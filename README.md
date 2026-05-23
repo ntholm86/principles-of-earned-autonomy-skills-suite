@@ -107,6 +107,8 @@ When you swap from Claude to Gpt to Gemini, the next model picks up this exact o
 
 ## Quickstart (First Successful Run)
 
+Want a copy-pasteable, 10-minute path? See [QUICKSTART.md](./QUICKSTART.md).
+
 1. Install with one command:
    - macOS / Linux: `bash install.sh`
    - Windows: `pwsh install.ps1`

@@ -1,5 +1,16 @@
 # Changelog
 
+## v3.22.0 — 2026-05-23
+
+### Changed
+- **Trail harness boundary softened (`trail/SKILL.md` 1.18.0 → 1.19.0):** Removed the mandate that the agent must extract raw harness transcripts to satisfy fidelity. Reasoning capture is now required; verbatim harness extraction is optional. Added an explicit anti-rationalization discipline (write reasoning before action, mark `[!REVERSAL]`, name a rejected alternative, prefer literal quotes, mark fidelity honestly). Verbatim transcripts remain the highest-trust tier when available and link via `transcript-file:` / `transcript-fidelity:`.
+- **Operator-held vision path fixed:** Updated `.trail/vision.md` reference to the canonical `.trail/audit-trail.md` (removed stale `.trail/log.md` token).
+- **Historical-era policy made explicit:** Added a "Historical-Era Policy" section to `BENCHMARKS.md` and a clarifying comment on `SESSION_FIDELITY_CONTRACT_DATE` in `verify.py`. Pre-contract entries are grandfathered as historical evidence and do not count toward Replicated status on their own.
+- **Benchmark publication surface upgraded:** `BENCHMARKS.md` now publishes a Results Matrix v0.1 with explicit per-evaluator-family columns (Claude, GPT, Gemini) and a Status legend (Seed / In progress / Replicated / Pending). B1–B3 are marked Seed pending replication; B4 is marked Replicated under the existing convergence chain.
+
+### Added
+- **`QUICKSTART.md`** — a 10-minute, copy-pasteable first-successful-run path. Linked from the README Quickstart section to reduce initial cognitive load.
+
 ## v3.21.0 — 2026-05-23
 
 ### Added
