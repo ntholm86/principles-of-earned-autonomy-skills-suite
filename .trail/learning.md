@@ -653,6 +653,18 @@ Compact chronological extract of every `[!REALIZATION]` and `[!REVERSAL]` marker
 
 **[!REVERSAL]** The initial multi_replace_string_in_file call produced a broken `text = path.read_text(...)\nexcept UnicodeDecodeError:` block missing the `try:` keyword and also lost the `analysis_text =` assignment — required two follow-up repairs. Root cause: the old-string context in the replacement included the line that needed to follow the except block, not the line that needed to be inside the try block. Applied careful surgical patches to restore correct syntax.
 
+## 2026-05-23 — retrospect-v3-22-0-arc
+
+**[!REALIZATION]** The May 11 retrospect's "centre of gravity = trail epistemics" claim aged poorly for this 15-entry arc. Entries 116–123 are predominantly about external positioning and trust-structure credibility. The shift happened without a clear inflection event — it emerged from the cumulative weight of distribution, benchmarks, QUICKSTART, and encoding work. Arc-reads are necessary because individual entries cannot see this.
+
+## 2026-05-23 — retrospect-v3-22-0-arc
+
+**[!REALIZATION]** :* FIRED — the May 11 retrospect asserted "2:118 reversal-to-realization ratio." This retrospect supersedes that claim with 12:162 (7.4%), partly from parser fix recovery and partly from 5 new reversals in entries 107–123.
+
+## 2026-05-23 — retrospect-v3-22-0-arc
+
+**[!REALIZATION]** A retrospect.md claim can be wrong at write-time if the arc-read precedes a same-session parser fix. The May 11 "2:118" claim was technically honest (it matched the artifact at the time) but the artifact was already known to be stale at the same moment. Lesson: if the arc-read includes a session that just changed a derived artifact, regenerate and re-read before forming the claim — do not rely on in-session memory of a count that may have just shifted.
+
 ---
 
-**162 markers — 150 realisations, 12 reversals**
+**165 markers — 153 realisations, 12 reversals**

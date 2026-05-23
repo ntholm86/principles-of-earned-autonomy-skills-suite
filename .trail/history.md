@@ -128,6 +128,7 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 121 | 2026-05-22 | vision-sourced-inference-reframe | vision/SKILL.md updated; Step 2 reframed from "Form hunches" to "Form sourced inferences"; evidence citation requirement tightened; structural tension named with safeguard. | vision/SKILL.md 1.3.0 → 1.4.0 |
 | ▸ 122 | 2026-05-23 | harness-boundary-soften-and-benchmark-matrix | trail/SKILL.md 1.18.0 → 1.19.0 with harness-boundary mandate replaced by required reasoning capture plus explicit anti-rationalization discipline; .trail/vision.md canonical path drift fixed; verify.py SESSION_FIDELITY_CONTRACT_DATE annotated with historical-era policy; BENCHMARKS.md restructured around a Results Matrix v0.1 with explicit per-evaluator-family columns and Pending rows; QUICKSTART.md added and linked from README. | trail/SKILL.md, .trail/vision.md, verify.py, BENCHMARKS.md (rewrite), QUICKSTART.md (new), README.md, CHANGELOG.md |
 | ▸ 123 | 2026-05-23 | verify-encoding-guard-required-files | check_required_markdown_docs now wraps path.read_text in try/except UnicodeDecodeError; non-UTF-8 REQUIRED_FILES produce one clean FAIL line from check_no_mojibake (#5) instead of a Python traceback. Docstring for check #5 updated to explicitly name REQUIRED_FILES. Smoke-tested with a literal 0xFF byte injected into BENCHMARKS.md. | verify.py |
+| ▸ 124 | 2026-05-23 | retrospect-v3-22-0-arc | retrospect.md replaced with six arc-claims covering entries 109–123; five active operational rules updated (three carried, two new); three next-runs-should-test items named. | .trail/retrospect.md |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -603,4 +604,4 @@ Do not edit by hand — re-run the command to refresh.
 
 - **REVERSAL:** The initial multi_replace_string_in_file call produced a broken `text = path.read_text(...)\nexcept UnicodeDecodeError:` block missing the `try:` keyword and also lost the `analysis_text =` assignment — required two follow-up repairs. Root cause: the old-string context in the replacement included the line that needed to follow the except block, not the line that needed to be inside the try block. Applied careful surgical patches to restore correct syntax.
 
-**123 runs total — 109 with changes, 14 silence**
+**124 runs total — 110 with changes, 14 silence**

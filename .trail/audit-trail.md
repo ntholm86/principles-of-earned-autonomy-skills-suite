@@ -5986,3 +5986,60 @@ Held — smoke-tested with [byte]0xFF injected into BENCHMARKS.md: verifier prod
 1. Scan the other check_ functions for unprotected path.read_text calls that could crash on bad-encoding files — apply the same try/except pattern consistently.
 2. Run a Retrospect pass — retrospect.md was last updated 2026-05-11, predates the fidelity contract and harness-boundary changes; the arc-claims it holds may no longer be the most important ones.
 3. Run a B1 replication in a fresh session (external evaluator family) to flip the first Pending cell in BENCHMARKS.md.
+
+
+## 2026-05-23 — retrospect-v3-22-0-arc
+
+- target: autonomous-agent-skills
+- operator: user
+- agent: GitHub Copilot (Anthropic Claude family)
+- skill: retrospect
+- session-file: .trail/sessions/2026-05-23-retrospect-v3-22-0-arc.md
+- fidelity: reconstructed
+- outcome: retrospect.md replaced with six arc-claims covering entries 109–123; five active operational rules updated (three carried, two new); three next-runs-should-test items named.
+- delta: .trail/retrospect.md
+
+### Interpretation of the ask
+
+Context note at session start said "Retrospect pass: arc reading COMPLETE; arc-claims formation NOT YET STARTED; retrospect.md NOT YET WRITTEN." Operator continued with "please continue / use the improve skill / understand my intent." Prior improve cycle had named Retrospect as the top Candidate Next Move. Interpreted as: execute the waiting Retrospect (arc-claims + write + record + commit). No correction from operator.
+
+Rejected alternative: run another improve iteration on a skill file. Rejected because the retrospect arc-reading was already complete and waiting — doing something else first would burn gathered context for no gain.
+
+### [!DECISION]
+
+Write six arc-claims covering entries 109–123. Supersede May 11 claims where contradicted. Carry what aged well. Write retrospect.md, append trail entry, regenerate derived artifacts, verify, commit.
+
+### Pre-commit prediction
+
+verify.py stays green. retrospect.md contains six claims with concrete entry citations. No new check or skill file edited.
+
+### Action
+
+- .trail/retrospect.md: replaced with six arc-claims, four next-tests, five operational rules
+- .trail/sessions/2026-05-23-retrospect-v3-22-0-arc.md: created
+- tools/record.py history --write; learning --write; verify.py: all green
+
+### Outcome vs prediction
+
+Held — verify.py OK. Six claims written with entry citations. No skill file edited.
+
+### Reflection
+
+[!REALIZATION] The May 11 retrospect's "centre of gravity = trail epistemics" claim aged poorly for this 15-entry arc. Entries 116–123 are predominantly about external positioning and trust-structure credibility. The shift happened without a clear inflection event — it emerged from the cumulative weight of distribution, benchmarks, QUICKSTART, and encoding work. Arc-reads are necessary because individual entries cannot see this.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired — first retrospect covering this arc; no prior claim to recur on.
+- *About to declare silence:* not fired — concrete arc-claims written.
+- *Contradicts prior [!REALIZATION]:* FIRED — the May 11 retrospect asserted "2:118 reversal-to-realization ratio." This retrospect supersedes that claim with 12:162 (7.4%), partly from parser fix recovery and partly from 5 new reversals in entries 107–123.
+- *Operator explicitly asked:* not fired — operator said "please continue / understand my intent"; this was interpreted as implicit, not explicit.
+
+**Across-trail macro-Hansei:**
+
+[!REALIZATION] A retrospect.md claim can be wrong at write-time if the arc-read precedes a same-session parser fix. The May 11 "2:118" claim was technically honest (it matched the artifact at the time) but the artifact was already known to be stale at the same moment. Lesson: if the arc-read includes a session that just changed a derived artifact, regenerate and re-read before forming the claim — do not rely on in-session memory of a count that may have just shifted.
+
+### Candidate Next Moves
+
+1. Run a B1 replication in a fresh session with a non-Claude evaluator family — this is the lowest-cost move to flip the first Pending cell in BENCHMARKS.md from scaffold to evidence.
+2. Audit existing .trail/sessions files for pre-contract-era labeling — surface the historical asymmetry inside the trail itself, not only in BENCHMARKS.md.
+3. Test the mtime-based freshness check against a fresh clone — the check passes trivially post-`git clone` because all files share the checkout timestamp; document or close this blind spot.

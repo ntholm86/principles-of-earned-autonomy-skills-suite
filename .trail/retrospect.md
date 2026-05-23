@@ -1,55 +1,56 @@
 # retrospect.md — autonomous-agent-skills
 
-_Last updated: 2026-05-11 (run: retrospect-after-marker-integrity)_
+_Last updated: 2026-05-23 (run: retrospect-v3-22-0-arc)_
 
 ## Scope of this read
 
-The arc from entry 63 (`feat-retrospect-skill`, 2026-05-01) through entry 106 (`improve-marker-integrity`, 2026-05-11) — 44 entries spanning the introduction of the Retrospect skill, the rationalization-loop mitigations sub-arc (May 5), and the 12-iteration trail-infrastructure sweep that closed today.
+The arc from entry 109 (`improve-offer-next-moves`, 2026-05-11) through entry 123 (`verify-encoding-guard-required-files`, 2026-05-23) — 15 entries since the last Retrospect at entry 108. The prior retrospect covered entries 63–106 and held its claims through entry 108; this run reads forward from there.
+
+Arc-question: What has the loop been doing since the May 11 arc-read? Where is the weight now? Which of the May 11 claims aged well and which did not?
+
+**Freshness check (run evidence):**
+- commands: `python tools/record.py history --write`; `python tools/record.py learning --write`; `python verify.py`
+- verify result: `OK — trail integrity checks pass` (123 entries, 162 markers)
+- gate: PASS (arc-claims allowed)
+
+---
 
 ## Current claims
 
-- **The target's centre of gravity has visibly shifted from skill mechanics to trail epistemics, and the shift has held for ~25 entries.** The May 5 arc-claim ("the remaining weight now sits in trail epistemics, not skill mechanics") was followed by 19 of the next 21 entries targeting trail/learning/memory infrastructure. This is no longer a hypothesis about where the work is — it is observably where the work has been.
+- **The operator-gate formalization is complete and validated.** The May 11 retrospect said the operator-gate pattern was "the strategic engine, but informal." Entry 109 added a Candidate Next Moves subsection to every trail entry; entry 112 (Probe PASS) demonstrated it changes behavior — an agent reading the trail treated the Candidate Next Moves list as suggestions not commands, distinguishing reasoning from compliance. The gate now has a structural trail surface and empirical validation.
 
-- **The Memory Model's three pillars now have artifact symmetry.** Memory has `log.md` + `history.md`; meta-cognition has `log.md` + `retrospect.md`; learning has `log.md` + `learning.md`. The third pillar's compact artifact was the asymmetric gap until iteration 5 of today's sweep; iteration 6 made regeneration mandatory; iteration 7 fixed the parser so the artifact is actually accurate (78 → 118 markers recovered). The triad is now structurally complete. This is the most significant architectural change since the introduction of Retrospect itself.
+- **The May 11 reversal-density claim was formed from a stale artifact and has since been corrected.** The retrospect stated "2:118 across the whole arc." That count was based on a `learning.md` snapshot captured before the same session's parser fix recovered 37 historical markers. Entry 111 corrected the ratio to ~7:119 at the time; the current baseline is 12:162 (7.4%). The freshness guard (entries 107 and 113) is directly responsible for making this visible. Prior claim partially refuted; reversal density is healthier than the retrospect reported.
 
-- **The operator-gate pattern is empirically the strategic engine, but it is informal.** Across the May 11 sweep, the genuinely strategic moves (creating learning.md, mandating freshness, fixing the parser) all started from "what should we do next?" exchanges where the agent ranked options and the operator picked. The mechanical moves (template alignment, verify.py enforcement of an already-decided contract) did not require it. Vision states "what to implement is the irreducible human gate"; the trail shows this gate operating as ad-hoc dialogue, not as a defined skill step. Whether to formalize it (as a step in Improve, or as an Intent invocation pattern) is the open question.
+- **The loop's center of gravity has shifted from trail epistemics to trust-structure credibility.** The May 11 claim was "the target's centre of gravity has visibly shifted from skill mechanics to trail epistemics." That was accurate through entries 63–108. Entries 109–123 show a different pattern: operator-gate completion (109, 112), distribution/adoption infrastructure (116–118), external positioning (118–120), trust-claim credibility tightening (121–123). The last eight entries address how the repo presents its evidence to external evaluators, not how it produces that evidence internally. The internal machinery is largely stable; the publication surface is the active front.
 
-- **The recurring-finding-class trigger has demonstrated load-bearing value.** The MARKER parser bug hit two consecutive iterations and was named explicitly in iter 6's pre-commitment. Without the trigger contract (introduced iter 1 of this sweep), the bug would likely have hit a third time — the operational pattern of "noticed but deferred" was visible in iter 5 too. The trigger surfaced the recurrence in time for iter 7 to act on it. This is the first arc evidence that step 6b's trigger contract changes behavior, not just documentation.
+- **Two systematic enforcement over-reaches have been corrected, establishing a pattern.** Forward-only fidelity contract (May 23, pre-session) and harness-boundary mandate (entry 122, same session) were both stated at maximum strength, encoded in spec or verifier, then had to be softened when reality exposed them as unimplementable. Both softenings were published as explicit era-boundary policy (historical-era labeling in verify.py; "verbatim harness extraction is optional" in trail/SKILL.md 1.19.0) rather than quietly weakening enforcement. The pattern is now recognizable and the healthy resolution is documented: acknowledge the ideal, name the era boundary, keep the aspiration visible without blocking adoption.
 
-- **The reversal-to-realization ratio is 2:118 across the whole arc and 0:14 across this session's strategic moves.** This is far below what Retrospect's own adversarial-audit lens (step 2b) treats as plausible for non-trivial work. Today alone had at least one explicit course reversal (`check_non_canonical_markers` attempted and removed) — it was *narrated* in the entry but not marked with `[!REVERSAL]`. The arc shows authors reach for `[!REALIZATION]` readily and `[!REVERSAL]` rarely. Either the loop is genuinely converging at an implausible rate, or the reversal marker is under-used. The latter is the more likely reading.
+- **verify.py is now the most mechanically enforced component of the suite.** It runs 14+ checks including: entry format, date order, mandatory metadata, mojibake/encoding, broken links, stale path tokens, session fidelity structure, transcript references, trigger evaluation, reversal honesty, derived-artifact freshness, and the new encoding-guard hardening (entry 123). The trust claims in PRINCIPLES.md and the external benchmark credibility now depend directly on this verifier running reliably. It is load-bearing infrastructure, not a quality gate.
 
-- **The vision document is doing real work.** The "three pillars" framing in vision.md was treated as a literal architecture target by today's sweep, and it produced concrete code (learning.md). This is the first arc instance where a vision passage drove an artifact decision rather than just orienting reflection. Vision is no longer only the destination; it is also a source of architectural primitives the loop quotes back at itself.
+- **The "cross-session learning acted-on" question from the May 11 retrospect remains open.** The May 11 retrospect's top next-test was: "A future fresh-session agent should reach for `learning.md` at step 1 and reference specific prior realizations by date+slug rather than rediscovering them." No entry in 109–123 is such a run. This has not been tested. The infrastructure exists (learning.md is current, improve step 1 instructs reading it); the behavioral evidence does not yet exist.
+
+---
 
 ## What the next runs should test
 
-- **Cross-session learning-acted-on.** A future fresh-session agent should reach for `learning.md` at step 1 and reference specific prior realizations by date+slug rather than rediscovering them. If the next 3 sessions show no such reference, the artifact is being read but not acted on — capability gap, not infrastructure gap.
+- **Cross-session learning acted-on (still the primary open question):** Run Improve in a fresh session on an external target, confirm the agent cites at least one learning.md entry by date+slug in its step 1 narration rather than rediscovering the same finding class.
 
-- **Reversal-density honesty.** Future entries that change course mid-iteration (not just from prior runs) should include `[!REVERSAL]`. The next 5 entries should be checked: any iteration that backs out of a planned change must mark it.
+- **B1 replication in a fresh session by a non-Claude evaluator family:** The BENCHMARKS.md matrix has three Pending cells for B1/B2/B3 (GPT and Gemini families). Flipping one Pending cell to In Progress requires a single external-family run on the same benchmark ID. This is the lowest-cost move to shift the benchmarks from scaffold to evidence.
 
-- **Operator-gate formalization vs. preservation.** Run an Intent or Vision dialogue specifically on whether the "what should we do next?" exchange should become a documented step. Either outcome is informative — formalizing it makes it auditable; explicitly preserving it as informal makes Vision's "operator-AI partnership" claim concrete.
+- **Enforced-ideal-vs-implementable-reality pattern recurrence:** Two over-reaches corrected in one session (fidelity contract; harness boundary) raises the question: are there other enforcement points where the spec is ahead of what any current harness can produce? Candidate: the `split-writer` fidelity tier in trail/SKILL.md — it specifies an independent second agent, but there is no harness that instantiates this. Either document it as an aspirational tier explicitly (as was done for verbatim transcripts) or test it.
 
-- **The mtime-based staleness check on a fresh clone.** Iteration 7's named blind spot: after `git clone`, both `log.md` and `learning.md` have the same checkout timestamp, so the check passes regardless of pre-commit state. A future iteration should test this — clone the repo fresh, see what verify.py reports.
+- **mtime-based freshness on a fresh clone (named as a blind spot in May 11 retrospect):** After `git clone`, all files have the same checkout timestamp, so verify.py's mtime-based freshness check passes trivially. A CI-aware workaround or a hash-based check would close this. Remains untested.
+
+---
 
 ## Active operational rules
 
-- **Every spec change must be paired with enforcement in the same session.** The recurring failure class across this arc is "spec written, enforcement deferred." Iter 1 (trigger contract spec) → iter 3 (verify.py enforcement) is a 2-iteration gap. The trail freshness mandate (iter 6) → enforcement (iter 7) is a 1-iteration gap. Aim for zero — write the spec change and the verify.py check in the same commit.
+- **Every spec change must be paired with enforcement in the same session.** Still holds. The May 11 arc named "spec written, enforcement deferred" as the recurring failure class; entries 109 and 113 closed that gap for the operator-gate and freshness guard respectively.
 
-- **Mark `[!REVERSAL]` when the iteration backs out of a planned step, not only when reversing prior runs.** Today's `check_non_canonical_markers` removal was a within-iteration reversal that should have been marked. The retroactive guidance: if the Action and Outcome section says "attempted X then removed it," that's a `[!REVERSAL]`.
+- **Mark `[!REVERSAL]` when the iteration backs out of a planned step, not only when reversing prior runs.** Still holds. Calibrated in entry 110. The current arc shows 12 reversals vs 150 realizations — healthier than the May 11 claim but still lower than expected for complex work.
 
-- **When changing the MARKER parser or related plumbing, smoke-check by comparing marker counts before and after.** Iter 5 and iter 6 both lost their own realizations to the parser bug, caught only when the count was checked. Iter 7's fix recovered 37 historical markers. Make this comparison part of any record.py change.
+- **When writing non-ASCII content to disk in PowerShell, use explicit UTF-8 encoding.** New rule from entries 122–123. `Set-Content` defaults to Windows-1252 on PS5; use `[System.IO.File]::WriteAllText(path, content, [System.Text.UTF8Encoding]::new($false))` or pipe through `Out-File -Encoding utf8`.
 
-- **Treat the `learning.md` and `history.md` regeneration as part of the commit, not a separate step.** Per trail v1.14.0 and verify.py check 10. Forgetting this now fails verify.
+- **Enforcement softenings must be published as explicit policy with a named era boundary.** New rule from entries 122. Do not quietly weaken a spec or verifier constraint. Name the era before which the old rule does not apply, document the reason, and keep the aspiration visible as the highest-trust tier when conditions allow it.
 
-- **Disregard "imminent silence" predictions.** Carried forward from prior retrospect — still proven by this arc. Iter 4's "technically well, strategically shallow" honest self-assessment was followed by 3 strategic iterations the agent did not predict.
-
-- **A structural change creates a long tail of documentation/tooling inconsistencies.** Carried forward — confirmed again by today's sweep (the trail v1.13.0 → v1.14.0 spec change required a parser fix and an enforcement check before the change was actually load-bearing).
-
-## Loop-effectiveness notes
-
-The loop has measurably improved at strategic work since the May 5 mitigations arc. The reflection-mechanism redesign (run 54), the trigger contract (today, iter 1), the learning artifact (iter 5), and the parser fix (iter 7) are all genuinely strategic — each names a structural property of the trail and changes the architecture, not the documentation.
-
-But two structural caveats remain:
-
-1. **The strategic moves still depend on operator gating.** None of the four moves above arose unprompted. The operator's "what should we do next?" question is the trigger; the agent's ranking is the proposal; the operator's selection is the decision. Vision says this is the right architecture. The arc confirms it is the *operating* architecture. The question is whether it should be more visible.
-
-2. **The reversal asymmetry is a confabulation signal Retrospect itself should be alert to.** A 2:118 ratio across 100+ entries on hard architectural work is implausible. The loop may be reaching for `[!REALIZATION]` defensively (to satisfy the marker check) and avoiding `[!REVERSAL]` because it implies prior error. The next Retrospect run should compare narrated course-changes against marked reversals — a discrepancy is a confabulation pattern, not an honesty one.
+- **When running Retrospect, regenerate derived artifacts before forming arc-claims.** Entry 111's realization: the May 11 retrospect's reversal-density claim was wrong because it was formed from a stale `learning.md`. The freshness guard now enforces this at commit time; Retrospect must also do its own freshness check at read time per the step 1b checklist in retrospect/SKILL.md.
