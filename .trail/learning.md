@@ -641,6 +641,18 @@ Compact chronological extract of every `[!REALIZATION]` and `[!REVERSAL]` marker
 
 **[!REVERSAL]** First write used Set-Content (Windows-1252 default) which corrupted em-dashes and broke verify.py UTF-8 read; re-encoded the file via System.IO.File.WriteAllText with UTF8Encoding(false) and re-verified green.
 
+## 2026-05-23 — verify-encoding-guard-required-files
+
+**[!REALIZATION]** :* not fired.
+
+## 2026-05-23 — verify-encoding-guard-required-files
+
+**[!REALIZATION]** The gap was never "missing detection" — check_no_mojibake already detected non-UTF-8 bytes. The gap was "detection that fails silently when it matters most." A verifier that crashes on the exact file it should flag is worse than no check at all: it hides the real error behind a traceback. This is a pattern to watch for in other checks: does each read that could encounter bad input have a graceful degradation path?
+
+## 2026-05-23 — verify-encoding-guard-required-files
+
+**[!REVERSAL]** The initial multi_replace_string_in_file call produced a broken `text = path.read_text(...)\nexcept UnicodeDecodeError:` block missing the `try:` keyword and also lost the `analysis_text =` assignment — required two follow-up repairs. Root cause: the old-string context in the replacement included the line that needed to follow the except block, not the line that needed to be inside the try block. Applied careful surgical patches to restore correct syntax.
+
 ---
 
-**159 markers — 148 realisations, 11 reversals**
+**162 markers — 150 realisations, 12 reversals**

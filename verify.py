@@ -9,7 +9,8 @@ Checks:
 2. Every entry heading matches `## YYYY-MM-DD — <slug>`.
 3. Entries are in non-decreasing date order.
 4. Every entry contains the mandatory metadata fields: target, agent, skill, outcome.
-5. No U+FFFD replacement characters (mojibake) anywhere in the live tree
+5. No U+FFFD replacement characters (mojibake) or non-UTF-8 bytes anywhere in
+    the live tree, including every REQUIRED_FILE
     (excludes archive/ and local virtual environments).
 6. Live repo files that current docs depend on exist.
 7. Required markdown docs do not contain duplicate H1 headings, and their local
@@ -195,7 +196,13 @@ def check_required_markdown_docs() -> list[str]:
         if not path.exists():
             continue
 
-        text = path.read_text(encoding="utf-8")
+        try:
+            text = path.read_text(encoding="utf-8")
+        except UnicodeDecodeError:
+            # Non-UTF-8 encoding; check_no_mojibake() will report this as a
+            # clean failure (check #5). Skip H1/link analysis here so a bad
+            # encoding produces one actionable error, not a crash.
+            continue
         analysis_text = _strip_fenced_code_blocks(text)
         if len(H1_HEADING.findall(analysis_text)) > 1:
             failures.append(f"multiple H1 headings in {rel}")

@@ -5930,3 +5930,59 @@ Make five focused changes in one iteration (they are independent, each small, al
 1. Add a verify.py check for non-UTF-8 bytes in REQUIRED_FILES so the encoding hazard surfaces structurally next time instead of as a stack trace — small, mechanical, prevents a recurrence already observed.
 2. Stand up one external-family replication run on B1 in a fresh session, then flip its cell from Pending to In progress / Replicated — turns the matrix from scaffold into evidence.
 3. Audit the existing 41 .trail/sessions files for the pre-contract-era label so the historical asymmetry is visible inside the trail itself, not only in BENCHMARKS.md — purely descriptive, no rewrite.
+
+
+## 2026-05-23 — verify-encoding-guard-required-files
+
+- target: autonomous-agent-skills
+- operator: user
+- agent: GitHub Copilot (Anthropic Claude family)
+- skill: improve
+- session-file: .trail/sessions/2026-05-23-verify-encoding-guard-required-files.md
+- fidelity: reconstructed
+- outcome: check_required_markdown_docs now wraps path.read_text in try/except UnicodeDecodeError; non-UTF-8 REQUIRED_FILES produce one clean FAIL line from check_no_mojibake (#5) instead of a Python traceback. Docstring for check #5 updated to explicitly name REQUIRED_FILES. Smoke-tested with a literal 0xFF byte injected into BENCHMARKS.md.
+- delta: verify.py
+
+### Interpretation of the ask
+
+"Add a verify.py check for non-UTF-8 bytes in REQUIRED_FILES so the encoding hazard surfaces structurally." check_no_mojibake (check #5) already detects non-UTF-8 files across the whole tree and records a clean failure. The structural gap was that check_required_markdown_docs crashed with an unhandled UnicodeDecodeError when it hit a REQUIRED_FILE with bad encoding, swallowing check #5's error message with a traceback. The fix is to protect the read so a bad-encoding file skips H1/link analysis (check #5 owns the failure message) rather than crashing the verifier.
+
+Rejected alternative: add a new check function + new check number. Rejected because check #5 already covers this completely; the gap was crash-vs-clean-failure, not missing detection.
+
+### [!DECISION]
+
+Wrap path.read_text in try/except UnicodeDecodeError inside check_required_markdown_docs. Expand check #5 docstring to explicitly say it covers REQUIRED_FILES. No new function, no new check number.
+
+### Pre-commit prediction
+
+A Windows-1252 or otherwise non-UTF-8 REQUIRED_FILE will produce exactly one FAIL line ("non-UTF-8 file: X") instead of a Python traceback. verify.py stays green on the current clean tree.
+
+### Action
+
+- verify.py: docstring check #5 expanded to "including every REQUIRED_FILE"
+- verify.py: check_required_markdown_docs wraps text = path.read_text(encoding="utf-8") in try/except UnicodeDecodeError with a continue and a comment pointing to check #5
+
+[!REVERSAL] The initial multi_replace_string_in_file call produced a broken `text = path.read_text(...)\nexcept UnicodeDecodeError:` block missing the `try:` keyword and also lost the `analysis_text =` assignment — required two follow-up repairs. Root cause: the old-string context in the replacement included the line that needed to follow the except block, not the line that needed to be inside the try block. Applied careful surgical patches to restore correct syntax.
+
+### Outcome vs prediction
+
+Held — smoke-tested with [byte]0xFF injected into BENCHMARKS.md: verifier produced "FAIL — 1 issue(s): non-UTF-8 file: BENCHMARKS.md" (clean, no crash). Restored file: verifier returned OK.
+
+### Reflection
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED — encoding failure already appeared in the previous session (BENCHMARKS.md Set-Content incident). This is the structural close: the verifier now catches it as a clean failure rather than a crash.
+- *About to declare silence:* not fired — concrete change made.
+- *Contradicts prior [!REALIZATION]:* not fired.
+- *Operator explicitly asked:* FIRED — operator directly requested the encoding guard.
+
+**Across-trail macro-Hansei:**
+
+[!REALIZATION] The gap was never "missing detection" — check_no_mojibake already detected non-UTF-8 bytes. The gap was "detection that fails silently when it matters most." A verifier that crashes on the exact file it should flag is worse than no check at all: it hides the real error behind a traceback. This is a pattern to watch for in other checks: does each read that could encounter bad input have a graceful degradation path?
+
+### Candidate Next Moves
+
+1. Scan the other check_ functions for unprotected path.read_text calls that could crash on bad-encoding files — apply the same try/except pattern consistently.
+2. Run a Retrospect pass — retrospect.md was last updated 2026-05-11, predates the fidelity contract and harness-boundary changes; the arc-claims it holds may no longer be the most important ones.
+3. Run a B1 replication in a fresh session (external evaluator family) to flip the first Pending cell in BENCHMARKS.md.
