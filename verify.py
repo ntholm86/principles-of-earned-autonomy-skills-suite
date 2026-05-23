@@ -10,7 +10,7 @@ Checks:
 3. Entries are in non-decreasing date order.
 4. Every entry contains the mandatory metadata fields: target, agent, skill, outcome.
 5. No U+FFFD replacement characters (mojibake) anywhere in the live tree
-    (excludes archive/).
+    (excludes archive/ and local virtual environments).
 6. Live repo files that current docs depend on exist.
 7. Required markdown docs do not contain duplicate H1 headings, and their local
     markdown links resolve.
@@ -21,6 +21,14 @@ Checks:
     macro-Hansei subsection when any trigger fired.
 10. `.trail/history.md` and `.trail/learning.md` are not older than
     `.trail/audit-trail.md` (staleness check using file mtime).
+11. Live docs do not contain stale trail path tokens (`trail/log.md` or
+    `.trail/log.md`); canonical path is `.trail/audit-trail.md`.
+12. Entries on or after the session-fidelity contract date use structurally
+    correct session artifacts (`.trail/sessions/` summaries,
+    `.trail/transcripts/` verbatim exports) with explicit fidelity metadata.
+13. Transcript-file references point to existing files.
+14. Entries under the reversal honesty contract do not narrate reversal cues
+    without a `[!REVERSAL]` marker.
 
 Exit code: 0 if all checks pass, 1 otherwise.
 """
@@ -37,6 +45,7 @@ REQUIRED_FILES = [
     "README.md",
     "CHANGELOG.md",
     "INSTALLING.md",
+    "BENCHMARKS.md",
     "improve/SKILL.md",
     "probe/SKILL.md",
     "intent/SKILL.md",
@@ -49,9 +58,42 @@ REQUIRED_FILES = [
 ENTRY_HEADING = re.compile(r"^##\s+(\d{4}-\d{2}-\d{2})\s+[\u2014-]\s+(.+?)\s*$")
 META_FIELD = re.compile(r"^-\s+(target|agent|skill|outcome)\s*:", re.MULTILINE)
 SESSION_FILE_META = re.compile(r"^-\s+session-file:\s+(.+?)\s*$", re.MULTILINE)
+TRANSCRIPT_FILE_META = re.compile(r"^-\s+transcript-file:\s+(.+?)\s*$", re.MULTILINE)
 H1_HEADING = re.compile(r"^#\s+.+$", re.MULTILINE)
 MARKDOWN_LINK = re.compile(r"\[[^\]]+\]\(([^)]+)\)")
 EXTERNAL_LINK = re.compile(r"^[a-z][a-z0-9+.-]*:", re.IGNORECASE)
+
+STALE_TRAIL_PATH_PATTERNS = [
+    re.compile(r"\.trail/log\.md"),
+    re.compile(r"(?<!\.)trail/log\.md"),
+]
+
+STALE_PATH_DOCS = [
+    "README.md",
+    "INSTALLING.md",
+    "POSITION.md",
+    "PRINCIPLES.md",
+    "intent/SKILL.md",
+    "vision/SKILL.md",
+    "improve/SKILL.md",
+    "trail/SKILL.md",
+    "retrospect/SKILL.md",
+    "probe/SKILL.md",
+]
+
+FIDELITY_TEXT = re.compile(
+    r"(?im)^\s*(?:\*\*fidelity:\*\*|fidelity:)\s*(.+?)\s*$"
+)
+SUMMARY_FIDELITY_VALUES = {"reconstructed", "mixed", "split-writer"}
+TRANSCRIPT_FIDELITY_VALUES = {"verbatim", "verbatim-structural"}
+
+SESSION_FIDELITY_CONTRACT_DATE = "2026-05-23"
+
+REVERSAL_HONESTY_CONTRACT_SLUG = "vision-sourced-inference-reframe"
+REVERSAL_CUE = re.compile(
+    r"\b(backed out|rolled back|reverted|undo(?:ne)?|undid|attempted[^\n]{0,120}then removed|removed it after|abandon(?:ed|ing)?)\b",
+    re.IGNORECASE,
+)
 
 
 def _strip_fenced_code_blocks(text: str) -> str:
@@ -120,7 +162,7 @@ def check_log_format() -> list[str]:
 
 def check_no_mojibake() -> list[str]:
     failures: list[str] = []
-    skip_dirs = {"archive", ".git"}
+    skip_dirs = {"archive", ".git", ".venv", "venv", "__pycache__"}
     for path in ROOT.rglob("*"):
         if not path.is_file():
             continue
@@ -165,6 +207,129 @@ def check_required_markdown_docs() -> list[str]:
             if not resolved.exists():
                 failures.append(f"broken local markdown link in {rel}: {target}")
 
+    return failures
+
+
+def _line_number(text: str, index: int) -> int:
+    return text.count("\n", 0, index) + 1
+
+
+def check_stale_path_tokens() -> list[str]:
+    """Fail when live docs contain old trail path tokens."""
+    failures: list[str] = []
+    for rel in STALE_PATH_DOCS:
+        path = ROOT / rel
+        if not path.exists():
+            continue
+        text = path.read_text(encoding="utf-8")
+        for pattern in STALE_TRAIL_PATH_PATTERNS:
+            for match in pattern.finditer(text):
+                line = _line_number(text, match.start())
+                failures.append(
+                    f"stale trail path token in {rel}:{line}: '{match.group(0)}' — use .trail/audit-trail.md"
+                )
+    return failures
+
+
+def _extract_fidelity_value(text: str) -> str | None:
+    m = FIDELITY_TEXT.search(text)
+    if not m:
+        return None
+    raw = m.group(1).strip().lower()
+    # Preserve canonical hyphenated values while tolerating legacy notes like
+    # "full — arc-read completed ..." by extracting the first token.
+    token = re.split(r"\s+[—-]\s+|\s+", raw, maxsplit=1)[0]
+    return token
+
+
+def check_session_fidelity_structure() -> list[str]:
+    failures: list[str] = []
+    if not LOG.exists():
+        return failures
+
+    entries = _parse_entries(LOG.read_text(encoding="utf-8"))
+    for date, slug, body in entries:
+        if date < SESSION_FIDELITY_CONTRACT_DATE:
+            continue
+
+        for m in SESSION_FILE_META.finditer(body):
+            rel_path = m.group(1).strip()
+            path = ROOT / rel_path
+            if not path.exists():
+                # Existence is validated separately by check_session_files.
+                continue
+            rel_parts = Path(rel_path).parts
+            if len(rel_parts) < 2 or rel_parts[0] != ".trail":
+                failures.append(
+                    f"entry '{date} {slug}' uses non-trail session-file path: {rel_path}"
+                )
+                continue
+
+            text = path.read_text(encoding="utf-8")
+            fidelity = _extract_fidelity_value(text)
+            if fidelity is None:
+                failures.append(
+                    f"entry '{date} {slug}' session summary missing fidelity metadata: {rel_path}"
+                )
+                continue
+
+            if rel_parts[1] == "sessions":
+                if fidelity in TRANSCRIPT_FIDELITY_VALUES:
+                    failures.append(
+                        f"entry '{date} {slug}' summary file uses verbatim fidelity ({fidelity}): {rel_path}"
+                    )
+                elif fidelity not in SUMMARY_FIDELITY_VALUES:
+                    failures.append(
+                        f"entry '{date} {slug}' has invalid summary fidelity value ({fidelity}): {rel_path}"
+                    )
+            elif rel_parts[1] == "transcripts":
+                if fidelity not in TRANSCRIPT_FIDELITY_VALUES:
+                    failures.append(
+                        f"entry '{date} {slug}' transcript file has invalid fidelity ({fidelity}): {rel_path}"
+                    )
+            else:
+                failures.append(
+                    f"entry '{date} {slug}' session-file must live in .trail/sessions/ or .trail/transcripts/: {rel_path}"
+                )
+
+        for m in TRANSCRIPT_FILE_META.finditer(body):
+            rel_path = m.group(1).strip()
+            path = ROOT / rel_path
+            if not path.exists():
+                # Existence is validated separately by check_transcript_references.
+                continue
+            rel_parts = Path(rel_path).parts
+            if len(rel_parts) < 2 or rel_parts[0] != ".trail" or rel_parts[1] != "transcripts":
+                failures.append(
+                    f"entry '{date} {slug}' transcript-file must live in .trail/transcripts/: {rel_path}"
+                )
+                continue
+            text = path.read_text(encoding="utf-8")
+            fidelity = _extract_fidelity_value(text)
+            if fidelity is None:
+                failures.append(
+                    f"entry '{date} {slug}' transcript missing fidelity metadata: {rel_path}"
+                )
+            elif fidelity not in TRANSCRIPT_FIDELITY_VALUES:
+                failures.append(
+                    f"entry '{date} {slug}' transcript has invalid fidelity ({fidelity}): {rel_path}"
+                )
+
+    return failures
+
+
+def check_transcript_references() -> list[str]:
+    """Check that every transcript-file reference in audit-trail.md points to an existing file."""
+    failures: list[str] = []
+    if not LOG.exists():
+        return failures
+    for date, slug, body in _parse_entries(LOG.read_text(encoding="utf-8")):
+        for m in TRANSCRIPT_FILE_META.finditer(body):
+            rel_path = m.group(1).strip()
+            if not (ROOT / rel_path).exists():
+                failures.append(
+                    f"entry '{date} {slug}' references missing transcript file: {rel_path}"
+                )
     return failures
 
 
@@ -281,6 +446,32 @@ def check_derived_artifact_freshness() -> list[str]:
     return failures
 
 
+def check_reversal_honesty_gate() -> list[str]:
+    """Fail when entries under contract narrate reversal cues without [!REVERSAL]."""
+    failures: list[str] = []
+    if not LOG.exists():
+        return failures
+    entries = _parse_entries(LOG.read_text(encoding="utf-8"))
+
+    contract_index: int | None = None
+    for i, (_, slug, _) in enumerate(entries):
+        if slug == REVERSAL_HONESTY_CONTRACT_SLUG:
+            contract_index = i
+            break
+    if contract_index is None:
+        return failures
+
+    for date, slug, body in entries[contract_index:]:
+        if "[!REVERSAL]" in body:
+            continue
+        cue = REVERSAL_CUE.search(body)
+        if cue:
+            failures.append(
+                f"entry '{date} {slug}' contains reversal cue '{cue.group(0)}' without [!REVERSAL] marker"
+            )
+    return failures
+
+
 def check_session_files() -> list[str]:
     """Check that every session-file: reference in audit-trail.md points to an existing file."""
     failures: list[str] = []
@@ -302,8 +493,12 @@ def main() -> int:
     all_failures.extend(check_log_format())
     all_failures.extend(check_no_mojibake())
     all_failures.extend(check_required_markdown_docs())
+    all_failures.extend(check_stale_path_tokens())
     all_failures.extend(check_session_files())
+    all_failures.extend(check_transcript_references())
+    all_failures.extend(check_session_fidelity_structure())
     all_failures.extend(check_trigger_evaluation())
+    all_failures.extend(check_reversal_honesty_gate())
     all_failures.extend(check_derived_artifact_freshness())
 
     if all_failures:
