@@ -609,6 +609,14 @@ Compact chronological extract of every `[!REALIZATION]` and `[!REVERSAL]` marker
 
 **[!REALIZATION]** The skills PRINCIPLES.md copy has no automated sync mechanism — it drifts every time the manifesto changes. This session exposed the drift after two manifesto commits in one session (v1.1.0 Premise addition, then P2 multi-resolution drop). If the cadence of manifesto edits increases, manual sync will become a recurring friction point. A `tools/sync-principles.py` script or a CI check comparing the two files would remove the manual step.
 
+## 2026-05-22 — vision-sourced-inference-reframe
+
+**[!REALIZATION]** :* not fired — no prior realization asserted that the "hunch" vocabulary was correct.
+
+## 2026-05-22 — vision-sourced-inference-reframe
+
+**[!REALIZATION]** The skills suite's own vocabulary discipline was weaker than its epistemics discipline. PRINCIPLES.md is rigorous about evidence and citation; Vision's Step 2 was using "hunch" — the softest possible epistemic frame — for a step that requires the hardest. Vocabulary sets the contract the agent internalises. A mismatch between vocabulary and requirements is a specification bug, not a style preference.
+
 ---
 
-**151 markers — 142 realisations, 9 reversals**
+**153 markers — 144 realisations, 9 reversals**

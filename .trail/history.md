@@ -125,6 +125,7 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 118 | 2026-05-12 | cross-repo-positioning-alignment | Cross-repo naming and category framing aligned so manifesto and implementation now present one coherent PEA story. | Updated skills README/CITATION/.zenodo, updated manifesto README implementation link, and updated skills git origin URL to the renamed repository path. |
 | ▸ 119 | 2026-05-13 | trail-file-rename-audit-trail | Renamed .trail/log.md → .trail/audit-trail.md across the spec surface; v3.19.0. | trail/SKILL.md 1.16.0 → 1.17.0; suite v3.18.0 → v3.19.0; 12 spec files updated; .trail/log.md → .trail/audit-trail.md (git mv); derived artifacts regenerated; two stale session-file path tokens updated to mirror the rename; one CHANGELOG link retargeted. |
 | ▸ 120 | 2026-05-13 | sync-principles-from-manifesto | Synced PRINCIPLES.md from manifesto commit 8aadb43 (P2 multi-resolution requirement dropped). | PRINCIPLES.md updated; relative links rewritten to canonical GitHub URLs per existing copy convention. |
+| ▸ 121 | 2026-05-22 | vision-sourced-inference-reframe | vision/SKILL.md updated; Step 2 reframed from "Form hunches" to "Form sourced inferences"; evidence citation requirement tightened; structural tension named with safeguard. | vision/SKILL.md 1.3.0 → 1.4.0 |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -587,4 +588,8 @@ Do not edit by hand — re-run the command to refresh.
 
 - **decided:** Overwrite skills PRINCIPLES.md with manifesto HEAD, rewriting ./PROBLEM.md and ./PROOF.md links to canonical GitHub URLs. No other changes.
 
-**120 runs total — 106 with changes, 14 silence**
+### Run 121 — 2026-05-22 — vision-sourced-inference-reframe
+
+- **decided:** Change Step 2: rename "Form hunches" → "Form sourced inferences", add a one-paragraph acknowledgment of the structural tension (agent narrating intent superficially resembles the failure mode the framework prevents) and name the safeguard (evidence-tracing + two-level operator adjudication: operator can reject the evidence-reading OR the conclusion independently). Tighten the "Sourced" bullet to require a specific citation (quoted phrase, trail entry by date+slug, concrete exchange) rather than "briefly state what gave you this vision." Propagate vocabulary change through Step 5, Step 6, and "What this skill does not do."
+
+**121 runs total — 107 with changes, 14 silence**

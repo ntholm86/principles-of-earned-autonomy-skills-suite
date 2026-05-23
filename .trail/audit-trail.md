@@ -5795,3 +5795,67 @@ Used Python script to read manifesto PRINCIPLES.md (UTF-8), apply regex link rew
 **Across-trail macro-Hansei** *(only if a trigger above fired; otherwise omit this subsection)*:
 
 [!REALIZATION] The skills PRINCIPLES.md copy has no automated sync mechanism — it drifts every time the manifesto changes. This session exposed the drift after two manifesto commits in one session (v1.1.0 Premise addition, then P2 multi-resolution drop). If the cadence of manifesto edits increases, manual sync will become a recurring friction point. A `tools/sync-principles.py` script or a CI check comparing the two files would remove the manual step.
+
+## 2026-05-22 — vision-sourced-inference-reframe
+
+- target: autonomous-agent-skills
+- operator: user
+- agent: Claude Sonnet 4.6 (Anthropic, via GitHub Copilot)
+- skill: improve
+- session-file: .trail/audit-trail.md
+- outcome: vision/SKILL.md updated; Step 2 reframed from "Form hunches" to "Form sourced inferences"; evidence citation requirement tightened; structural tension named with safeguard.
+- delta: vision/SKILL.md 1.3.0 → 1.4.0
+
+### Interpretation of the ask
+
+Operator: "I want to make the Vision skill better or more useful. Should we run Retrospect or Improve? Make sure you trail everything."
+
+Retrospect ruled out: retrospect.md is current (2026-05-11, 44-entry arc-read). The trail is not thin enough to warrant another arc-synthesis. Improve on Vision directly is the right instrument — the operator named a specific target and a prior evaluation (same session) identified a clear structural weak point.
+
+### Examination
+
+Three lenses applied to Vision v1.3.0:
+
+- **Inconsistency.** Step 2's name ("Form hunches") and its epistemic requirements are in direct contradiction. "Hunch" means gut-feeling. The step requires sourcing, specificity, and falsifiability — which are properties of evidence-based inference, not intuition. The vocabulary told the agent to guess; the requirements told it to reason. An agent anchoring to the weaker framing would produce impressionistic output while formally complying.
+- **Purpose.** Vision's purpose is to close the articulation gap through evidence-sourced inference, with operator adjudication before anything is acted on. The "hunch" vocabulary undermined this by implying the gap is closed by feeling rather than by marshalling evidence.
+- **Waste.** "Hunch" appeared 8+ times in the skill. Each occurrence introduced the same epistemically weak frame that the sourcing requirement was already trying to correct.
+
+### Challenge the first read
+
+Two stronger structural changes were considered and rejected:
+
+1. **Two-mode split** (elicitation mode when no vision.md exists vs. update mode when stale). Real gap, but Step 5 already handles it with "update in place rather than replacing." Adding a two-mode structure would add complexity without closing the most impactful gap.
+2. **When-NOT-to-invoke section.** The closing clause of Step 2 already covers this: "If you cannot honestly form any sourced inferences... say so and stop." A separate section would repeat it.
+
+### Decision
+
+[!DECISION] Change Step 2: rename "Form hunches" → "Form sourced inferences", add a one-paragraph acknowledgment of the structural tension (agent narrating intent superficially resembles the failure mode the framework prevents) and name the safeguard (evidence-tracing + two-level operator adjudication: operator can reject the evidence-reading OR the conclusion independently). Tighten the "Sourced" bullet to require a specific citation (quoted phrase, trail entry by date+slug, concrete exchange) rather than "briefly state what gave you this vision." Propagate vocabulary change through Step 5, Step 6, and "What this skill does not do."
+
+### Action
+
+- vision/SKILL.md: version 1.3.0 → 1.4.0
+- Step 2 header: "Form hunches" → "Form sourced inferences"
+- Step 2: added tension-acknowledgment paragraph naming the safeguard
+- Step 2 "Sourced" bullet → "Cited to specific evidence" with citation examples and two-level falsifiability framing
+- Step 2 "Stated as a guess" → "Stated as a reasoned inference"
+- Step 2 closing: "manufacture hunches" → "manufacture inferences to justify the run"
+- Step 5: "hunches the operator disagreed with" → "inferences the operator explicitly rejected"
+- Step 5: "current hunches do not change" → "current inferences do not change"
+- Step 6: "hunches... and their sources" → "sourced inferences... and their citations"
+- Step 6: "no hunches" → "no inferences"
+- "What this skill does not do": "act on hunches" → "act on unconfirmed inferences"
+
+### Reflection
+
+**Falsifiable claim:** An agent reading v1.4.0 and reaching Step 2 will encounter the structural tension named explicitly and the citation requirement before forming any inference. If the next Vision run produces inferences with "the operator seems to care about X" as the source rather than a specific cited location, the change failed.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired — first-time change to Vision epistemics; no prior trail pattern on this specific topic.
+- *About to declare silence:* not fired — change was made.
+- *Contradicts prior [!REALIZATION]:* not fired — no prior realization asserted that the "hunch" vocabulary was correct.
+- *Operator explicitly asked:* FIRED — operator asked to make Vision better and requested a specific recommendation (Retrospect vs. Improve).
+
+**Across-trail macro-Hansei:**
+
+[!REALIZATION] The skills suite's own vocabulary discipline was weaker than its epistemics discipline. PRINCIPLES.md is rigorous about evidence and citation; Vision's Step 2 was using "hunch" — the softest possible epistemic frame — for a step that requires the hardest. Vocabulary sets the contract the agent internalises. A mismatch between vocabulary and requirements is a specification bug, not a style preference.
