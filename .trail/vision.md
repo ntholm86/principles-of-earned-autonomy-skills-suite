@@ -4,6 +4,27 @@ _Operator-held. Stable within runs — no skill changes this file; only the oper
 
 ---
 
+## Current focus (Vision run, 2026-05-23)
+
+The immediate direction is explicit: increase immediate simplicity and onboarding speed while tightening trust claims so they remain structurally enforceable.
+
+Priority order for the next phase:
+
+1. **Integrity pass (fast win):** eliminate rename drift and install wording mismatch, then enforce this with a verifier rule for stale path tokens in live docs.
+2. **Product pass (adoption win):** make quickstart frictionless and semantically consistent so the first successful run is easy to reach.
+3. **Fidelity pass (core trust win):** enforce session fidelity metadata coverage and structurally distinguish summary artifacts from verbatim transcript artifacts.
+4. **Honesty pass (learning win):** add a reversal-detection heuristic or review gate to reduce realization/reversal asymmetry.
+5. **Benchmark pass (credibility win):** publish a small external benchmark set with independent evaluator replication evidence.
+
+Constraint carried from the operator's professional context: evidence from confidential enterprise work remains private because it is employer-owned work product covered by IP/confidentiality obligations.
+
+Open questions to resolve during implementation:
+
+- What is the minimum fidelity contract that raises trust without making session capture too heavy for daily use?
+- Which benchmark targets can be public and independently rerunnable without legal or privacy friction?
+
+---
+
 ## What this work is, beyond a skillset
 
 This repo is **as much research as it is development**. The development output is a set of skills; the research question those skills serve is older and bigger than any of them:

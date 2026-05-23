@@ -1,5 +1,29 @@
 # Changelog
 
+## v3.21.0 — 2026-05-23
+
+### Added
+- **Benchmark publication surface:** Added `BENCHMARKS.md` with a small benchmark set (external improve, external learning carry-forward, cold-target vision, independent convergence check), explicit replication rules, and current evidence status.
+
+### Changed
+- **Onboarding wording alignment (fast win):**
+  - `README.md`: "These five skills" → "These six skills".
+  - `README.md`: Quickstart rewritten as "First Successful Run" with explicit Vision-first and evidence-check steps.
+  - `INSTALLING.md`: pre-commit hook reference corrected to `.trail/audit-trail.md`.
+  - `INSTALLING.md`: "Full install (all five skills)" → "all six skills" and includes `probe/` in the directory tree.
+  - `vision/SKILL.md`: example question updated from five/six to six/seven for consistency.
+- **Trail structural fidelity contract:** `trail/SKILL.md` (1.17.0 → 1.18.0) now distinguishes `.trail/sessions/` (summary artifacts) from `.trail/transcripts/` (verbatim exports), updates transcript linking examples, and clarifies fidelity metadata expectations.
+- **Verifier hardening:** `verify.py` now enforces:
+  - stale path token detection in live docs (`trail/log.md` / `.trail/log.md` → `.trail/audit-trail.md`),
+  - session/transcript fidelity structure checks,
+  - transcript-file reference existence checks,
+  - reversal-cue honesty gate (reversal narration without `[!REVERSAL]` marker fails under contract),
+  - local virtual environment exclusion in mojibake scans to avoid third-party package noise.
+- **Session fidelity coverage:** Added explicit fidelity metadata to date-stamped summary files in `.trail/sessions/` where missing.
+
+### Added (supporting artifact)
+- `.trail/transcripts/README.md` — guidance for verbatim transcript exports and required metadata.
+
 ## v3.20.1 — 2026-05-23
 
 ### Added
