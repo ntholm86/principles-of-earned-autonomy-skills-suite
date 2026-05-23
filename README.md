@@ -145,7 +145,7 @@ Together, these force the agent to lock its reasoning *before* acquiring evidenc
 
 - Convergence criterion: three independent model families report no further actionable change.
 - Principles source: [Principles of Earned Autonomy](https://github.com/ntholm86/principles-of-earned-autonomy).
-- Benchmark set and replication protocol: [BENCHMARKS.md](./BENCHMARKS.md).
+- Benchmark set and replication protocol: [harness/BENCHMARKS.md](./harness/BENCHMARKS.md).
 
 ## Citation and License
 

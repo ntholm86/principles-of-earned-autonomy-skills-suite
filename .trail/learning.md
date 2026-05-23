@@ -665,6 +665,14 @@ Compact chronological extract of every `[!REALIZATION]` and `[!REVERSAL]` marker
 
 **[!REALIZATION]** A retrospect.md claim can be wrong at write-time if the arc-read precedes a same-session parser fix. The May 11 "2:118" claim was technically honest (it matched the artifact at the time) but the artifact was already known to be stale at the same moment. Lesson: if the arc-read includes a session that just changed a derived artifact, regenerate and re-read before forming the claim — do not rely on in-session memory of a count that may have just shifted.
 
+## 2026-05-23 — benchmark-b5-addition
+
+**[!REALIZATION]** :* not fired — This action is consistent with the `retrospect.md` finding that more benchmark evidence is needed.
+
+## 2026-05-23 — harness-dir-separation
+
+**[!REALIZATION]** :* not fired — no prior realization argued against separating development harness from user-facing skills.
+
 ---
 
-**165 markers — 153 realisations, 12 reversals**
+**167 markers — 155 realisations, 12 reversals**

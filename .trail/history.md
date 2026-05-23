@@ -129,6 +129,8 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 122 | 2026-05-23 | harness-boundary-soften-and-benchmark-matrix | trail/SKILL.md 1.18.0 → 1.19.0 with harness-boundary mandate replaced by required reasoning capture plus explicit anti-rationalization discipline; .trail/vision.md canonical path drift fixed; verify.py SESSION_FIDELITY_CONTRACT_DATE annotated with historical-era policy; BENCHMARKS.md restructured around a Results Matrix v0.1 with explicit per-evaluator-family columns and Pending rows; QUICKSTART.md added and linked from README. | trail/SKILL.md, .trail/vision.md, verify.py, BENCHMARKS.md (rewrite), QUICKSTART.md (new), README.md, CHANGELOG.md |
 | ▸ 123 | 2026-05-23 | verify-encoding-guard-required-files | check_required_markdown_docs now wraps path.read_text in try/except UnicodeDecodeError; non-UTF-8 REQUIRED_FILES produce one clean FAIL line from check_no_mojibake (#5) instead of a Python traceback. Docstring for check #5 updated to explicitly name REQUIRED_FILES. Smoke-tested with a literal 0xFF byte injected into BENCHMARKS.md. | verify.py |
 | ▸ 124 | 2026-05-23 | retrospect-v3-22-0-arc | retrospect.md replaced with six arc-claims covering entries 109–123; five active operational rules updated (three carried, two new); three next-runs-should-test items named. | .trail/retrospect.md |
+| ▸ 125 | 2026-05-23 | benchmark-b5-addition | One new benchmark added (B5). | BENCHMARKS.md, verify.py, benchmark-b5-target/main.py |
+| ▸ 126 | 2026-05-23 | harness-dir-separation | Benchmarking and tooling infrastructure moved to harness/ to separate it from the core usable skills. | git mv BENCHMARKS.md harness/BENCHMARKS.md; git mv tools harness/tools; move benchmark-b5-target harness/; verify.py REQUIRED_FILES updated; README.md benchmark link updated; QUICKSTART.md hook install path updated; BENCHMARKS.md internal verify.py link fixed. |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -604,4 +606,12 @@ Do not edit by hand — re-run the command to refresh.
 
 - **REVERSAL:** The initial multi_replace_string_in_file call produced a broken `text = path.read_text(...)\nexcept UnicodeDecodeError:` block missing the `try:` keyword and also lost the `analysis_text =` assignment — required two follow-up repairs. Root cause: the old-string context in the replacement included the line that needed to follow the except block, not the line that needed to be inside the try block. Applied careful surgical patches to restore correct syntax.
 
-**124 runs total — 110 with changes, 14 silence**
+### Run 125 — 2026-05-23 — benchmark-b5-addition
+
+- **decided:** Add a new, simple benchmark (B5) to the `BENCHMARKS.md` matrix to increase coverage and provide a baseline for a simple Python script target.
+
+### Run 126 — 2026-05-23 — harness-dir-separation
+
+- **decided:** Create `harness/` and move all testing/benchmarking infrastructure into it. Keep `verify.py` at the root (it validates the repo's own integrity and is referenced by the trail), update all cross-references. The root becomes: skill folders + README + CHANGELOG + QUICKSTART + INSTALLING + CITATION + PRINCIPLES + verify.py + archive/ + .trail/.
+
+**126 runs total — 112 with changes, 14 silence**

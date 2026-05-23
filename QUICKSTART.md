@@ -63,8 +63,8 @@ If all three are present, the loop ran successfully end to end.
 In your target repo:
 
 ```
-bash tools/install-hooks.sh     # macOS / Linux
-pwsh tools/install-hooks.ps1    # Windows
+bash harness/tools/install-hooks.sh     # macOS / Linux
+pwsh harness/tools/install-hooks.ps1    # Windows
 ```
 
 This rejects commits that touch substantive files without a corresponding `.trail/audit-trail.md` entry.

@@ -16,7 +16,7 @@ A benchmark run counts as replication evidence only if all conditions are met:
 
 ## Historical-Era Policy
 
-The verifier enforces structural fidelity rules forward-only, from `SESSION_FIDELITY_CONTRACT_DATE` in [verify.py](./verify.py). Entries strictly before that date are the **pre-contract era**.
+The verifier enforces structural fidelity rules forward-only, from `SESSION_FIDELITY_CONTRACT_DATE` in `verify.py`. Entries strictly before that date are the **pre-contract era**.
 
 - Pre-contract evidence may be cited as background but does not count toward Replicated status on its own.
 - Replicated status requires at least one in-era run (on or after the contract date) for the same benchmark, by an evaluator family distinct from the seed.
@@ -30,6 +30,7 @@ The verifier enforces structural fidelity rules forward-only, from `SESSION_FIDE
 | B2 | External cross-session learning carry-forward | Same foreign codebase across at least 2 sessions | Improve + Retrospect + Trail | Session 2 acts on a Session 1 `[!REALIZATION]` without re-diagnosing it |
 | B3 | Cold-target vision inference | Foreign codebase with no pre-seeded vision/trail | Vision + Trail | Operator confirms at least one inferred direction was correct and previously unwritten |
 | B4 | Independent evaluator convergence check | Skills repo convergence pass under protocol | Improve + Trail | Three distinct evaluator families declare silence in succession under protocol |
+| B5 | Benchmark target existence check | Local filesystem | verify.py | `verify.py` checks for the existence of `benchmark-b5-target/main.py` |
 
 ## Results Matrix v0.1
 
@@ -45,6 +46,7 @@ Status legend:
 | B2 | Seed (audit-trail entry `external-proof-vectorium-arc`) | Pending | Pending | Seed |
 | B3 | Seed (audit-trail Vision-on-cold-target entries) | Pending | Pending | Seed |
 | B4 | Replicated (silence-1 / silence-2 / silence-3 entries) | Replicated (same chain) | Replicated (same chain) | Replicated |
+| B5 | Pending | Pending | Pending | Pending |
 
 ## How to Add a New Run
 
