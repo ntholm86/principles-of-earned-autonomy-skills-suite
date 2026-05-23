@@ -2,7 +2,7 @@
 
 AI agents forget everything between sessions — and many things within a session. No memory of what was tried. No memory of why a decision was made. No memory of where you were heading. Forgets what it already created.
 
-These five skills fix that. Together they form a **Memory Model** — a persistent layer of context that survives session resets and model swaps. The agent reads it before every run. You read it to stay in control.
+These six skills fix that. Together they form a **Memory Model** — a persistent layer of context that survives session resets and model swaps. The agent reads it before every run. You read it to stay in control.
 
 These are the skills I use daily as a software engineer to safely delegate complex goals to AI agents. When an agent runs without constraints, it creates massive technical debt. These skills force it to stay on track, double-check its assumptions, and leave a clear record of why it made each change.
 
@@ -105,15 +105,18 @@ When you swap from Claude to Gpt to Gemini, the next model picks up this exact o
 2. **Execute:** Run `improve` for as many iterations as needed until you reach a plateau.
 3. **Reflect:** Run `retrospect` to evaluate the entire loop history and reflect on progress.
 
-## Quickstart
+## Quickstart (First Successful Run)
 
 1. Install with one command:
    - macOS / Linux: `bash install.sh`
    - Windows: `pwsh install.ps1`
-2. Or copy these skill folders manually into `.copilot/skills/`: `intent/`, `vision/`, `improve/`, `trail/`, `retrospect/`, `probe/`. See [INSTALLING.md](./INSTALLING.md) for details.
-3. Optional: install the pre-commit hook in your target repo to enforce trail discipline structurally — `bash tools/install-hooks.sh` or `pwsh tools/install-hooks.ps1`.
-4. If the target is not a repository, keep `.trail/` artifacts next to the target material.
-5. Start with a verifiable task and review the resulting trail entry.
+2. In your target repo, run Vision first to set direction:
+   - `/vision capture the destination for this repo and write .trail/vision.md`
+3. Run Improve on one concrete, verifiable task:
+   - `/improve review the checkout module for waste and overburden`
+4. Confirm the run produced evidence:
+   - `.trail/audit-trail.md` has a new entry with outcome and delta.
+5. Optional but recommended: install the pre-commit hook (`bash tools/install-hooks.sh` or `pwsh tools/install-hooks.ps1`) to enforce trail discipline structurally.
 
 ## Known Limitation: Stated Reasoning ≠ True Reasoning
 
@@ -140,6 +143,7 @@ Together, these force the agent to lock its reasoning *before* acquiring evidenc
 
 - Convergence criterion: three independent model families report no further actionable change.
 - Principles source: [Principles of Earned Autonomy](https://github.com/ntholm86/principles-of-earned-autonomy).
+- Benchmark set and replication protocol: [BENCHMARKS.md](./BENCHMARKS.md).
 
 ## Citation and License
 

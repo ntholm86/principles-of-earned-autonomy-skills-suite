@@ -78,7 +78,7 @@ For every vision you keep, write a question the operator can answer with a sente
 Examples:
 
 - *Vision:* The operator cares more about implementability by other harnesses than about feature completeness in this skillset.
-- *Question:* "Am I right that if you had to choose, you'd rather have these five skills work cleanly enough for someone else to implement than add a sixth that only works here?"
+- *Question:* "Am I right that if you had to choose, you'd rather have these six skills work cleanly enough for someone else to implement than add a seventh that only works here?"
 
 - *Vision:* The operator wants the loop to find behavioural improvements, not documentation improvements, and recent doc-only runs have been frustrating.
 - *Question:* "Are the recent runs landing as 'progress' or as 'the loop avoiding the real work'?"

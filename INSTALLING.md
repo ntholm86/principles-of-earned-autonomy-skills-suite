@@ -27,7 +27,7 @@ bash tools/install-hooks.sh     # macOS / Linux
 pwsh tools/install-hooks.ps1    # Windows
 ```
 
-This installs a pre-commit hook that rejects commits which touch substantive files without a corresponding `.trail/log.md` entry. Override with `git commit --no-verify` — the override itself is auditable.
+This installs a pre-commit hook that rejects commits which touch substantive files without a corresponding `.trail/audit-trail.md` entry. Override with `git commit --no-verify` — the override itself is auditable.
 
 ---
 
@@ -67,7 +67,7 @@ No sibling files required. Each skill is self-contained.
 
 ---
 
-## Full install (all five skills)
+## Full install (all six skills)
 
 ```
 your-repo/
@@ -82,6 +82,8 @@ your-repo/
       trail/
         SKILL.md
       retrospect/
+        SKILL.md
+      probe/
         SKILL.md
 ```
 
