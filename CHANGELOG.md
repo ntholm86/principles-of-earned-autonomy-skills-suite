@@ -1,5 +1,16 @@
 # Changelog
 
+## v3.20.1 — 2026-05-23
+
+### Added
+- **Confidential field evidence statement (README):** Added a confidentiality-safe note that the skillset was used successfully in a professional enterprise delivery context with high architectural complexity (multi-tenant cloud, DDD boundaries across microservices, cross-platform requirements, automated CI/CD), including the reported delivery delta (large T-shirt-size scope to completion in 3 days).
+- **Confidential field evidence context (POSITION):** Added the same deployment as private field evidence in "What the runs are showing," explicitly stating that the full trail cannot be published due to professional intellectual property and confidentiality obligations. Framed as high-signal evidence, not public proof of generality.
+
+## v3.20.0 — 2026-05-22
+
+### Changed
+- **Vision Step 2 reframed:** "Form hunches" → "Form sourced inferences" (`vision/SKILL.md` 1.3.0 → 1.4.0). Adds an explicit acknowledgment that Step 2 superficially resembles the failure mode the framework prevents (agent narrating operator intent), and names the safeguard: every inference must be citable to a specific source, and the operator adjudicates evidence-reading and conclusion independently. Tightens the source requirement from "briefly state what gave you this vision" to a specific citation (quoted phrase, trail entry by date+slug, concrete exchange). Propagates vocabulary change through Step 5, Step 6, and "What this skill does not do."
+
 ## v3.19.0 — 2026-05-12
 
 ### Changed

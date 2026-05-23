@@ -22,6 +22,14 @@ Convergence was declared only when **three independent evaluators from distinct 
 
 If the loop can't improve itself, the claim that it improves anything else is empty. It can.
 
+## Confidential Professional Field Evidence
+
+This skillset has also been used successfully in professional enterprise delivery on a confidential production system with high complexity and scale: multi-tenant cloud architecture, domain-driven service boundaries, multiple collaborating microservices, cross-platform delivery requirements, and fully automated CI/CD.
+
+In that deployment, a scope estimated internally as a large T-shirt-size effort was completed in 3 days.
+
+The full trail exists, but it cannot be published in this repository because it is employer-owned professional work product and covered by intellectual property and confidentiality obligations. Treat this as high-signal private field evidence: a strong indication of practical leverage, but not public, independently reproducible proof.
+
 ## The Skills
 
 | Skill | Problem | Solution |
