@@ -617,6 +617,30 @@ Compact chronological extract of every `[!REALIZATION]` and `[!REVERSAL]` marker
 
 **[!REALIZATION]** The skills suite's own vocabulary discipline was weaker than its epistemics discipline. PRINCIPLES.md is rigorous about evidence and citation; Vision's Step 2 was using "hunch" — the softest possible epistemic frame — for a step that requires the hardest. Vocabulary sets the contract the agent internalises. A mismatch between vocabulary and requirements is a specification bug, not a style preference.
 
+## 2026-05-23 — harness-boundary-soften-and-benchmark-matrix
+
+**[!REALIZATION]** The "harness boundary constraint" was an instance of letting an unimplementable ideal mask a working substrate. Agent-authored reasoning under explicit anti-rationalization discipline is not a downgrade from verbatim JSONL; it is the substrate that always exists, and verbatim is the bonus tier when a harness happens to expose it. Specifying the bonus as the floor blocks adoption on every harness that does not.
+
+## 2026-05-23 — harness-boundary-soften-and-benchmark-matrix
+
+**[!REALIZATION]** Encoding defaults on Windows are a silent trail-integrity risk. Set-Content on PowerShell 5 writes Windows-1252 by default and the verifier reads UTF-8 strictly. Any future protocol that mandates non-ASCII characters (em-dashes, smart quotes) must pin the writer encoding or risk a verifier failure that looks like a content bug.
+
+## 2026-05-23 — harness-boundary-soften-and-benchmark-matrix
+
+**[!REALIZATION]** :* FIRED — the prior trail entry that introduced the Harness Boundary Constraint asserted that verbatim JSONL extraction was the only honest substrate for internal reasoning. This iteration explicitly contradicts that as over-reach: required reasoning capture + anti-rationalization discipline is the working substrate; verbatim is the bonus tier. Reversal made visible in trail/SKILL.md 1.19.0.
+
+## 2026-05-23 — harness-boundary-soften-and-benchmark-matrix
+
+**[!REALIZATION]** The repo has twice now had to soften an enforcement that was honest-in-theory but unimplementable-in-practice (forward-only fidelity contract; now harness-boundary). The pattern: a principle is stated at maximum strength, the verifier or spec encodes it, then reality (historical entries, harness capabilities) forces a softer version. The healthy form of this loop is to publish the softening as policy (historical-era, optional verbatim) rather than quietly weakening enforcement. Both softenings now have public surfaces.
+
+## 2026-05-23 — harness-boundary-soften-and-benchmark-matrix
+
+**[!REVERSAL]** `, name a rejected alternative, prefer literal quotes, mark fidelity honestly). Content-minimum template now models agent-authored reasoning with an Outcome-vs-prediction section. Closing paragraph reframed: summary file mandatory, transcript file optional.
+
+## 2026-05-23 — harness-boundary-soften-and-benchmark-matrix
+
+**[!REVERSAL]** First write used Set-Content (Windows-1252 default) which corrupted em-dashes and broke verify.py UTF-8 read; re-encoded the file via System.IO.File.WriteAllText with UTF8Encoding(false) and re-verified green.
+
 ---
 
-**153 markers — 144 realisations, 9 reversals**
+**159 markers — 148 realisations, 11 reversals**

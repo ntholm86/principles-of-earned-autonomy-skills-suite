@@ -93,7 +93,7 @@ These two goals constrain each other. A skill that works conversationally but ca
 A reasoning layer that can't carry anything across runs is not a reasoning layer. The protocol the skills define must require all three, while leaving the implementation open — different harnesses will satisfy them in different ways, and some of those ways will be faster or more structured than what this skillset uses.
 
 **Memory** — *what happened.* The full record of decisions and reasoning behind it, actions, and reflections from prior runs, kept in a form that can be re-read. Without it, every run starts from zero and the agent cannot be held to anything it concluded yesterday.
-- *How the skillset solves it:* `.trail/log.md` — append-only, human-readable, source of truth. `.trail/history.md` is an auto-generated digest. The Trail skill enforces the structure.
+- *How the skillset solves it:* `.trail/audit-trail.md` — append-only, human-readable, source of truth. `.trail/history.md` is an auto-generated digest. The Trail skill enforces the structure.
 
 **Learning** — *what to do differently next time.* Some signal extracted from prior runs that changes future behavior. This is not the same as memory; memory is the substrate, learning is the update.
 - *How the skillset solves it:* Indirectly and weakly. There is no stored strategy artifact. "Learning" here means a future agent re-reads the trail and reasons over it. This is honest but slow.

@@ -87,6 +87,12 @@ FIDELITY_TEXT = re.compile(
 SUMMARY_FIDELITY_VALUES = {"reconstructed", "mixed", "split-writer"}
 TRANSCRIPT_FIDELITY_VALUES = {"verbatim", "verbatim-structural"}
 
+# Forward-only enforcement contract: entries dated on or after this date must
+# meet the structural fidelity rules (see check_session_fidelity_structure).
+# Entries strictly before this date belong to the "pre-contract era" and are
+# grandfathered in place — they are kept unmodified as historical evidence,
+# not retroactively rewritten. See BENCHMARKS.md for how the era boundary is
+# treated when computing replication evidence.
 SESSION_FIDELITY_CONTRACT_DATE = "2026-05-23"
 
 REVERSAL_HONESTY_CONTRACT_SLUG = "vision-sourced-inference-reframe"

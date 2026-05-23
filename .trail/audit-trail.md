@@ -5859,3 +5859,74 @@ Two stronger structural changes were considered and rejected:
 **Across-trail macro-Hansei:**
 
 [!REALIZATION] The skills suite's own vocabulary discipline was weaker than its epistemics discipline. PRINCIPLES.md is rigorous about evidence and citation; Vision's Step 2 was using "hunch" — the softest possible epistemic frame — for a step that requires the hardest. Vocabulary sets the contract the agent internalises. A mismatch between vocabulary and requirements is a specification bug, not a style preference.
+
+
+## 2026-05-23 — harness-boundary-soften-and-benchmark-matrix
+
+- target: autonomous-agent-skills
+- operator: user
+- agent: GitHub Copilot (Anthropic Claude family)
+- skill: improve
+- session-file: .trail/sessions/2026-05-23-harness-boundary-soften-and-benchmark-matrix.md
+- fidelity: reconstructed
+- outcome: trail/SKILL.md 1.18.0 → 1.19.0 with harness-boundary mandate replaced by required reasoning capture plus explicit anti-rationalization discipline; .trail/vision.md canonical path drift fixed; verify.py SESSION_FIDELITY_CONTRACT_DATE annotated with historical-era policy; BENCHMARKS.md restructured around a Results Matrix v0.1 with explicit per-evaluator-family columns and Pending rows; QUICKSTART.md added and linked from README.
+- delta: trail/SKILL.md, .trail/vision.md, verify.py, BENCHMARKS.md (rewrite), QUICKSTART.md (new), README.md, CHANGELOG.md
+
+### Interpretation of the ask
+
+User: "the harness boundary constraint is not yet appropriate because the replacement of the harness is not in play yet. We do need to capture reasoning but the llm should be aware of the danger of post hoc rationalization and try not to do it when writing reasoning." Plus four specific anchors (SKILL.md:205/212, vision.md:96, verify.py:90 + benchmark notes, BENCHMARKS.md:17, README.md:108) and an instruction to use the improve skill.
+
+Read as: keep reasoning capture as a structural requirement, but stop pretending the only honest substrate is JSONL extraction from the harness; replace it with agent-authored reasoning that is explicitly disciplined against post-hoc rationalization. Then finish the small drift items (vision path), make the pre-contract era policy visible rather than implicit, expose benchmark replication as a matrix instead of a status sentence, and cut onboarding friction with a 10-minute card.
+
+Rejected alternative considered: leave trail/SKILL.md as-is and only relax the verifier. Rejected because the verifier already grandfathers history; the false constraint lives in the spec, and an unsoftened spec keeps emitting impossible requirements for current harnesses.
+
+### [!DECISION]
+
+Make five focused changes in one iteration (they are independent, each small, all gated by the same verifier). Do not redesign the trail tiering; the verbatim tier is still meaningful when a harness exposes it. Do not invent evaluator-family replication data; publish the matrix with Pending cells so the gap is visible rather than hidden.
+
+### Pre-commit prediction
+
+1. verify.py stays green after all edits.
+2. No historical session files are modified.
+3. Trail spec shifts from mandatory JSONL extraction to required reasoning capture + anti-rationalization discipline; verbatim transcripts remain the top fidelity tier when available.
+4. BENCHMARKS surface gains a Results Matrix with explicit Pending cells for at least two additional evaluator families per B1–B3; no fabricated outcomes.
+
+### Action
+
+- trail/SKILL.md: 1.18.0 → 1.19.0; "Harness Boundary Constraint" subsection and the four-step JSONL extraction mandate replaced with "Reasoning capture is required; verbatim harness extraction is optional", plus an Anti-rationalization discipline list (predict before action, mark `[!REVERSAL]`, name a rejected alternative, prefer literal quotes, mark fidelity honestly). Content-minimum template now models agent-authored reasoning with an Outcome-vs-prediction section. Closing paragraph reframed: summary file mandatory, transcript file optional.
+- .trail/vision.md: ".trail/log.md" → ".trail/audit-trail.md" (single-token surgical fix; vision remains append/layered per operator-held rule).
+- verify.py: added explanatory comment block above SESSION_FIDELITY_CONTRACT_DATE naming the pre-contract era and pointing to BENCHMARKS.md.
+- BENCHMARKS.md: full rewrite. Added Historical-Era Policy section. Added Results Matrix v0.1 with Claude / GPT / Gemini columns and Status legend (Seed / In progress / Replicated / Pending). B1–B3 marked Seed with the in-repo anchors and Pending in the other families; B4 marked Replicated (unchanged status). [!REVERSAL] First write used Set-Content (Windows-1252 default) which corrupted em-dashes and broke verify.py UTF-8 read; re-encoded the file via System.IO.File.WriteAllText with UTF8Encoding(false) and re-verified green.
+- QUICKSTART.md: new file, 10-minute checklist (prereqs → install → vision → one improve iteration → confirm evidence → optional hook).
+- README.md: Quickstart section now points to QUICKSTART.md as the copy-pasteable path.
+- CHANGELOG.md: v3.22.0 entry added.
+
+### Outcome vs prediction
+
+1. Held — verify.py returned "OK — trail integrity checks pass" after the encoding fix.
+2. Held — no .trail/sessions/*.md were touched.
+3. Held — spec change shipped at v1.19.0; verbatim tier preserved.
+4. Held — matrix shipped with two Pending evaluator-family columns per B1–B3; no fabricated cells.
+
+### Reflection
+
+[!REALIZATION] The "harness boundary constraint" was an instance of letting an unimplementable ideal mask a working substrate. Agent-authored reasoning under explicit anti-rationalization discipline is not a downgrade from verbatim JSONL; it is the substrate that always exists, and verbatim is the bonus tier when a harness happens to expose it. Specifying the bonus as the floor blocks adoption on every harness that does not.
+
+[!REALIZATION] Encoding defaults on Windows are a silent trail-integrity risk. Set-Content on PowerShell 5 writes Windows-1252 by default and the verifier reads UTF-8 strictly. Any future protocol that mandates non-ASCII characters (em-dashes, smart quotes) must pin the writer encoding or risk a verifier failure that looks like a content bug.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired — first iteration on harness-boundary softening; no prior pattern to escalate.
+- *About to declare silence:* not fired — concrete changes were requested and made.
+- *Contradicts prior [!REALIZATION]:* FIRED — the prior trail entry that introduced the Harness Boundary Constraint asserted that verbatim JSONL extraction was the only honest substrate for internal reasoning. This iteration explicitly contradicts that as over-reach: required reasoning capture + anti-rationalization discipline is the working substrate; verbatim is the bonus tier. Reversal made visible in trail/SKILL.md 1.19.0.
+- *Operator explicitly asked:* FIRED — operator named the five changes verbatim and required the improve skill.
+
+**Across-trail macro-Hansei:**
+
+[!REALIZATION] The repo has twice now had to soften an enforcement that was honest-in-theory but unimplementable-in-practice (forward-only fidelity contract; now harness-boundary). The pattern: a principle is stated at maximum strength, the verifier or spec encodes it, then reality (historical entries, harness capabilities) forces a softer version. The healthy form of this loop is to publish the softening as policy (historical-era, optional verbatim) rather than quietly weakening enforcement. Both softenings now have public surfaces.
+
+### Candidate Next Moves
+
+1. Add a verify.py check for non-UTF-8 bytes in REQUIRED_FILES so the encoding hazard surfaces structurally next time instead of as a stack trace — small, mechanical, prevents a recurrence already observed.
+2. Stand up one external-family replication run on B1 in a fresh session, then flip its cell from Pending to In progress / Replicated — turns the matrix from scaffold into evidence.
+3. Audit the existing 41 .trail/sessions files for the pre-contract-era label so the historical asymmetry is visible inside the trail itself, not only in BENCHMARKS.md — purely descriptive, no rewrite.
