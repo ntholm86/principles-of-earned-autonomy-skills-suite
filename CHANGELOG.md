@@ -1,5 +1,11 @@
 # Changelog
 
+## v4.0.0 — 2026-05-28
+
+### Changed (BREAKING — skill rename)
+- **Vision skill renamed to Destination** (`destination/SKILL.md` v2.0.0). The skill's behaviour is unchanged; the name was changed because "vision" was reading as fluffy/aspirational while the skill's actual job is to produce a *definitive* operator-held destination. "Destination" carries that semantics directly. Slash command is now `/destination` (was `/vision`). Skill folder is `destination/` (was `vision/`). Internal cross-references in `intent/SKILL.md`, `improve/SKILL.md`, `retrospect/SKILL.md`, `trail/SKILL.md`, `de-ai/SKILL.md` updated accordingly. Top-level docs updated: `README.md`, `QUICKSTART.md`, `INSTALLING.md`, `POSITION.md`, `CITATION.cff`, `.zenodo.json`, `install.ps1`, `install.sh`, `harness/BENCHMARKS.md`, `verify.py` (`REQUIRED_FILES` and `STALE_PATH_DOCS`). Two alternative renames considered and rejected in the same session: retrospect→plan (rejected — retrospect is backward-looking synthesis, "plan" would mislead readers into expecting action items and erode Convergence Is Silence) and improve→execute (rejected — "execute" presupposes the decide-to-act decision that Improve is supposed to make, including the legitimate decision *not* to act).
+- **Artifact filename renamed `.trail/vision.md` → `.trail/destination.md`** with a legacy fallback: every skill that reads the operator-held destination now reads `.trail/destination.md` first, falls back to `.trail/vision.md` if only the legacy name exists, and surfaces a one-line migration hint (`git mv .trail/vision.md .trail/destination.md`). The fallback exists for the transition period and may be removed in a future major version. This repo's own `.trail/vision.md` was renamed via `git mv` to preserve history; the H1 header and preamble were updated to match.
+
 ## v3.22.0 — 2026-05-23
 
 ### Changed

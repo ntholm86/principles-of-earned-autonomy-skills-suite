@@ -6279,3 +6279,91 @@ A second observation, surfaced by the [!REVERSAL] above: the suite's pre-commit 
 3. **Consider a Retrospect run on the cross-target-repo learning pattern named in the realisation above.** The "implicit knowledge accumulating in foreign trails" insight is arc-level, not iteration-level.
 4. **Cross-reference de-ai from improve/SKILL.md.** Add a one-line pointer in the Improve composition section ("after substance settles, De-AI is the finishing pass") so future Improve runs discover de-ai without operator prompting.
 
+
+## 2026-05-28 — rename-vision-to-destination
+
+- target: autonomous-agent-skills (self)
+- operator: Nils Holmager
+- agent: GitHub Copilot (Claude, anthropic via vertex; tool-call ID prefix toolu_vrtx_01)
+- skill: improve (with intent at step 1, trail at step 7)
+- session-file: .trail/sessions/2026-05-28-rename-vision-to-destination.md
+- fidelity: reconstructed
+- outcome: Vision skill renamed to Destination across the suite; artifact `.trail/vision.md` renamed to `.trail/destination.md` with a legacy-fallback rule codified in `destination/SKILL.md` and propagated to every reader skill.
+- delta: suite v3.22.0 → v4.0.0; `vision/SKILL.md` v1.4.0 → `destination/SKILL.md` v2.0.0 (BREAKING — skill rename + artifact filename change with fallback)
+
+### Interpretation of the ask
+
+Operator opened with three rename proposals (Vision→DoD, Retrospect→Plan, Improve→Execute) framed as readability wins. Agent pushed back on all three with reasoning: each rename would import vocabulary that contradicts what the skill actually does (DoD implies a finite checklist; Plan implies forward action items; Execute presupposes the act/don't-act decision and erodes Convergence Is Silence). Operator narrowed to a single accepted rename: Vision → Destination, because "Vision is fluffy. Destination is definitive." Operator said "use the improve skill" and "there are several places to change this name" — explicit instruction to sweep, not to single-file.
+
+Intent narration captured one material divergence point: the artifact filename `.trail/vision.md` is published — other repos may already have it. Surfaced three options (A: hard break, B: keep filename, C: rename with fallback). Operator selected C and approved a CHANGELOG entry.
+
+### Examination
+
+- Scope grep returned 200+ matches across CHANGELOG (historical — don't touch), POSITION, README, QUICKSTART, INSTALLING, CITATION.cff, .zenodo.json, install.ps1/.sh, harness/BENCHMARKS.md, verify.py, and every SKILL.md that cross-references the destination/vision concept.
+- PRINCIPLES.md matches were false positives (the word "revision" matched the `vision` substring grep).
+- record.py and pre-commit hook had no vision references.
+- verify.py contains two hard-coded path lists that needed updating: REQUIRED_FILES (presence check) and STALE_PATH_DOCS (stale-token check on a per-file basis).
+
+### Decision
+
+[!DECISION] Rename the Vision skill to Destination (folder, slash command, SKILL.md frontmatter, all cross-references) and rename the artifact `.trail/vision.md` → `.trail/destination.md` with a legacy fallback. Bump the suite to v4.0.0 because the artifact filename change is a breaking change for any existing repo. The fallback (read `destination.md` first, fall back to `vision.md`, surface migration hint) preserves the rename's full payoff without breaking published consumers.
+
+Alternatives rejected within the same session:
+
+1. *Rename Retrospect → Plan.* Rejected — Retrospect produces backward-looking arc-claims and active operational rules, not a forward plan. "Plan" would mislead future readers into expecting an action list and would make the legitimate "no actionable findings" outcome read as failure.
+2. *Rename Improve → Execute.* Rejected — Improve's defining responsibility is *deciding whether to act* (incremental, redesign argument, or silence). "Execute" presupposes the decision and quietly kills Convergence Is Silence as a live option in practice.
+3. *Hard-rename the artifact filename with no fallback.* Rejected — would silently stop the skill from reading existing `.trail/vision.md` in published repos.
+4. *Keep the artifact filename `vision.md` after renaming the skill.* Rejected — permanent cognitive mismatch (skill is Destination but writes vision.md) for no benefit beyond avoiding a one-line fallback rule.
+
+### Prediction
+
+After the sweep: `verify.py` should still pass (the rename is mechanical — no new stale tokens introduced, no entry-format violations, the destination/SKILL.md file exists at the new REQUIRED_FILES path). `.trail/history.md` and `.trail/learning.md` will need regeneration via `record.py` because this entry adds a new dated header. No behavioural change to any skill — only the name and one filename. Existing repos with `.trail/vision.md` will continue to work via the fallback.
+
+### Action
+
+Executed in this order:
+
+1. `git mv vision/SKILL.md destination/SKILL.md` — failed first attempt on Windows; succeeded after `mkdir destination` (see [!REVERSAL] below).
+2. `git mv .trail/vision.md .trail/destination.md` — succeeded first try.
+3. `Remove-Item vision -Recurse` to clean up the empty leftover directory.
+4. Rewrote `destination/SKILL.md` in a single replace: frontmatter (`name: destination`, `version: 2.0.0`), added "Artifact name and fallback" section codifying the read-destination.md-first-then-fallback-to-vision.md-with-migration-hint rule, renamed "Vision" → "Destination" as the skill name throughout, "vision" → "destination" or "destination-hunch" as the concept noun where it referred to the operator-held goal, kept the substantive structure and step semantics unchanged.
+5. Multi-replace updated cross-references in `intent/SKILL.md`, `improve/SKILL.md`, `retrospect/SKILL.md`, `trail/SKILL.md`, `de-ai/SKILL.md` — each reader skill now explicitly mentions the legacy `vision.md` fallback.
+6. Multi-replace updated top-level docs: `README.md` (skills table, Memory Model paragraph, #2 section, workflow, quickstart), `QUICKSTART.md` (install line, set-destination section, evidence checklist, troubleshooting), `INSTALLING.md` (directory listings, optional-siblings table, slash command list), `install.ps1` and `install.sh` (SKILLS arrays, slash command echo), `harness/BENCHMARKS.md` (B3 row), `verify.py` (REQUIRED_FILES, STALE_PATH_DOCS), `CITATION.cff` (abstract), `.zenodo.json` (HTML description tokens), `POSITION.md` (skill list, narrative — kept "originally named Vision" parentheticals to avoid rewriting history).
+7. Updated `.trail/destination.md` H1 ("# Destination — autonomous-agent-skills") and preamble; added a one-line note that the rename happened on 2026-05-28. No substantive change to the operator-held content (per the vision-management user-memory rule about not destructively overwriting operator content — this was a mechanical rename only).
+8. Prepended `v4.0.0` entry to CHANGELOG.md.
+9. Created `.trail/sessions/2026-05-28-rename-vision-to-destination.md` (session summary, fidelity: reconstructed).
+10. Appended this audit-trail entry with `Add-Content -Encoding UTF8` (per the append-only user-memory rule — no `Set-Content`, no Get-Content round-trip).
+
+Verification step (still to run): `python verify.py` and `python harness/tools/record.py history --write && python harness/tools/record.py learning --write`. The operator will commit when satisfied.
+
+[!REVERSAL] First `git mv vision/SKILL.md destination/SKILL.md` attempt failed with "fatal: renaming … failed: No such file or directory" because git on Windows did not auto-create the missing target directory in this configuration. Worked after explicitly `mkdir destination` first. Worth recording so a future agent doing a similar rename pre-creates the target directory.
+
+[!REVERSAL] First batch edit of QUICKSTART.md's troubleshooting bullets replaced the U+2192 arrow character (`→`) with the three-character sequence `—>` because my replacement strings used `\u2014>` (em-dash + greater-than) instead of `\u2192`. Caught by re-reading the result before moving on; fixed with a targeted follow-up multi-replace. Pattern: when copy-mutating text that contains directional arrows or other non-ASCII glyphs, verify the glyph in the replacement string matches the original before submitting.
+
+### Reflection
+
+**Falsifiable claim about the target.** After this rename, the suite's named primitives now match what each one *produces*: Intent produces a per-prompt interpretation, Destination produces an operator-held destination, Retrospect produces arc-orientation, Improve produces a one-iteration change or silence, Trail produces the evidence record, Probe produces a reasoning-fidelity test. The previous name "Vision" was the only one whose label suggested aspiration ("envisioning") rather than a concrete artifact. A future run could disagree by showing that some other primitive still has a label/output mismatch — e.g., "Improve" suggesting "always change something" when the spec allows silence.
+
+**Named blind spot.** This iteration did not run `verify.py` after the edits. The prediction that verify will pass is reasoned but not tested. A regenerated history.md and learning.md were also not produced. If verify fails, the predicted "mechanical rename" framing is partly wrong and there is a structural concern in the sweep this iteration did not catch.
+
+**Imagined-reader pushback.** A reader who has been running this suite on their own repo for weeks will reasonably object: "You renamed the artifact filename. My `.trail/vision.md` is now off-canonical. The fallback works today but you've added a deprecation clock to my file." Counter: the fallback explicitly stays for a transition period, the migration is a one-line `git mv` they can run when convenient, and the alternative (permanent name mismatch between skill and artifact) would have been worse. But the objection is real and the operator should weigh whether the rename is worth the migration cost for the few external repos that exist.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired — last several entries were a de-ai skill addition, a benchmarks publication, a harness boundary softening; no rename pattern.
+- *About to declare silence:* not fired — substantive change made.
+- *Contradicts prior [!REALIZATION]:* not fired — checked recent realisations; the closest was "the suite has been quietly accumulating implicit knowledge across foreign trails" which is orthogonal to a name change. No prior realisation argued for or against the name "Vision."
+- *Operator explicitly asked:* FIRED — operator explicitly proposed renames and selected the one to apply.
+
+**Across-trail macro-Hansei** *(operator-explicitly-asked triggered)*:
+
+The operator's original three-rename proposal is itself evidence of an arc-level concern: *newcomer readability of the suite's primitive names*. The agent accepted one and pushed back on two. The accepted one (Vision → Destination) was a label/output mismatch the suite had carried since the skill was added on 2026-05-01 — three weeks of every reader having to mentally translate "Vision" into "the definitive destination file." The two rejected ones (Retrospect → Plan, Improve → Execute) would have made the names *more* readable at the cost of contradicting what the skills do. The arc-level question this raises: *are there other places in the suite where readability and accuracy are in tension, and is the suite consistently choosing accuracy?* Worth a future Retrospect run on the naming layer — not just slash commands, but section headings, marker names, and the principle names themselves.
+
+[!REALIZATION] The suite's vocabulary is a quietly load-bearing layer. A rename like this one has zero behavioural change but real readability impact. Until this iteration, the only naming-related entries in the trail were path renames (`.trail/log.md` → `.trail/audit-trail.md`) and one earlier "Vision Step 2 reframed" entry that tightened a sub-step's vocabulary. There is no skill or process in the suite for periodically auditing the *names* themselves against what they produce. This may be a gap.
+
+### Candidate Next Moves
+
+1. **Run `verify.py` and regenerate derived artifacts (`history.md`, `learning.md`)** — the prediction in this entry is unverified until those commands succeed. Closest in proximity, highest in confidence-recovery.
+2. **Sweep external repos the operator owns for `.trail/vision.md` and run `git mv` to migrate** — the fallback is for the transition period; the sooner the migration is done in the repos under the operator's control, the smaller the eventual deprecation cost.
+3. **Run Retrospect on the naming layer of the suite** — the macro-Hansei in this entry surfaced a candidate arc-level question (are other primitive names mismatching their outputs?) that would benefit from a deliberate arc-read rather than waiting for the next ad-hoc Improve iteration to notice.
+4. **Add a one-line note to userMemory `vision-management.md`** — the file now says "vision" but the artifact is `destination.md`. Either rename the memory note to `destination-management.md` or update its title to reflect the new artifact. Mechanical.

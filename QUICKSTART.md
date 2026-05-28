@@ -17,19 +17,19 @@ bash install.sh                 # macOS / Linux
 pwsh install.ps1                # Windows
 ```
 
-Or copy the six skill folders into `<your-repo>/.copilot/skills/`: `intent/`, `vision/`, `improve/`, `trail/`, `retrospect/`, `probe/`.
+Or copy the six skill folders into `<your-repo>/.copilot/skills/`: `intent/`, `destination/`, `improve/`, `trail/`, `retrospect/`, `probe/`.
 
 ## Set the destination (3 minutes)
 
 In your target repo, ask the agent:
 
 ```
-/vision capture the destination for this repo and write .trail/vision.md
+/destination capture the destination for this repo and write .trail/destination.md
 ```
 
-When asked, answer briefly. One or two sentences per question is enough. The output is `.trail/vision.md`.
+When asked, answer briefly. One or two sentences per question is enough. The output is `.trail/destination.md`.
 
-Done when: `.trail/vision.md` exists and you would not rewrite it from scratch tomorrow.
+Done when: `.trail/destination.md` exists and you would not rewrite it from scratch tomorrow.
 
 ## Run one improve iteration (4 minutes)
 
@@ -52,7 +52,7 @@ Done when: `.trail/audit-trail.md` has a new entry with `outcome:` and `delta:`.
 
 Open these and skim:
 
-1. `.trail/vision.md` — destination is captured.
+1. `.trail/destination.md` — destination is captured.
 2. `.trail/audit-trail.md` — new entry has interpretation, decision, action, and outcome.
 3. The change itself in the working tree.
 
@@ -71,6 +71,6 @@ This rejects commits that touch substantive files without a corresponding `.trai
 
 ## If something went wrong
 
-1. No `.trail/vision.md` created → re-run `/vision` and answer at least the first question.
+1. No `.trail/destination.md` created → re-run `/destination` and answer at least the first question.
 2. No audit entry appended → re-run `/improve` with a smaller, more concrete task.
 3. Agent did not narrate intent → ask it to apply `/intent` to your prompt first, then retry.

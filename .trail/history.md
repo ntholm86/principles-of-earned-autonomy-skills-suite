@@ -132,6 +132,7 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 125 | 2026-05-23 | benchmark-b5-addition | One new benchmark added (B5). | BENCHMARKS.md, verify.py, benchmark-b5-target/main.py |
 | ▸ 126 | 2026-05-23 | harness-dir-separation | Benchmarking and tooling infrastructure moved to harness/ to separate it from the core usable skills. | git mv BENCHMARKS.md harness/BENCHMARKS.md; git mv tools harness/tools; move benchmark-b5-target harness/; verify.py REQUIRED_FILES updated; README.md benchmark link updated; QUICKSTART.md hook install path updated; BENCHMARKS.md internal verify.py link fixed. |
 | ▸ 127 | 2026-05-27 | add-de-ai-skill | Added new `de-ai/SKILL.md` to the suite, codifying twelve AI-prose tells as a diagnostic catalogue. | created `de-ai/SKILL.md`; added entry to `.trail/audit-trail.md`; regenerated `.trail/history.md` and `.trail/learning.md`. |
+| ▸ 128 | 2026-05-28 | rename-vision-to-destination | Vision skill renamed to Destination across the suite; artifact `.trail/vision.md` renamed to `.trail/destination.md` with a legacy-fallback rule codified in `destination/SKILL.md` and propagated to every reader skill. | suite v3.22.0 → v4.0.0; `vision/SKILL.md` v1.4.0 → `destination/SKILL.md` v2.0.0 (BREAKING — skill rename + artifact filename change with fallback) |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -622,4 +623,11 @@ Do not edit by hand — re-run the command to refresh.
 - **REVERSAL:** above: the suite's pre-commit hook (verify.py) functions as an automatic governance check that catches mojibake corruption that the agent missed. The error message was immediate, specific, and reversible. This is Observable Autonomy working at the tooling layer - the agent's mistake was bounded by a structural guard. Worth recording: trail-integrity governance is **already implemented and effective**, not aspirational.
 - **REVERSAL:** ; prevents the same mojibake-corruption pattern in any future session.
 
-**127 runs total — 113 with changes, 14 silence**
+### Run 128 — 2026-05-28 — rename-vision-to-destination
+
+- **decided:** Rename the Vision skill to Destination (folder, slash command, SKILL.md frontmatter, all cross-references) and rename the artifact `.trail/vision.md` → `.trail/destination.md` with a legacy fallback. Bump the suite to v4.0.0 because the artifact filename change is a breaking change for any existing repo. The fallback (read `destination.md` first, fall back to `vision.md`, surface migration hint) preserves the rename's full payoff without breaking published consumers.
+- **REVERSAL:** below).
+- **REVERSAL:** First `git mv vision/SKILL.md destination/SKILL.md` attempt failed with "fatal: renaming … failed: No such file or directory" because git on Windows did not auto-create the missing target directory in this configuration. Worked after explicitly `mkdir destination` first. Worth recording so a future agent doing a similar rename pre-creates the target directory.
+- **REVERSAL:** First batch edit of QUICKSTART.md's troubleshooting bullets replaced the U+2192 arrow character (`→`) with the three-character sequence `—>` because my replacement strings used `\u2014>` (em-dash + greater-than) instead of `\u2192`. Caught by re-reading the result before moving on; fixed with a targeted follow-up multi-replace. Pattern: when copy-mutating text that contains directional arrows or other non-ASCII glyphs, verify the glyph in the replacement string matches the original before submitting.
+
+**128 runs total — 114 with changes, 14 silence**

@@ -1,10 +1,12 @@
-# Vision — autonomous-agent-skills
+# Destination — autonomous-agent-skills
 
-_Operator-held. Stable within runs — no skill changes this file; only the operator revises it. Read by Improve at step 1, before the trail and the retrospect.md. Revisit with Vision whenever the operator's understanding has evolved or after a major arc milestone._
+_Operator-held. Stable within runs — no skill changes this file; only the operator revises it. Read by Improve at step 1, before the trail and the retrospect.md. Revisit with the Destination skill whenever the operator's understanding has evolved or after a major arc milestone._
+
+_Renamed from `vision.md` on 2026-05-28 alongside the Vision→Destination skill rename (skill v2.0.0). Historical entries referencing "Vision" describe the same skill under its prior name._
 
 ---
 
-## Current focus (Vision run, 2026-05-23)
+## Current focus (Destination run, 2026-05-23)
 
 The immediate direction is explicit: increase immediate simplicity and onboarding speed while tightening trust claims so they remain structurally enforceable.
 

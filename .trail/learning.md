@@ -693,6 +693,26 @@ Compact chronological extract of every `[!REALIZATION]` and `[!REVERSAL]` marker
 
 **[!REVERSAL]** ; prevents the same mojibake-corruption pattern in any future session.
 
+## 2026-05-28 — rename-vision-to-destination
+
+**[!REALIZATION]** :* not fired — checked recent realisations; the closest was "the suite has been quietly accumulating implicit knowledge across foreign trails" which is orthogonal to a name change. No prior realisation argued for or against the name "Vision."
+
+## 2026-05-28 — rename-vision-to-destination
+
+**[!REALIZATION]** The suite's vocabulary is a quietly load-bearing layer. A rename like this one has zero behavioural change but real readability impact. Until this iteration, the only naming-related entries in the trail were path renames (`.trail/log.md` → `.trail/audit-trail.md`) and one earlier "Vision Step 2 reframed" entry that tightened a sub-step's vocabulary. There is no skill or process in the suite for periodically auditing the *names* themselves against what they produce. This may be a gap.
+
+## 2026-05-28 — rename-vision-to-destination
+
+**[!REVERSAL]** below).
+
+## 2026-05-28 — rename-vision-to-destination
+
+**[!REVERSAL]** First `git mv vision/SKILL.md destination/SKILL.md` attempt failed with "fatal: renaming … failed: No such file or directory" because git on Windows did not auto-create the missing target directory in this configuration. Worked after explicitly `mkdir destination` first. Worth recording so a future agent doing a similar rename pre-creates the target directory.
+
+## 2026-05-28 — rename-vision-to-destination
+
+**[!REVERSAL]** First batch edit of QUICKSTART.md's troubleshooting bullets replaced the U+2192 arrow character (`→`) with the three-character sequence `—>` because my replacement strings used `\u2014>` (em-dash + greater-than) instead of `\u2192`. Caught by re-reading the result before moving on; fixed with a targeted follow-up multi-replace. Pattern: when copy-mutating text that contains directional arrows or other non-ASCII glyphs, verify the glyph in the replacement string matches the original before submitting.
+
 ---
 
-**172 markers — 157 realisations, 15 reversals**
+**177 markers — 159 realisations, 18 reversals**

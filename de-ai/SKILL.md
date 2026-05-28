@@ -9,7 +9,7 @@ argument-hint: 'The prose target to examine (file, section, or specific passage)
 
 *Read the prose like a reader, not a writer. Where the rhythm announces "AI wrote this", cut.*
 
-*Memory Model role: Reads vision and recent trail entries for established voice norms; applied as a finishing pass during Improve runs that touch prose. Records realisations about new AI-tells into the trail so they accumulate.*
+*Memory Model role: Reads the destination and recent trail entries for established voice norms; applied as a finishing pass during Improve runs that touch prose. Records realisations about new AI-tells into the trail so they accumulate.*
 
 > **Governing principle:** [Observable Autonomy](../PRINCIPLES.md#principle-2-observable-autonomy) — the trail must be honest, and so must the prose. Mannered AI writing erodes the reader's trust that anything beneath it is real. A reader who notices the style stops engaging with the substance.
 
@@ -30,7 +30,7 @@ This skill is the finishing pass that strips the cluster.
 
 ## The diagnostic catalogue
 
-Twelve patterns that mark prose as machine-generated. Apply as a lens; do not run as a checklist. The signal is the cluster, not any single instance.
+Thirteen patterns that mark prose as machine-generated. Apply as a lens; do not run as a checklist. The signal is the cluster, not any single instance.
 
 ### 1. Meta-framing
 
@@ -68,6 +68,15 @@ Em-dashes gluing two sentences that want to be separate sentences. Three or more
 > ✅ *"Autonomy and transparency get treated as independent concerns. They are not."*
 
 The em-dash is fine for genuine interjection. It becomes a tell when it stands in for a sentence break the writer was unwilling to commit to.
+
+**Short-phrase connector** is a sub-class: an em-dash used to append a qualifying clause to a short statement, producing a marketing-copy rhythm.
+
+> ❌ *"Six skills — for any model, any toolset."*
+> ✅ *"Six skills."*
+
+Other stamps in this family: *"Built for teams — not just individuals.", "Fast — no setup required.", "Simple — until it needs to be complex."*
+
+The tell: the clause after the dash rarely adds information. It hedges, qualifies, or broadens. Cut it; if the information matters, make it a sentence.
 
 ### 4. Restatement bloat
 
@@ -132,6 +141,15 @@ Pre-fabricated phrasings that signal "professional copy" without saying anything
 
 These are templates the model has seen ten thousand times. They feel like writing; they are filler.
 
+**Spatial-void substitutes** are a sub-class: abstract gap-metaphors that name an absence instead of the thing that is missing or different.
+
+> ❌ *"We need to close the gap between the audit trail and real accountability."*
+> ✅ *"The audit trail does not prove accountability."*
+
+Other stamps in this family: *"bridge the gap", "fill the gap", "narrow the gap", "address the gap".*
+
+The tell: a void is described, not the difference. Replacing the metaphor with the actual claim almost always reveals that the original sentence was stalling.
+
 ### 10. False precision
 
 Words that perform precision without delivering it: *exactly, specifically, particularly, in particular.*
@@ -157,6 +175,23 @@ Stacking softeners on a single claim: *somewhat surprisingly, perhaps importantl
 > ❌ *"In some sense, this is perhaps the most important point."*
 > ✅ *"This is the most important point."* — or cut the sentence; if it is the most important, the surrounding text should already show it.
 
+### 13. Difficulty-announcement frames
+
+Announcing that something is hard, tricky, or a challenge before stating it. The frame substitutes for the claim.
+
+> ❌ *"The hard part is staying accountable for the work."*
+> ✅ *"Stay accountable for the work."*
+
+> ❌ *"The tricky part is knowing which outputs were wrong."*
+> ✅ *"You won't know which outputs were wrong until they've already been used."*
+
+> ❌ *"The real challenge is maintaining visibility as the system scales."*
+> ✅ *"Visibility degrades as the system scales."*
+
+Other stamps in this family: *"The key challenge is...", "The difficult part is...", "What makes this hard is...", "The problem is...", "Here's the catch:..."*
+
+The tell: the writer announces that a difficult thing is coming instead of just saying the difficult thing. Cut the announcement. Say the thing.
+
 ---
 
 ## The work
@@ -169,7 +204,7 @@ If the prose has substantive problems (wrong claim, unclear structure, missing i
 
 ### 2. Apply the catalogue as a lens
 
-Walk through the twelve patterns above. For each, ask: does this prose cluster on this pattern? Not "is there one instance" — *is the pattern the default*.
+Walk through the thirteen patterns above. For each, ask: does this prose cluster on this pattern? Not "is there one instance" — *is the pattern the default*.
 
 Name the clusters you find. Two or three is normal for AI-drafted prose. Five or more means the surface is the problem and a substantial rewrite is warranted. Zero clusters in AI-drafted prose almost certainly means you missed something — read again.
 
@@ -214,5 +249,5 @@ A known risk: a skill *about* AI-tells will naturally use the vocabulary of AI-t
 ## What this skill does not do
 
 - It does not produce a numerical "AI-likeness score." Such scores exist and are reverse-engineerable, which makes them gameable. Convergence here is the same as everywhere in this suite: independent readers (human, ideally diverse) finding nothing further to cut.
-- It does not rewrite for tone, register, or audience fit. That is a separate concern, handled at the Vision and Improve layers.
+- It does not rewrite for tone, register, or audience fit. That is a separate concern, handled at the Destination and Improve layers.
 - It does not strip personality. If the writer's voice happens to use em-dashes, three-part lists, or hedging, those are voice — not tells. The skill applies *only when the prose has no human author whose voice should be preserved*, or when the human author has asked for the lens to be applied to their own draft.

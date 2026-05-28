@@ -35,7 +35,7 @@ The full trail exists, but it cannot be published in this repository because it 
 | Skill | Problem | Solution |
 | :--- | :--- | :--- |
 | **[Intent](./intent/SKILL.md)** | The agent did what you said — not what you meant | Force the agent to understand the intent behind your prompt |
-| **[Vision](./vision/SKILL.md)** | The agent doesn't know your vision — because it's in your head | The agent will read your mind, uncover your vision and produce vision.md that other skills will use |
+| **[Destination](./destination/SKILL.md)** | The agent doesn't know where you're heading — because it's in your head | The agent will read your mind, uncover the destination and produce `.trail/destination.md` that other skills will use |
 | **[Trail](./trail/SKILL.md)** | The work is unauditable | Logs every autonomous decision made by the agent and the reason behind it |
 | **[Improve](./improve/SKILL.md)** | The agent makes superficial, undisciplined edits | A structured, iterative improvement loop that reflects and learns before acting |
 | **[Retrospect](./retrospect/SKILL.md)** | The agent can't see its own arc | Self-evaluates the progress of all iterations and determines what is next |
@@ -48,9 +48,9 @@ The full trail exists, but it cannot be published in this repository because it 
 
 Each skill externalizes what normally only lives inside a single model session — the goal, the destination, the decisions, the arc. Together they form a persistent memory layer that no model reset can erase.
 
-The files (`.trail/audit-trail.md`, `.trail/vision.md`, `.trail/retrospect.md`) provide the literal storage, but the interaction of the skills with those files creates **contextual awareness**.
+The files (`.trail/audit-trail.md`, `.trail/destination.md`, `.trail/retrospect.md`) provide the literal storage, but the interaction of the skills with those files creates **contextual awareness**.
 
-Memory alone is just retrieval; awareness is orientation. Because `Retrospect` reads the arc, `Vision` uncovers the destination, and `Intent` aligns the goal, the suite uses that memory to understand where it is and where it is going.
+Memory alone is just retrieval; awareness is orientation. Because `Retrospect` reads the arc, `Destination` uncovers where you're heading, and `Intent` aligns the goal, the suite uses that memory to understand where it is and where it is going.
 
 When you swap from Claude to Gpt to Gemini, the next model picks up this exact orientation. That accumulation is what makes the suite get smarter over time.
 
@@ -63,10 +63,10 @@ When you swap from Claude to Gpt to Gemini, the next model picks up this exact o
 
 *Rooted in [Commander's Intent](https://en.wikipedia.org/wiki/Commander%27s_intent) (U.S. Army doctrine) · [Coaching Kata](https://www.amazon.com/Toyota-Kata-Managing-Improvement-Adaptiveness/dp/0071635238) (Mike Rother, Toyota Kata) · [Socratic Method](https://plato.stanford.edu/entries/socrates/) (Stanford Encyclopedia of Philosophy)*
 
-### #2: VISION — The agent drifted over time
+### #2: DESTINATION — The agent drifted over time
 
 **Problem:** During a long autonomous run, the agent loses the plot, fixing minor issues rather than addressing the core architectural problem.
-**Solution:** Vision surfaces the agent's implicit assumptions about your destination, letting you course-correct early. Retrospect steps back, analyzes the full history of the work, and re-orients the loop.
+**Solution:** Destination surfaces the agent's implicit assumptions about where you're heading, letting you course-correct early. Retrospect steps back, analyzes the full history of the work, and re-orients the loop.
 
 > "No-one knows exactly what they want."
 >
@@ -101,7 +101,7 @@ When you swap from Claude to Gpt to Gemini, the next model picks up this exact o
 
 ## Workflow
 
-1. **Set the target:** Run `vision` first to determine the destination before starting work.
+1. **Set the target:** Run `destination` first to capture where you're heading before starting work.
 2. **Execute:** Run `improve` for as many iterations as needed until you reach a plateau.
 3. **Reflect:** Run `retrospect` to evaluate the entire loop history and reflect on progress.
 
@@ -112,8 +112,8 @@ Want a copy-pasteable, 10-minute path? See [QUICKSTART.md](./QUICKSTART.md).
 1. Install with one command:
    - macOS / Linux: `bash install.sh`
    - Windows: `pwsh install.ps1`
-2. In your target repo, run Vision first to set direction:
-   - `/vision capture the destination for this repo and write .trail/vision.md`
+2. In your target repo, run Destination first to set direction:
+   - `/destination capture the destination for this repo and write .trail/destination.md`
 3. Run Improve on one concrete, verifiable task:
    - `/improve review the checkout module for waste and overburden`
 4. Confirm the run produced evidence:

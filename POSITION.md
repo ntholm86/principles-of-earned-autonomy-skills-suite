@@ -56,7 +56,7 @@ That four-part stance is what I mean by the term. It's also the boundary: a cont
 
 ## What I'm doing about it
 
-I'm building a small set of skills — currently six, version 3.11.0 — that an AI agent applies to its own work. The skills are: **intent** (interpret the operator's intent before acting), **improve** (one highest-leverage change per run, stated reason), **probe** (test reasoning vs. pattern-matching), **trail** (append-only structured evidence per run), **retrospect** (read the arc of the trail and synthesize current orientation), and **Vision** (surface guesses the agent has formed about the operator's direction, as falsifiable questions).
+I'm building a small set of skills — currently six, version 3.11.0 — that an AI agent applies to its own work. The skills are: **intent** (interpret the operator's intent before acting), **improve** (one highest-leverage change per run, stated reason), **probe** (test reasoning vs. pattern-matching), **trail** (append-only structured evidence per run), **retrospect** (read the arc of the trail and synthesize current orientation), and **destination** (surface guesses the agent has formed about where the operator is heading, as falsifiable questions; renamed from "vision" in v2.0.0 of this skill).
 
 The skills sit on top of three principles I've published separately ([Principles of Earned Autonomy](https://github.com/ntholm86/principles-of-earned-autonomy)): Commander's Intent (define destination, not route), Observable Autonomy (autonomy is a function of transparency), and Convergence Is Silence (you're done when independent evaluators find nothing left to change).
 
@@ -69,7 +69,7 @@ The workshop-and-proof setup is honest about its own limits. It's incestuous: sa
 I want to be precise about what is and isn't on the table.
 
 - **I'm not claiming the skills are the answer.** They are *one attempt* at the answer. They may be the wrong attempt. They may be the right attempt for a narrower class of work than I hope.
-- **I'm not claiming the protocol is finished.** The current version is 3.x. The vision/retrospect.md split is two weeks old. Vision was added this week. Most of the protocol is unproven in execution.
+- **I'm not claiming the protocol is finished.** The current version is 3.x. The destination/retrospect.md split is two weeks old. The destination skill (originally named Vision) was added this week. Most of the protocol is unproven in execution.
 - **I'm not claiming this solves AI safety.** It doesn't. It addresses one slice — the slice where a willing operator with real authority is delegating to a real agent, in real time, on a real task. Many of the harder safety problems sit outside that slice.
 - **I'm not claiming originality on the components.** Trails are standard. Mission-type command is Prussian. Independent multi-evaluator convergence is older than I am. The bet is on the combination and the framing of *what they're collectively trying to solve.*
 
@@ -89,12 +89,12 @@ I don't expect all of these to come back negative. I expect at least one to. Tha
 
 _Added 2026-05-02. This section is updated as evidence accumulates._
 
-The Vision skill was the first mechanism in the protocol to produce something the operator had not written down before the run. Four runs in a single session, each on a different target, each at a different level of prior context:
+The Destination skill (originally named Vision) was the first mechanism in the protocol to produce something the operator had not written down before the run. Four runs in a single session, each on a different target, each at a different level of prior context:
 
-1. **Own vision paragraph.** The operator wrote a paragraph about the repo's direction. Vision read it and surfaced a latent intent the operator hadn't stated directly. Confirmed.
-2. **Known target with history (evo).** A repo the operator knows deeply, with an existing trail. Vision surfaced three direction and constraint hunches from the trail arc. All three confirmed.
-3. **Cold foreign target (vectorium).** A repo not discussed in the session, no `.trail/`, no vision, no priming. Signal came entirely from code structure, git commit arc, and package.json. Vision 1 surfaced "lost interest after beating the benchmark" — not written anywhere in the repo, inferred from the commit arc alone (performance climbs to a peak, then cleaning commits, then silence). Confirmed.
-4. **Production system with trail history (leifoglenedk).** A live driving school management system with three prior improvement runs in the trail. Vision surfaced the dual-role tension (production vs. practice target), the reason P0 security work was blocked, and the sequencing logic behind the three runs. All three confirmed.
+1. **Own destination paragraph.** The operator wrote a paragraph about the repo's direction. Destination read it and surfaced a latent intent the operator hadn't stated directly. Confirmed.
+2. **Known target with history (evo).** A repo the operator knows deeply, with an existing trail. Destination surfaced three direction and constraint hunches from the trail arc. All three confirmed.
+3. **Cold foreign target (vectorium).** A repo not discussed in the session, no `.trail/`, no destination, no priming. Signal came entirely from code structure, git commit arc, and package.json. The first hunch surfaced "lost interest after beating the benchmark" — not written anywhere in the repo, inferred from the commit arc alone (performance climbs to a peak, then cleaning commits, then silence). Confirmed.
+4. **Production system with trail history (leifoglenedk).** A live driving school management system with three prior improvement runs in the trail. Destination surfaced the dual-role tension (production vs. practice target), the reason P0 security work was blocked, and the sequencing logic behind the three runs. All three confirmed.
 
 5. **Confidential enterprise deployment (professional work).** I used this skillset in a real enterprise delivery context on a confidential production system with high architectural and delivery complexity: multi-tenant cloud services, domain-driven boundaries across multiple microservices, cross-platform requirements, and fully automated CI/CD. A scope estimated internally as a large T-shirt-size effort was completed in 3 days. The full trail exists but is employer-owned professional work product covered by intellectual property and confidentiality obligations, so it cannot be published here.
 
@@ -102,9 +102,9 @@ The pattern across all four: **the agent articulated something the operator had 
 
 The mechanism: an agent reads signal the operator never consciously gave it — emphasis patterns, what gets pushed back on, what the commit arc looks like when motivation runs out, what's named in every run but never touched — and surfaces that signal as falsifiable questions. Not conclusions. Not actions. Questions the operator answers in a sentence. The operator then either confirms, corrects, or redirects; the agent updates its working model.
 
-This is how Observable Autonomy and Commander's Intent combine in practice. Commander's Intent says: give the AI the destination, not the route, so it can adapt. But "the destination" assumes the operator has the destination fully articulated. The Vision mechanism works one step earlier: it reduces the cost of articulation, making implicit intent explicit enough to steer from. The operator stays in the loop not by reviewing every action but by answering questions whose answers are already in their head — they just hadn't said them yet.
+This is how Observable Autonomy and Commander's Intent combine in practice. Commander's Intent says: give the AI the destination, not the route, so it can adapt. But "the destination" assumes the operator has the destination fully articulated. The Destination skill works one step earlier: it reduces the cost of articulation, making implicit intent explicit enough to steer from. The operator stays in the loop not by reviewing every action but by answering questions whose answers are already in their head — they just hadn't said them yet.
 
-This is early evidence, not proof. Four runs in one session are publicly inspectable in this repository, and one additional professional deployment remains private due to IP/confidentiality constraints. Together they are strong field signal, but not yet public proof of generality or strict causality. The falsification condition — "Vision only ever confirms things already written in vision.md" — failed to trigger. Vision produced signal not in any file.
+This is early evidence, not proof. Four runs in one session are publicly inspectable in this repository, and one additional professional deployment remains private due to IP/confidentiality constraints. Together they are strong field signal, but not yet public proof of generality or strict causality. The falsification condition — "Destination only ever confirms things already written in `.trail/destination.md`" — failed to trigger. Destination produced signal not in any file.
 
 What remains unproven: whether this scales to capability gaps large enough that the operator can't verify the agent's source-reading even conversationally; whether it holds with operators other than the one building it; whether the questions the agent asks are well-calibrated or systematically biased toward certain kinds of implicit intent. Those are the next tests.
 
@@ -112,7 +112,7 @@ What remains unproven: whether this scales to capability gaps large enough that 
 
 The next stretch of work, in order:
 
-1. **Close the validation gap inside the repo.** Several mechanisms — Retrospect, the vision/retrospect.md split, Vision — are in the protocol but unproven in execution. They need to actually run and produce something that wasn't pre-seeded.
+1. **Close the validation gap inside the repo.** Several mechanisms — Retrospect, the destination/retrospect.md split, Destination itself — are in the protocol but unproven in execution. They need to actually run and produce something that wasn't pre-seeded.
 2. **Strengthen the weakest of memory / learning / meta-cognition.** Memory (the trail) and meta-cognition (the retrospect.md) are reasonably solid. Learning — extracting durable updates from prior runs — is currently weak: a future agent re-reads the trail and reasons over it, which is honest but slow. This is the most likely place a future loop run finds leverage.
 3. **One external proof.** Run the protocol on a target where the AI exceeds the operator on the underlying task and the operator is not me. Without this, the workshop-and-proof setup remains incestuous.
 4. **Engage the adjacent fields.** Send this stance to 3-5 people working on the closest problems. The goal is not validation; it's pressure-testing. Three outcomes are all good: "you're describing what I already do" (frame is not novel — adjust), "you're missing X" (frame is incomplete — adjust), "this is genuinely different" (frame earns its position).
@@ -123,7 +123,7 @@ If steps 1-3 hold up, the stance is worth defending publicly. If they don't, the
 
 ## Status
 
-This stance is **v0.3 and provisional** (updated 2026-05-23 with one confidential professional field result in addition to the public in-repo evidence from Vision runs). The repo it sits in is at v3.20.0 of the skillset and is not converged. The convergence baseline at v3.1.0 was for a smaller, simpler suite; the current suite is in active research, not production refinement. Any external claim about the suite's "convergence" should be read against that distinction.
+This stance is **v0.3 and provisional** (updated 2026-05-23 with one confidential professional field result in addition to the public in-repo evidence from Destination runs). The repo it sits in is at v3.20.0 of the skillset and is not converged. The convergence baseline at v3.1.0 was for a smaller, simpler suite; the current suite is in active research, not production refinement. Any external claim about the suite's "convergence" should be read against that distinction.
 
 I'm putting this here so the bet is stated and findable. If you read it and think I'm pointing at something real, I'd like to hear from you. If you read it and think I'm pointing at something that already has a name and a literature I'm ignoring, I'd especially like to hear from you.
 

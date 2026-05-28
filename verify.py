@@ -52,7 +52,7 @@ REQUIRED_FILES = [
     "probe/SKILL.md",
     "intent/SKILL.md",
     "trail/SKILL.md",
-    "vision/SKILL.md",
+    "destination/SKILL.md",
     "retrospect/SKILL.md",
     ".trail/audit-trail.md",
 ]
@@ -76,7 +76,7 @@ STALE_PATH_DOCS = [
     "POSITION.md",
     "PRINCIPLES.md",
     "intent/SKILL.md",
-    "vision/SKILL.md",
+    "destination/SKILL.md",
     "improve/SKILL.md",
     "trail/SKILL.md",
     "retrospect/SKILL.md",
