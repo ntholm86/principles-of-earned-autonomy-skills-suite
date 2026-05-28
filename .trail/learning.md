@@ -713,6 +713,22 @@ Compact chronological extract of every `[!REALIZATION]` and `[!REVERSAL]` marker
 
 **[!REVERSAL]** First batch edit of QUICKSTART.md's troubleshooting bullets replaced the U+2192 arrow character (`→`) with the three-character sequence `—>` because my replacement strings used `\u2014>` (em-dash + greater-than) instead of `\u2192`. Caught by re-reading the result before moving on; fixed with a targeted follow-up multi-replace. Pattern: when copy-mutating text that contains directional arrows or other non-ASCII glyphs, verify the glyph in the replacement string matches the original before submitting.
 
+## 2026-05-28 — fleet-rename-vision-to-destination
+
+**[!REALIZATION]** `:* not fired — the prior `e3d1577` realization ("the suite's vocabulary is a quietly load-bearing layer") is strengthened, not contradicted, by the demonstration that one name change has 8 downstream effects.
+
+## 2026-05-28 — fleet-rename-vision-to-destination
+
+**[!REALIZATION]** *Skills-suite renames have a fleet cost the suite has not been tracking.* The fleet-sweep capability demonstrated today (one Improve iteration coordinating an 8-repo rename) should arguably become a standing pattern for any skill-suite rename, not an ad-hoc response to operator request. A first-pass shape: every CHANGELOG entry that includes a path rename should include a "fleet sweep" checkbox the operator (or the suite itself) ticks once the operator's own repos have been migrated. This would make the unfinished `log.md` → `audit-trail.md` migration visible as outstanding work rather than as a silent forgotten obligation.
+
+## 2026-05-28 — fleet-rename-vision-to-destination
+
+**[!REVERSAL]** *Pre-flight check missed untracked `.trail/` directories.* The reconnaissance pass used `Test-Path .trail/vision.md` and `Get-ChildItem .trail` only — no `git ls-files` cross-check. When the bulk PowerShell loop hit manifesto (alphabetical position 4), `git mv` failed because the source file was untracked; under `ErrorActionPreference = 'Stop'` the failure terminated the loop before commit/push. Result: 6 repos in a staged-but-uncommitted state, 2 repos completely unprocessed. Recovery: completed commits + pushes for the 6 staged repos by hand, then switched to `Move-Item` for the 2 untracked-`.trail/` repos. Pattern to remember next time a fleet sweep mixes tracked and untracked targets: gate the loop on `git ls-files <path>` not `Test-Path <path>`, and isolate per-iteration failure with `try`/`catch` that *demonstrably* recovers rather than trusting `Stop` to interact gracefully with try/catch in a PowerShell-via-VSCode-terminal context.
+
+## 2026-05-28 — fleet-rename-vision-to-destination
+
+**[!REVERSAL]** *Bulk-PS loop output silently truncated by the terminal session.* On both the bulk migration loop and the recovery commit loop, the terminal returned essentially no inline output for the first call and only produced visible output on a follow-up `git log` inspection. The work had actually happened — the suppressed output created the false impression of total failure on the bulk loop and partial failure on the recovery loop. Pattern: when a long PS script returns suspiciously empty output, verify state with a separate read-only call before retrying or rolling back; do not assume "no output" means "nothing ran." This is a known PS-in-VSCode terminal interaction failure mode, not a script defect.
+
 ---
 
-**177 markers — 159 realisations, 18 reversals**
+**181 markers — 161 realisations, 20 reversals**

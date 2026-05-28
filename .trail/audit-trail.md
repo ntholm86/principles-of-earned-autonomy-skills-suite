@@ -6367,3 +6367,93 @@ The operator's original three-rename proposal is itself evidence of an arc-level
 2. **Sweep external repos the operator owns for `.trail/vision.md` and run `git mv` to migrate** — the fallback is for the transition period; the sooner the migration is done in the repos under the operator's control, the smaller the eventual deprecation cost.
 3. **Run Retrospect on the naming layer of the suite** — the macro-Hansei in this entry surfaced a candidate arc-level question (are other primitive names mismatching their outputs?) that would benefit from a deliberate arc-read rather than waiting for the next ad-hoc Improve iteration to notice.
 4. **Add a one-line note to userMemory `vision-management.md`** — the file now says "vision" but the artifact is `destination.md`. Either rename the memory note to `destination-management.md` or update its title to reflect the new artifact. Mechanical.
+
+## 2026-05-28 — fleet-rename-vision-to-destination
+
+- target: autonomous-agent-skills (closing entry for the fleet sweep initiated by today's earlier `rename-vision-to-destination` entry)
+- operator: Nils Holmager
+- agent: GitHub Copilot (Claude Opus 4.7 via vertex; tool-call ID prefix toolu_vrtx_01)
+- skill: improve (intent at step 1, trail at step 7)
+- session-file: .trail/sessions/2026-05-28-rename-vision-to-destination.md
+- fidelity: reconstructed
+- outcome: legacy `.trail/vision.md` migrated to `.trail/destination.md` across all 8 operator repos that carried it, with per-repo trail entries appended in each target's own audit trail.
+- delta: no change to this repo's spec surface; this entry records the fleet effect of the prior `e3d1577` rename so the skills-suite trail reflects the work the suite caused downstream.
+
+### Interpretation of the ask
+
+Operator asked: "look for repos where we need to rename the vision.md to destination.md", then "You do it but use the improve skill to do it". Two reads in order:
+
+1. Reconnaissance only — list candidates, leave migration to the operator. Rejected on the second message: "You do it." Operator explicitly delegated execution.
+2. Apply Improve loop semantics to the fleet sweep itself — one Improve iteration whose target is "the operator's repo fleet" and whose action is a parameterized loop, with per-repo trail entries written into each target repo (Trail mandates trail-in-target-repo, not trail-in-skills-repo).
+
+The destination: stop the legacy fallback in `destination/SKILL.md` v2.0.0 from being load-bearing across active repos. The repos are now the canonical-filename consumers the fallback was always meant to backstop, not depend on.
+
+### Examination
+
+Reconnaissance pass: scanned `C:\git\*\.trail\vision.md` and one pnpm-cached repo location. Eight repos found: ai-steward, harness-protocol, leifoglenedk, manifesto, pea-website, persona, SupplementPlanner, vectorium. Per-repo H1 patterns inspected — most "# Vision — <repo>"; persona "# Persona · Vision". Dirty-tree state: 3 of 8 had pre-existing uncommitted WIP (persona 8 files, SupplementPlanner 22 files, vectorium 2 files). Branches: 5 main/master, 3 on feature branches.
+
+What the examination missed and a within-iteration reversal then revealed: presence of `.trail/vision.md` on disk does not imply `.trail/` is tracked. The pre-flight `Test-Path` checked filesystem only.
+
+### Decision
+
+[!DECISION] One Improve iteration over the fleet. Per repo: `git mv` the file, rewrite the H1 line via the UTF-8 .NET API (not Get-Content/Set-Content — userMemory `append-only-trails.md` documents the PS5 mojibake), append a per-repo trail entry recording the rename and referencing the skills-suite session for the full rationale, regenerate derived artifacts via `record.py`, and commit only the four migration-related files (so pre-existing WIP in dirty repos stays untouched).
+
+Rejected alternatives:
+
+1. *Per-repo full Improve cycle.* Rejected — the decision is identical in all 8 repos; running the loop 8 times would be ceremony. The fleet is the target.
+2. *Wide `git add -A`.* Rejected — three repos had uncommitted WIP. Wide-add would have bundled unrelated work into the rename commit and likely caused the operator to lose track of WIP boundaries.
+3. *Skip the H1 edit; let the operator do it.* Rejected — the H1 contradicting the filename is exactly the cognitive mismatch the rename was supposed to eliminate. Half a rename is worse than none.
+4. *Skip per-repo trail entries; record only in the skills suite.* Rejected — Trail's contract is trail-in-target-repo. A future Retrospect on (say) persona must be able to discover the rename from persona's own trail without reading the skills-suite trail.
+
+### Prediction (made before action)
+
+All 8 commits land cleanly. No WIP disturbed. No merge conflicts (none of the 8 repos already had `destination.md`). Pre-commit hooks pass.
+
+### Action and Outcome vs Prediction
+
+Outcome: 6 of 8 repos committed and pushed clean. 2 of 8 (manifesto, vectorium) had untracked `.trail/` directories — migrated by filesystem rename with trail entries appended to their existing `.trail/log.md` (these two repos still use the pre-rename `log.md` filename; out of scope for this iteration). Final state:
+
+| Repo | Tracked? | Commit | Pushed |
+| --- | --- | --- | --- |
+| ai-steward | yes | d0fe4c9 | no remote configured |
+| harness-protocol | yes | 08e7f42 | yes (origin/master) |
+| leifoglenedk | yes | d5807f4 | yes (origin/master) |
+| manifesto | no (.trail untracked) | filesystem rename only | n/a |
+| pea-website | yes (folded into iter-89 commit 48030ea by operator's own concurrent session) | 48030ea | yes (origin/main) |
+| persona | yes | 85e3719 | no remote configured |
+| SupplementPlanner | yes | 2f556a1 | yes (origin/Barcode-scan) |
+| vectorium | no (.trail untracked) | filesystem rename only | n/a |
+
+WIP integrity verified post-sweep: persona's 8 pre-existing modified files still present in working tree; SupplementPlanner's 20+ Barcode-scan WIP changes still present. The targeted `git add` of only the four migration files held the WIP boundary the way it was supposed to.
+
+[!REVERSAL] *Pre-flight check missed untracked `.trail/` directories.* The reconnaissance pass used `Test-Path .trail/vision.md` and `Get-ChildItem .trail` only — no `git ls-files` cross-check. When the bulk PowerShell loop hit manifesto (alphabetical position 4), `git mv` failed because the source file was untracked; under `ErrorActionPreference = 'Stop'` the failure terminated the loop before commit/push. Result: 6 repos in a staged-but-uncommitted state, 2 repos completely unprocessed. Recovery: completed commits + pushes for the 6 staged repos by hand, then switched to `Move-Item` for the 2 untracked-`.trail/` repos. Pattern to remember next time a fleet sweep mixes tracked and untracked targets: gate the loop on `git ls-files <path>` not `Test-Path <path>`, and isolate per-iteration failure with `try`/`catch` that *demonstrably* recovers rather than trusting `Stop` to interact gracefully with try/catch in a PowerShell-via-VSCode-terminal context.
+
+[!REVERSAL] *Bulk-PS loop output silently truncated by the terminal session.* On both the bulk migration loop and the recovery commit loop, the terminal returned essentially no inline output for the first call and only produced visible output on a follow-up `git log` inspection. The work had actually happened — the suppressed output created the false impression of total failure on the bulk loop and partial failure on the recovery loop. Pattern: when a long PS script returns suspiciously empty output, verify state with a separate read-only call before retrying or rolling back; do not assume "no output" means "nothing ran." This is a known PS-in-VSCode terminal interaction failure mode, not a script defect.
+
+### Reflection
+
+**Falsifiable model-claim about the target (the suite + its fleet):** the Vision→Destination rename has fully propagated. The fallback in `destination/SKILL.md` v2.0.0 now exists for genuinely future consumers (third parties, repos the operator has not touched yet) rather than for the operator's own fleet. A future Retrospect that finds the fallback path *being read* in any of the 8 migrated repos has found a regression.
+
+**Named blind spot.** This sweep migrated only the filename. It did not audit each repo's own tooling, scripts, workflows, or docs for hard-coded references to `.trail/vision.md`. Two repos (manifesto, vectorium) also still use the older `.trail/log.md` filename predating this repo's own `log.md` → `audit-trail.md` rename — those are a separate fleet sweep, deliberately not folded in.
+
+**Imagined-reader pushback.** "You wrote per-repo trail entries that all say roughly the same thing. The signal-to-noise ratio of the trails is now worse, not better." Partial concession: each entry is structurally similar because the decision was the same. The mitigation is that each entry references the skills-suite session file for the full rationale rather than duplicating it, and each one names per-repo specifics (untracked vs tracked, log.md vs audit-trail.md, branch context). The alternative — recording the fleet sweep only in the skills suite — would have left each downstream repo with a filename change that has no in-repo explanation. Trail-in-target-repo wins.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired — this is a one-shot fleet sweep, not a pattern of incremental finds.
+- *About to declare silence:* not fired — substantive coordinated action across 8 repos.
+- *Contradicts prior `[!REALIZATION]`:* not fired — the prior `e3d1577` realization ("the suite's vocabulary is a quietly load-bearing layer") is strengthened, not contradicted, by the demonstration that one name change has 8 downstream effects.
+- *Operator explicitly asked:* FIRED — the fleet sweep itself was an explicit operator delegation.
+
+**Across-trail macro-Hansei** *(operator-explicitly-asked triggered)*:
+
+The sweep itself surfaces an arc-level pattern worth naming: **the skills suite has a downstream fleet, and the fleet's state is now a property of suite changes the suite has not historically tracked.** Until this iteration, every rename in the skills suite (`log.md` → `audit-trail.md`, `vision/SKILL.md` → `destination/SKILL.md`, `vision.md` → `destination.md`) treated the suite as the boundary and assumed consumers would migrate themselves. Today's sweep demonstrates that for the operator's own fleet, the suite *should* sweep, because the operator has more repos than they can hand-migrate without forgetting some. The two untracked-`.trail/` repos still on `log.md` are evidence that the previous suite rename did not sweep, and so the operator's fleet has a backlog of unfinished migrations the suite caused but did not finish.
+
+[!REALIZATION] *Skills-suite renames have a fleet cost the suite has not been tracking.* The fleet-sweep capability demonstrated today (one Improve iteration coordinating an 8-repo rename) should arguably become a standing pattern for any skill-suite rename, not an ad-hoc response to operator request. A first-pass shape: every CHANGELOG entry that includes a path rename should include a "fleet sweep" checkbox the operator (or the suite itself) ticks once the operator's own repos have been migrated. This would make the unfinished `log.md` → `audit-trail.md` migration visible as outstanding work rather than as a silent forgotten obligation.
+
+### Candidate Next Moves
+
+1. **Fleet-sweep `.trail/log.md` → `.trail/audit-trail.md`** in manifesto and vectorium (and audit the other 6 repos for the same artifact while at it). The realization above named this as outstanding suite-caused work; the cleanest follow-up is to close it.
+2. **Add a "fleet sweep status" line to the CHANGELOG entry format** for any future suite rename, so the unfinished-fleet-migration class of debt is observable instead of forgotten.
+3. **Audit each migrated repo's own tooling, scripts, and docs** for hard-coded `.trail/vision.md` references (named blind spot above). One pass per repo, lightweight.
+4. **Push the two no-remote repos (ai-steward, persona) to remotes** if they should have remotes — both committed locally but never pushed because no `origin` is configured. Worth confirming with the operator whether that is intentional or oversight.
