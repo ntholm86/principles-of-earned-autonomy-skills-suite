@@ -729,6 +729,18 @@ Compact chronological extract of every `[!REALIZATION]` and `[!REVERSAL]` marker
 
 **[!REVERSAL]** *Bulk-PS loop output silently truncated by the terminal session.* On both the bulk migration loop and the recovery commit loop, the terminal returned essentially no inline output for the first call and only produced visible output on a follow-up `git log` inspection. The work had actually happened — the suppressed output created the false impression of total failure on the bulk loop and partial failure on the recovery loop. Pattern: when a long PS script returns suspiciously empty output, verify state with a separate read-only call before retrying or rolling back; do not assume "no output" means "nothing ran." This is a known PS-in-VSCode terminal interaction failure mode, not a script defect.
 
+## 2026-05-30 — Improve: name the protocol-vs-structural limitation in README
+
+**[!REALIZATION]** `:* not fired -- this entry confirms and documents the architectural understanding developed this session.
+
+## 2026-05-30 — protocol-vs-structural-limitation-readme [correction]
+
+**[!REALIZATION]** The suite's arc of self-honesty has been converging toward this exact admission for several iterations. The five-mitigation list in Known Limitation was the penultimate step; naming "protocol, not structure" is the final honest landing. The suite is not done — harness-protocol and ai-steward are the next chapters — but the README now describes the current suite accurately rather than aspirationally.
+
+## 2026-05-30 — protocol-vs-structural-limitation-readme [correction-2]
+
+**[!REALIZATION]** `:* not fired — confirms and extends the honesty-arc realization from the prior correction.
+
 ---
 
-**181 markers — 161 realisations, 20 reversals**
+**184 markers — 164 realisations, 20 reversals**
