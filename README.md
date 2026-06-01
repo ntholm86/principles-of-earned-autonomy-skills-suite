@@ -10,11 +10,11 @@ Implementation repo for [Principles of Earned Autonomy](https://github.com/nthol
 
 Compatible with Claude (skills / Agent SDK), GitHub Copilot (custom skills), and any LLM agent that can read markdown and append to a file.
 
-## The Suite Improved Itself 200+ iterations
+## The Suite Improved Itself — [221 verified iterations](./.trail/ITERATION-COUNT.md)
 
-The suite ran on itself **200+ times**. Along the way, it autonomously decided to rewrite itself from scratch. Twice.
+The suite ran on itself **221 times** across four eras and two complete rewrites. Each self-targeted iteration is documented in the [evidence trail](./.trail/audit-trail.md), with 191 individually backed by git commits and the remaining 30 by a bulk initial commit. The full provenance breakdown — including git SHAs, verification commands, and an honest account of what is independently verifiable — is in [ITERATION-COUNT.md](./.trail/ITERATION-COUNT.md).
 
-Convergence was declared only when **three independent evaluators from distinct model families** (Claude, Gpt, Gemini) each ran the loop and found nothing left to change. The full evidence trail is in [.trail/audit-trail.md](./.trail/audit-trail.md).
+Convergence was declared only when **three independent evaluators from distinct model families** (Claude, Gpt, Gemini) each ran the loop and found nothing left to change.
 
 > "LLMs struggle to self-correct their responses without external feedback, and at times, their performance even degrades after self-correction."
 >

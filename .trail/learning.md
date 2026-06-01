@@ -741,6 +741,26 @@ Compact chronological extract of every `[!REALIZATION]` and `[!REVERSAL]` marker
 
 **[!REALIZATION]** `:* not fired — confirms and extends the honesty-arc realization from the prior correction.
 
+## 2026-05-29 — remove-de-ai-and-fix-destination-rename-drift
+
+**[!REALIZATION]** `:* not fired — the prior realization ("skills-suite renames have a fleet cost") is reinforced: the suite's *own* destination.md was part of the unpropagated fleet.
+
+## 2026-05-29 — remove-de-ai-and-fix-destination-rename-drift
+
+**[!REALIZATION]** The rename-drift pattern now has three data points: (1) the original `log.md` → `audit-trail.md` rename left fleet repos behind, (2) the `vision` → `destination` rename left fleet repos behind, (3) the `vision` → `destination` rename left the *suite's own destination.md body* behind. The class is: rename sessions update references but not self-references within the renamed artifact. A future rename should include "read the body of the renamed file itself" as an explicit check.
+
+## 2026-06-01 — relocate-v2-trail-to-dottrail
+
+**[!REALIZATION]** `:* not fired — consistent with the evidence-discoverability direction.
+
+## 2026-06-01 — iteration-count-provenance
+
+**[!REALIZATION]** The "200+ self-targeted iterations" claim is precisely 221 — and the 30 runs that predate individual git commits are the only part that requires trust rather than verification. Even excluding them entirely, the verifiable count (191) is close to 200. The claim is honest.
+
+## 2026-06-01 — iteration-count-provenance
+
+**[!REALIZATION]** `:* not fired — no prior realization about the iteration count exists.
+
 ---
 
-**184 markers — 164 realisations, 20 reversals**
+**189 markers — 169 realisations, 20 reversals**

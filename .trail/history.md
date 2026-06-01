@@ -137,6 +137,9 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 130 | 2026-05-30 | Improve: name the protocol-vs-structural limitation in README |  |  |
 | ▸ 131 | 2026-05-30 | protocol-vs-structural-limitation-readme [correction] | README Known Limitation section extended with one paragraph naming the protocol-vs-structural gap: skills are markdown interpreted by an LLM; no structural guarantee they are followed; harness-protocol + ai-steward are the structural enforcement layer. Framing: this suite is the behavioural scaffolding and the experiment that generated the requirement for that structural layer. | README.md +7 lines (one paragraph after the five-mitigation list, before the Reference section). |
 | ▸ 132 | 2026-05-30 | protocol-vs-structural-limitation-readme [correction-2] | supplies missing trigger evaluation lines for prior correction entry. | audit-trail.md only — no artifact change. |
+| ▸ 133 | 2026-05-29 | remove-de-ai-and-fix-destination-rename-drift | removed de-ai/ skill from the repo and fixed 10 stale vision/Vision references in .trail/destination.md that the Vision→Destination rename missed | de-ai/ deleted; .trail/destination.md updated (10 substitutions: Vision→Destination, vision.md→destination.md, log.md→audit-trail.md) |
+| ▸ 134 | 2026-06-01 | relocate-v2-trail-to-dottrail | moved `archive/v2/TRAIL/` to `.trail/v2/` so the full evidence chain (runs 1–97, 123+ decisions, 65+ session transcripts) lives in the evidence folder rather than mixed with archived implementation code | `git mv archive/v2/TRAIL .trail/v2` — 8 top-level trail files + `sessions/` directory with all session transcripts relocated; `archive/v2/` retains only implementation code and docs |
+| ▸ 135 | 2026-06-01 | iteration-count-provenance | created .trail/ITERATION-COUNT.md provenance document; updated README |  |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -644,4 +647,16 @@ Do not edit by hand — re-run the command to refresh.
 
 - **decided:** Add one paragraph at the end of the Known Limitation section's mitigation list, immediately before the Reference section header. Name "protocol, not structure" as the deeper limitation. State that skills are only as reliable as the model reading them. Point to harness-protocol and ai-steward as the structural enforcement layer. Close with the framing that the suite is "the behavioural scaffolding and the experiment that generated the requirement for that structural layer."
 
-**132 runs total — 118 with changes, 14 silence**
+### Run 133 — 2026-05-29 — remove-de-ai-and-fix-destination-rename-drift
+
+- **decided:** Two changes in one iteration (operator gave both directives together, and both are mechanical hygiene — not structural):
+
+### Run 134 — 2026-06-01 — relocate-v2-trail-to-dottrail
+
+- **decided:** `git mv archive/v2/TRAIL .trail/v2` — relocate the entire v2 trail directory as a self-contained unit into `.trail/v2/`. Keep `archive/v2/` with remaining implementation files.
+
+### Run 135 — 2026-06-01 — iteration-count-provenance
+
+- **decided:** Create `.trail/ITERATION-COUNT.md` — a provenance document with:
+
+**135 runs total — 121 with changes, 14 silence**
