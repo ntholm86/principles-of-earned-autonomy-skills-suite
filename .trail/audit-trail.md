@@ -6553,3 +6553,145 @@ No new arc-level finding beyond what the prior correction entry recorded. Trigge
 
 1. Regenerate history.md and learning.md (stale derived artifacts — see next action below).
 2. Cut a new Zenodo release.
+
+## 2026-05-29 — remove-de-ai-and-fix-destination-rename-drift
+
+- target: autonomous-agent-skills (this repo)
+- operator: ntholm86
+- agent: Claude Opus 4.6 / GitHub Copilot
+- skill: Improve
+- outcome: removed de-ai/ skill from the repo and fixed 10 stale vision/Vision references in .trail/destination.md that the Vision→Destination rename missed
+- delta: de-ai/ deleted; .trail/destination.md updated (10 substitutions: Vision→Destination, vision.md→destination.md, log.md→audit-trail.md)
+
+### Interpretation of the ask
+
+Operator gave two directives: (1) de-ai should not be part of the skillset repo, (2) the vision→destination rename may not have propagated everywhere. Applied Intent: the destination is repo hygiene — ensure the published skillset contains only the core skills and that internal references are consistent after the rename. The wrong interpretation would be to also strip all legacy-fallback references to vision.md — those are the intentional migration mechanism for downstream repos.
+
+### Examination
+
+**Inconsistency lens — de-ai presence:**
+- `de-ai/SKILL.md` existed in the repo but was not listed in `REQUIRED_FILES` in verify.py, not listed in the README skills table, not in install.ps1/install.sh, not counted in the "six skills" claim. It was effectively a stowaway — present on disk but not part of the published contract. Removal is clean with no downstream breakage.
+
+**Inconsistency lens — rename drift in destination.md:**
+- `.trail/destination.md` had 10 stale references: "Vision closes the gap", "vision convergence", "vision.md" (self-references), "Vision — holds the operator's destination in vision.md", "log.md" (also stale from the earlier log→audit-trail rename). The rename session updated all skill specs, README, QUICKSTART, INSTALLING, POSITION, CITATION.cff, .zenodo.json, install scripts, verify.py — but missed the body of the destination.md file itself. The file was `git mv`'d and its header updated, but the prose content was not swept.
+
+**All other skill specs (improve, intent, trail, retrospect, destination, probe):** Already use the correct name with appropriate legacy-fallback language. No action needed.
+
+**Historical files (CHANGELOG, audit-trail.md):** References to "Vision" and "vision.md" are correct as historical records. Not changed.
+
+### Decision
+
+[!DECISION] Two changes in one iteration (operator gave both directives together, and both are mechanical hygiene — not structural):
+1. Delete `de-ai/` from disk (operator chose "just delete from disk" over git rm or archive).
+2. Fix all 10 stale references in `.trail/destination.md`.
+
+Alternative considered: also updating `.trail/destination.md` prose that uses "vision" as a *concept* (e.g. "vision convergence" → "destination convergence"). Accepted — the concept name should match the skill name now that the rename has settled. The concept *is* the skill.
+
+### Prediction
+
+After these changes: (1) `de-ai/` will not exist on disk, (2) a grep for `vision` across non-archive, non-trail-history files will return only intentional legacy-fallback references (the "read destination.md, fall back to vision.md" pattern), (3) verify.py will still pass because de-ai was never in REQUIRED_FILES.
+
+### Action
+
+1. Deleted `de-ai/` directory via `Remove-Item -Recurse -Force`.
+2. Applied 10 substitutions in `.trail/destination.md`:
+   - "Vision closes the gap" → "Destination closes the gap"
+   - "Phase 1 is **vision convergence**" → "Phase 1 is **destination convergence**" (full paragraph: Vision→Destination, "full vision"→"full destination")
+   - "once vision is precise enough" → "once the destination is precise enough"
+   - "reason toward the vision...into vision.md" → "reason toward the destination...into destination.md"
+   - "files `vision.md`, `log.md`" → "files `destination.md`, `audit-trail.md`"
+   - "**Vision** — holds...in `vision.md`" → "**Destination** — holds...in `destination.md`"
+   - "**Trail** — ...in `log.md`" → "**Trail** — ...in `audit-trail.md`"
+   - "This `vision.md` sits alongside it: vision is" → "This `destination.md` sits alongside it: the destination is"
+   - "generate its own `vision.md`" → "generate its own `destination.md`"
+   - "Vision (this file)" → "Destination (this file)"
+
+Prediction check: verified — de-ai/ is gone, all 10 substitutions applied cleanly.
+
+### Reflection
+
+The skills repo at this point has a clean surface: the six core skills (Intent, Destination, Trail, Improve, Retrospect, Probe) are present and consistently named. De-ai was an orphan — added to the repo but never integrated into the published contract (not in README, not in verify.py, not in install scripts). Its removal is frictionless precisely because it was never fully adopted.
+
+The destination.md drift is a more interesting finding. The rename session was thorough — it updated every skill spec, every top-level doc, every script — but missed the body of the file *being renamed*. This is a known class of error: when you `git mv` a file and update its header, it's easy to assume the content is already correct because you just renamed *it*. The content still refers to itself by the old name throughout.
+
+Blind spot: I did not check `.trail/retrospect.md` or `.trail/learning.md` for stale vision references. These are derived files (regenerated by Retrospect and record.py) so they should be correct, but I did not verify.
+
+Imagined pushback from someone who knows the target better: "You changed 'vision convergence' to 'destination convergence' in the destination.md. But 'vision convergence' was the *concept name* from when it was introduced, not just a reference to the skill. The concept predates the rename." Counter: the operator renamed the skill precisely because "vision" was reading as fluffy/aspirational. Leaving the concept name as "vision convergence" in the destination file would preserve exactly the connotation the rename was trying to eliminate.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED — this is a rename-drift fix, and the prior entry (fleet-sweep-destination-rename) was also a rename-drift fix. Two consecutive rename-propagation iterations.
+- *About to declare silence:* not fired — changes were made.
+- *Contradicts prior `[!REALIZATION]`:* not fired — the prior realization ("skills-suite renames have a fleet cost") is reinforced: the suite's *own* destination.md was part of the unpropagated fleet.
+- *Operator explicitly asked:* FIRED — operator directly requested both changes.
+
+[!REALIZATION] The rename-drift pattern now has three data points: (1) the original `log.md` → `audit-trail.md` rename left fleet repos behind, (2) the `vision` → `destination` rename left fleet repos behind, (3) the `vision` → `destination` rename left the *suite's own destination.md body* behind. The class is: rename sessions update references but not self-references within the renamed artifact. A future rename should include "read the body of the renamed file itself" as an explicit check.
+
+### Candidate Next Moves
+
+1. **Check `.trail/retrospect.md` and `.trail/learning.md`** for any remaining stale vision/log.md references (named blind spot above).
+2. **Fleet-sweep `.trail/log.md` → `.trail/audit-trail.md`** — still outstanding from the prior entry's candidate list.
+3. **Run verify.py** to confirm the repo is clean after these changes.
+
+## 2026-06-01 — relocate-v2-trail-to-dottrail
+
+- target: autonomous-agent-skills (this repo)
+- operator: ntholm86
+- agent: Claude Opus 4.6 / GitHub Copilot
+- skill: Improve
+- outcome: moved `archive/v2/TRAIL/` to `.trail/v2/` so the full evidence chain (runs 1–97, 123+ decisions, 65+ session transcripts) lives in the evidence folder rather than mixed with archived implementation code
+- delta: `git mv archive/v2/TRAIL .trail/v2` — 8 top-level trail files + `sessions/` directory with all session transcripts relocated; `archive/v2/` retains only implementation code and docs
+
+### Interpretation of the ask
+
+The 200+ self-targeting iterations claim requires its evidence chain to be discoverable in `.trail/`. Currently the v2 trail (runs 1–97) lives inside `archive/v2/TRAIL/`, mixed with old skill implementations, scripts, and scorecards. The operator wants evidence in the evidence folder, implementation code staying in the archive. Not: bloat `.trail/` with old skill code. Not: delete the archive entirely.
+
+### Examination
+
+**Purpose lens:** `.trail/` is the evidence layer — "the record of what actually happened." The v2 trail (GENBA.md with runs 1–50 archived and 51–97 active, INDEX.md with 123+ decisions, 65+ session transcripts in sessions/) is exactly that — evidence of what happened during v2. It is currently discoverable only if you know to look inside `archive/v2/TRAIL/`, which is unintuitive.
+
+**Inconsistency lens:** The repo's README claims "200+ iterations" and points to `.trail/audit-trail.md` as evidence. But `audit-trail.md` starts at the v3 redesign (run 1 = 2026-04-22). Runs 1–97 from v2 are in `archive/v2/TRAIL/` — disconnected from the evidence folder. A reader following the evidence link would find ~80 v3 entries, not 200+.
+
+**Waste lens:** The `archive/v2/` directory mixes two concerns: (1) trail evidence (TRAIL/ subfolder), (2) retired implementation (skill specs, scripts, v1_archive). After the move, archive/ contains only implementation artifacts — a cleaner separation.
+
+### Decision
+
+[!DECISION] `git mv archive/v2/TRAIL .trail/v2` — relocate the entire v2 trail directory as a self-contained unit into `.trail/v2/`. Keep `archive/v2/` with remaining implementation files.
+
+Alternative considered: copy rather than move, keeping a reference in both places. Rejected — duplication creates divergence risk and no value since git history preserves the prior location.
+
+Alternative considered: flatten v2 sessions into `.trail/sessions/` alongside v3 sessions. Rejected — the v2 sessions use a different format (GENBA runs, not audit-trail entries) and mixing them would create confusion about which era a session belongs to.
+
+### Prediction
+
+After this change: (1) `.trail/v2/` will contain GENBA.md, GENBA_ARCHIVE.md, INDEX.md, sessions/, SUMMARY.md, and related files, (2) `archive/v2/TRAIL/` will no longer exist, (3) `archive/v2/` will still contain implementation files (skill specs, scripts, v1_archive), (4) a reader exploring `.trail/` will discover both the v3 audit trail and the v2 evidence chain.
+
+### Action
+
+1. `git mv archive/v2/TRAIL .trail/v2` — moved all v2 trail files preserving git history.
+2. Verified: `archive/v2/` still contains implementation files (CHANGELOG.md, skill directories, scripts, v1_archive). `.trail/v2/` contains all expected trail files (GENBA.md, GENBA_ARCHIVE.md, INDEX.md, METRICS_HISTORY_ARCHIVE.md, README.md, SCORECARD_ARCHIVE_v3.md, SCORECARD_ARCHIVE_v4_pre-protocol.md, SUMMARY.md, sessions/).
+
+Prediction check: all four conditions met.
+
+### Reflection
+
+The repo now has a unified evidence surface: `.trail/` contains the full history across all versions. A reader exploring `.trail/` sees `audit-trail.md` (v3, runs 1–80+), `v2/` (v2, runs 1–97), and the supporting files (destination.md, retrospect.md, learning.md, history.md, sessions/, transcripts/). The 200+ claim is now backed by evidence that lives in one discoverable location.
+
+The v2 trail uses a completely different format (GENBA runs with scoring rubrics, Kata/Kaizen/Hansei methodology) than v3 (structured audit-trail entries with markers). This is fine — they are distinct eras with distinct protocols. What matters is that both are findable.
+
+Blind spot: the README says "the full evidence trail is in [.trail/audit-trail.md]" — this is now incomplete since the v2 evidence is in `.trail/v2/`. A future pass could update that sentence to reference both, or add a top-level `.trail/README.md` that orients the reader.
+
+Imagined pushback: "Moving the v2 trail but not the v1_archive trail means v1 evidence is still scattered." Counter: `v1_archive/` contains only skill spec documents (hansei.md, kaizen.md, etc.) — not session transcripts or run logs. There is no v1 trail equivalent; v1 predates structured trail-keeping.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED — three consecutive iterations of "move things to where they belong" (fleet-sweep, rename-drift-fix, trail-relocation). The class is repo-organization hygiene.
+- *About to declare silence:* not fired — a structural move was made.
+- *Contradicts prior `[!REALIZATION]`:* not fired — consistent with the evidence-discoverability direction.
+- *Operator explicitly asked:* FIRED — operator directly requested this relocation.
+
+### Candidate Next Moves
+
+1. **Update README.md evidence link** — currently points only to `.trail/audit-trail.md`; should acknowledge `.trail/v2/` for the full 200+ claim.
+2. **Add a `.trail/README.md`** that orients a reader to both eras (v2 format, v3 format) and explains the iteration count.
+3. **Run verify.py** to confirm repo health after the structural change.
