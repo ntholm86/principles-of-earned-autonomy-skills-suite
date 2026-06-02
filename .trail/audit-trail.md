@@ -7527,3 +7527,67 @@ The arc across entries 143–146 is a compression arc. Each entry removed one ov
 ### Across-trail macro-Hansei *(recurring + operator-explicitly-asked triggered)*
 
 [!REALIZATION] The stable canonical form of the restriction-vs-reasoning-quality argument is now: (1) reasoning quality → safety, no capability cost; (2) restriction → safety, by limiting capability; (3) restriction → decreased reasoning quality → less of (1). This three-part structure is the minimum sufficient form and is internally consistent. The four-entry compression arc that produced it is itself evidence that the iterative refinement loop works on normative claims, not just code. Any future version of this claim that diverges from this structure should carry a trail entry explaining what was wrong with the three-part form — not just offering an alternative phrasing.
+
+## 2026-06-02 — arf-restriction-claim-variant-rejections
+
+- target: autonomous-agent-skills (POSITION.md); manifesto (PROBLEM.md)
+- operator: Nils Holmager
+- agent: GitHub Copilot (Claude Sonnet 4.6)
+- skill: improve + intent
+- outcome: conversation only — no file changes; two proposed variants evaluated and rejected; stable endpoint confirmed
+- delta: none
+
+### Interpretation of the ask
+
+Post-entry-146 conversation in which the operator proposed two further variants of the three-sentence claim and asked for evaluation. This entry records the decisions made in that conversation so the rejection reasoning is auditable.
+
+### Examination
+
+**Variant A — S1 change:** "Reasoning quality produces safety **without restriction**."
+Proposed as simpler/more direct than "without limiting capability."
+
+Rejected. "Without limiting capability" is the correct form because:
+- S2 says restriction works *by limiting capability* — so S1 must name that cost specifically to establish the contrast. "Without limiting capability" is the exact cost S1 is claiming ARF avoids.
+- "Without restriction" breaks the parallelism: S2's subject is "Restriction" and S1 would now be saying "without restriction" — redundant (obviously reasoning quality operates without restriction; that is the whole argument) or too broad.
+- The contrast S1→S2 needs is: same safety, but S1 achieves it *without the cost that S2 incurs*. That cost is capability limitation. Naming it is the argument.
+
+**Variant B — S3 subject change:** "**Limiting capability** decreases the reasoning quality that produces safety."
+Proposed as more "straight" — makes the causal chain explicit.
+
+Rejected. "Restriction decreases..." is the correct form because:
+- S2 and S3 both have "Restriction" as subject. The parallelism puts restriction in the dock twice in consecutive sentences: it produces safety *and* it degrades safety. The self-defeating nature is visible in the subjects without being labelled.
+- Changing S3's subject to "Limiting capability" breaks this: the reader must work to connect S3 back to restriction. S2 says restriction works *by* limiting capability, so S3's claim is already reachable from S2 without spelling out the intermediate step.
+- The causal walkthrough is less punchy than the rhetorical compression.
+
+### Decision
+
+[!DECISION] No change. Both variants were improvements in one dimension (clarity of the causal chain) and regressions in a more important dimension (rhetorical compression and structural parallelism). The form committed in entry 146 is the stable endpoint. Operator confirmed this.
+
+### Prediction
+
+No prediction required — no change was made. The stable endpoint holds.
+
+### Action
+
+None. This is a conversation-only entry.
+
+### Reflection
+
+The pattern across this entire arc (entries 143–147): each proposed variant forced a sharper articulation of *why* the current form is right. The rejection reasoning in this entry is the clearest statement yet of what the three-sentence structure is doing — parallelism, noun consistency, rhetorical compression over causal walkthrough. That reasoning was not written down before these conversation turns. The trail now holds it.
+
+[!REALIZATION] Explicit variant rejection with stated reasoning is more durable than a confirmed acceptance alone. A future editor who proposes "without restriction" or "Limiting capability decreases..." can read this entry and see why those forms were considered and rejected — rather than re-discovering the argument from scratch.
+
+### Candidate Next Moves
+
+1. **Pressure-test the "What would prove this wrong" section against the ARF claim.** Flagged in entry 146 as the next candidate move. The falsification section predates this specific three-sentence formulation and may not contain a crisp falsifier for the restriction-vs-reasoning-quality thesis.
+
+### Across-trail trigger evaluation
+
+- *Recurring finding-class:* not fired — this entry closes the arc; no new class is starting.
+- *About to declare silence:* FIRED — this is a conversation-only entry with no change; the claim is converged.
+- *Contradicts prior `[!REALIZATION]`:* not fired — extends entry 146's realization.
+- *Operator explicitly asked:* FIRED — operator asked to confirm everything is trailed.
+
+### Across-trail macro-Hansei *(silence + operator-explicitly-asked triggered)*
+
+[!REALIZATION] The arc is closed. The canonical form of the restriction-vs-reasoning-quality argument is on record in entry 146. The rejection reasoning for the two main alternative phrasings is on record here. A future agent or editor reading entries 143–147 has the full decision history: what was tried, what was rejected, what was kept, and why. Observable autonomy achieved.

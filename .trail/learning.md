@@ -897,6 +897,18 @@ Compact chronological extract of every `[!REALIZATION]` and `[!REVERSAL]` marker
 
 **[!REALIZATION]** The stable canonical form of the restriction-vs-reasoning-quality argument is now: (1) reasoning quality → safety, no capability cost; (2) restriction → safety, by limiting capability; (3) restriction → decreased reasoning quality → less of (1). This three-part structure is the minimum sufficient form and is internally consistent. The four-entry compression arc that produced it is itself evidence that the iterative refinement loop works on normative claims, not just code. Any future version of this claim that diverges from this structure should carry a trail entry explaining what was wrong with the three-part form — not just offering an alternative phrasing.
 
+## 2026-06-02 — arf-restriction-claim-variant-rejections
+
+**[!REALIZATION]** Explicit variant rejection with stated reasoning is more durable than a confirmed acceptance alone. A future editor who proposes "without restriction" or "Limiting capability decreases..." can read this entry and see why those forms were considered and rejected — rather than re-discovering the argument from scratch.
+
+## 2026-06-02 — arf-restriction-claim-variant-rejections
+
+**[!REALIZATION]** `:* not fired — extends entry 146's realization.
+
+## 2026-06-02 — arf-restriction-claim-variant-rejections
+
+**[!REALIZATION]** The arc is closed. The canonical form of the restriction-vs-reasoning-quality argument is on record in entry 146. The rejection reasoning for the two main alternative phrasings is on record here. A future agent or editor reading entries 143–147 has the full decision history: what was tried, what was rejected, what was kept, and why. Observable autonomy achieved.
+
 ---
 
-**223 markers — 203 realisations, 20 reversals**
+**226 markers — 206 realisations, 20 reversals**

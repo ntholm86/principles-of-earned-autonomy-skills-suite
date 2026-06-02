@@ -151,6 +151,7 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 144 | 2026-06-02 | arf-normative-restriction-harms-reasoning | normative claim written into POSITION.md and PROBLEM.md — restriction is not merely the wrong instrument but actively counterproductive, because it degrades the experience space the agent reasons from, and a bounded experience space produces a bounded reasoner | POSITION.md root-cause-premise paragraph — one sentence appended after "you can only sandbox your way to an AI that is less capable"; PROBLEM.md restriction-first bullet — same sentence appended after "earns more trust, not more constraint" |
 | ▸ 145 | 2026-06-02 | arf-restriction-narrows-reasoning-capacity | replaced overclaiming long sentence with precise three-sentence formulation; corrects a factual overclaim and sharpens the argument | POSITION.md and PROBLEM.md — "A bounded experience space produces a bounded reasoner: restriction reduces what the agent can perceive, reason about, and act on — degrading the very reasoning quality that is the only actual safeguard against harm — making restriction not merely ineffective but actively counterproductive." → "Reasoning quality produces safety without limiting capability. Restriction produces safety by limiting capability. Restriction narrows the reasoning capacity that produces safety." |
 | ▸ 146 | 2026-06-02 | arf-restriction-decreases-reasoning-quality | one-word-pair swap in S3 — "narrows the reasoning capacity" → "decreases the reasoning quality"; closes the noun loop with S1 and sharpens the verb | POSITION.md and PROBLEM.md — "Restriction narrows the reasoning capacity that produces safety." → "Restriction decreases the reasoning quality that produces safety." |
+| ▸ 147 | 2026-06-02 | arf-restriction-claim-variant-rejections | conversation only — no file changes; two proposed variants evaluated and rejected; stable endpoint confirmed | none |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -711,4 +712,8 @@ Do not edit by hand — re-run the command to refresh.
 
 - **decided:** Apply verbatim as operator confirmed. Prediction: a reader traces S1→S3 without bridging two different nouns. The self-defeating nature of restriction is visible in the three sentences as a closed argument. No further iteration needed on this claim.
 
-**146 runs total — 132 with changes, 14 silence**
+### Run 147 — 2026-06-02 — arf-restriction-claim-variant-rejections
+
+- **decided:** No change. Both variants were improvements in one dimension (clarity of the causal chain) and regressions in a more important dimension (rhetorical compression and structural parallelism). The form committed in entry 146 is the stable endpoint. Operator confirmed this.
+
+**147 runs total — 133 with changes, 14 silence**
