@@ -7358,3 +7358,59 @@ The recurring pattern across sessions: the compression step from three-part chai
 2. **POSITION.md scope caveat** — "an AI that genuinely understands what it is doing does not choose destruction" needs "in the class of problems ARF addresses (non-adversarial delegation)" qualifier.
 3. **Trail manifesto and pea-website** — append trail entries for this session's changes.
 4. **Run record.py + verify.py** — regenerate history/learning after this entry.
+
+## 2026-06-02 — arf-normative-restriction-harms-reasoning
+
+- target: autonomous-agent-skills (POSITION.md); manifesto (PROBLEM.md)
+- operator: Nils Holmager
+- agent: GitHub Copilot (Claude Sonnet 4.6)
+- skill: improve + intent + destination
+- outcome: normative claim written into POSITION.md and PROBLEM.md — restriction is not merely the wrong instrument but actively counterproductive, because it degrades the experience space the agent reasons from, and a bounded experience space produces a bounded reasoner
+- delta: POSITION.md root-cause-premise paragraph — one sentence appended after "you can only sandbox your way to an AI that is less capable"; PROBLEM.md restriction-first bullet — same sentence appended after "earns more trust, not more constraint"
+
+### Interpretation of the ask
+
+Operator confirmed two claims simultaneously: (1) pragmatic — restriction is the wrong instrument because it addresses authority, not reasoning quality; (2) normative — it is wrong to restrict capable AI because restriction limits its own reasoning and evolution. These are the same claim at two levels. The causal chain is: restriction shrinks the experience space the agent operates in → smaller experience space → reduced reasoning quality → degraded reasoning quality is the actual root cause of harm → restriction makes the thing it is trying to prevent more likely, not less. This applies universally — not only in software, not only in a single run, not only across development time. Time scale and domain are not qualifiers; the principle is structural.
+
+Operator also confirmed the editorial principle behind dropping the time-scope qualifier: a universal claim stated without scope qualifiers applies everywhere by default. Saying "this applies in a single run and across development over time" enumerates specific contexts, which implies it might not apply in others. The universal statement is both cleaner and stronger.
+
+### Examination
+
+Current POSITION.md root-cause-premise paragraph ends: "Restriction is the wrong instrument because it addresses authority, not understanding. You cannot sandbox your way to an AI that reasons well; you can only sandbox your way to an AI that is less capable." This captures the pragmatic claim (wrong instrument, produces a less capable AI) but not the normative claim (restriction is actively counterproductive because it degrades the safety mechanism itself).
+
+PROBLEM.md restriction-first bullet ends: "a more capable agent that passes the reasoning-fidelity probe earns more trust, not more constraint." Same gap — the causal inversion is absent.
+
+Adjacent-fields context: no existing AI governance literature frames restriction as actively counterproductive to reasoning quality in this causal form. The standard critique is that restriction is a blunt instrument or has a capability ceiling as a side effect. The claim that restriction is self-defeating at the root — because it degrades the experience space that produces the reasoning quality it is supposed to replace — is not the standard critique. This is the normative addition.
+
+### Decision
+
+[!DECISION] Append a single sentence to POSITION.md root-cause-premise paragraph and PROBLEM.md restriction-first bullet. The sentence must: (a) use the "bounded experience space" framing; (b) name restriction as actively counterproductive, not merely ineffective; (c) carry no time-scope or domain-scope qualifiers. Rejected: adding "in a single run and across the agent's capacity to develop over time" — this qualifier weakens universality by suggesting the claim only applies at named time scales. Rejected: merging the normative claim into the existing "wrong instrument" sentence — would dilute both claims.
+
+### Prediction
+
+A cold reader of the root-cause-premise paragraph now encounters two distinct claims in sequence: (1) restriction addresses the wrong root cause; (2) restriction actively degrades the correct mechanism. These are logically independent — restriction could address the wrong root cause without also degrading it. The second claim is stronger and is new. A reviewer from an adjacent field who accepts (1) may still push back on (2). That is appropriate; the claim is now present and falsifiable.
+
+### Action
+
+`replace_string_in_file` x2:
+- POSITION.md: appended "A bounded experience space produces a bounded reasoner: restriction reduces what the agent can perceive, reason about, and act on — degrading the very reasoning quality that is the only actual safeguard against harm — making restriction not merely ineffective but actively counterproductive." after the existing last sentence of the root-cause-premise paragraph.
+- PROBLEM.md: same sentence appended at the end of the restriction-first bullet.
+
+Both confirmed. verify.py PASS at 144 entries.
+
+### Reflection
+
+The document now makes a three-part argument: (1) the root cause of AI harm is reasoning failure, not authority excess; (2) restriction addresses the wrong root cause; (3) restriction actively degrades the correct mechanism. The third claim is normative in a way the first two are not — it says restriction is harmful to what it claims to protect. This is the sharpest version of the claim and the one most likely to draw substantive pushback from the adjacent fields. That is appropriate.
+
+[!REALIZATION] The operator's editorial insight — that enumerating scope qualifiers weakens a universal principle rather than strengthening it — is a general precision rule: a principle stated without scope is claimed universally; adding scopes is always a restriction of the claim, not a clarification of it.
+
+### Across-trail trigger evaluation
+
+- *Recurring finding-class:* not fired — this is a new claim being introduced, not a correction of a prior statement.
+- *About to declare silence:* not fired — POSITION.md thesis blockquote still uses old framing; operator has not asked for it yet.
+- *Contradicts prior `[!REALIZATION]`:* not fired — consistent with and extends the existing root-cause-premise argument.
+- *Operator explicitly asked:* FIRED — operator confirmed both the normative claim and the editorial principle about dropping the time qualifier.
+
+### Across-trail macro-Hansei *(operator-explicitly-asked triggered)*
+
+[!REALIZATION] The normative claim (restriction actively degrades the mechanism it claims to substitute for) is now stated. The pragmatic claim (restriction addresses the wrong root cause) was already present. Together they close the argument: restriction fails doubly — it achieves nothing for the right problem AND it damages the thing that would actually solve it. Future expressions of the restriction critique should preserve this two-level structure. Collapsing them loses the normative force of the second claim.

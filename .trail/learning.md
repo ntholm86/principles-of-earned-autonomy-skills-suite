@@ -861,6 +861,18 @@ Compact chronological extract of every `[!REALIZATION]` and `[!REVERSAL]` marker
 
 **[!REALIZATION]** The recurring finding establishes a principle for this claim: the trust-instrument chain has three components (context, reasoning quality, verification) supplied by two mechanisms (Commander's Intent, ARF). Any formulation that collapses these into one — "ARF measures demonstrated reasoning quality," "transparency is the trust mechanism," "safety = observable reasoning" — is an overstatement that adjacent-field reviewers will catch. The clean formulation is: Commander's Intent → adequate context → enables genuine reasoning; ARF → tests whether reasoning is situationally responsive; the combination → demonstrated reasoning quality → the trust instrument. Future expressions must name both mechanisms and their scopes.
 
+## 2026-06-02 — arf-normative-restriction-harms-reasoning
+
+**[!REALIZATION]** The operator's editorial insight — that enumerating scope qualifiers weakens a universal principle rather than strengthening it — is a general precision rule: a principle stated without scope is claimed universally; adding scopes is always a restriction of the claim, not a clarification of it.
+
+## 2026-06-02 — arf-normative-restriction-harms-reasoning
+
+**[!REALIZATION]** `:* not fired — consistent with and extends the existing root-cause-premise argument.
+
+## 2026-06-02 — arf-normative-restriction-harms-reasoning
+
+**[!REALIZATION]** The normative claim (restriction actively degrades the mechanism it claims to substitute for) is now stated. The pragmatic claim (restriction addresses the wrong root cause) was already present. Together they close the argument: restriction fails doubly — it achieves nothing for the right problem AND it damages the thing that would actually solve it. Future expressions of the restriction critique should preserve this two-level structure. Collapsing them loses the normative force of the second claim.
+
 ---
 
-**214 markers — 194 realisations, 20 reversals**
+**217 markers — 197 realisations, 20 reversals**
