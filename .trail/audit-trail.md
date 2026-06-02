@@ -7414,3 +7414,58 @@ The document now makes a three-part argument: (1) the root cause of AI harm is r
 ### Across-trail macro-Hansei *(operator-explicitly-asked triggered)*
 
 [!REALIZATION] The normative claim (restriction actively degrades the mechanism it claims to substitute for) is now stated. The pragmatic claim (restriction addresses the wrong root cause) was already present. Together they close the argument: restriction fails doubly — it achieves nothing for the right problem AND it damages the thing that would actually solve it. Future expressions of the restriction critique should preserve this two-level structure. Collapsing them loses the normative force of the second claim.
+
+## 2026-06-02 — arf-restriction-narrows-reasoning-capacity
+
+- target: autonomous-agent-skills (POSITION.md); manifesto (PROBLEM.md)
+- operator: Nils Holmager
+- agent: GitHub Copilot (Claude Sonnet 4.6)
+- skill: improve + intent
+- outcome: replaced overclaiming long sentence with precise three-sentence formulation; corrects a factual overclaim and sharpens the argument
+- delta: POSITION.md and PROBLEM.md — "A bounded experience space produces a bounded reasoner: restriction reduces what the agent can perceive, reason about, and act on — degrading the very reasoning quality that is the only actual safeguard against harm — making restriction not merely ineffective but actively counterproductive." → "Reasoning quality produces safety without limiting capability. Restriction produces safety by limiting capability. Restriction narrows the reasoning capacity that produces safety."
+
+### Interpretation of the ask
+
+Operator supplied the exact three-sentence replacement. The underlying correction: the previous sentence said restriction degrades "the only actual safeguard against harm" — an overclaim. Restriction does produce safety; it just does so by limiting capability. The correct claim is that reasoning quality produces safety *without* the capability cost, and that restriction — by narrowing the reasoning space — degrades the mechanism that makes that cost-free path available. The three-sentence version states this precisely and without excess.
+
+### Examination
+
+Previous sentence (entry 144): "A bounded experience space produces a bounded reasoner: restriction reduces what the agent can perceive, reason about, and act on — degrading the very reasoning quality that is the only actual safeguard against harm — making restriction not merely ineffective but actively counterproductive."
+
+Problem: "the only actual safeguard against harm" is false. Restriction also produces safety. The prior session flagged this overclaim; this session closes it.
+
+The three-sentence version resolves it cleanly:
+- Sentence 1: names the cost-free path (reasoning quality → safety, no capability cost)
+- Sentence 2: names the costly path (restriction → safety, but by limiting capability)
+- Sentence 3: the normative claim — restriction degrades sentence 1's path
+
+Both POSITION.md and PROBLEM.md carried the same error; both corrected in one operation.
+
+### Decision
+
+[!DECISION] Replace the overclaiming sentence with the operator-supplied three-sentence formulation verbatim. No paraphrase, no reordering. The operator has refined this through multiple iterations in this session; the final form is deliberate. Rejected: keeping any part of the prior sentence — it is factually overclaimed and correctly superseded.
+
+### Prediction
+
+A cold reader now encounters a logically clean three-part argument: (1) reasoning quality produces safety for free; (2) restriction produces safety at a capability cost; (3) restriction eliminates the free path. A reviewer who agrees that restriction produces safety can no longer object that the claim is false — they must engage with the comparative argument instead.
+
+### Action
+
+`multi_replace_string_in_file` × 2 — both locations in one call. verify.py PASS at 144 entries (this entry is 145).
+
+### Reflection
+
+This is the fourth precision correction to this specific claim across this session arc. The pattern: each iteration removed an overclaim and sharpened the comparative structure. The final form is the tightest it has been — three declarative sentences, no hedges, no embedded qualifications. The argument can now be quoted in full in three lines.
+
+[!REALIZATION] The editorial process that produced this — operator rejects overclaim, proposes cleaner frame, agent refines, operator finalises — is itself an instance of the protocol working. The claim being refined is the claim that the protocol produces better reasoning. The loop is recursive in the right direction.
+
+### Across-trail trigger evaluation
+
+- *Recurring finding-class:* FIRED — fifth correction in this arc where the restriction-vs-reasoning argument was overclaimed or imprecisely scoped. Pattern now fully resolved; the three-sentence form is the stable endpoint.
+- *About to declare silence:* not fired on this specific claim — the claim is now clean.
+- *Contradicts prior `[!REALIZATION]`:* not fired — extends and refines entry 144.
+- *Operator explicitly asked:* FIRED — operator supplied the exact replacement text.
+
+### Across-trail macro-Hansei *(recurring + operator-explicitly-asked triggered)*
+
+[!REALIZATION] The stable endpoint for the restriction-vs-reasoning comparative claim is: (1) reasoning quality → safety, no capability cost; (2) restriction → safety, by capability cost; (3) restriction eliminates (1). This three-part structure is the minimum sufficient form. Any future compression of this claim must preserve all three parts or it will revert to an overclaim. The canonical phrasing is now on record.

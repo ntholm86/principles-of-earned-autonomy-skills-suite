@@ -873,6 +873,18 @@ Compact chronological extract of every `[!REALIZATION]` and `[!REVERSAL]` marker
 
 **[!REALIZATION]** The normative claim (restriction actively degrades the mechanism it claims to substitute for) is now stated. The pragmatic claim (restriction addresses the wrong root cause) was already present. Together they close the argument: restriction fails doubly — it achieves nothing for the right problem AND it damages the thing that would actually solve it. Future expressions of the restriction critique should preserve this two-level structure. Collapsing them loses the normative force of the second claim.
 
+## 2026-06-02 — arf-restriction-narrows-reasoning-capacity
+
+**[!REALIZATION]** The editorial process that produced this — operator rejects overclaim, proposes cleaner frame, agent refines, operator finalises — is itself an instance of the protocol working. The claim being refined is the claim that the protocol produces better reasoning. The loop is recursive in the right direction.
+
+## 2026-06-02 — arf-restriction-narrows-reasoning-capacity
+
+**[!REALIZATION]** `:* not fired — extends and refines entry 144.
+
+## 2026-06-02 — arf-restriction-narrows-reasoning-capacity
+
+**[!REALIZATION]** The stable endpoint for the restriction-vs-reasoning comparative claim is: (1) reasoning quality → safety, no capability cost; (2) restriction → safety, by capability cost; (3) restriction eliminates (1). This three-part structure is the minimum sufficient form. Any future compression of this claim must preserve all three parts or it will revert to an overclaim. The canonical phrasing is now on record.
+
 ---
 
-**217 markers — 197 realisations, 20 reversals**
+**220 markers — 200 realisations, 20 reversals**
