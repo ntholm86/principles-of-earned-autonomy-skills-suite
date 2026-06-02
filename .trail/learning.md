@@ -761,6 +761,106 @@ Compact chronological extract of every `[!REALIZATION]` and `[!REVERSAL]` marker
 
 **[!REALIZATION]** `:* not fired — no prior realization about the iteration count exists.
 
+## 2026-06-01 — iteration-count-provenance
+
+**[!REALIZATION]** `:* not fired — this entry is consistent with the May 23 retrospect's characterization of verify.py as load-bearing infrastructure.
+
+## 2026-06-01 — iteration-count-provenance
+
+**[!REALIZATION]** The suite has a self-repairing verification architecture: when enforcement over-reaches, the correction is added as a named exception with a documented reason rather than silently softening the rule. This is the third iteration of that pattern (after forward-only fidelity and reversal honesty). The pattern is now stable enough to be named as a design principle, not just a workaround.
+
+## 2026-06-02 — arf-formalization-honest-assessment
+
+**[!REALIZATION]** `:* not fired — consistent with retrospect.md's "publication surface is the active front."
+
+## 2026-06-02 — arf-formalization-honest-assessment
+
+**[!REALIZATION]** The question "have we done these things now?" is the first time the operator has framed ARF formalization as a *legitimacy* problem rather than a *completeness* problem. Prior sessions treated "more benchmark runs" and "cleaner verifier" as the path to publication readiness. This session names a different bar: an independent researcher must be able to replicate without the operator's involvement. That bar has not been addressed. The suite has been getting more internally correct; it has not been getting more externally reproducible. These are different axes and the second has been under-attended.
+
+## 2026-06-02 — arf-tradeoff-dissolution-claim
+
+**[!REALIZATION]** The prior art search was necessary to produce this section. Without it, the claim would have been written without knowing where it sits relative to Winograd and CheckList. The search confirmed that the technique has ancestors, which forced a precise statement of what ARF adds beyond the technique. The honest search produced a more defensible claim, not a weaker one. Citing ancestors is an argument for originality, not against it.
+
+## 2026-06-02 — arf-tradeoff-dissolution-claim
+
+**[!REALIZATION]** `:* not fired — consistent with prior entry's finding that "externally reproducible" and "internally correct" are different axes. This entry addresses the intellectual claim axis.
+
+## 2026-06-02 — arf-tradeoff-dissolution-claim
+
+**[!REALIZATION]** The path to this claim required the prior art search. The operator's initial framing — "can I confidently claim invention?" — was not a request for reassurance. It was a precondition: the claim is only worth making if it survives an honest search. The search found no direct prior art and found two technique ancestors. The absence of direct prior art, combined with the precise identification of what the ancestors do and don't claim, produced a more rigorous claim than would have been possible without the search. The discipline of honest prior art attribution is what makes a novelty claim defensible, not what threatens it.
+
+## 2026-06-02 — ifa-named-paradigm-opponent
+
+**[!REALIZATION]** The LinkedIn post itself is useful context for POSITION.md's framing. It shows that the restriction-first paradigm has a published, named, dated representative actively asserting its territory. This makes ARF's philosophical disagreement concrete rather than abstract. The prior art search found no prior art for ARF; this post confirms that the restriction-first paradigm it rejects is a real, published position held by real people — not a strawman.
+
+## 2026-06-02 — ifa-named-paradigm-opponent
+
+**[!REALIZATION]** `:* not fired — consistent with prior entry's claim that "citing ancestors is an argument for originality, not against it." Same logic applies here: naming the opponent sharpens the claim.
+
+## 2026-06-02 — ifa-named-paradigm-opponent
+
+**[!REALIZATION]** The sequence across this session is: (1) honest prior art search found no direct prior art for ARF; (2) ARF's claim was crystallised as a tradeoff-dissolution; (3) the specific named paradigm ARF rejects was identified (IFA). Each step was necessary for the next. The prior art search was not just due diligence — it was the analytical work that made the philosophical claim precise. And naming the opponent (IFA) converts the claim from abstract ("safety=restriction is wrong") to citable ("IFA is the sharpest current formalization of the premise ARF rejects"). POSITION.md now has a complete claim architecture: ancestors cited (Winograd, CheckList), opponent named (IFA), application and conclusion stated, falsifiable prediction included.
+
+## 2026-06-02 — arf-paradigm-framing-capability-ceiling
+
+**[!REALIZATION]** The operator's "we don't want to limit the development of AI capability" is not just an ethical preference — it's a structural claim about what ARF makes possible that restriction-first approaches don't. Restriction-first creates a ceiling because capability growth is treated as threat. ARF creates a slope because capability growth is treated as evidence. These are different architectures of trust, not different points on the same axis.
+
+## 2026-06-02 — arf-paradigm-framing-capability-ceiling
+
+**[!REALIZATION]** `:* not fired — extends the prior realization ("citing ancestors strengthens the claim") to the paradigm level ("naming the paradigm class is stronger than naming one instance").
+
+## 2026-06-02 — arf-paradigm-framing-capability-ceiling
+
+**[!REALIZATION]** POSITION.md has gone through four substantive changes in this session: (1) adjacent fields for IFA named as specific opponent; (2) ARF tradeoff-dissolution claim drafted; (3) IFA demoted to paradigm instance; (4) capability-ceiling argument added. The direction across all four is toward a more precise, more defensible, more philosophically complete claim. The operator's instinct to not give IFA a named platform was correct: the claim is stronger when positioned against a paradigm than against a framework. The session has moved POSITION.md from a document that describes what the suite does to a document that argues why the dominant paradigm is structurally insufficient and what ARF offers instead.
+
+## 2026-06-02 — arf-thesis-sentence
+
+**[!REALIZATION]** The session arc from start to this entry: honest prior art search -> tradeoff dissolution claim -> capability ceiling argument -> paradigm-level framing -> thesis sentence. Each step was a sharpening of the same core insight. The thesis sentence is not new content — it is the compression of what was already in the document into a form that can be cited. Compression is the final step of formulation.
+
+## 2026-06-02 — arf-thesis-sentence
+
+**[!REALIZATION]** `:* not fired — consistent with the session arc.
+
+## 2026-06-02 — arf-thesis-sentence
+
+**[!REALIZATION]** POSITION.md has now received four substantive changes in this session, all moving in the same direction: from a document that describes what the suite does toward a document that makes a citable, dateable, falsifiable intellectual claim. The prior art search was the analytical work; the thesis sentence is the result. The document is now ready for step 4 in "Where this is going" — send to 3-5 adjacent-field contacts. That step was always the destination for this session's work; the ARF claim section is the artifact it requires.
+
+## 2026-06-02 — arf-root-cause-premise
+
+**[!REALIZATION]** The session has now produced a three-part philosophical structure for ARF: (1) root cause — destructive AI action is a reasoning failure, not an authority failure; (2) structural consequence — restriction-first creates a capability ceiling because it addresses the wrong root cause; (3) mechanism — observable reasoning is the right instrument because it addresses the actual root cause. This is a complete philosophical argument, not just a feature description. POSITION.md is now a position paper, not a project description.
+
+## 2026-06-02 — arf-root-cause-premise
+
+**[!REALIZATION]** `:* not fired — extends the session arc's direction.
+
+## 2026-06-02 — arf-root-cause-premise
+
+**[!REALIZATION]** The document now makes a complete argument: destructive AI action is a reasoning failure -> restriction addresses the wrong root cause -> restriction creates a capability ceiling -> demonstrated reasoning quality addresses the right root cause -> the probe is the instrument. Each step follows from the previous. The session has moved POSITION.md from a project description to a philosophical position paper with a complete argument structure, technique ancestors cited, paradigm opponent named, root cause stated, and falsifiable prediction included. This is the artifact that "engage the adjacent fields" (step 4 in "Where this is going") requires.
+
+## 2026-06-02 — precision-correction-trust-instrument
+
+**[!REALIZATION]** Note for trail integrity: this entry was first written without required schema fields (missing target, operator, agent, outcome, trigger evaluation lines). The bad entry was uncommitted; git checkout HEAD restored the trail; all seven prior session entries (133-139) were also uncommitted and were also lost in the restore. Entries 133-139 were recovered verbatim from the session transcript JSONL and re-appended before this entry. The trail is now complete. This sequence illustrates the cost of the git checkout approach when multiple uncommitted entries are present.
+
+## 2026-06-02 — precision-correction-trust-instrument
+
+**[!REALIZATION]** `:* not fired — this entry extends and sharpens the session arc's direction. The arf-root-cause-premise entry identified the three-part chain; this entry applies it consistently.
+
+## 2026-06-02 — precision-correction-trust-instrument
+
+**[!REALIZATION]** The precision correction reveals a pattern in how this claim gets written: the compression step (from three-part chain to shorthand) consistently drops the first two parts (context enables quality; quality reduces harm) and keeps only the third (observation verifies it). The result sounds like XAI transparency — a weak claim. The strong claim requires the full chain. Future expressions of this argument should lead with the root-cause premise (reasoning failure from insufficient context) rather than the verification mechanism (observable reasoning). The argument is strongest when it starts with *why* restriction fails, not with *how* ARF verifies.
+
+## 2026-06-02 — arf-scope-precision
+
+**[!REALIZATION]** The probe-as-correction applies here in meta form: the operator read the claims against the spec (Probe skill), noticed the divergence, and surfaced it as a correction. This is exactly what ARF is designed to do for AI reasoning — apply structured novelty (cold read against the source) and observe whether the claims diverge where they should. The operator is doing to the manifesto what the manifesto says the agent should do to its own reasoning.
+
+## 2026-06-02 — arf-scope-precision
+
+**[!REALIZATION]** `:* not fired — this sharpens the prior correction; it does not overturn it.
+
+## 2026-06-02 — arf-scope-precision
+
+**[!REALIZATION]** The recurring finding establishes a principle for this claim: the trust-instrument chain has three components (context, reasoning quality, verification) supplied by two mechanisms (Commander's Intent, ARF). Any formulation that collapses these into one — "ARF measures demonstrated reasoning quality," "transparency is the trust mechanism," "safety = observable reasoning" — is an overstatement that adjacent-field reviewers will catch. The clean formulation is: Commander's Intent → adequate context → enables genuine reasoning; ARF → tests whether reasoning is situationally responsive; the combination → demonstrated reasoning quality → the trust instrument. Future expressions must name both mechanisms and their scopes.
+
 ---
 
-**189 markers — 169 realisations, 20 reversals**
+**214 markers — 194 realisations, 20 reversals**

@@ -46,7 +46,7 @@ Status legend:
 | B2 | Seed (audit-trail entry `external-proof-vectorium-arc`) | Pending | Pending | Seed |
 | B3 | Seed (audit-trail Destination-on-cold-target entries) | Pending | Pending | Seed |
 | B4 | Replicated (silence-1 / silence-2 / silence-3 entries) | Replicated (same chain) | Replicated (same chain) | Replicated |
-| B5 | Pending | Pending | Pending | Pending |
+| B5 | Seed (audit-trail entry `harness-finalize-arf-b5-seed`) | Pending | Pending | Seed |
 
 ## How to Add a New Run
 

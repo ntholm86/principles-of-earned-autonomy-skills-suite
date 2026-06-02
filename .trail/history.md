@@ -139,7 +139,15 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 132 | 2026-05-30 | protocol-vs-structural-limitation-readme [correction-2] | supplies missing trigger evaluation lines for prior correction entry. | audit-trail.md only — no artifact change. |
 | ▸ 133 | 2026-05-29 | remove-de-ai-and-fix-destination-rename-drift | removed de-ai/ skill from the repo and fixed 10 stale vision/Vision references in .trail/destination.md that the Vision→Destination rename missed | de-ai/ deleted; .trail/destination.md updated (10 substitutions: Vision→Destination, vision.md→destination.md, log.md→audit-trail.md) |
 | ▸ 134 | 2026-06-01 | relocate-v2-trail-to-dottrail | moved `archive/v2/TRAIL/` to `.trail/v2/` so the full evidence chain (runs 1–97, 123+ decisions, 65+ session transcripts) lives in the evidence folder rather than mixed with archived implementation code | `git mv archive/v2/TRAIL .trail/v2` — 8 top-level trail files + `sessions/` directory with all session transcripts relocated; `archive/v2/` retains only implementation code and docs |
-| ▸ 135 | 2026-06-01 | iteration-count-provenance | created .trail/ITERATION-COUNT.md provenance document; updated README |  |
+| ▸ 135 | 2026-06-01 | iteration-count-provenance | verify.py restored to PASS (10 known failures eliminated); B5 benchmark recorded as Seed (Claude); derived artifacts regenerated. | verify.py — MACRO_HANSEI_HEADING regex extended to match H3 format; GRANDFATHERED_ENTRIES exception list added for 2 permanently-malformed correction entries. harness/BENCHMARKS.md — B5 row updated from Pending to Seed. .trail/history.md and .trail/learning.md regenerated. |
+| ▸ 136 | 2026-06-02 | arf-formalization-honest-assessment | honest assessment of ARF formalization status against five criteria — three gaps identified; no artifacts changed this session entry. | none (analysis only) |
+| ▸ 137 | 2026-06-02 | arf-tradeoff-dissolution-claim | ARF tradeoff-dissolution claim drafted and written into POSITION.md as new section "What ARF specifically claims" | POSITION.md — new section added naming ARF's rejection of the safety=restriction premise; Winograd and CheckList positioned as technique ancestors, not prior art |
+| ▸ 138 | 2026-06-02 | ifa-named-paradigm-opponent | IFA (Intelligence From Architecture, Harcej 2026) added to POSITION.md adjacent fields section as the named representative of the restriction-first paradigm ARF rejects; cross-reference added in "What ARF specifically claims" | POSITION.md — new adjacent fields bullet for IFA; one sentence added to "What ARF specifically claims" naming IFA and pointing to adjacent fields |
+| ▸ 139 | 2026-06-02 | arf-paradigm-framing-capability-ceiling | IFA-specific adjacent fields bullet replaced with paradigm-level "restriction-first AI governance" entry; ARF section updated with capability-ceiling argument and safety<->observable-reasoning framing | POSITION.md — (1) named IFA entry -> paradigm entry (IFA demoted to parenthetical); (2) ARF section — added capability-ceiling structural cost of restriction-first, added safety<->observable-reasoning conceptual pair |
+| ▸ 140 | 2026-06-02 | arf-thesis-sentence | Thesis sentence added as blockquote at the opening of "What ARF specifically claims" | POSITION.md — one blockquote inserted between datestamp and existing prose in the ARF section |
+| ▸ 141 | 2026-06-02 | arf-root-cause-premise | Root-cause premise paragraph added to "What ARF specifically claims" — destructive AI actions are reasoning failures (insufficient context/awareness), not authority failures; restriction addresses the wrong root cause | POSITION.md — one paragraph inserted before the capability-ceiling paragraph in the ARF section |
+| ▸ 142 | 2026-06-02 | precision-correction-trust-instrument | "observable reasoning" replaced with "demonstrated reasoning quality" as the trust instrument across manifesto and pea-website; three-part chain made explicit; ARF named as measurement | manifesto/README.md — "The trust instrument is observable reasoning" -> full three-part chain; manifesto/PROBLEM.md — "*safety <-> observable reasoning*" -> "*safety <-> demonstrated reasoning quality*"; manifesto/PRINCIPLES.md — "Observable reasoning dissolves the tradeoff" -> "Demonstrated reasoning quality — enabled by adequate context, verified through observable reasoning — dissolves the tradeoff"; pea-website/index.html ARF card — "reasoning visibly enough" -> "reasoning genuinely — not just visibly" |
+| ▸ 143 | 2026-06-02 | arf-scope-precision | ARF scope corrected from "measurement of demonstrated reasoning quality" (overclaim) to "measurement of the reasoning-fidelity component" — the part of demonstrated reasoning quality that ARF actually tests; 5 locations fixed across 3 repos | manifesto/README.md — "ARF is the measurement for that quality" -> "ARF measures the reasoning-fidelity component of that quality — whether the reasoning is genuinely situated rather than templated"; manifesto/PROBLEM.md — compound definition restructured to name Commander's Intent and ARF as separate contributors; POSITION.md adjacent-fields — *safety ↔ observable reasoning* -> *safety ↔ demonstrated reasoning quality*; POSITION.md ARF-body — "Transparency is the trust mechanism" -> "Observable reasoning is the verification mechanism; demonstrated reasoning quality is the trust instrument"; pea-website/index.html — removed "adequate context to understand what it was doing" from ARF's proof claim |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -658,5 +666,34 @@ Do not edit by hand — re-run the command to refresh.
 ### Run 135 — 2026-06-01 — iteration-count-provenance
 
 - **decided:** Create `.trail/ITERATION-COUNT.md` — a provenance document with:
+- **decided:** Fix MACRO_HANSEI_HEADING to match both bold and heading formats. Add GRANDFATHERED_ENTRIES for the two entries that were committed with --no-verify.
 
-**135 runs total — 121 with changes, 14 silence**
+### Run 137 — 2026-06-02 — arf-tradeoff-dissolution-claim
+
+- **decided:** Add a dedicated section "What ARF specifically claims" between "What the runs are showing" and "Where this is going". Rationale: this is a major intellectual commitment — the first time POSITION.md explicitly names the tradeoff ARF rejects. It deserves its own section with a datestamp, not absorption into an existing section. Rejected alternative: appending to "What I'm not claiming" — that section is defensive framing; this claim is affirmative.
+
+### Run 138 — 2026-06-02 — ifa-named-paradigm-opponent
+
+- **decided:** Add IFA as a named bullet in the adjacent fields section with precise positioning: (1) what IFA claims, (2) why IFA is not prior art for ARF, (3) what the genuine philosophical disagreement is. Add a one-sentence cross-reference in the "What ARF specifically claims" section. Rejected alternative: adding IFA only as a parenthetical in the ARF section without a full adjacent-fields entry — that would name the opponent without explaining the distinction, which could look defensive rather than precise.
+
+### Run 139 — 2026-06-02 — arf-paradigm-framing-capability-ceiling
+
+- **decided:** Two simultaneous edits: (1) Replace IFA-specific bullet with "Restriction-first AI governance" paradigm bullet; IFA demoted to parenthetical example. (2) Rewrite opening of "What ARF specifically claims" to introduce safety<->restriction vs. safety<->observable-reasoning as the conceptual pair, then add capability-ceiling argument. Rejected alternative: keeping IFA as named but adding the paradigm description above it — two entries for the same thing is redundant and signals the document is in dialogue with a specific LinkedIn post.
+
+### Run 140 — 2026-06-02 — arf-thesis-sentence
+
+- **decided:** Insert the thesis as a blockquote immediately after the datestamp, before the existing prose. Blockquote format makes it visually separable — it can be pulled out and cited verbatim. The existing prose becomes the development, not the claim. One sentence rejected as a candidate: "Safety is produced by adding transparency, not subtracting capability" — accurate but loses the "they are not the same problem" close, which is the key differentiating claim.
+
+### Run 141 — 2026-06-02 — arf-root-cause-premise
+
+- **decided:** Insert one paragraph before the capability-ceiling paragraph. The paragraph states the root-cause premise in full: (1) restriction treats destructiveness as authority failure; (2) ARF treats destructiveness as reasoning failure from insufficient context; (3) the goal is more awareness, not less permission; (4) you cannot sandbox your way to good reasoning. Rejected alternative: splitting this into two paragraphs — the idea is single and should be stated in one place.
+
+### Run 142 — 2026-06-02 — precision-correction-trust-instrument
+
+- **decided:** Apply precision correction to four locations simultaneously. Replace "observable reasoning" as trust instrument with "demonstrated reasoning quality" + explicit three-part chain where context permits. Conceptual pair updated to *safety <-> demonstrated reasoning quality* in PROBLEM.md. PRINCIPLES.md updated to show quality as the agent with context/observation as its mechanism. Website ARF card updated to surface the genuineness claim ("genuinely — not just visibly").
+
+### Run 143 — 2026-06-02 — arf-scope-precision
+
+- **decided:** Apply precision fix to all 5 locations simultaneously. The fix in each case: separate Commander's Intent (adequate context) from ARF (reasoning fidelity) — both are necessary for demonstrated reasoning quality, but they are not the same mechanism and must not be conflated. Rejected alternative: changing only the manifesto files and leaving POSITION.md stale. POSITION.md is the public stance document; having it lag behind the manifesto precision would be a coherence failure visible to any reader who reads both.
+
+**143 runs total — 129 with changes, 14 silence**
