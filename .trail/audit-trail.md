@@ -7469,3 +7469,61 @@ This is the fourth precision correction to this specific claim across this sessi
 ### Across-trail macro-Hansei *(recurring + operator-explicitly-asked triggered)*
 
 [!REALIZATION] The stable endpoint for the restriction-vs-reasoning comparative claim is: (1) reasoning quality → safety, no capability cost; (2) restriction → safety, by capability cost; (3) restriction eliminates (1). This three-part structure is the minimum sufficient form. Any future compression of this claim must preserve all three parts or it will revert to an overclaim. The canonical phrasing is now on record.
+
+## 2026-06-02 — arf-restriction-decreases-reasoning-quality
+
+- target: autonomous-agent-skills (POSITION.md); manifesto (PROBLEM.md)
+- operator: Nils Holmager
+- agent: GitHub Copilot (Claude Sonnet 4.6)
+- skill: improve + intent
+- outcome: one-word-pair swap in S3 — "narrows the reasoning capacity" → "decreases the reasoning quality"; closes the noun loop with S1 and sharpens the verb
+- delta: POSITION.md and PROBLEM.md — "Restriction narrows the reasoning capacity that produces safety." → "Restriction decreases the reasoning quality that produces safety."
+
+### Interpretation of the ask
+
+Operator confirmed the three-sentence form with this specific S3. The change is surgical: one noun (capacity → quality) and one verb (narrows → decreases). The intent is noun consistency — S1 names "reasoning quality" as the mechanism; S3 now degrades exactly that noun, closing the logical loop without a reader having to bridge two different words.
+
+### Examination
+
+Current S3: "Restriction narrows the reasoning capacity that produces safety."
+Proposed S3: "Restriction decreases the reasoning quality that produces safety."
+
+Two sub-changes:
+1. *capacity → quality*: eliminates a noun mismatch with S1. "Capacity" is a near-miss — it implies scope. "Quality" is the exact noun that S1 uses, making S1→S3 a closed argument: reasoning quality produces safety; restriction decreases reasoning quality. The reader completes the syllogism in one step.
+2. *narrows → decreases*: "narrows" implies scope reduction (fewer things can be reasoned about). "Decreases" implies magnitude reduction (the reasoning is worse). The actual claim is magnitude — restriction degrades reasoning quality, not just its range.
+
+Both changes are improvements; neither is overclaiming.
+
+### Decision
+
+[!DECISION] Apply verbatim as operator confirmed. Prediction: a reader traces S1→S3 without bridging two different nouns. The self-defeating nature of restriction is visible in the three sentences as a closed argument. No further iteration needed on this claim.
+
+### Prediction
+
+S1→S2→S3 now reads as a complete syllogism: (1) reasoning quality → safety, no capability cost; (2) restriction → safety, by limiting capability; (3) restriction → decreased reasoning quality → less of (1). A critic who accepts S1 and S2 cannot escape S3 without disputing the causal link between restriction and reasoning quality — which is the actual thesis.
+
+### Action
+
+`multi_replace_string_in_file` × 2 — both locations in one call. verify.py PASS at 145 entries (this entry is 146).
+
+### Reflection
+
+The arc across entries 143–146 is a compression arc. Each entry removed one overclaim or one imprecision. Entry 143: original overclaiming sentence. Entry 144: "bounded experience space" formulation — better but still overclaiming "only actual safeguard." Entry 145: three-sentence form introduced, noun inconsistency (capacity vs. quality) still present. Entry 146: noun inconsistency resolved, verb sharpened. The sentence has converged. The canonical form is on record.
+
+[!REALIZATION] The editorial process across this arc is itself an instance of the protocol working: operator detects overclaim → agent refines → operator confirms → loop closes. The argument being refined is an argument about the value of this kind of reasoning loop. The recursion is not incidental.
+
+### Candidate Next Moves
+
+1. **Declare convergence on this claim and move to the next open item in "Where this is going."** The three-sentence form is stable; further iteration risks polish-for-polish's-sake. The most productive next move is treating this section as done and turning attention to the external proof gap (entry in "Where this is going" §3).
+2. **Pressure-test POSITION.md "What would prove this wrong" against the ARF claim.** The falsification section predates the ARF-specific claim; it may not contain a crisp falsifier for the restriction-vs-reasoning-quality thesis specifically.
+
+### Across-trail trigger evaluation
+
+- *Recurring finding-class:* FIRED — entries 143–146 are four consecutive precision edits to the same three sentences. Pattern is complete; the finding-class is resolved.
+- *About to declare silence:* not fired — this run made a change (though this is the final iteration on this claim).
+- *Contradicts prior `[!REALIZATION]`:* not fired — entry 145 realization holds; this entry extends it.
+- *Operator explicitly asked:* FIRED — operator confirmed the exact wording.
+
+### Across-trail macro-Hansei *(recurring + operator-explicitly-asked triggered)*
+
+[!REALIZATION] The stable canonical form of the restriction-vs-reasoning-quality argument is now: (1) reasoning quality → safety, no capability cost; (2) restriction → safety, by limiting capability; (3) restriction → decreased reasoning quality → less of (1). This three-part structure is the minimum sufficient form and is internally consistent. The four-entry compression arc that produced it is itself evidence that the iterative refinement loop works on normative claims, not just code. Any future version of this claim that diverges from this structure should carry a trail entry explaining what was wrong with the three-part form — not just offering an alternative phrasing.

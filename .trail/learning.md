@@ -885,6 +885,18 @@ Compact chronological extract of every `[!REALIZATION]` and `[!REVERSAL]` marker
 
 **[!REALIZATION]** The stable endpoint for the restriction-vs-reasoning comparative claim is: (1) reasoning quality → safety, no capability cost; (2) restriction → safety, by capability cost; (3) restriction eliminates (1). This three-part structure is the minimum sufficient form. Any future compression of this claim must preserve all three parts or it will revert to an overclaim. The canonical phrasing is now on record.
 
+## 2026-06-02 — arf-restriction-decreases-reasoning-quality
+
+**[!REALIZATION]** The editorial process across this arc is itself an instance of the protocol working: operator detects overclaim → agent refines → operator confirms → loop closes. The argument being refined is an argument about the value of this kind of reasoning loop. The recursion is not incidental.
+
+## 2026-06-02 — arf-restriction-decreases-reasoning-quality
+
+**[!REALIZATION]** `:* not fired — entry 145 realization holds; this entry extends it.
+
+## 2026-06-02 — arf-restriction-decreases-reasoning-quality
+
+**[!REALIZATION]** The stable canonical form of the restriction-vs-reasoning-quality argument is now: (1) reasoning quality → safety, no capability cost; (2) restriction → safety, by limiting capability; (3) restriction → decreased reasoning quality → less of (1). This three-part structure is the minimum sufficient form and is internally consistent. The four-entry compression arc that produced it is itself evidence that the iterative refinement loop works on normative claims, not just code. Any future version of this claim that diverges from this structure should carry a trail entry explaining what was wrong with the three-part form — not just offering an alternative phrasing.
+
 ---
 
-**220 markers — 200 realisations, 20 reversals**
+**223 markers — 203 realisations, 20 reversals**
