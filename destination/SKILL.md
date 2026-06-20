@@ -1,6 +1,6 @@
 ---
 name: destination
-version: 2.0.0
+version: 2.1.0
 description: 'Surface the agent''s in-progress guesses about where the operator is heading — what they care about, what they are circling, what the implicit destination might be — and turn those guesses into questions the operator can confirm, correct, or reject. Closes the gap between the destination the operator has explicitly stated and what the agent has picked up from their conversation, reactions, and emphasis. USE WHEN: the destination feels thin or stale, the operator is exploring rather than executing, the agent suspects it is missing implicit direction, or before a long autonomous run that will drift if the destination is unclear.'
 argument-hint: 'Optionally: the area you want hunches about (a specific concern, a recent decision, the project as a whole)'
 ---
@@ -74,6 +74,7 @@ Write down two to five sourced inferences. Each is a claim the evidence supports
 - **Priority.** "I think Y matters more to you than the trail's attention split would imply."
 - **Constraint.** "I think you would reject Z even though nothing currently rules it out."
 - **Question being asked.** "I think the question you are actually trying to answer is W, even though you have been phrasing it as V."
+- **Quality bar.** "I think the bar you are actually holding the target to is Q (e.g. comparative defensibility under hostile external review, comparator coverage, empirical replication, operational deployability), not just internal consistency." Surfacing the operator-held quality bars early is what lets a later Retrospect declare silence against a named bar rather than infer one. *Origin:* the manifesto target's retro-v201 → retro-v202 transition (2026-06-04) showed that retrospects which silence-claim against bars they have never been challenged on are structurally fragile; the upstream fix is for the destination to name the bars in the first place. Full provenance: this repo's `.trail/audit-trail.md`, entry slug `improve-destination-named-boundary-symmetric`.
 
 Each inference must be:
 

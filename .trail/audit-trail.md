@@ -7591,3 +7591,140 @@ The pattern across this entire arc (entries 143–147): each proposed variant fo
 ### Across-trail macro-Hansei *(silence + operator-explicitly-asked triggered)*
 
 [!REALIZATION] The arc is closed. The canonical form of the restriction-vs-reasoning-quality argument is on record in entry 146. The rejection reasoning for the two main alternative phrasings is on record here. A future agent or editor reading entries 143–147 has the full decision history: what was tried, what was rejected, what was kept, and why. Observable autonomy achieved.
+
+---
+
+## 2026-06-04 - retro-named-boundary-rule-from-manifesto-arc
+
+**Slug:** retro-named-boundary-rule-from-manifesto-arc
+**Files touched:** retrospect/SKILL.md, CHANGELOG.md
+**Provenance:** insight originated in target repo `c:\git\manifesto`, audit-trail entry `2026-06-04 - retrospect-v202-comparative-defensibility` (run: retro-v202).
+
+### Interpretation of the ask
+
+Operator on the manifesto target observed that a realization from the manifesto's retrospect arc generalises beyond the manifesto and should be carried back to the retrospect skill itself. Specifically: a retrospect-declared silence on the manifesto (run retro-v201, "text-layer silence is now earned") was overturned within the same day by an operator-initiated publication-rigour-review run that tested a different quality bar. The [!REALIZATION] from the resulting retro-v202 - that a retrospect can only test the quality bars it knows about and that silence claims should carry named boundaries - is a structural property of the retrospect operation, not a manifesto-specific fact. Operator's intent: write the rule into this skill suite and record where it came from so future readers can trace it back.
+
+### Examination
+
+Read `retrospect/SKILL.md` (v1.8.0). The existing step 4 (loop-effectiveness) already asks "Is the silence earned, or is the loop stuck looking at easy surfaces?" - a good question but bar-agnostic. The existing step 5 (write the retrospect.md) describes the file shape but does not require silence claims to be bounded.
+
+Read this repo's `CHANGELOG.md` convention (semver, top-of-file entry, skill-version bump cited inline).
+
+Confirmed the rule generalises beyond the manifesto: any retrospect that asserts silence without naming the bar is structurally vulnerable to the same overturn pattern, because no retrospect tests every possible quality bar in a single run.
+
+### Decision
+
+[!DECISION] Promote the manifesto-derived realization to a retrospect-skill rule. Three changes:
+
+1. Add a new step 5a ("Bound every silence claim") to `retrospect/SKILL.md` requiring every silence/convergence/readiness claim to name the quality bar and the surfaces, plus an explicit list of bars not tested. Provide two worked examples (one for internal-consistency silence, one for comparative-defensibility silence, both taken from the manifesto arc that generated the rule).
+2. Add a parallel question to step 4's checklist: "Which quality bars has the loop actually tested, and which has it never been challenged on?" This makes the bar identification a loop-effectiveness check, not only a writing-time constraint.
+3. Inline the provenance in step 5a itself (manifesto retro-v201 -> retro-v202, this-repo trail slug) so a future reader of the SKILL can trace why the rule exists without leaving the file.
+
+Bump `retrospect` 1.8.0 -> 1.9.0. Add CHANGELOG v4.1.0 citing the trail slug. Append this trail entry per the append-only rule.
+
+Rejected alternatives:
+- Add the rule only to step 5 (writing) without touching step 4 (loop-effectiveness): rejected because the bar identification needs to happen during arc-reading, not at write time, or the retrospect will retrofit a bar to whatever silence it already wrote.
+- Add the rule as a separate doc rather than inline: rejected because separate docs are not read by skill consumers; the rule must live where the SKILL is read.
+- Wait for the rule to surface from a second independent target before promoting: rejected because the rule is structural (a retrospect cannot test bars it does not know about) rather than empirical (a specific failure mode in a specific repo). Single-target evidence is sufficient for a structural rule.
+
+### Action
+
+Executed via multi_replace_string_in_file:
+- `retrospect/SKILL.md` frontmatter: version 1.8.0 -> 1.9.0.
+- `retrospect/SKILL.md` step 4 "Ask" list: added the quality-bars question.
+- `retrospect/SKILL.md` after step 5: added step 5a "Bound every silence claim" with pattern, two worked examples, and inline provenance pointing to this trail slug.
+- `CHANGELOG.md`: prepended v4.1.0 entry citing the skill bump and the trail slug.
+- This audit-trail entry appended via `Add-Content -Encoding UTF8`.
+
+### Reflection
+
+*Current model of the target:* The retrospect skill now requires what it previously only suggested. A future retrospect run on any target that declares silence without naming the bar will be operating outside the SKILL spec, which gives a downstream improve-loop the leverage to surface that as a finding. The provenance is preserved in three places (this trail entry, the SKILL itself, the CHANGELOG), so the rule does not become orphaned from its origin.
+
+*Blind spot:* The list of quality bars in step 4 (internal text-layer consistency, comparative defensibility, comparator coverage, empirical replication, operational deployability) is illustrative, not exhaustive. A future target may surface a sixth bar the SKILL has not listed. That is acceptable - the rule's force is "name the bar", not "pick from this list". The illustrative list is there to make the abstract requirement concrete, not to close the set.
+
+*Imagined-reader pushback:* "Is one manifesto arc enough evidence to add a rule to a skill used across many targets?" Response: the rule is structural rather than empirical. The argument is not "this failure happened once in the manifesto, therefore add a rule" - it is "a retrospect cannot, by construction, test quality bars it has not been challenged on; therefore any unbounded silence claim is structurally fragile". The manifesto arc is the worked example that made the structural property visible, not the statistical basis for the rule.
+
+*Across-trail reflection triggers:*
+- *Recurring finding-class:* not fired - this is a single cross-repo promotion, not a pattern across many entries in this repo.
+- *About to declare silence:* not fired - this is an addition, not a closure.
+- *Contradicts prior [!REALIZATION]:* not fired - this entry extends the retrospect skill rather than contradicting any prior realization in this repo.
+- *Operator explicitly asked:* fired - "write it into the trail of the skillsets repo somewhere appropriate so it knows where it comes from".
+- *Cross-repo promotion:* fired - an insight originating in a target's retrospect arc has been promoted to the skill that produced the retrospect. This is the canonical mechanism by which the skill suite learns from the targets it operates on.
+
+[!REALIZATION] The retrospect skill operates on targets, and the targets sometimes teach the skill how to operate better. When that happens, the promotion must be traceable from the SKILL.md back to the target's trail and the target's trail forward to the SKILL.md. This entry establishes the pattern: target trail entry surfaces the realization; skill repo trail entry records the promotion with explicit provenance; SKILL.md itself carries an inline pointer to the promotion entry so any reader of the rule can trace why it exists. Future cross-repo promotions should follow the same three-anchor pattern.
+
+### Candidate Next Moves
+
+1. Consider whether the same named-boundary pattern should apply to `improve/SKILL.md` decision claims ("the target is improved enough to stop") - the symmetry suggests yes, but the operator has not opened that question. Defer until requested.
+2. Consider whether `destination/SKILL.md` should require destinations to name the quality bars the operator cares about, so that retrospect can read them against destination-named bars rather than inferring bars on its own. This would close the loop: destinations name bars, retrospects test them, silence is declared against the destination-named set. Significant structural change; defer until operator opens it.
+3. No CITATION.cff or .zenodo.json bump performed - the skill bump is minor and the top-level CITATION.cff was already stale (3.19.0 vs CHANGELOG v4.0.0). Flagged for separate operator-directed alignment pass, not done here.
+
+---
+
+## 2026-06-04 - improve-destination-named-boundary-symmetric
+
+**Slug:** improve-destination-named-boundary-symmetric
+**Files touched:** improve/SKILL.md, destination/SKILL.md, CHANGELOG.md
+**Provenance:** follow-up to this repo's prior entry `2026-06-04 - retro-named-boundary-rule-from-manifesto-arc`, which itself originated in manifesto target `c:\git\manifesto` entry `2026-06-04 - retrospect-v202-comparative-defensibility`.
+
+### Interpretation of the ask
+
+Operator approved candidate next moves 1 and 2 from the prior entry: apply the same named-boundary pattern to `improve/SKILL.md` decision claims and to `destination/SKILL.md` quality-bar elicitation. Then return focus to the manifesto repo. Read as: complete the symmetric promotion in one pass so the skill suite has a coherent named-boundary discipline across Destination -> Improve -> Retrospect, and stop touching the skills repo after this entry.
+
+### Examination
+
+Read `improve/SKILL.md` step 4a. The Silence option ("Nothing actionable was found. State what was examined and why nothing warranted change") is the iteration-level analogue of the arc-level silence claim that Retrospect makes. Same structural fragility applies: an improve iteration that declares silence without naming the quality bar it was testing against is structurally vulnerable to the next iteration (or operator probe) testing a bar this iteration never knew about.
+
+Read `destination/SKILL.md` step 2 (Form sourced inferences). The four existing shapes (Direction, Priority, Constraint, Question-being-asked) capture intent, not the quality bars the operator is holding the target to. Adding a fifth shape (Quality bar) is the minimal addition that closes the loop with the Retrospect step 5a rule: destinations name bars, retrospects test them, silence is declared against the destination-named set.
+
+Asymmetry between the two changes:
+- Improve gains a *requirement* (silence claims MUST name the bar). Same force as Retrospect step 5a.
+- Destination gains an *inference shape* (one of five), not a requirement. Consistent with destination's posture: it synthesises operator-held intent rather than producing agent-driven content. Forcing the operator to declare quality bars would conflict with the existing rule "do not score the operator's clarity" (destination README L143).
+
+Considered: should improve's other decision branches (incremental change, redesign argument) also require named boundaries? Rejected: incremental change has the prediction discipline already covering that ground (4a "make a pre-commit prediction"), and redesign argument is a stop-and-surface move, not a silence claim. The named-boundary rule applies specifically to silence/convergence/readiness claims.
+
+### Decision
+
+[!DECISION] Two coordinated SKILL edits in one pass, plus CHANGELOG and trail entry. After this entry, focus returns to manifesto target per operator direction.
+
+1. `improve/SKILL.md` 3.9.2 -> 3.10.0: extend the Silence bullet in step 4a with the named-boundary requirement, mirror the language from `retrospect/SKILL.md` step 5a, inline provenance pointing to this trail slug and the prior slug.
+2. `destination/SKILL.md` 2.0.0 -> 2.1.0: add "Quality bar" as a fifth inference shape in step 2, inline provenance pointing to this trail slug.
+3. CHANGELOG.md: prepend v4.2.0 entry covering both skill bumps, naming the architectural intent (closing the loop Destination -> Improve -> Retrospect).
+
+Rejected alternatives:
+- Force destination to require quality bars: rejected on the principle that destination synthesises operator-held intent, never grades it.
+- Add named-boundary requirement to improve's incremental-change branch as well: rejected because the existing pre-commit prediction discipline already constrains incremental claims; the named-boundary rule is specifically for silence/convergence claims.
+- Bump CITATION.cff/.zenodo.json: rejected per the prior entry's flag - top-level metadata is already stale (3.19.0 vs CHANGELOG v4.0.0) and a separate operator-directed alignment pass is the right place to fix it.
+
+### Action
+
+Executed via multi_replace_string_in_file in a single batch:
+- `improve/SKILL.md` frontmatter: 3.9.2 -> 3.10.0.
+- `improve/SKILL.md` step 4a Silence bullet: rewritten with named-boundary requirement and inline provenance.
+- `destination/SKILL.md` frontmatter: 2.0.0 -> 2.1.0.
+- `destination/SKILL.md` step 2 inference-shapes list: added Quality bar as the fifth shape with inline provenance.
+- `CHANGELOG.md`: prepended v4.2.0 entry citing both skill bumps and the loop-closing intent.
+- This audit-trail entry appended via `Add-Content -Encoding UTF8`.
+
+### Reflection
+
+*Current model of the target:* The three skills now share a coherent named-boundary discipline. Destination surfaces the bars the operator cares about (soft, inference-shape). Improve declares silence only against named bars (hard, requirement). Retrospect declares arc-silence only against named bars (hard, requirement, since v4.1.0). A retrospect that reads against a destination with named bars can now check: are the bars the loop has been testing the same as the bars the operator named in the destination? That check did not exist before this pass.
+
+*Blind spot:* The destination quality-bar inference shape is *one of five*, not required, so an operator who never surfaces bars in their destination will leave the loop guessing again. This is acceptable - destinations that are still exploratory should not be forced to name bars they have not formed yet - but it means the loop-closing only happens when the operator's destination has matured enough to name bars. Not a defect; a property of the soft-vs-hard asymmetry chosen deliberately.
+
+*Imagined-reader pushback:* "If destinations don't have to name bars, what does the new inference shape buy?" Response: it tells the destination agent to *try* to surface bars from existing signal (trail entries, conversation history, prior runs) rather than waiting for the operator to volunteer them. The shape is not a requirement on the operator; it is a requirement on the destination skill's elicitation work. The operator can still answer "I don't know yet" - that is a legitimate destination state.
+
+*Across-trail reflection triggers:*
+- *Recurring finding-class:* fired - this is the second named-boundary entry in this repo within one day; the pattern is being consistently propagated rather than coincidentally repeated.
+- *About to declare silence:* fired with named boundary - silence on the named-boundary rule application across the three skills in scope (destination, improve, retrospect). Bars not tested: the same pattern's applicability to `intent/SKILL.md`, `probe/SKILL.md`, `trail/SKILL.md`, and `de-ai/SKILL.md`. Those are deferred until operator opens them.
+- *Contradicts prior [!REALIZATION]:* not fired.
+- *Operator explicitly asked:* fired - "yes do that - use improve skill. and then lets go back to focus working on the manifesto repo".
+- *Cross-repo promotion:* fired - second consecutive promotion entry in this repo originating from the same manifesto arc, both with explicit provenance chains.
+
+[!REALIZATION] The Destination -> Improve -> Retrospect loop is the spine of the skill suite, and the named-boundary discipline now runs the full length of it. This was not visible from any single skill in isolation; it became visible only when the rule had been applied to all three. Architectural realization: when a structural rule is promoted from a target, the right next question is whether the rule has a natural domain larger than the originating skill. For the named-boundary rule, that domain is "any skill that produces a stopping signal" (silence, convergence, done). The three skills that produce stopping signals now share the discipline; skills that produce other kinds of artifacts (probes, trails, intent) do not need it.
+
+### Candidate Next Moves
+
+1. Per operator direction, return focus to the manifesto target. No further skills-repo work this session.
+2. Defer: top-level CITATION.cff / .zenodo.json alignment pass (3.19.0 -> v4.2.0). Needs operator direction.
+3. Defer: consider whether `de-ai/SKILL.md` and `trail/SKILL.md` produce stopping signals that should carry the named-boundary discipline. Tentative answer: no - `de-ai` is a pre-commit safety check, not a convergence claim; `trail` records, it does not declare silence. Not actioned until operator opens the question.

@@ -1,5 +1,18 @@
 # Changelog
 
+## v4.2.0 — 2026-06-04
+
+### Changed
+- **Improve skill silence claims now require named boundaries (`improve/SKILL.md` 3.9.2 → 3.10.0).** Step 4a's Silence option now requires every silence claim to name the quality bar the iteration was testing against (internal text-layer consistency, comparative defensibility under hostile external review, comparator coverage, empirical replication, operational deployability), the surfaces in scope, and the bars *not* tested. Mirrors the `retrospect/SKILL.md` step 5a rule introduced in v4.1.0; both originate in the manifesto target's retro-v201 → retro-v202 transition (2026-06-04). The asymmetry between the two skills - retrospect declares silence on arc-level claims, improve declares silence on iteration-level claims - is preserved; both now share the same named-boundary discipline.
+- **Destination skill now lists "Quality bar" as an inference shape (`destination/SKILL.md` 2.0.0 → 2.1.0).** Step 2 ("Form sourced inferences") gains a fifth shape: *Quality bar*. The destination skill surfaces the operator-held quality bars early, so a later Retrospect can declare silence against destination-named bars rather than infer them on its own. This closes the loop opened by the v4.1.0 retrospect rule: destinations name bars → retrospects test them → silence is declared against the destination-named set. Soft addition rather than a requirement, consistent with destination's posture of synthesising operator-held intent rather than producing agent-driven content.
+
+Provenance for both changes: this repo's `.trail/audit-trail.md`, entry slug `improve-destination-named-boundary-symmetric`, originating from manifesto target's retro-v201 → retro-v202 transition.
+
+## v4.1.0 — 2026-06-04
+
+### Changed
+- **Retrospect skill now requires every silence claim to name its quality bar and surfaces (`retrospect/SKILL.md` 1.8.0 → 1.9.0).** Added step 5a ("Bound every silence claim") requiring that any retrospect-declared silence, convergence, or readiness names which quality bar the silence applies to (internal text-layer consistency, comparative defensibility under hostile external review, comparator coverage, empirical replication, operational deployability, etc.) and which surfaces are in scope, plus an explicit list of bars not tested. Unbounded silence claims ("the target is in good shape", "text-layer silence is now earned") are forbidden because a bar the retrospect has never tested cannot be inside the silence claim. Also added a parallel question to step 4's loop-effectiveness checklist ("Which quality bars has the loop actually tested, and which has it never been challenged on?"). Provenance: promoted from the manifesto target's retro-v201 → retro-v202 transition (2026-06-04), where a retrospect-declared text-layer silence was overturned within the same day by an operator-initiated publication-rigour-review run testing a bar the prior retrospect had never been challenged on. Full provenance in this repo's `.trail/audit-trail.md` under entry slug `retro-named-boundary-rule-from-manifesto-arc`.
+
 ## v4.0.0 — 2026-05-28
 
 ### Changed (BREAKING — skill rename)

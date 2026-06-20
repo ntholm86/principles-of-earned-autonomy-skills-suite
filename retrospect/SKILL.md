@@ -1,6 +1,6 @@
 ---
 name: retrospect
-version: 1.8.0
+version: 1.9.0
 description: 'Read the trail as a single document and form arc-level claims about the target. What is the target becoming? Where has the loop''s attention been, and is that where the target''s real weight lies? What does the arc reveal that no individual iteration would surface? Writes .trail/retrospect.md — the Retrospect-derived current orientation for the target. Destination (.trail/destination.md, with .trail/vision.md as legacy fallback), if present, is the operator-held destination and is read but never written. USE WHEN: about to declare convergence, recurring finding-class suspected, operator asks "how are we doing?", or an independent arc-read is needed without running a full improve loop.'
 argument-hint: 'The target and its trail, and optionally the specific arc-question to answer'
 ---
@@ -111,6 +111,7 @@ Ask:
 
 - Has the loop been finding genuine findings, or finding excuses to act?
 - Is the silence earned, or is the loop stuck looking at easy surfaces?
+- **Which quality bars has the loop actually tested, and which has it never been challenged on?** A retrospect can only test the bars it knows about. Internal text-layer consistency, comparative defensibility under hostile external review, comparator coverage, empirical replication, and operational deployability are distinct bars; passing one says nothing about the others. Name the bar this retrospect's silence claim applies to.
 - What kind of finding would this loop structurally miss? Name it concretely.
 - If the operator could see the arc as a whole, would they say "yes, that is the right focus"?
 
@@ -158,6 +159,20 @@ _Last updated: YYYY-MM-DD (run: <slug>)_
 ```
 
 Commit `.trail/retrospect.md` alongside `audit-trail.md`, `history.md`, and `learning.md` after the run. Never commit changes to `.trail/destination.md` (or legacy `.trail/vision.md`) from a Retrospect run.
+
+### 5a. Bound every silence claim
+
+Any claim in `retrospect.md` that the target has reached silence, convergence, or readiness must name **which quality bar** the silence applies to and **which surfaces** are in scope. Unbounded silence claims ("the target is in good shape", "text-layer silence is now earned") are the form most likely to be overturned by the next operator-initiated probe, because a bar the retrospect has never tested cannot be inside the silence claim.
+
+The pattern: *"Silence on `<named bar>` for `<named surfaces>`. Bars not tested by this retrospect: `<list>`."*
+
+Examples:
+- *"Silence on internal text-layer consistency for all non-operator-locked surfaces. Bars not tested: comparative defensibility under hostile external review, comparator coverage."*
+- *"Silence on comparative defensibility for the prior-work bullets currently in scope. Bars not tested: comparator coverage (whether the right set of prior works has been engaged at all), empirical replication."*
+
+If the retrospect cannot name the bar, the silence claim is not yet ready to be made. Either name the bar or write the claim as a bar-scoped observation rather than as silence.
+
+*Origin:* This rule was promoted from the manifesto target's `retro-v201` -> `retro-v202` transition (entry slug `retrospect-v202-comparative-defensibility`, 2026-06-04), where a retrospect-declared text-layer silence was overturned within the same day by an operator-initiated publication-rigour-review run that tested a quality bar the prior retrospect had never been challenged on. Full provenance in this repo's `.trail/audit-trail.md` under entry slug `retro-named-boundary-rule-from-manifesto-arc`.
 
 ### 6. Record
 
