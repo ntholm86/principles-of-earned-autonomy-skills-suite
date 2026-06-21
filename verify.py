@@ -1,12 +1,12 @@
-#!/usr/bin/env python3
-"""verify.py — mechanical integrity check for the trail.
+﻿#!/usr/bin/env python3
+"""verify.py â€” mechanical integrity check for the trail.
 
 Replaces verify-suite.ps1 from v2. Pure-Python, zero dependencies, runs on
 Windows / macOS / Linux.
 
 Checks:
-1. .trail/audit-trail.md exists and is non-empty.
-2. Every entry heading matches `## YYYY-MM-DD — <slug>`.
+1. .acm/audit-trail.md exists and is non-empty.
+2. Every entry heading matches `## YYYY-MM-DD â€” <slug>`.
 3. Entries are in non-decreasing date order.
 4. Every entry contains the mandatory metadata fields: target, agent, skill, outcome.
 5. No U+FFFD replacement characters (mojibake) or non-UTF-8 bytes anywhere in
@@ -18,15 +18,15 @@ Checks:
 8. Every `session-file:` reference in audit-trail.md points to an existing file.
 9. Entries written under the v3.8.0 reflection contract (from
     `improve-step6b-trigger-observability` onward) record an explicit
-    four-trigger evaluation — bare "N/A"/"TODO" rejected — and include a
+    four-trigger evaluation â€” bare "N/A"/"TODO" rejected â€” and include a
     macro-Hansei subsection when any trigger fired.
-10. `.trail/history.md` and `.trail/learning.md` are not older than
-    `.trail/audit-trail.md` (staleness check using file mtime).
+10. `.acm/history.md` and `.acm/learning.md` are not older than
+    `.acm/audit-trail.md` (staleness check using file mtime).
 11. Live docs do not contain stale trail path tokens (`trail/log.md` or
-    `.trail/log.md`); canonical path is `.trail/audit-trail.md`.
+    `.acm/log.md`); canonical path is `.acm/audit-trail.md`.
 12. Entries on or after the session-fidelity contract date use structurally
-    correct session artifacts (`.trail/sessions/` summaries,
-    `.trail/transcripts/` verbatim exports) with explicit fidelity metadata.
+    correct session artifacts (`.acm/sessions/` summaries,
+    `.acm/transcripts/` verbatim exports) with explicit fidelity metadata.
 13. Transcript-file references point to existing files.
 14. Entries under the reversal honesty contract do not narrate reversal cues
     without a `[!REVERSAL]` marker.
@@ -40,7 +40,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-LOG = ROOT / ".trail" / "audit-trail.md"
+LOG = ROOT / ".acm" / "audit-trail.md"
 
 REQUIRED_FILES = [
     "README.md",
@@ -54,7 +54,7 @@ REQUIRED_FILES = [
     "trail/SKILL.md",
     "destination/SKILL.md",
     "retrospect/SKILL.md",
-    ".trail/audit-trail.md",
+    ".acm/audit-trail.md",
 ]
 
 ENTRY_HEADING = re.compile(r"^##\s+(\d{4}-\d{2}-\d{2})\s+[\u2014-]\s+(.+?)\s*$")
@@ -66,7 +66,7 @@ MARKDOWN_LINK = re.compile(r"\[[^\]]+\]\(([^)]+)\)")
 EXTERNAL_LINK = re.compile(r"^[a-z][a-z0-9+.-]*:", re.IGNORECASE)
 
 STALE_TRAIL_PATH_PATTERNS = [
-    re.compile(r"\.trail/log\.md"),
+    re.compile(r"\.acm/log\.md"),
     re.compile(r"(?<!\.)trail/log\.md"),
 ]
 
@@ -92,7 +92,7 @@ TRANSCRIPT_FIDELITY_VALUES = {"verbatim", "verbatim-structural"}
 # Forward-only enforcement contract: entries dated on or after this date must
 # meet the structural fidelity rules (see check_session_fidelity_structure).
 # Entries strictly before this date belong to the "pre-contract era" and are
-# grandfathered in place — they are kept unmodified as historical evidence,
+# grandfathered in place â€” they are kept unmodified as historical evidence,
 # not retroactively rewritten. See BENCHMARKS.md for how the era boundary is
 # treated when computing replication evidence.
 SESSION_FIDELITY_CONTRACT_DATE = "2026-05-23"
@@ -127,10 +127,10 @@ def check_required_files() -> list[str]:
 def check_log_format() -> list[str]:
     failures: list[str] = []
     if not LOG.exists():
-        return [".trail/audit-trail.md does not exist"]
+        return [".acm/audit-trail.md does not exist"]
     text = LOG.read_text(encoding="utf-8")
     if not text.strip():
-        return [".trail/audit-trail.md is empty"]
+        return [".acm/audit-trail.md is empty"]
 
     entries: list[tuple[str, str, str]] = []
     current_date: str | None = None
@@ -145,14 +145,14 @@ def check_log_format() -> list[str]:
             current_date, current_slug = m.group(1), m.group(2)
             current_body = []
         elif malformed_heading.match(line):
-            failures.append(f"malformed entry heading in .trail/audit-trail.md: {line}")
+            failures.append(f"malformed entry heading in .acm/audit-trail.md: {line}")
         elif current_date is not None:
             current_body.append(line)
     if current_date is not None:
         entries.append((current_date, current_slug or "", "\n".join(current_body)))
 
     if not entries:
-        failures.append(".trail/audit-trail.md contains no entries matching '## YYYY-MM-DD — slug'")
+        failures.append(".acm/audit-trail.md contains no entries matching '## YYYY-MM-DD â€” slug'")
         return failures
 
     prev_date: str | None = None
@@ -194,7 +194,7 @@ def check_no_mojibake() -> list[str]:
 def check_required_markdown_docs() -> list[str]:
     failures: list[str] = []
     # PRINCIPLES.md is a verbatim external copy; its relative links point to its home repo
-    markdown_files = [rel for rel in REQUIRED_FILES if rel.endswith(".md") and rel not in (".trail/audit-trail.md", "PRINCIPLES.md")]
+    markdown_files = [rel for rel in REQUIRED_FILES if rel.endswith(".md") and rel not in (".acm/audit-trail.md", "PRINCIPLES.md")]
     for rel in markdown_files:
         path = ROOT / rel
         if not path.exists():
@@ -243,7 +243,7 @@ def check_stale_path_tokens() -> list[str]:
             for match in pattern.finditer(text):
                 line = _line_number(text, match.start())
                 failures.append(
-                    f"stale trail path token in {rel}:{line}: '{match.group(0)}' — use .trail/audit-trail.md"
+                    f"stale trail path token in {rel}:{line}: '{match.group(0)}' â€” use .acm/audit-trail.md"
                 )
     return failures
 
@@ -254,8 +254,8 @@ def _extract_fidelity_value(text: str) -> str | None:
         return None
     raw = m.group(1).strip().lower()
     # Preserve canonical hyphenated values while tolerating legacy notes like
-    # "full — arc-read completed ..." by extracting the first token.
-    token = re.split(r"\s+[—-]\s+|\s+", raw, maxsplit=1)[0]
+    # "full â€” arc-read completed ..." by extracting the first token.
+    token = re.split(r"\s+[â€”-]\s+|\s+", raw, maxsplit=1)[0]
     return token
 
 
@@ -276,7 +276,7 @@ def check_session_fidelity_structure() -> list[str]:
                 # Existence is validated separately by check_session_files.
                 continue
             rel_parts = Path(rel_path).parts
-            if len(rel_parts) < 2 or rel_parts[0] != ".trail":
+            if len(rel_parts) < 2 or rel_parts[0] != ".acm":
                 failures.append(
                     f"entry '{date} {slug}' uses non-trail session-file path: {rel_path}"
                 )
@@ -306,7 +306,7 @@ def check_session_fidelity_structure() -> list[str]:
                     )
             else:
                 failures.append(
-                    f"entry '{date} {slug}' session-file must live in .trail/sessions/ or .trail/transcripts/: {rel_path}"
+                    f"entry '{date} {slug}' session-file must live in .acm/sessions/ or .acm/transcripts/: {rel_path}"
                 )
 
         for m in TRANSCRIPT_FILE_META.finditer(body):
@@ -316,9 +316,9 @@ def check_session_fidelity_structure() -> list[str]:
                 # Existence is validated separately by check_transcript_references.
                 continue
             rel_parts = Path(rel_path).parts
-            if len(rel_parts) < 2 or rel_parts[0] != ".trail" or rel_parts[1] != "transcripts":
+            if len(rel_parts) < 2 or rel_parts[0] != ".acm" or rel_parts[1] != "transcripts":
                 failures.append(
-                    f"entry '{date} {slug}' transcript-file must live in .trail/transcripts/: {rel_path}"
+                    f"entry '{date} {slug}' transcript-file must live in .acm/transcripts/: {rel_path}"
                 )
                 continue
             text = path.read_text(encoding="utf-8")
@@ -370,8 +370,8 @@ MACRO_HANSEI_HEADING = re.compile(
 # Entries committed with --no-verify (append-only discipline prevents in-place
 # repair; correction entries supply the missing data in subsequent trail entries).
 # Key: exact slug; Value: set of check names to skip.
-# "metadata" — skips the required-field check in check_log_format().
-# "trigger"  — skips the trigger-evaluation check in check_trigger_evaluation().
+# "metadata" â€” skips the required-field check in check_log_format().
+# "trigger"  â€” skips the trigger-evaluation check in check_trigger_evaluation().
 GRANDFATHERED_ENTRIES: dict[str, set[str]] = {
     "Improve: name the protocol-vs-structural limitation in README": {"metadata", "trigger"},
     "protocol-vs-structural-limitation-readme [correction]": {"trigger"},
@@ -468,16 +468,16 @@ def check_derived_artifact_freshness() -> list[str]:
         return failures
     log_mtime = LOG.stat().st_mtime
     for artifact_name in ("history.md", "learning.md"):
-        artifact = ROOT / ".trail" / artifact_name
+        artifact = ROOT / ".acm" / artifact_name
         subcommand = artifact_name.replace(".md", "")
         if not artifact.exists():
             failures.append(
-                f"missing derived artifact .trail/{artifact_name} — "
+                f"missing derived artifact .acm/{artifact_name} â€” "
                 f"run: python tools/record.py {subcommand} --write"
             )
         elif artifact.stat().st_mtime < log_mtime:
             failures.append(
-                f"stale derived artifact .trail/{artifact_name} is older than .trail/audit-trail.md — "
+                f"stale derived artifact .acm/{artifact_name} is older than .acm/audit-trail.md â€” "
                 f"run: python tools/record.py {subcommand} --write"
             )
     return failures
@@ -541,11 +541,11 @@ def main() -> int:
     all_failures.extend(check_derived_artifact_freshness())
 
     if all_failures:
-        print(f"FAIL — {len(all_failures)} issue(s):")
+        print(f"FAIL â€” {len(all_failures)} issue(s):")
         for f in all_failures:
             print(f"  - {f}")
         return 1
-    print("OK — trail integrity checks pass")
+    print("OK â€” trail integrity checks pass")
     return 0
 
 
