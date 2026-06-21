@@ -1,4 +1,4 @@
-name: Verify Trail Integrity
+name: Verify ACM Integrity
 
 on:
   push:
