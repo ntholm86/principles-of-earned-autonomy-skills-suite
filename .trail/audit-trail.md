@@ -7728,3 +7728,17 @@ Executed via multi_replace_string_in_file in a single batch:
 1. Per operator direction, return focus to the manifesto target. No further skills-repo work this session.
 2. Defer: top-level CITATION.cff / .zenodo.json alignment pass (3.19.0 -> v4.2.0). Needs operator direction.
 3. Defer: consider whether `de-ai/SKILL.md` and `trail/SKILL.md` produce stopping signals that should carry the named-boundary discipline. Tentative answer: no - `de-ai` is a pre-commit safety check, not a convergence claim; `trail` records, it does not declare silence. Not actioned until operator opens the question.
+
+---
+
+## 2026-06-21 — reposition-as-acm-implementation
+
+**Ask:** Update suite positioning to reflect that ACM (Agent Context Memory) is now the formal specification. This suite is an implementation of ACM, not the definition of the memory model.
+
+**Decision:** Two changes — README "Memory Model" section reframed as "ACM Implementation"; .zenodo.json adds isImplementationOf relationship to ACM GitHub repo.
+
+**Action:** Updated README.md and .zenodo.json. No functional changes to skills.
+
+**Reflection:**
+- *Model claim:* The conceptual hierarchy is now correct: PEA (theory) → ACM (specification) → Skills Suite (implementation). The suite was the first to instantiate this pattern; ACM is now the formal definition of that pattern.
+- *Blind spot:* The Zenodo isImplementationOf uses a GitHub URL, not a DOI. Will need updating once ACM's Zenodo deposit completes.

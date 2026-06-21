@@ -25,6 +25,12 @@
       "relation": "isDerivedFrom",
       "resource_type": "software",
       "scheme": "doi"
+    },
+    {
+      "identifier": "https://github.com/ntholm86/agent-context-memory",
+      "relation": "isImplementationOf",
+      "resource_type": "software",
+      "scheme": "url"
     }
   ]
 }

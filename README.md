@@ -8,6 +8,8 @@ These are the skills I use daily as a software engineer to safely delegate compl
 
 Implementation repo for [Principles of Earned Autonomy](https://github.com/ntholm86/principles-of-earned-autonomy). The manifesto defines the principles; this suite enacts them.
 
+The memory structure this suite uses is formally specified in [Agent Context Memory (ACM)](https://github.com/ntholm86/agent-context-memory) — the governance-first specification for AI agent context memory. This suite is the reference implementation of ACM.
+
 Compatible with Claude (skills / Agent SDK), GitHub Copilot (custom skills), and any LLM agent that can read markdown and append to a file.
 
 ## The Suite Improved Itself — [221 verified iterations](./.trail/ITERATION-COUNT.md)
@@ -44,9 +46,11 @@ The full trail exists, but it cannot be published in this repository because it 
 
 **[Probe](./probe/SKILL.md)** — included for research and validation use. Constructs a "spot the difference" test to measure whether the agent is genuinely reasoning or pattern-matching. Used to validate [Autonomous Reasoning Fidelity](https://github.com/ntholm86/principles-of-earned-autonomy/blob/main/PRINCIPLES.md#autonomous-reasoning-fidelity-operational-definition) — not a skill you'd run in daily development.
 
-## The Memory Model
+## The Memory Model (ACM Implementation)
 
 Each skill externalizes what normally only lives inside a single model session — the goal, the destination, the decisions, the arc. Together they form a persistent memory layer that no model reset can erase.
+
+This memory structure is formally specified by the [Agent Context Memory (ACM)](https://github.com/ntholm86/agent-context-memory) standard. ACM defines three tiers organized by trust level: Intent (`destination.md`, principal-authored), Trace (`audit-trail.md`, `retrospect.md`, agent append-only), and Evidence (harness-captured session records). This suite implements the Intent and Trace tiers; the Evidence tier requires a separate harness.
 
 The files (`.trail/audit-trail.md`, `.trail/destination.md`, `.trail/retrospect.md`) provide the literal storage, but the interaction of the skills with those files creates **contextual awareness**.
 
