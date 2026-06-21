@@ -7769,3 +7769,57 @@ Executed via multi_replace_string_in_file in a single batch:
 **Verification:** Final scan shows no .trail/ in prescriptive files. Only historical CHANGELOG.md and session files retain original references.
 
 **Blind spot:** The skills suite is a local install — this rename only affects this machine. Other users with the skills installed will need to update their installs.
+
+---
+
+## 2026-06-21 -- acm-scope-stop-conditions-propagated
+
+**Slug:** acm-scope-stop-conditions-propagated
+**Files touched:** improve/SKILL.md, retrospect/SKILL.md
+**Provenance:** ACM SPEC.md §4.2 stop conditions formalized today (agent-context-memory trail entry cm-scope-traversal-stop-conditions).
+
+### Ask
+
+Align improve/SKILL.md and retrospect/SKILL.md scope traversal instructions to the newly-formalized ACM §4.2 stop conditions.
+
+### Change
+
+Prior text (both files): "stop traversal at the filesystem root or when no .acm/ is found for two consecutive levels." The "two consecutive levels" rule was written before §4.2 was formalized and was inconsistent with the ai-steward implementation (4-level cap + filesystem root).
+
+New text: stop when any of: filesystem root reached; .acm-root marker file found (operator-declared ceiling, read that directory then stop); 4 levels traversed (implementation ceiling).
+
+### Why the old rule was wrong
+
+"No .acm/ for two consecutive levels" breaks if there's a gap in the hierarchy (e.g., a src/ subdirectory between the repo root and the workspace). It would silently stop traversal at a gap rather than continuing to the correct scope level. The .acm-root marker is explicit, operator-controlled, and deterministic.
+
+### Rule 22 compliance
+
+ACM §4.2 is a specification change. The skills suite is an ACM implementation. Rule: "any content change must propagate to lower-resolution surfaces." This trail entry is the propagation record.
+
+---
+
+## 2026-06-21 — gap: trail-skill missing ACM Mandate Gate enforcement
+
+- target: skills suite trail skill (SKILL.md)
+- agent: GitHub Copilot (Claude Sonnet 4.6)
+- skill: trail
+- outcome: gap noted, not yet fixed
+- delta: no code change — note only
+
+### Finding
+
+The trail skill does not enforce ACM §3 (Mandate Gate): it runs and writes to `audit-trail.md` even when no `destination.md` exists in the target repo.
+
+ai-steward enforces the gate structurally — SCAN returns `None` if `_load_scope_context()` finds no destination. The trail skill has no equivalent hard stop.
+
+Both tools write to the same `.acm/` evidence layer and are governed by the same destination. The asymmetry means a human-supervised session can produce a trail entry with no authorising mandate, which violates ACM §3.
+
+### What needs to change
+
+SKILL.md should add a pre-flight check: before appending to `audit-trail.md`, confirm `destination.md` exists at repo or workspace scope. If absent, prompt the operator to author one (or explicitly waive with a stated reason) before proceeding.
+
+This keeps the trail skill ACM-compliant as a first-class implementation, not just a convention-follower.
+
+### Deferred because
+
+Low urgency — the operator is always present in human-supervised sessions and provides the mandate implicitly through the request. The structural gap is real but the risk is low in practice. Fix when the skill suite is next revised.
