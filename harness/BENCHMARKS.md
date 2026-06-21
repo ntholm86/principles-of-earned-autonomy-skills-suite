@@ -52,7 +52,7 @@ Status legend:
 
 1. Pick a benchmark ID from the set above.
 2. Run it in a fresh session under the listed evaluator family.
-3. Append an audit entry to `.trail/audit-trail.md` with `outcome`, `delta`, and `session-file:`.
+3. Append an audit entry to `.acm/audit-trail.md` with `outcome`, `delta`, and `session-file:`.
 4. Update the matching cell in the Results Matrix above with a short anchor to the audit entry.
 5. If a benchmark reaches the replication rules and historical-era policy, mark its Status as **Replicated**.
 

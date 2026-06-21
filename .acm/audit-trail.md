@@ -7742,3 +7742,30 @@ Executed via multi_replace_string_in_file in a single batch:
 **Reflection:**
 - *Model claim:* The conceptual hierarchy is now correct: PEA (theory) → ACM (specification) → Skills Suite (implementation). The suite was the first to instantiate this pattern; ACM is now the formal definition of that pattern.
 - *Blind spot:* The Zenodo isImplementationOf uses a GitHub URL, not a DOI. Will need updating once ACM's Zenodo deposit completes.
+
+---
+
+## 2026-06-21 — skills-suite-trail-to-acm-rename
+
+**Ask:** Rename .trail/ to .acm/ in the skills suite at C:\Users\admin\.copilot\skills.
+
+**Examination:** Skills suite had .trail/ folder and many references across active documentation. Historical files (CHANGELOG, audit-trail, session transcripts) document what the folder was called at the time — leave those as-is.
+
+**Lenses applied:**
+- *Historical preservation:* CHANGELOG.md, audit-trail.md, session files are historical record — references left unchanged
+- *Prescriptive documentation:* SKILL.md files, README, QUICKSTART, INSTALLING, POSITION, BENCHMARKS are active instructions — updated to .acm/
+
+**Decision:** [!DECISION] Rename folder and update prescriptive files only. Leave historical files unchanged.
+
+**Action:**
+1. Renamed .trail/ to .acm/
+2. Updated trail/SKILL.md (line 30 example)
+3. Updated .acm/destination.md (prescriptive descriptions)
+4. Updated .acm/ITERATION-COUNT.md (evidence location)
+5. Updated .acm/transcripts/README.md
+6. Updated harness/BENCHMARKS.md
+7. Updated README.md, QUICKSTART.md, INSTALLING.md, POSITION.md
+
+**Verification:** Final scan shows no .trail/ in prescriptive files. Only historical CHANGELOG.md and session files retain original references.
+
+**Blind spot:** The skills suite is a local install — this rename only affects this machine. Other users with the skills installed will need to update their installs.

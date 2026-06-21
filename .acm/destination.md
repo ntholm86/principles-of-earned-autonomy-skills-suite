@@ -95,14 +95,14 @@ These two goals constrain each other. A skill that works conversationally but ca
 A reasoning layer that can't carry anything across runs is not a reasoning layer. The protocol the skills define must require all three, while leaving the implementation open — different harnesses will satisfy them in different ways, and some of those ways will be faster or more structured than what this skillset uses.
 
 **Memory** — *what happened.* The full record of decisions and reasoning behind it, actions, and reflections from prior runs, kept in a form that can be re-read. Without it, every run starts from zero and the agent cannot be held to anything it concluded yesterday.
-- *How the skillset solves it:* `.trail/audit-trail.md` — append-only, human-readable, source of truth. `.trail/history.md` is an auto-generated digest. The Trail skill enforces the structure.
+- *How the skillset solves it:* `.acm/audit-trail.md` — append-only, human-readable, source of truth. `.acm/history.md` is an auto-generated digest. The Trail skill enforces the structure.
 
 **Learning** — *what to do differently next time.* Some signal extracted from prior runs that changes future behavior. This is not the same as memory; memory is the substrate, learning is the update.
 - *How the skillset solves it:* Indirectly and weakly. There is no stored strategy artifact. "Learning" here means a future agent re-reads the trail and reasons over it. This is honest but slow.
 - *What done looks like:* The agent begins a run with a different approach than it would have used on run 1 — not because the operator told it to, but because it read what didn't work and adjusted. Concretely: a run produces a `[!REALIZATION]` or `[!REVERSAL]`; a later run in a fresh session, on the same target, shows evidence it acted on that prior finding rather than rediscovering it. That is learning. The skillset does not currently produce this reliably. This is the most underdeveloped of the three and the most important gap for a future loop run to target.
 
 **Meta-cognition** — *what the target is becoming, and is the loop's attention in the right place.* Reasoning about the work itself: the arc, the recurring patterns, whether the questions being asked are the right questions. Without this, an agent will keep solving local problems while the structural problem drifts.
-- *How the skillset solves it:* `.trail/retrospect.md` — the current synthesized orientation, written by Retrospect after reading the arc, read by Improve at step 1 before each run. The Retrospect skill is the mechanism that produces it. This `destination.md` sits alongside it: the destination is what the operator/team holds and does not change without an explicit decision; retrospect.md is what the agent derives from the trail and is rewritten each Retrospect run.
+- *How the skillset solves it:* `.acm/retrospect.md` — the current synthesized orientation, written by Retrospect after reading the arc, read by Improve at step 1 before each run. The Retrospect skill is the mechanism that produces it. This `destination.md` sits alongside it: the destination is what the operator/team holds and does not change without an explicit decision; retrospect.md is what the agent derives from the trail and is rewritten each Retrospect run.
 
 ## The hard problem this repo exists to chip away at
 

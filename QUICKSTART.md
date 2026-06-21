@@ -1,4 +1,4 @@
-# 10-Minute First Successful Run
+﻿# 10-Minute First Successful Run
 
 A minimal, copy-pasteable path to one real run that produces real evidence. Aim is one usable trail entry in under ten minutes.
 
@@ -24,12 +24,12 @@ Or copy the six skill folders into `<your-repo>/.copilot/skills/`: `intent/`, `d
 In your target repo, ask the agent:
 
 ```
-/destination capture the destination for this repo and write .trail/destination.md
+/destination capture the destination for this repo and write .acm/destination.md
 ```
 
-When asked, answer briefly. One or two sentences per question is enough. The output is `.trail/destination.md`.
+When asked, answer briefly. One or two sentences per question is enough. The output is `.acm/destination.md`.
 
-Done when: `.trail/destination.md` exists and you would not rewrite it from scratch tomorrow.
+Done when: `.acm/destination.md` exists and you would not rewrite it from scratch tomorrow.
 
 ## Run one improve iteration (4 minutes)
 
@@ -46,14 +46,14 @@ Examples:
 
 The agent will narrate intent, predict an outcome before acting, make one change, verify it, and append an entry.
 
-Done when: `.trail/audit-trail.md` has a new entry with `outcome:` and `delta:`.
+Done when: `.acm/audit-trail.md` has a new entry with `outcome:` and `delta:`.
 
 ## Confirm evidence exists (1 minute)
 
 Open these and skim:
 
-1. `.trail/destination.md` — destination is captured.
-2. `.trail/audit-trail.md` — new entry has interpretation, decision, action, and outcome.
+1. `.acm/destination.md` â€” destination is captured.
+2. `.acm/audit-trail.md` â€” new entry has interpretation, decision, action, and outcome.
 3. The change itself in the working tree.
 
 If all three are present, the loop ran successfully end to end.
@@ -67,10 +67,10 @@ bash harness/tools/install-hooks.sh     # macOS / Linux
 pwsh harness/tools/install-hooks.ps1    # Windows
 ```
 
-This rejects commits that touch substantive files without a corresponding `.trail/audit-trail.md` entry.
+This rejects commits that touch substantive files without a corresponding `.acm/audit-trail.md` entry.
 
 ## If something went wrong
 
-1. No `.trail/destination.md` created → re-run `/destination` and answer at least the first question.
-2. No audit entry appended → re-run `/improve` with a smaller, more concrete task.
-3. Agent did not narrate intent → ask it to apply `/intent` to your prompt first, then retry.
+1. No `.acm/destination.md` created â†’ re-run `/destination` and answer at least the first question.
+2. No audit entry appended â†’ re-run `/improve` with a smaller, more concrete task.
+3. Agent did not narrate intent â†’ ask it to apply `/intent` to your prompt first, then retry.

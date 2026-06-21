@@ -62,11 +62,11 @@ External targets excluded:
 
 ### Era 4: v3 audit-trail (individual commits)
 
-**Evidence:** 134 entries in `.trail/audit-trail.md`, each committed individually. The audit trail format records interpretation, examination, decisions, actions, and reflection per session. Two entries target vectorium (external) — the remaining 132 are self-targeted.
+**Evidence:** 134 entries in `.acm/audit-trail.md`, each committed individually. The audit trail format records interpretation, examination, decisions, actions, and reflection per session. Two entries target vectorium (external) — the remaining 132 are self-targeted.
 
 The v3 era also introduced:
 - `verify.py` — a 14-check mechanical verifier that enforces trail integrity at every commit
-- Session transcripts in `.trail/sessions/` — verbatim or reconstructed conversation records
+- Session transcripts in `.acm/sessions/` — verbatim or reconstructed conversation records
 - `learning.md` — derived extract of all `[!REALIZATION]` and `[!REVERSAL]` markers
 
 ---
