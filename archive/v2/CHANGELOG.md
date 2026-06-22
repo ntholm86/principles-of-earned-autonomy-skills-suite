@@ -587,7 +587,7 @@ Root cause for the gap: P3 originally treated the measurement scheme as fixed in
 
 ### Fixed
 
-- **`GENBA.md`:** Repaired legacy mojibake in Run 11 (`â€”`, `â†’`, `æ”¹å–„`) so historical entries are human-readable and machine-searchable.
+- **`GENBA.md`:** Repaired legacy mojibake in Run 11 (`—`, `→`, `改善`) so historical entries are human-readable and machine-searchable.
 - **`SCORECARD.md`:** Corrected Run 14 score row from claimed `9.4 (+0.4)` to validated `9.1 (+0.1)` per Run 15 correction audit.
 
 ### Changed
@@ -599,7 +599,7 @@ Root cause for the gap: P3 originally treated the measurement scheme as fixed in
 ### Fixed
 
 - **`kata` skill (CRITICAL):** Phase 4 CHRONICLE contained an unresolved placeholder (`//... existing code ...`) where the GENBA entry-format template should live. The chronicling instruction was unfollowable. Restored the full GENBA + SCORECARD entry templates.
-- **`kaikaku` skill (CRITICAL):** Entire file was UTF-8 mojibake — `(改革)` rendered as `(æ”¹é©)` (with embedded control char `C2 9D`), and every em-dash rendered as `â€"`. Rewrote file with correct UTF-8 byte sequences. 14 prior runs missed this defect; surfaced by Run 15 fresh-read.
+- **`kaikaku` skill (CRITICAL):** Entire file was UTF-8 mojibake — `(改革)` rendered as `(改é©)` (with embedded control char `C2 9D`), and every em-dash rendered as `â€"`. Rewrote file with correct UTF-8 byte sequences. 14 prior runs missed this defect; surfaced by Run 15 fresh-read.
 
 ### Changed
 

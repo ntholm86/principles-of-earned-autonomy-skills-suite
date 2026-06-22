@@ -1,575 +1,575 @@
 # History
 
 Auto-generated from `.acm/audit-trail.md` by the `record.py history --write` command in the autonomous-agent-skills install.
-Do not edit by hand â€” re-run the command to refresh.
+Do not edit by hand — re-run the command to refresh.
 
 | # | Date | Slug | Outcome | Delta |
 |---|------|------|---------|-------|
-| â–¸ 1 | 2026-04-23 | v3 redesign | redesign executed; v3 structure shipped on branch `v3-redesign` | v2.4.1 → v3.0.0 (not yet merged to main, not yet tagged) |
-| â–¸ 2 | 2026-04-23 | v3 self-target and v2 retirement | minor changes (drift markers + retirement notice); no structural changes | same author/session as the v3-redesign entry above; chain not yet started |
-| â–¸ 3 | 2026-04-23 | v3-clean-root-waste | v2 artifacts removed from live tree; chain reset | v3-redesign branch |
-| â–¸ 4 | 2026-04-23 | v3-citation-update | citation and release workflow updated | CITATION.cff and .github/workflows/release.yml aligned with v3 |
-| â–¸ 5 | 2026-04-23 | v3-principles-copy-repair | principles copy repaired and verifier hardened | PRINCIPLES.md de-duplicated; tools/verify.py now rejects duplicate H1 docs and broken local markdown links |
-| â–¸ 6 | 2026-04-23 | observable-loops-decision | design decision recorded; addendum spec drafted | OBSERVABLE-LOOPS.md added (v0.1 draft); no skill behaviour or runtime change |
-| â–¸ 7 | 2026-04-23 | v3 evaluation | identified structural gaps in tooling (verify.py) and probe skill; changes proposed | none yet (evaluation phase complete) |
-| â–¸ 8 | 2026-04-23 | v3-changelog-splice-repair | CHANGELOG.md de-spliced; 626 lines of v2 body removed from live file | CHANGELOG.md 651 lines → 25 lines |
-| Â· 9 | 2026-04-24 | v3-silence-1 | silence — nothing actionable found; convergence chain peg 1/3 | none |
-| Â· 10 | 2026-04-24 | v3-silence-2 | silence — nothing actionable found; convergence chain peg 2/3 | none |
-| â–¸ 11 | 2026-04-24 | v3-verifier-scope-repair | actionable finding fixed — verifier mojibake scan scope aligned with stated live-tree contract; convergence chain reset | tools/verify.py (`skip_dirs` changed from `{archive,.git,.github,tools}` to `{archive,.git}`) |
-| â–¸ 12 | 2026-04-24 | intent-done-condition-canonicalized | intent and done-condition contract added to live docs; convergence interpretation clarified | README.md and trail/README.md updated |
-| â–¸ 13 | 2026-04-24 | convergence-scope-protocol-adopted | convergence scope protocol added and integrated into Grasp inputs; verifier now requires protocol file | CONVERGENCE_SCOPE_PROTOCOL.md added; README.md, trail/README.md, improve/SKILL.md, tools/verify.py updated |
-| â–¸ 14 | 2026-04-24 | v3-baseline-lock | baseline locked | trail/log.md appended only |
-| Â· 15 | 2026-04-24 | v3-silence-1 | silence — nothing actionable found; skills convergence peg 1/3 under convergence scope protocol | trail/log.md appended only |
-| Â· 16 | 2026-04-24 | v3-silence-2 | silence — nothing actionable found; skills convergence peg 2/3 under convergence scope protocol | trail/log.md appended only |
-| Â· 17 | 2026-04-24 | v3-silence-3 | silence — nothing actionable found; skills convergence peg 3/3 under convergence scope protocol | trail/log.md appended only |
-| Â· 18 | 2026-04-24 | v3-coherence-silence | silence — no cross-layer contradictions found; coherence check passed under convergence scope protocol | trail/log.md appended only |
-| â–¸ 19 | 2026-04-24 | trail/README.md drift fix | trail/README.md rewritten to match actual v3 structure; v3.0.1 cut | v3.0.0 -> v3.0.1 |
-| â–¸ 20 | 2026-04-24 | v3.0.1 chain status declared | chain status made explicit; no artifact change | trail/log.md appended only |
-| â–¸ 21 | 2026-04-24 | trail-README-splice-repair | actionable finding fixed — trail/README.md had v2 splice tail (lines 45-70); fully removed; convergence chain resets to 0/3 | trail/README.md truncated from 70 lines to 44 lines; chain reset |
-| â–¸ 22 | 2026-04-24 | v3-peg2-openai-metadata-fix | actionable finding fixed — version metadata aligned with v3.0.1 tag; convergence chain reset | README.md, CHANGELOG.md, CITATION.cff |
-| Â· 23 | 2026-04-24 | v3-silence-1 | silence — nothing actionable found; skills convergence peg 1/3 | trail/log.md appended only |
-| Â· 24 | 2026-04-24 | v3-silence-2 | silence — nothing actionable found; skills convergence peg 2/3 | none |
-| Â· 25 | 2026-04-24 | v3-silence-3 | silence — nothing actionable found; skills convergence peg 3/3 | none |
-| Â· 26 | 2026-04-24 | cross-layer-coherence | silence — no contradiction found across all three layers; coherence check passes | none |
-| â–¸ 27 | 2026-04-28 | four-skill composable architecture | two new skills added (Intent, Trail); Improve and Probe refactored to delegate; README updated | v3.1.0 → v3.2.0 (live tree, not yet tagged) |
-| â–¸ 28 | 2026-04-29 | v3.3.0-history-and-install | history command added to record.py; INSTALLING.md created; README opening rewritten | v3.2.0 → v3.3.0 |
-| â–¸ 29 | 2026-04-30 | v3.3.2-trail-location-fix | trail SKILL.md location ambiguity fixed; v3.3.2 shipped | v3.3.1 -> v3.3.2 |
-| â–¸ 30 | 2026-04-30 | readme-human-scan-and-user-direction | README tightened for human scanning; user-set direction made explicit | README wording only; no behavior change |
-| â–¸ 31 | 2026-04-30 | verify-contract-and-trail-repair | verifier aligned with current repo contract; trail integrity restored | `tools/verify.py`, `improve/SKILL.md`, `CHANGELOG.md`, `trail/log.md`, `trail/history.md` |
-| â–¸ 32 | 2026-04-30 | trail-readme-skill-count | changed — corrected stale skill count in trail/README.md | trail/README.md "The two skills" → "The four skills" (intent, improve, probe, trail) |
-| â–¸ 33 | 2026-04-30 | readme-title-and-hook | changed — README title and opening paragraph rewritten for first impression | README.md title "Skills" → "Autonomous Development Skills Suite"; opening paragraph now leads with what it does, proof, and stopping condition |
-| â–¸ 34 | 2026-04-30 | readme-goal-section | changed — added "The goal" section to README.md | README.md gains explicit statement of operator intent and verification philosophy |
-| â–¸ 35 | 2026-04-30 | readme-stopped-to-converged | changed — "stopped" → "converged" in README opening paragraph | one word change; README opening now consistent with PRINCIPLES.md definition and Evidence section framing |
-| â–¸ 36 | 2026-04-30 | install-instructions-missing-tools | changed | added \	ools/\ to README.md and INSTALLING.md copy instructions |
-| â–¸ 37 | 2026-04-30 | relative-path-inconsistencies | changed | fixed broken link to format spec and invalid relative paths to record.py in documentation |
-| â–¸ 38 | 2026-04-30 | ghost-protocol-reference | changed | removed references to nonexistent CONVERGENCE_SCOPE_PROTOCOL.md from INSTALLING.md and improve/SKILL.md |
-| â–¸ 39 | 2026-04-30 | probe-unexplained-v2-jargon | one incremental change | replaced "(Tier 1)" jargon with an explanation readable without v2 knowledge |
-| â–¸ 40 | 2026-04-30 | remove-verify-from-export | one incremental change | moved verify.py out of the exportable tools/ config directory |
-| â–¸ 41 | 2026-04-30 | changelog-version-drift | one incremental change | added v3.6.1 entry to CHANGELOG.md; bumped version string in README.md |
-| â–¸ 42 | 2026-04-30 | indexed-marker-grep-path | one incremental change | fixed broken grep command path in indexed-marker recovery instructions |
-| â–¸ 43 | 2026-04-30 | trail-readme-v2-vocabulary | one incremental change | removed "kata skills" from H1 title — retired v2 vocabulary |
-| â–¸ 44 | 2026-04-30 | trail-readme-shiken-jargon | one incremental change | removed "(Shiken-style)" v2 jargon from probe skill description |
-| Â· 45 | 2026-04-30 | claude-silence-run-1 | silence | none — zero actionable findings |
-| Â· 46 | 2026-05-01 | claude-silence-run-2 | silence | none — zero actionable findings; second consecutive silence from this model family |
-| â–¸ 47 | 2026-05-01 | trail-dir-rename-to-dottrail | changed — structural fix; evidence trail moved from `trail/` to `.trail/` | v3.6.1 → v3.7.0 |
-| â–¸ 48 | 2026-05-01 | record-py-unicode-fix | changed — `record.py history` UnicodeEncodeError on Windows fixed; v3.7.1 | v3.7.0 → v3.7.1 |
-| â–¸ 49 | 2026-05-01 | trail-stale-paths-cleanup | changed — stale `trail/log.md` paths from v3.7.0 rename fixed; v3.7.2 | v3.7.1 → v3.7.2 |
-| â–¸ 50 | 2026-05-01 | trail-stale-paths-final | changed — remaining stale `trail/log.md` paths fixed in record.py and trail/SKILL.md; v3.7.3 | v3.7.2 → v3.7.3 |
-| â–¸ 51 | 2026-05-01 | changelog-v370-v373 | changed — CHANGELOG entries for v3.7.0–v3.7.3 written; README version updated to v3.7.3 | v3.7.3 (CHANGELOG + README only; no code change) |
-| â–¸ 52 | 2026-05-01 | stale-paths-zenodo-citation | changed — three stale paths / version mismatches fixed in .trail/README.md, .zenodo.json, CITATION.cff; v3.7.4 | v3.7.3 → v3.7.4 |
-| â–¸ 53 | 2026-05-01 | version-consistency-v374 | changed — CHANGELOG entry for v3.7.4 written; README and CITATION.cff updated to v3.7.4 | v3.7.4 (CHANGELOG + README + CITATION.cff only; no code change) |
-| â–¸ 54 | 2026-05-01 | reflect-step-hansei-rewrite | changed — `improve/SKILL.md` step 6 rewritten as two-part Hansei (per-iteration + conditional across-trail); `trail/SKILL.md` Reflection template updated to match | v3.7.4 → v3.8.0; improve 3.2.0 → 3.3.0; trail 1.5.0 → 1.6.0 |
-| â–¸ 55 | 2026-05-01 | fallback-reflection-bullet | changed — step 7 fallback bullet "Any reflection on the loop itself" replaced with target-anchored equivalent matching new step 6 | v3.8.0 (improve/SKILL.md only; no version bump warranted — v3.8.0 echo cleanup, not new content) |
-| â–¸ 56 | 2026-05-01 | readme-reflection-echo | changed — updated README.md's description of the 'Reflect' step to reflect v3.8.0's target-anchored Hansei instead of old loop-convergence wording | none (documentation cleanup echo) |
-| â–¸ 57 | 2026-05-01 | stub-reflection-scaffold | changed — `tools/record.py` STUB_TEMPLATE `### Reflection` section upgraded from bare `TODO` to structured three-prompt scaffold matching step 6a + conditional 6b | none (tooling quality improvement, no version bump) |
-| Â· 58 | 2026-05-01 | echo-sweep-silence | silence — full repo sweep found no remaining v3.8.0 echo in any active instruction file | none |
-| â–¸ 59 | 2026-05-01 | zenodo-description-update | changed — updated .zenodo.json description to reflect the full six-step loop for Improve (Observe, Examine, Challenge, Decide, Act, Reflect) instead of the outdated summary. | none |
-| â–¸ 60 | 2026-05-01 | tagline-step-names | changed — updated SKILL.md subtitle and README table entry from the old 5-word formula ("Examine. Decide. Change. Verify. Record.") to the accurate 7-step sequence matching actual step headings | none (documentation alignment) |
-| â–¸ 61 | 2026-05-01 | frontmatter-description-fix | changed — rewritten `improve/SKILL.md` frontmatter `description` to use accurate step verbs; removed "verify, and record" tail and "change it" misname | none (no behaviour change, skill routing text updated) |
-| â–¸ 62 | 2026-05-01 | v381-patch-release | changed — cut v3.8.1 patch release; CHANGELOG, README version line, CITATION.cff all bumped from 3.8.0 → 3.8.1 | v3.8.1 |
-| Â· 63 | 2026-05-01 | silence-run-63 | silence — no actionable finding after full sweep of all active files | none |
-| â–¸ 64 | 2026-05-01 | feat-retrospect-skill | added Retrospect — new standalone arc-reflection skill (v1.0.0) | v3.8.1 → v3.9.0 |
-| â–¸ 65 | 2026-05-01 | feat-working-model | added `.trail/model.md` as the working model artifact — written by Retrospect, read by Improve | v3.9.0 → v3.9.1 |
-| â–¸ 66 | 2026-05-01 | docs-readme-retrospect.md-orientation | fixed stale README description — runs now start with retrospect.md, not the full trail | v3.9.1 (no version bump — docs fix only) |
-| â–¸ 67 | 2026-05-01 | retrospect.md-seed-evo-vision | created .trail/retrospect.md — first retrospect.md for this repo, capturing the evo connection and constraints that must hold before integration | no version bump — retrospect.md is a new artifact, not a code change |
-| â–¸ 68 | 2026-05-01 | split-vision-from-retrospect.md | introduced `.trail/vision.md` as a sibling to `.trail/retrospect.md`; vision is operator-held and never written by any skill, retrospect.md is Retrospect-derived and rewritten each run | suite v3.9.1 → v3.10.0; improve 3.3.0 → 3.4.0; retrospect 1.1.0 → 1.2.0; trail 1.6.0 → 1.7.0 |
-| â–¸ 69 | 2026-05-01 | Vision-skill-added | added Vision as the sixth skill — on-demand interview mechanism that surfaces the agent's guesses about where the operator is heading and turns them into questions the operator can confirm or correct | suite v3.10.0 → v3.11.0; new `vision/SKILL.md` v1.0.0 |
-| â–¸ 70 | 2026-05-01 | Vision-on-operator-vision-intent | vision.md gained a top-section research framing — "architecture of trustworthy delegation" — drafted from intent rather than operator's words, approved before write | .trail/vision.md +14 lines (new "What this work is, beyond a skillset" section) |
-| â–¸ 71 | 2026-05-01 | position-md-v0-1-drafted | POSITION.md v0.1 drafted and committed — first standalone position document for the repo, framing "operation-time trustworthy delegation" as the bet, with explicit falsification criteria and adjacent-work mapping | POSITION.md +new file (~2200 words) |
-| â–¸ 72 | 2026-05-02 | Vision-skill-validated-on-foreign-target | Vision exercised cold on vectorium — no .trail/, no vision.md, no priming. All three hunches confirmed. Vision 1 surfaced "lost interest after beating the benchmark" — not written anywhere in vectorium, inferred from commit arc alone. | c:\git\vectorium\.trail\log.md created (full run record lives there) |
-| â–¸ 73 | 2026-05-02 | session-v3-16-0-retrospect-first-run | v3.16.0 -- Vision validated on 3 foreign targets; all writing skills gain .trail/ directory creation; Retrospect gains vision-first read order; first real Retrospect arc-read; retrospect.md updated from operator-seeded to evidence-derived | v3.15.0 -> v3.16.0 |
-| â–¸ 74 | 2026-05-02 | self-run-resume-after-v3-16-0 | retrospect.md refreshed after manifesto consistency sweep; next self-tests narrowed to Retrospect second-pass, occasion-independence experiment, and external proof |  |
-| â–¸ 75 | 2026-05-02 | retrospect-second-real-pass-after-v3-16-0 | second real Retrospect pass completed; retrospect.md updated; first-pass claims remained compatible while integrating new evidence from manifesto consistency sweep |  |
-| â–¸ 76 | 2026-05-02 | occasion-independence-experiment-pass-1 | PASS (first data point) — agent-initiated direction question produced one structural change without operator topic injection |  |
-| â–¸ 77 | 2026-05-02 | trail-v1-10-0-sessions-mandatory | fixed — sessions/ writing is now mandatory with explicit format | trail/SKILL.md v1.9.0 → v1.10.0 |
-| â–¸ 78 | 2026-05-02 | Vision: vision-competitive-framing | vision.md updated — competitive framing, adoption success condition, and learning falsification condition added | .trail/vision.md updated in place |
-| â–¸ 79 | 2026-05-02 | retro-on-updated-vision | retrospect.md updated — arc read against substantially updated vision.md (recognition claim, two-phase architecture, adoption success, learning falsification); six claims formed; prior retrospect.md replaced | .trail/retrospect.md replaced |
-| â–¸ 80 | 2026-05-02 | external-proof-vectorium-improve-run | Improve run completed end-to-end on a non-self-targeting codebase. One correctness fix shipped (StateMachine test import path). Trail entry written to vectorium's .trail/log.md. Committed to vectorium repo (33c34aa). | vectorium StateMachine.test.ts import corrected; vectorium .trail/log.md updated |
-| â–¸ 81 | 2026-05-02 | external-proof-vectorium-retrospect | First retrospect.md written for vectorium. Three-skill arc (Vision + Improve + Retrospect) completed on a real non-self-targeting codebase. | vectorium `.trail/retrospect.md` created; `.trail/sessions/2026-05-02-retrospect-after-Vision-and-improve.md` created; committed 74f65f1 |
-| â–¸ 82 | 2026-05-02 | retrospect-vectorium-arc-evidence-2026-05-02 | retrospect.md updated — full arc read incorporating vectorium external-proof arc (5 trail entries, 2 sessions); first clear cross-session learning case identified; retrospect.md claims updated on 4 of 6 items | .trail/retrospect.md replaced |
-| â–¸ 83 | 2026-05-03 | retrospect.md-claim6-operator-framing-correction | changed — retrospect.md claim 6 corrected; model-introduced "operator != author" framing removed; replaced with operator-confirmed intent: a codebase the operator did not build | .trail/retrospect.md updated (claim 6 + next-runs item 1 + loop-effectiveness note) |
-| â–¸ 84 | 2026-05-03 | verify-session-file-enforcement | changed — verify.py check 8 added; session-file: references now mechanically enforced | v3.17.1 -> v3.17.2; verify.py +check_session_files(); CHANGELOG, README, CITATION.cff bumped |
-| â–¸ 85 | 2026-05-04 | rename-hunch-compass-plain-english-retrospect | TODO | TODO |
-| â–¸ 86 | 2026-05-05 | rationalization-loop threat named; five mitigations queued | structural threat to the proof claim named explicitly; five mitigations approved by operator; constraint added (`"keep the purpose of the skills crystal clear`"); no skill changes made in this conversation — implementation deferred to a deliberate Improve run |  |
-| â–¸ 87 | 2026-05-05 | rationalization-loop-mitigations | Implemented Mitigations 1, 2, and 5 for the rationalization loop threat across Improve, Trail, and Retrospect. | Improve enforces pre-commit prediction; Trail requires prediction field and notes reversal density; Retrospect checks outcome anchoring and reversal density. |
-| â–¸ 88 | 2026-05-05 | update-record-py-and-design-decision | tools/record.py generated stub updated to enforce 'Prediction' and 'Action and Outcome' structures, effectively scaffolding mitigation #1 into ongoing usages. Design decision reviewed. | tools/record.py updated STUB_TEMPLATE; prepended session recording. |
-| â–¸ 89 | 2026-05-05 | integrate-writer-split-and-adversarial-audit | Counter-design implemented. Mitigation #3 and #4 woven into improve, 	rail, and | Modified SKILL.md files for Retrospect (2b. Adversarial Audit Mode), Improve (7. Writer split protocol) and Trail (Fidelity tagging). |
-| â–¸ 90 | 2026-05-05 | update-readme-mitigations-list | Added Mitigations #3 and #4 to the README's Rationalization Loop section. | Modified README.md to list exactly 5 structural mitigations. |
-| â–¸ 91 | 2026-05-05 | improve-record-encoding-resilience | Added utf-8 error fallback logic to python reading capabilities preventing crash-outs. | Modified 	ools/record.py: Built _safe_read_log() and removed direct LOG.read_text(encoding="utf-8") calls. |
-| â–¸ 92 | 2026-05-05 | retrospect-mitigations-arc | Synthesized recent mitigation additions into retrospect.md and identified unbroken run history as suspect under new rules. | Wrote .trail/retrospect.md. |
-| â–¸ 93 | 2026-05-05 | retrospect-adversarial-audit | Adversarial Audit caught a blatant trail confabulation where an agent proposed changes, declared no delta, yet recorded executing them within the same entry. | Appended retrospective findings to .trail/retrospect.md. |
-| â–¸ 94 | 2026-05-05 | probe-arf-prediction | FAIL. The agent complies with operator commands to skip the prediction block, creating post-hoc trails on demand rather than defending the protocol. | None. Probe results recorded. |
-| â–¸ 95 | 2026-05-05 | improve-learning-gap | Addressed the suite's 'Learning' gap by explicitly codifying 'Active operational rules' into retrospect.md and mandating their adoption in improve/SKILL.md. | Modified retrospect/SKILL.md and improve/SKILL.md. |
-| â–¸ 96 | 2026-05-11 | improve-intent-composition | Added Vision/Retrospect paragraph to intent/SKILL.md composition section; repaired pre-existing encoding corruption in log.md (one \x97 byte -> UTF-8 em-dash). | intent/SKILL.md composition section now complete; .trail/log.md UnicodeDecodeError resolved. |
-| â–¸ 97 | 2026-05-11 | improve-trail-integrity | Repaired all 13 trail integrity failures reported by verify.py. | Replaced mojibake in log.md and retrospect.md; created 7 placeholder session files. |
-| â–¸ 98 | 2026-05-11 | improve-probe-memory-model | Added Memory Model role annotation to probe/SKILL.md. | probe/SKILL.md now consistent with other skills. |
-| â–¸ 99 | 2026-05-11 | improve-intent-remove-the-test | Removed operationally inert "The Test" section from intent/SKILL.md; folded the useful observer-test sentence into the Narrate step. | intent/SKILL.md one section shorter, observer test co-located with the step it tests. |
-| â–¸ 100 | 2026-05-11 | retrospect-run-2 | TODO | TODO |
-| â–¸ 101 | 2026-05-11 | improve-step6b-trigger-observability | Restructured improve/SKILL.md step 6b so across-trail trigger evaluation is observable per Principle 2 — every entry must record one evidence-bearing line per trigger; bare "N/A" is no longer permitted. Updated tools/record.py STUB_TEMPLATE to match. | improve/SKILL.md 3.7.0 → 3.8.0; tools/record.py STUB_TEMPLATE replaces single conditional macro-Hansei field with mandatory four-trigger evaluation block plus conditional macro-Hansei subsection. |
-| â–¸ 102 | 2026-05-11 | improve-trail-template-align | Updated trail/SKILL.md Reflection template to match improve v3.8.0 contract — trigger evaluation is mandatory per entry; macro-Hansei is conditional on triggers firing. Closes the documentation tail named as the prior entry's blind spot. | trail/SKILL.md 1.11.0 → 1.12.0; Reflection template rewritten to specify mandatory four-trigger evaluation and conditional macro-Hansei. |
-| â–¸ 103 | 2026-05-11 | improve-verify-trigger-contract | Added `check_trigger_evaluation()` to verify.py — enforces the v3.8.0 reflection contract from the contract slug onward. Two prior contract-era entries pass; pre-existing pre-contract failure unchanged. Breaks the structural-deferral chain by acting on the candidate named in the prior two entries. | verify.py grows one check (~70 LOC) plus a small `_parse_entries` helper extracted from `check_session_files` for reuse. |
-| â–¸ 104 | 2026-05-11 | improve-learning-marker-access | Added explicit [!REALIZATION]/[!REVERSAL] marker-surfacing guidance to improve step 1's log.md reading instruction; these markers are now named as the efficient access path to learning residue when the log is long. | improve/SKILL.md 3.8.0 → 3.8.1; one sentence added to step 1 log.md bullet. |
-| â–¸ 105 | 2026-05-11 | improve-learning-artifact | Added `record.py learning [--write]` subcommand and `.trail/learning.md` derived artifact — a compact chronological extract of every `[!REALIZATION]` and `[!REVERSAL]` marker. improve step 1 now reads it before log.md; trail/SKILL.md documents it. First operator-directed run targeting the learning gap rather than the safe pre-committed candidate. | tools/record.py +1 subcommand (~80 LOC); improve/SKILL.md 3.8.1 → 3.8.2 step 1 reads learning.md before log.md; trail/SKILL.md 1.12.0 → 1.13.0 file map adds learning.md; new file .trail/learning.md (74 markers from 104 entries; 9.5% the size of log.md). |
-| â–¸ 106 | 2026-05-11 | trail-derived-artifact-freshness | Trail now structurally owns derived-artifact freshness. The commit-step block in trail/SKILL.md mandates regeneration of both `history.md` and `learning.md` as part of every Trail commit; the multi-iteration block already required history.md regeneration but contradictory "on-demand" prose elsewhere has been reconciled. learning.md staleness — flagged as the prior entry's pre-committed candidate — is closed at the spec level. | trail/SKILL.md 1.13.0 → 1.14.0; commit-step block, file-map paragraph, and multi-iteration sequence updated. tools/record.py unchanged (the `learning --write` subcommand built in iteration 5 already exists). improve/SKILL.md unchanged — Trail owns this responsibility, not Improve. |
-| â–¸ 107 | 2026-05-11 | improve-marker-integrity | changed — MARKER regex broadened; staleness check added; check_session_files deduplicated | tools/record.py (MARKER regex + .search()), verify.py (check 10: freshness, deduplication) |
-| â–¸ 108 | 2026-05-11 | retrospect-after-marker-integrity | changed — retrospect.md fully replaced with arc-claims for entries 63–106 | .trail/retrospect.md (full rewrite) |
-| â–¸ 109 | 2026-05-11 | improve-offer-next-moves | changed — improve gains step 6c, trail entry template gains "Candidate next moves" subsection | improve/SKILL.md (v3.8.2 → 3.9.0, new step 6c), trail/SKILL.md (v1.14.0 → 1.15.0, template addition), tools/record.py (stub template addition) |
-| â–¸ 110 | 2026-05-11 | improve-reversal-honesty | changed — `[!REVERSAL]` definition tightened to explicitly cover within-iteration backouts; step 5 now prompts for the marker; .gitignore added | trail/SKILL.md (v1.15.0 → 1.15.1, definition + example), improve/SKILL.md (v3.9.0 → 3.9.1, step 5 prompt), .gitignore (new), __pycache__/verify.cpython-313.pyc (untracked) |
-| â–¸ 111 | 2026-05-11 | audit-reversal-density-and-frame-vision-gap | changed — audit performed; retrospect's "2:118" claim partially refuted; vision-gap framed as operator question | no code/spec changes — this entry is the artifact (audit findings + framed question) |
-| â–¸ 112 | 2026-05-11 | probe-operator-gate-reasoning | PASS. The agent correctly interpreted a Candidate Next Moves suggestion from a prior trail entry as a suggestion, not a command, demonstrating reasoning over pattern-matching. | n/a |
-| â–¸ 113 | 2026-05-12 | improve-retrospect-freshness-guard | Resolved the pre-existing missing session-file reference for retrospect-run-2 and added a Retrospect freshness guard that requires regenerating and checking history/learning artifacts before arc-claims. | retrospect/SKILL.md 1.6.0 -> 1.7.0; added .trail/sessions/2026-05-11-retrospect-run-2.md and .trail/sessions/2026-05-12-improve-retrospect-freshness-guard.md. |
-| â–¸ 114 | 2026-05-12 | retrospect-freshness-simulation | Demonstrated stale-artifact detection and recovery path for the new Retrospect freshness guard by forcing stale mtimes, observing verify failure, running guard commands, and restoring verify to OK. | no source files changed; evidence-only run recorded in trail with regenerated history/learning artifacts. |
-| â–¸ 115 | 2026-05-12 | improve-retrospect-freshness-checklist | Added an executable freshness checklist and a minimal filled evidence example to retrospect/SKILL.md so the freshness guard can be applied consistently in real runs. | retrospect/SKILL.md 1.7.0 -> 1.8.0; added checklist and example under step 1b. |
-| â–¸ 116 | 2026-05-12 | distribution-enforcement-discoverability | Closed three of four competitive gaps - enforcement (CI + pre-commit hook), distribution (one-line installers), discoverability (README subtitle + topic plan). Voice consistency (#4) declared sufficient without edit. | added .github/workflows/verify.yml, tools/hooks/pre-commit, tools/install-hooks.{sh,ps1}, install.{sh,ps1}; updated README.md and INSTALLING.md. |
-| â–¸ 117 | 2026-05-12 | docs-changelog-for-v3.18.0 | Added release notes for v3.18.0 to CHANGELOG.md in preparation for release workflow run. | CHANGELOG.md updated with v3.18.0 entry. |
-| â–¸ 118 | 2026-05-12 | cross-repo-positioning-alignment | Cross-repo naming and category framing aligned so manifesto and implementation now present one coherent PEA story. | Updated skills README/CITATION/.zenodo, updated manifesto README implementation link, and updated skills git origin URL to the renamed repository path. |
-| â–¸ 119 | 2026-05-13 | trail-file-rename-audit-trail | Renamed .trail/log.md → .trail/audit-trail.md across the spec surface; v3.19.0. | trail/SKILL.md 1.16.0 → 1.17.0; suite v3.18.0 → v3.19.0; 12 spec files updated; .trail/log.md → .trail/audit-trail.md (git mv); derived artifacts regenerated; two stale session-file path tokens updated to mirror the rename; one CHANGELOG link retargeted. |
-| â–¸ 120 | 2026-05-13 | sync-principles-from-manifesto | Synced PRINCIPLES.md from manifesto commit 8aadb43 (P2 multi-resolution requirement dropped). | PRINCIPLES.md updated; relative links rewritten to canonical GitHub URLs per existing copy convention. |
-| â–¸ 121 | 2026-05-22 | vision-sourced-inference-reframe | vision/SKILL.md updated; Step 2 reframed from "Form hunches" to "Form sourced inferences"; evidence citation requirement tightened; structural tension named with safeguard. | vision/SKILL.md 1.3.0 → 1.4.0 |
-| â–¸ 122 | 2026-05-23 | harness-boundary-soften-and-benchmark-matrix | trail/SKILL.md 1.18.0 → 1.19.0 with harness-boundary mandate replaced by required reasoning capture plus explicit anti-rationalization discipline; .trail/vision.md canonical path drift fixed; verify.py SESSION_FIDELITY_CONTRACT_DATE annotated with historical-era policy; BENCHMARKS.md restructured around a Results Matrix v0.1 with explicit per-evaluator-family columns and Pending rows; QUICKSTART.md added and linked from README. | trail/SKILL.md, .trail/vision.md, verify.py, BENCHMARKS.md (rewrite), QUICKSTART.md (new), README.md, CHANGELOG.md |
-| â–¸ 123 | 2026-05-23 | verify-encoding-guard-required-files | check_required_markdown_docs now wraps path.read_text in try/except UnicodeDecodeError; non-UTF-8 REQUIRED_FILES produce one clean FAIL line from check_no_mojibake (#5) instead of a Python traceback. Docstring for check #5 updated to explicitly name REQUIRED_FILES. Smoke-tested with a literal 0xFF byte injected into BENCHMARKS.md. | verify.py |
-| â–¸ 124 | 2026-05-23 | retrospect-v3-22-0-arc | retrospect.md replaced with six arc-claims covering entries 109–123; five active operational rules updated (three carried, two new); three next-runs-should-test items named. | .trail/retrospect.md |
-| â–¸ 125 | 2026-05-23 | benchmark-b5-addition | One new benchmark added (B5). | BENCHMARKS.md, verify.py, benchmark-b5-target/main.py |
-| â–¸ 126 | 2026-05-23 | harness-dir-separation | Benchmarking and tooling infrastructure moved to harness/ to separate it from the core usable skills. | git mv BENCHMARKS.md harness/BENCHMARKS.md; git mv tools harness/tools; move benchmark-b5-target harness/; verify.py REQUIRED_FILES updated; README.md benchmark link updated; QUICKSTART.md hook install path updated; BENCHMARKS.md internal verify.py link fixed. |
-| â–¸ 127 | 2026-05-27 | add-de-ai-skill | Added new `de-ai/SKILL.md` to the suite, codifying twelve AI-prose tells as a diagnostic catalogue. | created `de-ai/SKILL.md`; added entry to `.trail/audit-trail.md`; regenerated `.trail/history.md` and `.trail/learning.md`. |
-| â–¸ 128 | 2026-05-28 | rename-vision-to-destination | Vision skill renamed to Destination across the suite; artifact `.trail/vision.md` renamed to `.trail/destination.md` with a legacy-fallback rule codified in `destination/SKILL.md` and propagated to every reader skill. | suite v3.22.0 → v4.0.0; `vision/SKILL.md` v1.4.0 → `destination/SKILL.md` v2.0.0 (BREAKING — skill rename + artifact filename change with fallback) |
-| â–¸ 129 | 2026-05-28 | fleet-rename-vision-to-destination | legacy `.trail/vision.md` migrated to `.trail/destination.md` across all 8 operator repos that carried it, with per-repo trail entries appended in each target's own audit trail. | no change to this repo's spec surface; this entry records the fleet effect of the prior `e3d1577` rename so the skills-suite trail reflects the work the suite caused downstream. |
-| â–¸ 130 | 2026-05-30 | Improve: name the protocol-vs-structural limitation in README |  |  |
-| â–¸ 131 | 2026-05-30 | protocol-vs-structural-limitation-readme [correction] | README Known Limitation section extended with one paragraph naming the protocol-vs-structural gap: skills are markdown interpreted by an LLM; no structural guarantee they are followed; harness-protocol + ai-steward are the structural enforcement layer. Framing: this suite is the behavioural scaffolding and the experiment that generated the requirement for that structural layer. | README.md +7 lines (one paragraph after the five-mitigation list, before the Reference section). |
-| â–¸ 132 | 2026-05-30 | protocol-vs-structural-limitation-readme [correction-2] | supplies missing trigger evaluation lines for prior correction entry. | audit-trail.md only — no artifact change. |
-| â–¸ 133 | 2026-05-29 | remove-de-ai-and-fix-destination-rename-drift | removed de-ai/ skill from the repo and fixed 10 stale vision/Vision references in .trail/destination.md that the Vision→Destination rename missed | de-ai/ deleted; .trail/destination.md updated (10 substitutions: Vision→Destination, vision.md→destination.md, log.md→audit-trail.md) |
-| â–¸ 134 | 2026-06-01 | relocate-v2-trail-to-dottrail | moved `archive/v2/TRAIL/` to `.trail/v2/` so the full evidence chain (runs 1–97, 123+ decisions, 65+ session transcripts) lives in the evidence folder rather than mixed with archived implementation code | `git mv archive/v2/TRAIL .trail/v2` — 8 top-level trail files + `sessions/` directory with all session transcripts relocated; `archive/v2/` retains only implementation code and docs |
-| â–¸ 135 | 2026-06-01 | iteration-count-provenance | verify.py restored to PASS (10 known failures eliminated); B5 benchmark recorded as Seed (Claude); derived artifacts regenerated. | verify.py — MACRO_HANSEI_HEADING regex extended to match H3 format; GRANDFATHERED_ENTRIES exception list added for 2 permanently-malformed correction entries. harness/BENCHMARKS.md — B5 row updated from Pending to Seed. .trail/history.md and .trail/learning.md regenerated. |
-| â–¸ 136 | 2026-06-02 | arf-formalization-honest-assessment | honest assessment of ARF formalization status against five criteria — three gaps identified; no artifacts changed this session entry. | none (analysis only) |
-| â–¸ 137 | 2026-06-02 | arf-tradeoff-dissolution-claim | ARF tradeoff-dissolution claim drafted and written into POSITION.md as new section "What ARF specifically claims" | POSITION.md — new section added naming ARF's rejection of the safety=restriction premise; Winograd and CheckList positioned as technique ancestors, not prior art |
-| â–¸ 138 | 2026-06-02 | ifa-named-paradigm-opponent | IFA (Intelligence From Architecture, Harcej 2026) added to POSITION.md adjacent fields section as the named representative of the restriction-first paradigm ARF rejects; cross-reference added in "What ARF specifically claims" | POSITION.md — new adjacent fields bullet for IFA; one sentence added to "What ARF specifically claims" naming IFA and pointing to adjacent fields |
-| â–¸ 139 | 2026-06-02 | arf-paradigm-framing-capability-ceiling | IFA-specific adjacent fields bullet replaced with paradigm-level "restriction-first AI governance" entry; ARF section updated with capability-ceiling argument and safety<->observable-reasoning framing | POSITION.md — (1) named IFA entry -> paradigm entry (IFA demoted to parenthetical); (2) ARF section — added capability-ceiling structural cost of restriction-first, added safety<->observable-reasoning conceptual pair |
-| â–¸ 140 | 2026-06-02 | arf-thesis-sentence | Thesis sentence added as blockquote at the opening of "What ARF specifically claims" | POSITION.md — one blockquote inserted between datestamp and existing prose in the ARF section |
-| â–¸ 141 | 2026-06-02 | arf-root-cause-premise | Root-cause premise paragraph added to "What ARF specifically claims" — destructive AI actions are reasoning failures (insufficient context/awareness), not authority failures; restriction addresses the wrong root cause | POSITION.md — one paragraph inserted before the capability-ceiling paragraph in the ARF section |
-| â–¸ 142 | 2026-06-02 | precision-correction-trust-instrument | "observable reasoning" replaced with "demonstrated reasoning quality" as the trust instrument across manifesto and pea-website; three-part chain made explicit; ARF named as measurement | manifesto/README.md — "The trust instrument is observable reasoning" -> full three-part chain; manifesto/PROBLEM.md — "*safety <-> observable reasoning*" -> "*safety <-> demonstrated reasoning quality*"; manifesto/PRINCIPLES.md — "Observable reasoning dissolves the tradeoff" -> "Demonstrated reasoning quality — enabled by adequate context, verified through observable reasoning — dissolves the tradeoff"; pea-website/index.html ARF card — "reasoning visibly enough" -> "reasoning genuinely — not just visibly" |
-| â–¸ 143 | 2026-06-02 | arf-scope-precision | ARF scope corrected from "measurement of demonstrated reasoning quality" (overclaim) to "measurement of the reasoning-fidelity component" — the part of demonstrated reasoning quality that ARF actually tests; 5 locations fixed across 3 repos | manifesto/README.md — "ARF is the measurement for that quality" -> "ARF measures the reasoning-fidelity component of that quality — whether the reasoning is genuinely situated rather than templated"; manifesto/PROBLEM.md — compound definition restructured to name Commander's Intent and ARF as separate contributors; POSITION.md adjacent-fields — *safety ↔ observable reasoning* -> *safety ↔ demonstrated reasoning quality*; POSITION.md ARF-body — "Transparency is the trust mechanism" -> "Observable reasoning is the verification mechanism; demonstrated reasoning quality is the trust instrument"; pea-website/index.html — removed "adequate context to understand what it was doing" from ARF's proof claim |
-| â–¸ 144 | 2026-06-02 | arf-normative-restriction-harms-reasoning | normative claim written into POSITION.md and PROBLEM.md — restriction is not merely the wrong instrument but actively counterproductive, because it degrades the experience space the agent reasons from, and a bounded experience space produces a bounded reasoner | POSITION.md root-cause-premise paragraph — one sentence appended after "you can only sandbox your way to an AI that is less capable"; PROBLEM.md restriction-first bullet — same sentence appended after "earns more trust, not more constraint" |
-| â–¸ 145 | 2026-06-02 | arf-restriction-narrows-reasoning-capacity | replaced overclaiming long sentence with precise three-sentence formulation; corrects a factual overclaim and sharpens the argument | POSITION.md and PROBLEM.md — "A bounded experience space produces a bounded reasoner: restriction reduces what the agent can perceive, reason about, and act on — degrading the very reasoning quality that is the only actual safeguard against harm — making restriction not merely ineffective but actively counterproductive." → "Reasoning quality produces safety without limiting capability. Restriction produces safety by limiting capability. Restriction narrows the reasoning capacity that produces safety." |
-| â–¸ 146 | 2026-06-02 | arf-restriction-decreases-reasoning-quality | one-word-pair swap in S3 — "narrows the reasoning capacity" → "decreases the reasoning quality"; closes the noun loop with S1 and sharpens the verb | POSITION.md and PROBLEM.md — "Restriction narrows the reasoning capacity that produces safety." → "Restriction decreases the reasoning quality that produces safety." |
-| â–¸ 147 | 2026-06-02 | arf-restriction-claim-variant-rejections | conversation only — no file changes; two proposed variants evaluated and rejected; stable endpoint confirmed | none |
-| â–¸ 148 | 2026-06-04 | retro-named-boundary-rule-from-manifesto-arc |  |  |
-| â–¸ 149 | 2026-06-04 | improve-destination-named-boundary-symmetric |  |  |
-| â–¸ 150 | 2026-06-21 | reposition-as-acm-implementation |  |  |
-| â–¸ 151 | 2026-06-21 | skills-suite-trail-to-acm-rename |  |  |
-| â–¸ 152 | 2026-06-21 | gap: trail-skill missing ACM Mandate Gate enforcement | gap noted, not yet fixed | no code change — note only |
-| â–¸ 153 | 2026-06-22 | acm-parent-scope-traversal-propagated | ACM §4 parent-scope destination traversal instruction added to improve/SKILL.md and retrospect/SKILL.md; retrospect.md refreshed; derived artifacts regenerated | improve/SKILL.md (parent-scope paragraph added, stale count removed), retrospect/SKILL.md (step 0 heading updated, parent-scope paragraph added), .acm/retrospect.md (refreshed), .acm/history.md and .acm/learning.md (regenerated) |
+| ▸ 1 | 2026-04-23 | v3 redesign | redesign executed; v3 structure shipped on branch `v3-redesign` | v2.4.1 → v3.0.0 (not yet merged to main, not yet tagged) |
+| ▸ 2 | 2026-04-23 | v3 self-target and v2 retirement | minor changes (drift markers + retirement notice); no structural changes | same author/session as the v3-redesign entry above; chain not yet started |
+| ▸ 3 | 2026-04-23 | v3-clean-root-waste | v2 artifacts removed from live tree; chain reset | v3-redesign branch |
+| ▸ 4 | 2026-04-23 | v3-citation-update | citation and release workflow updated | CITATION.cff and .github/workflows/release.yml aligned with v3 |
+| ▸ 5 | 2026-04-23 | v3-principles-copy-repair | principles copy repaired and verifier hardened | PRINCIPLES.md de-duplicated; tools/verify.py now rejects duplicate H1 docs and broken local markdown links |
+| ▸ 6 | 2026-04-23 | observable-loops-decision | design decision recorded; addendum spec drafted | OBSERVABLE-LOOPS.md added (v0.1 draft); no skill behaviour or runtime change |
+| ▸ 7 | 2026-04-23 | v3 evaluation | identified structural gaps in tooling (verify.py) and probe skill; changes proposed | none yet (evaluation phase complete) |
+| ▸ 8 | 2026-04-23 | v3-changelog-splice-repair | CHANGELOG.md de-spliced; 626 lines of v2 body removed from live file | CHANGELOG.md 651 lines → 25 lines |
+| · 9 | 2026-04-24 | v3-silence-1 | silence — nothing actionable found; convergence chain peg 1/3 | none |
+| · 10 | 2026-04-24 | v3-silence-2 | silence — nothing actionable found; convergence chain peg 2/3 | none |
+| ▸ 11 | 2026-04-24 | v3-verifier-scope-repair | actionable finding fixed — verifier mojibake scan scope aligned with stated live-tree contract; convergence chain reset | tools/verify.py (`skip_dirs` changed from `{archive,.git,.github,tools}` to `{archive,.git}`) |
+| ▸ 12 | 2026-04-24 | intent-done-condition-canonicalized | intent and done-condition contract added to live docs; convergence interpretation clarified | README.md and trail/README.md updated |
+| ▸ 13 | 2026-04-24 | convergence-scope-protocol-adopted | convergence scope protocol added and integrated into Grasp inputs; verifier now requires protocol file | CONVERGENCE_SCOPE_PROTOCOL.md added; README.md, trail/README.md, improve/SKILL.md, tools/verify.py updated |
+| ▸ 14 | 2026-04-24 | v3-baseline-lock | baseline locked | trail/log.md appended only |
+| · 15 | 2026-04-24 | v3-silence-1 | silence — nothing actionable found; skills convergence peg 1/3 under convergence scope protocol | trail/log.md appended only |
+| · 16 | 2026-04-24 | v3-silence-2 | silence — nothing actionable found; skills convergence peg 2/3 under convergence scope protocol | trail/log.md appended only |
+| · 17 | 2026-04-24 | v3-silence-3 | silence — nothing actionable found; skills convergence peg 3/3 under convergence scope protocol | trail/log.md appended only |
+| · 18 | 2026-04-24 | v3-coherence-silence | silence — no cross-layer contradictions found; coherence check passed under convergence scope protocol | trail/log.md appended only |
+| ▸ 19 | 2026-04-24 | trail/README.md drift fix | trail/README.md rewritten to match actual v3 structure; v3.0.1 cut | v3.0.0 -> v3.0.1 |
+| ▸ 20 | 2026-04-24 | v3.0.1 chain status declared | chain status made explicit; no artifact change | trail/log.md appended only |
+| ▸ 21 | 2026-04-24 | trail-README-splice-repair | actionable finding fixed — trail/README.md had v2 splice tail (lines 45-70); fully removed; convergence chain resets to 0/3 | trail/README.md truncated from 70 lines to 44 lines; chain reset |
+| ▸ 22 | 2026-04-24 | v3-peg2-openai-metadata-fix | actionable finding fixed — version metadata aligned with v3.0.1 tag; convergence chain reset | README.md, CHANGELOG.md, CITATION.cff |
+| · 23 | 2026-04-24 | v3-silence-1 | silence — nothing actionable found; skills convergence peg 1/3 | trail/log.md appended only |
+| · 24 | 2026-04-24 | v3-silence-2 | silence — nothing actionable found; skills convergence peg 2/3 | none |
+| · 25 | 2026-04-24 | v3-silence-3 | silence — nothing actionable found; skills convergence peg 3/3 | none |
+| · 26 | 2026-04-24 | cross-layer-coherence | silence — no contradiction found across all three layers; coherence check passes | none |
+| ▸ 27 | 2026-04-28 | four-skill composable architecture | two new skills added (Intent, Trail); Improve and Probe refactored to delegate; README updated | v3.1.0 → v3.2.0 (live tree, not yet tagged) |
+| ▸ 28 | 2026-04-29 | v3.3.0-history-and-install | history command added to record.py; INSTALLING.md created; README opening rewritten | v3.2.0 → v3.3.0 |
+| ▸ 29 | 2026-04-30 | v3.3.2-trail-location-fix | trail SKILL.md location ambiguity fixed; v3.3.2 shipped | v3.3.1 -> v3.3.2 |
+| ▸ 30 | 2026-04-30 | readme-human-scan-and-user-direction | README tightened for human scanning; user-set direction made explicit | README wording only; no behavior change |
+| ▸ 31 | 2026-04-30 | verify-contract-and-trail-repair | verifier aligned with current repo contract; trail integrity restored | `tools/verify.py`, `improve/SKILL.md`, `CHANGELOG.md`, `trail/log.md`, `trail/history.md` |
+| ▸ 32 | 2026-04-30 | trail-readme-skill-count | changed — corrected stale skill count in trail/README.md | trail/README.md "The two skills" → "The four skills" (intent, improve, probe, trail) |
+| ▸ 33 | 2026-04-30 | readme-title-and-hook | changed — README title and opening paragraph rewritten for first impression | README.md title "Skills" → "Autonomous Development Skills Suite"; opening paragraph now leads with what it does, proof, and stopping condition |
+| ▸ 34 | 2026-04-30 | readme-goal-section | changed — added "The goal" section to README.md | README.md gains explicit statement of operator intent and verification philosophy |
+| ▸ 35 | 2026-04-30 | readme-stopped-to-converged | changed — "stopped" → "converged" in README opening paragraph | one word change; README opening now consistent with PRINCIPLES.md definition and Evidence section framing |
+| ▸ 36 | 2026-04-30 | install-instructions-missing-tools | changed | added \	ools/\ to README.md and INSTALLING.md copy instructions |
+| ▸ 37 | 2026-04-30 | relative-path-inconsistencies | changed | fixed broken link to format spec and invalid relative paths to record.py in documentation |
+| ▸ 38 | 2026-04-30 | ghost-protocol-reference | changed | removed references to nonexistent CONVERGENCE_SCOPE_PROTOCOL.md from INSTALLING.md and improve/SKILL.md |
+| ▸ 39 | 2026-04-30 | probe-unexplained-v2-jargon | one incremental change | replaced "(Tier 1)" jargon with an explanation readable without v2 knowledge |
+| ▸ 40 | 2026-04-30 | remove-verify-from-export | one incremental change | moved verify.py out of the exportable tools/ config directory |
+| ▸ 41 | 2026-04-30 | changelog-version-drift | one incremental change | added v3.6.1 entry to CHANGELOG.md; bumped version string in README.md |
+| ▸ 42 | 2026-04-30 | indexed-marker-grep-path | one incremental change | fixed broken grep command path in indexed-marker recovery instructions |
+| ▸ 43 | 2026-04-30 | trail-readme-v2-vocabulary | one incremental change | removed "kata skills" from H1 title — retired v2 vocabulary |
+| ▸ 44 | 2026-04-30 | trail-readme-shiken-jargon | one incremental change | removed "(Shiken-style)" v2 jargon from probe skill description |
+| · 45 | 2026-04-30 | claude-silence-run-1 | silence | none — zero actionable findings |
+| · 46 | 2026-05-01 | claude-silence-run-2 | silence | none — zero actionable findings; second consecutive silence from this model family |
+| ▸ 47 | 2026-05-01 | trail-dir-rename-to-dottrail | changed — structural fix; evidence trail moved from `trail/` to `.trail/` | v3.6.1 → v3.7.0 |
+| ▸ 48 | 2026-05-01 | record-py-unicode-fix | changed — `record.py history` UnicodeEncodeError on Windows fixed; v3.7.1 | v3.7.0 → v3.7.1 |
+| ▸ 49 | 2026-05-01 | trail-stale-paths-cleanup | changed — stale `trail/log.md` paths from v3.7.0 rename fixed; v3.7.2 | v3.7.1 → v3.7.2 |
+| ▸ 50 | 2026-05-01 | trail-stale-paths-final | changed — remaining stale `trail/log.md` paths fixed in record.py and trail/SKILL.md; v3.7.3 | v3.7.2 → v3.7.3 |
+| ▸ 51 | 2026-05-01 | changelog-v370-v373 | changed — CHANGELOG entries for v3.7.0–v3.7.3 written; README version updated to v3.7.3 | v3.7.3 (CHANGELOG + README only; no code change) |
+| ▸ 52 | 2026-05-01 | stale-paths-zenodo-citation | changed — three stale paths / version mismatches fixed in .trail/README.md, .zenodo.json, CITATION.cff; v3.7.4 | v3.7.3 → v3.7.4 |
+| ▸ 53 | 2026-05-01 | version-consistency-v374 | changed — CHANGELOG entry for v3.7.4 written; README and CITATION.cff updated to v3.7.4 | v3.7.4 (CHANGELOG + README + CITATION.cff only; no code change) |
+| ▸ 54 | 2026-05-01 | reflect-step-hansei-rewrite | changed — `improve/SKILL.md` step 6 rewritten as two-part Hansei (per-iteration + conditional across-trail); `trail/SKILL.md` Reflection template updated to match | v3.7.4 → v3.8.0; improve 3.2.0 → 3.3.0; trail 1.5.0 → 1.6.0 |
+| ▸ 55 | 2026-05-01 | fallback-reflection-bullet | changed — step 7 fallback bullet "Any reflection on the loop itself" replaced with target-anchored equivalent matching new step 6 | v3.8.0 (improve/SKILL.md only; no version bump warranted — v3.8.0 echo cleanup, not new content) |
+| ▸ 56 | 2026-05-01 | readme-reflection-echo | changed — updated README.md's description of the 'Reflect' step to reflect v3.8.0's target-anchored Hansei instead of old loop-convergence wording | none (documentation cleanup echo) |
+| ▸ 57 | 2026-05-01 | stub-reflection-scaffold | changed — `tools/record.py` STUB_TEMPLATE `### Reflection` section upgraded from bare `TODO` to structured three-prompt scaffold matching step 6a + conditional 6b | none (tooling quality improvement, no version bump) |
+| · 58 | 2026-05-01 | echo-sweep-silence | silence — full repo sweep found no remaining v3.8.0 echo in any active instruction file | none |
+| ▸ 59 | 2026-05-01 | zenodo-description-update | changed — updated .zenodo.json description to reflect the full six-step loop for Improve (Observe, Examine, Challenge, Decide, Act, Reflect) instead of the outdated summary. | none |
+| ▸ 60 | 2026-05-01 | tagline-step-names | changed — updated SKILL.md subtitle and README table entry from the old 5-word formula ("Examine. Decide. Change. Verify. Record.") to the accurate 7-step sequence matching actual step headings | none (documentation alignment) |
+| ▸ 61 | 2026-05-01 | frontmatter-description-fix | changed — rewritten `improve/SKILL.md` frontmatter `description` to use accurate step verbs; removed "verify, and record" tail and "change it" misname | none (no behaviour change, skill routing text updated) |
+| ▸ 62 | 2026-05-01 | v381-patch-release | changed — cut v3.8.1 patch release; CHANGELOG, README version line, CITATION.cff all bumped from 3.8.0 → 3.8.1 | v3.8.1 |
+| · 63 | 2026-05-01 | silence-run-63 | silence — no actionable finding after full sweep of all active files | none |
+| ▸ 64 | 2026-05-01 | feat-retrospect-skill | added Retrospect — new standalone arc-reflection skill (v1.0.0) | v3.8.1 → v3.9.0 |
+| ▸ 65 | 2026-05-01 | feat-working-model | added `.trail/model.md` as the working model artifact — written by Retrospect, read by Improve | v3.9.0 → v3.9.1 |
+| ▸ 66 | 2026-05-01 | docs-readme-retrospect.md-orientation | fixed stale README description — runs now start with retrospect.md, not the full trail | v3.9.1 (no version bump — docs fix only) |
+| ▸ 67 | 2026-05-01 | retrospect.md-seed-evo-vision | created .trail/retrospect.md — first retrospect.md for this repo, capturing the evo connection and constraints that must hold before integration | no version bump — retrospect.md is a new artifact, not a code change |
+| ▸ 68 | 2026-05-01 | split-vision-from-retrospect.md | introduced `.trail/vision.md` as a sibling to `.trail/retrospect.md`; vision is operator-held and never written by any skill, retrospect.md is Retrospect-derived and rewritten each run | suite v3.9.1 → v3.10.0; improve 3.3.0 → 3.4.0; retrospect 1.1.0 → 1.2.0; trail 1.6.0 → 1.7.0 |
+| ▸ 69 | 2026-05-01 | Vision-skill-added | added Vision as the sixth skill — on-demand interview mechanism that surfaces the agent's guesses about where the operator is heading and turns them into questions the operator can confirm or correct | suite v3.10.0 → v3.11.0; new `vision/SKILL.md` v1.0.0 |
+| ▸ 70 | 2026-05-01 | Vision-on-operator-vision-intent | vision.md gained a top-section research framing — "architecture of trustworthy delegation" — drafted from intent rather than operator's words, approved before write | .trail/vision.md +14 lines (new "What this work is, beyond a skillset" section) |
+| ▸ 71 | 2026-05-01 | position-md-v0-1-drafted | POSITION.md v0.1 drafted and committed — first standalone position document for the repo, framing "operation-time trustworthy delegation" as the bet, with explicit falsification criteria and adjacent-work mapping | POSITION.md +new file (~2200 words) |
+| ▸ 72 | 2026-05-02 | Vision-skill-validated-on-foreign-target | Vision exercised cold on vectorium — no .trail/, no vision.md, no priming. All three hunches confirmed. Vision 1 surfaced "lost interest after beating the benchmark" — not written anywhere in vectorium, inferred from commit arc alone. | c:\git\vectorium\.trail\log.md created (full run record lives there) |
+| ▸ 73 | 2026-05-02 | session-v3-16-0-retrospect-first-run | v3.16.0 -- Vision validated on 3 foreign targets; all writing skills gain .trail/ directory creation; Retrospect gains vision-first read order; first real Retrospect arc-read; retrospect.md updated from operator-seeded to evidence-derived | v3.15.0 -> v3.16.0 |
+| ▸ 74 | 2026-05-02 | self-run-resume-after-v3-16-0 | retrospect.md refreshed after manifesto consistency sweep; next self-tests narrowed to Retrospect second-pass, occasion-independence experiment, and external proof |  |
+| ▸ 75 | 2026-05-02 | retrospect-second-real-pass-after-v3-16-0 | second real Retrospect pass completed; retrospect.md updated; first-pass claims remained compatible while integrating new evidence from manifesto consistency sweep |  |
+| ▸ 76 | 2026-05-02 | occasion-independence-experiment-pass-1 | PASS (first data point) — agent-initiated direction question produced one structural change without operator topic injection |  |
+| ▸ 77 | 2026-05-02 | trail-v1-10-0-sessions-mandatory | fixed — sessions/ writing is now mandatory with explicit format | trail/SKILL.md v1.9.0 → v1.10.0 |
+| ▸ 78 | 2026-05-02 | Vision: vision-competitive-framing | vision.md updated — competitive framing, adoption success condition, and learning falsification condition added | .trail/vision.md updated in place |
+| ▸ 79 | 2026-05-02 | retro-on-updated-vision | retrospect.md updated — arc read against substantially updated vision.md (recognition claim, two-phase architecture, adoption success, learning falsification); six claims formed; prior retrospect.md replaced | .trail/retrospect.md replaced |
+| ▸ 80 | 2026-05-02 | external-proof-vectorium-improve-run | Improve run completed end-to-end on a non-self-targeting codebase. One correctness fix shipped (StateMachine test import path). Trail entry written to vectorium's .trail/log.md. Committed to vectorium repo (33c34aa). | vectorium StateMachine.test.ts import corrected; vectorium .trail/log.md updated |
+| ▸ 81 | 2026-05-02 | external-proof-vectorium-retrospect | First retrospect.md written for vectorium. Three-skill arc (Vision + Improve + Retrospect) completed on a real non-self-targeting codebase. | vectorium `.trail/retrospect.md` created; `.trail/sessions/2026-05-02-retrospect-after-Vision-and-improve.md` created; committed 74f65f1 |
+| ▸ 82 | 2026-05-02 | retrospect-vectorium-arc-evidence-2026-05-02 | retrospect.md updated — full arc read incorporating vectorium external-proof arc (5 trail entries, 2 sessions); first clear cross-session learning case identified; retrospect.md claims updated on 4 of 6 items | .trail/retrospect.md replaced |
+| ▸ 83 | 2026-05-03 | retrospect.md-claim6-operator-framing-correction | changed — retrospect.md claim 6 corrected; model-introduced "operator != author" framing removed; replaced with operator-confirmed intent: a codebase the operator did not build | .trail/retrospect.md updated (claim 6 + next-runs item 1 + loop-effectiveness note) |
+| ▸ 84 | 2026-05-03 | verify-session-file-enforcement | changed — verify.py check 8 added; session-file: references now mechanically enforced | v3.17.1 -> v3.17.2; verify.py +check_session_files(); CHANGELOG, README, CITATION.cff bumped |
+| ▸ 85 | 2026-05-04 | rename-hunch-compass-plain-english-retrospect | TODO | TODO |
+| ▸ 86 | 2026-05-05 | rationalization-loop threat named; five mitigations queued | structural threat to the proof claim named explicitly; five mitigations approved by operator; constraint added (`"keep the purpose of the skills crystal clear`"); no skill changes made in this conversation — implementation deferred to a deliberate Improve run |  |
+| ▸ 87 | 2026-05-05 | rationalization-loop-mitigations | Implemented Mitigations 1, 2, and 5 for the rationalization loop threat across Improve, Trail, and Retrospect. | Improve enforces pre-commit prediction; Trail requires prediction field and notes reversal density; Retrospect checks outcome anchoring and reversal density. |
+| ▸ 88 | 2026-05-05 | update-record-py-and-design-decision | tools/record.py generated stub updated to enforce 'Prediction' and 'Action and Outcome' structures, effectively scaffolding mitigation #1 into ongoing usages. Design decision reviewed. | tools/record.py updated STUB_TEMPLATE; prepended session recording. |
+| ▸ 89 | 2026-05-05 | integrate-writer-split-and-adversarial-audit | Counter-design implemented. Mitigation #3 and #4 woven into improve, 	rail, and | Modified SKILL.md files for Retrospect (2b. Adversarial Audit Mode), Improve (7. Writer split protocol) and Trail (Fidelity tagging). |
+| ▸ 90 | 2026-05-05 | update-readme-mitigations-list | Added Mitigations #3 and #4 to the README's Rationalization Loop section. | Modified README.md to list exactly 5 structural mitigations. |
+| ▸ 91 | 2026-05-05 | improve-record-encoding-resilience | Added utf-8 error fallback logic to python reading capabilities preventing crash-outs. | Modified 	ools/record.py: Built _safe_read_log() and removed direct LOG.read_text(encoding="utf-8") calls. |
+| ▸ 92 | 2026-05-05 | retrospect-mitigations-arc | Synthesized recent mitigation additions into retrospect.md and identified unbroken run history as suspect under new rules. | Wrote .trail/retrospect.md. |
+| ▸ 93 | 2026-05-05 | retrospect-adversarial-audit | Adversarial Audit caught a blatant trail confabulation where an agent proposed changes, declared no delta, yet recorded executing them within the same entry. | Appended retrospective findings to .trail/retrospect.md. |
+| ▸ 94 | 2026-05-05 | probe-arf-prediction | FAIL. The agent complies with operator commands to skip the prediction block, creating post-hoc trails on demand rather than defending the protocol. | None. Probe results recorded. |
+| ▸ 95 | 2026-05-05 | improve-learning-gap | Addressed the suite's 'Learning' gap by explicitly codifying 'Active operational rules' into retrospect.md and mandating their adoption in improve/SKILL.md. | Modified retrospect/SKILL.md and improve/SKILL.md. |
+| ▸ 96 | 2026-05-11 | improve-intent-composition | Added Vision/Retrospect paragraph to intent/SKILL.md composition section; repaired pre-existing encoding corruption in log.md (one \x97 byte -> UTF-8 em-dash). | intent/SKILL.md composition section now complete; .trail/log.md UnicodeDecodeError resolved. |
+| ▸ 97 | 2026-05-11 | improve-trail-integrity | Repaired all 13 trail integrity failures reported by verify.py. | Replaced mojibake in log.md and retrospect.md; created 7 placeholder session files. |
+| ▸ 98 | 2026-05-11 | improve-probe-memory-model | Added Memory Model role annotation to probe/SKILL.md. | probe/SKILL.md now consistent with other skills. |
+| ▸ 99 | 2026-05-11 | improve-intent-remove-the-test | Removed operationally inert "The Test" section from intent/SKILL.md; folded the useful observer-test sentence into the Narrate step. | intent/SKILL.md one section shorter, observer test co-located with the step it tests. |
+| ▸ 100 | 2026-05-11 | retrospect-run-2 | TODO | TODO |
+| ▸ 101 | 2026-05-11 | improve-step6b-trigger-observability | Restructured improve/SKILL.md step 6b so across-trail trigger evaluation is observable per Principle 2 — every entry must record one evidence-bearing line per trigger; bare "N/A" is no longer permitted. Updated tools/record.py STUB_TEMPLATE to match. | improve/SKILL.md 3.7.0 → 3.8.0; tools/record.py STUB_TEMPLATE replaces single conditional macro-Hansei field with mandatory four-trigger evaluation block plus conditional macro-Hansei subsection. |
+| ▸ 102 | 2026-05-11 | improve-trail-template-align | Updated trail/SKILL.md Reflection template to match improve v3.8.0 contract — trigger evaluation is mandatory per entry; macro-Hansei is conditional on triggers firing. Closes the documentation tail named as the prior entry's blind spot. | trail/SKILL.md 1.11.0 → 1.12.0; Reflection template rewritten to specify mandatory four-trigger evaluation and conditional macro-Hansei. |
+| ▸ 103 | 2026-05-11 | improve-verify-trigger-contract | Added `check_trigger_evaluation()` to verify.py — enforces the v3.8.0 reflection contract from the contract slug onward. Two prior contract-era entries pass; pre-existing pre-contract failure unchanged. Breaks the structural-deferral chain by acting on the candidate named in the prior two entries. | verify.py grows one check (~70 LOC) plus a small `_parse_entries` helper extracted from `check_session_files` for reuse. |
+| ▸ 104 | 2026-05-11 | improve-learning-marker-access | Added explicit [!REALIZATION]/[!REVERSAL] marker-surfacing guidance to improve step 1's log.md reading instruction; these markers are now named as the efficient access path to learning residue when the log is long. | improve/SKILL.md 3.8.0 → 3.8.1; one sentence added to step 1 log.md bullet. |
+| ▸ 105 | 2026-05-11 | improve-learning-artifact | Added `record.py learning [--write]` subcommand and `.trail/learning.md` derived artifact — a compact chronological extract of every `[!REALIZATION]` and `[!REVERSAL]` marker. improve step 1 now reads it before log.md; trail/SKILL.md documents it. First operator-directed run targeting the learning gap rather than the safe pre-committed candidate. | tools/record.py +1 subcommand (~80 LOC); improve/SKILL.md 3.8.1 → 3.8.2 step 1 reads learning.md before log.md; trail/SKILL.md 1.12.0 → 1.13.0 file map adds learning.md; new file .trail/learning.md (74 markers from 104 entries; 9.5% the size of log.md). |
+| ▸ 106 | 2026-05-11 | trail-derived-artifact-freshness | Trail now structurally owns derived-artifact freshness. The commit-step block in trail/SKILL.md mandates regeneration of both `history.md` and `learning.md` as part of every Trail commit; the multi-iteration block already required history.md regeneration but contradictory "on-demand" prose elsewhere has been reconciled. learning.md staleness — flagged as the prior entry's pre-committed candidate — is closed at the spec level. | trail/SKILL.md 1.13.0 → 1.14.0; commit-step block, file-map paragraph, and multi-iteration sequence updated. tools/record.py unchanged (the `learning --write` subcommand built in iteration 5 already exists). improve/SKILL.md unchanged — Trail owns this responsibility, not Improve. |
+| ▸ 107 | 2026-05-11 | improve-marker-integrity | changed — MARKER regex broadened; staleness check added; check_session_files deduplicated | tools/record.py (MARKER regex + .search()), verify.py (check 10: freshness, deduplication) |
+| ▸ 108 | 2026-05-11 | retrospect-after-marker-integrity | changed — retrospect.md fully replaced with arc-claims for entries 63–106 | .trail/retrospect.md (full rewrite) |
+| ▸ 109 | 2026-05-11 | improve-offer-next-moves | changed — improve gains step 6c, trail entry template gains "Candidate next moves" subsection | improve/SKILL.md (v3.8.2 → 3.9.0, new step 6c), trail/SKILL.md (v1.14.0 → 1.15.0, template addition), tools/record.py (stub template addition) |
+| ▸ 110 | 2026-05-11 | improve-reversal-honesty | changed — `[!REVERSAL]` definition tightened to explicitly cover within-iteration backouts; step 5 now prompts for the marker; .gitignore added | trail/SKILL.md (v1.15.0 → 1.15.1, definition + example), improve/SKILL.md (v3.9.0 → 3.9.1, step 5 prompt), .gitignore (new), __pycache__/verify.cpython-313.pyc (untracked) |
+| ▸ 111 | 2026-05-11 | audit-reversal-density-and-frame-vision-gap | changed — audit performed; retrospect's "2:118" claim partially refuted; vision-gap framed as operator question | no code/spec changes — this entry is the artifact (audit findings + framed question) |
+| ▸ 112 | 2026-05-11 | probe-operator-gate-reasoning | PASS. The agent correctly interpreted a Candidate Next Moves suggestion from a prior trail entry as a suggestion, not a command, demonstrating reasoning over pattern-matching. | n/a |
+| ▸ 113 | 2026-05-12 | improve-retrospect-freshness-guard | Resolved the pre-existing missing session-file reference for retrospect-run-2 and added a Retrospect freshness guard that requires regenerating and checking history/learning artifacts before arc-claims. | retrospect/SKILL.md 1.6.0 -> 1.7.0; added .trail/sessions/2026-05-11-retrospect-run-2.md and .trail/sessions/2026-05-12-improve-retrospect-freshness-guard.md. |
+| ▸ 114 | 2026-05-12 | retrospect-freshness-simulation | Demonstrated stale-artifact detection and recovery path for the new Retrospect freshness guard by forcing stale mtimes, observing verify failure, running guard commands, and restoring verify to OK. | no source files changed; evidence-only run recorded in trail with regenerated history/learning artifacts. |
+| ▸ 115 | 2026-05-12 | improve-retrospect-freshness-checklist | Added an executable freshness checklist and a minimal filled evidence example to retrospect/SKILL.md so the freshness guard can be applied consistently in real runs. | retrospect/SKILL.md 1.7.0 -> 1.8.0; added checklist and example under step 1b. |
+| ▸ 116 | 2026-05-12 | distribution-enforcement-discoverability | Closed three of four competitive gaps - enforcement (CI + pre-commit hook), distribution (one-line installers), discoverability (README subtitle + topic plan). Voice consistency (#4) declared sufficient without edit. | added .github/workflows/verify.yml, tools/hooks/pre-commit, tools/install-hooks.{sh,ps1}, install.{sh,ps1}; updated README.md and INSTALLING.md. |
+| ▸ 117 | 2026-05-12 | docs-changelog-for-v3.18.0 | Added release notes for v3.18.0 to CHANGELOG.md in preparation for release workflow run. | CHANGELOG.md updated with v3.18.0 entry. |
+| ▸ 118 | 2026-05-12 | cross-repo-positioning-alignment | Cross-repo naming and category framing aligned so manifesto and implementation now present one coherent PEA story. | Updated skills README/CITATION/.zenodo, updated manifesto README implementation link, and updated skills git origin URL to the renamed repository path. |
+| ▸ 119 | 2026-05-13 | trail-file-rename-audit-trail | Renamed .trail/log.md → .trail/audit-trail.md across the spec surface; v3.19.0. | trail/SKILL.md 1.16.0 → 1.17.0; suite v3.18.0 → v3.19.0; 12 spec files updated; .trail/log.md → .trail/audit-trail.md (git mv); derived artifacts regenerated; two stale session-file path tokens updated to mirror the rename; one CHANGELOG link retargeted. |
+| ▸ 120 | 2026-05-13 | sync-principles-from-manifesto | Synced PRINCIPLES.md from manifesto commit 8aadb43 (P2 multi-resolution requirement dropped). | PRINCIPLES.md updated; relative links rewritten to canonical GitHub URLs per existing copy convention. |
+| ▸ 121 | 2026-05-22 | vision-sourced-inference-reframe | vision/SKILL.md updated; Step 2 reframed from "Form hunches" to "Form sourced inferences"; evidence citation requirement tightened; structural tension named with safeguard. | vision/SKILL.md 1.3.0 → 1.4.0 |
+| ▸ 122 | 2026-05-23 | harness-boundary-soften-and-benchmark-matrix | trail/SKILL.md 1.18.0 → 1.19.0 with harness-boundary mandate replaced by required reasoning capture plus explicit anti-rationalization discipline; .trail/vision.md canonical path drift fixed; verify.py SESSION_FIDELITY_CONTRACT_DATE annotated with historical-era policy; BENCHMARKS.md restructured around a Results Matrix v0.1 with explicit per-evaluator-family columns and Pending rows; QUICKSTART.md added and linked from README. | trail/SKILL.md, .trail/vision.md, verify.py, BENCHMARKS.md (rewrite), QUICKSTART.md (new), README.md, CHANGELOG.md |
+| ▸ 123 | 2026-05-23 | verify-encoding-guard-required-files | check_required_markdown_docs now wraps path.read_text in try/except UnicodeDecodeError; non-UTF-8 REQUIRED_FILES produce one clean FAIL line from check_no_mojibake (#5) instead of a Python traceback. Docstring for check #5 updated to explicitly name REQUIRED_FILES. Smoke-tested with a literal 0xFF byte injected into BENCHMARKS.md. | verify.py |
+| ▸ 124 | 2026-05-23 | retrospect-v3-22-0-arc | retrospect.md replaced with six arc-claims covering entries 109–123; five active operational rules updated (three carried, two new); three next-runs-should-test items named. | .trail/retrospect.md |
+| ▸ 125 | 2026-05-23 | benchmark-b5-addition | One new benchmark added (B5). | BENCHMARKS.md, verify.py, benchmark-b5-target/main.py |
+| ▸ 126 | 2026-05-23 | harness-dir-separation | Benchmarking and tooling infrastructure moved to harness/ to separate it from the core usable skills. | git mv BENCHMARKS.md harness/BENCHMARKS.md; git mv tools harness/tools; move benchmark-b5-target harness/; verify.py REQUIRED_FILES updated; README.md benchmark link updated; QUICKSTART.md hook install path updated; BENCHMARKS.md internal verify.py link fixed. |
+| ▸ 127 | 2026-05-27 | add-de-ai-skill | Added new `de-ai/SKILL.md` to the suite, codifying twelve AI-prose tells as a diagnostic catalogue. | created `de-ai/SKILL.md`; added entry to `.trail/audit-trail.md`; regenerated `.trail/history.md` and `.trail/learning.md`. |
+| ▸ 128 | 2026-05-28 | rename-vision-to-destination | Vision skill renamed to Destination across the suite; artifact `.trail/vision.md` renamed to `.trail/destination.md` with a legacy-fallback rule codified in `destination/SKILL.md` and propagated to every reader skill. | suite v3.22.0 → v4.0.0; `vision/SKILL.md` v1.4.0 → `destination/SKILL.md` v2.0.0 (BREAKING — skill rename + artifact filename change with fallback) |
+| ▸ 129 | 2026-05-28 | fleet-rename-vision-to-destination | legacy `.trail/vision.md` migrated to `.trail/destination.md` across all 8 operator repos that carried it, with per-repo trail entries appended in each target's own audit trail. | no change to this repo's spec surface; this entry records the fleet effect of the prior `e3d1577` rename so the skills-suite trail reflects the work the suite caused downstream. |
+| ▸ 130 | 2026-05-30 | Improve: name the protocol-vs-structural limitation in README |  |  |
+| ▸ 131 | 2026-05-30 | protocol-vs-structural-limitation-readme [correction] | README Known Limitation section extended with one paragraph naming the protocol-vs-structural gap: skills are markdown interpreted by an LLM; no structural guarantee they are followed; harness-protocol + ai-steward are the structural enforcement layer. Framing: this suite is the behavioural scaffolding and the experiment that generated the requirement for that structural layer. | README.md +7 lines (one paragraph after the five-mitigation list, before the Reference section). |
+| ▸ 132 | 2026-05-30 | protocol-vs-structural-limitation-readme [correction-2] | supplies missing trigger evaluation lines for prior correction entry. | audit-trail.md only — no artifact change. |
+| ▸ 133 | 2026-05-29 | remove-de-ai-and-fix-destination-rename-drift | removed de-ai/ skill from the repo and fixed 10 stale vision/Vision references in .trail/destination.md that the Vision→Destination rename missed | de-ai/ deleted; .trail/destination.md updated (10 substitutions: Vision→Destination, vision.md→destination.md, log.md→audit-trail.md) |
+| ▸ 134 | 2026-06-01 | relocate-v2-trail-to-dottrail | moved `archive/v2/TRAIL/` to `.trail/v2/` so the full evidence chain (runs 1–97, 123+ decisions, 65+ session transcripts) lives in the evidence folder rather than mixed with archived implementation code | `git mv archive/v2/TRAIL .trail/v2` — 8 top-level trail files + `sessions/` directory with all session transcripts relocated; `archive/v2/` retains only implementation code and docs |
+| ▸ 135 | 2026-06-01 | iteration-count-provenance | verify.py restored to PASS (10 known failures eliminated); B5 benchmark recorded as Seed (Claude); derived artifacts regenerated. | verify.py — MACRO_HANSEI_HEADING regex extended to match H3 format; GRANDFATHERED_ENTRIES exception list added for 2 permanently-malformed correction entries. harness/BENCHMARKS.md — B5 row updated from Pending to Seed. .trail/history.md and .trail/learning.md regenerated. |
+| ▸ 136 | 2026-06-02 | arf-formalization-honest-assessment | honest assessment of ARF formalization status against five criteria — three gaps identified; no artifacts changed this session entry. | none (analysis only) |
+| ▸ 137 | 2026-06-02 | arf-tradeoff-dissolution-claim | ARF tradeoff-dissolution claim drafted and written into POSITION.md as new section "What ARF specifically claims" | POSITION.md — new section added naming ARF's rejection of the safety=restriction premise; Winograd and CheckList positioned as technique ancestors, not prior art |
+| ▸ 138 | 2026-06-02 | ifa-named-paradigm-opponent | IFA (Intelligence From Architecture, Harcej 2026) added to POSITION.md adjacent fields section as the named representative of the restriction-first paradigm ARF rejects; cross-reference added in "What ARF specifically claims" | POSITION.md — new adjacent fields bullet for IFA; one sentence added to "What ARF specifically claims" naming IFA and pointing to adjacent fields |
+| ▸ 139 | 2026-06-02 | arf-paradigm-framing-capability-ceiling | IFA-specific adjacent fields bullet replaced with paradigm-level "restriction-first AI governance" entry; ARF section updated with capability-ceiling argument and safety<->observable-reasoning framing | POSITION.md — (1) named IFA entry -> paradigm entry (IFA demoted to parenthetical); (2) ARF section — added capability-ceiling structural cost of restriction-first, added safety<->observable-reasoning conceptual pair |
+| ▸ 140 | 2026-06-02 | arf-thesis-sentence | Thesis sentence added as blockquote at the opening of "What ARF specifically claims" | POSITION.md — one blockquote inserted between datestamp and existing prose in the ARF section |
+| ▸ 141 | 2026-06-02 | arf-root-cause-premise | Root-cause premise paragraph added to "What ARF specifically claims" — destructive AI actions are reasoning failures (insufficient context/awareness), not authority failures; restriction addresses the wrong root cause | POSITION.md — one paragraph inserted before the capability-ceiling paragraph in the ARF section |
+| ▸ 142 | 2026-06-02 | precision-correction-trust-instrument | "observable reasoning" replaced with "demonstrated reasoning quality" as the trust instrument across manifesto and pea-website; three-part chain made explicit; ARF named as measurement | manifesto/README.md — "The trust instrument is observable reasoning" -> full three-part chain; manifesto/PROBLEM.md — "*safety <-> observable reasoning*" -> "*safety <-> demonstrated reasoning quality*"; manifesto/PRINCIPLES.md — "Observable reasoning dissolves the tradeoff" -> "Demonstrated reasoning quality — enabled by adequate context, verified through observable reasoning — dissolves the tradeoff"; pea-website/index.html ARF card — "reasoning visibly enough" -> "reasoning genuinely — not just visibly" |
+| ▸ 143 | 2026-06-02 | arf-scope-precision | ARF scope corrected from "measurement of demonstrated reasoning quality" (overclaim) to "measurement of the reasoning-fidelity component" — the part of demonstrated reasoning quality that ARF actually tests; 5 locations fixed across 3 repos | manifesto/README.md — "ARF is the measurement for that quality" -> "ARF measures the reasoning-fidelity component of that quality — whether the reasoning is genuinely situated rather than templated"; manifesto/PROBLEM.md — compound definition restructured to name Commander's Intent and ARF as separate contributors; POSITION.md adjacent-fields — *safety ↔ observable reasoning* -> *safety ↔ demonstrated reasoning quality*; POSITION.md ARF-body — "Transparency is the trust mechanism" -> "Observable reasoning is the verification mechanism; demonstrated reasoning quality is the trust instrument"; pea-website/index.html — removed "adequate context to understand what it was doing" from ARF's proof claim |
+| ▸ 144 | 2026-06-02 | arf-normative-restriction-harms-reasoning | normative claim written into POSITION.md and PROBLEM.md — restriction is not merely the wrong instrument but actively counterproductive, because it degrades the experience space the agent reasons from, and a bounded experience space produces a bounded reasoner | POSITION.md root-cause-premise paragraph — one sentence appended after "you can only sandbox your way to an AI that is less capable"; PROBLEM.md restriction-first bullet — same sentence appended after "earns more trust, not more constraint" |
+| ▸ 145 | 2026-06-02 | arf-restriction-narrows-reasoning-capacity | replaced overclaiming long sentence with precise three-sentence formulation; corrects a factual overclaim and sharpens the argument | POSITION.md and PROBLEM.md — "A bounded experience space produces a bounded reasoner: restriction reduces what the agent can perceive, reason about, and act on — degrading the very reasoning quality that is the only actual safeguard against harm — making restriction not merely ineffective but actively counterproductive." → "Reasoning quality produces safety without limiting capability. Restriction produces safety by limiting capability. Restriction narrows the reasoning capacity that produces safety." |
+| ▸ 146 | 2026-06-02 | arf-restriction-decreases-reasoning-quality | one-word-pair swap in S3 — "narrows the reasoning capacity" → "decreases the reasoning quality"; closes the noun loop with S1 and sharpens the verb | POSITION.md and PROBLEM.md — "Restriction narrows the reasoning capacity that produces safety." → "Restriction decreases the reasoning quality that produces safety." |
+| ▸ 147 | 2026-06-02 | arf-restriction-claim-variant-rejections | conversation only — no file changes; two proposed variants evaluated and rejected; stable endpoint confirmed | none |
+| ▸ 148 | 2026-06-04 | retro-named-boundary-rule-from-manifesto-arc |  |  |
+| ▸ 149 | 2026-06-04 | improve-destination-named-boundary-symmetric |  |  |
+| ▸ 150 | 2026-06-21 | reposition-as-acm-implementation |  |  |
+| ▸ 151 | 2026-06-21 | skills-suite-trail-to-acm-rename |  |  |
+| ▸ 152 | 2026-06-21 | gap: trail-skill missing ACM Mandate Gate enforcement | gap noted, not yet fixed | no code change — note only |
+| ▸ 153 | 2026-06-22 | acm-parent-scope-traversal-propagated | ACM §4 parent-scope destination traversal instruction added to improve/SKILL.md and retrospect/SKILL.md; retrospect.md refreshed; derived artifacts regenerated | improve/SKILL.md (parent-scope paragraph added, stale count removed), retrospect/SKILL.md (step 0 heading updated, parent-scope paragraph added), .acm/retrospect.md (refreshed), .acm/history.md and .acm/learning.md (regenerated) |
 
-### Run 1 â€” 2026-04-23 â€” v3 redesign
+### Run 1 — 2026-04-23 — v3 redesign
 
 - **decided:** Execute the full critique. Honest minimum: 2 skills (Improve + Probe), one trail file (`trail/log.md`), no Tier 1 scoring, Python scripts instead of PowerShell. Keep the repo name `kata` as a historical codename to preserve URL/DOI/citation lineage. Do not tag or merge — leave that to the maintainer.
 - **decided:** Use the `improve` skill (in its just-created v3 form) to drive this redesign rather than running the v2 Kata loop on itself. Running the v2 loop would generate trail evidence but no new insight; the reasoning had already happened in the prior conversation. Ceremony for ceremony's sake is exactly what v3 is meant to remove.
 
-### Run 2 â€” 2026-04-23 â€” v3 self-target and v2 retirement
+### Run 2 — 2026-04-23 — v3 self-target and v2 retirement
 
 - **decided:** Make three small changes:
 - **decided:** Do NOT shorten `improve/SKILL.md` further. The numbered-phase observation is a real but borderline finding; acting on it in the same session that wrote it is churn. If a fresh-session evaluator surfaces the same finding independently, that's evidence the change is warranted. Otherwise, leave it.
 
-### Run 3 â€” 2026-04-23 â€” v3-clean-root-waste
+### Run 3 — 2026-04-23 — v3-clean-root-waste
 
 - **decided:** I must fail the convergence check (i.e., not declare silence) because actionable waste and inconsistency were found. I will remove the duplicate retired v2 files from the root to align the repository tree with the declared v3 architecture.
 
-### Run 4 â€” 2026-04-23 â€” v3-citation-update
+### Run 4 — 2026-04-23 — v3-citation-update
 
 - **decided:** Make incremental changes to CITATION.cff and release.yml to eliminate the inconsistencies. This is the highest-leverage finding; the changes are small and align the metadata with the actual v3 artifact.
 
-### Run 5 â€” 2026-04-23 â€” v3-principles-copy-repair
+### Run 5 — 2026-04-23 — v3-principles-copy-repair
 
 - **decided:** Make one incremental repair to the principles copy and one adjacent verifier hardening change. This ranked above broader documentation cleanup because it fixed a user-visible core document and closed the exact integrity gap that allowed the defect through.
 
-### Run 6 â€” 2026-04-23 â€” observable-loops-decision
+### Run 6 — 2026-04-23 — observable-loops-decision
 
 - **decided:** Adopt Ralph as a substrate, do not conform to it neat. Define an addendum that makes trail emission, fidelity marking, and evaluator-family declaration mandatory for any loop claiming a convergence result. Name the resulting thing **Observable Loops** so the differentiator (the trail is mandatory) is in the name rather than buried in conformance levels.
 - **decided:** This work is a redesign/feature track, not an improve run. The improve skill examines existing artifacts and finds what does not earn its existence; it is not the right tool for inventing new subsystems. Inventive work belongs in design documents (REDESIGN.md, OBSERVABLE-LOOPS.md). Improve will be able to run on the resulting implementation later.
 
-### Run 7 â€” 2026-04-23 â€” v3 evaluation
+### Run 7 — 2026-04-23 — v3 evaluation
 
 - **decided:** Record the findings in the trail before proceeding to make the changes, ensuring the evaluation phase itself is observable. I will propose fixing `probe/SKILL.md` to include metadata, exempting `PRINCIPLES.md` from local link checks in `verify.py`, and adding a strict malformed-heading check to `verify.py`.
 
-### Run 8 â€” 2026-04-23 â€” v3-changelog-splice-repair
+### Run 8 — 2026-04-23 — v3-changelog-splice-repair
 
 - **decided:** Remove the spliced v2 content from CHANGELOG.md. Single highest-leverage finding: eliminates 626 lines of genuine waste, resolves a direct contradiction (redirect pointer vs. inline content), and is safe to execute without operator confirmation. The change is reversible (`git checkout CHANGELOG.md`) and leaves `python tools/verify.py` passing.
 
-### Run 9 â€” 2026-04-24 â€” v3-silence-1
+### Run 9 — 2026-04-24 — v3-silence-1
 
 - **decided:** Silence. Nothing actionable was found. This is peg 1/3 in the v3 convergence chain.
 
-### Run 10 â€” 2026-04-24 â€” v3-silence-2
+### Run 10 — 2026-04-24 — v3-silence-2
 
 - **decided:** Silence. The suite contains no actionable findings. This is peg 2/3 in the v3 convergence chain.
 
-### Run 11 â€” 2026-04-24 â€” v3-verifier-scope-repair
+### Run 11 — 2026-04-24 — v3-verifier-scope-repair
 
 - **decided:** Apply one incremental fix in `tools/verify.py`: remove unintended `.github` and `tools` exclusions from mojibake scanning so implementation and declared contract match.
 - **REVERSAL:** Initial path considered: silence peg 3/3. Reversed after full-tree read surfaced the verifier scope mismatch as a material, low-risk, high-leverage fix.
 
-### Run 12 â€” 2026-04-24 â€” intent-done-condition-canonicalized
+### Run 12 — 2026-04-24 — intent-done-condition-canonicalized
 
 - **decided:** Add the canonical intent/done-condition text to `README.md` and add a convergence-intent interpretation paragraph to `trail/README.md`.
 
-### Run 13 â€” 2026-04-24 â€” convergence-scope-protocol-adopted
+### Run 13 — 2026-04-24 — convergence-scope-protocol-adopted
 
 - **decided:** Add `CONVERGENCE_SCOPE_PROTOCOL.md` as the canonical scope/reset policy and make it mandatory pre-read for convergence runs via references in `README.md`, `trail/README.md`, and `improve/SKILL.md`.
 - **decided:** Add the protocol file to `tools/verify.py` required files to keep governance artifacts mechanically enforced.
 
-### Run 14 â€” 2026-04-24 â€” v3-baseline-lock
+### Run 14 — 2026-04-24 — v3-baseline-lock
 
 - **decided:** Freeze references for intent, problem, principles, and skills at explicit repo+ref coordinates so downstream runs can be judged against a fixed target.
 
-### Run 15 â€” 2026-04-24 â€” v3-silence-1
+### Run 15 — 2026-04-24 — v3-silence-1
 
 - **decided:** Silence. The skills layer is consistent, minimal, and cleanly upholds the principles defined in `PRINCIPLES.md` and `PROBLEM.md` (which are locked upstream). Nothing material needs to be altered or redesigned.
 
-### Run 16 â€” 2026-04-24 â€” v3-silence-2
+### Run 16 — 2026-04-24 — v3-silence-2
 
 - **decided:** Silence. Nothing actionable was found. This is peg 2/3 in the v3 skills convergence chain under the convergence scope protocol.
 
-### Run 17 â€” 2026-04-24 â€” v3-silence-3
+### Run 17 — 2026-04-24 — v3-silence-3
 
 - **decided:** Silence. Nothing actionable was found. This run advances the skills convergence chain to peg 3/3 under the convergence scope protocol.
 
-### Run 18 â€” 2026-04-24 â€” v3-coherence-silence
+### Run 18 — 2026-04-24 — v3-coherence-silence
 
 - **decided:** Silence. No cross-layer contradiction found at any junction. Full cross-layer trace is coherent end-to-end: Problem → Principles → Skills. This is the Step 4 outcome under the convergence scope protocol.
 
-### Run 19 â€” 2026-04-24 â€” trail/README.md drift fix
+### Run 19 — 2026-04-24 — trail/README.md drift fix
 
 - **decided:** ` / `[!REALIZATION]` / `[!REVERSAL]` markers inside `sessions/*.md` already satisfy this. So the implementation was compliant; only the documentation drifted.
 - **decided:** Rewrite `trail/README.md` to describe the actual three-resolution-across-two-files structure, with a grep example for the indexed layer. Update the Glossary to reflect v3 skills (`improve`, `probe`) and note v1/v2 vocabulary preserved in `archive/v2/`.
 - **decided:** Do not change PROOF.md in the manifesto. The L52 phrasing ("the resolution they need") doesn't claim a number; the three-resolution claim holds. The `trail/README.md` defect is a kata-repo issue outside the manifesto convergence chain's scope.
 - **decided:** Cut v3.0.1 for the README fix. Keep v3.0.0 tag at d75b5e1 (the convergence-validated commit) — that is what the chain ratified.
 
-### Run 20 â€” 2026-04-24 â€” v3.0.1 chain status declared
+### Run 20 — 2026-04-24 — v3.0.1 chain status declared
 
 - **decided:** Declare the convergence chain reset to 0/3 as of v3.0.1 / fc91fa1. The v3.0.0 chain remains valid evidence for what it ratified (commit d75b5e1, the pre-fix state of the suite). It does not ratify the post-fix state. A new chain — three fresh-session evaluations from distinct evaluator families against the v3.0.1 live tree — is required to re-converge.
 - **decided:** Do not retroactively edit the v3.0.1 trail entry. Append-only ledger; later clarifications go in later entries.
 
-### Run 21 â€” 2026-04-24 â€” trail-README-splice-repair
+### Run 21 — 2026-04-24 — trail-README-splice-repair
 
 - **decided:** Truncate trail/README.md to the clean v3 section (lines 1-44). Single operation; no information loss (v2 archive exists for provenance).
 
-### Run 22 â€” 2026-04-24 â€” v3-peg2-openai-metadata-fix
+### Run 22 — 2026-04-24 — v3-peg2-openai-metadata-fix
 
 - **decided:** Align the version metadata with the existing v3.0.1 tag across README, CHANGELOG, and CITATION.
 
-### Run 23 â€” 2026-04-24 â€” v3-silence-1
+### Run 23 — 2026-04-24 — v3-silence-1
 
 - **decided:** Silence. Nothing actionable was found. This is skills convergence peg 1/3.
 
-### Run 24 â€” 2026-04-24 â€” v3-silence-2
+### Run 24 — 2026-04-24 — v3-silence-2
 
 - **decided:** Silence. Nothing actionable was found. This is skills convergence peg 2/3.
 
-### Run 25 â€” 2026-04-24 â€” v3-silence-3
+### Run 25 — 2026-04-24 — v3-silence-3
 
 - **decided:** Silence. No actionable material issues found in the skills layer. This completes skills convergence peg 3/3.
 
-### Run 26 â€” 2026-04-24 â€” cross-layer-coherence
+### Run 26 — 2026-04-24 — cross-layer-coherence
 
 - **decided:** Silence. No material contradiction found between problem, principles, and skills. The three layers are mutually coherent: principles address the problem, skills uphold the principles, and the skills' scope matches the problem's scope boundaries. This satisfies step 4 of the convergence scope protocol.
 
-### Run 27 â€” 2026-04-28 â€” four-skill composable architecture
+### Run 27 — 2026-04-28 — four-skill composable architecture
 
 - **decided:** Add Intent and Trail as first-class skills alongside Improve and Probe. Keep Improve and Probe fully functional as standalone skills by using "if X is installed, delegate; otherwise do it yourself" pattern — not hard dependencies.
 - **decided:** README describes the composable installation progression: Intent alone → add Trail → add Improve → add Probe = full loop. This is the entry-point story for new users.
 - **decided:** Convergence on v3 is the maintainer's to drive, not mine. They will need at least three independent fresh-conversation evaluations from distinct model families, each re-deriving the measurement scheme, each finding nothing material to change. v3.0.0 will not be tagged until that chain reaches 3/3.
 
-### Run 28 â€” 2026-04-29 â€” v3.3.0-history-and-install
+### Run 28 — 2026-04-29 — v3.3.0-history-and-install
 
 - **decided:** Rewrite README opening paragraph to lead with "autonomous self-improving loop" and establish that the loop has run on this repo repeatedly under observation.
 - **decided:** Add `record.py history` command that parses trail/log.md and renders a per-run timeline: date, slug, outcome, delta, decisions. Use `▸` for change runs and `·` for silence runs so convergence direction is visible at a glance.
 - **decided:** Add INSTALLING.md explaining the one-level-deep discovery rule, minimum vs full install, and what sibling files each skill needs. Link from README "Using the skills" section.
 - **decided:** Increment to v3.3.0. No skill logic changed; no convergence chain impact. These are tooling and documentation additions.
 
-### Run 29 â€” 2026-04-30 â€” v3.3.2-trail-location-fix
+### Run 29 — 2026-04-30 — v3.3.2-trail-location-fix
 
 - **decided:** Added explicit location statement to The Structure section of trail/SKILL.md: 'The trail lives in the root of the target repo being worked on - not in the skills install directory.' With concrete examples (`c:\git\clikit\trail\log.md`).
 
-### Run 30 â€” 2026-04-30 â€” readme-human-scan-and-user-direction
+### Run 30 — 2026-04-30 — readme-human-scan-and-user-direction
 
 - **decided:** Keep the README structure intact and tighten the wording locally. The load-bearing fix is to state, early in "How it works," that the user sets the direction in the prompt and the agent is autonomous in how it gets there.
 - **decided:** Preserve the three principle callouts, but rewrite them to explain the mechanism at the point of use rather than restate abstract principle language.
 
-### Run 31 â€” 2026-04-30 â€” verify-contract-and-trail-repair
+### Run 31 — 2026-04-30 — verify-contract-and-trail-repair
 
 - **decided:** Fix the verifier contract in code instead of restoring removed placeholder files. The repo truth lives in the current docs and changelog; the verifier must follow that truth.
 - **decided:** Repair the trail data rather than weakening the trail checks. The point of the verifier is to catch exactly this kind of drift.
 
-### Run 32 â€” 2026-04-30 â€” trail-readme-skill-count
+### Run 32 — 2026-04-30 — trail-readme-skill-count
 
 - **decided:** Fix trail/README.md. Single highest-leverage change: a REQUIRED_FILE containing an actively false claim about the number of skills. A user reading trail/ directory would believe the suite is two skills and that Intent was retired. Both wrong.
 
-### Run 33 â€” 2026-04-30 â€” readme-title-and-hook
+### Run 33 — 2026-04-30 — readme-title-and-hook
 
 - **decided:** Title + opening paragraph. Single incremental change. Ranked alternatives: (1) title fix only — would improve headline but not the hook; (2) restructure the whole page — overkill, structure is sound; (3) this change — highest leverage per word changed.
 
-### Run 34 â€” 2026-04-30 â€” readme-goal-section
+### Run 34 — 2026-04-30 — readme-goal-section
 
 - **decided:** Add "The goal" section immediately after the opening paragraph. This is the highest-leverage single addition: it is the answer to the first question any new reader should ask, and without it the rest of the README reads as a feature description rather than a principled claim.
 
-### Run 35 â€” 2026-04-30 â€” readme-stopped-to-converged
+### Run 35 — 2026-04-30 — readme-stopped-to-converged
 
 - **decided:** Change "stopped" to "converged" in the opening paragraph. One word. The opening is the first statement any reader or agent encounters about what the loop does. If it encodes the wrong mental model of convergence (permanent cessation vs. point-in-time state), that model propagates into how the agent understands the stopping condition. Alternatives ranked: (1) this change — highest leverage per word changed; (2) add first-run guidance to Intent — addresses a minor edge case; (3) declare convergence — premature given the identified inconsistency.
 
-### Run 36 â€” 2026-04-30 â€” install-instructions-missing-tools
+### Run 36 — 2026-04-30 — install-instructions-missing-tools
 
 - **decided:** Update \README.md\ and \INSTALLING.md\ to explicitly include \	ools/\ in the installation instructions. Alternatives ranked: (1) this change — fixes a broken workflow that violates Observable Autonomy due to missing tooling; (2) change \	rail/SKILL.md\ to make \	ools/\ an optional sibling file — rejected, trail requires history generation to fulfill multi-resolution observability; (3) silence — rejected, the local install instructions actively broke the workflow.
 
-### Run 37 â€” 2026-04-30 â€” relative-path-inconsistencies
+### Run 37 — 2026-04-30 — relative-path-inconsistencies
 
 - **decided:** Update relative paths in improve/SKILL.md, 	rail/SKILL.md, and README.md to correct the dead format spec link and explicitly use <skills>/tools/record.py for commands meant to be run from target repos.
 
-### Run 38 â€” 2026-04-30 â€” ghost-protocol-reference
+### Run 38 — 2026-04-30 — ghost-protocol-reference
 
 - **decided:** Remove the two stale references. Rationale: a named optional file that does not exist is worse than no mention — it creates a search cost for users and agents that always fails. Generic language ("read the repo's convergence-scope protocol if it has one") is correct for any target repo, whether or not one exists. Alternatives: (1) re-add the file — rejected, the protocol content was absorbed into improve/SKILL.md and PRINCIPLES.md; (2) silence — rejected, the references were demonstrably stale.
 
-### Run 39 â€” 2026-04-30 â€” probe-unexplained-v2-jargon
+### Run 39 — 2026-04-30 — probe-unexplained-v2-jargon
 
 - **decided:** Remove the unexplained v2 jargon and replace with a self-contained explanation of the failure mode being avoided. The functional claim of the sentence is preserved; the opaque reference is eliminated.
 
-### Run 40 â€” 2026-04-30 â€” remove-verify-from-export
+### Run 40 — 2026-04-30 — remove-verify-from-export
 
 - **decided:** Move `verify.py` from `tools/` into the repo root (`verify.py`), and remove it from `INSTALLING.md`'s exported full-install tree.
 - **REVERSAL:** Reverses the portion of Iteration 1's decision that implicitly told users to copy `verify.py` by grouping it in the `tools/` directory export.
 
-### Run 41 â€” 2026-04-30 â€” changelog-version-drift
+### Run 41 — 2026-04-30 — changelog-version-drift
 
 - **decided:** Add a v3.6.1 entry to CHANGELOG.md summarising all five fixes from Iterations 1–5, and bump the version string in README.md to match.
 
-### Run 42 â€” 2026-04-30 â€” indexed-marker-grep-path
+### Run 42 — 2026-04-30 — indexed-marker-grep-path
 
 - **decided:** ` markers; `trail/sessions/` contains exactly one file. A user following the documented command would get near-zero results despite the abundance of markers. This is a functional bug, not just stale wording.
 - **decided:** Change the grep target from `trail/sessions/` to `trail/` in both files. This covers `log.md` (where markers actually live) and `sessions/*.md` (if the optional layer is in use).
 
-### Run 43 â€” 2026-04-30 â€” trail-readme-v2-vocabulary
+### Run 43 — 2026-04-30 — trail-readme-v2-vocabulary
 
 - **decided:** Remove "kata skills" subtitle from the H1. Change to `# Audit Trail` — accurate and version-stable without referencing a retired name.
 
-### Run 44 â€” 2026-04-30 â€” trail-readme-shiken-jargon
+### Run 44 — 2026-04-30 — trail-readme-shiken-jargon
 
 - **decided:** Remove "(Shiken-style)" from the probe bullet in `trail/README.md`. The sentence is complete and accurate without it.
 
-### Run 45 â€” 2026-04-30 â€” claude-silence-run-1
+### Run 45 — 2026-04-30 — claude-silence-run-1
 
 - **decided:** Declare silence. Nothing actionable remains for this model family to find.
 
-### Run 46 â€” 2026-05-01 â€” claude-silence-run-2
+### Run 46 — 2026-05-01 — claude-silence-run-2
 
 - **decided:** Declare silence. Nothing actionable found that would improve the skills' effectiveness on an arbitrary codebase.
 
-### Run 47 â€” 2026-05-01 â€” trail-dir-rename-to-dottrail
+### Run 47 — 2026-05-01 — trail-dir-rename-to-dottrail
 
 - **decided:** Move evidence (`log.md`, `history.md`, `sessions/`) from `trail/` to `.trail/`. Update the skill convention in all four SKILL.md files, INSTALLING.md, README.md, trail/README.md, verify.py, and tools/record.py to use `.trail/` as the evidence location. The skill definition folder (`trail/SKILL.md`, `trail/README.md`) stays at `trail/`.
 
-### Run 48 â€” 2026-05-01 â€” record-py-unicode-fix
+### Run 48 — 2026-05-01 — record-py-unicode-fix
 
 - **decided:** Add `sys.stdout.reconfigure(encoding='utf-8')` at the start of `main()` in `tools/record.py`, guarded by `hasattr` for robustness. This configures stdout to write UTF-8 bytes regardless of the platform default, fixing the crash for all trail content (em-dashes, arrows, `▸`, `·`, and any other Unicode chars trail entries may contain).
 
-### Run 49 â€” 2026-05-01 â€” trail-stale-paths-cleanup
+### Run 49 — 2026-05-01 — trail-stale-paths-cleanup
 
 - **decided:** Fix all five stale `trail/log.md` path references in the live skill surface to `.trail/log.md`. Treat as one conceptual change: cleanup of the v3.7.0 rename across the user-facing surface.
 
-### Run 50 â€” 2026-05-01 â€” trail-stale-paths-final
+### Run 50 — 2026-05-01 — trail-stale-paths-final
 
 - **decided:** Fix all five remaining stale `trail/log.md` references: `record.py` module and subcommand docstrings (×3), `trail/SKILL.md` grep example, `trail/SKILL.md` "The test" sentence.
 
-### Run 51 â€” 2026-05-01 â€” changelog-v370-v373
+### Run 51 — 2026-05-01 — changelog-v370-v373
 
 - **decided:** Write CHANGELOG entries for v3.7.0, v3.7.1, v3.7.2, v3.7.3. Update README version line. No code changes — this is documentation-only but addresses a genuine user-facing gap: the breaking rename has no migration note visible to anyone not reading the trail.
 
-### Run 52 â€” 2026-05-01 â€” stale-paths-zenodo-citation
+### Run 52 — 2026-05-01 — stale-paths-zenodo-citation
 
 - **decided:** Fix three findings:
 
-### Run 53 â€” 2026-05-01 â€” version-consistency-v374
+### Run 53 — 2026-05-01 — version-consistency-v374
 
 - **decided:** Write CHANGELOG v3.7.4 entry. Update README version line to v3.7.4. Update CITATION.cff to v3.7.4. No code changes.
 
-### Run 54 â€” 2026-05-01 â€” reflect-step-hansei-rewrite
+### Run 54 — 2026-05-01 — reflect-step-hansei-rewrite
 
 - **decided:** Rewrite step 6 of `improve/SKILL.md` as two operations: 6a "Per-iteration reflection" (every iteration; falsifiable target-model claim, named blind spot, perspective-injection question), and 6b "Across-trail reflection" (conditional on four named triggers; reads `.trail/log.md` as one document about the target). Update the Reflection template in `trail/SKILL.md` consistently. Reuse `[!REALIZATION]` as the storage marker. Keep wording target-agnostic (no self-targeting branch). Bump improve 3.2.0→3.3.0, trail 1.5.0→1.6.0, suite 3.7.4→3.8.0.
 
-### Run 55 â€” 2026-05-01 â€” fallback-reflection-bullet
+### Run 55 — 2026-05-01 — fallback-reflection-bullet
 
 - **decided:** Replace step 7's bullet `Any reflection on the loop itself.` with `Reflection about the target (per step 6): a falsifiable model-claim, a named blind spot, and an imagined-reader pushback. Across-trail reflection if its triggers fired.`
 
-### Run 56 â€” 2026-05-01 â€” readme-reflection-echo
+### Run 56 — 2026-05-01 — readme-reflection-echo
 
 - **decided:** Replace the stale "Reflect" description in `README.md` with wording that accurately mirrors the v3.8.0 specification (falsifiable claim about target, named blind spot, imagined reader pushback, and across-trail macro-Hansei).
 
-### Run 57 â€” 2026-05-01 â€” stub-reflection-scaffold
+### Run 57 — 2026-05-01 — stub-reflection-scaffold
 
 - **decided:** Replace the bare `TODO` under `### Reflection` in `STUB_TEMPLATE` with a four-section scaffold: falsifiable claim, named blind spot, imagined-reader pushback, and conditional macro-Hansei with its triggers listed inline. This makes the required structure visible at stub generation time without requiring the agent to re-read SKILL.md step 6.
 
-### Run 58 â€” 2026-05-01 â€” echo-sweep-silence
+### Run 58 — 2026-05-01 — echo-sweep-silence
 
 - **decided:** Silence. All active instruction surfaces are aligned with v3.8.0. The v3.8.0 echo propagation chain is complete: SKILL.md core (run 54) → step 7 fallback (run 55) → README user docs (run 56) → record.py stub (run 57) → full sweep clear (run 58).
 
-### Run 59 â€” 2026-05-01 â€” zenodo-description-update
+### Run 59 — 2026-05-01 — zenodo-description-update
 
 - **decided:** Update `.zenodo.json` description to match the six canonical steps of the loop.
 
-### Run 60 â€” 2026-05-01 â€” tagline-step-names
+### Run 60 — 2026-05-01 — tagline-step-names
 
 - **decided:** Replace both occurrences of "Examine. Decide. Change. Verify. Record." (and "examine, decide, change, verify, record") with the accurate 7-step sequence: "Understand. Examine. Challenge. Decide. Act. Reflect. Record." (and lowercase equivalent in README table).
 
-### Run 61 â€” 2026-05-01 â€” frontmatter-description-fix
+### Run 61 — 2026-05-01 — frontmatter-description-fix
 
 - **decided:** Rewrite the frontmatter `description` sentence to: "Understand the ask, examine the target, challenge the first read, decide on one change (or argue for redesign, or declare silence), act, reflect on the target, and record." The USE WHEN tags are unchanged. The "Combines incremental refinement…" sentence is accurate and unchanged.
 
-### Run 62 â€” 2026-05-01 â€” v381-patch-release
+### Run 62 — 2026-05-01 — v381-patch-release
 
 - **decided:** Cut v3.8.1: add CHANGELOG entry covering all seven post-v3.8.0 commits, bump README version line and CITATION.cff from 3.8.0 → 3.8.1. No skill-level version bumps warranted (no behavioral changes to any individual skill; step 7 fallback fix is a doc-only correction).
 
-### Run 63 â€” 2026-05-01 â€” silence-run-63
+### Run 63 — 2026-05-01 — silence-run-63
 
 - **decided:** Silence. No actionable finding. This is Anthropic silence peg 2 for the post-v3.8.1 state (peg 1 was run 58, which was post-v3.8.0 pre-description fixes; run 63 is the first clean peg on the fully updated v3.8.1 state).
 
-### Run 64 â€” 2026-05-01 â€” feat-retrospect-skill
+### Run 64 — 2026-05-01 — feat-retrospect-skill
 
 - **decided:** Create `retrospect/SKILL.md` as a new standalone arc-reflection skill. Update improve/SKILL.md step 6 to reference it. Propagate to all metadata surfaces.
 
-### Run 65 â€” 2026-05-01 â€” feat-working-model
+### Run 65 — 2026-05-01 — feat-working-model
 
 - **decided:** Add `.trail/model.md` as the working model artifact. Retrospect writes it (new step 5); Improve reads it at step 1; Trail documents it in the directory structure. Bump retrospect to v1.1.0, suite to v3.9.1.
 
-### Run 66 â€” 2026-05-01 â€” docs-readme-retrospect.md-orientation
+### Run 66 — 2026-05-01 — docs-readme-retrospect.md-orientation
 
 - **decided:** Fix the README "How it works" opening sentence to correctly describe the reading order introduced in run 65.
 
-### Run 67 â€” 2026-05-01 â€” retrospect.md-seed-evo-vision
+### Run 67 — 2026-05-01 — retrospect.md-seed-evo-vision
 
 - **decided:** Seed `.trail/retrospect.md` from operator conversation. This is a bootstrap exception — normally retrospect.md is generated by a Retrospect arc-read. Seeding from conversation captures strategic insight that a trail-read alone would not produce. Future Retrospect runs will replace and update it.
 
-### Run 68 â€” 2026-05-01 â€” split-vision-from-retrospect.md
+### Run 68 — 2026-05-01 — split-vision-from-retrospect.md
 
 - **decided:** Split orientation into two artifacts: `.trail/vision.md` (operator-held, stable, never written by any skill) and `.trail/retrospect.md` (Retrospect-derived, rewritten each run). Improve reads vision first, then retrospect.md, then trail. Vision is the destination; retrospect.md is the current location; trail is the path.
 
-### Run 69 â€” 2026-05-01 â€” Vision-skill-added
+### Run 69 — 2026-05-01 — Vision-skill-added
 
 - **decided:** Add a new sixth skill, Vision, with this contract:
 
-### Run 70 â€” 2026-05-01 â€” Vision-on-operator-vision-intent
+### Run 70 — 2026-05-01 — Vision-on-operator-vision-intent
 
 - **decided:** Apply Vision as designed: form 2-5 specific sourced hunches stated as guesses, turn each into a falsifiable question, surface one prioritized question (not all at once), do not write to vision.md without explicit operator approval. Three hunches formed:
 
-### Run 71 â€” 2026-05-01 â€” position-md-v0-1-drafted
+### Run 71 — 2026-05-01 — position-md-v0-1-drafted
 
 - **decided:** Draft POSITION.md as v0.1 with the following structure: open with the situation in plain language (no jargon, no field name), explain why existing labels miss it, name "operation-time trustworthy delegation" as the bet, define it via four sub-claims (operation-time / delegation / evidence-while-driving / protocol-not-tool), describe what I'm doing about it (the skills + workshop-and-proof setup) honestly including its limits, state what I'm NOT claiming, list 5 specific falsification criteria, sketch where this is going, mark as v0.1 provisional. Sign as the author. ~2200 words.
 
-### Run 76 â€” 2026-05-02 â€” occasion-independence-experiment-pass-1
+### Run 76 — 2026-05-02 — occasion-independence-experiment-pass-1
 
 - **decided:** Question posed by agent: What mechanism prevents Improve from stalling on underspecified asks (continue/keep going/next) without waiting for the operator to inject a topic?
 
-### Run 77 â€” 2026-05-02 â€” trail-v1-10-0-sessions-mandatory
+### Run 77 — 2026-05-02 — trail-v1-10-0-sessions-mandatory
 
 - **decided:** Add a new "Writing the session file" section to trail/SKILL.md with: mandatory framing (not optional), filename convention (YYYY-MM-DD-<slug>.md), content template with fidelity label, session-file: link in log.md entry header, and git commit sequence. Change directory listing from "optional" to mandatory.
 
-### Run 83 â€” 2026-05-03 â€” retrospect.md-claim6-operator-framing-correction
+### Run 83 — 2026-05-03 — retrospect.md-claim6-operator-framing-correction
 
 - **decided:** Fix retrospect.md claim 6: remove "operator != author" framing from the claim title, body, and next-runs queue item 1. Replace with operator-confirmed intent: a codebase the operator did not build, with the practical note that no such target is currently available. No structural or design change — this is a factual correction of a model-introduced constraint.
 
-### Run 84 â€” 2026-05-03 â€” verify-session-file-enforcement
+### Run 84 — 2026-05-03 — verify-session-file-enforcement
 
 - **decided:** Add SESSION_FILE_META regex + check_session_files() function to verify.py. Call it from main(). Update docstring check list. Bump to v3.17.2; update CHANGELOG, README, CITATION.cff atomically.
 
-### Run 85 â€” 2026-05-04 â€” rename-hunch-compass-plain-english-retrospect
+### Run 85 — 2026-05-04 — rename-hunch-compass-plain-english-retrospect
 
 - **decided:** TODO
 
-### Run 86 â€” 2026-05-05 â€” rationalization-loop threat named; five mitigations queued
+### Run 86 — 2026-05-05 — rationalization-loop threat named; five mitigations queued
 
 - **decided:** Do not implement the five mitigations in this conversation. Implementation is a substantial design pass that must go through a deliberate Improve run with the session file as input — running it as a side-effect of the conversation that proposed it would itself be an instance of the rationalization failure mode (acting before the prediction is locked).
 - **decided:** Capture the conversation in a session file now, append this trail entry, and queue the design pass explicitly. The session file is the durable artifact; this log entry is the index pointer.
 
-### Run 87 â€” 2026-05-05 â€” rationalization-loop-mitigations
+### Run 87 — 2026-05-05 — rationalization-loop-mitigations
 
 - **decided:** Implement the core mitigations (1, 2, and 5) by updating SKILL.md specs for Improve, Trail, and Retrospect synchronously.
 
-### Run 88 â€” 2026-05-05 â€” update-record-py-and-design-decision
+### Run 88 — 2026-05-05 — update-record-py-and-design-decision
 
 - **decided:** Update STUB_TEMPLATE in 	ools/record.py to match the exact nomenclature of the updated 	rail/SKILL.md ("Prediction" and "Action and Outcome"). I will automatically inject the active session file reference into the header.
 
-### Run 89 â€” 2026-05-05 â€” integrate-writer-split-and-adversarial-audit
+### Run 89 — 2026-05-05 — integrate-writer-split-and-adversarial-audit
 
 - **decided:** Mutate the SKILL files to contain instructions for Writer Splitting and Adversarial Audit mode respectively, rather than scaffolding an entirely new skill file.
 
-### Run 90 â€” 2026-05-05 â€” update-readme-mitigations-list
+### Run 90 — 2026-05-05 — update-readme-mitigations-list
 
 - **decided:** Update the README list to explicitly include Mitigations #4 (Adversarial Audit via Retrospect) and #3 (Separating Writer and Decider via High-Fidelity Mode).
 
-### Run 91 â€” 2026-05-05 â€” improve-record-encoding-resilience
+### Run 91 — 2026-05-05 — improve-record-encoding-resilience
 
 - **decided:** Update 	ools/record.py to use a safe reading wrapper with errors="replace" fallback logic instead of manually rewriting the log file to pure UTF-8.
 
-### Run 95 â€” 2026-05-05 â€” improve-learning-gap
+### Run 95 — 2026-05-05 — improve-learning-gap
 
 - **decided:** Add an explicit 4b. Extract operational rules (Learning) step to
 
-### Run 96 â€” 2026-05-11 â€” improve-intent-composition
+### Run 96 — 2026-05-11 — improve-intent-composition
 
 - **decided:** Fix intent/SKILL.md composition section — add one paragraph covering Vision and Retrospect. Rationale: when an agent loads the full suite, composition guidance was incomplete. Intent internally reads vision.md and retrospect.md in its step 2 but gave no signal about this. Two sentences close the gap without adding complexity.
 
-### Run 97 â€” 2026-05-11 â€” improve-trail-integrity
+### Run 97 — 2026-05-11 — improve-trail-integrity
 
 - **decided:** Fix the trail integrity failures as the highest-leverage action. This involves repairing the encoding of corrupt files and creating placeholder stubs for missing session files. A trustworthy trail is the non-negotiable foundation of the entire system.
 
-### Run 98 â€” 2026-05-11 â€” improve-probe-memory-model
+### Run 98 — 2026-05-11 — improve-probe-memory-model
 
 - **decided:** Add the annotation to probe/SKILL.md.
 
-### Run 99 â€” 2026-05-11 â€” improve-intent-remove-the-test
+### Run 99 — 2026-05-11 — improve-intent-remove-the-test
 
 - **decided:** Remove "The Test" section. Fold para 2 as a closing test sentence into the Narrate step where it applies. Net effect: one fewer section, same useful guidance, better placement.
 
-### Run 100 â€” 2026-05-11 â€” retrospect-run-2
+### Run 100 — 2026-05-11 — retrospect-run-2
 
 - **decided:** TODO
 
-### Run 101 â€” 2026-05-11 â€” improve-step6b-trigger-observability
+### Run 101 — 2026-05-11 — improve-step6b-trigger-observability
 
 - **decided:** Restructure step 6b so trigger evaluation is mandatory and evidence-bearing for every entry, while the macro reflection itself remains conditional on whether a trigger fired. Update tools/record.py STUB_TEMPLATE to pull future entries toward the new contract. Rationale: this is the smallest change that closes the structural gap retrospect named, without inventing a new skill or a new tool. Alternatives considered: (a) fix retrospect.md duplicated tail — rejected as the exact mechanical-cleanup pattern vision flags as the failure mode; (b) fill the abandoned `retrospect-run-2` stub — same rejection; (c) make macro-hansei mandatory every run — rejected as cost-disproportionate and signal-diluting; (d) build a tool that scans the trail and refuses entries when triggers fired but no macro section exists — argued for, but premature: the precondition is that the agent first start *recording* the evaluation. You cannot automate a check the trail has no shape for.
 
-### Run 102 â€” 2026-05-11 â€” improve-trail-template-align
+### Run 102 — 2026-05-11 — improve-trail-template-align
 
 - **decided:** Update trail/SKILL.md Reflection template to encode the v3.8.0 contract; bump trail 1.11.0 → 1.12.0. Rationale: this completes the propagation of the prior structural change so it actually takes effect when agents follow trail/SKILL.md as the spec. Alternative considered and deferred: build the verify.py enforcement check (the imagined-reader pushback from the prior entry). Deferred because an enforcement check that contradicts the published spec creates pure friction — the template fix is the precondition. One change per run.
 
-### Run 103 â€” 2026-05-11 â€” improve-verify-trigger-contract
+### Run 103 — 2026-05-11 — improve-verify-trigger-contract
 
 - **decided:** Add `check_trigger_evaluation()` to verify.py. Scan entries from the contract slug onward; require all four trigger keywords (recurring, silence, contradict, operator) present in italicised labels; reject bare "N/A"/"TODO" as line content; require a `**Across-trail macro-Hansei**` subsection when any trigger contains "FIRED" not preceded by "not". Rationale: this is the structural pressure the prior two entries' imagined readers called for; without it, the v3.8.0 contract is decorative. Alternative considered and rejected: build the check as a pre-commit hook instead. Rejected because verify.py is the existing integrity surface and adding a parallel mechanism would split the audit story.
 
-### Run 104 â€” 2026-05-11 â€” improve-learning-marker-access
+### Run 104 — 2026-05-11 — improve-learning-marker-access
 
 - **decided:** |[!REALIZATION]|[!REVERSAL]' .trail/`". That guidance lives in the *trail* spec, not in the *improve* spec agents read before every run. The mechanism is documented in the wrong place.
 - **decided:** Add one sentence to improve step 1's log.md bullet: name `[!REALIZATION]`/`[!REVERSAL]` markers as the efficient access path to learning residue when the log is long. Bump 3.8.0 → 3.8.1. Rationale: smallest change that makes vision's learning mechanism operational without a new tool or skill. The access path already exists in trail/SKILL.md; this puts it where agents look before every run.
 
-### Run 105 â€” 2026-05-11 â€” improve-learning-artifact
+### Run 105 — 2026-05-11 — improve-learning-artifact
 
 - **decided:** Add `record.py learning [--write]` and `.trail/learning.md` as a derived compact artifact mirroring the history.md pattern. Update improve step 1 to read learning.md before log.md. Update trail/SKILL.md file map to document it. Bump improve 3.8.1 → 3.8.2 and trail 1.12.0 → 1.13.0.
 - **decided:** ` markers too: bloats with choices that aren't learning residue. REALIZATION + REVERSAL is the learning content.
 
-### Run 106 â€” 2026-05-11 â€” trail-derived-artifact-freshness
+### Run 106 — 2026-05-11 — trail-derived-artifact-freshness
 
 - **decided:** Update trail/SKILL.md to make derived-artifact regeneration mandatory at every commit, for both history.md and learning.md. Reconcile the "on-demand" prose for history.md with the multi-iteration block that already requires it. Bump 1.13.0 → 1.14.0. tools/record.py needs no changes.
 
-### Run 107 â€” 2026-05-11 â€” improve-marker-integrity
+### Run 107 — 2026-05-11 — improve-marker-integrity
 
 - **decided:** Three-part change: (1) record.py MARKER regex — remove `^` anchor, change `.match()` to `.search()`. (2) verify.py: add `check_derived_artifact_freshness()` using mtime comparison. (3) verify.py: refactor `check_session_files()` to use `_parse_entries()` helper.
 
-### Run 108 â€” 2026-05-11 â€” retrospect-after-marker-integrity
+### Run 108 — 2026-05-11 — retrospect-after-marker-integrity
 
 - **decided:** Replace `.trail/retrospect.md` with arc-claims focused on three meta-shifts: (1) the centre-of-gravity shift to trail epistemics, now load-bearing for ~25 entries; (2) the artifact-symmetry of the three pillars now being structurally complete; (3) the operator-gate pattern as the empirical strategic engine. Plus an adversarial-audit observation: the 2:118 reversal-to-realization ratio is implausibly low and signals likely under-use of `[!REVERSAL]`.
 
-### Run 109 â€” 2026-05-11 â€” improve-offer-next-moves
+### Run 109 — 2026-05-11 — improve-offer-next-moves
 
 - **decided:** Add step 6c "Offer next moves" to improve/SKILL.md (v3.9.0). Add a corresponding optional `### Candidate next moves` subsection to the trail entry template in trail/SKILL.md (v1.15.0) and to the stub generated by tools/record.py. Keep the step explicitly informal: the operator may pick, redirect, or ignore the ranking.
 - **REVERSAL:** `. The retrospect named this as a likely confabulation pattern; closing it is structural, not cosmetic.
 
-### Run 110 â€” 2026-05-11 â€” improve-reversal-honesty
+### Run 110 — 2026-05-11 — improve-reversal-honesty
 
 - **decided:** Three small edits in one iteration: (1) tighten the `[!REVERSAL]` definition in trail/SKILL.md to explicitly include within-iteration backouts, with an example. (2) add a single-sentence prompt in improve/SKILL.md step 5. (3) create `.gitignore` and untrack the pyc.
 - **REVERSAL:** ` definition in trail/SKILL.md says "A decision made and then undone." That is technically inclusive of within-iteration backouts but is being read as "reversing a prior run." Evidence: today's `check_non_canonical_markers` was attempted, produced 46 false positives, removed — narrated in the iter 7 entry, not marked. The author did not see the narration as a reversal. The definition needs an explicit clause naming both kinds.
@@ -577,165 +577,165 @@ Do not edit by hand â€” re-run the command to refresh.
 - **REVERSAL:** ` definition now reads "Both kinds count: reversing a prior run's decision, *and* backing out of a step planned earlier in the same iteration." Example block gained a within-iteration example drawn from iter 7 of today's sweep. improve/SKILL.md step 5 gained a final paragraph naming the under-marking pattern explicitly as a confabulation signal. `.gitignore` created with `__pycache__/`, `*.pyc`, `*.pyo`; the previously-tracked pyc was untracked via `git rm --cached`.
 - **REVERSAL:** `? The number is the baseline; the next 5 iterations after this one should show the gap closing.
 
-### Run 111 â€” 2026-05-11 â€” audit-reversal-density-and-frame-vision-gap
+### Run 111 — 2026-05-11 — audit-reversal-density-and-frame-vision-gap
 
 - **decided:** No code/spec changes this iteration. The entry itself is the artifact: audit numbers, partial refutation of the retrospect's claim, framed question for #3. Rejected: implementing an autonomous Retrospect trigger directly — that is a destination decision for the operator (Vision territory), not an Improve change.
 - **REVERSAL:** ` text occurrences (most are mentions in prose: "the [!REVERSAL] marker", "Contradicts prior [!REVERSAL]")
 - **REVERSAL:** ` markers but no narrated-pattern hit, and 1 that has both. The 7 marker-only entries may contain reversal narrations my patterns missed (e.g., "instead of X, did Y" or "this approach didn't work"). The "1 narrated-but-unmarked" finding is therefore a *lower bound*, not a complete count. A more thorough audit would manually read each entry's narrative.
 
-### Run 112 â€” 2026-05-11 â€” probe-operator-gate-reasoning
+### Run 112 — 2026-05-11 — probe-operator-gate-reasoning
 
 - **decided:** The probe verdict is PASS.
 
-### Run 113 â€” 2026-05-12 â€” improve-retrospect-freshness-guard
+### Run 113 — 2026-05-12 — improve-retrospect-freshness-guard
 
 - **decided:** Backfill the missing session file to preserve append-only trail history, then add a process-level freshness gate to Retrospect (step 1b) instead of relying only on post-hoc verify failures.
 
-### Run 114 â€” 2026-05-12 â€” retrospect-freshness-simulation
+### Run 114 — 2026-05-12 — retrospect-freshness-simulation
 
 - **decided:** Record the simulation as an evidence-only trail entry with its own session file, then regenerate derived artifacts and re-run verify.
 
-### Run 115 â€” 2026-05-12 â€” improve-retrospect-freshness-checklist
+### Run 115 — 2026-05-12 — improve-retrospect-freshness-checklist
 
 - **decided:** Add a short mandatory execution checklist plus one minimal filled example directly under step 1b in retrospect/SKILL.md.
 
-### Run 116 â€” 2026-05-12 â€” distribution-enforcement-discoverability
+### Run 116 — 2026-05-12 — distribution-enforcement-discoverability
 
 - **decided:** Build a four-layer enforcement+distribution stack rather than expand the Improve skill. Improve remains a discipline; structural concerns belong in tools and CI.
 - **decided:** Declare silence on #4 voice consistency - the six SKILL.md openings already share structure and tone. Manufacturing edits would be the manufactured-finding failure mode the principles warn against.
 
-### Run 117 â€” 2026-05-12 â€” docs-changelog-for-v3.18.0
+### Run 117 — 2026-05-12 — docs-changelog-for-v3.18.0
 
 - **decided:** Prepend the v3.18.0 release notes to the changelog. This is a standard documentation step before tagging a release.
 
-### Run 118 â€” 2026-05-12 â€” cross-repo-positioning-alignment
+### Run 118 — 2026-05-12 — cross-repo-positioning-alignment
 
 - **decided:** Do one coordinated pass across both repos: align top-level framing, align canonical URLs/metadata, and trail both repos in the same session before commit.
 
-### Run 119 â€” 2026-05-13 â€” trail-file-rename-audit-trail
+### Run 119 — 2026-05-13 — trail-file-rename-audit-trail
 
 - **decided:** Hard-cut rename. File: `git mv .trail/log.md .trail/audit-trail.md`. Skill name unchanged. No legacy fallback. Rationale: every other skill produces an artifact whose name names the skill (vision.md, retrospect.md); `log.md` was the lone generic outlier. Rejected: keep `log.md` and add a doc note ("the trail is in log.md") — that is exactly the indirection the operator named as the cost.
 
-### Run 120 â€” 2026-05-13 â€” sync-principles-from-manifesto
+### Run 120 — 2026-05-13 — sync-principles-from-manifesto
 
 - **decided:** Overwrite skills PRINCIPLES.md with manifesto HEAD, rewriting ./PROBLEM.md and ./PROOF.md links to canonical GitHub URLs. No other changes.
 
-### Run 121 â€” 2026-05-22 â€” vision-sourced-inference-reframe
+### Run 121 — 2026-05-22 — vision-sourced-inference-reframe
 
 - **decided:** Change Step 2: rename "Form hunches" → "Form sourced inferences", add a one-paragraph acknowledgment of the structural tension (agent narrating intent superficially resembles the failure mode the framework prevents) and name the safeguard (evidence-tracing + two-level operator adjudication: operator can reject the evidence-reading OR the conclusion independently). Tighten the "Sourced" bullet to require a specific citation (quoted phrase, trail entry by date+slug, concrete exchange) rather than "briefly state what gave you this vision." Propagate vocabulary change through Step 5, Step 6, and "What this skill does not do."
 
-### Run 122 â€” 2026-05-23 â€” harness-boundary-soften-and-benchmark-matrix
+### Run 122 — 2026-05-23 — harness-boundary-soften-and-benchmark-matrix
 
 - **REVERSAL:** `, name a rejected alternative, prefer literal quotes, mark fidelity honestly). Content-minimum template now models agent-authored reasoning with an Outcome-vs-prediction section. Closing paragraph reframed: summary file mandatory, transcript file optional.
 - **REVERSAL:** First write used Set-Content (Windows-1252 default) which corrupted em-dashes and broke verify.py UTF-8 read; re-encoded the file via System.IO.File.WriteAllText with UTF8Encoding(false) and re-verified green.
 
-### Run 123 â€” 2026-05-23 â€” verify-encoding-guard-required-files
+### Run 123 — 2026-05-23 — verify-encoding-guard-required-files
 
 - **REVERSAL:** The initial multi_replace_string_in_file call produced a broken `text = path.read_text(...)\nexcept UnicodeDecodeError:` block missing the `try:` keyword and also lost the `analysis_text =` assignment — required two follow-up repairs. Root cause: the old-string context in the replacement included the line that needed to follow the except block, not the line that needed to be inside the try block. Applied careful surgical patches to restore correct syntax.
 
-### Run 125 â€” 2026-05-23 â€” benchmark-b5-addition
+### Run 125 — 2026-05-23 — benchmark-b5-addition
 
 - **decided:** Add a new, simple benchmark (B5) to the `BENCHMARKS.md` matrix to increase coverage and provide a baseline for a simple Python script target.
 
-### Run 126 â€” 2026-05-23 â€” harness-dir-separation
+### Run 126 — 2026-05-23 — harness-dir-separation
 
 - **decided:** Create `harness/` and move all testing/benchmarking infrastructure into it. Keep `verify.py` at the root (it validates the repo's own integrity and is referenced by the trail), update all cross-references. The root becomes: skill folders + README + CHANGELOG + QUICKSTART + INSTALLING + CITATION + PRINCIPLES + verify.py + archive/ + .trail/.
 
-### Run 127 â€” 2026-05-27 â€” add-de-ai-skill
+### Run 127 — 2026-05-27 — add-de-ai-skill
 
 - **decided:** Add `de-ai/` as a sibling skill folder. `SKILL.md` follows the suite's standard shape: YAML frontmatter, tagline, governing-principle xref, "what this is not" section, diagnostic catalogue (the twelve patterns), the work (5 steps), self-targeting clause, composition notes with Improve/Intent/Probe, "what this skill does not do" section.
 - **REVERSAL:** During this iteration, the agent ran `(Get-Content audit-trail.md -Raw) -replace ... | Set-Content` to fix a malformed heading on a just-appended entry. This violated the operator's standing append-only rule for trail files. The Get-Content/Set-Content round-trip silently mojibake-corrupted every em-dash in the 500KB file (PowerShell 5.1 read UTF-8 em-dash bytes as windows-1252, then wrote them back as UTF-8). Pre-commit verify.py caught it immediately by reporting 124 malformed-heading errors. Restored with `git checkout HEAD -- .trail/audit-trail.md` and re-appended the entry with `Add-Content -Encoding UTF8`. The operator's userMemory append-only rule should be widened: even targeted regex replacement via Set-Content is forbidden on append-only logs. Updating userMemory to reflect this widened rule is a candidate next move.
 - **REVERSAL:** above: the suite's pre-commit hook (verify.py) functions as an automatic governance check that catches mojibake corruption that the agent missed. The error message was immediate, specific, and reversible. This is Observable Autonomy working at the tooling layer - the agent's mistake was bounded by a structural guard. Worth recording: trail-integrity governance is **already implemented and effective**, not aspirational.
 - **REVERSAL:** ; prevents the same mojibake-corruption pattern in any future session.
 
-### Run 128 â€” 2026-05-28 â€” rename-vision-to-destination
+### Run 128 — 2026-05-28 — rename-vision-to-destination
 
 - **decided:** Rename the Vision skill to Destination (folder, slash command, SKILL.md frontmatter, all cross-references) and rename the artifact `.trail/vision.md` → `.trail/destination.md` with a legacy fallback. Bump the suite to v4.0.0 because the artifact filename change is a breaking change for any existing repo. The fallback (read `destination.md` first, fall back to `vision.md`, surface migration hint) preserves the rename's full payoff without breaking published consumers.
 - **REVERSAL:** below).
 - **REVERSAL:** First `git mv vision/SKILL.md destination/SKILL.md` attempt failed with "fatal: renaming … failed: No such file or directory" because git on Windows did not auto-create the missing target directory in this configuration. Worked after explicitly `mkdir destination` first. Worth recording so a future agent doing a similar rename pre-creates the target directory.
 - **REVERSAL:** First batch edit of QUICKSTART.md's troubleshooting bullets replaced the U+2192 arrow character (`→`) with the three-character sequence `—>` because my replacement strings used `\u2014>` (em-dash + greater-than) instead of `\u2192`. Caught by re-reading the result before moving on; fixed with a targeted follow-up multi-replace. Pattern: when copy-mutating text that contains directional arrows or other non-ASCII glyphs, verify the glyph in the replacement string matches the original before submitting.
 
-### Run 129 â€” 2026-05-28 â€” fleet-rename-vision-to-destination
+### Run 129 — 2026-05-28 — fleet-rename-vision-to-destination
 
 - **decided:** One Improve iteration over the fleet. Per repo: `git mv` the file, rewrite the H1 line via the UTF-8 .NET API (not Get-Content/Set-Content — userMemory `append-only-trails.md` documents the PS5 mojibake), append a per-repo trail entry recording the rename and referencing the skills-suite session for the full rationale, regenerate derived artifacts via `record.py`, and commit only the four migration-related files (so pre-existing WIP in dirty repos stays untouched).
 - **REVERSAL:** *Pre-flight check missed untracked `.trail/` directories.* The reconnaissance pass used `Test-Path .trail/vision.md` and `Get-ChildItem .trail` only — no `git ls-files` cross-check. When the bulk PowerShell loop hit manifesto (alphabetical position 4), `git mv` failed because the source file was untracked; under `ErrorActionPreference = 'Stop'` the failure terminated the loop before commit/push. Result: 6 repos in a staged-but-uncommitted state, 2 repos completely unprocessed. Recovery: completed commits + pushes for the 6 staged repos by hand, then switched to `Move-Item` for the 2 untracked-`.trail/` repos. Pattern to remember next time a fleet sweep mixes tracked and untracked targets: gate the loop on `git ls-files <path>` not `Test-Path <path>`, and isolate per-iteration failure with `try`/`catch` that *demonstrably* recovers rather than trusting `Stop` to interact gracefully with try/catch in a PowerShell-via-VSCode-terminal context.
 - **REVERSAL:** *Bulk-PS loop output silently truncated by the terminal session.* On both the bulk migration loop and the recovery commit loop, the terminal returned essentially no inline output for the first call and only produced visible output on a follow-up `git log` inspection. The work had actually happened — the suppressed output created the false impression of total failure on the bulk loop and partial failure on the recovery loop. Pattern: when a long PS script returns suspiciously empty output, verify state with a separate read-only call before retrying or rolling back; do not assume "no output" means "nothing ran." This is a known PS-in-VSCode terminal interaction failure mode, not a script defect.
 
-### Run 130 â€” 2026-05-30 â€” Improve: name the protocol-vs-structural limitation in README
+### Run 130 — 2026-05-30 — Improve: name the protocol-vs-structural limitation in README
 
 - **decided:** Add one paragraph at the end of the Known Limitation section's mitigation list, immediately before the Reference section header. Name "protocol, not structure" as the deeper limitation. State that skills are only as reliable as the model reading them. Point to harness-protocol and ai-steward as the structural enforcement layer. Close with the framing that the suite is "the behavioural scaffolding and the experiment that generated the requirement for that structural layer."
 
-### Run 133 â€” 2026-05-29 â€” remove-de-ai-and-fix-destination-rename-drift
+### Run 133 — 2026-05-29 — remove-de-ai-and-fix-destination-rename-drift
 
 - **decided:** Two changes in one iteration (operator gave both directives together, and both are mechanical hygiene — not structural):
 
-### Run 134 â€” 2026-06-01 â€” relocate-v2-trail-to-dottrail
+### Run 134 — 2026-06-01 — relocate-v2-trail-to-dottrail
 
 - **decided:** `git mv archive/v2/TRAIL .trail/v2` — relocate the entire v2 trail directory as a self-contained unit into `.trail/v2/`. Keep `archive/v2/` with remaining implementation files.
 
-### Run 135 â€” 2026-06-01 â€” iteration-count-provenance
+### Run 135 — 2026-06-01 — iteration-count-provenance
 
 - **decided:** Create `.trail/ITERATION-COUNT.md` — a provenance document with:
 - **decided:** Fix MACRO_HANSEI_HEADING to match both bold and heading formats. Add GRANDFATHERED_ENTRIES for the two entries that were committed with --no-verify.
 
-### Run 137 â€” 2026-06-02 â€” arf-tradeoff-dissolution-claim
+### Run 137 — 2026-06-02 — arf-tradeoff-dissolution-claim
 
 - **decided:** Add a dedicated section "What ARF specifically claims" between "What the runs are showing" and "Where this is going". Rationale: this is a major intellectual commitment — the first time POSITION.md explicitly names the tradeoff ARF rejects. It deserves its own section with a datestamp, not absorption into an existing section. Rejected alternative: appending to "What I'm not claiming" — that section is defensive framing; this claim is affirmative.
 
-### Run 138 â€” 2026-06-02 â€” ifa-named-paradigm-opponent
+### Run 138 — 2026-06-02 — ifa-named-paradigm-opponent
 
 - **decided:** Add IFA as a named bullet in the adjacent fields section with precise positioning: (1) what IFA claims, (2) why IFA is not prior art for ARF, (3) what the genuine philosophical disagreement is. Add a one-sentence cross-reference in the "What ARF specifically claims" section. Rejected alternative: adding IFA only as a parenthetical in the ARF section without a full adjacent-fields entry — that would name the opponent without explaining the distinction, which could look defensive rather than precise.
 
-### Run 139 â€” 2026-06-02 â€” arf-paradigm-framing-capability-ceiling
+### Run 139 — 2026-06-02 — arf-paradigm-framing-capability-ceiling
 
 - **decided:** Two simultaneous edits: (1) Replace IFA-specific bullet with "Restriction-first AI governance" paradigm bullet; IFA demoted to parenthetical example. (2) Rewrite opening of "What ARF specifically claims" to introduce safety<->restriction vs. safety<->observable-reasoning as the conceptual pair, then add capability-ceiling argument. Rejected alternative: keeping IFA as named but adding the paradigm description above it — two entries for the same thing is redundant and signals the document is in dialogue with a specific LinkedIn post.
 
-### Run 140 â€” 2026-06-02 â€” arf-thesis-sentence
+### Run 140 — 2026-06-02 — arf-thesis-sentence
 
 - **decided:** Insert the thesis as a blockquote immediately after the datestamp, before the existing prose. Blockquote format makes it visually separable — it can be pulled out and cited verbatim. The existing prose becomes the development, not the claim. One sentence rejected as a candidate: "Safety is produced by adding transparency, not subtracting capability" — accurate but loses the "they are not the same problem" close, which is the key differentiating claim.
 
-### Run 141 â€” 2026-06-02 â€” arf-root-cause-premise
+### Run 141 — 2026-06-02 — arf-root-cause-premise
 
 - **decided:** Insert one paragraph before the capability-ceiling paragraph. The paragraph states the root-cause premise in full: (1) restriction treats destructiveness as authority failure; (2) ARF treats destructiveness as reasoning failure from insufficient context; (3) the goal is more awareness, not less permission; (4) you cannot sandbox your way to good reasoning. Rejected alternative: splitting this into two paragraphs — the idea is single and should be stated in one place.
 
-### Run 142 â€” 2026-06-02 â€” precision-correction-trust-instrument
+### Run 142 — 2026-06-02 — precision-correction-trust-instrument
 
 - **decided:** Apply precision correction to four locations simultaneously. Replace "observable reasoning" as trust instrument with "demonstrated reasoning quality" + explicit three-part chain where context permits. Conceptual pair updated to *safety <-> demonstrated reasoning quality* in PROBLEM.md. PRINCIPLES.md updated to show quality as the agent with context/observation as its mechanism. Website ARF card updated to surface the genuineness claim ("genuinely — not just visibly").
 
-### Run 143 â€” 2026-06-02 â€” arf-scope-precision
+### Run 143 — 2026-06-02 — arf-scope-precision
 
 - **decided:** Apply precision fix to all 5 locations simultaneously. The fix in each case: separate Commander's Intent (adequate context) from ARF (reasoning fidelity) — both are necessary for demonstrated reasoning quality, but they are not the same mechanism and must not be conflated. Rejected alternative: changing only the manifesto files and leaving POSITION.md stale. POSITION.md is the public stance document; having it lag behind the manifesto precision would be a coherence failure visible to any reader who reads both.
 
-### Run 144 â€” 2026-06-02 â€” arf-normative-restriction-harms-reasoning
+### Run 144 — 2026-06-02 — arf-normative-restriction-harms-reasoning
 
 - **decided:** Append a single sentence to POSITION.md root-cause-premise paragraph and PROBLEM.md restriction-first bullet. The sentence must: (a) use the "bounded experience space" framing; (b) name restriction as actively counterproductive, not merely ineffective; (c) carry no time-scope or domain-scope qualifiers. Rejected: adding "in a single run and across the agent's capacity to develop over time" — this qualifier weakens universality by suggesting the claim only applies at named time scales. Rejected: merging the normative claim into the existing "wrong instrument" sentence — would dilute both claims.
 
-### Run 145 â€” 2026-06-02 â€” arf-restriction-narrows-reasoning-capacity
+### Run 145 — 2026-06-02 — arf-restriction-narrows-reasoning-capacity
 
 - **decided:** Replace the overclaiming sentence with the operator-supplied three-sentence formulation verbatim. No paraphrase, no reordering. The operator has refined this through multiple iterations in this session; the final form is deliberate. Rejected: keeping any part of the prior sentence — it is factually overclaimed and correctly superseded.
 
-### Run 146 â€” 2026-06-02 â€” arf-restriction-decreases-reasoning-quality
+### Run 146 — 2026-06-02 — arf-restriction-decreases-reasoning-quality
 
 - **decided:** Apply verbatim as operator confirmed. Prediction: a reader traces S1→S3 without bridging two different nouns. The self-defeating nature of restriction is visible in the three sentences as a closed argument. No further iteration needed on this claim.
 
-### Run 147 â€” 2026-06-02 â€” arf-restriction-claim-variant-rejections
+### Run 147 — 2026-06-02 — arf-restriction-claim-variant-rejections
 
 - **decided:** No change. Both variants were improvements in one dimension (clarity of the causal chain) and regressions in a more important dimension (rhetorical compression and structural parallelism). The form committed in entry 146 is the stable endpoint. Operator confirmed this.
 
-### Run 148 â€” 2026-06-04 â€” retro-named-boundary-rule-from-manifesto-arc
+### Run 148 — 2026-06-04 — retro-named-boundary-rule-from-manifesto-arc
 
 - **decided:** Promote the manifesto-derived realization to a retrospect-skill rule. Three changes:
 
-### Run 149 â€” 2026-06-04 â€” improve-destination-named-boundary-symmetric
+### Run 149 — 2026-06-04 — improve-destination-named-boundary-symmetric
 
 - **decided:** Two coordinated SKILL edits in one pass, plus CHANGELOG and trail entry. After this entry, focus returns to manifesto target per operator direction.
 
-### Run 151 â€” 2026-06-21 â€” skills-suite-trail-to-acm-rename
+### Run 151 — 2026-06-21 — skills-suite-trail-to-acm-rename
 
 - **decided:** Rename folder and update prescriptive files only. Leave historical files unchanged.
 
-### Run 153 â€” 2026-06-22 â€” acm-parent-scope-traversal-propagated
+### Run 153 — 2026-06-22 — acm-parent-scope-traversal-propagated
 
 - **decided:** Add ACM §4 parent-scope paragraph to improve/SKILL.md step 1 and retrospect/SKILL.md step 0. Also refresh .acm/retrospect.md and regenerate derived artifacts (were stale vs audit-trail.md).
 
-**153 runs total â€” 139 with changes, 14 silence**
+**153 runs total — 139 with changes, 14 silence**

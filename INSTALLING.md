@@ -5,8 +5,8 @@
 From a clone of this repo:
 
 ```
-bash install.sh                 # macOS / Linux  â†’ installs to ~/.copilot/skills
-pwsh install.ps1                # Windows        â†’ installs to $HOME\.copilot\skills
+bash install.sh                 # macOS / Linux  → installs to ~/.copilot/skills
+pwsh install.ps1                # Windows        → installs to $HOME\.copilot\skills
 ```
 
 To install into a project instead of user-global:
@@ -27,7 +27,7 @@ bash tools/install-hooks.sh     # macOS / Linux
 pwsh tools/install-hooks.ps1    # Windows
 ```
 
-This installs a pre-commit hook that rejects commits which touch substantive files without a corresponding `.acm/audit-trail.md` entry. Override with `git commit --no-verify` â€” the override itself is auditable.
+This installs a pre-commit hook that rejects commits which touch substantive files without a corresponding `.acm/audit-trail.md` entry. Override with `git commit --no-verify` — the override itself is auditable.
 
 ---
 
@@ -87,13 +87,13 @@ your-repo/
         SKILL.md
 ```
 
-That's it. The skills are plain markdown files â€” no scripts, no dependencies, nothing to install or execute.
+That's it. The skills are plain markdown files — no scripts, no dependencies, nothing to install or execute.
 
-Optionally copy `PRINCIPLES.md` next to the skill folders â€” the skills reference it but work fully without it (the principles are inlined in each SKILL.md).
+Optionally copy `PRINCIPLES.md` next to the skill folders — the skills reference it but work fully without it (the principles are inlined in each SKILL.md).
 
 ### Also included: Probe (research and validation)
 
-`probe/SKILL.md` is included in the repo but is **not part of the daily workflow**. It measures [Autonomous Reasoning Fidelity](https://github.com/ntholm86/autonomous-agent-principles/blob/v1.0.0/PRINCIPLES.md#autonomous-reasoning-fidelity-operational-definition) â€” useful if you want to validate that the agent is genuinely reasoning and not pattern-matching. Copy it in if you need it; leave it out if you don't.
+`probe/SKILL.md` is included in the repo but is **not part of the daily workflow**. It measures [Autonomous Reasoning Fidelity](https://github.com/ntholm86/autonomous-agent-principles/blob/v1.0.0/PRINCIPLES.md#autonomous-reasoning-fidelity-operational-definition) — useful if you want to validate that the agent is genuinely reasoning and not pattern-matching. Copy it in if you need it; leave it out if you don't.
 
 ---
 
@@ -106,14 +106,14 @@ All skills work with only their own `SKILL.md`. No required sibling files.
 | **intent** | `PRINCIPLES.md` (cross-reference link; content is inlined) |
 | **destination** | `PRINCIPLES.md` |
 | **improve** | `PRINCIPLES.md` |
-| **trail** | nothing â€” creates `.acm/audit-trail.md` on first use |
-| **retrospect** | nothing â€” reads `.acm/audit-trail.md` written by trail |
+| **trail** | nothing — creates `.acm/audit-trail.md` on first use |
+| **retrospect** | nothing — reads `.acm/audit-trail.md` written by trail |
 
 ---
 
-## The trail â€” where it lives
+## The trail — where it lives
 
-The trail is **per project**. The AI writes it automatically â€” no scripts required.
+The trail is **per project**. The AI writes it automatically — no scripts required.
 
 When the trail skill runs for the first time on a project it creates:
 `<repo-root>/.acm/audit-trail.md` (the append-only evidence log)
@@ -126,16 +126,16 @@ Commit `.acm/audit-trail.md` after each session. That's the full workflow.
 
 *This section is for people running the improvement loop on the skills repo itself. If you're adopting the skills for your own project, you don't need any of this.*
 
-`tools/record.py` and `verify.py` exist to support the experiment that produced this suite â€” running the loop 200+ times and proving the trail is intact.
+`tools/record.py` and `verify.py` exist to support the experiment that produced this suite — running the loop 200+ times and proving the trail is intact.
 
-**`tools/record.py`** â€” generates a human-readable `history.md` from the trail log. Run from the repo root:
+**`tools/record.py`** — generates a human-readable `history.md` from the trail log. Run from the repo root:
 ```
 python tools/record.py history --write    # writes .acm/history.md
 python tools/record.py summary            # prints the latest entry
 ```
 It only writes into `.acm/`. No network calls.
 
-**`verify.py`** â€” read-only integrity check. Confirms the trail is well-formed, dates are in order, required files exist, and referenced session files are present. Writes nothing.
+**`verify.py`** — read-only integrity check. Confirms the trail is well-formed, dates are in order, required files exist, and referenced session files are present. Writes nothing.
 ```
 python verify.py
 ```
@@ -145,7 +145,7 @@ Exit 0 = all checks pass, exit 1 = something is wrong.
 
 ## Using a skill
 
-Once installed, type the skill name prefixed with `/` in the Copilot chat to invoke it directly. Or just describe your task â€” skills whose `description` field matches will be suggested automatically.
+Once installed, type the skill name prefixed with `/` in the Copilot chat to invoke it directly. Or just describe your task — skills whose `description` field matches will be suggested automatically.
 
 Available slash commands: `/intent`, `/destination`, `/improve`, `/trail`, `/retrospect`, `/probe`
 

@@ -1,12 +1,12 @@
 ﻿#!/usr/bin/env python3
-"""verify.py â€” mechanical integrity check for the trail.
+"""verify.py — mechanical integrity check for the trail.
 
 Replaces verify-suite.ps1 from v2. Pure-Python, zero dependencies, runs on
 Windows / macOS / Linux.
 
 Checks:
 1. .acm/audit-trail.md exists and is non-empty.
-2. Every entry heading matches `## YYYY-MM-DD â€” <slug>`.
+2. Every entry heading matches `## YYYY-MM-DD — <slug>`.
 3. Entries are in non-decreasing date order.
 4. Every entry contains the mandatory metadata fields: target, agent, skill, outcome.
 5. No U+FFFD replacement characters (mojibake) or non-UTF-8 bytes anywhere in
@@ -18,7 +18,7 @@ Checks:
 8. Every `session-file:` reference in audit-trail.md points to an existing file.
 9. Entries written under the v3.8.0 reflection contract (from
     `improve-step6b-trigger-observability` onward) record an explicit
-    four-trigger evaluation â€” bare "N/A"/"TODO" rejected â€” and include a
+    four-trigger evaluation — bare "N/A"/"TODO" rejected — and include a
     macro-Hansei subsection when any trigger fired.
 10. `.acm/history.md` and `.acm/learning.md` are not older than
     `.acm/audit-trail.md` (staleness check using file mtime).
@@ -92,7 +92,7 @@ TRANSCRIPT_FIDELITY_VALUES = {"verbatim", "verbatim-structural"}
 # Forward-only enforcement contract: entries dated on or after this date must
 # meet the structural fidelity rules (see check_session_fidelity_structure).
 # Entries strictly before this date belong to the "pre-contract era" and are
-# grandfathered in place â€” they are kept unmodified as historical evidence,
+# grandfathered in place — they are kept unmodified as historical evidence,
 # not retroactively rewritten. See BENCHMARKS.md for how the era boundary is
 # treated when computing replication evidence.
 SESSION_FIDELITY_CONTRACT_DATE = "2026-05-23"
@@ -152,7 +152,7 @@ def check_log_format() -> list[str]:
         entries.append((current_date, current_slug or "", "\n".join(current_body)))
 
     if not entries:
-        failures.append(".acm/audit-trail.md contains no entries matching '## YYYY-MM-DD â€” slug'")
+        failures.append(".acm/audit-trail.md contains no entries matching '## YYYY-MM-DD — slug'")
         return failures
 
     prev_date: str | None = None
@@ -243,7 +243,7 @@ def check_stale_path_tokens() -> list[str]:
             for match in pattern.finditer(text):
                 line = _line_number(text, match.start())
                 failures.append(
-                    f"stale trail path token in {rel}:{line}: '{match.group(0)}' â€” use .acm/audit-trail.md"
+                    f"stale trail path token in {rel}:{line}: '{match.group(0)}' — use .acm/audit-trail.md"
                 )
     return failures
 
@@ -254,8 +254,8 @@ def _extract_fidelity_value(text: str) -> str | None:
         return None
     raw = m.group(1).strip().lower()
     # Preserve canonical hyphenated values while tolerating legacy notes like
-    # "full â€” arc-read completed ..." by extracting the first token.
-    token = re.split(r"\s+[â€”-]\s+|\s+", raw, maxsplit=1)[0]
+    # "full — arc-read completed ..." by extracting the first token.
+    token = re.split(r"\s+[—-]\s+|\s+", raw, maxsplit=1)[0]
     return token
 
 
@@ -370,8 +370,8 @@ MACRO_HANSEI_HEADING = re.compile(
 # Entries committed with --no-verify (append-only discipline prevents in-place
 # repair; correction entries supply the missing data in subsequent trail entries).
 # Key: exact slug; Value: set of check names to skip.
-# "metadata" â€” skips the required-field check in check_log_format().
-# "trigger"  â€” skips the trigger-evaluation check in check_trigger_evaluation().
+# "metadata" — skips the required-field check in check_log_format().
+# "trigger"  — skips the trigger-evaluation check in check_trigger_evaluation().
 GRANDFATHERED_ENTRIES: dict[str, set[str]] = {
     "Improve: name the protocol-vs-structural limitation in README": {"metadata", "trigger"},
     "protocol-vs-structural-limitation-readme [correction]": {"trigger"},
@@ -472,12 +472,12 @@ def check_derived_artifact_freshness() -> list[str]:
         subcommand = artifact_name.replace(".md", "")
         if not artifact.exists():
             failures.append(
-                f"missing derived artifact .acm/{artifact_name} â€” "
+                f"missing derived artifact .acm/{artifact_name} — "
                 f"run: python tools/record.py {subcommand} --write"
             )
         elif artifact.stat().st_mtime < log_mtime:
             failures.append(
-                f"stale derived artifact .acm/{artifact_name} is older than .acm/audit-trail.md â€” "
+                f"stale derived artifact .acm/{artifact_name} is older than .acm/audit-trail.md — "
                 f"run: python tools/record.py {subcommand} --write"
             )
     return failures
@@ -541,11 +541,11 @@ def main() -> int:
     all_failures.extend(check_derived_artifact_freshness())
 
     if all_failures:
-        print(f"FAIL â€” {len(all_failures)} issue(s):")
+        print(f"FAIL — {len(all_failures)} issue(s):")
         for f in all_failures:
             print(f"  - {f}")
         return 1
-    print("OK â€” trail integrity checks pass")
+    print("OK — trail integrity checks pass")
     return 0
 
 

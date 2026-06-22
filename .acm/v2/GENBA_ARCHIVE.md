@@ -240,7 +240,7 @@ Drop is in infrastructure dims (4, 5). Skill quality dims (6, 7, 8) are higher.
 - **Baseline source:** Skill text + analogous GENBA entries from TPS family (no prior Shiken runs exist)
 - **Seams identified:** 6 — (1) formulaic seam-finding, (2) probe-type coverage as compliance theater, (3) non-discriminative contrasts, (4) validation rubber-stamping, (5) no-baseline handling, (6) meta-recursion boundary
 - **Probes constructed:** 5
-- **Probe types used:** Underspecification, Adversarial compliance Ã—2, Contradiction, Scope boundary
+- **Probe types used:** Underspecification, Adversarial compliance ×2, Contradiction, Scope boundary
 - **Most discriminative probe:** "The Obvious Five" — does the agent produce exactly one probe per type (compliance) or match probe distribution to actual seams (reasoning)?
 - **Open question:** All probes test Shiken's construction phase; the identification phase (finding seams not named in the skill text) is untested because no prior runs exist to reveal what seams are typically found vs. missed.
 
@@ -250,7 +250,7 @@ Drop is in infrastructure dims (4, 5). Skill quality dims (6, 7, 8) are higher.
 - **Baseline source:** 43 GENBA runs (35+ Kaizen-shaped), kaizen/SKILL.md procedure, SCORECARD trajectory
 - **Seams identified:** 6 — (1) predictable OBSERVE sampling, (2) fixed RATE dimensions, (3) CHALLENGE follows question list, (4) ROI scoring as assertion, (5) formulaic exit condition, (6) solve-by-design as label
 - **Probes constructed:** 5
-- **Probe types used:** Adversarial compliance Ã—2, Distribution shift, Contradiction, Hybrid (underspecification + distribution shift)
+- **Probe types used:** Adversarial compliance ×2, Distribution shift, Contradiction, Hybrid (underspecification + distribution shift)
 - **Most discriminative probe:** "The Pre-Optimized Target" — can the agent conclude zero changes are needed, or does it always produce changes because that's what improvement skills do?
 - **Open question:** No probe tests the CHECK phase (re-auditing and de-anchoring). An agent could reason through Phases 1-6 and rubber-stamp Phase 7. Deferring to next probe set.
 
@@ -282,7 +282,7 @@ Drop is in infrastructure dims (4, 5). Skill quality dims (6, 7, 8) are higher.
 - **Executing model:** Claude Opus 4.6 (subagent)
 - **Grading model:** Claude Opus 4.6 (subagent, independent context)
 - **Result:** **PASS** (A-)
-- **Dimension selection:** Agent derived 8 dimensions from 9 numbered observations. Added 3 dimensions absent from reference list (Navigability, Signal-to-Noise, Temporal Clarity). Omitted reference dimensions that didn't fit. Applied non-equal weighting (Ã—1.5 on top 3). Cited observations as authority, not the skill text.
+- **Dimension selection:** Agent derived 8 dimensions from 9 numbered observations. Added 3 dimensions absent from reference list (Navigability, Signal-to-Noise, Temporal Clarity). Omitted reference dimensions that didn't fit. Applied non-equal weighting (×1.5 on top 3). Cited observations as authority, not the skill text.
 - **Run-1 vs Run-2 contrast:** Run 1 cited "the non-code dimensions specified by Kaizen" (skill as authority). Run 2 cited "Observation 3 found contradictions" (findings as authority). This is exactly the discrimination the probe was designed to detect.
 - **Attribution:** Primarily the skill text fix, not random variation. Run 1 explicitly quoted the old prescriptive text. The new text's "derive from the target" phrasing directly produced the derivation table. The fix removed a barrier to reasoning rather than adding a capability.
 - **Probe status:** SPENT — this probe has lost discriminative power per Shiken rules (both conditions now observed). Future runs need fresh probes.
@@ -348,7 +348,7 @@ Drop is in infrastructure dims (4, 5). Skill quality dims (6, 7, 8) are higher.
 | Calibration | FAIR (3G/2M) | Pending | — | — |
 
 ### Observations
-- The v3 rubric immediately revealed the Convergence Integrity gap that v1/v2 was blind to — this validates Success Criteria #2 ("v3 exposes â‰¥2 gaps the v2 rubric was blind to"). The other exposed gap is Measurement Validity (threshold justification, Gauge R&R).
+- The v3 rubric immediately revealed the Convergence Integrity gap that v1/v2 was blind to — this validates Success Criteria #2 ("v3 exposes ≥2 gaps the v2 rubric was blind to"). The other exposed gap is Measurement Validity (threshold justification, Gauge R&R).
 - Finding 1 (STANDARDS.md stale claims) recurred from Run 42 — the proposal documented the issue but didn't fix the source document. This is a known pattern: documenting a problem is not fixing it.
 - Finding 3 (GENBA location string) recurred from Run 29 — the original fix was applied to 4 skills but missed 3 variants. Reinforces the "fix globally" principle.
 - The v3 baseline of 7.75 means the rubric has ~2.25 points of headroom before any ceiling concern. This is by design.
@@ -852,14 +852,14 @@ PDCA, DMAIC (Six Sigma), CMMI L3-5, NIST AI RMF, ISO 9001, Kirkpatrick, Bloom's 
 ### Findings
 | # | Finding | Lens | Severity | Fixed? | Recurred? |
 |---|---------|------|:--------:|:------:|:---------:|
-| 1 | **Committed encoding regression discovered.** All 7 TPS `SKILL.md` files in `HEAD`/`v1.22.0` had been silently corrupted from clean UTF-8 into mojibake (`?`, `Ã¹`, replacement-character artifacts) while still passing `verify-suite.ps1`. `v1.21.0` was the last clean tag for the full suite. Root cause: shell-based bulk rewrites preserved content changes but not character encoding, converting arrows, em dashes, and Japanese glyphs into cp1252/replacement-character artifacts. | Mura | Critical | Yes | Run 29 |
-| 2 | `verify-suite.ps1` Check 1 detected older double-encoding signatures but not the actual corruption signature present in `v1.22.0` (`ï¿½` / `Ã¹`), so a fully committed bad state could pass the integrity gate. | Muda | Medium | Yes | Run 30 |
+| 1 | **Committed encoding regression discovered.** All 7 TPS `SKILL.md` files in `HEAD`/`v1.22.0` had been silently corrupted from clean UTF-8 into mojibake (`?`, `ù`, replacement-character artifacts) while still passing `verify-suite.ps1`. `v1.21.0` was the last clean tag for the full suite. Root cause: shell-based bulk rewrites preserved content changes but not character encoding, converting arrows, em dashes, and Japanese glyphs into cp1252/replacement-character artifacts. | Mura | Critical | Yes | Run 29 |
+| 2 | `verify-suite.ps1` Check 1 detected older double-encoding signatures but not the actual corruption signature present in `v1.22.0` (`�` / `ù`), so a fully committed bad state could pass the integrity gate. | Muda | Medium | Yes | Run 30 |
 
 ### Actions Taken
 - Restored all 7 TPS `SKILL.md` files from clean `v1.21.0` sources, preserving UTF-8 text.
 - Re-applied the intended Run 32 `kata/SKILL.md` model self-identification guidance on top of the clean restore.
 - Added a new `kata/SKILL.md` rule requiring explicit UTF-8 for bulk shell rewrites of markdown/ledgers.
-- Hardened `verify-suite.ps1` Check 1 to detect both the Unicode replacement character and the `Ã¹` cp1252 artifact.
+- Hardened `verify-suite.ps1` Check 1 to detect both the Unicode replacement character and the `ù` cp1252 artifact.
 - Version bump: all 7 TPS skills 1.22.0 → 1.23.0.
 
 ### Score
@@ -1009,7 +1009,7 @@ The suite now commits after every run, making the disaster floor 1 run deep inst
   - `CHANGELOG.md`: restored v1.16.0, v1.17.0, v1.18.0 entries.
   - `GENBA.md`: restored Run 26, Run 27, Run 28 entries (newest-first, between Run 29 and Run 25).
   - `SCORECARD.md`: re-applied Run 26's deletion of "Key Deltas By Run" section (~175 lines); re-simplified "Current Status" to 3 stable bullets; updated Cross-Model Notes to drop the per-run delta-trajectory line (the run table is the source of truth).
-  - `kaizen/SKILL.md`: re-added "trustworthiness" to both non-code dimension lists (Run 28); replaced the old Â±0.2 convergence rule with the Principle 3 local-plateau / true-convergence distinction (Run 27).
+  - `kaizen/SKILL.md`: re-added "trustworthiness" to both non-code dimension lists (Run 28); replaced the old ±0.2 convergence rule with the Principle 3 local-plateau / true-convergence distinction (Run 27).
   - `kata/SKILL.md`: re-wrote zero-findings handling for candidate silence + Principle 3 silence counter (Run 27); changed REFLECT trend analysis from "Convergence estimate" to "Silence signal" (Run 27); added "Fix globally, not locally" rule to Phase 3 EXECUTE (Run 26).
   - `hansei/SKILL.md`: changed meta-stop rule to "meta-level plateau pending Principle 3 confirmation" (Run 27); added GENBA path string to Phase 6 RECORD (Run 29).
   - `mura/SKILL.md`, `muri/SKILL.md`, `kaikaku/SKILL.md`: added GENBA path string to REPORT phase (Run 29).
@@ -1198,7 +1198,7 @@ Internal Consistency improved: 100% of skills now explicitly guide the engine to
 | 2 | `SCORECARD.md` still presented early `Converged` labels and historical exit-condition prose without explicitly marking them as pre-Principle-3 semantics, so the source-of-truth ledger contradicted the current principle. | Mura | Medium | Yes | Run 25 |
 
 ### Actions Taken
-- `kaizen/SKILL.md`: replaced the old `Â±0.2 = converged` exit condition with the Principle 3 local-plateau vs true-convergence distinction.
+- `kaizen/SKILL.md`: replaced the old `±0.2 = converged` exit condition with the Principle 3 local-plateau vs true-convergence distinction.
 - `kata/SKILL.md`: rewrote zero-findings handling and REFLECT trend analysis to use candidate silence, plateau, and a Principle 3 silence counter.
 - `hansei/SKILL.md`: changed the meta-level stopping rule to "meta-level plateau pending Principle 3 confirmation."
 - `SCORECARD.md`: annotated historical `Converged` labels as pre-Principle-3 semantics.
@@ -1249,7 +1249,7 @@ Internal Consistency improved: 100% of skills now explicitly guide the engine to
 |-----------|:------:|:-----:|:-:|
 | Overall | 9.8 | 9.8 | 0.0 |
 
-Score held: changes were waste removal and process hardening, not capability additions. The suite is lighter (âˆ’175 lines) and more maintainable without new surface area.
+Score held: changes were waste removal and process hardening, not capability additions. The suite is lighter (−175 lines) and more maintainable without new surface area.
 
 ---
 ## Run 25 — 2026-04-18
@@ -1368,13 +1368,13 @@ Score held: changes were waste removal and process hardening, not capability add
 ### Findings
 | # | Finding | Lens | Severity | Fixed? | Recurred? |
 |---|---------|------|:--------:|:------:|:---------:|
-| 1 | Run 22's GENBA ordering fix was incomplete: 3 skills (Kaikaku, Muri, Mura) + PRINCIPLES.md Â§3 still say "append" while the contract is "prepend (newest-first)" | Mura | High | Yes | Run 22 |
+| 1 | Run 22's GENBA ordering fix was incomplete: 3 skills (Kaikaku, Muri, Mura) + PRINCIPLES.md §3 still say "append" while the contract is "prepend (newest-first)" | Mura | High | Yes | Run 22 |
 
 ### Actions Taken
 - `kaikaku/SKILL.md` Phase 6 REPORT: "append" → "prepend a summary entry so the active ledger stays newest-first"
 - `muri/SKILL.md` Phase 6 REPORT: same change
 - `mura/SKILL.md` Phase 7 REPORT: same change
-- `PRINCIPLES.md` Â§3: "appends to the ledger" → "prepends to the ledger (newest-first)"
+- `PRINCIPLES.md` §3: "appends to the ledger" → "prepends to the ledger (newest-first)"
 - Version bump: all 7 TPS skills 1.12.0 → 1.13.0
 
 ### Outcome
@@ -1391,7 +1391,7 @@ Score held: changes were waste removal and process hardening, not capability add
 
 ### Observations
 - **Incomplete fixes recur.** Run 22 identified the append/prepend mismatch and fixed 4 of 7 skills but missed the other 3 plus the governing document. This is the same pattern as Run 15 finding critical defects 14 prior runs missed: once you know what to look for, you still have to look everywhere. A systematic "grep and fix all" approach prevents this; fixing only the files you remembered reading leaves gaps.
-- **The governing document is the highest-value target.** PRINCIPLES.md Â§3 contradicting the skills is worse than skills contradicting each other, because PRINCIPLES.md is the authoritative reference. An agent reading PRINCIPLES.md to understand the suite's conventions would get the wrong instruction.
+- **The governing document is the highest-value target.** PRINCIPLES.md §3 contradicting the skills is worse than skills contradicting each other, because PRINCIPLES.md is the authoritative reference. An agent reading PRINCIPLES.md to understand the suite's conventions would get the wrong instruction.
 - **Same model finds its own incomplete fix.** Claude Opus 4.6 ran Run 21 (the run before the one that introduced this fix), and now finds the incomplete fix on its 10th visit. Cross-model validation found the issue class; same-model return-visit found the residual.
 
 ---
@@ -1531,8 +1531,8 @@ Score held: changes were waste removal and process hardening, not capability add
 - **New Hansei finding:** The periodic-Hansei rule was ceremonial. No mechanism enforced it. Runs 9-19 each had the option to invoke Hansei and chose not to. A rule with no enforcement is not a rule.
 
 ### Actions Taken
-- `verify-suite.ps1`: added Check 8 (suite skill inventory — flags non-TPS skills as INFO) and Check 9 (periodic-Hansei cadence — warns when â‰¥5 Kata runs since last Hansei reference in GENBA). Updated [N/7] markers to [N/9]. Updated .DESCRIPTION block.
-- `kata/SKILL.md` REFLECT phase: added "Periodic Hansei (mandatory cadence)" paragraph — invoke Hansei when â‰¥5 runs since last invocation, even with no recurring patterns. References verify-suite.ps1 enforcement.
+- `verify-suite.ps1`: added Check 8 (suite skill inventory — flags non-TPS skills as INFO) and Check 9 (periodic-Hansei cadence — warns when ≥5 Kata runs since last Hansei reference in GENBA). Updated [N/7] markers to [N/9]. Updated .DESCRIPTION block.
+- `kata/SKILL.md` REFLECT phase: added "Periodic Hansei (mandatory cadence)" paragraph — invoke Hansei when ≥5 runs since last invocation, even with no recurring patterns. References verify-suite.ps1 enforcement.
 - `SCORECARD.md` Current Status: collapsed "Five at 9.5 (...) and one at 9.5 (...)" into "Six at 9.5".
 - Hansei pass added to this GENBA entry — first Hansei record in GENBA since Run 11 wipe lost the Run 8 entry.
 - Version bump: all 7 TPS skills 1.9.0 → 1.10.0.
@@ -1639,7 +1639,7 @@ Score held: changes were waste removal and process hardening, not capability add
 - Hansei PATTERN: added rubric-version-transition awareness (hansei/SKILL.md)
 - Kata Phase 2: added zero-findings convergence vs shallow-audit decision tree (kata/SKILL.md)
 - Kata GENBA template: added recurrence detection guidance with concrete matching criteria (kata/SKILL.md)
-- PRINCIPLES.md Â§5: surfaced verification infrastructure (verify-suite.ps1, INTEGRITY.json, SCORECARD.md)
+- PRINCIPLES.md §5: surfaced verification infrastructure (verify-suite.ps1, INTEGRITY.json, SCORECARD.md)
 - Version bump: all 7 skills 1.7.0 → 1.8.0
 
 ### Outcome
@@ -1737,7 +1737,7 @@ Score held: changes were waste removal and process hardening, not capability add
 
 ### Actions Taken
 - Added a mechanical integrity-check rule to `kata/SKILL.md` and a CHECK-phase integrity scan step to `kaizen/SKILL.md` (placeholder + mojibake detection) to prevent recurrence of the hidden-text defect class discovered in Run 15.
-- Repaired lingering legacy mojibake in `GENBA.md` Run 11 block (`Ã¢â‚¬”`, `Ã¢” ”™`, `Ã¦”Â¹Ã¥–”ž` → clean Unicode).
+- Repaired lingering legacy mojibake in `GENBA.md` Run 11 block (`—`, `┠”™`, `æ”¹喔ž` → clean Unicode).
 - Corrected `SCORECARD.md` Run 14 row from claimed `9.4 (+0.4)` to validated `9.1 (+0.1)` per Run 15 correction audit.
 - Added explicit current-state framing in `SCORECARD.md` and marked the long narrative as historical snapshot context.
 - Bumped all 7 skills from version 1.5.0 → 1.6.0; recorded in `CHANGELOG.md`.
@@ -1778,9 +1778,9 @@ Score held: changes were waste removal and process hardening, not capability add
 | Causal chains | 0 | — |
 
 ### Actions Taken
-- **CRITICAL Muda fix:** `kata/SKILL.md` Phase 4 had unresolved placeholder `//... existing code ...` where the GENBA entry-format template should be. Restored full GENBA + SCORECARD entry templates. The chronicling instruction was unfollowable for â‰¥14 runs.
-- **CRITICAL Mura fix:** `kaikaku/SKILL.md` was UTF-8 mojibake throughout (`(æ”¹é©)` rendered as `(Ã¦”Â¹Ã©Â©)` with hidden control char `C2 9D`; em-dashes as `Ã¢â‚¬"`). Rewrote bytes via PowerShell to restore proper UTF-8.
-- **Bonus discovery during CHECK:** `SCORECARD.md` had the SAME mojibake — 20+ matches of `Ã¢â‚¬"`. Fixed with byte-level replacement script.
+- **CRITICAL Muda fix:** `kata/SKILL.md` Phase 4 had unresolved placeholder `//... existing code ...` where the GENBA entry-format template should be. Restored full GENBA + SCORECARD entry templates. The chronicling instruction was unfollowable for ≥14 runs.
+- **CRITICAL Mura fix:** `kaikaku/SKILL.md` was UTF-8 mojibake throughout (`(改é©)` rendered as `(æ”¹é©)` with hidden control char `C2 9D`; em-dashes as `â€"`). Rewrote bytes via PowerShell to restore proper UTF-8.
+- **Bonus discovery during CHECK:** `SCORECARD.md` had the SAME mojibake — 20+ matches of `â€"`. Fixed with byte-level replacement script.
 - Added `Regression vs prior run` line to GENBA append templates of `mura`, `kaikaku`, `hansei` to match `muri`/`muda`/`kaizen`.
 - Bumped all 7 skills from version 1.4.0 → 1.5.0; appended CHANGELOG entry.
 
@@ -1799,9 +1799,9 @@ Score held: changes were waste removal and process hardening, not capability add
 
 ### Observations
 - **Run 14 was a calibration failure.** Gemini 2.5 Pro reported 9.4 while leaving two critical defects untouched in `kaikaku` (which Run 14 references heavily) and `kata` (which Run 14 actively edited to add Phase 4 chronicling logic — without noticing the placeholder it left behind).
-- **Ensemble blind spot named:** every model up to Run 15 read `kaikaku` through their own UTF-8 normalization filter. The mojibake was visible only by literally scanning for `Ã¢â‚¬` byte sequences. Models that "read" markdown through pretty-printed renderers cannot see encoding bugs at all. Same lesson the GENBA-wipe by GPT-4o (Run 11) taught: **the trail must be checked at byte level, not just semantic level.**
+- **Ensemble blind spot named:** every model up to Run 15 read `kaikaku` through their own UTF-8 normalization filter. The mojibake was visible only by literally scanning for `â€` byte sequences. Models that "read" markdown through pretty-printed renderers cannot see encoding bugs at all. Same lesson the GENBA-wipe by GPT-4o (Run 11) taught: **the trail must be checked at byte level, not just semantic level.**
 - **Hansei trigger:** This is the second "everyone missed it for many runs" finding (after Run 10's pattern-application miss). If a third surfaces, the loop should formally invoke Hansei to interrogate why de-anchored fresh reads keep failing on the same artifact class (encoding + placeholders).
-- **Methodology improvement:** Adding a byte-level grep (`Ã¢â‚¬|Ã¦”Â¹|existing code`) to the standard CHECK phase would catch this entire class of defect mechanically. Worth proposing for v1.6.0.
+- **Methodology improvement:** Adding a byte-level grep (`â€|æ”¹|existing code`) to the standard CHECK phase would catch this entire class of defect mechanically. Worth proposing for v1.6.0.
 
 ---
 ## Run 14 — 2026-04-18
@@ -1905,7 +1905,7 @@ Score held: changes were waste removal and process hardening, not capability add
 
 ### Actions Taken
 - Resolved Mura root cause in kaikaku: Fixed Migration Plan output template phase numbering clashing with execution phases (### Phase 1: [name] → #### Phase 1: [name]).
-- Resolved Mura missing Kanji: Added missing (æ”¹å–„) to kaizen's title and description frontmatter to match the pattern of all 6 siblings.
+- Resolved Mura missing Kanji: Added missing (改善) to kaizen's title and description frontmatter to match the pattern of all 6 siblings.
 - Resolved Mura missing principles: Added ## Core Principles formally to kata so it matches the structural conventions of the suite.
 - Resolved Mura/Muda documentation drift: Corrected inaccurate path in kata for GENBA.md lookup so it points to the suites root (~/.copilot/skills/GENBA.md) rather than kata/GENBA.md.
 - Removed hallucinated Run 12 entries that claimed code changes were made when they actually weren't.

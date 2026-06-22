@@ -1,5 +1,5 @@
 ﻿#!/usr/bin/env python3
-"""record.py â€” append entries to .acm/audit-trail.md and digest the latest one.
+"""record.py — append entries to .acm/audit-trail.md and digest the latest one.
 
 Replaces the kiroku-*.ps1 family from v2. Pure-Python, zero dependencies.
 
@@ -18,7 +18,7 @@ Subcommands:
   learning [--write]
       Print (or write to .acm/learning.md) a compact chronological extract
       of every [!REALIZATION] and [!REVERSAL] marker from .acm/audit-trail.md.
-      The learning surface â€” what the loop has actually concluded across runs.
+      The learning surface — what the loop has actually concluded across runs.
 """
 from __future__ import annotations
 
@@ -76,29 +76,29 @@ TODO
 
 ### Prediction
 
-TODO â€” state a falsifiable prediction of what this change will achieve and what will not happen, before taking action.
+TODO — state a falsifiable prediction of what this change will achieve and what will not happen, before taking action.
 
 ### Action and Outcome
 
-TODO â€” detail what was done, and explicitly compare the actual outcome to the prediction above.
+TODO — detail what was done, and explicitly compare the actual outcome to the prediction above.
 
 ### Reflection
 
 **Falsifiable claim about the target's current state:**
 
-TODO â€” a specific, disprovable statement about what is true of the target right now.
+TODO — a specific, disprovable statement about what is true of the target right now.
 
 **Named blind spot:**
 
-TODO â€” what this examination likely missed, and why.
+TODO — what this examination likely missed, and why.
 
 **Imagined-reader pushback:**
 
-TODO â€” the strongest objection from someone who knows the target better.
+TODO — the strongest objection from someone who knows the target better.
 
-**Across-trail trigger evaluation** *(every entry â€” one line per trigger, with brief evidence from the trail; bare "N/A" is not allowed)*:
+**Across-trail trigger evaluation** *(every entry — one line per trigger, with brief evidence from the trail; bare "N/A" is not allowed)*:
 
-- *Recurring finding-class:* TODO (FIRED / not fired â€” evidence from last N entries)
+- *Recurring finding-class:* TODO (FIRED / not fired — evidence from last N entries)
 - *About to declare silence:* TODO
 - *Contradicts prior [!REALIZATION]:* TODO
 - *Operator explicitly asked:* TODO
@@ -198,12 +198,12 @@ def _render_history(entries: list[dict], markdown: bool) -> str:
         lines.append("# History")
         lines.append("")
         lines.append("Auto-generated from `.acm/audit-trail.md` by the `record.py history --write` command in the autonomous-agent-skills install.")
-        lines.append("Do not edit by hand â€” re-run the command to refresh.")
+        lines.append("Do not edit by hand — re-run the command to refresh.")
         lines.append("")
         lines.append("| # | Date | Slug | Outcome | Delta |")
         lines.append("|---|------|------|---------|-------|")
         for i, e in enumerate(entries, 1):
-            icon = "Â·" if "silence" in e["outcome"].lower() else "â–¸"
+            icon = "·" if "silence" in e["outcome"].lower() else "▸"
             outcome = (e["outcome"] or "").replace("|", "\\|")
             delta = (e["delta"] or "").replace("|", "\\|")
             slug = e["slug"].replace("|", "\\|")
@@ -214,7 +214,7 @@ def _render_history(entries: list[dict], markdown: bool) -> str:
         for i, e in enumerate(entries, 1):
             if not (e["decisions"] or e["reversals"]):
                 continue
-            lines.append(f"### Run {i} â€” {e['date']} â€” {e['slug']}")
+            lines.append(f"### Run {i} — {e['date']} — {e['slug']}")
             lines.append("")
             for d in e["decisions"]:
                 lines.append(f"- **decided:** {d}")
@@ -224,12 +224,12 @@ def _render_history(entries: list[dict], markdown: bool) -> str:
 
         silence_count = sum(1 for e in entries if "silence" in e["outcome"].lower())
         change_count = len(entries) - silence_count
-        lines.append(f"**{len(entries)} runs total â€” {change_count} with changes, {silence_count} silence**")
+        lines.append(f"**{len(entries)} runs total — {change_count} with changes, {silence_count} silence**")
         return "\n".join(lines) + "\n"
 
     # Terminal format (original)
     for i, e in enumerate(entries, 1):
-        icon = "Â·" if "silence" in e["outcome"].lower() else "â–¸"
+        icon = "·" if "silence" in e["outcome"].lower() else "▸"
         lines.append(f"{icon} Run {i:>2}  {e['date']}  {e['slug']}")
         if e["outcome"]:
             lines.append(f"         outcome:  {e['outcome']}")
@@ -244,7 +244,7 @@ def _render_history(entries: list[dict], markdown: bool) -> str:
         lines.append("")
     silence_count = sum(1 for e in entries if "silence" in e["outcome"].lower())
     change_count = len(entries) - silence_count
-    lines.append(f"  {len(entries)} runs total â€” {change_count} with changes, {silence_count} silence")
+    lines.append(f"  {len(entries)} runs total — {change_count} with changes, {silence_count} silence")
     return "\n".join(lines)
 
 
@@ -282,7 +282,7 @@ def cmd_history(args: argparse.Namespace) -> int:
 def _render_learning(entries: list[dict], markdown: bool) -> str:
     """Render the [!REALIZATION] / [!REVERSAL] markers across all entries.
 
-    The compact learning surface â€” what the loop has concluded across runs.
+    The compact learning surface — what the loop has concluded across runs.
     Each item carries its date+slug context so the source entry is locatable
     in log.md.
     """
@@ -298,15 +298,15 @@ def _render_learning(entries: list[dict], markdown: bool) -> str:
         lines.append("# Learning")
         lines.append("")
         lines.append("Auto-generated from `.acm/audit-trail.md` by the `record.py learning --write` command in the autonomous-agent-skills install.")
-        lines.append("Do not edit by hand â€” re-run the command to refresh.")
+        lines.append("Do not edit by hand — re-run the command to refresh.")
         lines.append("")
-        lines.append("Compact chronological extract of every `[!REALIZATION]` and `[!REVERSAL]` marker. The learning surface â€” what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.")
+        lines.append("Compact chronological extract of every `[!REALIZATION]` and `[!REVERSAL]` marker. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.")
         lines.append("")
         if not items:
             lines.append("_(no markers found)_")
             return "\n".join(lines) + "\n"
         for date, slug, kind, content in items:
-            lines.append(f"## {date} â€” {slug}")
+            lines.append(f"## {date} — {slug}")
             lines.append("")
             lines.append(f"**[!{kind}]** {content}")
             lines.append("")
@@ -314,7 +314,7 @@ def _render_learning(entries: list[dict], markdown: bool) -> str:
         lines.append("")
         realisation_count = sum(1 for it in items if it[2] == "REALIZATION")
         reversal_count = len(items) - realisation_count
-        lines.append(f"**{len(items)} markers â€” {realisation_count} realisations, {reversal_count} reversals**")
+        lines.append(f"**{len(items)} markers — {realisation_count} realisations, {reversal_count} reversals**")
         return "\n".join(lines) + "\n"
 
     # Terminal format
@@ -329,7 +329,7 @@ def _render_learning(entries: list[dict], markdown: bool) -> str:
         lines.append("")
     realisation_count = sum(1 for it in items if it[2] == "REALIZATION")
     reversal_count = len(items) - realisation_count
-    lines.append(f"  {len(items)} markers â€” {realisation_count} realisations, {reversal_count} reversals")
+    lines.append(f"  {len(items)} markers — {realisation_count} realisations, {reversal_count} reversals")
     return "\n".join(lines)
 
 
@@ -393,7 +393,7 @@ def build_parser() -> argparse.ArgumentParser:
     p_hist.add_argument("--write", action="store_true", help="Write .acm/history.md as committed markdown instead of printing.")
     p_hist.set_defaults(func=cmd_history)
 
-    p_learn = sub.add_parser("learning", help="Extract every [!REALIZATION]/[!REVERSAL] marker â€” the compact learning surface.")
+    p_learn = sub.add_parser("learning", help="Extract every [!REALIZATION]/[!REVERSAL] marker — the compact learning surface.")
     p_learn.add_argument("--write", action="store_true", help="Write .acm/learning.md as committed markdown instead of printing.")
     p_learn.set_defaults(func=cmd_learning)
 

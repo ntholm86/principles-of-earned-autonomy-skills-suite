@@ -588,7 +588,7 @@ Other 7 lenses showed no actionable findings (Unevenness, Overburden, Waste, P1 
 - Vitest installed in `apps/api`; 9 security tests added, all pass
 - Pubmed phantom directory given README stub
 
-**Verification:** API tsc --noEmit: âœ… 0 errors. Web tsc --noEmit: âœ… 0 errors. Vitest: âœ… 9/9 pass.
+**Verification:** API tsc --noEmit: ✅ 0 errors. Web tsc --noEmit: ✅ 0 errors. Vitest: ✅ 9/9 pass.
 
 ---
 ## Run 76 - 2026-04-21
@@ -603,7 +603,7 @@ Other 7 lenses showed no actionable findings (Unevenness, Overburden, Waste, P1 
 **Measurement scheme:** Derived from mission (plan-vs-shipped gap analysis on a web application). Rubric v3 does not apply to external targets. Five derived measurements: (1) Feature presence — pass/fail per major planned feature; (2) Build integrity — TypeScript type-check + Vite build; (3) Test coverage — yes/no; (4) Security posture — flag/clear per item; (5) Document credibility — do plan docs accurately reflect shipped state.
 
 **Key findings (root causes):**
-1. Plan docs conflate intent with completion — all âœ… markers look identical whether shipped or not; docs were written as forward-looking specs in a chat-based LLM workflow and never revised as status records.
+1. Plan docs conflate intent with completion — all ✅ markers look identical whether shipped or not; docs were written as forward-looking specs in a chat-based LLM workflow and never revised as status records.
 2. Zero test infrastructure is architectural, not a task gap — no test runner installed in either package.
 3. Three security configurations are dev-mode defaults never hardened: `cors()` with no origin restriction (OWASP A05 HIGH), `contentSecurityPolicy: false` (MEDIUM), access+refresh JWT tokens share same secret (MEDIUM). Human action required — no auto-fix.
 4. Four planned features not shipped: Tesseract OCR label scanning, application metrics/monitoring, PubMed feature routes (empty directory scaffolded), GDPR data export endpoint.
@@ -611,7 +611,7 @@ Other 7 lenses showed no actionable findings (Unevenness, Overburden, Waste, P1 
 
 **What was done:** Read 12 planning documents; cross-referenced against schema, source files, and dependency manifests. Ran TypeScript type-check + Vite build. Checked git for committed credentials. Created TRAIL/ in target project. No code changes.
 
-**Verification:** API tsc --noEmit: âœ… 0 errors. Web tsc --noEmit: âœ… 0 errors. Web vite build: âœ… success. Tests: âŒ no test framework.
+**Verification:** API tsc --noEmit: ✅ 0 errors. Web tsc --noEmit: ✅ 0 errors. Web vite build: ✅ success. Tests: âŒ no test framework.
 
 **Measurements:** Feature presence 14/18 (78%). Build integrity 3/3 PASS. Test coverage: ZERO. Security flags: 3 open. Document credibility: LOW.
 
@@ -988,7 +988,7 @@ The user identified a real P2 gap: Kata Step 1 told agents to *derive* measureme
 | # | Finding | Root cause | Recurred? | Action |
 |---|---------|------------|-----------|--------|
 | 1 | Individual skills (Kaizen, Kaikaku, Hansei, Shiken) specify what to DO but not what the trail must contain when the skill completes. An agent reading any individual skill file doesn't know what evidence to deposit in the kiroku session. | Observable output requirements were defined only at the Kata orchestration level (Steps 4–5), not at the skill execution level. | First | Added `## Evidence` section to all 4 individual skills: observer-centric statement of what an observer should find in the trail after the skill completes. Does not prescribe reasoning process (P1 compliant). |
-| 2 | `metrics.ps1` Metric 11 reported POOR despite SUMMARY.md checkpoint being checked with reviewer date. Root cause (a): reviewer wrote `20-04-2026` (DD-MM-YYYY) but the regex expects `\d{4}-\d{2}-\d{2}` (YYYY-MM-DD) — date never parsed. Root cause (b): assessment logic gave no credit for checkbox-checked + date parsed when Review Log has no rows. | Format mismatch (template says YYYY-MM-DD, reviewer used DD-MM-YYYY) + assessment logic gap for checkpoint-only evidence. | First | Fixed SUMMARY.md date to `2026-04-20`; added new GOOD case to assessment: if checkbox checked + date â‰¤ 7 days old + Review Log empty → GOOD with note to populate Review Log. |
+| 2 | `metrics.ps1` Metric 11 reported POOR despite SUMMARY.md checkpoint being checked with reviewer date. Root cause (a): reviewer wrote `20-04-2026` (DD-MM-YYYY) but the regex expects `\d{4}-\d{2}-\d{2}` (YYYY-MM-DD) — date never parsed. Root cause (b): assessment logic gave no credit for checkbox-checked + date parsed when Review Log has no rows. | Format mismatch (template says YYYY-MM-DD, reviewer used DD-MM-YYYY) + assessment logic gap for checkpoint-only evidence. | First | Fixed SUMMARY.md date to `2026-04-20`; added new GOOD case to assessment: if checkbox checked + date ≤ 7 days old + Review Log empty → GOOD with note to populate Review Log. |
 
 ### Verification
 
@@ -1038,7 +1038,7 @@ This is **not** a suite-self-evaluation run. No suite-level score is asserted. P
 - Shipped in evo as commit on the working branch (`CHANGELOG.md` "Unreleased" section).
 
 ### Falsification step
-Smoke-tested the detector against current `c:\git\apikit` (post-Run-66-fix). Expected â‰¤1 finding (Run 66 was supposed to clean it up). **Actual: 5 findings across 5 test files** — `test_app.py`, `test_items.py`, `test_models.py`, `test_store.py`, `test_user_validation.py`. Run 66 only addressed the duplicate-user pattern; apikit *still* has 4 other source defects whose only structural protection is bug-asserting tests. The detector is not synthetic — it surfaces real, currently-undetected debt on a real evo-generated repo.
+Smoke-tested the detector against current `c:\git\apikit` (post-Run-66-fix). Expected ≤1 finding (Run 66 was supposed to clean it up). **Actual: 5 findings across 5 test files** — `test_app.py`, `test_items.py`, `test_models.py`, `test_store.py`, `test_user_validation.py`. Run 66 only addressed the duplicate-user pattern; apikit *still* has 4 other source defects whose only structural protection is bug-asserting tests. The detector is not synthetic — it surfaces real, currently-undetected debt on a real evo-generated repo.
 
 ### Methodology validation — did the suite help, get in the way, or both?
 
@@ -1158,7 +1158,7 @@ Fresh file-read surfaced two real parser defects in the suite tooling rather tha
 | Methodology | Kata → Kaizen |
 
 ### Independence Gate
-This run is **not** a valid Principle 3 convergence datapoint. Although the model family changed, prior scores and Run 63 conclusions were already visible in conversation context. Under `PRINCIPLES.md` Â§3, a same-conversation model switch is not an independent assessment.
+This run is **not** a valid Principle 3 convergence datapoint. Although the model family changed, prior scores and Run 63 conclusions were already visible in conversation context. Under `PRINCIPLES.md` §3, a same-conversation model switch is not an independent assessment.
 
 ### Diagnosis
 - `TRAIL/SUMMARY.md` drifted: `## Open Concerns` still said the P3 silence counter was `0/3`, while `SCORECARD.md`, `TRAIL/GENBA.md`, and `## Direction` already recorded Run 63 as `1/3`.
@@ -1188,7 +1188,7 @@ This run is **not** a valid Principle 3 convergence datapoint. Although the mode
 
 ### Measurements (Rubric v3)
 
-| # | Dimension | Start | End | Î” |
+| # | Dimension | Start | End | Δ |
 |---|-----------|:-----:|:---:|:-:|
 | D1 | Process Completeness | 8 | 8 | 0 |
 | D2 | Causal Analysis | 8 | 8 | 0 |
@@ -1209,7 +1209,7 @@ Read all 5 skill files, PRINCIPLES.md, README.md, SCORECARD Rubric v3, and CHANG
 **Observations surfaced (none actionable):**
 1. Kata Decide step lacks explicit decision criteria → by P1 design (adding criteria = prescriptive)
 2. Shiken measures only D8 layer 3 (discrimination) → correct division of labor with Kiroku for preconditions
-3. Check 9 doesn't check evaluator diversity → correct — plateau-detection â‰  convergence-detection
+3. Check 9 doesn't check evaluator diversity → correct — plateau-detection ≠ convergence-detection
 4. Kaizen silence vs. measurement instability → by design — scheme revision = artifact change → resets silence
 5. D2 lacks mechanical operationalization → root-cause quality can't be computed from prose
 6. Minor wording (Kaikaku frontmatter, multi-resolution duplication) → cosmetic, not worth manufacturing changes
@@ -1269,7 +1269,7 @@ The TPS suite's diagnostic lenses (unevenness, overburden, waste) worked natural
 
 ### Measurements (Rubric v3)
 
-| # | Dimension | Start | End | Î” |
+| # | Dimension | Start | End | Δ |
 |---|-----------|:-----:|:---:|:-:|
 | D1 | Process Completeness | 8 | 8 | 0 |
 | D2 | Causal Analysis | 8 | 8 | 0 |
@@ -1301,7 +1301,7 @@ F#3 (external target deferred 19 runs) is not fixable by artifact change — it 
 
 3. **Kata SKILL.md — pre-flight CM check.** Added to Execute step before invoking the selected skill: verify the latest GENBA entry's claims, catch inter-run drift before modifying further, record drift as a finding.
 
-4. **verify-suite.ps1 Check 9 — signal-based.** Replaced fixed 5-run cadence check with sustained-plateau detection: walks SCORECARD rows backward, counts consecutive zero-delta rows, warns at â‰¥3. Uses the existing `Get-ScorecardRunRows` function's object model (`.Run`, `.Delta` properties). Fixed a type mismatch bug in the initial implementation (Sort-Object against objects, not raw strings).
+4. **verify-suite.ps1 Check 9 — signal-based.** Replaced fixed 5-run cadence check with sustained-plateau detection: walks SCORECARD rows backward, counts consecutive zero-delta rows, warns at ≥3. Uses the existing `Get-ScorecardRunRows` function's object model (`.Run`, `.Delta` properties). Fixed a type mismatch bug in the initial implementation (Sort-Object against objects, not raw strings).
 
 ### Verification
 - `verify-suite.ps1`: **0 failures, 0 warnings.** All 14 checks pass including the restructured Check 9.
@@ -1403,7 +1403,7 @@ Loop is healthy mechanically (0 failures on verify-suite, all Run 54 findings ta
 
 ### Measurements (Rubric v3)
 
-| # | Dimension | Start | End | Î” |
+| # | Dimension | Start | End | Δ |
 |---|-----------|:-----:|:---:|:-:|
 | 1 | Process Completeness | 8 | 8 | — |
 | 2 | Causal Analysis | 8 | 8 | — |
@@ -1420,7 +1420,7 @@ Loop is healthy mechanically (0 failures on verify-suite, all Run 54 findings ta
 | # | Finding | Lens | Severity | Fixed? | Recurred? |
 |---|---------|------|:--------:|:------:|:---------:|
 | 1 | P3 silence counter in SCORECARD is self-narrated text ("0/3") with no mechanical computation. Convergence Integrity (D7) cannot exceed self-assertion when the loop's stopping condition is asserted rather than derived. Without computation, the counter could drift from reality and there is no mechanical guard against false convergence claims. | Overburden | High | Yes | First |
-| 2 | `kata/SKILL.md` Convergence section says "produce the same assessment" — vague. PRINCIPLES.md Â§3 is precise: "produce the same score (within a defined tolerance)". Kata softens the principle and creates clarity drift between authoritative source and downstream skill. | Unevenness | Medium | Yes | First |
+| 2 | `kata/SKILL.md` Convergence section says "produce the same assessment" — vague. PRINCIPLES.md §3 is precise: "produce the same score (within a defined tolerance)". Kata softens the principle and creates clarity drift between authoritative source and downstream skill. | Unevenness | Medium | Yes | First |
 
 ### Actions Taken
 - Added **Metric 7 (P3 Convergence Silence Counter)** to `metrics.ps1`. Walks SCORECARD rows backward from the most recent run, counts consecutive zero-delta runs, counts distinct evaluators in the chain, parses the asserted counter from SCORECARD, and warns on drift. Output classifies state as ACTIVE / APPROACHING / CONVERGED.
@@ -1429,7 +1429,7 @@ Loop is healthy mechanically (0 failures on verify-suite, all Run 54 findings ta
 
 ### Outcome
 - D3 (Measurement Validity) 8 → 8.5: convergence is now a measurable, reproducible quantity instead of an asserted text snippet.
-- D6 (Instruction Clarity) 9 → 9.5: Kata Convergence section now mirrors PRINCIPLES.md Â§3 precisely.
+- D6 (Instruction Clarity) 9 → 9.5: Kata Convergence section now mirrors PRINCIPLES.md §3 precisely.
 - D7 (Convergence Integrity) 8 → 9: stopping condition has mechanical infrastructure. Drift between asserted and computed counters is now detectable.
 - verify-suite: 0 failures, 0 warnings. metrics.ps1 confirms computed counter (0) matches asserted (0/3).
 
@@ -1445,7 +1445,7 @@ Loop is healthy mechanically (0 failures on verify-suite, all Run 54 findings ta
 
 ### Measurements (Rubric v3)
 
-| # | Dimension | Start | End | Î” |
+| # | Dimension | Start | End | Δ |
 |---|-----------|:-----:|:---:|:-:|
 | 1 | Process Completeness | 8 | 8 | — |
 | 2 | Causal Analysis | 8 | 8 | — |
@@ -1461,7 +1461,7 @@ Loop is healthy mechanically (0 failures on verify-suite, all Run 54 findings ta
 
 | # | Finding | Lens | Severity | Fixed? | Recurred? |
 |---|---------|------|:--------:|:------:|:---------:|
-| 1 | 3 orphan main-run-table rows (2Ã— Run 57, 1Ã— Run 56) floated between Dimension Trajectory table and `**Key:**` section in SCORECARD.md. Escaped all 14 mechanical checks because parsers stop at `## Dimension Trajectory`. Root cause: insertion error during Run 56/57 SCORECARD update. | Unevenness | High | Yes | First |
+| 1 | 3 orphan main-run-table rows (2× Run 57, 1× Run 56) floated between Dimension Trajectory table and `**Key:**` section in SCORECARD.md. Escaped all 14 mechanical checks because parsers stop at `## Dimension Trajectory`. Root cause: insertion error during Run 56/57 SCORECARD update. | Unevenness | High | Yes | First |
 | 2 | CHANGELOG [Unreleased] missing entries from Runs 51–54 and Run 56. Seven runs of significant changes (parser fix, Check 14, threshold rationale, archive extraction, README fix, METRICS_HISTORY cleanup) accumulated since v2.2.0 without release. | Waste | Medium | Yes | First |
 
 ### Actions Taken
@@ -1489,7 +1489,7 @@ Loop is healthy mechanically (0 failures on verify-suite, all Run 54 findings ta
 
 ### Measurements (Rubric v3)
 
-| # | Dimension | Start | End | Î” |
+| # | Dimension | Start | End | Δ |
 |---|-----------|:-----:|:---:|:-:|
 | 1 | Process Completeness | 8 | 8 | — |
 | 2 | Causal Analysis | 8 | 8 | — |
@@ -1529,7 +1529,7 @@ Loop is healthy mechanically (0 failures on verify-suite, all Run 54 findings ta
 
 ### Measurements (Rubric v3 — updated from Run 55)
 
-| # | Dimension | Start | End | Î” |
+| # | Dimension | Start | End | Δ |
 |---|-----------|:-----:|:---:|:-:|
 | 1 | Process Completeness | 8 | 8 | — |
 | 2 | Causal Analysis | 8 | 8 | — |
@@ -1570,7 +1570,7 @@ Loop is healthy mechanically (0 failures on verify-suite, all Run 54 findings ta
 
 ### Measurements (Rubric v3 — inherited from Run 53)
 
-| # | Dimension | Start | End | Î” |
+| # | Dimension | Start | End | Δ |
 |---|-----------|:-----:|:---:|:-:|
 | 1 | Process Completeness | 8 | 8 | — |
 | 2 | Causal Analysis | 8 | 8 | — |
@@ -1653,7 +1653,7 @@ Loop is healthy but narrowing. The highest-leverage move is not another Claude K
 
 ### Measurements (Rubric v3 — inherited from Run 52)
 
-| # | Dimension | Start | End | Î” |
+| # | Dimension | Start | End | Δ |
 |---|-----------|:-----:|:---:|:-:|
 | 1 | Process Completeness | 8 | 8 | — |
 | 2 | Causal Analysis | 8 | 8 | — |
@@ -1694,7 +1694,7 @@ Loop is healthy but narrowing. The highest-leverage move is not another Claude K
 
 ### Measurements (Rubric v3 — inherited from Run 51)
 
-| # | Dimension | Start | End | Î” |
+| # | Dimension | Start | End | Δ |
 |---|-----------|:-----:|:---:|:-:|
 | 1 | Process Completeness | 8 | 8 | — |
 | 2 | Causal Analysis | 8 | 8 | — |
@@ -1738,7 +1738,7 @@ Loop is healthy but narrowing. The highest-leverage move is not another Claude K
 
 ### Measurements (Rubric v3, 8 dimensions — first measurement-protocol run)
 
-| # | Dimension | Start | End | Î” |
+| # | Dimension | Start | End | Δ |
 |---|-----------|:-----:|:---:|:-:|
 | 1 | Process Completeness | 8 | 8 | — |
 | 2 | Causal Analysis | 8 | 8 | — |

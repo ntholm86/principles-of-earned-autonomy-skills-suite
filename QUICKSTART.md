@@ -52,8 +52,8 @@ Done when: `.acm/audit-trail.md` has a new entry with `outcome:` and `delta:`.
 
 Open these and skim:
 
-1. `.acm/destination.md` â€” destination is captured.
-2. `.acm/audit-trail.md` â€” new entry has interpretation, decision, action, and outcome.
+1. `.acm/destination.md` — destination is captured.
+2. `.acm/audit-trail.md` — new entry has interpretation, decision, action, and outcome.
 3. The change itself in the working tree.
 
 If all three are present, the loop ran successfully end to end.
@@ -71,6 +71,6 @@ This rejects commits that touch substantive files without a corresponding `.acm/
 
 ## If something went wrong
 
-1. No `.acm/destination.md` created â†’ re-run `/destination` and answer at least the first question.
-2. No audit entry appended â†’ re-run `/improve` with a smaller, more concrete task.
-3. Agent did not narrate intent â†’ ask it to apply `/intent` to your prompt first, then retry.
+1. No `.acm/destination.md` created → re-run `/destination` and answer at least the first question.
+2. No audit entry appended → re-run `/improve` with a smaller, more concrete task.
+3. Agent did not narrate intent → ask it to apply `/intent` to your prompt first, then retry.
