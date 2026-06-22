@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """pre-commit hook â€” enforces Observable Autonomy.
 
 If this commit touches substantive files (skills, tools, principles, README)

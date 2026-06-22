@@ -7823,3 +7823,61 @@ This keeps the trail skill ACM-compliant as a first-class implementation, not ju
 ### Deferred because
 
 Low urgency — the operator is always present in human-supervised sessions and provides the mandate implicitly through the request. The structural gap is real but the risk is low in practice. Fix when the skill suite is next revised.
+
+
+---
+
+## 2026-06-22 — acm-parent-scope-traversal-propagated
+
+- target: skills suite (improve/SKILL.md, retrospect/SKILL.md)
+- agent: GitHub Copilot (Claude claude-sonnet-4-6, tool-call prefix toolu_bdrk_*)
+- skill: improve
+- outcome: ACM §4 parent-scope destination traversal instruction added to improve/SKILL.md and retrospect/SKILL.md; retrospect.md refreshed; derived artifacts regenerated
+- delta: improve/SKILL.md (parent-scope paragraph added, stale count removed), retrospect/SKILL.md (step 0 heading updated, parent-scope paragraph added), .acm/retrospect.md (refreshed), .acm/history.md and .acm/learning.md (regenerated)
+
+### Ask
+
+Add the ACM §4 parent-scope reading instruction to improve/SKILL.md step 1 and retrospect/SKILL.md step 0. Entry 152 (acm-scope-stop-conditions-propagated) fixed the stop conditions for scope traversal; this entry adds the traversal instruction itself.
+
+### Examination
+
+**improve/SKILL.md step 1:** Instructed agents to read the target repo’s .acm/ folder “for two orientation files.” Two gaps: (a) the fixed count “two” was stale (four .acm/ files are now listed: destination, retrospect, learning, audit-trail); (b) no instruction to traverse parent directories for higher-scope destination.md files. An agent running Improve on a repo nested in a workspace with a workspace-level destination.md would miss that mandate entirely.
+
+**retrospect/SKILL.md step 0:** Same traversal gap — step 0 said “read the target repo root’s destination.md if it exists” with no mention of parent scopes. An arc-read without higher-scope mandates produces claims that may miss cross-repo coordination constraints.
+
+Both gaps are ACM §4 non-conformances. Stop conditions were already correct (entry 152). The traversal instruction was missing.
+
+**Trail-entry gap:** The SKILL.md changes existed in the working tree without a corresponding trail entry. The operational rule “Trail entries are required for SKILL.md changes” was not satisfied. This entry closes that gap.
+
+### Decision
+
+[!DECISION] Add ACM §4 parent-scope paragraph to improve/SKILL.md step 1 and retrospect/SKILL.md step 0. Also refresh .acm/retrospect.md and regenerate derived artifacts (were stale vs audit-trail.md).
+
+### Action
+
+- improve/SKILL.md: Changed “for two orientation files” → “for orientation files” (count was stale). Added ACM §4 parent-scope reading paragraph.
+- retrospect/SKILL.md: Updated step 0 heading to “Read the destination first (all scopes)”. Added ACM §4 parent-scope paragraph.
+- .acm/retrospect.md: Refreshed (post-acm-reposition-retro; 5 claims, operational rules).
+- .acm/history.md and .acm/learning.md: Regenerated (153 entries, 232 markers after this entry).
+
+**Side fix:** Re-installed pre-commit hook from harness/tools/hooks/pre-commit stripping the BOM (`\xef\xbb\xbf`) that PowerShell’s Copy-Item had introduced, causing “cannot spawn” on the shebang line.
+
+### Reflection
+
+*Current model of the target:* The three primary skills (Improve, Retrospect, Destination) now implement ACM §4 parent-scope traversal consistently: traversal instruction, stop conditions (§4.2), and label-per-scope convention are all present. A session running any of these skills against a nested repo will correctly read workspace-level mandates before repo-level ones.
+
+*Blind spot:* intent/SKILL.md, probe/SKILL.md, and trail/SKILL.md have not been checked for the traversal gap. Intent likely needs it (reads destination.md directly). Probe probably does not (operates on code). Trail probably does not (records, does not read destination).
+
+*Across-trail reflection triggers:*
+- *Recurring finding-class:* not fired — entries 151, 152, and this entry are all ACM propagation work, but they cover distinct § sections. If a fourth consecutive entry is an ACM propagation, the trigger should fire.
+- *About to declare silence:* not fired — this is an addition, not a closure. intent/SKILL.md has not been checked.
+- *Contradicts prior [!REALIZATION]:* not fired — extends entry 152’s realization.
+- *Operator explicitly asked:* not fired.
+
+*Pre-existing verify.py failures noted:* Entries at dates 2026-06-04, 2026-06-21 (reposition, rename) and the gap-note entry were committed without required metadata fields and/or trigger-evaluation lines. They cannot be retroactively corrected (append-only rule). Pre-existing debt; not addressed in this session.
+
+### Candidate Next Moves
+
+1. **Check intent/SKILL.md for ACM §4 parent-scope traversal gap** — most likely candidate; Intent reads destination.md at step 1.
+2. **Fix pre-existing verify.py failures** — entries 2026-06-04 and 2026-06-21 need amendment entries appending missing metadata/trigger fields (4 entries, each needing 4–8 lines). Append-only compliant via correction entries.
+3. **Cross-session learning test** — run Improve in a fresh session on an external target; confirm the agent cites a learning.md entry by date+slug in step 1.

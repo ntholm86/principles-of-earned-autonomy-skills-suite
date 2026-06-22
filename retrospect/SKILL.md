@@ -26,11 +26,13 @@ Full statement of the principles: [PRINCIPLES.md](../PRINCIPLES.md) â€” rea
 
 ## The work
 
-### 0. Read the destination first
+### 0. Read the destination first (all scopes)
 
-Before forming any scope statement, read `.acm/destination.md` **in the target repo root** if it exists (falling back to `.acm/vision.md` if only the legacy name is present). This is the operator-held destination â€” what the target is for and what constraints hold across all runs. Reading it first ensures the arc is read against what the operator actually cares about, not retrofitted afterward.
+Before forming any scope statement, read `.acm/destination.md` **in the target repo root** if it exists (falling back to `.acm/vision.md` if only the legacy name is present). This is the operator-held destination — what the target is for and what constraints hold across all runs. Reading it first ensures the arc is read against what the operator actually cares about, not retrofitted afterward.
 
-If no `destination.md` or `vision.md` exists, proceed â€” but note the absence. A Retrospect run on a target without a destination is reading the arc without somewhere to orient against.
+**ACM §4 Scoped Memory — read parent scopes first.** Before reading the repo's `.acm/destination.md`, traverse parent directories upward and read any `.acm/destination.md` found there. Stop when: filesystem root reached; a `.acm-root` marker file is found (operator ceiling — read that directory's `.acm/` then stop); or 4 levels traversed. Higher-scope mandates govern lower-scope ones. Label each scope when reading (e.g., "workspace mandate", "repo mandate"). The workspace destination gives the arc its organizational context; arc-claims made without it may miss cross-repo coordination constraints.
+
+If no `destination.md` or `vision.md` exists at any scope, proceed — but note the absence. A Retrospect run on a target without a destination is reading the arc without somewhere to orient against.
 
 ### 1. Identify the scope
 
