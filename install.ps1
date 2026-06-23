@@ -10,7 +10,7 @@ param(
 
 $ErrorActionPreference = 'Stop'
 
-$skills = @('intent', 'destination', 'improve', 'trail', 'retrospect', 'probe')
+$skills = @('intent', 'destination', 'improve', 'trail', 'orient', 'probe')
 $src = $PSScriptRoot
 
 if (-not (Test-Path $Target)) {
@@ -37,4 +37,4 @@ if (Test-Path $principles) {
 
 Write-Host ""
 Write-Host "Installed PEA skills to: $Target"
-Write-Host "Invoke in Copilot chat with /intent, /destination, /improve, /trail, /retrospect, /probe"
+Write-Host "Invoke in Copilot chat with /intent, /destination, /improve, /trail, /orient, /probe"

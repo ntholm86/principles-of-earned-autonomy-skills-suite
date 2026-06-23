@@ -40,7 +40,7 @@ The full trail exists, but it cannot be published in this repository because it 
 | **[Destination](./destination/SKILL.md)** | The agent doesn't know where you're heading — because it's in your head | The agent will read your mind, uncover the destination and produce `.acm/destination.md` that other skills will use |
 | **[Trail](./trail/SKILL.md)** | The work is unauditable | Logs every autonomous decision made by the agent and the reason behind it |
 | **[Improve](./improve/SKILL.md)** | The agent makes superficial, undisciplined edits | A structured, iterative improvement loop that reflects and learns before acting |
-| **[Retrospect](./retrospect/SKILL.md)** | The agent can't see its own arc | Self-evaluates the progress of all iterations and determines what is next |
+| **[Orient](./orient/SKILL.md)** | The agent can't see its own arc | Self-evaluates the progress of all iterations and determines what is next |
 
 ### Validation skill
 
@@ -50,11 +50,11 @@ The full trail exists, but it cannot be published in this repository because it 
 
 Each skill externalizes what normally only lives inside a single model session — the goal, the destination, the decisions, the arc. Together they form a persistent memory layer that no model reset can erase.
 
-This memory structure is formally specified by the [Agent Context Memory (ACM)](https://github.com/ntholm86/agent-context-memory) standard. ACM defines three tiers organized by trust level: Intent (`destination.md`, principal-authored), Trace (`audit-trail.md`, `retrospect.md`, agent append-only), and Evidence (harness-captured session records). This suite implements the Intent and Trace tiers; the Evidence tier requires a separate harness.
+This memory structure is formally specified by the [Agent Context Memory (ACM)](https://github.com/ntholm86/agent-context-memory) standard. ACM defines three tiers organized by trust level: Intent (`destination.md`, principal-authored), Trace (`audit-trail.md`, `orientation.md`, agent append-only), and Evidence (harness-captured session records). This suite implements the Intent and Trace tiers; the Evidence tier requires a separate harness.
 
-The files (`.acm/audit-trail.md`, `.acm/destination.md`, `.acm/retrospect.md`) provide the literal storage, but the interaction of the skills with those files creates **contextual awareness**.
+The files (`.acm/audit-trail.md`, `.acm/destination.md`, `.acm/orientation.md`) provide the literal storage, but the interaction of the skills with those files creates **contextual awareness**.
 
-Memory alone is just retrieval; awareness is orientation. Because `Retrospect` reads the arc, `Destination` uncovers where you're heading, and `Intent` aligns the goal, the suite uses that memory to understand where it is and where it is going.
+Memory alone is just retrieval; awareness is orientation. Because `Orient` reads the arc, `Destination` uncovers where you're heading, and `Intent` aligns the goal, the suite uses that memory to understand where it is and where it is going.
 
 When you swap from Claude to Gpt to Gemini, the next model picks up this exact orientation. That accumulation is what makes the suite get smarter over time.
 
@@ -70,7 +70,7 @@ When you swap from Claude to Gpt to Gemini, the next model picks up this exact o
 ### #2: DESTINATION — The agent drifted over time
 
 **Problem:** During a long autonomous run, the agent loses the plot, fixing minor issues rather than addressing the core architectural problem.
-**Solution:** Destination surfaces the agent's implicit assumptions about where you're heading, letting you course-correct early. Retrospect steps back, analyzes the full history of the work, and re-orients the loop.
+**Solution:** Destination surfaces the agent's implicit assumptions about where you're heading, letting you course-correct early. Orient steps back, analyzes the full history of the work, and re-orients the loop.
 
 > "No-one knows exactly what they want."
 >
@@ -94,10 +94,10 @@ When you swap from Claude to Gpt to Gemini, the next model picks up this exact o
 >
 > — Kent Beck, [Extreme Programming Explained](https://www.amazon.com/Extreme-Programming-Explained-Embrace-Change/dp/0321278658)
 
-### #5: RETROSPECT — The agent can't see its own arc
+### #5: ORIENT — The agent can't see its own arc
 
 **Problem:** After 50 iterations, the agent has been diligently improving — but nobody stepped back to ask whether those 50 iterations were solving the right problem. Each step looked locally optimal. The overall arc drifted.
-**Solution:** Retrospect reads the entire trail history as a single document and forms arc-level claims: what is the target becoming, where has the loop's attention been, and is that where the real weight lies? It surfaces what no individual iteration would reveal.
+**Solution:** Orient reads the entire trail history as a single document and forms arc-level claims: what is the target becoming, where has the loop's attention been, and is that where the real weight lies? It surfaces what no individual iteration would reveal.
 
 > "Life can only be understood backwards; but it must be lived forwards."
 >
@@ -107,7 +107,7 @@ When you swap from Claude to Gpt to Gemini, the next model picks up this exact o
 
 1. **Set the target:** Run `destination` first to capture where you're heading before starting work.
 2. **Execute:** Run `improve` for as many iterations as needed until you reach a plateau.
-3. **Reflect:** Run `retrospect` to evaluate the entire loop history and reflect on progress.
+3. **Reflect:** Run `orient` to evaluate the entire loop history and reflect on progress.
 
 ## Quickstart (First Successful Run)
 
@@ -138,9 +138,9 @@ Trail logs what the agent *says* it decided. Research shows this is not always t
 
 **How this suite mitigates it:** To prevent LLMs from generating post-hoc justifications to fit decisions already made, the suite enforces structural constraints:
 1. **Pre-commit prediction (Improve, Trail):** The agent must record a falsifiable prediction of what a change will and will not achieve *before* acting or observing the actual outcome.
-2. **Outcome anchoring (Retrospect):** Subsequent arc-reads systematically evaluate actual outcomes against those prior predictions to expose localized confabulation.
-3. **Reversal density (Trail, Retrospect):** A uniform, unbroken trail of "successes" is actively flagged as suspect rationalization. True reasoning leaves a trail of reversals, dead ends, and tested predictions.
-4. **Adversarial audit (Retrospect):** A dedicated lens to actively hunt for outcome mismatch and logical discontinuities across the trail history.
+2. **Outcome anchoring (Orient):** Subsequent arc-reads systematically evaluate actual outcomes against those prior predictions to expose localized confabulation.
+3. **Reversal density (Trail, Orient):** A uniform, unbroken trail of "successes" is actively flagged as suspect rationalization. True reasoning leaves a trail of reversals, dead ends, and tested predictions.
+4. **Adversarial audit (Orient):** A dedicated lens to actively hunt for outcome mismatch and logical discontinuities across the trail history.
 5. **Separating writer and decider (Improve, Trail):** In maximum-trust sequences (High-Fidelity Mode), the agent making the change is procedurally forbidden from writing the final trail entry, handing off to a second independent evaluator.
 
 Together, these force the agent to lock its reasoning *before* acquiring evidence, and introduce explicit adversarial structures to break the post-hoc rationalization loop.

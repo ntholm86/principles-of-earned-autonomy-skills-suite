@@ -57,7 +57,7 @@ That four-part stance is what I mean by the term. It's also the boundary: a cont
 
 ## What I'm doing about it
 
-I'm building a small set of skills — currently six, version 3.11.0 — that an AI agent applies to its own work. The skills are: **intent** (interpret the operator's intent before acting), **improve** (one highest-leverage change per run, stated reason), **probe** (test reasoning vs. pattern-matching), **trail** (append-only structured evidence per run), **retrospect** (read the arc of the trail and synthesize current orientation), and **destination** (surface guesses the agent has formed about where the operator is heading, as falsifiable questions; renamed from "vision" in v2.0.0 of this skill).
+I'm building a small set of skills — currently six, version 3.11.0 — that an AI agent applies to its own work. The skills are: **intent** (interpret the operator's intent before acting), **improve** (one highest-leverage change per run, stated reason), **probe** (test reasoning vs. pattern-matching), **trail** (append-only structured evidence per run), **orient** (read the arc of the trail and synthesize current orientation), and **destination** (surface guesses the agent has formed about where the operator is heading, as falsifiable questions; renamed from "vision" in v2.0.0 of this skill).
 
 The skills sit on top of three principles I've published separately ([Principles of Earned Autonomy](https://github.com/ntholm86/principles-of-earned-autonomy)): Commander's Intent (define destination, not route), Observable Autonomy (autonomy is a function of transparency), and Convergence Is Silence (you're done when independent evaluators find nothing left to change).
 
@@ -70,7 +70,7 @@ The workshop-and-proof setup is honest about its own limits. It's incestuous: sa
 I want to be precise about what is and isn't on the table.
 
 - **I'm not claiming the skills are the answer.** They are *one attempt* at the answer. They may be the wrong attempt. They may be the right attempt for a narrower class of work than I hope.
-- **I'm not claiming the protocol is finished.** The current version is 3.x. The destination/retrospect.md split is two weeks old. The destination skill (originally named Vision) was added this week. Most of the protocol is unproven in execution.
+- **I'm not claiming the protocol is finished.** The current version is 3.x. The destination/orientation.md split is two weeks old. The destination skill (originally named Vision) was added this week. Most of the protocol is unproven in execution.
 - **I'm not claiming this solves AI safety.** It doesn't. It addresses one slice — the slice where a willing operator with real authority is delegating to a real agent, in real time, on a real task. Many of the harder safety problems sit outside that slice.
 - **I'm not claiming originality on the components.** Trails are standard. Mission-type command is Prussian. Independent multi-evaluator convergence is older than I am. The bet is on the combination and the framing of *what they're collectively trying to solve.*
 
@@ -141,8 +141,8 @@ A falsifiable statement: **an operator who passes an ARF probe on a given agent 
 
 The next stretch of work, in order:
 
-1. **Close the validation gap inside the repo.** Several mechanisms — Retrospect, the destination/retrospect.md split, Destination itself — are in the protocol but unproven in execution. They need to actually run and produce something that wasn't pre-seeded.
-2. **Strengthen the weakest of memory / learning / meta-cognition.** Memory (the trail) and meta-cognition (the retrospect.md) are reasonably solid. Learning — extracting durable updates from prior runs — is currently weak: a future agent re-reads the trail and reasons over it, which is honest but slow. This is the most likely place a future loop run finds leverage.
+1. **Close the validation gap inside the repo.** Several mechanisms — Orient, the destination/orientation.md split, Destination itself — are in the protocol but unproven in execution. They need to actually run and produce something that wasn't pre-seeded.
+2. **Strengthen the weakest of memory / learning / meta-cognition.** Memory (the trail) and meta-cognition (the orientation.md) are reasonably solid. Learning — extracting durable updates from prior runs — is currently weak: a future agent re-reads the trail and reasons over it, which is honest but slow. This is the most likely place a future loop run finds leverage.
 3. **One external proof.** Run the protocol on a target where the AI exceeds the operator on the underlying task and the operator is not me. Without this, the workshop-and-proof setup remains incestuous.
 4. **Engage the adjacent fields.** Send this stance to 3-5 people working on the closest problems. The goal is not validation; it's pressure-testing. Three outcomes are all good: "you're describing what I already do" (frame is not novel — adjust), "you're missing X" (frame is incomplete — adjust), "this is genuinely different" (frame earns its position).
 

@@ -8,7 +8,7 @@
 # Pass a path to install into a project: bash install.sh ./my-repo/.copilot/skills
 set -e
 
-SKILLS=(intent destination improve trail retrospect probe)
+SKILLS=(intent destination improve trail orient probe)
 
 SRC=$(cd "$(dirname "$0")" && pwd)
 DST="${1:-$HOME/.copilot/skills}"
@@ -33,4 +33,4 @@ fi
 
 echo ""
 echo "Installed PEA skills to: $DST"
-echo "Invoke in Copilot chat with /intent, /destination, /improve, /trail, /retrospect, /probe"
+echo "Invoke in Copilot chat with /intent, /destination, /improve, /trail, /orient, /probe"

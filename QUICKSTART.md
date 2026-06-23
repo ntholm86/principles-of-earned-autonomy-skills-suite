@@ -17,7 +17,7 @@ bash install.sh                 # macOS / Linux
 pwsh install.ps1                # Windows
 ```
 
-Or copy the six skill folders into `<your-repo>/.copilot/skills/`: `intent/`, `destination/`, `improve/`, `trail/`, `retrospect/`, `probe/`.
+Or copy the six skill folders into `<your-repo>/.copilot/skills/`: `intent/`, `destination/`, `improve/`, `trail/`, `orient/`, `probe/`.
 
 ## Set the destination (3 minutes)
 

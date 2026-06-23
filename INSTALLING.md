@@ -81,7 +81,7 @@ your-repo/
         SKILL.md
       trail/
         SKILL.md
-      retrospect/
+      orient/
         SKILL.md
       probe/
         SKILL.md
@@ -107,7 +107,7 @@ All skills work with only their own `SKILL.md`. No required sibling files.
 | **destination** | `PRINCIPLES.md` |
 | **improve** | `PRINCIPLES.md` |
 | **trail** | nothing — creates `.acm/audit-trail.md` on first use |
-| **retrospect** | nothing — reads `.acm/audit-trail.md` written by trail |
+| **orient** | nothing — reads `.acm/audit-trail.md` written by trail |
 
 ---
 
@@ -147,7 +147,7 @@ Exit 0 = all checks pass, exit 1 = something is wrong.
 
 Once installed, type the skill name prefixed with `/` in the Copilot chat to invoke it directly. Or just describe your task — skills whose `description` field matches will be suggested automatically.
 
-Available slash commands: `/intent`, `/destination`, `/improve`, `/trail`, `/retrospect`, `/probe`
+Available slash commands: `/intent`, `/destination`, `/improve`, `/trail`, `/orient`, `/probe`
 
 Example:
 ```

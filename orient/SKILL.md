@@ -1,17 +1,17 @@
 ﻿---
-name: retrospect
-version: 1.9.0
-description: 'Read the trail as a single document and form arc-level claims about the target. What is the target becoming? Where has the loop''s attention been, and is that where the target''s real weight lies? What does the arc reveal that no individual iteration would surface? Writes .acm/retrospect.md — the Retrospect-derived current orientation for the target. Destination (.acm/destination.md, with .acm/vision.md as legacy fallback), if present, is the operator-held destination and is read but never written. USE WHEN: about to declare convergence, recurring finding-class suspected, operator asks "how are we doing?", or an independent arc-read is needed without running a full improve loop.'
+name: orient
+version: 2.0.0
+description: 'Read the trail as a single document and form arc-level claims about the target. What is the target becoming? Where has the loop''s attention been, and is that where the target''s real weight lies? What does the arc reveal that no individual iteration would surface? Writes .acm/orientation.md — the Orient-derived current orientation for the target. Destination (.acm/destination.md, with .acm/vision.md as legacy fallback), if present, is the operator-held destination and is read but never written. USE WHEN: about to declare convergence, recurring finding-class suspected, operator asks "how are we doing?", or an independent arc-read is needed without running a full improve loop.'
 argument-hint: 'The target and its trail, and optionally the specific arc-question to answer'
 ---
 
-# Retrospect
+# Orient
 
 *Read the whole arc. See what no single iteration can.*
 
-*Memory Model role: Synthesizes the trail into `.acm/retrospect.md` — the arc-level orientation the next run starts from.*
+*Memory Model role: Synthesizes the trail into `.acm/orientation.md` — the arc-level orientation the next run starts from.*
 
-The Improve loop is optimised for one iteration at a time. Retrospect is optimised for reading all of them at once. Where Improve asks "what should change next?", Retrospect asks "what has been changing, where is the weight of this target actually sitting, and is the loop looking at the right thing?"
+The Improve loop is optimised for one iteration at a time. Orient is optimised for reading all of them at once. Where Improve asks "what should change next?", Orient asks "what has been changing, where is the weight of this target actually sitting, and is the loop looking at the right thing?"
 
 Run this skill when an arc-level view is more useful than another low-altitude pass: before declaring convergence, when a pattern of similar findings has emerged, when the operator asks "how are we doing?", or any time you want arc-level understanding without committing to a change.
 
@@ -19,8 +19,8 @@ Run this skill when an arc-level view is more useful than another low-altitude p
 
 This skill enacts two principles:
 
-1. **Observable Autonomy** — the trail exists so that arc-claims can be made and checked. Retrospect is the mechanism that reads the trail as evidence rather than as a log.
-2. **Convergence Is Silence** — convergence is only meaningful if the arc was read honestly before it was declared. Retrospect is that check.
+1. **Observable Autonomy** — the trail exists so that arc-claims can be made and checked. Orient is the mechanism that reads the trail as evidence rather than as a log.
+2. **Convergence Is Silence** — convergence is only meaningful if the arc was read honestly before it was declared. Orient is that check.
 
 Full statement of the principles: [PRINCIPLES.md](../PRINCIPLES.md) — read it if available, but this skill operates fully without it.
 
@@ -32,7 +32,7 @@ Before forming any scope statement, read `.acm/destination.md` **in the target r
 
 **ACM §4 Scoped Memory — read parent scopes first.** Before reading the repo's `.acm/destination.md`, traverse parent directories upward and read any `.acm/destination.md` found there. Stop when: filesystem root reached; a `.acm-root` marker file is found (operator ceiling — read that directory's `.acm/` then stop); or 4 levels traversed. Higher-scope mandates govern lower-scope ones. Label each scope when reading (e.g., "workspace mandate", "repo mandate"). The workspace destination gives the arc its organizational context; arc-claims made without it may miss cross-repo coordination constraints.
 
-If no `destination.md` or `vision.md` exists at any scope, proceed — but note the absence. A Retrospect run on a target without a destination is reading the arc without somewhere to orient against.
+If no `destination.md` or `vision.md` exists at any scope, proceed — but note the absence. An Orient run on a target without a destination is reading the arc without somewhere to orient against.
 
 ### 1. Identify the scope
 
@@ -113,7 +113,7 @@ Ask:
 
 - Has the loop been finding genuine findings, or finding excuses to act?
 - Is the silence earned, or is the loop stuck looking at easy surfaces?
-- **Which quality bars has the loop actually tested, and which has it never been challenged on?** A retrospect can only test the bars it knows about. Internal text-layer consistency, comparative defensibility under hostile external review, comparator coverage, empirical replication, and operational deployability are distinct bars; passing one says nothing about the others. Name the bar this retrospect's silence claim applies to.
+- **Which quality bars has the loop actually tested, and which has it never been challenged on?** An orient run can only test the bars it knows about. Internal text-layer consistency, comparative defensibility under hostile external review, comparator coverage, empirical replication, and operational deployability are distinct bars; passing one says nothing about the others. Name the bar this orient run's silence claim applies to.
 - What kind of finding would this loop structurally miss? Name it concretely.
 - If the operator could see the arc as a whole, would they say "yes, that is the right focus"?
 
@@ -126,20 +126,20 @@ The arc is the mechanism by which the agent learns how to work within the specif
 - Look for `[!REALIZATION]` markers across the arc that describe operational failures, successful rules of engagement, or architectural landmines specific to this target (e.g., "Never trust the build script to clean up," "This repo forbids adding third-party dependencies").
 - Synthesize these historical realizations into concrete, imperative rules for future agents. Do not just summarize what happened; state *what must be done differently next time*.
 
-### 5. Write the retrospect.md
+### 5. Write the orientation.md
 
 **Before writing: create the `.acm/` directory in the target repo root if it does not already exist.**
 
-Write the arc-claims from step 3 (and any loop-effectiveness findings from step 4) to `.acm/retrospect.md` in the target repo root. This file is the **retrospect.md** — the current Retrospect-derived orientation: where the loop's attention has been, what the arc currently shows is true of the target, and what the next runs should test.
+Write the arc-claims from step 3 (and any loop-effectiveness findings from step 4) to `.acm/orientation.md` in the target repo root. This file is the **orientation.md** — the current Orient-derived orientation: where the loop's attention has been, what the arc currently shows is true of the target, and what the next runs should test.
 
-The retrospect.md should make sense in light of the destination (read at step 0) — arc-claims may reference whether the loop has been pursuing what the destination says matters — but must not duplicate destination content. Never write to `.acm/destination.md` (or legacy `.acm/vision.md`) from a Retrospect run.
+The orientation.md should make sense in light of the destination (read at step 0) — arc-claims may reference whether the loop has been pursuing what the destination says matters — but must not duplicate destination content. Never write to `.acm/destination.md` (or legacy `.acm/vision.md`) from an Orient run.
 
-`.acm/retrospect.md` is not append-only. Retrospect replaces it each time it runs. The full reasoning history lives in `audit-trail.md`; the destination is where the target is going; the retrospect.md is the current distillation of where the target is along the way.
+`.acm/orientation.md` is not append-only. Orient replaces it each time it runs. The full reasoning history lives in `audit-trail.md`; the destination is where the target is going; the orientation.md is the current distillation of where the target is along the way.
 
 The file shape is simple:
 
 ```markdown
-# retrospect.md — <target name>
+# orientation.md — <target name>
 
 _Last updated: YYYY-MM-DD (run: <slug>)_
 
@@ -160,19 +160,19 @@ _Last updated: YYYY-MM-DD (run: <slug>)_
 <From step 4, if triggered. Omit section if step 4 was not run.>
 ```
 
-Commit `.acm/retrospect.md` alongside `audit-trail.md`, `history.md`, and `learning.md` after the run. Never commit changes to `.acm/destination.md` (or legacy `.acm/vision.md`) from a Retrospect run.
+Commit `.acm/orientation.md` alongside `audit-trail.md`, `history.md`, and `learning.md` after the run. Never commit changes to `.acm/destination.md` (or legacy `.acm/vision.md`) from an Orient run.
 
 ### 5a. Bound every silence claim
 
-Any claim in `retrospect.md` that the target has reached silence, convergence, or readiness must name **which quality bar** the silence applies to and **which surfaces** are in scope. Unbounded silence claims ("the target is in good shape", "text-layer silence is now earned") are the form most likely to be overturned by the next operator-initiated probe, because a bar the retrospect has never tested cannot be inside the silence claim.
+Any claim in `orientation.md` that the target has reached silence, convergence, or readiness must name **which quality bar** the silence applies to and **which surfaces** are in scope. Unbounded silence claims ("the target is in good shape", "text-layer silence is now earned") are the form most likely to be overturned by the next operator-initiated probe, because a bar the orient has never tested cannot be inside the silence claim.
 
-The pattern: *"Silence on `<named bar>` for `<named surfaces>`. Bars not tested by this retrospect: `<list>`."*
+The pattern: *"Silence on `<named bar>` for `<named surfaces>`. Bars not tested by this orient run: `<list>`."
 
 Examples:
 - *"Silence on internal text-layer consistency for all non-operator-locked surfaces. Bars not tested: comparative defensibility under hostile external review, comparator coverage."*
 - *"Silence on comparative defensibility for the prior-work bullets currently in scope. Bars not tested: comparator coverage (whether the right set of prior works has been engaged at all), empirical replication."*
 
-If the retrospect cannot name the bar, the silence claim is not yet ready to be made. Either name the bar or write the claim as a bar-scoped observation rather than as silence.
+If the orient run cannot name the bar, the silence claim is not yet ready to be made. Either name the bar or write the claim as a bar-scoped observation rather than as silence.
 
 *Origin:* This rule was promoted from the manifesto target's `retro-v201` -> `retro-v202` transition (entry slug `retrospect-v202-comparative-defensibility`, 2026-06-04), where a retrospect-declared text-layer silence was overturned within the same day by an operator-initiated publication-rigour-review run that tested a quality bar the prior retrospect had never been challenged on. Full provenance in this repo's `.acm/audit-trail.md` under entry slug `retro-named-boundary-rule-from-manifesto-arc`.
 
@@ -191,6 +191,6 @@ There is no separate "decision" or "action" field unless a follow-up action was 
 
 ## What this skill does not do
 
-- **It does not make changes to the target.** Retrospect reads and claims; Improve changes. If the arc reveals a specific finding, hand off to Improve.
-- **It does not replace Improve's step 6b.** Step 6b is a lightweight in-loop check that fires inside an improve iteration when a trigger condition is met. Retrospect is a standalone arc-read run instead of an improve iteration when a high-altitude view is what is needed. Use both.
+- **It does not make changes to the target.** Orient reads and claims; Improve changes. If the arc reveals a specific finding, hand off to Improve.
+- **It does not replace Improve's step 6b.** Step 6b is a lightweight in-loop check that fires inside an improve iteration when a trigger condition is met. Orient is a standalone arc-read run instead of an improve iteration when a high-altitude view is what is needed. Use both.
 - **It does not score the trail.** No number, no rubric, no grade. Claims are the output — claims a future run can test.
