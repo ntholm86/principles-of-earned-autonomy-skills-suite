@@ -12,6 +12,8 @@ The memory structure this suite uses is formally specified in [Agent Context Mem
 
 Compatible with Claude (skills / Agent SDK), GitHub Copilot (custom skills), and any LLM agent that can read markdown and append to a file.
 
+![The full architecture illustrated as a Storm P-style Rube Goldberg machine: Commander's Intent feeds the Improve loop, the audit trail runs as a conveyor belt through the whole machine, Orient reads the arc and feeds learning back in, and the machine converges to silence.](./stormpInspired.png)
+
 ## The Suite Improved Itself — [221 verified iterations](./.acm/ITERATION-COUNT.md)
 
 The suite ran on itself **221 times** across four eras and two complete rewrites. Each self-targeted iteration is documented in the [evidence trail](./.acm/audit-trail.md), with 191 individually backed by git commits and the remaining 30 by a bulk initial commit. The full provenance breakdown — including git SHAs, verification commands, and an honest account of what is independently verifiable — is in [ITERATION-COUNT.md](./.acm/ITERATION-COUNT.md).

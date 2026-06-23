@@ -937,6 +937,10 @@ Compact chronological extract of every `[!REALIZATION]` and `[!REVERSAL]` marker
 
 **[!REALIZATION]** :* not fired.
 
+## 2026-06-23 — stormp-illustration-readme
+
+**[!REALIZATION]** contradicted: No.
+
 ---
 
-**233 markers — 213 realisations, 20 reversals**
+**234 markers — 214 realisations, 20 reversals**
