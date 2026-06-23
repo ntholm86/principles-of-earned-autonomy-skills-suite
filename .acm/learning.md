@@ -933,6 +933,10 @@ Compact chronological extract of every `[!REALIZATION]` and `[!REVERSAL]` marker
 
 **[!REALIZATION]** :* not fired — extends entry 152’s realization.
 
+## 2026-06-23 — retrospect-to-orient-rename
+
+**[!REALIZATION]** :* not fired.
+
 ---
 
-**232 markers — 212 realisations, 20 reversals**
+**233 markers — 213 realisations, 20 reversals**

@@ -7881,3 +7881,61 @@ Both gaps are ACM §4 non-conformances. Stop conditions were already correct (en
 1. **Check intent/SKILL.md for ACM §4 parent-scope traversal gap** — most likely candidate; Intent reads destination.md at step 1.
 2. **Fix pre-existing verify.py failures** — entries 2026-06-04 and 2026-06-21 need amendment entries appending missing metadata/trigger fields (4 entries, each needing 4–8 lines). Append-only compliant via correction entries.
 3. **Cross-session learning test** — run Improve in a fresh session on an external target; confirm the agent cites a learning.md entry by date+slug in step 1.
+
+## 2026-06-23 — retrospect-to-orient-rename
+
+- target: skills repo (this repo)
+- operator: Nils Holmager
+- agent: Claude Opus 4.5 (Anthropic, copilot)
+- skill: improve (operator-directed infrastructure change)
+- outcome: Retrospect skill renamed to Orient; file renamed retrospect.md -> orientation.md
+- delta: retrospect/ -> orient/, v1.8.0 -> v2.0.0
+
+### Interpretation of the ask
+
+The operator directed a coordinated cross-ecosystem terminology rename: "retrospect" -> "orientation" across five repositories. Rationale stated: "Destination + Orientation forms a coherent navigation metaphor" and "The REORIENT phase name now reads naturally."
+
+This is an infrastructure change to align terminology with the navigation metaphor used throughout the ACM specification.
+
+### Examination
+
+Scope analysis:
+- skills repo: skill folder, SKILL.md, all cross-references, install scripts, documentation
+- agent-context-memory: SPEC.md canonical definition
+- ai-steward: pipeline code, tests, CLI
+- pea-website: public documentation, skill cards
+- llm-harness-proxy: only historical transcripts (append-only, not modified)
+
+### Decision
+
+[!DECISION] Rename the skill folder from retrospect/ to orient/ (not "orientation/" — matches "orient" command invocation pattern). Version bump to 2.0.0 reflects breaking change: any automation referencing "retrospect" path or function names will break.
+
+[!DECISION] Historical trail entries preserved per append-only rule. Only forward-looking documentation and active code updated.
+
+### Action
+
+Files renamed and updated:
+- retrospect/ -> orient/
+- orient/SKILL.md: updated all self-references, bumped version 1.8.0 -> 2.0.0
+- improve/SKILL.md, destination/SKILL.md, intent/SKILL.md, trail/SKILL.md: updated cross-references
+- install.ps1, install.sh: updated paths
+- README.md, QUICKSTART.md, INSTALLING.md, POSITION.md: updated documentation
+- .acm/retrospect.md -> .acm/orientation.md
+
+Coordinated commits across ecosystem:
+- skills: 711e652
+- agent-context-memory: 36be2d8
+- ai-steward: c3ca807
+- pea-website: 621a8dc
+
+### Reflection
+
+*Current model of the target:* The skills suite now uses consistent navigation terminology: Destination (where you're going) + Orientation (where you are). The REORIENT phase in ai-steward reads naturally as "re-orient" rather than the awkward "re-retrospect" that never existed.
+
+*Blind spot:* External documentation, blog posts, or tutorials referencing "retrospect" skill will now be stale. No automated redirect mechanism exists.
+
+*Across-trail reflection triggers:*
+- *Recurring finding-class:* not fired.
+- *About to declare silence:* not fired - infrastructure change, not improvement cycle.
+- *Contradicts prior [!REALIZATION]:* not fired.
+- *Operator explicitly asked:* FIRED - operator initiated this coordinated rename explicitly.

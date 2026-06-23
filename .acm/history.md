@@ -158,6 +158,7 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 151 | 2026-06-21 | skills-suite-trail-to-acm-rename |  |  |
 | ▸ 152 | 2026-06-21 | gap: trail-skill missing ACM Mandate Gate enforcement | gap noted, not yet fixed | no code change — note only |
 | ▸ 153 | 2026-06-22 | acm-parent-scope-traversal-propagated | ACM §4 parent-scope destination traversal instruction added to improve/SKILL.md and retrospect/SKILL.md; retrospect.md refreshed; derived artifacts regenerated | improve/SKILL.md (parent-scope paragraph added, stale count removed), retrospect/SKILL.md (step 0 heading updated, parent-scope paragraph added), .acm/retrospect.md (refreshed), .acm/history.md and .acm/learning.md (regenerated) |
+| ▸ 154 | 2026-06-23 | retrospect-to-orient-rename | Retrospect skill renamed to Orient; file renamed retrospect.md -> orientation.md | retrospect/ -> orient/, v1.8.0 -> v2.0.0 |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -738,4 +739,9 @@ Do not edit by hand — re-run the command to refresh.
 
 - **decided:** Add ACM §4 parent-scope paragraph to improve/SKILL.md step 1 and retrospect/SKILL.md step 0. Also refresh .acm/retrospect.md and regenerate derived artifacts (were stale vs audit-trail.md).
 
-**153 runs total — 139 with changes, 14 silence**
+### Run 154 — 2026-06-23 — retrospect-to-orient-rename
+
+- **decided:** Rename the skill folder from retrospect/ to orient/ (not "orientation/" — matches "orient" command invocation pattern). Version bump to 2.0.0 reflects breaking change: any automation referencing "retrospect" path or function names will break.
+- **decided:** Historical trail entries preserved per append-only rule. Only forward-looking documentation and active code updated.
+
+**154 runs total — 140 with changes, 14 silence**
