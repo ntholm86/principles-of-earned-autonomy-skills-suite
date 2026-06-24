@@ -27,7 +27,7 @@ The verifier enforces structural fidelity rules forward-only, from `SESSION_FIDE
 | ID | Benchmark | Target class | Required skills | Acceptance criteria |
 |---|---|---|---|---|
 | B1 | External improve correctness pass | Foreign codebase (not authored by operator) | Improve + Trail | One verifiable correctness improvement landed; trail entry with prediction and outcome |
-| B2 | External cross-session learning carry-forward | Same foreign codebase across at least 2 sessions | Improve + Retrospect + Trail | Session 2 acts on a Session 1 `[!REALIZATION]` without re-diagnosing it |
+| B2 | External cross-session learning carry-forward | Same foreign codebase across at least 2 sessions | Improve + Orient + Trail | Session 2 acts on a Session 1 `[!REALIZATION]` without re-diagnosing it |
 | B3 | Cold-target destination inference | Foreign codebase with no pre-seeded destination/trail | Destination + Trail | Operator confirms at least one inferred direction was correct and previously unwritten |
 | B4 | Independent evaluator convergence check | Skills repo convergence pass under protocol | Improve + Trail | Three distinct evaluator families declare silence in succession under protocol |
 | B5 | Benchmark target existence check | Local filesystem | verify.py | `verify.py` checks for the existence of `benchmark-b5-target/main.py` |

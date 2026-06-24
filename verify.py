@@ -53,7 +53,7 @@ REQUIRED_FILES = [
     "intent/SKILL.md",
     "trail/SKILL.md",
     "destination/SKILL.md",
-    "retrospect/SKILL.md",
+    "orient/SKILL.md",
     ".acm/audit-trail.md",
 ]
 
@@ -79,7 +79,7 @@ STALE_PATH_DOCS = [
     "destination/SKILL.md",
     "improve/SKILL.md",
     "trail/SKILL.md",
-    "retrospect/SKILL.md",
+    "orient/SKILL.md",
     "probe/SKILL.md",
 ]
 

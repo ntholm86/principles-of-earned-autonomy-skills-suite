@@ -187,7 +187,7 @@ If Trail is not installed: append a single entry to `.acm/audit-trail.md` contai
 - The arc-claims from step 3 — written as falsifiable statements, not summaries.
 - Loop-effectiveness findings from step 4 (if triggered), marked with `[!REALIZATION]` where material.
 
-There is no separate "decision" or "action" field unless a follow-up action was identified. Retrospect is observational; its output is claims, not changes.
+There is no separate "decision" or "action" field unless a follow-up action was identified. Orient is observational; its output is claims, not changes.
 
 ## What this skill does not do
 
