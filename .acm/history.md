@@ -161,6 +161,7 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 154 | 2026-06-23 | retrospect-to-orient-rename | Retrospect skill renamed to Orient; file renamed retrospect.md -> orientation.md | retrospect/ -> orient/, v1.8.0 -> v2.0.0 |
 | ▸ 155 | 2026-06-23 | stormp-illustration-readme | Storm P architecture illustration added to README as visual intro | Added stormpInspired.png before "The Suite Improved Itself" section |
 | ▸ 156 | 2026-07-02 | rename-commanders-intent-to-operators-intent | renamed across all live docs; vocabulary now internally consistent | Principle 1 name Commander's Intent -> Operator's Intent; supporting term mission -> destination |
+| ▸ 157 | 2026-07-02 | rename-sweep-gap-fix-verify-recursive-search | closed a gap in the earlier Commander's Intent -> Operator's Intent rename; intent/SKILL.md still had the old name in its YAML description and body prose | intent/SKILL.md front-matter description and 'the user is the commander' line -> Operator's Intent / 'the user is the operator' |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -754,4 +755,8 @@ Do not edit by hand — re-run the command to refresh.
 
 - **decided:** Renamed PEA's own vocabulary use of "mission"/"commander" to "destination"/"operator" in every live, current-facing doc (manifesto/PRINCIPLES.md, PROBLEM.md, PROOF.md; agent-context-memory/SPEC.md; skills/PRINCIPLES.md; pea-website/post.txt, index.html). Left doctrine-name references ("Auftragstaktik (Mission Command)", "Prussian mission-type command") untouched because they describe a historical proper noun, not PEA's terminology.
 
-**156 runs total — 142 with changes, 14 silence**
+### Run 157 — 2026-07-02 — rename-sweep-gap-fix-verify-recursive-search
+
+- **decided:** Fixed all three files using the same PEA-vocabulary-vs-doctrine-citation rule established in the prior rename pass. Left the one legitimate exception (pea-website/index.html's en.wikipedia.org/wiki/Commander%27s_intent URL and skills/README.md, skills/.zenodo.json's identical pattern) untouched -- these cite the real Wikipedia article name, not PEA's own vocabulary.
+
+**157 runs total — 143 with changes, 14 silence**

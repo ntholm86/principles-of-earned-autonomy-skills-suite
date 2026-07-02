@@ -949,6 +949,14 @@ Compact chronological extract of every `[!REALIZATION]` and `[!REVERSAL]` marker
 
 **[!REALIZATION]** The PEA-vocabulary-vs-cited-doctrine distinction (own coined terms vs. historically-named doctrine like Auftragstaktik) is now a repeatable pattern across two consecutive rename passes in the same session. Future renames of PEA's own vocabulary should default to checking for this same split before doing a blanket replace.
 
+## 2026-07-02 — rename-sweep-gap-fix-verify-recursive-search
+
+**[!REALIZATION]** :* not fired -- consistent with, and extends, the realization already recorded in the previous entry about the PEA-vocabulary-vs-doctrine split.
+
+## 2026-07-02 — rename-sweep-gap-fix-verify-recursive-search
+
+**[!REALIZATION]** Three consecutive entries finding new leftover occurrences of the same rename is itself the signal: a single bulk pass over natural-language prose cannot be trusted to be exhaustive, because "commander" appears in lowercase generic-role usage, inside YAML string escaping, and inside asset-generation prompts that don't look like "documentation" at first glance. The reliable method is what closed the gap each time: an unfiltered recursive grep for the bare word, followed by manual triage against the doctrine-citation exception -- not a smarter regex, but a broader, repeated sweep.
+
 ---
 
-**236 markers — 216 realisations, 20 reversals**
+**238 markers — 218 realisations, 20 reversals**

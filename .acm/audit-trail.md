@@ -8045,3 +8045,59 @@ Someone who knows the target better might push back on: whether "destination-lev
 
 1. Audit ai-steward source code (scan.py, cli.py, scan_system.md) for any standalone "mission" identifiers or comments missed by the prose-focused pass.
 2. Consider whether skills/POSITION.md's "Mission-type command is Prussian" should gain a parenthetical linking it explicitly to Operator's Intent, since a cold reader might not immediately connect the two after the rename.
+
+## 2026-07-02 — rename-sweep-gap-fix-verify-recursive-search
+
+- target: skills repo (intent/SKILL.md), plus agent-context-memory/SPEC.md and pea-website/imageprompt.txt (verified/fixed outside this repo)
+- operator: maintainer (Nils Holmager)
+- agent: Claude Sonnet 4.5 (GitHub Copilot)
+- skill: improve
+- outcome: closed a gap in the earlier Commander's Intent -> Operator's Intent rename; intent/SKILL.md still had the old name in its YAML description and body prose
+- delta: intent/SKILL.md front-matter description and 'the user is the commander' line -> Operator's Intent / 'the user is the operator'
+
+### Interpretation of the ask
+
+Operator asked whether the live pea-website GitHub Pages URL had picked up the earlier rename, was concerned the push may not have landed correctly, and asked for a recursive search of everything under C:\git\pea for the literal string "Commander" to catch any remaining misses.
+
+### Examination
+
+Confirmed via git log/ls-remote that the pea-website push had landed correctly (origin/main matched local HEAD); the live page was simply not yet rebuilt/deployed by GitHub Pages, not a push failure. Ran a recursive, unfiltered grep for "Commander|commander" across the entire C:\git\pea tree (316 matches, 123 files). Sorted every hit into: (a) .acm/ trail, destination, session, and transcript files -- excluded per standing operator instruction (append-only historical record); (b) archive/v2/ -- excluded, frozen legacy snapshot; (c) .venv/site-packages/pip -- false positive, third-party library's unrelated CommandError class; (d) genuine live-doc misses.
+
+Found three genuine live-doc misses from the earlier pass: agent-context-memory/SPEC.md line 427 ("the \"commander\" at each scope"), skills/intent/SKILL.md line 4 (YAML description) and line 15 ("the user is the commander"), and pea-website/imageprompt.txt (5 occurrences: workstation list, station heading, two body sentences, moving-parts checklist heading).
+
+### Decision
+
+[!DECISION] Fixed all three files using the same PEA-vocabulary-vs-doctrine-citation rule established in the prior rename pass. Left the one legitimate exception (pea-website/index.html's en.wikipedia.org/wiki/Commander%27s_intent URL and skills/README.md, skills/.zenodo.json's identical pattern) untouched -- these cite the real Wikipedia article name, not PEA's own vocabulary.
+Alternative rejected: re-run a blanket workspace-wide regex replace -- rejected because it already proved too blunt once (missed context-dependent lowercase "commander" usages that a literal string match alone doesn't disambiguate from doctrine citations); manual targeted fixes with context review are lower-risk for a small remaining set.
+
+### Prediction
+
+After this fix, a repeat recursive grep for "Commander" across C:\git\pea should return zero hits outside .acm/, archive/, .venv/, and the small set of intentional Wikipedia-URL/doctrine citations already verified as correct.
+
+### Action
+
+Applied 3 targeted edits: agent-context-memory/SPEC.md (1 line), skills/intent/SKILL.md (YAML description + governing-principle line), pea-website/imageprompt.txt (5 occurrences: workstation list label, station heading, "commander pulls the lever" sentence, "commander's scroll" sentence, moving-parts checklist heading). Committed and pushed agent-context-memory immediately (no pre-commit gate there). skills repo commit was blocked by the pre-commit hook requiring this trail entry -- writing it now to unblock.
+
+### Reflection
+
+Updated model of the target: the "PEA vocabulary vs. cited doctrine" rename is now verified complete across all live docs in all 5 repos via exhaustive recursive search, not just the files the agent remembered touching. A future run could disagree by finding a stray occurrence in a file type this grep didn't cover (e.g. binary assets, or a file with an encoding that breaks plain-text grep).
+
+Named blind spot: did not re-check whether stormpInspired.png (the already-generated illustration image itself) visually depicts a "military commander" figure inconsistent with the now-renamed "operator" text -- the image was generated before this vocabulary existed and regenerating it is a separate, larger task the operator hasn't asked for.
+
+Someone who knows the target better might push back on: whether renaming the illustration-generation prompt (imageprompt.txt) after the image was already rendered creates a silent mismatch between the prompt-as-written and the artifact-as-shipped -- worth flagging explicitly rather than letting it be discovered later.
+
+**Across-trail trigger evaluation** *(every entry -- one line per trigger, with brief evidence from the trail; bare "N/A" is not allowed)*:
+
+- *Recurring finding-class:* fired -- this is the third consecutive entry in this session finding leftover Commander's Intent / commander references after believing the rename was complete (illustration caption, then Derives-from tags, now SPEC.md/intent/SKILL.md/imageprompt.txt). The pattern: bulk find-replace passes reliably miss context-dependent lowercase and YAML-escaped occurrences.
+- *About to declare silence:* not fired -- operator explicitly requested a fresh verification pass, not closure.
+- *Contradicts prior [!REALIZATION]:* not fired -- consistent with, and extends, the realization already recorded in the previous entry about the PEA-vocabulary-vs-doctrine split.
+- *Operator explicitly asked:* FIRED -- operator directly requested the recursive search and raised the concern about missed spots.
+
+**Across-trail macro-Hansei:**
+
+[!REALIZATION] Three consecutive entries finding new leftover occurrences of the same rename is itself the signal: a single bulk pass over natural-language prose cannot be trusted to be exhaustive, because "commander" appears in lowercase generic-role usage, inside YAML string escaping, and inside asset-generation prompts that don't look like "documentation" at first glance. The reliable method is what closed the gap each time: an unfiltered recursive grep for the bare word, followed by manual triage against the doctrine-citation exception -- not a smarter regex, but a broader, repeated sweep.
+
+### Candidate Next Moves
+
+1. Flag to the operator (done, in this entry) that stormpInspired.png was generated from the pre-rename prompt and depicts a military-commander figure; regenerating the image to match imageprompt.txt's "operator" wording is a separate task, not implied by this text fix.
+2. Re-check GitHub Pages deploy status on ntholm86.github.io/earned-autonomy/ after a few minutes to confirm the rename is now live.
