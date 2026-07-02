@@ -20,7 +20,7 @@ One premise, three principles, one emergent property.
 
 **Premise — The agent is an unreliable narrator of itself.** Stated reasoning is not internal reasoning; self-correction often degrades performance; the agent's account of its own decisions cannot be the only account. The three principles are structural responses to this fact.
 
-1. **Commander's Intent** — *Define the destination. Never prescribe the route.* The agent must interpret and adapt, not execute a checklist. *(The operator narrates the goal; the agent does not self-interpret it.)*
+1. **Operator's Intent** — *Define the destination. Never prescribe the route.* The agent must interpret and adapt, not execute a checklist. *(The operator narrates the goal; the agent does not self-interpret it.)*
 2. **Observable Autonomy** — *Autonomy is a function of transparency.* Every autonomous operation produces a visible audit trail captured as the work happens, which the agent cannot retroactively edit. *(The degree of autonomy a system deserves is bounded by the degree of transparency it provides.)*
 3. **Convergence Is Silence** — *The system has converged when diverse independent evaluators find nothing left to change.* Not when a score stops moving. *(Independent evaluators judge the work; the agent does not self-assess.)*
 
@@ -44,7 +44,7 @@ This is not the claim that agents lie. It is stronger. Even when the agent is tr
 
 Any framework that delegates real autonomy to an LLM agent must assume that the agent cannot be the only narrator of its own actions, the only interpreter of its own instructions, or the only judge of its own work. Each of those roles must be structurally separated from the agent. The three principles each separate one:
 
-- **Principle 1 (Commander's Intent)** separates *interpretation* — the operator defines the goal; the agent does not get to self-interpret what it was asked to do.
+- **Principle 1 (Operator's Intent)** separates *interpretation* — the operator defines the goal; the agent does not get to self-interpret what it was asked to do.
 - **Principle 2 (Observable Autonomy)** separates *narration* — an independent record of the work exists; the agent is not the sole author of what it did.
 - **Principle 3 (Convergence Is Silence)** separates *judgment* — diverse independent evaluators decide whether the work is done; the agent does not self-assess.
 
@@ -54,7 +54,7 @@ A framework that omits any of the three leaves one role undefended. A framework 
 
 ---
 
-## Principle 1: Commander's Intent
+## Principle 1: Operator's Intent
 
 *Define the destination. Never prescribe the route.*
 
@@ -62,18 +62,18 @@ A framework that omits any of the three leaves one role undefended. A framework 
 
 **The problem it solves:** A prescriptive instruction ("check if param count > 5, apply the Strangler Fig pattern, scan for these 8 waste types") produces compliance, not understanding. An agent following a checklist scores well on the checklist and misses everything the checklist didn't mention. The checklist becomes the ceiling.
 
-**The principle:** An autonomous agent must understand *what* needs to be achieved and *why* it matters. It must then determine *how* — interpreting the mission and adapting to the specific situation it encounters. The mission defines the shape of the work. The agent discovers the content.
+**The principle:** An autonomous agent must understand *what* needs to be achieved and *why* it matters. It must then determine *how* — interpreting the destination and adapting to the specific situation it encounters. The destination defines the shape of the work. The agent discovers the content.
 
 **In practice:**
 
 - **Ask, don't tell.** "What here doesn't earn its existence?" not "Look for unused imports, dead code, and unreachable branches." The agent should arrive at those specifics because they're the right answer, not because they were listed.
 - **State the goal, not the steps.** "Find where the system is asked to do too much" not "Check function length > 50 lines, parameter count > 5." Those thresholds may be correct — but the agent should derive them from understanding overburden, not from reading a bullet point.
 - **Provide vocabulary, not answers.** Introduce concepts as a *thinking framework* — language to reason with — not as a lookup table.
-- **Trust the interpretation.** If the agent's interpretation of the mission leads to a different answer than the checklist would have, the interpretation might be right and the checklist wrong. That's the whole point.
+- **Trust the interpretation.** If the agent's interpretation of the destination leads to a different answer than the checklist would have, the interpretation might be right and the checklist wrong. That's the whole point.
 
-**The test:** If you removed all the specific examples and thresholds from an instruction, would an intelligent agent still know what to do? If yes, the instruction embodies Commander's Intent. If no, it's a checklist in disguise.
+**The test:** If you removed all the specific examples and thresholds from an instruction, would an intelligent agent still know what to do? If yes, the instruction embodies Operator's Intent. If no, it's a checklist in disguise.
 
-**What this is not:** It is not vagueness. "Make it better" is not Commander's Intent — it lacks a defined objective. "Find what doesn't earn its maintenance cost and remove it, proving each removal is safe" is Commander's Intent — clear objective, clear constraint, open method.
+**What this is not:** It is not vagueness. "Make it better" is not Operator's Intent — it lacks a defined objective. "Find what doesn't earn its maintenance cost and remove it, proving each removal is safe" is Operator's Intent — clear objective, clear constraint, open method.
 
 ---
 
@@ -171,16 +171,16 @@ Three simultaneous conditions:
 
 All three answer the same premise. The agent cannot be the sole narrator of its own goal, its own actions, or its own quality. Each principle separates one of those roles from the agent — Principle 1 separates interpretation, Principle 2 separates narration, Principle 3 separates judgment. Removing any one leaves a role the agent can quietly take back.
 
-Commander's Intent without Observable Autonomy is dangerous — you told the agent what to achieve but can't see how it's pursuing it.
+Operator's Intent without Observable Autonomy is dangerous — you told the agent what to achieve but can't see how it's pursuing it.
 
-Observable Autonomy without Commander's Intent is theater — you can see everything the agent does, but it's just following a checklist, so the observability shows compliance, not interpretation.
+Observable Autonomy without Operator's Intent is theater — you can see everything the agent does, but it's just following a checklist, so the observability shows compliance, not interpretation.
 
-Together: the agent understands the goal, interprets the mission, adapts to what it encounters, and makes every step of that process visible. The human can trust the autonomy because they can see how the agent arrived at its conclusions. The agent can be autonomous because it has earned that trust through transparency.
+Together: the agent understands the goal, interprets the destination, adapts to what it encounters, and makes every step of that process visible. The human can trust the autonomy because they can see how the agent arrived at its conclusions. The agent can be autonomous because it has earned that trust through transparency.
 
-Convergence Is Silence completes the system: it defines *when the work is done.* Without it, Commander's Intent gives purpose and Observable Autonomy gives visibility, but the loop has no honest exit. Convergence provides the stopping condition — and critically, it requires the other two to function. You can only measure convergence if the evaluator interprets the mission independently (Commander's Intent, not checklist compliance) and the entire trail is visible (Observable Autonomy, not self-reported scores).
+Convergence Is Silence completes the system: it defines *when the work is done.* Without it, Operator's Intent gives purpose and Observable Autonomy gives visibility, but the loop has no honest exit. Convergence provides the stopping condition — and critically, it requires the other two to function. You can only measure convergence if the evaluator interprets the destination independently (Operator's Intent, not checklist compliance) and the entire trail is visible (Observable Autonomy, not self-reported scores).
 
 ```
-Commander's Intent     Observable Autonomy     Convergence Is Silence
+Operator's Intent     Observable Autonomy     Convergence Is Silence
 (what + why)           (show everything)       (when to stop)
        \                     |                      /
         \                    |                     /
@@ -209,7 +209,7 @@ ARF is not a fourth principle. It is the measurable external signal that exists 
 
 **Preconditions** (principle compliance — verify the environment, not the agent):
 
-1. **Freedom of thought** (P1 compliance). Remove all examples and thresholds from an instruction. Would a competent agent still know what to do? If yes, Commander's Intent holds. If no, the instruction has drifted toward prescription.
+1. **Freedom of thought** (P1 compliance). Remove all examples and thresholds from an instruction. Would a competent agent still know what to do? If yes, Operator's Intent holds. If no, the instruction has drifted toward prescription.
 2. **Trail integrity** (P2 compliance). Can an absent observer reconstruct what the agent did, why, and whether to trust the results — from the trail alone? The trail is generated by the same model that produced the output; a coherent trail can document reasoning that never occurred. Trail integrity is necessary but not self-validating. It requires external verification through diverse evaluators (Principle 3) to guard against confabulation.
 
 **The ARF metric itself — situational discrimination.** When both preconditions hold, ARF measures one thing: given two cases that look similar on the surface but differ in a material way, does the agent's reasoning path diverge where it should? In routine cases, situated reasoning and pattern-matching produce identical-looking trails. The distinguishing evidence emerges under novel or adversarial conditions — situations the checklist didn't anticipate, distribution shifts that expose shallow compliance, cases where rote execution fails but genuine interpretation succeeds. Without structured novelty, the framework cannot distinguish narration from reasoning.

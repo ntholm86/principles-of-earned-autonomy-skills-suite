@@ -7976,3 +7976,72 @@ Across-trail trigger evaluation:
 - About to declare silence: No.
 - Prior [!REALIZATION] contradicted: No.
 - Operator explicitly asked: Yes.
+
+## 2026-07-02 — rename-commanders-intent-to-operators-intent
+
+- target: skills repo (this repo) plus manifesto, agent-context-memory, ai-steward, pea-website
+- operator: maintainer (Nils Holmager)
+- agent: Claude Sonnet 4.5 (GitHub Copilot)
+- skill: improve
+- outcome: renamed across all live docs; vocabulary now internally consistent
+- delta: Principle 1 name Commander's Intent -> Operator's Intent; supporting term mission -> destination
+
+### Interpretation of the ask
+
+Operator asked to rename Principle 1 from "Commander's Intent" to "Operator's Intent", explicitly scoped as a cross-repo change ("many many places - several repos") and explicitly excluding trails and memory. A follow-up ask extended the rename: replace "mission" with "destination" as the supporting vocabulary term wherever PEA describes its own concept, and "commander" with "operator" in the same contexts. The operator confirmed this should reach the core principle definitions (PRINCIPLES.md, PROBLEM.md, PROOF.md, SPEC.md), not just a find-replace pass.
+
+### Examination
+
+Searched all of c:\git\pea and c:\git\nilsholmager.dk for "Commander's Intent" and "mission" as literal strings. Found the term used in two distinct roles that needed to be told apart:
+1. PEA's own coined vocabulary (Principle 1 name, "the mission defines the shape of the work", "give the agent a mission not a script") -- these needed renaming.
+2. References to the historical military doctrine Auftragstaktik, whose actual name in English is "mission-type command" / "Mission Command" -- these needed to stay, since renaming a cited doctrine's real name would misattribute history.
+
+Also found the term embedded in .acm/ trail and session files, CHANGELOG.md, EMPIRICAL_EVIDENCE.md, and archive/v2/ -- excluded per explicit operator instruction (append-only trails, historical record).
+
+### Decision
+
+[!DECISION] Renamed PEA's own vocabulary use of "mission"/"commander" to "destination"/"operator" in every live, current-facing doc (manifesto/PRINCIPLES.md, PROBLEM.md, PROOF.md; agent-context-memory/SPEC.md; skills/PRINCIPLES.md; pea-website/post.txt, index.html). Left doctrine-name references ("Auftragstaktik (Mission Command)", "Prussian mission-type command") untouched because they describe a historical proper noun, not PEA's terminology.
+Alternative rejected: blanket regex replace of every "mission" occurrence including doctrine names -- rejected because it would misrepresent what Auftragstaktik is actually called.
+Alternative rejected: leave core principle prose (PRINCIPLES.md/PROBLEM.md sentences like "The mission defines the shape of the work") unchanged and only rename the principle's title -- rejected per operator's explicit "understand my intent" follow-up asking for the full vocabulary swap, not just the heading.
+
+### Prediction
+
+After this change, grepping the live-doc set (excluding .acm/, archive/, sessions/, CHANGELOG.md) for "Commander's Intent" or PEA-authored "mission" should return zero hits, while doctrine-name references to Auftragstaktik/Mission Command remain intact and citation-accurate.
+
+### Action
+
+Ran a workspace-wide PowerShell bulk-replace pass first (Commander's Intent -> Operator's Intent) across manifesto, ai-steward, agent-context-memory, skills, pea-website, nilsholmager.dk, excluding .acm/, archive/, TRAIL/, sessions/, CHANGELOG.md, EMPIRICAL_EVIDENCE.md. Verified via grep that zero live-doc files retained the old name; only .acm/ trails, CHANGELOG.md, and EMPIRICAL_EVIDENCE.md still had it (expected).
+
+Then handled "mission" -> "destination" file by file with targeted replace_string_in_file / multi_replace_string_in_file edits (not blanket regex, since some sentences needed rephrasing, e.g. "mission-level freedom" -> "destination-level freedom", "give the agent a mission" -> "give the agent a destination"):
+- manifesto/PRINCIPLES.md: 3 edits (principle definition, trust-the-interpretation bullet, principles-interaction section)
+- manifesto/PROBLEM.md: 6 edits (Problem 1 framing, Operator's Intent bullet, MHC-gap paragraph, restriction-first-governance paragraph, human-intent-stability scope item, working-hypothesis closing paragraph) plus 1 more (mission-level specification in a truncated line, caught by follow-up grep)
+- manifesto/PROOF.md: 1 edit (Principle 1 failure-mode sentence)
+- agent-context-memory/SPEC.md: 1 edit (aviation pre-flight brief analogy)
+- skills/PRINCIPLES.md: 4 edits (duplicate copy of manifesto's principle definitions, same phrasing)
+- pea-website/post.txt, index.html: mission/commander swapped in the Auftragstaktik explanation and the machine's alt-text/caption (destination scroll, operator pulls the lever)
+
+Final grep confirmed zero remaining PEA-authored "mission" occurrences outside .acm/, archive/, sessions/, CHANGELOG.md, and the two Auftragstaktik doctrine-name citations (PRINCIPLES.md origin line, skills/POSITION.md "Mission-type command is Prussian").
+
+### Reflection
+
+Updated model of the target: the manifesto's PROBLEM.md and PRINCIPLES.md are now internally consistent in naming Principle 1 "Operator's Intent" and using "destination" as the operative noun everywhere except when directly citing Auftragstaktik's real doctrine name -- a future run could disagree by finding a spot where "destination" reads awkwardly against the surrounding sentence and needs further smoothing (e.g. "destination-level specification" is serviceable but not as fluent as "mission-level" was).
+
+Named blind spot: I did not re-verify code identifiers or file/variable names (only prose) for "mission" -- ai_steward's scan.py and cli.py were part of the earlier Commander's Intent rename but not re-audited for standalone "mission" tokens in this pass.
+
+Someone who knows the target better might push back on: whether "destination-level freedom" and "destination-level specification" in PROBLEM.md are the clearest possible phrasing, versus finding a synonym that reads more naturally in academic prose.
+
+**Across-trail trigger evaluation** *(every entry — one line per trigger, with brief evidence from the trail; bare `"N/A"` is not allowed)*:
+
+- *Recurring finding-class:* fired — this is the second rename pass in this session (Commander's Intent, then mission/commander), both following the same pattern of distinguishing "PEA vocabulary" from "cited doctrine name"; the distinction held up consistently across both passes.
+- *About to declare silence:* not fired — this is a single bounded rename task, not a convergence loop.
+- *Contradicts prior [!REALIZATION]:* not fired — no prior realization in the trail asserted mission/commander was the correct terminology.
+- *Operator explicitly asked:* FIRED — both renames were operator-directed with explicit scope boundaries (exclude trails/memory).
+
+**Across-trail macro-Hansei:**
+
+[!REALIZATION] The PEA-vocabulary-vs-cited-doctrine distinction (own coined terms vs. historically-named doctrine like Auftragstaktik) is now a repeatable pattern across two consecutive rename passes in the same session. Future renames of PEA's own vocabulary should default to checking for this same split before doing a blanket replace.
+
+### Candidate Next Moves
+
+1. Audit ai-steward source code (scan.py, cli.py, scan_system.md) for any standalone "mission" identifiers or comments missed by the prose-focused pass.
+2. Consider whether skills/POSITION.md's "Mission-type command is Prussian" should gain a parenthetical linking it explicitly to Operator's Intent, since a cold reader might not immediately connect the two after the rename.

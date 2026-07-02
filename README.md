@@ -1,4 +1,4 @@
-﻿# Principles of Earned Autonomy - Skills Suite
+# Principles of Earned Autonomy - Skills Suite
 
 AI agents forget everything between sessions — and many things within a session. No memory of what was tried. No memory of why a decision was made. No memory of where you were heading. Forgets what it already created.
 
@@ -12,7 +12,7 @@ The memory structure this suite uses is formally specified in [Agent Context Mem
 
 Compatible with Claude (skills / Agent SDK), GitHub Copilot (custom skills), and any LLM agent that can read markdown and append to a file.
 
-![The full architecture illustrated as a Storm P-style Rube Goldberg machine: Commander's Intent feeds the Improve loop, the audit trail runs as a conveyor belt through the whole machine, Orient reads the arc and feeds learning back in, and the machine converges to silence.](./stormpInspired.png)
+![The full architecture illustrated as a Storm P-style Rube Goldberg machine: Operator's Intent feeds the Improve loop, the audit trail runs as a conveyor belt through the whole machine, Orient reads the arc and feeds learning back in, and the machine converges to silence.](./stormpInspired.png)
 
 ## The Suite Improved Itself — [221 verified iterations](./.acm/ITERATION-COUNT.md)
 
@@ -67,7 +67,7 @@ When you swap from Claude to Gpt to Gemini, the next model picks up this exact o
 **Problem:** The agent did literally exactly what you wrote — word-by-word — not what you actually meant.
 **Solution:** Intent forces the agent to explicitly state its interpretation of your task *before* executing anything. It acts as an early warning system for misaligned assumptions.
 
-*Rooted in [Commander's Intent](https://en.wikipedia.org/wiki/Commander%27s_intent) (U.S. Army doctrine) · [Coaching Kata](https://www.amazon.com/Toyota-Kata-Managing-Improvement-Adaptiveness/dp/0071635238) (Mike Rother, Toyota Kata) · [Socratic Method](https://plato.stanford.edu/entries/socrates/) (Stanford Encyclopedia of Philosophy)*
+*Rooted in [Operator's Intent](https://en.wikipedia.org/wiki/Commander%27s_intent) (U.S. Army doctrine) · [Coaching Kata](https://www.amazon.com/Toyota-Kata-Managing-Improvement-Adaptiveness/dp/0071635238) (Mike Rother, Toyota Kata) · [Socratic Method](https://plato.stanford.edu/entries/socrates/) (Stanford Encyclopedia of Philosophy)*
 
 ### #2: DESTINATION — The agent drifted over time
 

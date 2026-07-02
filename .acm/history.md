@@ -160,6 +160,7 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 153 | 2026-06-22 | acm-parent-scope-traversal-propagated | ACM §4 parent-scope destination traversal instruction added to improve/SKILL.md and retrospect/SKILL.md; retrospect.md refreshed; derived artifacts regenerated | improve/SKILL.md (parent-scope paragraph added, stale count removed), retrospect/SKILL.md (step 0 heading updated, parent-scope paragraph added), .acm/retrospect.md (refreshed), .acm/history.md and .acm/learning.md (regenerated) |
 | ▸ 154 | 2026-06-23 | retrospect-to-orient-rename | Retrospect skill renamed to Orient; file renamed retrospect.md -> orientation.md | retrospect/ -> orient/, v1.8.0 -> v2.0.0 |
 | ▸ 155 | 2026-06-23 | stormp-illustration-readme | Storm P architecture illustration added to README as visual intro | Added stormpInspired.png before "The Suite Improved Itself" section |
+| ▸ 156 | 2026-07-02 | rename-commanders-intent-to-operators-intent | renamed across all live docs; vocabulary now internally consistent | Principle 1 name Commander's Intent -> Operator's Intent; supporting term mission -> destination |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -749,4 +750,8 @@ Do not edit by hand — re-run the command to refresh.
 
 - **decided:** Place illustration after the intro paragraphs and before the "The Suite Improved Itself" h2.
 
-**155 runs total — 141 with changes, 14 silence**
+### Run 156 — 2026-07-02 — rename-commanders-intent-to-operators-intent
+
+- **decided:** Renamed PEA's own vocabulary use of "mission"/"commander" to "destination"/"operator" in every live, current-facing doc (manifesto/PRINCIPLES.md, PROBLEM.md, PROOF.md; agent-context-memory/SPEC.md; skills/PRINCIPLES.md; pea-website/post.txt, index.html). Left doctrine-name references ("Auftragstaktik (Mission Command)", "Prussian mission-type command") untouched because they describe a historical proper noun, not PEA's terminology.
+
+**156 runs total — 142 with changes, 14 silence**

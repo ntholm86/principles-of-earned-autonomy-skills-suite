@@ -1,4 +1,4 @@
-﻿# A stance on what we're actually trying to solve
+# A stance on what we're actually trying to solve
 
 _Author: Nils Holmager ([@ntholm86](https://github.com/ntholm86)). Version 0.1, 2026-05-01. This is a stance, not a paper. It states what I'm betting on, where I think it differs from adjacent work, and what would prove me wrong._
 
@@ -59,7 +59,7 @@ That four-part stance is what I mean by the term. It's also the boundary: a cont
 
 I'm building a small set of skills — currently six, version 3.11.0 — that an AI agent applies to its own work. The skills are: **intent** (interpret the operator's intent before acting), **improve** (one highest-leverage change per run, stated reason), **probe** (test reasoning vs. pattern-matching), **trail** (append-only structured evidence per run), **orient** (read the arc of the trail and synthesize current orientation), and **destination** (surface guesses the agent has formed about where the operator is heading, as falsifiable questions; renamed from "vision" in v2.0.0 of this skill).
 
-The skills sit on top of three principles I've published separately ([Principles of Earned Autonomy](https://github.com/ntholm86/principles-of-earned-autonomy)): Commander's Intent (define destination, not route), Observable Autonomy (autonomy is a function of transparency), and Convergence Is Silence (you're done when independent evaluators find nothing left to change).
+The skills sit on top of three principles I've published separately ([Principles of Earned Autonomy](https://github.com/ntholm86/principles-of-earned-autonomy)): Operator's Intent (define destination, not route), Observable Autonomy (autonomy is a function of transparency), and Convergence Is Silence (you're done when independent evaluators find nothing left to change).
 
 The repo where the skills live is **simultaneously the workshop and the proof**. The skills have to be able to improve themselves; if they can't, the claim that they're a usable reasoning layer is hollow. Each run finds the highest-leverage thing left to change in the skills themselves and changes it — or argues for convergence.
 
@@ -103,7 +103,7 @@ The pattern across all four: **the agent articulated something the operator had 
 
 The mechanism: an agent reads signal the operator never consciously gave it — emphasis patterns, what gets pushed back on, what the commit arc looks like when motivation runs out, what's named in every run but never touched — and surfaces that signal as falsifiable questions. Not conclusions. Not actions. Questions the operator answers in a sentence. The operator then either confirms, corrects, or redirects; the agent updates its working model.
 
-This is how Observable Autonomy and Commander's Intent combine in practice. Commander's Intent says: give the AI the destination, not the route, so it can adapt. But "the destination" assumes the operator has the destination fully articulated. The Destination skill works one step earlier: it reduces the cost of articulation, making implicit intent explicit enough to steer from. The operator stays in the loop not by reviewing every action but by answering questions whose answers are already in their head — they just hadn't said them yet.
+This is how Observable Autonomy and Operator's Intent combine in practice. Operator's Intent says: give the AI the destination, not the route, so it can adapt. But "the destination" assumes the operator has the destination fully articulated. The Destination skill works one step earlier: it reduces the cost of articulation, making implicit intent explicit enough to steer from. The operator stays in the loop not by reviewing every action but by answering questions whose answers are already in their head — they just hadn't said them yet.
 
 This is early evidence, not proof. Four runs in one session are publicly inspectable in this repository, and one additional professional deployment remains private due to IP/confidentiality constraints. Together they are strong field signal, but not yet public proof of generality or strict causality. The falsification condition — "Destination only ever confirms things already written in `.acm/destination.md`" — failed to trigger. Destination produced signal not in any file.
 
