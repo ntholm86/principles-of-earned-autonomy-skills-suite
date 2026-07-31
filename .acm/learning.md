@@ -985,6 +985,18 @@ Compact chronological extract of every `[!REALIZATION]` and `[!REVERSAL]` marker
 
 **[!REALIZATION]** The clearest, cheapest, most overdue piece of work visible in this repo right now is not a new idea -- it is finishing something the loop already started and named five weeks ago (intent/SKILL.md's ACM section 4 gap). A loop that keeps generating new findings while a small, previously-identified, well-specified gap sits untouched is exhibiting exactly the single-loop-without-follow-through pattern the destination's own Learning section flags as underdeveloped -- except here the miss is not "no realization was recorded," it is "a realization was recorded and then not acted on across five subsequent entries."
 
+## 2026-07-31 — improve-intent-acm4-traversal-fix
+
+**[!REALIZATION]** This is the second consecutive improve iteration to close a gap that was named as a candidate next move in a prior run rather than originate a new finding. Read together with the orient run's own macro-Hansei ("a realization was recorded and then not acted on across five subsequent entries"), this iteration is direct evidence that naming a gap explicitly and then acting on it in the very next iteration is possible when the loop treats its own candidate-ranking as real input rather than a formality.
+
+## 2026-07-31 — improve-intent-acm4-traversal-fix
+
+**[!REALIZATION]** :* not fired -- confirms rather than contradicts the orient run's macro-Hansei about candidate-next-move follow-through.
+
+## 2026-07-31 — improve-intent-acm4-traversal-fix
+
+**[!REALIZATION]** Applying the new step 6b double-loop question (added earlier this session) to this recurring-finding-class trigger: is the recurrence here -- "the loop keeps acting on its own prior candidate list" -- a single-loop symptom or a double-loop signal? On examination, this is NOT a governing-variable defect. The suite's own architecture explicitly permits and expects candidate-next-moves to sit unpicked across multiple entries while the operator directs attention elsewhere (documented in improve/SKILL.md step 4b: "Silence from the operator is a valid response"). The recurrence here is the loop correctly returning to its own backlog when given a topic-free instruction, not a symptom of a wrong goal or assumption in destination.md. No governing variable is implicated; no escalation to Destination is warranted. This is offered as the first worked example of the new question concluding "no double-loop action needed" rather than "escalate" -- the question is falsifiable in both directions, not just a trigger toward more ceremony.
+
 ---
 
-**245 markers — 225 realisations, 20 reversals**
+**248 markers — 228 realisations, 20 reversals**

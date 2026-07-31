@@ -8225,3 +8225,65 @@ Rewrote .acm/orientation.md in full (not append -- per orient's own rule that or
 1. Fix intent/SKILL.md's ACM section 4 parent-scope-traversal gap -- smallest, most concretely specified, most overdue item in the suite right now.
 2. Confirm with the operator whether the trail-skill ACM Mandate Gate gap (agent-deferred, not operator-deferred) should now be actioned, given it has sat unconfirmed since 2026-06-21.
 3. Watch for the next recurring-finding-class trigger in this repo's own trail and check whether the new step-6b double-loop question actually fires and produces a named governing-variable escalation.
+
+## 2026-07-31 - improve-intent-acm4-traversal-fix
+
+- target: skills repo (this repo) -- intent/SKILL.md
+- operator: maintainer (Nils Holmager)
+- agent: Claude Sonnet 4.5 (GitHub Copilot)
+- skill: improve
+- outcome: added the ACM section 4 parent-scope-traversal paragraph to intent/SKILL.md; gap closed
+- delta: intent/SKILL.md 1.2.1 -> 1.3.0; CHANGELOG.md v4.4.0 added
+
+### Interpretation of the ask
+
+The operator said "run the improve skill" with no topic specified. Per improve/SKILL.md step 1's instruction for underspecified asks, I formed a destination-hunch from the immediately preceding orient run rather than waiting: that run's own top-ranked candidate next move, and its macro-Hansei realization, both named the same overdue item -- intent/SKILL.md's missing ACM section 4 parent-scope-traversal instruction, flagged as candidate #1 on 2026-06-22 and still unfixed five weeks later. I proceeded with this as the explicit assumption rather than asking, since the orient run already surfaced it as the clearest, cheapest, most concretely-specified open item in the suite.
+
+### Examination
+
+Re-read intent/SKILL.md's "Read the accumulated context" section directly (not just relying on the prior grep) to confirm the gap was still real: confirmed, no ACM section 4 / parent-scope / traversal language present.
+
+- Purpose: intent/SKILL.md's own stated job is to interpret prompts against accumulated context, but without parent-scope traversal it can only see repo-level destination -- for a repo nested under a workspace mandate (this repo, under c:\git\pea\.acm-root), that is an incomplete picture of the destination it claims to read.
+- Inconsistency: improve/SKILL.md and orient/SKILL.md both already carry the identical ACM section 4 paragraph (added 2026-06-22); intent/SKILL.md was the one skill left out despite reading destination.md directly in its own step 1.
+- Challenge the first read (step 3): is this actually right, or is there a deeper redesign question? No -- this is a narrow, well-precedented textual addition with two working examples already in the same repo to copy from. No Kaikaku argument applies here.
+
+### Decision
+
+[!DECISION] One incremental change: add the same ACM section 4 paragraph (adapted to Intent's own voice and placement) to intent/SKILL.md's "Read the accumulated context" step, immediately before the Destination bullet -- matching where improve/SKILL.md places the equivalent paragraph relative to its own destination-reading step.
+
+Rejected alternative: rewriting Intent's context-reading section more broadly while in there. Rejected per the no-batching constraint -- the only warranted change is the named gap itself.
+
+### Prediction
+
+I will add one paragraph to intent/SKILL.md. I expect this to make Intent consistent with improve/SKILL.md and orient/SKILL.md's parent-scope-traversal behavior. I expect this NOT to change Intent's core Extract/Narrate/Check-the-Gap/Act structure, and NOT to require changes to any other skill file.
+
+### Action
+
+Edited intent/SKILL.md: inserted the ACM section 4 paragraph before the "Read the accumulated context" bullet list, reusing the same stop-condition wording (filesystem root, .acm-root marker, 4-level ceiling) already codified as an operational rule in orientation.md, with a closing sentence adapted to Intent's framing (prompt interpretation, not arc-claims). Bumped intent/SKILL.md 1.2.1 -> 1.3.0. Added CHANGELOG.md v4.4.0 entry. Ran python verify.py -- initially failed on stale derived artifacts (history.md/learning.md older than audit-trail.md, an artifact of the prior orient commit's timestamps, not a content defect); regenerated via harness/tools/record.py and re-ran -- passed clean.
+
+Comparing outcome to prediction: held. No changes were needed to Intent's core structure or to any other skill file.
+
+### Reflection
+
+[!REALIZATION] This is the second consecutive improve iteration to close a gap that was named as a candidate next move in a prior run rather than originate a new finding. Read together with the orient run's own macro-Hansei ("a realization was recorded and then not acted on across five subsequent entries"), this iteration is direct evidence that naming a gap explicitly and then acting on it in the very next iteration is possible when the loop treats its own candidate-ranking as real input rather than a formality.
+
+Named blind spot: I did not check whether probe/SKILL.md or trail/SKILL.md need the same ACM section 4 paragraph. orientation.md's operational rules only track improve, orient, and now intent; probe and trail have not been audited for this specific gap in this session.
+
+Someone who knows this target better might push back on: whether copying near-identical paragraphs into three separate SKILL.md files (improve, orient, intent) is itself a waste/duplication smell that a shared include mechanism would resolve -- the suite has no such mechanism (each SKILL.md is self-contained by design, per "generic first" and no shared tooling infrastructure), so the duplication may be an accepted tradeoff rather than an oversight, but it was not explicitly examined as a tradeoff in this run.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED -- this is the second consecutive entry (following 2026-07-31 orient-post-argyris-window and 2026-07-31 improve-argyris-double-loop-6b-integration) built directly from a prior run's own named candidate next move rather than a fresh independent finding.
+- *About to declare silence:* not fired -- this run made a change.
+- *Contradicts prior [!REALIZATION]:* not fired -- confirms rather than contradicts the orient run's macro-Hansei about candidate-next-move follow-through.
+- *Operator explicitly asked:* not fired -- operator gave a bare "run the improve skill" with no topic; the topic came from the loop's own prior candidate ranking, not a fresh operator instruction.
+
+**Across-trail macro-Hansei:**
+
+[!REALIZATION] Applying the new step 6b double-loop question (added earlier this session) to this recurring-finding-class trigger: is the recurrence here -- "the loop keeps acting on its own prior candidate list" -- a single-loop symptom or a double-loop signal? On examination, this is NOT a governing-variable defect. The suite's own architecture explicitly permits and expects candidate-next-moves to sit unpicked across multiple entries while the operator directs attention elsewhere (documented in improve/SKILL.md step 4b: "Silence from the operator is a valid response"). The recurrence here is the loop correctly returning to its own backlog when given a topic-free instruction, not a symptom of a wrong goal or assumption in destination.md. No governing variable is implicated; no escalation to Destination is warranted. This is offered as the first worked example of the new question concluding "no double-loop action needed" rather than "escalate" -- the question is falsifiable in both directions, not just a trigger toward more ceremony.
+
+### Candidate Next Moves
+
+1. Audit probe/SKILL.md and trail/SKILL.md for the same ACM section 4 parent-scope-traversal gap, now that three of the suite's primary skills (improve, orient, intent) carry it consistently.
+2. Consider whether the near-identical ACM section 4 paragraph duplicated across three SKILL.md files is a waste smell worth naming explicitly as an accepted tradeoff (self-contained skill files) rather than leaving it unexamined.
+3. Continue watching for the step-6b double-loop question to fire on a case where the answer is genuinely "yes, escalate to Destination" -- this run's case concluded "no" honestly, but the question has not yet been observed producing an actual destination-revision candidate.

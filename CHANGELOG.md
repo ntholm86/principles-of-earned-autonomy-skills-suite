@@ -1,5 +1,10 @@
 # Changelog
 
+## v4.4.0 — 2026-07-31
+
+### Changed
+- **Intent skill now reads parent-scope destinations before interpreting a prompt (`intent/SKILL.md` 1.2.1 → 1.3.0).** Added the ACM §4 Scoped Memory paragraph (parent-directory traversal, `.acm-root` stop marker, 4-level ceiling, higher-scope-wins) to the "Read the accumulated context" step, matching the instruction already present in `improve/SKILL.md` and `orient/SKILL.md`. This closes a gap named as the top candidate next move in this repo's own trail on 2026-06-22 (entry `acm-parent-scope-traversal-propagated`) and reconfirmed by the 2026-07-31 orient run — over five weeks between naming and fixing. Without this, an agent applying Intent inside a nested repo (such as this one, under `c:\git\pea\.acm-root`) could interpret a prompt without ever reading the workspace-level mandate that might reshape what the prompt means.
+
 ## v4.3.0 — 2026-07-31
 
 ### Changed

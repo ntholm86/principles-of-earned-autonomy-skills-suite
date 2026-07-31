@@ -164,6 +164,7 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 157 | 2026-07-02 | rename-sweep-gap-fix-verify-recursive-search | closed a gap in the earlier Commander's Intent -> Operator's Intent rename; intent/SKILL.md still had the old name in its YAML description and body prose | intent/SKILL.md front-matter description and 'the user is the commander' line -> Operator's Intent / 'the user is the operator' |
 | ▸ 158 | 2026-07-31 | improve-argyris-double-loop-6b-integration | added an explicit Argyris double-loop question to improve/SKILL.md step 6b; one incremental change | improve/SKILL.md 3.10.0 -> 3.11.0; CHANGELOG.md v4.3.0 added |
 | ▸ 159 | 2026-07-31 | orient-post-argyris-window | orientation.md rewritten; 5 arc-claims formed, 2 candidate-next-move follow-through gaps named, orientation.md's own stale references corrected | .acm/orientation.md rewritten (was last updated 2026-06-21 as retrospect.md-titled content) |
+| ▸ 160 | 2026-07-31 | improve-intent-acm4-traversal-fix | added the ACM section 4 parent-scope-traversal paragraph to intent/SKILL.md; gap closed | intent/SKILL.md 1.2.1 -> 1.3.0; CHANGELOG.md v4.4.0 added |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -765,4 +766,8 @@ Do not edit by hand — re-run the command to refresh.
 
 - **decided:** One incremental change, not a new skill. Added a fifth reflection question to improve/SKILL.md step 6b (across-trail reflection), which only activates when the existing "recurring finding-class" trigger fires. The question asks the agent to name the specific governing variable implicated by a recurring pattern and route it to the Destination skill, rather than proposing another artifact-level patch.
 
-**159 runs total — 145 with changes, 14 silence**
+### Run 160 — 2026-07-31 — improve-intent-acm4-traversal-fix
+
+- **decided:** One incremental change: add the same ACM section 4 paragraph (adapted to Intent's own voice and placement) to intent/SKILL.md's "Read the accumulated context" step, immediately before the Destination bullet -- matching where improve/SKILL.md places the equivalent paragraph relative to its own destination-reading step.
+
+**160 runs total — 146 with changes, 14 silence**

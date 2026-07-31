@@ -1,6 +1,6 @@
 ---
 name: intent
-version: 1.2.1
+version: 1.3.0
 description: 'Apply Operator''s Intent to the user''s own prompt before acting. Interpret what the user is trying to achieve, not what they literally wrote. Narrate the interpretation so the user can correct drift before work begins. USE WHEN: any substantive request that implies work (build, fix, improve, explain, investigate, decide). SKIP WHEN: the request is unambiguous and mechanical (a specific file read, a one-line command, a yes/no confirmation).'
 argument-hint: 'Triggered automatically by any substantive user prompt; can also be invoked explicitly: "apply intent to this request"'
 ---
@@ -34,6 +34,8 @@ These are probes, not a checklist. Use different probes if the situation calls f
 ### Read the accumulated context
 
 A single prompt is a thin signal. Before extracting intent, read what already exists in the **target repo's `.acm/` folder** (in the root of the repo being worked on — never in the skills install directory) — in this order:
+
+**ACM §4 Scoped Memory — read parent scopes first.** Before reading the repo's own `.acm/destination.md`, traverse parent directories upward and read any `.acm/destination.md` found there. Higher-scope mandates govern lower-scope ones — if a workspace or org destination conflicts with the repo destination, the higher scope wins. Label each scope when reading (e.g., "workspace mandate", "repo mandate"). Stop traversal when any of: filesystem root reached; a `.acm-root` marker file is found in a directory (operator-declared ceiling — read that directory's `.acm/` then stop); or 4 levels traversed (implementation ceiling). A prompt interpreted without the workspace mandate may miss cross-repo coordination constraints that reshape what the prompt actually means.
 
 - **Destination** (`.acm/destination.md`, with `.acm/vision.md` as legacy fallback) — the operator-held destination. If present, this is the most important context. The prompt is a single instruction; the destination is the overarching goal it serves. Read it first. Interpret the prompt in light of where the operator has said they are trying to go.
 - **orientation.md** (`.acm/orientation.md`) — the Orient-derived current orientation. Where the work actually is right now, what the loop has been attending to, what findings have accumulated. The prompt means something different depending on whether the target is early-stage, mid-refactor, or nearly converged.
