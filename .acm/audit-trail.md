@@ -8169,3 +8169,59 @@ Someone who knows this target better might push back on: whether "governing vari
 1. Add a parallel, lighter-weight double-loop question to improve/SKILL.md step 3 (single-iteration Kaikaku question) for cases where a governing-variable-level defect is visible on the very first read, without waiting for a recurring pattern -- deferred this run per the no-batching constraint.
 2. Observe whether this new step 6b question actually fires and produces a genuine destination-revision candidate the next time a recurring-finding-class trigger appears in this repo's own trail; if it never fires across several future iterations, that is evidence the trigger condition (tied to recurrence) is too narrow.
 3. Consider whether orient/SKILL.md step 4 (loop-effectiveness evaluation) should ask the same governing-variable question at the arc level, parallel to its existing quality-bar question -- not actioned this run to avoid batching two files in one iteration.
+
+## 2026-07-31 - orient-post-argyris-window
+
+- target: skills repo (this repo)
+- operator: maintainer (Nils Holmager)
+- agent: Claude Sonnet 4.5 (GitHub Copilot)
+- skill: orient
+- outcome: orientation.md rewritten; 5 arc-claims formed, 2 candidate-next-move follow-through gaps named, orientation.md's own stale references corrected
+- delta: .acm/orientation.md rewritten (was last updated 2026-06-21 as retrospect.md-titled content)
+
+### Scope statement
+
+Read the arc from entry 152 (2026-06-21, acm-scope-stop-conditions-propagated -- the last entry covered by the prior orient run) through entry 158 (2026-07-31, improve-argyris-double-loop-6b-integration) -- 6 new entries across a 40-day span, including a 29-day gap with no activity in this repo's own trail. Arc-question: what has this window shown, and is the loop's attention landing on what its own named candidate-next-moves called for.
+
+Step 0 (destination, all scopes): read the workspace-level destination at c:\git\pea\.acm\destination.md (found via the .acm-root marker one level up; traversal correctly stopped there per ACM 4.2). No conflict between the workspace destination and the repo destination's 2026-07-31 Argyris note.
+
+Freshness guard: python harness/tools/record.py history --write (158 entries), learning --write (240 markers), python verify.py (OK) -- all run before forming arc-claims.
+
+### Arc-claims
+
+[!REALIZATION] Since the prior orient run, this repo's own attention has gone almost entirely to terminology and ACM-conformance surfaces, not to capability gaps -- even where two capability gaps (trail-skill ACM Mandate Gate enforcement; intent/SKILL.md's missing ACM section 4 parent-scope traversal) were explicitly named as candidate next moves in this exact window and neither was picked up by any of the 5 entries that followed.
+
+[!REALIZATION] intent/SKILL.md still lacks the ACM section 4 parent-scope-traversal instruction, over five weeks after entry acm-parent-scope-traversal-propagated (2026-06-22) named it as candidate #1 and added the same instruction to improve/SKILL.md and orient/SKILL.md. Confirmed by direct grep (zero hits for "ACM", "parent-scope", "traversal" in intent/SKILL.md as of this run).
+
+[!REALIZATION] The orientation.md this run replaces had drifted from the artifact it describes: it still called itself retrospect.md and referred to "Retrospect" throughout, two days after the 2026-06-23 rename to Orient, and it carried an open item referencing de-ai/SKILL.md, a skill confirmed absent from the current live tree (file search, 0 results). Orientation.md is not immune to the same drift class it exists to catch elsewhere.
+
+The trail-skill ACM Mandate Gate gap (2026-06-21) was a unilateral agent deferral ("risk is low in practice... fix when next revised"), not an operator instruction -- a different category than the suite's genuinely operator-gated deferrals (whole-suite mandate-gate conformance, CITATION.cff alignment). Carrying both under the same "operator-deferred" label risks the loop treating its own avoidance as authorized.
+
+This session's Argyris double-loop addition (entry 158) is structurally the same kind of untested claim as the suite's oldest open question (cross-session learning acted-on): the mechanism exists on paper, unobserved to fire in practice.
+
+### Loop-effectiveness (step 4)
+
+Quality bars tested this window: internal text-layer consistency only (three rename/consistency passes, recurring-finding-class fired twice, converged into a recorded operational rule). Bars not tested: comparative defensibility, comparator coverage, empirical replication, operational deployability -- none touched in this 40-day window. No silence or convergence claims were made in this window, so no named-boundary violation to check, but the absence of any convergence attempt across 40 days is itself notable.
+
+Candidate-next-move follow-through: weak. Two consecutive entries (2026-06-21, 2026-06-22) ranked "check intent/SKILL.md for the ACM 4 gap" as the top candidate. None of the next 5 entries picked it up; attention went to a skill rename, an illustration placement, and two terminology sweeps before an operator-initiated topic (Argyris) took over. Named plainly per orient's own effectiveness-evaluation prompt.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired -- this orient run's own findings (stale terminology drift in orientation.md, an unaddressed candidate-next-move) are new observations for this run, not a repetition of the same finding-class within the run itself.
+- *About to declare silence:* not fired -- this run identifies open gaps; it does not declare convergence or silence at any quality bar.
+- *Contradicts prior [!REALIZATION]:* not fired -- extends the existing 2026-05-01 realization series about learning being underdeveloped; does not contradict it.
+- *Operator explicitly asked:* FIRED -- operator explicitly asked to run the orient skill this session.
+
+**Across-trail macro-Hansei:**
+
+[!REALIZATION] The clearest, cheapest, most overdue piece of work visible in this repo right now is not a new idea -- it is finishing something the loop already started and named five weeks ago (intent/SKILL.md's ACM section 4 gap). A loop that keeps generating new findings while a small, previously-identified, well-specified gap sits untouched is exhibiting exactly the single-loop-without-follow-through pattern the destination's own Learning section flags as underdeveloped -- except here the miss is not "no realization was recorded," it is "a realization was recorded and then not acted on across five subsequent entries."
+
+### Action
+
+Rewrote .acm/orientation.md in full (not append -- per orient's own rule that orientation.md is replaced each run). Corrected the stale "Retrospect" naming and dropped the now-invalid de-ai/SKILL.md reference. Added 5 new arc-claims, updated "what next runs should test" (added the intent/SKILL.md gap as item 1, retired the de-ai item), and added 4 new operational rules learned this window (PEA-vocabulary-vs-doctrine split; bulk-replace-never-exhaustive; PowerShell Copy-Item BOM hazard; verify.py's strict trigger-line/macro-Hansei formatting). Regenerated history.md and learning.md; python verify.py passed after the rewrite.
+
+### Candidate Next Moves
+
+1. Fix intent/SKILL.md's ACM section 4 parent-scope-traversal gap -- smallest, most concretely specified, most overdue item in the suite right now.
+2. Confirm with the operator whether the trail-skill ACM Mandate Gate gap (agent-deferred, not operator-deferred) should now be actioned, given it has sat unconfirmed since 2026-06-21.
+3. Watch for the next recurring-finding-class trigger in this repo's own trail and check whether the new step-6b double-loop question actually fires and produces a named governing-variable escalation.
