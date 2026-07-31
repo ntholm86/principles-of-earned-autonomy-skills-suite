@@ -8101,3 +8101,71 @@ Someone who knows the target better might push back on: whether renaming the ill
 
 1. Flag to the operator (done, in this entry) that stormpInspired.png was generated from the pre-rename prompt and depicts a military-commander figure; regenerating the image to match imageprompt.txt's "operator" wording is a separate task, not implied by this text fix.
 2. Re-check GitHub Pages deploy status on ntholm86.github.io/earned-autonomy/ after a few minutes to confirm the rename is now live.
+
+## 2026-07-31 - improve-argyris-double-loop-6b-integration
+
+- target: skills repo (this repo) -- improve/SKILL.md
+- operator: maintainer (Nils Holmager)
+- agent: Claude Sonnet 4.5 (GitHub Copilot)
+- skill: improve
+- outcome: added an explicit Argyris double-loop question to improve/SKILL.md step 6b; one incremental change
+- delta: improve/SKILL.md 3.10.0 -> 3.11.0; CHANGELOG.md v4.3.0 added
+
+### Interpretation of the ask
+
+The operator pasted a conversation snippet about "double loop learning" architecture (Argyris 1977, Model I/II behaviors, governing variables) and stated the intent explicitly: implement Argyris 1977 double-loop learning into the skillset, but first capture it in destination.md, then let an improve iteration decide where and how to implement it against the combined destination. The operator was explicit that I did not have to agree with the framing of the pasted snippet, only understand the intent.
+
+In the immediately prior session, I captured this as a new destination note in .acm/destination.md (entry "2026-07-31 (gap: learning must include governing-variable challenge, not only execution correction)"), deliberately leaving mechanism unspecified per Principle 1. This session's ask -- "use the improve skill" -- I interpreted as: run one full improve iteration on the skills repo itself, treating that new destination note as active input, and find the single highest-leverage integration point (or argue redesign, or declare silence).
+
+### Examination
+
+Read .acm/destination.md (including the new 2026-07-31 note), .acm/orientation.md, .acm/learning.md, and the recent tail of .acm/audit-trail.md before examining the skills themselves, per step 1.
+
+Lenses applied to improve/SKILL.md, orient/SKILL.md, intent/SKILL.md, and PRINCIPLES.md:
+
+- Purpose: does the suite currently distinguish single-loop correction (fixing the action) from double-loop correction (revising the governing variable that produced the action)? Finding: no. improve/SKILL.md step 3's "Kaikaku question" asks whether the target's structure is wrong, but never whether the destination's own governing assumptions are wrong. orient/SKILL.md step 4 asks which quality bars have been tested, not whether governing variables have been challenged. Grepped the full skills tree for "governing variable", "single-loop", "double-loop", "Model I", "Model II" -- zero live-doc hits, confirming this is a genuine gap, not existing vocabulary I overlooked.
+- Inconsistency: the suite's architecture already treats destination.md as operator-revisable (Destination skill's whole purpose), but nothing in Improve or Orient currently signals *when* a finding should escalate to a destination-revision candidate rather than another artifact patch. The mechanism for revision exists; the trigger for recognizing when to reach for it does not.
+- Overburden / Waste: not the relevant lenses here -- this is a capability gap, not excess or waste.
+
+### Decision
+
+[!DECISION] One incremental change, not a new skill. Added a fifth reflection question to improve/SKILL.md step 6b (across-trail reflection), which only activates when the existing "recurring finding-class" trigger fires. The question asks the agent to name the specific governing variable implicated by a recurring pattern and route it to the Destination skill, rather than proposing another artifact-level patch.
+
+Rejected alternative 1: a new dedicated skill (e.g. "double-loop" or "hansei-v2"). Rejected because the suite's own trail explicitly records rejecting skill proliferation in the v3 redesign (six skills collapsed to two, later recomposed to the current minimal set) -- a new skill for one reflective question would repeat the overburden the suite already corrected for once.
+
+Rejected alternative 2: adding the question to step 3 (Challenge the first read, single-iteration Kaikaku question) instead of step 6b. Rejected because Argyris double-loop learning is specifically motivated by *repeated* single-loop correction failing to eliminate the same error class -- that is an arc-level phenomenon, and step 6b's existing recurring-finding-class trigger is the exact hook already built for arc-level pattern recognition. Adding it to step 3 would ask every single iteration to speculate about governing variables even when no pattern has yet emerged, which is a weaker signal and risks manufactured findings (a violation the skill explicitly warns against elsewhere).
+
+Rejected alternative 3: making the same addition in both step 3 and step 6b in one iteration. Rejected per the suite's own architectural constraint 4 ("One change per run, highest leverage, stated reason. No batching."). The step-3 addition is offered instead as a Candidate Next Move below.
+
+### Prediction
+
+I will add one reflection question to improve/SKILL.md step 6b. I expect this to give future iterations an explicit, named vocabulary (governing variable) to escalate a recurring pattern to a destination-level question. I expect this NOT to: create a new skill, introduce a new trail marker, change the trail file format, or add work to iterations where the recurring-finding-class trigger does not fire (the question is nested inside the existing "if any trigger fired" branch, not a new mandatory step).
+
+### Action
+
+Edited improve/SKILL.md step 6b: added the double-loop question as a fourth bullet in the "sit with this" list, citing Argiris 1977 by name, defining governing variable in-line so the term is self-contained for a reader without prior Argyris knowledge (per Principle "human-readable, no term requires prior knowledge"). Bumped improve/SKILL.md front-matter version 3.10.0 -> 3.11.0. Added CHANGELOG.md v4.3.0 entry documenting the change and its provenance (destination note 2026-07-31). Ran python verify.py -- passed ("OK -- trail integrity checks pass"). Regenerated .acm/history.md (157 entries) and .acm/learning.md (238 markers) via harness/tools/record.py before appending this entry.
+
+Comparing outcome to prediction: held. No new skill, marker, or file format was introduced; the addition is nested inside the existing conditional trigger, matching the "additive, not mandatory-for-every-iteration" prediction.
+
+### Reflection
+
+**Across-trail macro-Hansei:**
+
+[!REALIZATION] The suite's architecture already had the double-loop *mechanism* (destination.md is operator-revisable; Destination skill exists to revise it) but lacked the *trigger* for recognizing when a finding warrants reaching for that mechanism instead of patching the artifact again. This gap is consistent with the destination.md Learning section's own prior claim that "Learning... is the most underdeveloped of the three [memory, learning, meta-cognition] and the most important gap for a future loop run to target" -- this change is a direct, narrow instance of closing that named gap, not a new direction.
+
+Named blind spot: this change has not yet been exercised against a real recurring-finding-class trigger in this repo's own trail (the most recent recurring pattern I found, the 2026-07-02 Commander's Intent rename sweep, already resolved via three consecutive fix-and-close entries before this question existed). I have not observed the new question fire in practice; I only verified it reads correctly and is structurally reachable.
+
+Someone who knows this target better might push back on: whether "governing variable" is the right level of abstraction for an agent to reason about without more worked examples in the skill text -- Argyris's original concept applies to organizational actors with stated values, and mapping it onto a destination.md file's stated goals and constraints is a translation choice, not a direct transplant. The skill text does not yet include a worked example of a governing-variable-level finding, unlike the Kaikaku question in step 3 which has none either -- consistent with the suite's existing style, but worth naming as unresolved.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired -- this run's finding class (a missing arc-level reflection question) has not previously appeared in this repo's trail; checked learning.md for prior mentions of "double-loop", "governing variable" -- none found.
+- *About to declare silence:* not fired -- this run made a change.
+- *Contradicts prior [!REALIZATION]:* not fired -- this extends, rather than contradicts, the existing 2026-05-01 realization series about learning being the most underdeveloped of the three memory-model pillars.
+- *Operator explicitly asked:* FIRED -- operator explicitly directed the Argyris double-loop integration across two consecutive sessions (destination capture, then this improve run).
+
+### Candidate Next Moves
+
+1. Add a parallel, lighter-weight double-loop question to improve/SKILL.md step 3 (single-iteration Kaikaku question) for cases where a governing-variable-level defect is visible on the very first read, without waiting for a recurring pattern -- deferred this run per the no-batching constraint.
+2. Observe whether this new step 6b question actually fires and produces a genuine destination-revision candidate the next time a recurring-finding-class trigger appears in this repo's own trail; if it never fires across several future iterations, that is evidence the trigger condition (tied to recurrence) is too narrow.
+3. Consider whether orient/SKILL.md step 4 (loop-effectiveness evaluation) should ask the same governing-variable question at the arc level, parallel to its existing quality-bar question -- not actioned this run to avoid batching two files in one iteration.

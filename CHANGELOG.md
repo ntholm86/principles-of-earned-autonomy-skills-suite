@@ -1,5 +1,10 @@
 # Changelog
 
+## v4.3.0 — 2026-07-31
+
+### Changed
+- **Improve skill's across-trail reflection now names Argyris double-loop learning explicitly (`improve/SKILL.md` 3.10.0 → 3.11.0).** Step 6b's macro-reflection prompts gain a fifth question: when the recurring-finding-class trigger fires, the agent must ask whether the recurrence is a single-loop symptom (the action keeps getting patched) or a double-loop signal (a governing variable in `.acm/destination.md`, or an unstated carried assumption, is the actual defect). When the latter, the entry must name the specific governing variable implicated and route it to the operator via the Destination skill rather than proposing another artifact-level patch. Sourced from operator direction (2026-07-31) to integrate Argyris 1977 double-loop learning into the skillset, captured first as a destination note (`.acm/destination.md`, entry `2026-07-31`) and then left to an Improve iteration to find the highest-leverage integration point. This is additive: no new skill, marker, or file was introduced; the question only surfaces when the existing recurring-finding-class trigger already fires.
+
 ## v4.2.0 — 2026-06-04
 
 ### Changed

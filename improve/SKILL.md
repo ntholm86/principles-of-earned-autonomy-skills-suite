@@ -1,6 +1,6 @@
 ---
 name: improve
-version: 3.10.0
+version: 3.11.0
 description: 'The improvement skill. Understand the ask, examine the target, challenge the first read, decide on one change (or argue for redesign, or declare silence), act, reflect on the target, and record. Combines incremental refinement, structural rethinking, and reflection on the target itself. USE WHEN: improve, audit, review, fix, refactor, redesign, evaluate, what would make this better, am I missing something.'
 argument-hint: 'The target to improve, and optionally the concern (correctness, simplicity, performance, etc.)'
 ---
@@ -146,6 +146,7 @@ When the macro reflection runs, read `.acm/audit-trail.md` as a *single document
 - Which prior realisations aged well, and which were wrong in retrospect? If the trail is long enough, name at least one of each.
 - Where has attention been spent, and is that where the target's real weight lies? A long tail of small fixes in one corner can mean either "that corner is the bottleneck" or "this is the corner the loop has grown comfortable looking at." The trail itself is the evidence — re-read it.
 - What does the target need next that *no individual iteration would have surfaced* — only the arc reveals?
+- **Is the recurring pattern a single-loop symptom or a double-loop signal?** Single-loop correction fixes the action while leaving the governing variable that produced it untouched — the goal, constraint, or assumption in `.acm/destination.md` (or an unstated assumption the loop has been carrying) that shaped every one of the recurring fixes. If the same finding-class keeps recurring despite repeated correction, the recurrence itself is evidence that the governing variable, not the action, is the actual defect. Name the specific governing variable implicated, state it as a candidate destination-revision (not another artifact patch), and route it to the operator via the [Destination](../destination/SKILL.md) skill rather than proposing a fifth fix for the same symptom. (Argyris, *Organizational Learning*, 1977 — single-loop learning corrects action within existing governing variables; double-loop learning questions and revises the governing variables themselves.)
 
 Write the result as `[!REALIZATION]` in this entry, framed as a claim about the target. If it changes the priority for the next iteration, say so plainly.
 

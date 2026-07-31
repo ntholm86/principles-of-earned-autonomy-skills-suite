@@ -129,3 +129,15 @@ Sourced from comparing this suite's principles against an external framework (th
 **What this solves, stated as destination, not mechanism:** an operator using this suite (or any skill descended from it) should be able to declare, once, a short list of actions that are never auto-authorized regardless of the reasoning behind them — and have every skill respect that list as a hard boundary, not a factor weighed against the moment's evidence. This is a gap in what the suite currently guarantees, not a design for how to guarantee it.
 
 **Deliberately not specified here:** where such a list lives, how a skill checks it, what triggers a review of it, or how it composes with Intent's existing purpose-defeating-route check. That is implementation — the agent's own path to find, the same way this destination has never prescribed Trail's file format or Orient's rubric shape. Prescribing the mechanism here would repeat the exact violation Principle 1 exists to prevent: this file defines the destination, not the route.
+
+## Destination note - 2026-07-31 (gap: learning must include governing-variable challenge, not only execution correction)
+
+Sourced from operator direction in session (2026-07-31): "implement Argyris 1977 double loop learning into the skillset," with explicit sequencing: capture in destination first, then let improve decide where and how to implement it against the combined destination.
+
+The gap named here is architectural, not cosmetic: current loop behavior can improve actions within existing assumptions (single-loop), but it does not yet reliably force explicit challenge of the governing variables themselves (goal interpretation, constraint selection, quality-bar choice, and defensive reasoning patterns). In practice, this means the suite can optimize a route while still carrying a wrong frame.
+
+**What this solves, stated as destination, not mechanism:** the skillset should be able to detect and surface when "the plan is improving but the frame is wrong," and then trigger a structured re-examination of governing variables before further optimization. That includes challenging hidden assumptions, exposing purpose-defeating interpretations of intent, and making defensive or face-saving reasoning visible instead of rewarding it. The desired end-state is not more iteration volume; it is higher goal fidelity through explicit frame-correction.
+
+This destination remains bounded by the existing principles and architecture: Commander's Intent stays the fixed anchor, observability remains mandatory, and convergence-to-silence is valid only when both route quality and governing-variable validity have been challenged adequately for the named boundary.
+
+**Deliberately not specified here:** which skill(s) should own the double-loop checks, what artifact schema should hold governing-variable audits, which heuristics identify defensive routines, what stop-conditions apply, and how this composes with existing Destination/Improve/Orient/Retrospect responsibilities. Those are implementation decisions for improve-loop discovery and proposal, not destination-level prescription.
