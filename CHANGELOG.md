@@ -1,5 +1,10 @@
 # Changelog
 
+## v4.5.0 — 2026-07-31
+
+### Changed
+- **Destination skill now reads parent-scope destinations before forming hunches (`destination/SKILL.md` 2.1.0 → 2.2.0).** Added the ACM §4 Scoped Memory paragraph (parent-directory traversal, `.acm-root` stop marker, 4-level ceiling, higher-scope-wins) to step 1 ("Gather signal"), matching the instruction already present in `improve/SKILL.md`, `orient/SKILL.md`, and `intent/SKILL.md` (added earlier the same day). Found while auditing whether `probe/SKILL.md` and `trail/SKILL.md` also needed the paragraph — they do not (probe never reads destination.md; trail records decisions already made, it does not independently interpret destination) — but the audit surfaced a more consequential gap: Destination is the one skill that *authors* the repo-level `destination.md`, and it was the one skill not reading the workspace-level mandate first. A hunch formed, or a revision written, without the higher-scope destination risks proposing something already settled one level up, or duplicating a coordination constraint that belongs there instead.
+
 ## v4.4.0 — 2026-07-31
 
 ### Changed

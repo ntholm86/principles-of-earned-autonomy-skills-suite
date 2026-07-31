@@ -8287,3 +8287,67 @@ Someone who knows this target better might push back on: whether copying near-id
 1. Audit probe/SKILL.md and trail/SKILL.md for the same ACM section 4 parent-scope-traversal gap, now that three of the suite's primary skills (improve, orient, intent) carry it consistently.
 2. Consider whether the near-identical ACM section 4 paragraph duplicated across three SKILL.md files is a waste smell worth naming explicitly as an accepted tradeoff (self-contained skill files) rather than leaving it unexamined.
 3. Continue watching for the step-6b double-loop question to fire on a case where the answer is genuinely "yes, escalate to Destination" -- this run's case concluded "no" honestly, but the question has not yet been observed producing an actual destination-revision candidate.
+
+## 2026-07-31 - improve-destination-acm4-traversal-fix
+
+- target: skills repo (this repo) -- destination/SKILL.md
+- operator: maintainer (Nils Holmager)
+- agent: Claude Sonnet 4.5 (GitHub Copilot)
+- skill: improve
+- outcome: added the ACM section 4 parent-scope-traversal paragraph to destination/SKILL.md; probe and trail confirmed correctly exempt
+- delta: destination/SKILL.md 2.1.0 -> 2.2.0; CHANGELOG.md v4.5.0 added
+
+### Interpretation of the ask
+
+Operator again said "run the improve skill" with no topic. Following the prior entry's own candidate next moves, I formed the hunch: audit probe/SKILL.md and trail/SKILL.md for the ACM section 4 parent-scope-traversal gap that intent/SKILL.md just received. I proceeded with this as the explicit assumption, per improve/SKILL.md step 1's instruction for underspecified asks.
+
+### Examination
+
+Read probe/SKILL.md in full and grepped it for destination/orientation/.acm/ references: it reads and writes .acm/audit-trail.md only for recording verdicts; it never reads destination.md to form its claims (a probe's claim is about the agent's reasoning under novelty, not about the target's destination). Confirmed: probe genuinely does not need ACM section 4 traversal -- it has no destination-reading step to add it to.
+
+Grepped trail/SKILL.md for the same terms: zero hits. Trail describes the .acm/ file structure (including destination.md's role) for documentation purposes but has no step where the *recording* agent independently interprets destination.md to decide what to do -- it records decisions other skills already made. Confirmed: trail genuinely does not need it either.
+
+Having confirmed both candidates were correctly exempt (not a gap, a legitimate design difference), I challenged the first read (step 3) rather than stopping at "nothing to do here": which other primary skills read destination.md directly to form their own reasoning, the way improve/orient/intent do? Checked destination/SKILL.md's own step 1 ("Gather signal") -- it reads .acm/destination.md, orientation.md, audit-trail.md, and sessions/ directly to form hunches, exactly the same category of destination-dependent reasoning that improve/orient/intent perform. Grepped destination/SKILL.md for "ACM", "parent-scope", "traversal", ".acm-root" -- zero hits. This is a real, more consequential gap than the one just closed in intent/SKILL.md: Destination is the skill that *authors* the repo-level destination.md, so forming a hunch or writing a revision without first reading the workspace-level mandate risks proposing something a higher scope has already settled.
+
+### Decision
+
+[!DECISION] One incremental change: add the ACM section 4 paragraph to destination/SKILL.md step 1, adapted to Destination's own voice (hunch-forming, not arc-claims or prompt-interpretation) and closing with the specific risk this skill faces if it skips the higher scope: proposing or duplicating something the workspace mandate has already settled.
+
+[!DECISION] Do not add anything to probe/SKILL.md or trail/SKILL.md. Confirmed via direct reading and grep that neither has a destination-reading step this paragraph would attach to; adding it regardless would be prescriptive noise, not a fix.
+
+Rejected alternative: declare silence on the whole audit (probe + trail both exempt) without looking further. Rejected because step 3 (challenge the first read) surfaced a materially bigger gap in destination/SKILL.md itself once I asked "which skills genuinely need this and have I checked all of them" rather than stopping at the two named in the candidate list.
+
+### Prediction
+
+I will add one paragraph to destination/SKILL.md. I expect this to close the traversal gap across all four primary destination-reading skills (improve, orient, intent, destination). I expect this NOT to require any change to probe/SKILL.md or trail/SKILL.md, since neither reads destination.md as part of its own reasoning.
+
+### Action
+
+Edited destination/SKILL.md: inserted the ACM section 4 paragraph in step 1 ("Gather signal"), before the `.acm/destination.md` bullet, reusing the same stop-condition wording as the other three skills, closing with a sentence specific to Destination's own risk (proposing or duplicating a workspace-settled matter). Bumped destination/SKILL.md 2.1.0 -> 2.2.0. Added CHANGELOG.md v4.5.0 entry documenting both the fix and the probe/trail exemption finding. Ran python verify.py after regenerating derived artifacts -- passed clean on the first attempt (trigger-line format and macro-Hansei heading applied correctly from the start this time, per the operational rule recorded in orientation.md).
+
+Comparing outcome to prediction: held. Only destination/SKILL.md needed the change; probe and trail were confirmed exempt, not silently skipped.
+
+### Reflection
+
+[!REALIZATION] Destination is the skill most exposed to the risk ACM section 4 exists to prevent, and it was the last of the four destination-reading skills to receive the fix -- not because it was judged lower priority, but because the original candidate list (from the 2026-06-22 entry) never named it at all; it named only intent, probe, and trail. The audit only surfaced destination/SKILL.md's own gap because this run explicitly asked "have I checked every skill that needs this," not because it was on anyone's list. A candidate-next-moves list is only as complete as the scan that produced it -- this is worth carrying forward as a caution about trusting an inherited candidate list as exhaustive.
+
+Named blind spot: I have not re-checked whether the workspace-level destination.md itself (c:\git\pea\.acm\destination.md) has any Destination-skill-specific expectations about how repo-level Destination runs should reconcile with it beyond what ACM section 4 already states generically -- this run applied the generic traversal rule without asking whether Destination-on-Destination composition needs anything beyond that.
+
+Someone who knows this target better might push back on: whether closing this gap in destination/SKILL.md now, in the same day as the improve and intent fixes, constitutes a "recurring finding-class" that should itself trigger a higher-level question -- namely, was the original 2026-06-22 scan of "which skills need ACM section 4" simply incomplete from the start, rather than three independent small gaps found on three separate days.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED -- this is the third same-day entry finding an ACM section 4 traversal gap in a primary skill (intent earlier this session, now destination), following the same discovery method (grep for the paragraph, confirm absence, add it).
+- *About to declare silence:* not fired -- this run made a change, after briefly considering and rejecting silence on the narrower probe/trail-only audit.
+- *Contradicts prior [!REALIZATION]:* not fired -- extends rather than contradicts the intent-fix entry's realization about candidate-next-move follow-through.
+- *Operator explicitly asked:* not fired -- operator gave a bare "run the improve skill"; the topic came from the loop's own prior candidate list.
+
+**Across-trail macro-Hansei:**
+
+[!REALIZATION] Applying the step 6b double-loop question to this recurring-finding-class trigger: is "three same-day ACM section 4 gaps, found one at a time" a single-loop symptom or a double-loop signal? This one leans toward double-loop. The single-loop read is "each gap is a distinct small fix, keep patching them as found." The double-loop read is: the governing variable at fault is the *scanning method* used on 2026-06-22 -- it named three skills (intent, probe, trail) and implicitly treated that as the complete set of skills needing ACM section 4, when the actual criterion ("does this skill independently read destination.md to form its own reasoning") was never stated explicitly and was not applied exhaustively to every skill in the suite at that time. Naming the governing variable: the candidate-list-generation process silently narrowed "skills that read destination" to "the skills whoever wrote that entry happened to check," rather than deriving the list from the stated criterion. This is worth surfacing to the operator as a genuine destination-level candidate: should a future ACM-conformance sweep state its selection criterion explicitly and apply it to every skill file, rather than relying on an ad hoc list assembled during one entry? Routing this as a named observation rather than a silent artifact patch, per the double-loop discipline -- not resolving it unilaterally this run.
+
+### Candidate Next Moves
+
+1. Operator-facing question (from the macro-Hansei above): should the suite adopt an explicit, stated selection criterion for "which skills need ACM section 4 traversal" (e.g., "any skill that reads .acm/destination.md to form its own reasoning, checked exhaustively against every SKILL.md in the tree") rather than relying on an inherited, possibly-incomplete list? This is offered as a genuine double-loop candidate, not actioned this run.
+2. If the operator confirms candidate 1, the next improve iteration should re-derive the list from that explicit criterion and re-check every skill file in the tree (not just the four already touched) in one pass, rather than continuing to find them one at a time.
+3. Revisit whether the near-identical ACM section 4 paragraph now duplicated across four SKILL.md files (improve, orient, intent, destination) is worth naming as an accepted tradeoff versus a shared-include mechanism -- still not examined as its own question.

@@ -1,6 +1,6 @@
 ---
 name: destination
-version: 2.1.0
+version: 2.2.0
 description: 'Surface the agent''s in-progress guesses about where the operator is heading — what they care about, what they are circling, what the implicit destination might be — and turn those guesses into questions the operator can confirm, correct, or reject. Closes the gap between the destination the operator has explicitly stated and what the agent has picked up from their conversation, reactions, and emphasis. USE WHEN: the destination feels thin or stale, the operator is exploring rather than executing, the agent suspects it is missing implicit direction, or before a long autonomous run that will drift if the destination is unclear.'
 argument-hint: 'Optionally: the area you want hunches about (a specific concern, a recent decision, the project as a whole)'
 ---
@@ -55,6 +55,8 @@ Destination is fast, conversational, and stops as soon as the operator says "yes
 ### 1. Gather signal
 
 Before forming any hunches, look at what is available in the **target repo's `.acm/` folder** (in the root of the repo being worked on — not the skills install directory):
+
+**ACM §4 Scoped Memory — read parent scopes first.** Before reading the repo's own `.acm/destination.md`, traverse parent directories upward and read any `.acm/destination.md` found there. Higher-scope mandates govern lower-scope ones — if a workspace or org destination conflicts with the repo destination, the higher scope wins. Label each scope when reading (e.g., "workspace mandate", "repo mandate"). Stop traversal when any of: filesystem root reached; a `.acm-root` marker file is found in a directory (operator-declared ceiling — read that directory's `.acm/` then stop); or 4 levels traversed (implementation ceiling). Destination is the skill that authors the repo-level destination.md — a hunch formed or a revision written without first reading the workspace mandate risks proposing something a higher scope has already settled, or duplicating a coordination constraint that belongs one level up.
 
 - `.acm/destination.md` (or legacy `.acm/vision.md`) — what the operator has explicitly said (if it exists). Apply the fallback rule above.
 - `.acm/orientation.md` — what the agent's last arc-read concluded about the target.
