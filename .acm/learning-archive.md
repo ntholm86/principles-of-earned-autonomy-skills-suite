@@ -1117,6 +1117,18 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** The operator-gate caught what the loop's own process did not, immediately, in the same session -- a new form of gate-effectiveness evidence distinct from prior "which next move to pick" evidence: this is the gate catching a bad implementation of an agreed destination-level concern.
 
+## 2026-08-01 — orient-post-genericity-reversal
+
+**[!REALIZATION]** :* not fired -- extends rather than contradicts the trail-sessions-mandate removal entry and the reversal entry's own realizations.
+
+## 2026-08-01 — orient-post-genericity-reversal
+
+**[!REALIZATION]** Read as one document, this window is the clearest evidence this repo's trail has produced on the destination's own oldest named gap (Learning: "the most underdeveloped of the three"). A destination note asking the loop to derive that improving its own reasoning matters did not, by itself, make the loop apply its own already-recorded learning more carefully in the very next action -- if anything, the new framing appears to have competed with, rather than reinforced, the older and more mundane precedent. The operator-gate closed the gap this time. Whether it needs to every time, or whether a structural re-trigger point for learning.md is worth adding, is now the single most concrete open design question this repo's trail has surfaced.
+
+## 2026-08-01 — trail-decision-precedent-check-requirement
+
+**[!REALIZATION]** This entry is itself the first live test of the new requirement -- and it passed, because the precedent check was performed deliberately and stated explicitly before the Decision was finalized, not added afterward as decoration. That is a meaningfully different discipline than what happened in the withdrawn entry, where a directly relevant precedent existed in learning.md and was not re-checked before the contradicting edit was written. The difference this time was not a smarter mechanism -- it was choosing to grep learning.md for specific terms before deciding, the same action any future agent following this new marker definition would be asked to take.
+
 ---
 
-**278 markers — 257 realisations, 21 reversals**
+**281 markers — 260 realisations, 21 reversals**

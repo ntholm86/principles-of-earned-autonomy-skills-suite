@@ -1,5 +1,10 @@
 # Changelog
 
+## v4.20.0 — 2026-08-01
+
+### Removed
+- **`.acm/vision.md` legacy-fallback support removed entirely.** The Vision→Destination rename (v2.0.0, 2026-05-28) added a fallback so repos that hadn't migrated yet would still work — explicitly scoped as transition-period support ("may be removed in a future major version"). Two months later, the fleet migration is confirmed complete (the 8 operator repos migrated 2026-05-28) and no repo touched this session, including `agent-context-memory` and `work-skill`, references `vision.md` at all. Removed every "or legacy `.acm/vision.md`" mention and the migration-hint mechanism from `destination/SKILL.md` (which owned the fallback rule), and the corresponding read-instruction clauses in `improve/SKILL.md`, `intent/SKILL.md`, `orient/SKILL.md` (including its frontmatter description), and `trail/SKILL.md`'s directory listing. `.acm/destination.md` is now the only recognized filename — a repo with only an old `vision.md` will be treated as having no destination yet, the same as any repo that hasn't run Destination. `destination/SKILL.md` 2.2.0 -> 2.3.0; `improve/SKILL.md` 3.12.3 -> 3.12.4; `intent/SKILL.md` 1.3.0 -> 1.3.1; `orient/SKILL.md` 2.1.0 -> 2.1.1; `trail/SKILL.md` 2.4.0 -> 2.4.1.
+
 ## v4.19.0 — 2026-08-01
 
 ### Fixed

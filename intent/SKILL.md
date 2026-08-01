@@ -1,6 +1,6 @@
 ---
 name: intent
-version: 1.3.0
+version: 1.3.1
 description: 'Apply Operator''s Intent to the user''s own prompt before acting. Interpret what the user is trying to achieve, not what they literally wrote. Narrate the interpretation so the user can correct drift before work begins. USE WHEN: any substantive request that implies work (build, fix, improve, explain, investigate, decide). SKIP WHEN: the request is unambiguous and mechanical (a specific file read, a one-line command, a yes/no confirmation).'
 argument-hint: 'Triggered automatically by any substantive user prompt; can also be invoked explicitly: "apply intent to this request"'
 ---
@@ -37,7 +37,7 @@ A single prompt is a thin signal. Before extracting intent, read what already ex
 
 **ACM §4 Scoped Memory — read parent scopes first.** Before reading the repo's own `.acm/destination.md`, traverse parent directories upward and read any `.acm/destination.md` found there. Higher-scope mandates govern lower-scope ones — if a workspace or org destination conflicts with the repo destination, the higher scope wins. Label each scope when reading (e.g., "workspace mandate", "repo mandate"). Stop traversal when any of: filesystem root reached; a `.acm-root` marker file is found in a directory (operator-declared ceiling — read that directory's `.acm/` then stop); or 4 levels traversed (implementation ceiling). A prompt interpreted without the workspace mandate may miss cross-repo coordination constraints that reshape what the prompt actually means.
 
-- **Destination** (`.acm/destination.md`, with `.acm/vision.md` as legacy fallback) — the operator-held destination. If present, this is the most important context. The prompt is a single instruction; the destination is the overarching goal it serves. Read it first. Interpret the prompt in light of where the operator has said they are trying to go.
+- **Destination** (`.acm/destination.md`) — the operator-held destination. If present, this is the most important context. The prompt is a single instruction; the destination is the overarching goal it serves. Read it first. Interpret the prompt in light of where the operator has said they are trying to go.
 - **orientation.md** (`.acm/orientation.md`) — the Orient-derived current orientation. Where the work actually is right now, what the loop has been attending to, what findings have accumulated. The prompt means something different depending on whether the target is early-stage, mid-refactor, or nearly converged.
 - **The trail** (`.acm/audit-trail.md`) — past decisions, reversals, and realisations reveal what the user has consistently cared about, what they rejected, and where things went wrong before. A pattern of `[!REVERSAL]` entries around a particular approach is stronger evidence of intent than any single prompt.
 - **The conversation** — corrections, approvals, and the moments the user stepped in all carry intent signal. A user who keeps redirecting toward simplicity is telling you something that no single prompt states explicitly.
@@ -87,7 +87,7 @@ Proceed with the interpreted task. If during the work the interpretation turns o
 
 This skill runs first. When Improve or Probe is also active, Intent operates on the prompt that identifies the target before those skills examine the target itself. If Intent changes what the target is, the downstream skill works on the corrected target.
 
-When Destination or Orient is also active, their output files (`destination.md` — with `vision.md` as legacy fallback — and `orientation.md`) are already read as part of Intent's own 'Read the accumulated context' step — no additional ordering is needed. Intent reads these files; it never writes them.
+When Destination or Orient is also active, their output files (`destination.md` and `orientation.md`) are already read as part of Intent's own 'Read the accumulated context' step — no additional ordering is needed. Intent reads these files; it never writes them.
 
 When Trail is also active, paste the Intent narration verbatim into the "Interpretation of the ask" section of the log entry. A session with Intent but no Trail means the next session starts cold — the interpretation was visible once and is now gone.
 

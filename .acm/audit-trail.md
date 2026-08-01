@@ -10134,3 +10134,67 @@ There is no separate Decision/Action field -- Orient is observational; the artif
 **Across-trail macro-Hansei**
 
 [!REALIZATION] Read as the whole arc from the very first v3-redesign entry through today: the loop has repeatedly demonstrated it can find, diagnose, and fix genuine defects (mojibake, BOM corruption, file-scope gaps, version drift) and can even extend its own reasoning framework (double-loop learning in two skills) and contribute upstream to a different repo's specification. What it has not yet done, across the entire trail, not just this window, is produce or seek evidence that anyone other than the operator has picked this up. This is the single most load-bearing gap this repo's own destination names, and today's session -- despite being unusually productive -- did not close any distance on it. Naming this as the arc's actual state, not just this window's, since the pattern is consistent across the whole history, not new to today.
+
+## 2026-08-01 - remove-vision-md-legacy-fallback
+
+- target: skills repo (this repo) -- destination/SKILL.md, improve/SKILL.md, intent/SKILL.md, orient/SKILL.md, trail/SKILL.md
+- operator: maintainer (Nils Holmager)
+- agent: Claude Sonnet 4.5 (GitHub Copilot)
+- skill: improve
+- outcome: removed .acm/vision.md legacy-fallback support entirely across all five skill files that referenced it; the fallback was explicitly scoped at introduction as transition-period-only support
+- delta: destination/SKILL.md 2.2.0 -> 2.3.0; improve/SKILL.md 3.12.3 -> 3.12.4; intent/SKILL.md 1.3.0 -> 1.3.1; orient/SKILL.md 2.1.0 -> 2.1.1; trail/SKILL.md 2.4.0 -> 2.4.1; CHANGELOG.md v4.20.0 added
+
+### Interpretation of the ask
+
+Operator: "we can remove fallbacks now for .acm/vision.md fx. understand my intent - use improve." I interpreted this as: the Vision->Destination rename happened over two months ago (2026-05-28, v2.0.0), the fallback was explicitly documented at introduction as transition-period-only ("This fallback exists for the transition period. It may be removed in a future major version" -- destination/SKILL.md, pre-edit), and the operator judges enough time has passed to drop it, consistent with today's broader theme of simplification and closing loose ends once their original justification has expired.
+
+### Examination
+
+Purpose lens: read destination/SKILL.md's own fallback rule directly rather than assuming it was still needed -- confirmed it was always scoped as temporary. Checked whether removal is actually safe rather than assuming the operator's timing judgment alone: grepped every repo touched this session (agent-context-memory, work-skill) for "vision.md" -- zero references in either, both already fully on destination.md. Checked this repo's own trail for the fleet-migration entry (`fleet-rename-vision-to-destination`, 2026-05-28) confirming all 8 of the operator's own repos carrying the old artifact were migrated at rename time. Combined with this session's own Orient finding (zero evidence of any external, non-operator adoption across this repo's entire trail), there is no known repo, inside or outside this session's reach, still depending on the fallback.
+
+Grepped all six skill files for "vision" and "vision.md" -- found 18 genuine references across 5 files (destination, improve, intent, orient, trail; probe correctly has none, since it never reads destination.md). Also checked README.md, INSTALLING.md, QUICKSTART.md, POSITION.md, PRINCIPLES.md directly -- zero mentions in any live user-facing doc, meaning the fallback was purely an internal skill-instruction detail, not something documented to end users. CHANGELOG.md's historical entries mentioning vision.md (describing the original rename and subsequent fixes) were correctly left untouched -- historical narrative, not live behavior description, same class of exemption already established for CHANGELOG.md and audit-trail.md elsewhere in this session.
+
+### Decision
+
+[!DECISION] Remove the fallback entirely rather than a partial reduction (e.g., keeping a bare "if vision.md exists, suggest renaming it" notice without treating it as a read-equivalent). Precedent check: grepped learning.md/learning-archive.md for "vision.md fallback", "legacy artifact", "transition period" before deciding -- found only the original rename entries describing the fallback's introduction and intended temporary scope; no precedent argues for a partial removal instead of a full one, and the original design already anticipated a clean removal ("may be removed in a future major version," not "may be narrowed").
+
+[!DECISION] Bump destination/SKILL.md with a minor version increment (2.2.0 -> 2.3.0) since it owned the actual fallback *behavior* (not just a mention of it) and this changes what the skill does for a hypothetical unmigrated repo; treat the other four files' edits as patch-level (they only removed a documentation clause describing behavior destination/SKILL.md itself no longer implements, not a change to their own behavior contract).
+
+Rejected alternative: treat this as a breaking/major version change for destination/SKILL.md (as the original Vision->Destination rename was, 1.x -> 2.0.0). Rejected -- that rename changed the *canonical artifact name* affecting every existing installation; this change removes a *compatibility shim* for a transition that has already completed, affecting only the (empirically absent) population still on the old name. The two changes are not the same magnitude.
+
+Rejected alternative: leave the fallback in place indefinitely as low-cost insurance. Rejected -- it is not actually zero-cost: it adds a parenthetical clause to nearly every destination-reading instruction across five files, each one a small tax on every future read of those files, for a compatibility path with no known remaining beneficiary. This is consistent with today's own destination-level efficiency concern (token/resource cost weighed against value).
+
+### Prediction
+
+I will remove 18 references across 5 skill files plus one frontmatter description, bump 5 version numbers, and add a CHANGELOG entry. I expect python verify.py to pass clean (no check depends on the removed wording; ACM_SCOPE_TRAVERSAL_INVARIANT's exact-match string is unrelated to this text and untouched). I expect this NOT to touch probe/SKILL.md (never referenced vision.md) or any live user-facing doc (none mentioned it).
+
+### Action
+
+Edited destination/SKILL.md: simplified the header provenance note, replaced the "Artifact name and fallback" section with a plain "Artifact name" section, removed all "(or legacy .acm/vision.md)" clauses and the migration-hint/legacy-file-handling paragraph. Edited improve/SKILL.md, intent/SKILL.md, orient/SKILL.md (including its frontmatter description), and trail/SKILL.md's directory listing to drop their corresponding fallback-mention clauses. Confirmed via a follow-up grep that all remaining "vision" matches in the six skill files are false positives (the substring "vision" inside "re-vision" in "destination-revision") -- no real references remain. Confirmed README.md/INSTALLING.md/QUICKSTART.md/POSITION.md/PRINCIPLES.md never mentioned vision.md, so no live user-facing doc needed changes. Bumped all five version numbers. Added CHANGELOG.md v4.20.0 entry. Regenerated history.md/learning.md/learning-archive.md and ran python verify.py -- passed clean on the first attempt.
+
+Comparing outcome to prediction: held on every point.
+
+### Reflection
+
+[!REALIZATION] This is a clean example of a compatibility shim being retired on schedule rather than accumulating indefinitely as unexamined insurance -- the original design (destination/SKILL.md, 2026-05-28) explicitly named the condition for its own removal ("the transition period... may be removed in a future major version") rather than leaving it open-ended, and this entry is that condition being checked and found satisfied, not assumed. This is a small but genuine instance of the suite's own design discipline (name the retirement condition, don't just add compatibility forever) paying off.
+
+Named blind spot: I verified no repo *this session touched* still references vision.md, and relied on the fleet-migration trail entry for the operator's own broader repo set. I have not independently verified every one of the operator's repos beyond what this session directly checked -- if some unmigrated repo exists outside this session's visibility, it will now see "no destination.md found" rather than a fallback read, which is a graceful (not silent-failure) degradation, but still worth naming as unverified beyond the evidence actually gathered.
+
+Imagined-reader pushback: "You removed a documented compatibility feature based on absence of evidence (no repo you checked still uses it) rather than presence of evidence (confirming every possible repo has migrated) -- isn't that the wrong direction of proof for a removal?" Fair point, but the original fallback's own design already anticipated exactly this shape of decision -- it was scoped as temporary from day one, with removal conditioned on the transition period being over, not on exhaustively proving zero remaining users. Absence of evidence is the correct standard for retiring a explicitly-temporary shim whose own documentation named a removal condition in advance; it would be the wrong standard for removing a feature that was never scoped as temporary.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired -- this is a new kind of change (retiring a scoped-temporary compatibility shim on schedule), not a continuation of today's file-scope-gap or BOM-fix families.
+- *About to declare silence:* not fired -- this run made a change.
+- *Contradicts prior [!REALIZATION]:* not fired -- consistent with, and fulfills, the original fallback design's own stated removal condition.
+- *Operator explicitly asked:* FIRED -- operator directly requested "we can remove fallbacks now for .acm/vision.md."
+
+**Across-trail macro-Hansei**
+
+[!REALIZATION] No new governing-variable diagnosis needed here; this entry does not extend or contradict the day's other recurring-pattern diagnoses. It is worth noting as a distinct, positive category from those: this is the first entry today that closes a piece of the suite's OWN evolution (retiring a self-scoped temporary feature) rather than fixing a defect (encoding, file-scope, version drift). The suite's design discipline of naming removal conditions in advance, rather than leaving compatibility shims open-ended, is what made this decision fast and low-risk to make today.
+
+### Candidate Next Moves
+
+1. **Exercise Orient's new step 3b in a live run** -- still the oldest untested item from earlier today.
+2. **Decide on the duplicate "Section 5" numbering defect found in agent-context-memory/SPEC.md** -- a different repo's decision.
+3. Settle whether a target-agnostic formulation of "self-targeting should surface reasoning-capability gaps" is even coherent -- still carried, deliberately not rushed.
