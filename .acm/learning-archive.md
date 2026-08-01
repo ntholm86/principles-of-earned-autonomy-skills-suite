@@ -1081,6 +1081,18 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** :* not fired -- extends rather than contradicts the 2026-07-31 double-loop addition and the destination.md's own "Learning... most underdeveloped" claim.
 
+## 2026-08-01 — improve-self-targeting-reasoning-capability-instrument
+
+**[!REALIZATION]** This entry is a direct test of whether a destination note, freshly written, can be turned into a loop behavior change in the very next iteration -- not just cited as context for some future run. That much held: the note existed, and this run built on it within the same session. What remains genuinely unproven is the harder claim underneath it: whether the loop, self-targeting, can derive a reasoning-capability gap on its own initiative, without the destination note having been handed to it moments before by the operator in the same conversation. This run is evidence of "the destination note is actionable," not yet evidence of "self-targeting reliably surfaces reasoning-capability gaps unprompted." That distinction should be tested by a future self-targeting run that has NOT just had this exact gap named to it in the same session -- ideally a genuinely fresh session.
+
+## 2026-08-01 — reversal-self-targeting-branch-violates-genericity
+
+**[!REALIZATION]** The precedent that should have prevented this mistake was already sitting in learning.md -- the exact compact learning surface improve/SKILL.md step 1 instructs every run to read before examining anything, specifically framed as faster and more reliable than re-reading the full trail. I had, minutes earlier in the same session, been reasoning explicitly about "learning carry-forward" as one of the destination's named reasoning-capability concerns -- and then proceeded to make an edit that a prior recorded realization already warned against, without re-checking learning.md for exactly this class of proposal before writing it. This is a direct, live instance of the destination note's own concern (does the loop carry prior learning forward, or does it re-derive the same mistake) -- except this time the loop did not carry it forward, it repeated the mistake learning.md had already recorded. This is more honest and more useful evidence about the actual state of the suite's reasoning capability than the meta-instruction I wrote and then had to revert: the real gap is not "the Self-targeting section lacks a self-check" -- it is "the agent does not reliably re-consult learning.md immediately before proposing a skill-file change, even in the same session where it had just been discussing learning carry-forward directly."
+
+## 2026-08-01 — reversal-self-targeting-branch-violates-genericity
+
+**[!REALIZATION]** :* not fired -- this entry directly confirms and acts on the pre-existing learning.md realization rather than contradicting it; it contradicts my OWN prior entry in this session (marked as [!REVERSAL] above), which is the correct marker for that, not this trigger.
+
 ---
 
-**269 markers — 249 realisations, 20 reversals**
+**272 markers — 252 realisations, 20 reversals**

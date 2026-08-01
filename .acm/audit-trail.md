@@ -9992,3 +9992,67 @@ Imagined-reader pushback: "This note commits the repo to a new, somewhat abstrac
 3. **Consider whether convergence declarations on this repo should now explicitly ask "did this arc produce an upstream-worthy finding"** as a named dimension, per the reflection above -- a genuine open question for a future Orient run, not decided here.
 4. **Systematically audit every verify.py check's actual implementation against its docstring/comment claim** -- still the oldest high-confidence candidate, unchanged in priority.
 5. Settle whether a target-agnostic formulation of "self-targeting should surface reasoning-capability gaps" is even coherent -- still carried.
+
+## 2026-08-01 - implement-scale-gap-in-acm-spec-repo
+
+- target: agent-context-memory (cross-repo, per this repo's own destination note about surfacing spec-level findings upstream)
+- operator: maintainer (Nils Holmager)
+- agent: Claude Sonnet 4.5 (GitHub Copilot)
+- skill: improve
+- outcome: implemented the previously-drafted Scale-gap candidate directly in agent-context-memory/SPEC.md; committed locally there, NOT pushed pending operator confirmation (public, published repo)
+- delta: no change to this repo's own files; agent-context-memory SPEC.md 0.3.0 -> 0.4.0 (commit 51e951e, local only)
+
+### Interpretation of the ask
+
+Operator: "I think go ahead and implement it in ACM right now: C:\git\pea\agent-context-memory" -- direct authorization to execute the candidate SPEC.md addition drafted two turns earlier in this conversation (adding a Scale column and explanatory prose to SS5.5's comparator table, citing this repo's learning.md/learning-archive.md pattern as the reference implementation for closing ACM's own acknowledged Scale gap).
+
+### Examination
+
+Worked entirely within agent-context-memory (full reasoning, precedent checks, and decisions recorded in that repo's own .acm/audit-trail.md, per Trail's own rule that the trail belongs with the repo being worked on -- not duplicated here). Summary of what was found there: a genuine, separate pre-existing defect (two different top-level sections both numbered "Section 5") that made a decimal subsection number for the new content ambiguous; resolved by adding the content as prose within the existing "5.5 The Governance Gap" section rather than a new numbered subsection, and explicitly not attempting to fix the numbering collision itself, since doing so would require renumbering "Reference Implementation" to Section 7 and silently orphaning numerous historical, append-only audit-trail.md entries in that repo that reference "Section 6" specifically. Also found and fixed, as a necessary side effect of the version bump this addition required, a pre-existing drift where that repo's own CITATION.cff/.zenodo.json (0.3.2) were already ahead of SPEC.md's own frontmatter version (0.3.0) -- the same class of hand-maintained-version-drift defect found and fixed multiple times in this repo earlier the same session.
+
+### Decision
+
+[!DECISION] Implement the addition directly in agent-context-memory: SS5.5 comparator table gains a Scale column; new prose describes ACM's answer to Scale (mechanical, content-blind bounded-window/archive pattern over the trace tier, contrasted explicitly with MemGPT's agent-decided promotion/demotion, since the latter would reopen capture-author separation); cites this repo's learning.md/learning-archive.md as reference implementation. Synced SPEC.md/CITATION.cff/.zenodo.json to 0.4.0/2026-08-01. Committed locally in that repo (51e951e). Precedent check performed in that repo's own trail entry, not repeated here.
+
+[!DECISION] Do NOT push the commit to agent-context-memory's remote without explicit operator confirmation. That repo is publicly published (prior entries in its own trail reference GitHub Releases and pushes to origin/main) -- pushing to shared, public history is exactly the class of action this workspace's own destination note (2026-07-29, "a class of action no accumulated reasoning quality should auto-authorize") already names as requiring explicit human ceremony every time, independent of how sound the reasoning behind the change is.
+
+[!DECISION] Record this as a fresh entry in this repo's own trail too, closing the loop the earlier destination note opened, even though the substantive reasoning lives in agent-context-memory's own trail -- consistent with Trail's own mandate that any session producing a decision or finding gets an entry, and this repo's own candidate-next-moves list explicitly queued "draft the candidate SPEC.md addition" as the next action.
+
+Rejected alternative: duplicate the full reasoning from agent-context-memory's trail entry into this repo's trail. Rejected -- Trail's own principle is that the trail belongs with the repo being worked on; this entry exists to close the loop and record the cross-repo action from this repo's perspective (what was authorized, what was done, what remains open -- the push decision), not to re-litigate reasoning that already has its own home.
+
+### Prediction
+
+I will implement the SPEC.md addition, version-sync the three metadata files, and commit locally in agent-context-memory, without pushing. I expect this repo's own files to be entirely unaffected except for this trail entry and its derived artifacts.
+
+### Action
+
+Completed in agent-context-memory (see that repo's own .acm/audit-trail.md, entry `scale-gap-closed-via-bounded-trace-tier-windowing`, for full reasoning): edited SPEC.md, CITATION.cff, .zenodo.json; committed locally as 51e951e. Confirmed via `git status`/`git diff --stat` in that repo that exactly the three intended files changed. Did not push. Regenerated this repo's own history.md/learning.md/learning-archive.md and will run verify.py after this entry.
+
+Comparing outcome to prediction: held.
+
+### Reflection
+
+[!REALIZATION] The destination note added earlier this session ("this repo is the site of ACM's own development") was tested within the same conversation that named it, and held: a concrete finding (the Scale gap, the learning.md pattern) was recognized as spec-relevant, surfaced explicitly rather than left as a local-only improvement, drafted as a candidate, and -- once authorized -- actually implemented in the correct upstream location. This is the fastest a destination note has gone from stated expectation to exercised instance in this repo's history.
+
+Named blind spot: whether this pattern (skillsuite finding -> spec-level recognition -> upstream implementation) will recur without this specific, unusually explicit operator-guided conversation is untested. This instance was operator-initiated at every step (pointing out the lineage, confirming intent, authorizing implementation) -- the harder, not-yet-tested version is whether a future Improve/Orient run on this repo would recognize a spec-level finding and propose surfacing it without the operator first drawing the connection.
+
+Imagined-reader pushback: "You committed to a public repo's history without pushing, then wrote about it here instead of just asking whether to push -- why not just ask?" Asking is the next line of this response, not omitted -- the trail entry itself is not the mechanism for asking; stating the decision (commit, don't push, ask explicitly) here is the observability requirement, separate from actually surfacing the question to the operator in conversation.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired -- first instance of this specific cross-repo pattern being exercised end-to-end in this repo's own trail.
+- *About to declare silence:* not fired -- this run's outcome is a completed action (in another repo), recorded here.
+- *Contradicts prior [!REALIZATION]:* not fired -- directly fulfills, rather than contradicts, the destination note and the candidate-next-move it produced.
+- *Operator explicitly asked:* FIRED -- operator directly authorized "implement it in ACM right now."
+
+**Across-trail macro-Hansei**
+
+[!REALIZATION] Per the lighter-weight-pointer convention: no new governing-variable diagnosis is introduced by this entry. It is the direct execution of the destination note added immediately before it in this same session, and the substantive precedent-checking and decision reasoning for the cross-repo action itself lives in agent-context-memory's own trail, not here. What is new is the confirmation that the destination note's own falsifiability test ("does a future entry actually surface and act on a spec-level finding, or does the note sit unused") has already been answered once, within the same conversation that posed it.
+
+### Candidate Next Moves
+
+1. **Get explicit operator confirmation on whether to push commit 51e951e to agent-context-memory's remote** -- named above, the immediate open item.
+2. **Decide whether the duplicate "Section 5" numbering defect in agent-context-memory/SPEC.md warrants its own dedicated fix** -- found and deliberately deferred in that repo's own trail entry, not this repo's decision to make alone.
+3. **Systematically audit every verify.py check's actual implementation against its docstring/comment claim** -- still the oldest high-confidence candidate in this repo, unchanged in priority.
+4. **Exercise step 3b in a live future orient run** -- still the oldest untested item.
+5. Settle whether a target-agnostic formulation of "self-targeting should surface reasoning-capability gaps" is even coherent -- still carried.

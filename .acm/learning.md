@@ -5,19 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 269 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-01 — improve-self-targeting-reasoning-capability-instrument
-
-**[!REALIZATION]** This entry is a direct test of whether a destination note, freshly written, can be turned into a loop behavior change in the very next iteration -- not just cited as context for some future run. That much held: the note existed, and this run built on it within the same session. What remains genuinely unproven is the harder claim underneath it: whether the loop, self-targeting, can derive a reasoning-capability gap on its own initiative, without the destination note having been handed to it moments before by the operator in the same conversation. This run is evidence of "the destination note is actionable," not yet evidence of "self-targeting reliably surfaces reasoning-capability gaps unprompted." That distinction should be tested by a future self-targeting run that has NOT just had this exact gap named to it in the same session -- ideally a genuinely fresh session.
-
-## 2026-08-01 — reversal-self-targeting-branch-violates-genericity
-
-**[!REALIZATION]** The precedent that should have prevented this mistake was already sitting in learning.md -- the exact compact learning surface improve/SKILL.md step 1 instructs every run to read before examining anything, specifically framed as faster and more reliable than re-reading the full trail. I had, minutes earlier in the same session, been reasoning explicitly about "learning carry-forward" as one of the destination's named reasoning-capability concerns -- and then proceeded to make an edit that a prior recorded realization already warned against, without re-checking learning.md for exactly this class of proposal before writing it. This is a direct, live instance of the destination note's own concern (does the loop carry prior learning forward, or does it re-derive the same mistake) -- except this time the loop did not carry it forward, it repeated the mistake learning.md had already recorded. This is more honest and more useful evidence about the actual state of the suite's reasoning capability than the meta-instruction I wrote and then had to revert: the real gap is not "the Self-targeting section lacks a self-check" -- it is "the agent does not reliably re-consult learning.md immediately before proposing a skill-file change, even in the same session where it had just been discussing learning carry-forward directly."
-
-## 2026-08-01 — reversal-self-targeting-branch-violates-genericity
-
-**[!REALIZATION]** :* not fired -- this entry directly confirms and acts on the pre-existing learning.md realization rather than contradicting it; it contradicts my OWN prior entry in this session (marked as [!REVERSAL] above), which is the correct marker for that, not this trigger.
+Showing the most recent 60 markers. 272 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-01 — reversal-self-targeting-branch-violates-genericity
 
@@ -246,6 +234,18 @@ Showing the most recent 60 markers. 269 older marker(s) are in `.acm/learning-ar
 ## 2026-08-01 — destination-note-skillsuite-as-acm-development-site
 
 **[!REALIZATION]** This entry is a live test of the destination note it just added: it recognized the Scale-gap/learning.md-pattern connection as evidence worth citing in a destination-level note, rather than only as conversational color. Whether that recognition generalizes to future, less operator-prompted instances -- the loop noticing a spec-level implication on its own initiative, the way this session has repeatedly tested whether the loop derives reasoning-capability gaps unprompted -- remains exactly as untested as every prior version of that same open question in this repo's trail.
+
+## 2026-08-01 — implement-scale-gap-in-acm-spec-repo
+
+**[!REALIZATION]** The destination note added earlier this session ("this repo is the site of ACM's own development") was tested within the same conversation that named it, and held: a concrete finding (the Scale gap, the learning.md pattern) was recognized as spec-relevant, surfaced explicitly rather than left as a local-only improvement, drafted as a candidate, and -- once authorized -- actually implemented in the correct upstream location. This is the fastest a destination note has gone from stated expectation to exercised instance in this repo's history.
+
+## 2026-08-01 — implement-scale-gap-in-acm-spec-repo
+
+**[!REALIZATION]** :* not fired -- directly fulfills, rather than contradicts, the destination note and the candidate-next-move it produced.
+
+## 2026-08-01 — implement-scale-gap-in-acm-spec-repo
+
+**[!REALIZATION]** Per the lighter-weight-pointer convention: no new governing-variable diagnosis is introduced by this entry. It is the direct execution of the destination note added immediately before it in this same session, and the substantive precedent-checking and decision reasoning for the cross-repo action itself lives in agent-context-memory's own trail, not here. What is new is the confirmation that the destination note's own falsifiability test ("does a future entry actually surface and act on a spec-level finding, or does the note sit unused") has already been answered once, within the same conversation that posed it.
 
 ---
 
