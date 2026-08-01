@@ -201,6 +201,7 @@ Do not edit by hand — re-run the command to refresh.
 | · 194 | 2026-08-01 | close-kaikaku-thread-via-existing-purpose-lens-not-new-mechanism | confirmed the operator's own suggestion was the right fix - no new Kaikaku-branch needed in Orient; one sentence now routes deutero-learning findings through Improve's existing Purpose lens/Kaikaku question, with Convergence Is Silence as the redesign validation bar | orient/SKILL.md 2.2.0 -> 2.3.0; CHANGELOG.md v4.22.0 added |
 | ▸ 195 | 2026-08-01 | restore-ooda-pdca-premortem-lineage-citations | restored PDCA, OODA, and pre-mortem lineage citations found dropped between v1's kaizen.md and v3's Improve/Orient split, first named two entries ago as a standing candidate | improve/SKILL.md 3.12.4 -> 3.13.0; orient/SKILL.md 2.3.0 -> 2.4.0; CHANGELOG.md v4.23.0 added |
 | ▸ 196 | 2026-08-01 | intent-gains-reader-side-example-stripping-test | added a reader-side mirror of Principle 1's writer-side test, closing a failure caught live in this session | intent/SKILL.md 1.3.1 -> 1.4.0; CHANGELOG.md v4.24.0 added |
+| ▸ 197 | 2026-08-01 | capture-model-capability-bounds-skill-fidelity | captured a premise not stated anywhere - skill execution fidelity is bounded below and scaled above by the executing model's capability - distinct from Principle 3's evaluator-diversity rationale | .acm/destination.md +1 note; no SKILL.md changes |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -948,4 +949,4 @@ Do not edit by hand — re-run the command to refresh.
 
 - **decided:** Add one Extract-step probe to intent/SKILL.md: strip a prompt's given examples and check whether the underlying goal survives; if not, illustration has been mistaken for enumeration.
 
-**196 runs total — 181 with changes, 15 silence**
+**197 runs total — 182 with changes, 15 silence**

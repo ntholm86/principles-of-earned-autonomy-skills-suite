@@ -5,11 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 289 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-01 — confirm-bom-root-cause-and-fix-verifypy
-
-**[!REALIZATION]** The recurring-finding-class trigger fired, but the macro-Hansei for this specific pattern was already performed in the immediately prior entry (governing-variable diagnosis: no single canonical file-scope list in verify.py -- REQUIRED_FILES, STALE_PATH_DOCS, and ACM_SCOPE_TRAVERSAL_FILES each independently go stale). This entry does not change that diagnosis; it is a direct continuation of acting on it (root-cause confirmation, then one more fix in the already-agreed "one at a time" sequence), not a new instance requiring a fresh governing-variable read. Repeating the full macro reflection verbatim here would be ceremony without new signal -- the honest record is that the check was made, the same governing variable still applies, and no revision to it is warranted from this entry's evidence.
+Showing the most recent 60 markers. 290 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-01 — close-create-file-bom-blind-spot-and-fix-installing-md
 
@@ -246,6 +242,10 @@ Showing the most recent 60 markers. 289 older marker(s) are in `.acm/learning-ar
 ## 2026-08-01 — intent-gains-reader-side-example-stripping-test
 
 **[!REALIZATION]** :* not fired.
+
+## 2026-08-01 — capture-model-capability-bounds-skill-fidelity
+
+**[!REALIZATION]** :* not fired -- extends, does not contradict, Principle 3's evaluator-diversity rationale by naming what it does not cover.
 
 ---
 

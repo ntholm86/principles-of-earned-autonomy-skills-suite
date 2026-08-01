@@ -10421,3 +10421,29 @@ This is a different finding-class than the last several entries (which found exi
 ### Candidate Next Moves
 
 1. Test this new probe's actual usefulness the next time a prompt contains genuinely ambiguous examples (not the clear-in-hindsight case that motivated it).
+
+## 2026-08-01 - capture-model-capability-bounds-skill-fidelity
+
+- target: .acm/destination.md (capture only; no skill-file implementation)
+- operator: maintainer (Nils Holmager)
+- agent: GitHub Copilot (Claude Sonnet 5)
+- skill: destination + trail
+- outcome: captured a premise not stated anywhere - skill execution fidelity is bounded below and scaled above by the executing model's capability - distinct from Principle 3's evaluator-diversity rationale
+- delta: .acm/destination.md +1 note; no SKILL.md changes
+
+Condensed entry, no judgment call: this records a capture the operator explicitly confirmed ("yea") after I proposed it, following the same destination-first pattern used throughout this session. No mechanism decided; noted as a candidate for upstream contribution to the canonical principles-of-earned-autonomy repo, not implemented here.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired -- new premise, not a repeat.
+- *About to declare silence:* not fired.
+- *Contradicts prior [!REALIZATION]:* not fired -- extends, does not contradict, Principle 3's evaluator-diversity rationale by naming what it does not cover.
+- *Operator explicitly asked:* FIRED -- operator confirmed the capture directly.
+
+**Across-trail macro-Hansei**
+
+None warranted: a direct capture confirmation, not a request to re-derive an arc-level claim.
+
+### Candidate Next Moves
+
+1. Decide whether and how to actually propose this upstream in the canonical principles-of-earned-autonomy repo - a separate, not-yet-taken action.
