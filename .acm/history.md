@@ -172,6 +172,7 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 165 | 2026-08-01 | orient-zero-new-arc | no new arc since the last orient run -- orientation.md left unchanged; declining to manufacture arc-claims | none |
 | ▸ 166 | 2026-08-01 | trail-drop-sessions-mandate-independent-capture-exists | removed the mandatory .acm/sessions/ session-summary-writing requirement from trail/SKILL.md; audit-trail.md entry remains the sole mandatory artifact | trail/SKILL.md 1.19.0 -> 2.0.0 (breaking -- removes a prior mandate); CHANGELOG.md v4.8.0 added |
 | ▸ 167 | 2026-08-01 | improve-self-targeting-reasoning-capability-instrument | added an explicit self-check to improve/SKILL.md's Self-targeting section distinguishing reasoning-capability gaps from textual/mechanical ones; first direct application of the newly-drafted destination note | improve/SKILL.md 3.11.0 -> 3.12.0; CHANGELOG.md v4.9.0 added; .acm/destination.md's uncommitted 2026-08-01 note now committed alongside this change |
+| ▸ 168 | 2026-08-01 | reversal-self-targeting-branch-violates-genericity | reverted the previous entry's addition to improve/SKILL.md's Self-targeting section; it violated this suite's own "Generic first" constraint and an already-recorded lesson in learning.md | improve/SKILL.md 3.12.0 -> 3.12.1 (reversal); CHANGELOG.md v4.9.1 [correction] entry added |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -802,4 +803,9 @@ Do not edit by hand — re-run the command to refresh.
 
 - **decided:** Extend improve/SKILL.md's Self-targeting section with an explicit self-check: when self-targeting, ask whether the highest-leverage gap is in the agent's own reasoning/interpretive capability (intent decompression, governing-variable challenge, learning carry-forward) rather than only in the skill files' wording or structure. Require the reflection step to name which of the two happened, so a textual fix cannot pass as a reasoning-capability one or vice versa.
 
-**167 runs total — 153 with changes, 14 silence**
+### Run 168 — 2026-08-01 — reversal-self-targeting-branch-violates-genericity
+
+- **decided:** Fully revert the addition -- restore improve/SKILL.md's Self-targeting section to its exact pre-v4.9.0 wording. Do not attempt to write a "generic version" of the same insight in this same entry. The underlying concern (self-targeting runs should be able to surface reasoning-capability gaps, not only artifact-level ones) is left unresolved rather than hastily re-solved with another special-cased instruction under time pressure -- if a genuinely target-agnostic formulation exists, it deserves its own careful pass, not a rushed patch appended to a correction entry.
+- **REVERSAL:** The entry "improve-self-targeting-reasoning-capability-instrument" (2026-08-01, this same session) added a self-targeting-specific paragraph to improve/SKILL.md's Self-targeting section. This entry fully reverses that addition after the operator identified it violates the suite's own genericity constraint.
+
+**168 runs total — 154 with changes, 14 silence**

@@ -1,5 +1,10 @@
 # Changelog
 
+## v4.9.1 — 2026-08-01 [correction]
+
+### Reverted
+- **`improve/SKILL.md`'s Self-targeting section reverted to its pre-v4.9.0 wording (3.12.0 → 3.12.1).** The v4.9.0 addition named "this suite," a dated destination note, and specific self-targeting behavior inside a skill file that must work generically across any target repo — a direct violation of this suite's own "Generic first" architectural constraint and an already-recorded lesson in `.acm/learning.md` ("remain target-agnostic enough that the self-targeting case falls out without special-casing," from the `reflect-step-hansei-rewrite` entry). Operator caught this immediately on review. The underlying concern (self-targeting runs should be able to surface reasoning-capability gaps, not only artifact-level ones) is not abandoned — it is left unresolved rather than solved with a special-cased instruction, per the same discipline that produced the original wording this change reverts to.
+
 ## v4.9.0 — 2026-08-01
 
 ### Changed

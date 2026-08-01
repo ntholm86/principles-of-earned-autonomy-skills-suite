@@ -8730,3 +8730,68 @@ Imagined-reader pushback: "You wrote a paragraph telling a future agent to ask i
 2. Address destination note item 3 (token/resource efficiency) as its own dedicated iteration -- deferred this run per no-batching.
 3. Test whether the new Self-targeting self-check actually fires usefully in a genuinely fresh session (no primed context from this conversation) -- the strongest possible validation, per the macro-Hansei above.
 4. The suite's older backlog (CITATION.cff currency, B1 replication, mtime freshness, whole-suite mandate gate) remains untouched and available if the operator wants to redirect.
+
+## 2026-08-01 - reversal-self-targeting-branch-violates-genericity
+
+- target: skills repo (this repo) -- improve/SKILL.md
+- operator: maintainer (Nils Holmager)
+- agent: Claude Sonnet 4.5 (GitHub Copilot)
+- skill: improve
+- outcome: reverted the previous entry's addition to improve/SKILL.md's Self-targeting section; it violated this suite's own "Generic first" constraint and an already-recorded lesson in learning.md
+- delta: improve/SKILL.md 3.12.0 -> 3.12.1 (reversal); CHANGELOG.md v4.9.1 [correction] entry added
+
+### Interpretation of the ask
+
+Operator: "I dont like what you did - adding a condition for self-targeting in the improve skill. The skill must be completely target-agnostic." Direct, unambiguous correction of the immediately prior entry. I interpreted this as: revert the specific addition, and understand why it was wrong rather than just mechanically undoing it.
+
+### Examination
+
+Re-read the addition I had just made to improve/SKILL.md's Self-targeting section. It explicitly said "When the target is this suite itself..." and "Per the destination's 2026-08-01 note..." -- language that only makes sense for this one specific repo and only makes sense if a reader already knows this repo's own destination.md contains a dated note. This is a direct violation of destination.md's own "Architectural constraints (not guidelines)": "1. Generic first. No infrastructure, tests, or docs that only make sense because the target is a skills repo."
+
+Checked learning.md for whether this exact failure mode was already a recorded lesson: found it immediately, in the reflect-step-hansei-rewrite entry's realization: "...and remain target-agnostic enough that the self-targeting case falls out without special-casing." That entry explicitly rejected a self-targeting branch for a similar reason during the v3.8.0 Hansei redesign: a special-cased "if self-targeting, also do X" instruction was proposed and rejected specifically because it violated genericity, with a named test for catching this class of mistake (substitute an arbitrary target name -- e.g. a driving school's own operations manual -- into the sentence; if it stops making sense, the wording has smuggled in a repo-specific assumption).
+
+Applying that test retroactively to my reverted text: "When the target is [a driving school's operations manual] itself, ask whether the highest-leverage gap is in the agent's own reasoning... per the destination's 2026-08-01 note" -- fails immediately. The destination-note reference cannot survive the substitution; the whole paragraph could only ever be read by an agent working on this specific repo.
+
+### Decision
+
+[!DECISION] Fully revert the addition -- restore improve/SKILL.md's Self-targeting section to its exact pre-v4.9.0 wording. Do not attempt to write a "generic version" of the same insight in this same entry. The underlying concern (self-targeting runs should be able to surface reasoning-capability gaps, not only artifact-level ones) is left unresolved rather than hastily re-solved with another special-cased instruction under time pressure -- if a genuinely target-agnostic formulation exists, it deserves its own careful pass, not a rushed patch appended to a correction entry.
+
+Rejected alternative: rewrite the paragraph to remove the specific "this suite" / "2026-08-01 note" references while keeping a generic-sounding version of the same self-check. Rejected because I do not yet have confidence that the underlying distinction (reasoning-capability gap vs. artifact-level gap) is even coherent for an arbitrary target -- for most external targets, "the agent's own reasoning" and "the target's structure" are cleanly separable; only for a target that is itself an AI's own reasoning instructions (this suite, or a similar prompt/skill-authoring repo) does the distinction make sense at all. Manufacturing generic-sounding wording around a claim that may only actually hold for one narrow class of targets would be worse than reverting cleanly and leaving the gap named but unsolved.
+
+### Prediction
+
+Reverting will restore improve/SKILL.md to a state where every sentence in the Self-targeting section passes the driving-school substitution test (the two pre-existing sentences already do, since they describe a universal self-referential-testability property using this repo's files only as the illustrative example, not as a load-bearing reference). verify.py will pass with no other changes needed.
+
+### Action
+
+Restored improve/SKILL.md's "## Self-targeting" section to its exact original two-sentence form. Bumped version 3.12.0 -> 3.12.1. Added CHANGELOG.md v4.9.1 [correction] entry documenting the revert and citing the specific learning.md precedent that should have prevented this in the first place. Ran python verify.py after regenerating derived artifacts -- passed clean.
+
+Comparing outcome to prediction: held.
+
+[!REVERSAL] The entry "improve-self-targeting-reasoning-capability-instrument" (2026-08-01, this same session) added a self-targeting-specific paragraph to improve/SKILL.md's Self-targeting section. This entry fully reverses that addition after the operator identified it violates the suite's own genericity constraint.
+
+### Reflection
+
+[!REALIZATION] The precedent that should have prevented this mistake was already sitting in learning.md -- the exact compact learning surface improve/SKILL.md step 1 instructs every run to read before examining anything, specifically framed as faster and more reliable than re-reading the full trail. I had, minutes earlier in the same session, been reasoning explicitly about "learning carry-forward" as one of the destination's named reasoning-capability concerns -- and then proceeded to make an edit that a prior recorded realization already warned against, without re-checking learning.md for exactly this class of proposal before writing it. This is a direct, live instance of the destination note's own concern (does the loop carry prior learning forward, or does it re-derive the same mistake) -- except this time the loop did not carry it forward, it repeated the mistake learning.md had already recorded. This is more honest and more useful evidence about the actual state of the suite's reasoning capability than the meta-instruction I wrote and then had to revert: the real gap is not "the Self-targeting section lacks a self-check" -- it is "the agent does not reliably re-consult learning.md immediately before proposing a skill-file change, even in the same session where it had just been discussing learning carry-forward directly."
+
+Named blind spot: I have not checked whether this same "propose an edit without re-checking learning.md against it" pattern is present anywhere else in this session's other changes (the ACM section 4 additions, the trail sessions/-mandate removal, etc.). This entry only checked the one edit the operator flagged; a broader audit of this session's other changes against learning.md has not been done.
+
+Imagined-reader pushback: "You're now proposing that the real fix is 'try harder to remember to check learning.md' -- that is not a structural fix, it's a resolution to be more careful, which is exactly the kind of unenforceable good intention this suite's own principles distrust (see PRINCIPLES.md's premise: 'the agent is an unreliable narrator of itself'). If this is a real, recurring gap, it needs a structural check, not a promise." This pushback is correct and is exactly why I have not proposed any new mechanism in this entry -- doing so under the same time pressure that produced the mistake being corrected would risk repeating the error one level up (another special-cased, insufficiently-considered instruction). Naming the gap honestly here, without rushing a fix, is the more disciplined move.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired -- this is the first time in this specific session that a change was reverted for violating genericity; not yet a recurring class.
+- *About to declare silence:* not fired -- a change (the revert) was made.
+- *Contradicts prior [!REALIZATION]:* not fired -- this entry directly confirms and acts on the pre-existing learning.md realization rather than contradicting it; it contradicts my OWN prior entry in this session (marked as [!REVERSAL] above), which is the correct marker for that, not this trigger.
+- *Operator explicitly asked:* FIRED -- operator directly identified the problem and directed the correction.
+
+**Across-trail macro-Hansei:**
+
+[!REALIZATION] This session now contains a clean, falsifiable natural experiment in the exact question the destination's 2026-08-01 note raises: can the loop derive that improving its own reasoning capability matters? The honest answer, based on this entry, is: not reliably without operator correction. The loop had direct textual access to the relevant lesson (learning.md, read at the start of the session) and made the mistake anyway when writing a new instruction under the immediate influence of a related but distinct idea (the destination note's reasoning-capability framing). The genuinely useful finding from this whole arc is not the reverted paragraph -- it is this: a destination note naming "improve the agent's own reasoning" as a goal does not, by itself, make the agent apply learning.md more carefully; if anything, the presence of an exciting new framing may have distracted from the more mundane, already-known check. Any future attempt to operationalize the destination's reasoning-capability concern should treat this as the primary evidence, not the paragraph that had to be reverted.
+
+### Candidate Next Moves
+
+1. Do not re-attempt a target-agnostic version of the reverted paragraph without a dedicated, unhurried examination of whether the reasoning-capability-vs-artifact-level distinction is even coherent for a general target -- per the decision above, this may only be a valid concept for self-referential (prompt/skill-authoring) targets, which itself would need to be stated honestly rather than smuggled into a generic-sounding sentence.
+2. Consider whether learning.md needs a more prominent or differently-triggered read instruction -- not "read it once at step 1," but something that fires again specifically before any skill-file edit is proposed, given this entry's evidence that a single read at the start of a long session was not sufficient to prevent a directly-contradicting proposal later in the same session.
+3. Audit this session's other changes (ACM section 4 additions, trail sessions/-mandate removal) against learning.md for the same class of unconsulted-precedent mistake -- named blind spot above, not yet done.
+4. The suite's older backlog (CITATION.cff currency, B1 replication, mtime freshness, whole-suite mandate gate) remains available if the operator wants to redirect away from this thread.

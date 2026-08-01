@@ -1085,6 +1085,22 @@ Compact chronological extract of every `[!REALIZATION]` and `[!REVERSAL]` marker
 
 **[!REALIZATION]** This entry is a direct test of whether a destination note, freshly written, can be turned into a loop behavior change in the very next iteration -- not just cited as context for some future run. That much held: the note existed, and this run built on it within the same session. What remains genuinely unproven is the harder claim underneath it: whether the loop, self-targeting, can derive a reasoning-capability gap on its own initiative, without the destination note having been handed to it moments before by the operator in the same conversation. This run is evidence of "the destination note is actionable," not yet evidence of "self-targeting reliably surfaces reasoning-capability gaps unprompted." That distinction should be tested by a future self-targeting run that has NOT just had this exact gap named to it in the same session -- ideally a genuinely fresh session.
 
+## 2026-08-01 — reversal-self-targeting-branch-violates-genericity
+
+**[!REALIZATION]** The precedent that should have prevented this mistake was already sitting in learning.md -- the exact compact learning surface improve/SKILL.md step 1 instructs every run to read before examining anything, specifically framed as faster and more reliable than re-reading the full trail. I had, minutes earlier in the same session, been reasoning explicitly about "learning carry-forward" as one of the destination's named reasoning-capability concerns -- and then proceeded to make an edit that a prior recorded realization already warned against, without re-checking learning.md for exactly this class of proposal before writing it. This is a direct, live instance of the destination note's own concern (does the loop carry prior learning forward, or does it re-derive the same mistake) -- except this time the loop did not carry it forward, it repeated the mistake learning.md had already recorded. This is more honest and more useful evidence about the actual state of the suite's reasoning capability than the meta-instruction I wrote and then had to revert: the real gap is not "the Self-targeting section lacks a self-check" -- it is "the agent does not reliably re-consult learning.md immediately before proposing a skill-file change, even in the same session where it had just been discussing learning carry-forward directly."
+
+## 2026-08-01 — reversal-self-targeting-branch-violates-genericity
+
+**[!REALIZATION]** :* not fired -- this entry directly confirms and acts on the pre-existing learning.md realization rather than contradicting it; it contradicts my OWN prior entry in this session (marked as [!REVERSAL] above), which is the correct marker for that, not this trigger.
+
+## 2026-08-01 — reversal-self-targeting-branch-violates-genericity
+
+**[!REALIZATION]** This session now contains a clean, falsifiable natural experiment in the exact question the destination's 2026-08-01 note raises: can the loop derive that improving its own reasoning capability matters? The honest answer, based on this entry, is: not reliably without operator correction. The loop had direct textual access to the relevant lesson (learning.md, read at the start of the session) and made the mistake anyway when writing a new instruction under the immediate influence of a related but distinct idea (the destination note's reasoning-capability framing). The genuinely useful finding from this whole arc is not the reverted paragraph -- it is this: a destination note naming "improve the agent's own reasoning" as a goal does not, by itself, make the agent apply learning.md more carefully; if anything, the presence of an exciting new framing may have distracted from the more mundane, already-known check. Any future attempt to operationalize the destination's reasoning-capability concern should treat this as the primary evidence, not the paragraph that had to be reverted.
+
+## 2026-08-01 — reversal-self-targeting-branch-violates-genericity
+
+**[!REVERSAL]** The entry "improve-self-targeting-reasoning-capability-instrument" (2026-08-01, this same session) added a self-targeting-specific paragraph to improve/SKILL.md's Self-targeting section. This entry fully reverses that addition after the operator identified it violates the suite's own genericity constraint.
+
 ---
 
-**270 markers — 250 realisations, 20 reversals**
+**274 markers — 253 realisations, 21 reversals**
