@@ -1,5 +1,10 @@
 # Changelog
 
+## v4.24.0 — 2026-08-01
+
+### Added
+- **`intent/SKILL.md`'s Extract step gains a reader-side mirror of Principle 1's own writer-side test.** Principle 1 already tests instruction-*writers*: "if you removed the specific examples, would an intelligent agent still know what to do?" Nothing tested the *reader* side of the same failure — an agent collapsing a prompt's illustrative examples into an exhaustive checklist. Found live, in-session: the operator gave three spontaneous examples of "what understanding a target's purpose might involve," and the agent treated them as a menu to choose from rather than illustrations of a richer, unenumerated category — despite Intent being explicitly invoked by name moments earlier. Added one probe: strip the prompt's examples and check whether the underlying goal is still visible; if the interpretation only holds together because of the specific examples, illustration has been mistaken for enumeration. `intent/SKILL.md` 1.3.1 -> 1.4.0.
+
 ## v4.23.0 — 2026-08-01
 
 ### Added

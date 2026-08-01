@@ -5,11 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 288 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-01 — confirm-bom-root-cause-and-fix-verifypy
-
-**[!REALIZATION]** :* not fired -- directly continues the sequencing plan from the immediately prior entry.
+Showing the most recent 60 markers. 289 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-01 — confirm-bom-root-cause-and-fix-verifypy
 
@@ -246,6 +242,10 @@ Showing the most recent 60 markers. 288 older marker(s) are in `.acm/learning-ar
 ## 2026-08-01 — restore-ooda-pdca-premortem-lineage-citations
 
 **[!REALIZATION]** :* not fired -- directly closes a candidate named in the two immediately prior entries.
+
+## 2026-08-01 — intent-gains-reader-side-example-stripping-test
+
+**[!REALIZATION]** :* not fired.
 
 ---
 

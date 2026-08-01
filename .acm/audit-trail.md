@@ -10383,3 +10383,41 @@ Mechanical restoration, no judgment call: the citations already existed verbatim
 ### Candidate Next Moves
 
 1. Test the "gap is usually smaller than framed" claim (named two entries ago) against a target other than this repo before trusting it as general.
+
+## 2026-08-01 - intent-gains-reader-side-example-stripping-test
+
+- target: intent/SKILL.md Extract step
+- operator: maintainer (Nils Holmager)
+- agent: GitHub Copilot (Claude Sonnet 5)
+- skill: improve
+- outcome: added a reader-side mirror of Principle 1's writer-side test, closing a failure caught live in this session
+- delta: intent/SKILL.md 1.3.1 -> 1.4.0; CHANGELOG.md v4.24.0 added
+
+[!DECISION] Add one Extract-step probe to intent/SKILL.md: strip a prompt's given examples and check whether the underlying goal survives; if not, illustration has been mistaken for enumeration.
+Rationale: this exact failure happened live, two turns ago in this same session - the operator gave three illustrative examples of what "understanding a target's purpose" might involve, and the agent treated them as an exhaustive menu, despite Intent being explicitly invoked. Principle 1 already has this test for instruction writers; nothing applied it to readers.
+Alternative rejected: rely on the operator to keep catching this live - rejected because destination.md notes are read by future agents asynchronously, with no live corrector present, unlike this chat.
+Alternative rejected: enumerate a fixed list of "signs an example is illustrative" - rejected as the same over-specification failure this fix exists to prevent; a single generic test (strip and check) is the smallest sufficient mechanism.
+Precedent check: learning.md/learning-archive.md had a prior realization about the "substitution test" (swap in an unrelated target, check the wording still holds) used once ad hoc for a specific wording decision, but no standing requirement to apply either test at read-time before narrating an interpretation. This closes that gap generically rather than repeating the one-off.
+
+Prediction: verify.py passes clean; no change needed elsewhere, since this is additive to Intent's existing Extract probes, not a restructuring.
+
+Action: added the probe as a fourth Extract bullet, bumped intent/SKILL.md 1.3.1 -> 1.4.0, added CHANGELOG.md v4.24.0. Ran python verify.py - passed clean. Prediction held.
+
+Reflection: the honest limit here is real and named, not solved - this test reduces but does not eliminate the risk the operator is actually worried about (a future agent misreading a destination.md note with no live corrector present). Full elimination would require Convergence Is Silence's own rigor (independent evaluators) applied to every note, which is not practical at this granularity. This fix is a cheap, generic, targeted reduction of one specific known failure mode, not a claim that misinterpretation risk is now closed.
+
+Named blind spot: this probe has not yet been tested against a prompt where the "is this illustrative or exhaustive" question is genuinely ambiguous rather than clear in hindsight - today's case was clear only after the operator pointed it out.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired -- first time this specific failure (example-as-checklist) has been named as a mechanism gap in this trail.
+- *About to declare silence:* not fired.
+- *Contradicts prior [!REALIZATION]:* not fired.
+- *Operator explicitly asked:* FIRED -- operator asked directly "what can we do about that."
+
+**Across-trail macro-Hansei**
+
+This is a different finding-class than the last several entries (which found existing-but-uncredited mechanisms); this one is a genuine, previously-nonexistent gap in Intent's own protocol, caught through live operator correction rather than self-examination. Worth naming honestly: this fix exists only because the operator caught it in real time, not because any prior self-directed Improve or Orient run surfaced it - which is itself a data point on how much of today's real progress has depended on operator correction rather than autonomous discovery.
+
+### Candidate Next Moves
+
+1. Test this new probe's actual usefulness the next time a prompt contains genuinely ambiguous examples (not the clear-in-hindsight case that motivated it).

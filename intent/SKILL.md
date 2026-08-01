@@ -1,6 +1,6 @@
 ---
 name: intent
-version: 1.3.1
+version: 1.4.0
 description: 'Apply Operator''s Intent to the user''s own prompt before acting. Interpret what the user is trying to achieve, not what they literally wrote. Narrate the interpretation so the user can correct drift before work begins. USE WHEN: any substantive request that implies work (build, fix, improve, explain, investigate, decide). SKIP WHEN: the request is unambiguous and mechanical (a specific file read, a one-line command, a yes/no confirmation).'
 argument-hint: 'Triggered automatically by any substantive user prompt; can also be invoked explicitly: "apply intent to this request"'
 ---
@@ -28,6 +28,7 @@ Before doing anything else, understand the destination the prompt is pointing at
 - **What outcome does the user actually want?** Not the verb they used — the end-state that makes the rest of what they said make sense. "Rewrite this function" might mean make-it-shorter, make-it-correct, match-the-codebase, or teach-me-how-you'd-write-it. These are different tasks.
 - **Why do they want it?** The reason reshapes the work. "Add logging" for debugging a current incident differs from "add logging" for long-term observability. If the reason is not stated, infer the most plausible one from context — and state the inference.
 - **What would count as a wrong interpretation?** Name at least one alternative you considered and rejected, and why. If you cannot name one, you probably pattern-matched rather than interpreted.
+- **Are the specifics given illustrations, or an exhaustive list?** When a prompt includes examples, apply Principle 1's own test in reverse: if the examples were stripped out, would the underlying goal still be visible and coherent? If yes, treat them as illustrations of a category and re-derive the goal in your own words before narrating it. If your interpretation only holds together because of the specific examples — if removing them leaves nothing — you have mistaken illustration for enumeration, the exact failure Operator's Intent exists to prevent when the operator is the one writing the instruction. A prompt can fail this test as easily as a SKILL.md can.
 
 These are probes, not a checklist. Use different probes if the situation calls for it.
 
