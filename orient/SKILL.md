@@ -1,6 +1,6 @@
 ---
 name: orient
-version: 2.2.0
+version: 2.3.0
 description: 'Read the trail as a single document and form arc-level claims about the target. What is the target becoming? Where has the loop''s attention been, and is that where the target''s real weight lies? What does the arc reveal that no individual iteration would surface? Writes .acm/orientation.md — the Orient-derived current orientation for the target. Destination (.acm/destination.md), if present, is the operator-held destination and is read but never written. USE WHEN: about to declare convergence, recurring finding-class suspected, operator asks "how are we doing?", or an independent arc-read is needed without running a full improve loop.'
 argument-hint: 'The target and its trail, and optionally the specific arc-question to answer'
 ---
@@ -130,6 +130,8 @@ Ask:
 Run this step when: the loop is about to declare convergence, the finding pattern looks suspiciously tidy, or the operator explicitly asked how the loop is performing.
 
 **If this step surfaces a structural blind spot in how the loop itself learns** — a lens it never applies, a trigger that never fires, a trail format that hides the evidence it should show — that is not a target-level finding to file away among this run's arc-claims. Name the specific mechanism implicated (a lens, a trigger, a check, the trail format itself), state it as a candidate revision to the loop's own design, and route it to the operator via [Destination](../destination/SKILL.md) — the same way step 3b routes governing-variable findings. A blind spot in how the loop learns is at least as load-bearing as a blind spot in the target itself: it silently caps every future run's ability to find anything the current mechanism cannot see.
+
+Acting on the candidate is itself a subsequent [Improve](../improve/SKILL.md) iteration targeting the implicated mechanism — no separate incremental-vs-radical logic is needed here, because that iteration's own Purpose lens and Kaikaku question (step 3) already make that decision generically, for any target. If the outcome is a redesign of how the loop reasons, its validation is Convergence Is Silence, not the agent's own judgment that it improved.
 
 ### 4b. Extract operational rules (Learning)
 

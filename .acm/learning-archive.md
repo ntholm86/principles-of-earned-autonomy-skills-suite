@@ -1149,6 +1149,10 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** :* not fired -- directly fulfills the carried-forward candidate from three prior entries rather than contradicting any of them.
 
+## 2026-08-01 — audit-learning-precedent-surfaces-position-quickstart-h1-gap-and-systemic-bom
+
+**[!REALIZATION]** Reading this session as one arc: the recurring pattern named above (checks with silent scope gaps) has now appeared three times in one day, each time found by actually re-reading the file/list in question rather than trusting that a prior fix generalized further than it did. The PRINCIPLES.md fix from earlier today explicitly named "audit STALE_PATH_DOCS and ACM_SCOPE_TRAVERSAL_FILES for the same silent-exclusion pattern" as a candidate next move -- that audit still has not been done, and this entry's finding (POSITION.md/QUICKSTART.md missing from REQUIRED_FILES) is arguably the same class of gap that audit was meant to catch, just in a different list (REQUIRED_FILES itself, not the other two). The governing pattern is: whenever this repo adds a new live doc (POSITION.md, QUICKSTART.md were both added well after the original REQUIRED_FILES list was written), nothing currently prompts a check of whether it needs to join every file-scoping list verify.py maintains. Fixing three individual instances of this pattern is not the same as fixing the pattern -- a genuinely systemic answer would be enumerating all of verify.py's file-scoping lists in one place and checking each new live doc against the full set, not discovering each one independently when something happens to force a look.
+
 ---
 
-**286 markers — 265 realisations, 21 reversals**
+**287 markers — 266 realisations, 21 reversals**

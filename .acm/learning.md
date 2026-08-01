@@ -5,11 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 286 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-01 — audit-learning-precedent-surfaces-position-quickstart-h1-gap-and-systemic-bom
-
-**[!REALIZATION]** Reading this session as one arc: the recurring pattern named above (checks with silent scope gaps) has now appeared three times in one day, each time found by actually re-reading the file/list in question rather than trusting that a prior fix generalized further than it did. The PRINCIPLES.md fix from earlier today explicitly named "audit STALE_PATH_DOCS and ACM_SCOPE_TRAVERSAL_FILES for the same silent-exclusion pattern" as a candidate next move -- that audit still has not been done, and this entry's finding (POSITION.md/QUICKSTART.md missing from REQUIRED_FILES) is arguably the same class of gap that audit was meant to catch, just in a different list (REQUIRED_FILES itself, not the other two). The governing pattern is: whenever this repo adds a new live doc (POSITION.md, QUICKSTART.md were both added well after the original REQUIRED_FILES list was written), nothing currently prompts a check of whether it needs to join every file-scoping list verify.py maintains. Fixing three individual instances of this pattern is not the same as fixing the pattern -- a genuinely systemic answer would be enumerating all of verify.py's file-scoping lists in one place and checking each new live doc against the full set, not discovering each one independently when something happens to force a look.
+Showing the most recent 60 markers. 287 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-01 — confirm-bom-root-cause-and-fix-verifypy
 
@@ -246,6 +242,10 @@ Showing the most recent 60 markers. 286 older marker(s) are in `.acm/learning-ar
 ## 2026-08-01 — merge-kaikaku-purpose-lens-threads-and-name-token-efficiency-adoption-link
 
 **[!REALIZATION]** :* not fired -- extends the existing efficiency destination note rather than contradicting it.
+
+## 2026-08-01 — close-kaikaku-thread-via-existing-purpose-lens-not-new-mechanism
+
+**[!REALIZATION]** :* not fired - confirms and closes the immediately prior entries' open threads.
 
 ---
 

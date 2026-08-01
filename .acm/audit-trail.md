@@ -10325,3 +10325,39 @@ None warranted: the operator-explicitly-asked trigger here is a direct capture i
 
 1. Run Improve to decide whether the Purpose lens or a distinct mechanism resolves the Kaikaku-vs-incremental question for deutero-learning findings - the next concrete implementation step, deliberately not done in this entry.
 2. Keep future entries in this thread as short as this one where the underlying change is small - direct application of the efficiency note just captured.
+
+## 2026-08-01 - close-kaikaku-thread-via-existing-purpose-lens-not-new-mechanism
+
+- target: orient/SKILL.md step 4 closing paragraph
+- operator: maintainer (Nils Holmager)
+- agent: GitHub Copilot (Claude Sonnet 5)
+- skill: improve
+- outcome: confirmed the operator's own suggestion was the right fix - no new Kaikaku-branch needed in Orient; one sentence now routes deutero-learning findings through Improve's existing Purpose lens/Kaikaku question, with Convergence Is Silence as the redesign validation bar
+- delta: orient/SKILL.md 2.2.0 -> 2.3.0; CHANGELOG.md v4.22.0 added
+
+[!DECISION] Add one linking sentence to Orient step 4's close instead of new incremental-vs-radical branching logic.
+Rationale: Improve's step 2 (Purpose) and step 3 (Kaikaku) already ask exactly this question, generically, for any target - including a skill file describing the loop's own reasoning, once a deutero-learning finding routes there via a fresh Improve iteration. Adding parallel branching logic to Orient would duplicate what already exists.
+Alternative rejected: write explicit incremental-vs-radical branching into Orient step 4 itself (my own initial proposal) - rejected once the operator pointed at Purpose lens; it would have been new machinery for a decision the framework already makes elsewhere.
+Precedent check: learning.md/learning-archive.md had no prior mention of Kaikaku tied to deutero-learning or Convergence as a redesign validator besides this session's own note; nothing else relevant found.
+
+Prediction: verify.py passes with no regressions; no change needed to improve/SKILL.md itself, since step 2/3 already do the needed work unmodified.
+
+Action: edited the closing paragraph of orient/SKILL.md step 4 (one added sentence), bumped 2.2.0 -> 2.3.0, added CHANGELOG.md v4.22.0. Ran python verify.py - passed clean. Prediction held: improve/SKILL.md untouched.
+
+Reflection: this entry is itself the practiced version of the efficiency note captured two entries ago - the fix and this record are both a fraction of the length of the previous two entries in this thread, because the actual gap was smaller than it first looked. Named blind spot: whether this pattern (real gap turns out smaller than initial framing) will hold on a target neither this operator nor I have looked at yet remains untested.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED - third consecutive entry in this thread finding the gap smaller than framed (Purpose-lens reframing, deutero-learning credit-not-new-mechanism, now this).
+- *About to declare silence:* not fired.
+- *Contradicts prior [!REALIZATION]:* not fired - confirms and closes the immediately prior entries' open threads.
+- *Operator explicitly asked:* FIRED - operator said "the word," invoking the prior turn's explicit offer to proceed.
+
+**Across-trail macro-Hansei**
+
+Three entries in a row in this single thread found the same shape: a perceived cognitive gap (Purpose lens depth, deutero-learning naming, Kaikaku wiring) turned out to already be substantially present, needing a small link or credit rather than new machinery. This is now a real pattern worth naming as a claim: this repo's current governing risk is not missing mechanisms, it is under-recognized existing ones - which is itself consistent with the efficiency note two entries ago (the cheapest fix is usually to look harder at what already exists before building something new). Whether this claim generalizes beyond this one thread, on this one repo, is untested and should not be assumed for other targets.
+
+### Candidate Next Moves
+
+1. Test the "gap is usually smaller than framed" claim against a target other than this repo before trusting it as a general property of the loop, not just this thread.
+2. Restore the OODA/pre-mortem citation dropped between v1 and v3 - still the smallest, most concrete unaddressed item from earlier in this session.

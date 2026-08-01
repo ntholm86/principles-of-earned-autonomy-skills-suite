@@ -1,5 +1,10 @@
 # Changelog
 
+## v4.22.0 — 2026-08-01
+
+### Added
+- **Closed the Kaikaku/Purpose-lens thread with the minimal fix, not a new mechanism.** The operator's own suggestion ("maybe Purpose lens is what should do it") was correct: rather than adding separate incremental-vs-radical branching logic to Orient step 4's deutero-learning close, one clarifying sentence now points to the fact that acting on a routed finding is itself a subsequent Improve iteration on the implicated mechanism — whose existing Purpose lens and Kaikaku question (step 3) already decide incremental vs. redesign generically, for any target. If a redesign results, its validation is named explicitly as Convergence Is Silence, not the agent's own say-so. `orient/SKILL.md` 2.2.0 -> 2.3.0.
+
 ## v4.21.0 — 2026-08-01
 
 ### Added
