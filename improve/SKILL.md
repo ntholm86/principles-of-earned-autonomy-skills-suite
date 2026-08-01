@@ -1,6 +1,6 @@
 ---
 name: improve
-version: 3.12.2
+version: 3.12.3
 description: 'The improvement skill. Understand the ask, examine the target, challenge the first read, decide on one change (or argue for redesign, or declare silence), act, reflect on the target, and record. Combines incremental refinement, structural rethinking, and reflection on the target itself. USE WHEN: improve, audit, review, fix, refactor, redesign, evaluate, what would make this better, am I missing something.'
 argument-hint: 'The target to improve, and optionally the concern (correctness, simplicity, performance, etc.)'
 ---
@@ -58,7 +58,7 @@ This is not ceremony. The most common failure mode in autonomous improvement is 
 
 Look at the target. Read what is there. Run what can be run. Form a mental model of how it works and what it is for.
 
-Three lenses are available as thinking tools — not a procedure, not a checklist. Apply the ones the target invites:
+Several lenses are available as thinking tools — not a procedure, not a checklist. Apply the ones the target invites:
 
 - **Purpose.** Does the target achieve what it is for? Read `.acm/destination.md` (or legacy `.acm/vision.md`) and the target's own README. Is there a gap between the stated goal and what the artifact actually does? Is the design the right one for the job? This lens runs first.
 - **Inconsistency.** Where does the target contradict itself? Mixed conventions, asymmetric handling of similar cases, naming patterns that diverge for no reason. Inconsistency is often a root cause whose symptoms surface elsewhere.

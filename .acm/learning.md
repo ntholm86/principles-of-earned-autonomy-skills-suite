@@ -5,19 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 251 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-01 — acm4-sweep-complete-plus-consistency-enforcement
-
-**[!REALIZATION]** The ACM section 4 traversal gap-closing arc that ran across three sessions (2026-06-22 partial, 2026-07-31 x2, 2026-08-01) is now genuinely complete and, more importantly, self-defending: a future edit to any of the four files' stop-condition wording will fail verify.py immediately rather than silently drifting until a future orient or improve run happens to notice by re-reading the text verbatim, the way this run did. This closes the loop the destination's own Learning section named as underdeveloped ("what to do differently next time") in a structural way, not just a narrative one -- the lesson is now enforced by a tool, not only recorded as a realization for a future agent to rediscover.
-
-## 2026-08-01 — acm4-sweep-complete-plus-consistency-enforcement
-
-**[!REALIZATION]** :* not fired -- resolves, rather than contradicts, the double-loop candidate the prior entry surfaced (the selection-criterion question). Also partially supersedes my own tentative same-session judgment earlier in this run's own examination ("duplication is fine, no infra needed") -- marked as a within-run correction, not a cross-entry reversal, since I caught it before acting, per the [!REVERSAL] guidance for within-iteration backouts. [!REVERSAL] Initial path considered mid-run: declare silence on the duplication question after an abstract argument that four self-contained copies were an acceptable tradeoff. Reversed after actually reading the four paragraphs verbatim and finding orient/SKILL.md's wording had already drifted -- the abstract argument was answering the wrong question (is duplication acceptable in principle) rather than the concrete one (has this specific duplication already caused drift).
-
-## 2026-08-01 — acm4-sweep-complete-plus-consistency-enforcement
-
-**[!REALIZATION]** This is the resolution to the double-loop candidate the prior entry (2026-07-31, improve-destination-acm4-traversal-fix) explicitly surfaced rather than actioned: "should the suite adopt an explicit, stated selection criterion... rather than relying on an inherited list?" This run answered it in practice rather than as policy: stating the criterion once and applying it exhaustively found that the inherited list (intent, probe, trail from the 2026-06-22 entry) had in fact missed destination/SKILL.md, confirming the double-loop concern was correct -- the governing variable (an implicit, unstated selection criterion) really had been the defect, not just the individual missing paragraphs. The fix applied here (mechanical enforcement via verify.py) is a structural answer to that governing-variable problem: it does not depend on any future scan remembering to be exhaustive, because drift is now caught regardless of how the next check is scoped.
+Showing the most recent 60 markers. 254 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-01 — verify-overburden-audit-principles-h1-gap-fix
 
@@ -246,6 +234,18 @@ Showing the most recent 60 markers. 251 older marker(s) are in `.acm/learning-ar
 ## 2026-08-01 — fix-orientation-and-audit-trail-boms-closes-cleanup-arc
 
 **[!REALIZATION]** Per the established lighter-weight-pointer convention: no new governing-variable diagnosis is introduced here. The pattern-family diagnosis stands as recorded in `confirm-bom-root-cause-and-fix-verifypy`; the grouping-vs-risk resolution is this entry's own contribution, noted above, and does not contradict the delegated decision two entries ago -- it is the natural completion of applying that decision with risk-appropriate rigor rather than a uniform template.
+
+## 2026-08-01 — fix-lens-count-miscount-three-vs-four
+
+**[!REALIZATION]** This is a small but clean example of a pattern this session has now seen many times: a fragile, hardcoded specific (a count, a file list, a version number) drifting silently until something unrelated forces a direct look at the actual text. The fix this time explicitly avoided reproducing the same fragility (choosing "Several" over "Four") rather than just resolving the immediate symptom -- consistent with, and reinforcing, the systemic lesson from the REQUIRED_FILES/BOM arc earlier today.
+
+## 2026-08-01 — fix-lens-count-miscount-three-vs-four
+
+**[!REALIZATION]** :* not fired -- consistent with, and an instance of, the "avoid fragile hardcoded specifics" lesson already recorded this session.
+
+## 2026-08-01 — fix-lens-count-miscount-three-vs-four
+
+**[!REALIZATION]** The operator-explicitly-asked trigger firing here, combined with the "not fired" recurring-finding-class result, is worth noting precisely because it did NOT fire as recurring: this session has now seen the "fragile hardcoded specific drifts silently" root-cause shape at least three times (REQUIRED_FILES gap, ACM traversal file lists, and now this lens-count miscount) but each instance has been in different subject matter (file-scoping lists vs. prose counts), so the mechanical recurring-finding-class trigger (which tracks entry-to-entry repetition, not cross-session thematic repetition) correctly does not fire. This is itself worth naming as a limit of the trigger: it catches immediate repetition well but would not, on its own, surface "this is the third distinct instance of the same root-cause shape today" without a broader arc-level read -- exactly the kind of thing an Orient run is positioned to catch that a single Improve iteration structurally cannot.
 
 ---
 

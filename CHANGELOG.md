@@ -1,5 +1,10 @@
 # Changelog
 
+## v4.14.0 — 2026-08-01
+
+### Fixed
+- **`improve/SKILL.md` step 2 said "Three lenses are available" but listed four (Purpose, Inconsistency, Overburden, Waste)** — a stale count left over from when the "Purpose" lens was added after the original three (the Toyota 3M lenses, renamed to English during the v3 redesign: Mura→Inconsistency, Muri→Overburden, Muda→Waste). Fixed by removing the fragile count entirely ("Several lenses") rather than updating it to "Four," since a hardcoded number would just go stale again the next time a lens is added or removed — the same staleness class as several other fixes this session (`REQUIRED_FILES`, ACM traversal file lists). `improve/SKILL.md` 3.12.2 -> 3.12.3.
+
 ## v4.13.0 — 2026-08-01
 
 ### Added

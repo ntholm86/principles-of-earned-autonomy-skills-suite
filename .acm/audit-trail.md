@@ -9575,3 +9575,65 @@ Imagined-reader pushback: "You just did the single riskiest operation in this wh
 3. **Audit `STALE_PATH_DOCS` and `ACM_SCOPE_TRAVERSAL_FILES`** for the same silent-exclusion pattern, still open from several entries ago.
 4. Settle whether a target-agnostic formulation of "self-targeting should surface reasoning-capability gaps" is even coherent -- still carried.
 5. The suite's older backlog (CITATION.cff currency, B1 replication, mtime freshness, whole-suite mandate gate) remains available if the operator wants to redirect.
+
+## 2026-08-01 - fix-lens-count-miscount-three-vs-four
+
+- target: skills repo (this repo) -- improve/SKILL.md
+- operator: maintainer (Nils Holmager)
+- agent: Claude Sonnet 4.5 (GitHub Copilot)
+- skill: improve
+- outcome: fixed a stale lens-count in improve/SKILL.md step 2 ("Three lenses" but four listed), surfaced during a conversational investigation into whether the original Toyota 3M lenses (Muda/Mura/Muri) still exist in this suite
+- delta: improve/SKILL.md 3.12.2 -> 3.12.3; CHANGELOG.md v4.14.0 added
+
+### Interpretation of the ask
+
+The operator asked directly whether waste/unevenness/overburden (the 3M Toyota lenses from an earlier version of this suite) are still applied through some mechanism. Investigating this (grepping archive/v2, the trail, and improve/SKILL.md directly) confirmed all three are present today under English names (Mura -> Inconsistency, Muri -> Overburden, Muda -> Waste, renamed during the v3 redesign per the operator's own documented "get away from the Japanese wordings" instruction), plus a fourth lens ("Purpose") added later with no 3M equivalent. While confirming this, re-reading improve/SKILL.md step 2 directly surfaced that its intro line says "Three lenses are available" while four are listed immediately below -- a genuine, previously unnoticed miscount. I surfaced this as a bonus finding and the operator confirmed: "yes lets do that."
+
+### Examination
+
+Precedent check: grepped learning.md and learning-archive.md for "Three lenses", "four lenses", "lens count" before editing -- no matches. This is a new finding, not a repeat of previously-flagged work.
+
+Purpose lens (applied to the finding itself, appropriately): the "Three lenses" wording is stale relative to the file's own content, not merely inelegant -- it directly contradicts the four bullet points immediately below it, which is a literal instance of the "Inconsistency" lens the sentence is introducing. Traced when "Purpose" was added: the trail shows "Purpose lens (vision-anchored)" being used as far back as the vision/pre-Destination era, well before this session, meaning the miscount has been live for a long time without being caught -- a genuine, if minor, latent defect surfaced only by this conversation's tangential question.
+
+### Decision
+
+[!DECISION] Remove the hardcoded lens count entirely ("Several lenses are available") rather than updating it to "Four." Rationale: a hardcoded number is exactly the fragile-count pattern this session has repeatedly found and fixed elsewhere today (REQUIRED_FILES gaps, ACM traversal file lists) -- updating "Three" to "Four" would only postpone the same staleness to the next time a lens is added or removed (the file's own text explicitly invites adding more: "Add lenses as the target warrants"). Removing the number closes the defect class, not just this instance of it. Precedent check: no existing learning.md/learning-archive.md entry addresses this specific wording; the general "avoid hardcoded counts that silently drift" pattern is well-established in this session's own recent history (verify.py's REQUIRED_FILES/STALE_PATH_DOCS lists) and this decision is consistent with, not contradicting, that pattern.
+
+Rejected alternative: update "Three" to "Four." Rejected per the rationale above -- this would fix the symptom while leaving the exact mechanism that produced it (a hardcoded count next to a list that can change) untouched.
+
+### Prediction
+
+I will change one line in improve/SKILL.md, bump its version 3.12.2 -> 3.12.3, and add a CHANGELOG entry. I expect python verify.py to pass clean. I expect this NOT to change the four lens definitions themselves, only the intro sentence's count wording.
+
+### Action
+
+Changed "Three lenses are available as thinking tools" to "Several lenses are available as thinking tools" in improve/SKILL.md step 2. Bumped version 3.12.2 -> 3.12.3. Added CHANGELOG.md v4.14.0 entry. Regenerated history.md/learning.md/learning-archive.md and ran python verify.py -- passed clean on the first attempt.
+
+Comparing outcome to prediction: held on every point.
+
+### Reflection
+
+[!REALIZATION] This is a small but clean example of a pattern this session has now seen many times: a fragile, hardcoded specific (a count, a file list, a version number) drifting silently until something unrelated forces a direct look at the actual text. The fix this time explicitly avoided reproducing the same fragility (choosing "Several" over "Four") rather than just resolving the immediate symptom -- consistent with, and reinforcing, the systemic lesson from the REQUIRED_FILES/BOM arc earlier today.
+
+Named blind spot: I have not checked whether any other prose in the skill files contains similarly fragile hardcoded counts (e.g., "six skills", "two lenses", "three triggers") that could have drifted the same way. This fix addressed the one instance found, not a systematic sweep for the pattern.
+
+Imagined-reader pushback: "This is a trivial one-word fix elevated to a full trail entry with precedent checks and reflection -- is this proportionate?" The ceremony here is fixed cost per entry regardless of change size, which is a legitimate question this session's own "batching vs. efficiency" thread already raised. This entry does not resolve that question again; it simply follows the established per-entry discipline for a small, single, clearly-scoped fix, consistent with how the other small single-line fixes earlier today (the BOM strips) were each recorded individually before the grouping decision.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired -- this is a new, distinct kind of finding (a fragile hardcoded prose count), not a continuation of the BOM-fix or file-scope-gap families from earlier today.
+- *About to declare silence:* not fired -- this run made a change.
+- *Contradicts prior [!REALIZATION]:* not fired -- consistent with, and an instance of, the "avoid fragile hardcoded specifics" lesson already recorded this session.
+- *Operator explicitly asked:* FIRED -- operator directly confirmed "yes lets do that" in response to the finding I surfaced.
+
+**Across-trail macro-Hansei**
+
+[!REALIZATION] The operator-explicitly-asked trigger firing here, combined with the "not fired" recurring-finding-class result, is worth noting precisely because it did NOT fire as recurring: this session has now seen the "fragile hardcoded specific drifts silently" root-cause shape at least three times (REQUIRED_FILES gap, ACM traversal file lists, and now this lens-count miscount) but each instance has been in different subject matter (file-scoping lists vs. prose counts), so the mechanical recurring-finding-class trigger (which tracks entry-to-entry repetition, not cross-session thematic repetition) correctly does not fire. This is itself worth naming as a limit of the trigger: it catches immediate repetition well but would not, on its own, surface "this is the third distinct instance of the same root-cause shape today" without a broader arc-level read -- exactly the kind of thing an Orient run is positioned to catch that a single Improve iteration structurally cannot.
+
+### Candidate Next Moves
+
+1. **Sweep skill files for other fragile hardcoded counts** ("six skills", version-specific claims, etc.) that could have drifted the same way as the lens-count miscount -- named blind spot above, a natural small follow-up.
+2. **Exercise step 3b in a live future orient run** -- still the oldest untested item; this entry's own macro-Hansei (the trigger's limits re: cross-session pattern detection) is fresh, relevant material for that run.
+3. **Audit `STALE_PATH_DOCS` and `ACM_SCOPE_TRAVERSAL_FILES`** for the same silent-exclusion pattern, still open from several entries ago.
+4. Settle whether a target-agnostic formulation of "self-targeting should surface reasoning-capability gaps" is even coherent -- still carried.
+5. The suite's older backlog (CITATION.cff currency, B1 replication, mtime freshness, whole-suite mandate gate) remains available if the operator wants to redirect.
