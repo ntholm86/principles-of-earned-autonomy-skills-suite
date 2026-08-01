@@ -9847,3 +9847,78 @@ Imagined-reader pushback: "You just spent this entry investigating git tag hygie
 3. **Continue testing the condensed format** on a task that turns out to genuinely have no judgment call (the still-open hardcoded-count sweep is the next candidate) -- this entry's own experience suggests picking a smaller, more contained target than "fix a stale metadata file," which turned out to have more depth than expected.
 4. **Exercise step 3b in a live future orient run** -- still the oldest untested item.
 5. Settle whether a target-agnostic formulation of "self-targeting should surface reasoning-capability gaps" is even coherent -- still carried.
+
+## 2026-08-01 - clarify-history-learning-optional-per-acm-spec-conformance
+
+- target: skills repo (this repo) -- trail/SKILL.md
+- operator: maintainer (Nils Holmager)
+- agent: Claude Sonnet 4.5 (GitHub Copilot)
+- skill: improve
+- outcome: clarified that history.md, learning.md, and learning-archive.md are optional derived convenience artifacts, not required for ACM conformance -- resolved via direct evidence from the authoritative agent-context-memory SPEC.md rather than a unilateral file-count decision
+- delta: trail/SKILL.md 2.3.0 -> 2.4.0; CHANGELOG.md v4.18.0 added
+
+### Interpretation of the ask
+
+Operator asked two connected questions: (1) "we have stuff like history and learnings -- how and when are we supposed to write to that?" and (2) comparing to another operator project (work-skill, which has only destination.md, orientation.md, audit-trail.md) -- "is it possible we should consider using fewer docs in .acm/? remember this skills project is what defines the ACM... but we also need to be efficient." I interpreted this as: (a) a genuine process-clarity gap (the write mechanism for derived files may not be obvious from a fresh read), and (b) a real architectural question about whether the current 6-file .acm/ set (destination, orientation, audit-trail, history, learning, learning-archive) is more than the canonical spec requires, given the operator's own explicit efficiency concern (destination note 2026-08-01 item 3). Applying Intent meant not assuming the operator's stated premise ("this skills project defines the ACM") was accurate without checking -- it was checkable, and checking it changed the shape of the answer.
+
+### Examination
+
+Investigated directly rather than reasoning from memory: found a separate repo, `agent-context-memory` (c:\git\pea\agent-context-memory), containing the actual formal `SPEC.md` (ACM v0.3.0) -- a document this skills repo's own destination.md and CITATION.cff already reference via an "isImplementationOf" relationship, which I had not previously read closely.
+
+Read SPEC.md directly rather than inferring from file names:
+- §1.3 (Trace tier) lists `audit-trail.md`, `orientation.md`, `learning.md`, and `history.md` as reference-implementation examples of "derived artifacts" -- descriptive, not a conformance requirement.
+- §6.1 ("Required files") names only `destination.md` and `audit-trail.md` as required; `orientation.md` is explicitly listed as optional. `learning.md`/`learning-archive.md`/`history.md` do not appear in this list at all.
+- §6.3 ("Minimal Conformance") states six conformance criteria, every one of them a property (mandate exists first, agent reads it first, interpretation visible before action, trace tier append-only, author separation enforced, mandate gate implemented) -- none require any specific file beyond destination.md and audit-trail.md to exist.
+- §6.5 ("This Repository as Reference") states the `agent-context-memory` repo's OWN `.acm/` uses exactly 3 files: destination.md, audit-trail.md, orientation.md -- identical to work-skill's structure, and explicitly calls itself "minimally conformant but not fully conformant" (full conformance requires an evidence-tier harness, unrelated to history.md/learning.md).
+- §6.6 ("Implementation Provenance") states the `.acm/` pattern was publicly released as part of the Principles of Earned Autonomy Skills Suite (this repo) BEFORE the specification was written, and that "the implementation predates and informed the specification."
+
+This last point directly bears on the operator's stated premise. "This skills project is what defines the ACM" is not quite accurate (the formal spec document lives in a separate repo, and that repo's own `.acm/` structure has fewer files than this one) -- but it is not wrong either: this repo's implementation is the historical origin that the later formal spec documents and generalizes. Both facts needed stating precisely rather than either accepting the premise uncritically or dismissing it.
+
+### Decision
+
+[!DECISION] Update trail/SKILL.md's directory listing and surrounding prose to explicitly mark `history.md`, `learning.md`, and `learning-archive.md` as OPTIONAL (not required for ACM conformance), name the specific spec sections that establish this (§6.1, §6.3), and state when to adopt them (once a trail is long enough that full reads become wasteful) rather than presenting them as a default starting configuration. Also mark `orientation.md` as "optional per ACM but recommended," matching the spec's own §6.1 treatment. Precedent check: grepped learning.md/learning-archive.md for "ACM spec", "agent-context-memory", "conformance", "required files" before drafting -- found no prior entry in this repo's own trail that had previously read agent-context-memory's SPEC.md directly and cross-checked file requirements against it. This is new, not a repeat of prior work.
+
+[!DECISION] Do NOT remove history.md/learning.md/learning-archive.md from this repo. This repo's own audit-trail.md is now 900KB+ across 184 entries -- exactly the scale the new documentation says justifies adopting the derived-artifact layer. Removing them here would trade a real, measured efficiency win (the bounded learning.md window, added earlier this session, already cut the mandatory read from 120KB to 34KB) for a symbolic minimalism this repo's own trail size does not support.
+
+[!DECISION] Do NOT edit destination.md to walk back the operator's "this skills project defines the ACM" framing unilaterally. destination.md is operator-held; the correction (origination vs. formal-spec-authorship) is stated here in the trail and in conversation for the operator's own judgment, not imposed on their file.
+
+Rejected alternative: remove history.md/learning.md from this repo to match work-skill and the spec's own reference example exactly. Rejected -- per the rationale above, this repo's trail is large enough that these files earn their keep; matching another project's file count for its own sake is not the same as matching its needs.
+
+Rejected alternative: leave trail/SKILL.md's wording as-is and only answer the question conversationally. Rejected -- the ambiguity is a real, permanent documentation gap (a future reader or implementer, not just this conversation, would hit the same question), and this repo's own destination.md explicitly frames documentation quality as bounded by whether "an intelligent agent would still know what to do" without prior context -- the pre-fix wording did not clear that bar for this specific question.
+
+### Prediction
+
+I will edit trail/SKILL.md's directory listing and two surrounding paragraphs, bump its version 2.3.0 -> 2.4.0, and add a CHANGELOG entry. I expect python verify.py to pass clean (no H1/link/mojibake issues introduced). I expect this NOT to change destination.md, NOT to remove any file from this repo's own .acm/, and NOT to touch work-skill or agent-context-memory (their own maintainers' call, not mine to make unilaterally).
+
+### Action
+
+Read agent-context-memory/SPEC.md directly (sections 1, 2, and 6) rather than relying on file-name inference. Edited trail/SKILL.md: directory listing now marks history.md/learning.md/learning-archive.md as OPTIONAL and orientation.md as "optional per ACM but recommended"; added a new paragraph stating only audit-trail.md is required, citing SPEC.md §6.1/§6.3 explicitly; rewrote the learning.md explanatory paragraph to state these files are never hand-written, are adopted when a trail grows large enough to justify them (not by default), and are skippable entirely; updated the commit-sequence example to note that only audit-trail.md needs committing when the optional files are not in use. Bumped trail/SKILL.md 2.3.0 -> 2.4.0. Added CHANGELOG.md v4.18.0 entry. Regenerated history.md/learning.md/learning-archive.md and ran python verify.py -- passed clean on the first attempt.
+
+Comparing outcome to prediction: held on every point.
+
+### Reflection
+
+[!REALIZATION] This is the sixth distinct instance today of "a claim (this time, an operator-stated premise, not a mechanical check) turned out to be checkable and slightly inaccurate once actually verified against a primary source rather than accepted or inferred" -- following PRINCIPLES.md's H1 gap, the POSITION.md/QUICKSTART.md REQUIRED_FILES gap, the systemic BOM issue, check_no_mojibake's narrow coverage, and the git tag drift. This one is different in kind from the prior five: those were all mechanical artifacts within this repo; this one is a conceptual/architectural claim about this repo's relationship to an external spec. The same discipline (check the primary source directly, don't reason from memory or file-name pattern-matching) resolved it the same way.
+
+Named blind spot: I have not verified whether `work-skill`'s own `.acm/destination.md` or documentation makes any claim about ACM conformance that this finding would affect, nor whether the operator wants `work-skill`'s own docs updated to reference this clarification. That is the operator's project and decision, not assumed here.
+
+Imagined-reader pushback: "You just spent significant effort reading an external spec document to answer what could have been settled by directly saying 'these two files are optional, done' -- was the SPEC.md deep-dive proportionate?" Partially fair. The direct answer ("they're optional, adopt when the trail is large") could have been given without the spec reading. What the spec reading added beyond that: it corrected the operator's stated premise with evidence rather than my own opinion, and it grounded "optional" in an authoritative, citable source rather than my own judgment call -- which matters specifically because the operator explicitly invoked this repo's role in "defining the ACM," making the actual spec's own words the most relevant possible evidence for answering a question about that role.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED -- sixth instance today of "an unverified claim/assumption turns out inaccurate once checked against a primary source," though the first in this specific class (an external spec document, not an internal mechanical artifact). The governing-variable diagnosis already on record (this repo lacks a single canonical source of truth for several categories of "current state" claims) extends naturally to include "claims about this repo's relationship to its own governing spec," broadening the diagnosis's scope again.
+- *About to declare silence:* not fired -- this run made a change.
+- *Contradicts prior [!REALIZATION]:* not fired -- extends, rather than contradicts, the existing governing-variable diagnosis.
+- *Operator explicitly asked:* FIRED -- the operator asked this exact question directly, and explicitly instructed "understand my intent and use improve skill."
+
+**Across-trail macro-Hansei**
+
+[!REALIZATION] Per the lighter-weight-pointer convention: the core governing-variable diagnosis (no single source of truth for several categories of "current state" claims across this repo) stands as recorded in `confirm-bom-root-cause-and-fix-verifypy` and its restatements, now broadened a second time today (first to release/tag hygiene in the CITATION.cff entry, now to this repo's own claimed relationship to an external governing spec). Both broadenings share the same root shape and do not require a new diagnosis, only an acknowledgment that the pattern's scope keeps turning out to be wider than each individual instance suggested. Worth naming as a candidate for the still-pending systematic-audit candidate move: that audit should now explicitly include checking this repo's stated relationships to external repos (agent-context-memory, evo, ai-steward, llm-harness-proxy) against those repos' actual current content, not just this repo's own internal artifacts.
+
+### Candidate Next Moves
+
+1. **Extend the still-pending systematic audit to include this repo's stated relationships to external repos** (agent-context-memory, evo, ai-steward, llm-harness-proxy), not just internal verify.py checks and file-scoping lists -- per the broadened macro-Hansei above.
+2. **Consider whether destination.md's framing of this repo's role relative to agent-context-memory would benefit from an operator-authored clarification** (origination vs. formal-spec-authorship) -- named for the operator's own judgment, not actioned here.
+3. **Systematically audit every verify.py check's actual implementation against its docstring/comment claim in one dedicated pass** -- still the oldest high-confidence candidate, unchanged in priority.
+4. **Exercise step 3b in a live future orient run** -- still the oldest untested item.
+5. Settle whether a target-agnostic formulation of "self-targeting should surface reasoning-capability gaps" is even coherent -- still carried.

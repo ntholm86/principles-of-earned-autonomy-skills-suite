@@ -1057,6 +1057,18 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** :* not fired -- fully consistent with and reuses the prior orient run's output unchanged.
 
+## 2026-08-01 — orient-zero-new-arc
+
+**[!REALIZATION]** The suite's own orientation.md remains: intent/SKILL.md gap already closed (this session), ACM section 4 arc closed and self-enforcing, the older backlog (CITATION.cff currency, B1 replication, mtime freshness, whole-suite mandate gate) is still the single most useful redirect if the operator wants one. Nothing in this zero-entry window changes that. Restating it here rather than in a rewritten orientation.md keeps the distinction clear: orientation.md is the agent's current synthesis of the target, not a running log of every time someone asked for it.
+
+## 2026-08-01 — trail-drop-sessions-mandate-independent-capture-exists
+
+**[!REALIZATION]** The sessions/ mandate was, from the moment it was added, an acknowledged compromise -- the trail-v1-10-0-sessions-mandatory entry made it mandatory to close "the longest-standing Observable Autonomy gap," while the very same skill's Fidelity section already ranked the artifact it mandated as the weakest possible tier. This is a case where a real constraint (no independent capture existed yet) forced a second-best mandate, and the mandate should have carried an explicit sunset condition ("remove this once independent capture exists") rather than being stated as a durable requirement. Worth carrying forward as a general practice: when a spec adopts a second-best mechanism because a better one does not yet exist, name the condition under which the second-best mechanism should be retired, not just the reason it was adopted.
+
+## 2026-08-01 — trail-drop-sessions-mandate-independent-capture-exists
+
+**[!REALIZATION]** :* FIRED -- this directly reverses the 2026-05-02 trail-v1-10-0-sessions-mandatory entry's decision to make sessions/ mandatory, and the reasoning offered there ("no independent capture mechanism existed") is explicitly named and superseded here.
+
 ---
 
-**263 markers — 243 realisations, 20 reversals**
+**266 markers — 246 realisations, 20 reversals**

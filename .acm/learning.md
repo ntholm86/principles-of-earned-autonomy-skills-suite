@@ -5,19 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 263 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-01 — orient-zero-new-arc
-
-**[!REALIZATION]** The suite's own orientation.md remains: intent/SKILL.md gap already closed (this session), ACM section 4 arc closed and self-enforcing, the older backlog (CITATION.cff currency, B1 replication, mtime freshness, whole-suite mandate gate) is still the single most useful redirect if the operator wants one. Nothing in this zero-entry window changes that. Restating it here rather than in a rewritten orientation.md keeps the distinction clear: orientation.md is the agent's current synthesis of the target, not a running log of every time someone asked for it.
-
-## 2026-08-01 — trail-drop-sessions-mandate-independent-capture-exists
-
-**[!REALIZATION]** The sessions/ mandate was, from the moment it was added, an acknowledged compromise -- the trail-v1-10-0-sessions-mandatory entry made it mandatory to close "the longest-standing Observable Autonomy gap," while the very same skill's Fidelity section already ranked the artifact it mandated as the weakest possible tier. This is a case where a real constraint (no independent capture existed yet) forced a second-best mandate, and the mandate should have carried an explicit sunset condition ("remove this once independent capture exists") rather than being stated as a durable requirement. Worth carrying forward as a general practice: when a spec adopts a second-best mechanism because a better one does not yet exist, name the condition under which the second-best mechanism should be retired, not just the reason it was adopted.
-
-## 2026-08-01 — trail-drop-sessions-mandate-independent-capture-exists
-
-**[!REALIZATION]** :* FIRED -- this directly reverses the 2026-05-02 trail-v1-10-0-sessions-mandatory entry's decision to make sessions/ mandatory, and the reasoning offered there ("no independent capture mechanism existed") is explicitly named and superseded here.
+Showing the most recent 60 markers. 266 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-01 — trail-drop-sessions-mandate-independent-capture-exists
 
@@ -246,6 +234,18 @@ Showing the most recent 60 markers. 263 older marker(s) are in `.acm/learning-ar
 ## 2026-08-01 — citation-cff-currency-fix-surfaces-git-tag-drift
 
 **[!REALIZATION]** Per the lighter-weight-pointer convention established earlier today: the governing-variable diagnosis stands unchanged from `confirm-bom-root-cause-and-fix-verifypy` and its subsequent restatements -- this entry is the fifth instance of the same shape, now extending beyond "verify.py checks" and "file lists" into "release/tag hygiene," which broadens the diagnosis's scope slightly (it is not just a verify.py-specific problem, it is a general pattern in how this repo tracks "what is the current true state" across several independent bookkeeping mechanisms -- CHANGELOG prose, git tags, verify.py's REQUIRED_FILES/STALE_PATH_DOCS/ACM_SCOPE_TRAVERSAL_FILES lists, and now CITATION.cff -- each maintained by hand, each capable of independently drifting from the others). This broadened framing is itself worth carrying into the still-pending "systematic verify.py audit" candidate move, which should now perhaps be reframed more broadly as a systematic audit of every hand-maintained "current state" claim in the repo, not only verify.py's checks specifically.
+
+## 2026-08-01 — clarify-history-learning-optional-per-acm-spec-conformance
+
+**[!REALIZATION]** This is the sixth distinct instance today of "a claim (this time, an operator-stated premise, not a mechanical check) turned out to be checkable and slightly inaccurate once actually verified against a primary source rather than accepted or inferred" -- following PRINCIPLES.md's H1 gap, the POSITION.md/QUICKSTART.md REQUIRED_FILES gap, the systemic BOM issue, check_no_mojibake's narrow coverage, and the git tag drift. This one is different in kind from the prior five: those were all mechanical artifacts within this repo; this one is a conceptual/architectural claim about this repo's relationship to an external spec. The same discipline (check the primary source directly, don't reason from memory or file-name pattern-matching) resolved it the same way.
+
+## 2026-08-01 — clarify-history-learning-optional-per-acm-spec-conformance
+
+**[!REALIZATION]** :* not fired -- extends, rather than contradicts, the existing governing-variable diagnosis.
+
+## 2026-08-01 — clarify-history-learning-optional-per-acm-spec-conformance
+
+**[!REALIZATION]** Per the lighter-weight-pointer convention: the core governing-variable diagnosis (no single source of truth for several categories of "current state" claims across this repo) stands as recorded in `confirm-bom-root-cause-and-fix-verifypy` and its restatements, now broadened a second time today (first to release/tag hygiene in the CITATION.cff entry, now to this repo's own claimed relationship to an external governing spec). Both broadenings share the same root shape and do not require a new diagnosis, only an acknowledgment that the pattern's scope keeps turning out to be wider than each individual instance suggested. Worth naming as a candidate for the still-pending systematic-audit candidate move: that audit should now explicitly include checking this repo's stated relationships to external repos (agent-context-memory, evo, ai-steward, llm-harness-proxy) against those repos' actual current content, not just this repo's own internal artifacts.
 
 ---
 
