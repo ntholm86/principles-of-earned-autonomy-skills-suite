@@ -5,19 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 227 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-06-04 — retro-named-boundary-rule-from-manifesto-arc
-
-**[!REALIZATION]** :* not fired - this entry extends the retrospect skill rather than contradicting any prior realization in this repo.
-
-## 2026-06-04 — retro-named-boundary-rule-from-manifesto-arc
-
-**[!REALIZATION]** The retrospect skill operates on targets, and the targets sometimes teach the skill how to operate better. When that happens, the promotion must be traceable from the SKILL.md back to the target's trail and the target's trail forward to the SKILL.md. This entry establishes the pattern: target trail entry surfaces the realization; skill repo trail entry records the promotion with explicit provenance; SKILL.md itself carries an inline pointer to the promotion entry so any reader of the rule can trace why it exists. Future cross-repo promotions should follow the same three-anchor pattern.
-
-## 2026-06-04 — improve-destination-named-boundary-symmetric
-
-**[!REALIZATION]** :* not fired.
+Showing the most recent 60 markers. 230 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-06-04 — improve-destination-named-boundary-symmetric
 
@@ -246,6 +234,18 @@ Showing the most recent 60 markers. 227 older marker(s) are in `.acm/learning-ar
 ## 2026-08-01 — audit-learning-precedent-surfaces-position-quickstart-h1-gap-and-systemic-bom
 
 **[!REALIZATION]** Reading this session as one arc: the recurring pattern named above (checks with silent scope gaps) has now appeared three times in one day, each time found by actually re-reading the file/list in question rather than trusting that a prior fix generalized further than it did. The PRINCIPLES.md fix from earlier today explicitly named "audit STALE_PATH_DOCS and ACM_SCOPE_TRAVERSAL_FILES for the same silent-exclusion pattern" as a candidate next move -- that audit still has not been done, and this entry's finding (POSITION.md/QUICKSTART.md missing from REQUIRED_FILES) is arguably the same class of gap that audit was meant to catch, just in a different list (REQUIRED_FILES itself, not the other two). The governing pattern is: whenever this repo adds a new live doc (POSITION.md, QUICKSTART.md were both added well after the original REQUIRED_FILES list was written), nothing currently prompts a check of whether it needs to join every file-scoping list verify.py maintains. Fixing three individual instances of this pattern is not the same as fixing the pattern -- a genuinely systemic answer would be enumerating all of verify.py's file-scoping lists in one place and checking each new live doc against the full set, not discovering each one independently when something happens to force a look.
+
+## 2026-08-01 — confirm-bom-root-cause-and-fix-verifypy
+
+**[!REALIZATION]** The append-safety test (BOM is only written at file-creation/full-overwrite time, never reintroduced by a later append to an already-BOM-less file) is the load-bearing fact for how this cleanup can proceed safely: it means `.acm/audit-trail.md`'s BOM, once eventually stripped, would not silently reappear from this session's own continued use of `Add-Content -Encoding UTF8` for future entries -- the risk is entirely in the one-time strip operation itself, not in ongoing use. This changes the shape of the remaining work: it is a one-time, per-file migration, not a recurring maintenance burden, provided future *new* files in this repo are created via a BOM-safe path (`create_file`, or PowerShell's `-Encoding utf8NoBOM` where available, or `[System.IO.File]::WriteAllText` with an explicit `UTF8Encoding(false)`) rather than plain `-Encoding utf8`/`UTF8` in Windows PowerShell 5.1.
+
+## 2026-08-01 — confirm-bom-root-cause-and-fix-verifypy
+
+**[!REALIZATION]** :* not fired -- directly continues the sequencing plan from the immediately prior entry.
+
+## 2026-08-01 — confirm-bom-root-cause-and-fix-verifypy
+
+**[!REALIZATION]** The recurring-finding-class trigger fired, but the macro-Hansei for this specific pattern was already performed in the immediately prior entry (governing-variable diagnosis: no single canonical file-scope list in verify.py -- REQUIRED_FILES, STALE_PATH_DOCS, and ACM_SCOPE_TRAVERSAL_FILES each independently go stale). This entry does not change that diagnosis; it is a direct continuation of acting on it (root-cause confirmation, then one more fix in the already-agreed "one at a time" sequence), not a new instance requiring a fresh governing-variable read. Repeating the full macro reflection verbatim here would be ceremony without new signal -- the honest record is that the check was made, the same governing variable still applies, and no revision to it is warranted from this entry's evidence.
 
 ---
 

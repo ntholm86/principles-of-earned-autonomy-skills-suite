@@ -913,6 +913,18 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** from the resulting retro-v202 - that a retrospect can only test the quality bars it knows about and that silence claims should carry named boundaries - is a structural property of the retrospect operation, not a manifesto-specific fact. Operator's intent: write the rule into this skill suite and record where it came from so future readers can trace it back.
 
+## 2026-06-04 — retro-named-boundary-rule-from-manifesto-arc
+
+**[!REALIZATION]** :* not fired - this entry extends the retrospect skill rather than contradicting any prior realization in this repo.
+
+## 2026-06-04 — retro-named-boundary-rule-from-manifesto-arc
+
+**[!REALIZATION]** The retrospect skill operates on targets, and the targets sometimes teach the skill how to operate better. When that happens, the promotion must be traceable from the SKILL.md back to the target's trail and the target's trail forward to the SKILL.md. This entry establishes the pattern: target trail entry surfaces the realization; skill repo trail entry records the promotion with explicit provenance; SKILL.md itself carries an inline pointer to the promotion entry so any reader of the rule can trace why it exists. Future cross-repo promotions should follow the same three-anchor pattern.
+
+## 2026-06-04 — improve-destination-named-boundary-symmetric
+
+**[!REALIZATION]** :* not fired.
+
 ---
 
-**227 markers — 207 realisations, 20 reversals**
+**230 markers — 210 realisations, 20 reversals**

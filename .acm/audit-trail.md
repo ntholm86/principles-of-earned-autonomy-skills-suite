@@ -9057,3 +9057,73 @@ Imagined-reader pushback: "You found a much bigger problem than you started with
 3. **Audit `STALE_PATH_DOCS` and `ACM_SCOPE_TRAVERSAL_FILES` for the same silent-exclusion pattern**, and consider whether verify.py needs a single canonical "all live docs" list that every file-scoping check derives from, rather than several independently-maintained lists that can each individually go stale -- this is the systemic fix implied by the macro-Hansei above.
 4. Settle whether a target-agnostic formulation of "self-targeting should surface reasoning-capability gaps" is even coherent -- still carried, not yet done.
 5. The suite's older backlog (CITATION.cff currency, B1 replication, mtime freshness, whole-suite mandate gate) remains available if the operator wants to redirect.
+
+## 2026-08-01 - confirm-bom-root-cause-and-fix-verifypy
+
+- target: skills repo (this repo) -- verify.py
+- operator: maintainer (Nils Holmager)
+- agent: Claude Sonnet 4.5 (GitHub Copilot)
+- skill: improve
+- outcome: empirically confirmed the root cause of the systemic BOM issue named as the top candidate next move in the prior entry; fixed verify.py's own leading BOM as the second file in the "one at a time" sequence
+- delta: verify.py loses its leading UTF-8 BOM (1-line diff, shebang line only); no functional change
+
+### Interpretation of the ask
+
+Operator: "run the improve skill on the skills repo." Bare, generic prompt -- as with the prior several iterations, I self-directed from the trail's own candidate-next-move ranking rather than waiting for a topic. The immediately preceding entry ranked "determine the root cause of the systemic BOM issue... before attempting to fix the ~13 other live files" as candidate #1, above even the STALE_PATH_DOCS/ACM_SCOPE_TRAVERSAL_FILES audit, specifically because of the corruption-risk history tied to `.acm/audit-trail.md`. I treated that ranking as the destination for this iteration.
+
+### Examination
+
+Purpose lens: the prior entry left a named blind spot -- *why* so many live files carry a leading BOM was unknown, only the symptom's scope had been measured. Fixing files without knowing the mechanism risks the BOM silently reappearing on the next edit, which would make any cleanup Sisyphean.
+
+Ran a direct empirical test in this repo's own PowerShell session (confirmed PSVersion 5.1.26100): created a fresh file via both `Out-File -Encoding utf8` and `Add-Content -Encoding UTF8`, then inspected the first three bytes of each with `[System.IO.File]::ReadAllBytes`. Both wrote `239 187 191` (`EF BB BF`, the UTF-8 BOM) to the freshly-created file. This is a well-documented PowerShell 5.1 behavior -- `-Encoding utf8`/`UTF8` always emits a BOM in Windows PowerShell (fixed only in PowerShell 7+ via the separate `utf8NoBOM` encoding option, which 5.1 does not have).
+
+Then tested the append case specifically, since `.acm/audit-trail.md` and other affected files are edited via repeated `Add-Content -Encoding UTF8` calls, not fresh creation: wrote a file via `[System.IO.File]::WriteAllText` with no BOM, confirmed its first bytes were BOM-free, then ran `Add-Content -Path ... -Encoding UTF8` to append a second line. The first three bytes were unchanged after the append -- confirming Add-Content does **not** re-insert a BOM into an existing file that already lacks one; the BOM is only written at file-creation time (or full-overwrite time, which is equivalent to creation for this purpose).
+
+This fully explains the pattern from the prior entry: every one of the ~70 affected files (archive/v2/ and the ~13 live ones) was, at some point in its history, first created via a PowerShell command using `-Encoding utf8`/`UTF8` -- consistent with archive/v2/'s known origin in the old PowerShell-based v2 tooling (`kiroku-*.ps1`, `verify-suite.ps1`, named in the v3-redesign entry), and consistent with this session's own repeated use of `Add-Content -Path ... -Encoding UTF8` for every trail append (which is safe for `.acm/audit-trail.md` specifically only because that file already had its BOM baked in long before this session; a brand-new `.acm/`-file created fresh via that same pattern would get a new BOM the same way `verify.py` apparently once did).
+
+### Decision
+
+[!DECISION] Fix `verify.py`'s own leading BOM as the next file in the "one at a time" sequence explicitly planned in the prior entry, choosing it over the other ~11 remaining live files because: it is plain Python source with no corruption history (unlike `.acm/audit-trail.md`, `.acm/orientation.md`); a leading BOM in a `.py` file is purely cosmetic debt (CPython's tokenizer strips a UTF-8 BOM per PEP 263, so execution was never actually affected -- confirmed by `python verify.py` having passed cleanly every time this session despite the BOM being present the whole time); and fixing the mechanical checker's own file first, before considering whether to add a BOM-detection check to that same checker, has a certain self-referential appropriateness. Precedent check: this follows the exact mechanism already validated on QUICKSTART.md two entries ago (utf8-sig decode to strip BOM, re-encode plain utf-8, confirm via byte-length diff that only the BOM changed) -- no new mechanism introduced, so no new risk beyond what was already tested.
+
+[!DECISION] Do not fix any of the other ~10 remaining live files in this same iteration, and do not yet add a mechanical BOM-detection check to verify.py. Precedent check: this continues the scope boundary set two entries ago -- "one at a time," not a batch -- and the root-cause confirmation in this entry does not change the risk calculus for `.acm/audit-trail.md` specifically (still the last file to touch, given its two prior corruption incidents); knowing the mechanism makes the eventual fix safer but does not make touching that file safe *now*, in the same iteration as several other changes.
+
+Rejected alternative: fix all ~10 remaining live files in one sweep now that the mechanism is confirmed safe. Rejected -- the prior entry's own reasoning for "one at a time" was about verification discipline (byte-level diff per file, one at a time, not batched trust), not about uncertainty in the mechanism; knowing the root cause does not remove the value of verifying each file individually.
+
+Rejected alternative: add a full-tree BOM check to verify.py now, scoped only to files already confirmed BOM-free (a grandfathering allowlist, similar to this repo's SESSION_FIDELITY_CONTRACT_DATE pattern). Rejected for this iteration specifically -- this would be a second, more complex decision (allowlist design, growth-on-fix semantics) layered onto a root-cause-confirmation entry; better decided on its own, once more of the live files are actually fixed and there is a clearer sense of what the allowlist would need to look like.
+
+### Prediction
+
+I will strip verify.py's BOM and expect the git diff to show exactly one line changed (the BOM-prefixed shebang line) with no other content difference. I expect `python verify.py` to still execute and pass after the change, since CPython already tolerated the BOM. I expect this NOT to touch any other file, NOT to add a new verify.py check, and NOT to touch `.acm/audit-trail.md`.
+
+### Action
+
+Ran the empirical PowerShell tests described above (fresh-file creation via Out-File/Add-Content with -Encoding utf8/UTF8; append-to-existing-BOM-less-file test) to confirm the root cause and the append-safety boundary. Stripped verify.py's BOM via .NET's UTF8 decode (auto-detects and strips BOM) followed by a UTF8Encoding(false)-encoded rewrite; confirmed via raw byte-length diff that exactly 3 bytes were removed. Confirmed via `git diff verify.py` that exactly one line changed (the BOM-prefixed shebang line, now BOM-free) with a clean 1-insertion/1-deletion diff stat -- no other line touched. Regenerated `history.md`/`learning.md`/`learning-archive.md` and ran `python verify.py` -- passed clean.
+
+Comparing outcome to prediction: held on every point.
+
+### Reflection
+
+[!REALIZATION] The append-safety test (BOM is only written at file-creation/full-overwrite time, never reintroduced by a later append to an already-BOM-less file) is the load-bearing fact for how this cleanup can proceed safely: it means `.acm/audit-trail.md`'s BOM, once eventually stripped, would not silently reappear from this session's own continued use of `Add-Content -Encoding UTF8` for future entries -- the risk is entirely in the one-time strip operation itself, not in ongoing use. This changes the shape of the remaining work: it is a one-time, per-file migration, not a recurring maintenance burden, provided future *new* files in this repo are created via a BOM-safe path (`create_file`, or PowerShell's `-Encoding utf8NoBOM` where available, or `[System.IO.File]::WriteAllText` with an explicit `UTF8Encoding(false)`) rather than plain `-Encoding utf8`/`UTF8` in Windows PowerShell 5.1.
+
+Named blind spot: I did not verify whether `create_file` (the tool this session has used for genuinely new files) itself ever writes a BOM -- all of this entry's evidence is about PowerShell's Out-File/Add-Content specifically. If `create_file` also writes a BOM under some condition, the "safe path" named above would be wrong, and any future new `.acm/`-file created this session could still pick up a fresh BOM through a different mechanism than the one just diagnosed.
+
+Imagined-reader pushback: "You spent a whole iteration confirming a mechanism whose fix is identical to the one you already validated on QUICKSTART.md two entries ago -- did this actually need its own iteration, or could the root-cause check and one more file-fix have been folded into the same entry as QUICKSTART.md?" Fair challenge. The reason they are separate: the QUICKSTART.md entry explicitly deferred both the root-cause investigation and the remaining fixes as future work, under real time pressure within that iteration (the BOM discovery there was already a scope-expanding surprise inside an entry that started as a REQUIRED_FILES coverage fix). Doing the root-cause work properly -- with a real empirical test, not a guess -- deserved its own focused iteration rather than being squeezed in as an afterthought, consistent with this session's repeated experience that rushing a second finding into an already-scoped entry is exactly how the genericity violation happened earlier today.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED -- this is now the fourth entry today involving a mechanical-check/file-scope gap or encoding defect (PRINCIPLES.md H1 exclusion, ACM section 4 wording drift, POSITION.md/QUICKSTART.md REQUIRED_FILES gap plus its BOM, and now verify.py's own BOM). The macro-Hansei in the immediately prior entry already named the systemic version of this pattern (no single source of truth for "all live docs/files this repo cares about"); this entry is a direct continuation of acting on that named pattern, not a new instance requiring fresh macro reflection.
+- *About to declare silence:* not fired -- this run made a change.
+- *Contradicts prior [!REALIZATION]:* not fired -- directly continues the sequencing plan from the immediately prior entry.
+- *Operator explicitly asked:* not fired -- operator gave a bare "run the improve skill" prompt.
+
+**Across-trail macro-Hansei**
+
+[!REALIZATION] The recurring-finding-class trigger fired, but the macro-Hansei for this specific pattern was already performed in the immediately prior entry (governing-variable diagnosis: no single canonical file-scope list in verify.py -- REQUIRED_FILES, STALE_PATH_DOCS, and ACM_SCOPE_TRAVERSAL_FILES each independently go stale). This entry does not change that diagnosis; it is a direct continuation of acting on it (root-cause confirmation, then one more fix in the already-agreed "one at a time" sequence), not a new instance requiring a fresh governing-variable read. Repeating the full macro reflection verbatim here would be ceremony without new signal -- the honest record is that the check was made, the same governing variable still applies, and no revision to it is warranted from this entry's evidence.
+
+### Candidate Next Moves
+
+1. **Fix the next live file's BOM** (e.g. `INSTALLING.md`, or one of `orient/SKILL.md`/`probe/SKILL.md`/`trail/SKILL.md`), continuing the same one-at-a-time, byte-verified pattern, still leaving `.acm/audit-trail.md` and `.acm/orientation.md` for last given their append-only/derived roles.
+2. **Verify whether `create_file` itself ever writes a BOM** -- the blind spot named above -- before relying on it as the assumed "safe path" for any new `.acm/`-file this session might still create.
+3. **Design the allowlist-based BOM check for verify.py** (grandfathered, growing as each file is fixed) once enough live files are actually clean to make the allowlist meaningful -- deliberately deferred again this entry, now with a clearer sense of why (the design question itself deserves its own iteration).
+4. **Audit `STALE_PATH_DOCS` and `ACM_SCOPE_TRAVERSAL_FILES` for the same silent-exclusion pattern** named in the prior entry's macro-Hansei -- still not yet done, now ranked below the BOM work given the corruption-risk urgency, but still open.
+5. Settle whether a target-agnostic formulation of "self-targeting should surface reasoning-capability gaps" is even coherent -- still carried, not yet done.

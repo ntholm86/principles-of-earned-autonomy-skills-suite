@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """verify.py — mechanical integrity check for the trail.
 
 Replaces verify-suite.ps1 from v2. Pure-Python, zero dependencies, runs on
