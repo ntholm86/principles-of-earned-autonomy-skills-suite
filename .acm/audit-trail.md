@@ -8490,3 +8490,59 @@ Someone who knows this target better might push back on: whether PRINCIPLES.md s
 1. Cosmetic: reorder verify.py's module-docstring check numbering to match main()'s actual call order, or reorder main()'s calls to match the docstring -- either direction resolves the inconsistency; not actioned this run (low leverage, batching discipline).
 2. Audit STALE_PATH_DOCS and ACM_SCOPE_TRAVERSAL_FILES for the same silent-exclusion/dead-code pattern just found in REQUIRED_FILES' consumer -- not yet done systematically.
 3. The suite's older backlog items (CITATION.cff/.zenodo.json currency, B1 cross-family replication, mtime-based freshness on fresh clone, whole-suite ACM mandate-gate conformance) remain untouched since at least 2026-06-21 -- still the largest available redirect if the operator wants to move off mechanical-hardening work.
+
+## 2026-08-01 - orient-post-acm4-closure
+
+- target: skills repo (this repo)
+- operator: maintainer (Nils Holmager)
+- agent: Claude Sonnet 4.5 (GitHub Copilot)
+- skill: orient
+- outcome: orientation.md rewritten; ACM section 4 arc confirmed closed and self-enforcing, double-loop mechanism confirmed working across 3 discriminating instances, older backlog named as the clear next redirect if the operator wants one
+- delta: .acm/orientation.md rewritten (was last updated 2026-07-31 as orient-post-argyris-window)
+
+### Scope statement
+
+Read the arc from entry orient-post-argyris-window (2026-07-31, the last orient run) through entry verify-overburden-audit-principles-h1-gap-fix (2026-08-01) -- 4 new entries in under 24 hours. Arc-question: did the ACM section 4 traversal arc (the prior orient run's own top finding) actually get closed, and what did the loop do once it was -- did it redirect to the older backlog, or keep finding adjacent work.
+
+Step 0 (destination, all scopes): re-read the workspace-level destination at c:\git\pea\.acm\destination.md via the .acm-root marker. No changes since the prior orient run.
+
+Freshness guard: python harness/tools/record.py history --write (163 entries), learning --write (256 markers), python verify.py (OK) -- run before forming arc-claims.
+
+### Arc-claims
+
+[!REALIZATION] The ACM section 4 arc opened 2026-06-22 and reopened as the prior orient run's top finding is now closed and self-enforcing: intent/SKILL.md and destination/SKILL.md received the traversal paragraph; orient/SKILL.md's own copy was found already drifted from the other three and harmonized; a new verify.py check (15) now fails automatically on future wording drift across all four files. This is a stronger form of "closed" than this repo's three prior silence claims (ARF restriction-reasoning, named-boundary discipline, .acm rename), which hold only because no one has touched those surfaces again -- this one holds because a mechanical check would catch a re-drift even without a human re-reading the four files side by side.
+
+[!REALIZATION] The step-6b double-loop question (added 2026-07-31) has now fired three times in four days with three genuinely different outcomes: no-escalation-warranted (intent fix), escalation-warranted-and-surfaced-not-resolved (destination fix), escalation-answered-in-practice-and-closed-structurally (the consistency-enforcement entry). A fourth entry did not fire the trigger at all. This variance is evidence the mechanism discriminates rather than defaulting to one templated answer.
+
+[!REALIZATION] A second instance of "a mechanical check silently stopped covering the exact file its own history says it exists for" was found and closed this window: PRINCIPLES.md's exclusion from the duplicate-H1 check via dead code, found the same day as the ACM section 4 enforcement work. Two instances of this failure class in one two-day window is now a named pattern.
+
+Across this 4-entry window, every candidate-next-move list named the suite's older backlog (CITATION.cff/.zenodo.json currency, B1 cross-family replication, mtime-based freshness, whole-suite ACM mandate-gate conformance) as an available redirect, and none was picked up. Unlike the prior orient run's finding (weak follow-through on the loop's own candidates), this window shows strong short-horizon follow-through -- every entry built on the immediately-prior entry's own candidate. What has not moved is the older, pre-existing backlog, now stale relative to when it was first named.
+
+verify.py's own file-scoping constants (STALE_PATH_DOCS, ACM_SCOPE_TRAVERSAL_FILES) have not been systematically audited for the same silent-exclusion pattern just found in REQUIRED_FILES' consumer -- named as an open candidate, not yet examined.
+
+### Loop-effectiveness (step 4)
+
+Quality bars tested this window: internal text-layer consistency (again) and, newly, mechanical-enforcement completeness. Comparative defensibility, comparator coverage, empirical replication, and operational deployability remain untouched across two consecutive orient windows now.
+
+Candidate-next-move follow-through has flipped from the prior orient run's finding: this window shows strong self-referential follow-through (every entry built on the prior entry's own candidate) but the same weakness persists toward the *older*, pre-existing backlog that predates the current session's focus.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED -- this is the second consecutive orient run to name "the loop's own candidate-next-moves get followed inconsistently" as a finding, though the direction flipped (weak short-horizon follow-through last time, strong this time, weak on the older backlog both times).
+- *About to declare silence:* not fired -- this run forms arc-claims and rewrites orientation.md; it does not declare convergence or silence at any quality bar.
+- *Contradicts prior [!REALIZATION]:* not fired -- extends rather than contradicts the prior orient run's candidate-follow-through finding by refining it (self-referential vs. older-backlog follow-through are now distinguished).
+- *Operator explicitly asked:* FIRED -- operator explicitly asked to run the orient skill this session.
+
+**Across-trail macro-Hansei:**
+
+[!REALIZATION] The suite now has a working, repeatedly-exercised example of exactly the capability the destination's own Learning section named as underdeveloped: the ACM section 4 arc shows a realization (2026-06-22) being rediscovered as still-open, acted on across two entries, cross-checked against its own duplication risk, and converted into a mechanical guarantee rather than a hope that a future run reads the trail correctly. The open question is whether the same discipline transfers to the suite's older, less mechanical backlog items -- text-consistency fixes are a much easier target for this pattern than empirical replication or mandate-gate conformance would be.
+
+### Action
+
+Rewrote .acm/orientation.md in full (not append, per orient's own rule). Updated scope, 5 new arc-claims, "what next runs should test" (older backlog promoted to item 1, new items on the STALE_PATH_DOCS/ACM_SCOPE_TRAVERSAL_FILES audit and the verify.py docstring-ordering cosmetic issue), added 3 new/updated operational rules (mechanical-check-scope-drift caution, double-loop-honesty-per-instance, ACM section 4 now mechanically enforced not just a manual reminder), and loop-effectiveness notes reflecting the flipped follow-through pattern. Regenerated history.md/learning.md; verify.py passed clean.
+
+### Candidate Next Moves
+
+1. If the operator wants to redirect: the older backlog (CITATION.cff currency, B1 replication, mtime freshness, whole-suite mandate gate) is the single most useful next topic -- untouched across 6+ weeks despite being named repeatedly.
+2. Systematic audit of STALE_PATH_DOCS and ACM_SCOPE_TRAVERSAL_FILES for the silent-exclusion pattern (named by the prior entry, not yet done).
+3. Fix verify.py's cosmetic docstring-numbering vs. main()'s call-order mismatch (low priority, named twice now).
