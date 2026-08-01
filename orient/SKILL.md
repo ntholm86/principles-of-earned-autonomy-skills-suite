@@ -1,6 +1,6 @@
 ---
 name: orient
-version: 2.0.1
+version: 2.1.0
 description: 'Read the trail as a single document and form arc-level claims about the target. What is the target becoming? Where has the loop''s attention been, and is that where the target''s real weight lies? What does the arc reveal that no individual iteration would surface? Writes .acm/orientation.md — the Orient-derived current orientation for the target. Destination (.acm/destination.md, with .acm/vision.md as legacy fallback), if present, is the operator-held destination and is read but never written. USE WHEN: about to declare convergence, recurring finding-class suspected, operator asks "how are we doing?", or an independent arc-read is needed without running a full improve loop.'
 argument-hint: 'The target and its trail, and optionally the specific arc-question to answer'
 ---
@@ -104,6 +104,16 @@ Examples of the right shape:
 - "The trail shows three reversals in the same area. The loop has not yet found a stable model of that area."
 
 Avoid: "The target seems to be in good shape." That is an observation without content, not a claim.
+
+### 3b. Ask whether a recurring arc-claim is a single-loop symptom or a double-loop signal
+
+When step 3 produces a claim describing a *recurring* pattern — the same finding-class across multiple entries, the same kind of correction applied repeatedly, the same corner returned to again and again — ask explicitly whether the recurrence is a single-loop symptom or a double-loop signal. Single-loop correction fixes the action within existing governing variables (a goal, constraint, or quality-bar choice in `.acm/destination.md`, or an unstated assumption the arc has been carrying) while leaving those variables themselves unexamined. If the same finding-class keeps recurring despite repeated correction, the recurrence itself is evidence that the governing variable — not the action — is the actual defect.
+
+This question can resolve to "no." A recurring pattern is not automatically a governing-variable defect — some recurrences are the arc correctly behaving as designed (candidates sitting unpicked across entries while the operator directs attention elsewhere is an explicitly valid pattern, not a defect). Answer honestly in both directions; the question exists to be asked, not to manufacture an escalation.
+
+When it resolves to "yes": name the specific governing variable implicated, write it as a candidate destination-revision — not another arc-claim about the target's surface — and record it as such. Whether to act on it is the operator's decision via [Destination](../destination/SKILL.md); Orient's job is to make the governing-variable question visible, not to resolve it unilaterally.
+
+*Why this belongs in Orient, and not only in Improve's step 6b:* step 6b fires from inside a single iteration, when that iteration happens to notice a recurring pattern. Orient reads the whole arc at once and is positioned to catch governing-variable-level recurrences that no individual iteration had enough surface area to see — exactly the kind of finding an arc-level read exists for. (Argyris, *Organizational Learning*, 1977 — single-loop learning corrects action within existing governing variables; double-loop learning questions and revises the governing variables themselves.)
 
 ### 4. Evaluate loop effectiveness (when the arc warrants it)
 

@@ -9373,3 +9373,71 @@ Imagined-reader pushback: "You asked a question, got told to decide yourself, an
 3. **Decide the order and approach for `.acm/orientation.md` and `.acm/audit-trail.md`** -- still deliberately last; the grouping decision made here does not extend to either given their distinct risk profile (derived/rewritten vs. append-only-with-corruption-history).
 4. Audit `STALE_PATH_DOCS` and `ACM_SCOPE_TRAVERSAL_FILES` for the same silent-exclusion pattern, still open from several entries ago.
 5. Settle whether a target-agnostic formulation of "self-targeting should surface reasoning-capability gaps" is even coherent, still carried.
+
+## 2026-08-01 - orient-step3b-argyris-double-loop-check
+
+- target: skills repo (this repo) -- orient/SKILL.md
+- operator: maintainer (Nils Holmager)
+- agent: Claude Sonnet 4.5 (GitHub Copilot)
+- skill: improve
+- outcome: added an explicit Argyris double-loop check to orient/SKILL.md (new step 3b), closing the gap the operator asked about directly this session -- Improve's step 6b already had it, Orient did not
+- delta: orient/SKILL.md 2.0.1 -> 2.1.0; CHANGELOG.md v4.13.0 added
+
+### Interpretation of the ask
+
+Operator asked directly: "Is argyris 1977 double loop learning also implemented in Orient skill?" I answered honestly that it was not -- a grep of orient/SKILL.md found no reference to Argyris, "double-loop," "single-loop," or "governing variable," while improve/SKILL.md step 6b has all four. I also noted, as an interesting wrinkle, that the most recent orient run (`orient-post-bom-cleanup-and-efficiency-check`) had actually *performed* double-loop-style reasoning in its claim 5 (the no-batching-vs-efficiency tension) without the skill file ever instructing it to look for that. The operator then said: "yea i do want that - understand my intent, use improve skill to do it." I interpreted this as: close the gap by adding an explicit step to orient/SKILL.md, mirroring step 6b's mechanism but adapted to Orient's arc-level vantage point, continuing this session's original opening request (2026-07-31: "implement Argyris 1977 double loop learning into the skillset").
+
+### Examination
+
+Precedent check: grepped learning.md and learning-archive.md for "Argyris", "double-loop", "governing variable" before drafting anything. Found an existing entry, `orient-post-argyris-window` (2026-07-31, an earlier session), where an orient run had already informally *applied* the step 6b double-loop question to its own recurring-finding-class trigger -- twice, with different outcomes (one resolving "no governing-variable defect," one resolving "yes, escalate to Destination"). This is directly relevant precedent: it shows the combination (Orient + double-loop question) has already been used in practice and produced falsifiable, honest results in both directions -- but it was borrowed ad hoc from Improve's step 6b language each time, never codified as Orient's own step. No prior entry proposed and rejected formalizing this in orient/SKILL.md itself -- searched specifically for that and found nothing, so this is a new addition, not a repeat of declined work.
+
+Read destination.md's 2026-07-31 note directly: it explicitly leaves "which skill(s) should own the double-loop checks... implementation decisions for improve-loop discovery" unspecified, meaning Orient owning an explicit version of this check is squarely within the destination's own stated scope, not an overreach.
+
+Read orient/SKILL.md's full structure to find the right insertion point: step 3 ("Form arc-claims") is where recurring patterns get named as falsifiable claims; step 4 ("Evaluate loop effectiveness") is adjacent but asks about examination coverage, not governing-variable validity. The natural slot is a new lettered sub-step between them, matching the existing 2b/5a lettered-substep convention already used in this file.
+
+### Decision
+
+[!DECISION] Add step 3b to orient/SKILL.md: when step 3 produces a claim describing a recurring pattern, explicitly ask whether the recurrence is a single-loop symptom or a double-loop signal, following the same governing-variable framing as improve/SKILL.md step 6b (goal, constraint, or quality-bar choice in destination.md, or an unstated assumption). Explicitly preserved the "can resolve to no" clause from the precedent entry's own worked example (`orient-post-argyris-window` correctly resolved "no defect" once) -- the new step must not read as a bias toward manufacturing escalations. When it resolves "yes," name the governing variable and route to Destination rather than resolving unilaterally, matching step 6b's existing routing language and this session's own recent practice (the no-batching/efficiency tension routing, two entries ago). Precedent check restated: consistent with, not contradicting, `orient-post-argyris-window`'s two outcomes and the not-yet-actioned destination note from 2026-07-31.
+
+Rejected alternative: fold the double-loop question into step 4 ("Evaluate loop effectiveness") instead of a new step. Rejected -- step 4's questions are about whether the loop's examination coverage is right (a different axis: "what did we look at" vs. "is the framing itself wrong"); collapsing them would blur two genuinely different questions into one step, the same kind of overburden lens this skillset applies to targets it examines.
+
+Rejected alternative: copy step 6b's text verbatim into orient/SKILL.md. Rejected -- step 6b's context is "a single iteration noticing a pattern"; Orient's vantage point is different (the whole arc at once), so the wording needed to state that difference explicitly (the "why this belongs in Orient, not only in Improve" paragraph) rather than just duplicating text across two files with no acknowledgment of why both need it.
+
+Applied the substitution test before finalizing wording (per the operational rule from two windows ago): re-read the drafted paragraph substituting an arbitrary unrelated target -- every noun used (`arc`, `.acm/destination.md`, `governing variable`, `Destination` skill) is already generic vocabulary used identically elsewhere in both orient/SKILL.md and improve/SKILL.md; no repo-specific noun ("this suite," a dated note, a specific file unique to this repo) survived into the wording.
+
+### Prediction
+
+I will add a new step 3b to orient/SKILL.md between steps 3 and 4, bump its version 2.0.1 -> 2.1.0, and add a CHANGELOG entry. I expect python verify.py to pass clean afterward (no H1/mojibake/format issues introduced). I expect this NOT to change orient/SKILL.md's numbering of steps 4 onward (only insert, not renumber), and NOT to touch improve/SKILL.md's existing step 6b.
+
+### Action
+
+Read destination.md, orientation.md, and the relevant learning.md/learning-archive.md precedent before drafting. Inserted step 3b into orient/SKILL.md between the end of step 3 and the start of step 4, following the 2b/5a lettered-substep convention already present in the file. Bumped orient/SKILL.md's frontmatter version 2.0.1 -> 2.1.0. Added CHANGELOG.md v4.13.0 entry. Regenerated history.md/learning.md/learning-archive.md and ran python verify.py -- passed clean on the first attempt. Re-read the inserted section directly afterward to re-confirm the substitution test held after the actual edit (not just on the draft) -- confirmed clean.
+
+Comparing outcome to prediction: held on every point.
+
+### Reflection
+
+[!REALIZATION] This closes the loop on something this session's own arc had already produced evidence for without naming it as a gap: the most recent orient run (two entries ago) exhibited double-loop reasoning in its claim 5 without any instruction to do so, and an even earlier session (`orient-post-argyris-window`) had informally borrowed step 6b's exact question into an orient run twice. The gap was never "Orient can't do this" -- it demonstrably already had, twice, in different sessions -- the gap was that the capability lived in ad hoc borrowing rather than in Orient's own spec, meaning a fresh agent reading only orient/SKILL.md (not the trail) would have no reason to know to ask this question. Codifying it turns a pattern that depended on an agent happening to remember or rediscover it into one the spec itself teaches.
+
+Named blind spot: this is the first orient run that will operate with step 3b actually present in the spec, and it has not yet been exercised in a live orient run -- everything about its correctness rests on the two precedent examples (`orient-post-argyris-window`) and this session's own retroactive claim-5 example, not on a fresh test of the newly-worded step itself. Whether the wording produces the same quality of "no defect" vs. "yes, escalate" distinctions those precedents made, or instead nudges toward one answer more than the other, is untested.
+
+Imagined-reader pushback: "You're adding a step to a skill file based on two examples from an entirely different, informal use of the same question -- how do you know the formalized wording will produce the same quality of reasoning as the ad hoc version did?" Fair, and the named blind spot above says the same thing. The mitigating factor: the new wording explicitly preserves the "can resolve to no" clause specifically because the ad hoc precedent showed that outcome is real and valuable, not just a theoretical caveat -- so at minimum the formalized version does not silently drop the one safeguard the precedent already validated. Whether it reproduces the full quality of reasoning is something only a future live orient run exercising step 3b can actually test.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired -- this is a new kind of change (adding a spec step, not another BOM fix or file-scope-gap fix); not a repeat of this session's recent recurring pattern family.
+- *About to declare silence:* not fired -- this run made a change.
+- *Contradicts prior [!REALIZATION]:* not fired -- directly acts on and is consistent with the `orient-post-argyris-window` precedent and the 2026-07-31 destination note, contradicting neither.
+- *Operator explicitly asked:* FIRED -- the operator asked the direct question that surfaced this gap, then explicitly said "yea i do want that... use improve skill to do it."
+
+**Across-trail macro-Hansei**
+
+[!REALIZATION] The operator-explicitly-asked trigger firing here is a clean case, distinct from the deeper double-loop candidates named in recent entries: the operator did not just approve a self-directed hunch, they asked the diagnostic question themselves ("is this also implemented in Orient?") that this entry's own answer depended on. Read against this session's arc as a whole, this is the second time in a row (after the delegated no-batching decision) that the operator-gate has functioned in a form other than "pick from a ranked candidate list" -- first as delegated autonomy under an explicit standing instruction, now as a direct diagnostic question the agent had not itself surfaced as a gap until asked. Both are healthy variants of the gate, not degraded ones, and worth naming together: the gate is not a single mechanism but a family of interaction shapes, and this session has now exercised three of them (ranked-candidate selection, delegated autonomy, direct operator-initiated diagnosis).
+
+### Candidate Next Moves
+
+1. **Exercise step 3b in a live future orient run** and see whether it produces a genuine "yes, escalate" or "no defect" finding, or whether the wording needs adjustment after real use -- this is the natural next test, named as the blind spot above.
+2. **Continue the BOM cleanup** -- five `.acm/sessions/*.md` files (blocked on the fingerprint question), then `.acm/orientation.md` and `.acm/audit-trail.md` last, per the prior entries' sequencing.
+3. **Audit `STALE_PATH_DOCS` and `ACM_SCOPE_TRAVERSAL_FILES`** for the same silent-exclusion pattern, still open from several entries ago.
+4. Settle whether a target-agnostic formulation of "self-targeting should surface reasoning-capability gaps" is even coherent -- still carried, not yet done.
+5. The suite's older backlog (CITATION.cff currency, B1 replication, mtime freshness, whole-suite mandate gate) remains available if the operator wants to redirect.

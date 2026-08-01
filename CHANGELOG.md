@@ -1,5 +1,10 @@
 # Changelog
 
+## v4.13.0 — 2026-08-01
+
+### Added
+- **Argyris 1977 double-loop learning was implemented in `improve/SKILL.md` step 6b but not in `orient/SKILL.md`, despite Orient being the skill best positioned to catch governing-variable-level recurrences (it reads the whole arc, not one iteration).** Added step 3b to `orient/SKILL.md`: when step 3 produces a claim describing a recurring pattern, explicitly ask whether the recurrence is a single-loop symptom or a double-loop signal, name the governing variable if so, and route it to the operator via Destination rather than resolving it unilaterally. The question can resolve to "no" — not automatically an escalation trigger. Mirrors step 6b's existing framing; applies the substitution test (no repo-specific nouns). `orient/SKILL.md` 2.0.1 -> 2.1.0.
+
 ## v4.12.0 — 2026-08-01
 
 ### Fixed

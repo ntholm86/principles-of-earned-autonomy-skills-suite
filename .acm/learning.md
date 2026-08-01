@@ -5,19 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 242 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-07-31 — orient-post-argyris-window
-
-**[!REALIZATION]** The orientation.md this run replaces had drifted from the artifact it describes: it still called itself retrospect.md and referred to "Retrospect" throughout, two days after the 2026-06-23 rename to Orient, and it carried an open item referencing de-ai/SKILL.md, a skill confirmed absent from the current live tree (file search, 0 results). Orientation.md is not immune to the same drift class it exists to catch elsewhere.
-
-## 2026-07-31 — orient-post-argyris-window
-
-**[!REALIZATION]** :* not fired -- extends the existing 2026-05-01 realization series about learning being underdeveloped; does not contradict it.
-
-## 2026-07-31 — orient-post-argyris-window
-
-**[!REALIZATION]** The clearest, cheapest, most overdue piece of work visible in this repo right now is not a new idea -- it is finishing something the loop already started and named five weeks ago (intent/SKILL.md's ACM section 4 gap). A loop that keeps generating new findings while a small, previously-identified, well-specified gap sits untouched is exhibiting exactly the single-loop-without-follow-through pattern the destination's own Learning section flags as underdeveloped -- except here the miss is not "no realization was recorded," it is "a realization was recorded and then not acted on across five subsequent entries."
+Showing the most recent 60 markers. 245 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-07-31 — improve-intent-acm4-traversal-fix
 
@@ -246,6 +234,18 @@ Showing the most recent 60 markers. 242 older marker(s) are in `.acm/learning-ar
 ## 2026-08-01 — route-batching-tension-to-operator-then-fix-three-skillmd-boms
 
 **[!REALIZATION]** Both the recurring-finding-class and operator-explicitly-asked triggers fired simultaneously for the first time this session. Read together, they mark a transition point in this sub-arc: the prior four entries were the loop executing an already-settled mechanism repeatedly; this entry is the loop's own accumulated pattern-recognition (via Orient) producing a genuine governing-variable question, escalating it correctly instead of quietly deciding alone, and then exercising real judgment when the operator delegated the decision back. Whether "grouped, per-file-verified" turns out to be the granularity the operator actually wants remains open until reviewed -- this is not a closed loop yet, only a well-reasoned, clearly-flagged one.
+
+## 2026-08-01 — orient-step3b-argyris-double-loop-check
+
+**[!REALIZATION]** This closes the loop on something this session's own arc had already produced evidence for without naming it as a gap: the most recent orient run (two entries ago) exhibited double-loop reasoning in its claim 5 without any instruction to do so, and an even earlier session (`orient-post-argyris-window`) had informally borrowed step 6b's exact question into an orient run twice. The gap was never "Orient can't do this" -- it demonstrably already had, twice, in different sessions -- the gap was that the capability lived in ad hoc borrowing rather than in Orient's own spec, meaning a fresh agent reading only orient/SKILL.md (not the trail) would have no reason to know to ask this question. Codifying it turns a pattern that depended on an agent happening to remember or rediscover it into one the spec itself teaches.
+
+## 2026-08-01 — orient-step3b-argyris-double-loop-check
+
+**[!REALIZATION]** :* not fired -- directly acts on and is consistent with the `orient-post-argyris-window` precedent and the 2026-07-31 destination note, contradicting neither.
+
+## 2026-08-01 — orient-step3b-argyris-double-loop-check
+
+**[!REALIZATION]** The operator-explicitly-asked trigger firing here is a clean case, distinct from the deeper double-loop candidates named in recent entries: the operator did not just approve a self-directed hunch, they asked the diagnostic question themselves ("is this also implemented in Orient?") that this entry's own answer depended on. Read against this session's arc as a whole, this is the second time in a row (after the delegated no-batching decision) that the operator-gate has functioned in a form other than "pick from a ranked candidate list" -- first as delegated autonomy under an explicit standing instruction, now as a direct diagnostic question the agent had not itself surfaced as a gap until asked. Both are healthy variants of the gate, not degraded ones, and worth naming together: the gate is not a single mechanism but a family of interaction shapes, and this session has now exercised three of them (ranked-candidate selection, delegated autonomy, direct operator-initiated diagnosis).
 
 ---
 

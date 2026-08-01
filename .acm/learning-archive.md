@@ -973,6 +973,18 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** intent/SKILL.md still lacks the ACM section 4 parent-scope-traversal instruction, over five weeks after entry acm-parent-scope-traversal-propagated (2026-06-22) named it as candidate #1 and added the same instruction to improve/SKILL.md and orient/SKILL.md. Confirmed by direct grep (zero hits for "ACM", "parent-scope", "traversal" in intent/SKILL.md as of this run).
 
+## 2026-07-31 — orient-post-argyris-window
+
+**[!REALIZATION]** The orientation.md this run replaces had drifted from the artifact it describes: it still called itself retrospect.md and referred to "Retrospect" throughout, two days after the 2026-06-23 rename to Orient, and it carried an open item referencing de-ai/SKILL.md, a skill confirmed absent from the current live tree (file search, 0 results). Orientation.md is not immune to the same drift class it exists to catch elsewhere.
+
+## 2026-07-31 — orient-post-argyris-window
+
+**[!REALIZATION]** :* not fired -- extends the existing 2026-05-01 realization series about learning being underdeveloped; does not contradict it.
+
+## 2026-07-31 — orient-post-argyris-window
+
+**[!REALIZATION]** The clearest, cheapest, most overdue piece of work visible in this repo right now is not a new idea -- it is finishing something the loop already started and named five weeks ago (intent/SKILL.md's ACM section 4 gap). A loop that keeps generating new findings while a small, previously-identified, well-specified gap sits untouched is exhibiting exactly the single-loop-without-follow-through pattern the destination's own Learning section flags as underdeveloped -- except here the miss is not "no realization was recorded," it is "a realization was recorded and then not acted on across five subsequent entries."
+
 ---
 
-**242 markers — 222 realisations, 20 reversals**
+**245 markers — 225 realisations, 20 reversals**
