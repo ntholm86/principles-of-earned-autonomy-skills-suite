@@ -173,6 +173,7 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 166 | 2026-08-01 | trail-drop-sessions-mandate-independent-capture-exists | removed the mandatory .acm/sessions/ session-summary-writing requirement from trail/SKILL.md; audit-trail.md entry remains the sole mandatory artifact | trail/SKILL.md 1.19.0 -> 2.0.0 (breaking -- removes a prior mandate); CHANGELOG.md v4.8.0 added |
 | ▸ 167 | 2026-08-01 | improve-self-targeting-reasoning-capability-instrument | added an explicit self-check to improve/SKILL.md's Self-targeting section distinguishing reasoning-capability gaps from textual/mechanical ones; first direct application of the newly-drafted destination note | improve/SKILL.md 3.11.0 -> 3.12.0; CHANGELOG.md v4.9.0 added; .acm/destination.md's uncommitted 2026-08-01 note now committed alongside this change |
 | ▸ 168 | 2026-08-01 | reversal-self-targeting-branch-violates-genericity | reverted the previous entry's addition to improve/SKILL.md's Self-targeting section; it violated this suite's own "Generic first" constraint and an already-recorded lesson in learning.md | improve/SKILL.md 3.12.0 -> 3.12.1 (reversal); CHANGELOG.md v4.9.1 [correction] entry added |
+| ▸ 169 | 2026-08-01 | orient-post-genericity-reversal | orientation.md rewritten; window contains a well-reasoned architectural correction (trail sessions-mandate removal) and a self-correction cycle (a change withdrawn after being found to violate the suite's own genericity constraint) -- the correction is judged the most valuable evidence this window produced | .acm/orientation.md rewritten (was last updated 2026-08-01 as orient-post-acm4-closure) |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -808,4 +809,4 @@ Do not edit by hand — re-run the command to refresh.
 - **decided:** Fully revert the addition -- restore improve/SKILL.md's Self-targeting section to its exact pre-v4.9.0 wording. Do not attempt to write a "generic version" of the same insight in this same entry. The underlying concern (self-targeting runs should be able to surface reasoning-capability gaps, not only artifact-level ones) is left unresolved rather than hastily re-solved with another special-cased instruction under time pressure -- if a genuinely target-agnostic formulation exists, it deserves its own careful pass, not a rushed patch appended to a correction entry.
 - **REVERSAL:** The entry "improve-self-targeting-reasoning-capability-instrument" (2026-08-01, this same session) added a self-targeting-specific paragraph to improve/SKILL.md's Self-targeting section. This entry fully reverses that addition after the operator identified it violates the suite's own genericity constraint.
 
-**168 runs total — 154 with changes, 14 silence**
+**169 runs total — 155 with changes, 14 silence**

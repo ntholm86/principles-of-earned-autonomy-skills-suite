@@ -1,96 +1,89 @@
 ﻿# orientation.md — autonomous-agent-skills
 
-_Last updated: 2026-08-01 (run: orient-post-acm4-closure)_
+_Last updated: 2026-08-01 (run: orient-post-genericity-reversal)_
 
 ## Scope of this read
 
-The arc from entry `orient-post-argyris-window` (2026-07-31, the last orient run) through entry `verify-overburden-audit-principles-h1-gap-fix` (2026-08-01) — 4 new entries in under 24 hours: `improve-intent-acm4-traversal-fix`, `improve-destination-acm4-traversal-fix`, `acm4-sweep-complete-plus-consistency-enforcement`, `verify-overburden-audit-principles-h1-gap-fix`.
+The arc from entry `orient-zero-new-arc` (2026-08-01, the last orient run) through entry `reversal-self-targeting-branch-violates-genericity` (2026-08-01) — 3 new entries in the same session, plus a new destination note added between them.
 
-Arc-question: did the ACM §4 traversal gap-closing arc (the prior orient run's own top-ranked finding) actually get closed, and what did the loop do once it was? Is the loop still avoiding the suite's older backlog, or has that changed?
+Arc-question: what happened in the window since the last orient run, given it contains both a well-reasoned architectural correction (trail's sessions/ mandate) and a self-correction cycle (a change proposed, then reverted for violating this suite's own "Generic first" constraint)? What does the reversal actually reveal about the loop's current reasoning capability, versus what the reverted change merely claimed to add?
 
 **Freshness check (run evidence):**
-- `python harness/tools/record.py history --write` -> 163 entries.
-- `python harness/tools/record.py learning --write` -> 256 markers.
+- `python harness/tools/record.py history --write` -> 168 entries.
+- `python harness/tools/record.py learning --write` -> 274 markers.
 - `python verify.py` -> OK, trail integrity checks pass.
 - Gate: PASS (arc-claims allowed).
-
-Step 0 (destination, all scopes): re-read the workspace-level destination at `c:\git\pea\.acm\destination.md` (via the `.acm-root` marker one level up). No changes since the prior orient run; no conflict with this repo's destination notes.
 
 ---
 
 ## Current claims
 
-**1. The ACM §4 parent-scope-traversal gap-closing arc — first opened 2026-06-22, reopened as the top finding of the prior orient run — is now closed and, more importantly, self-enforcing.**
-`intent/SKILL.md` and `destination/SKILL.md` both received the traversal paragraph (2026-07-31). `orient/SKILL.md`'s own copy was found to have already drifted from the other three (stale "operator ceiling" wording, missing the "(implementation ceiling)" label) and was harmonized (2026-08-01). A new `verify.py` check (#15, `check_acm_scope_traversal_consistency`) now fails automatically if any of the four files' stop-condition clause diverges again. This is qualitatively different from the prior three "silence" claims in this repo's history (ARF restriction-reasoning, named-boundary discipline, `.acm` rename) — those held because no one touched the surface again; this one holds because a mechanical check would catch a re-drift even if no one is reading the four files side by side.
-**Falsifiable by:** a future edit to any of the four files' stop-condition wording that `verify.py` fails to flag.
+**1. Trail's `.acm/sessions/` mandate removal (`trail/SKILL.md` 1.19.0 -> 2.0.0) is a genuine, well-reasoned architectural correction, not a reversal candidate.**
+The operator's two stated reasons were independently verified before acting: `llm-harness-proxy`'s README was read directly (confirmed it's an MITM proxy capturing verbatim JSONL, but only for sessions explicitly routed through it — applies to harness-driven runs like ai-steward, not to this kind of interactive session); and the host-product session-history claim was verified indirectly via this workspace's own `chronicle`/`session_store_sql` tooling already depending on it. The change correctly kept `.acm/audit-trail.md` as the sole mandatory artifact and reframed the Fidelity section around independent capture rather than deleting the fidelity-marking concept outright.
+**Falsifiable by:** a future entry finding that some downstream tooling silently depended on fresh `.acm/sessions/` files being written and broke when they stopped appearing.
 
-**2. The step-6b double-loop question (added 2026-07-31) has now been exercised three times in four days with genuinely different, non-templated outcomes — it is functioning as a real discriminator, not ceremony.**
-Run 1 (`improve-intent-acm4-traversal-fix`) concluded no governing-variable escalation was warranted (ordinary operator-gated backlog work). Run 2 (`improve-destination-acm4-traversal-fix`) concluded escalation *was* warranted — the original 2026-06-22 scan's selection criterion was implicit and incomplete — and surfaced it as an operator-facing question rather than resolving it unilaterally. Run 3 (`acm4-sweep-complete-plus-consistency-enforcement`) answered that question in practice (re-derived the criterion, applied it exhaustively, confirmed the concern was correct) and closed it structurally. Run 4 did not fire the trigger at all (distinct finding-class). Three fired, one didn't, and the three that fired produced three different conclusions. That variance is itself the evidence the mechanism is discriminating rather than defaulting to one answer.
-**Falsifiable by:** a future run where the question fires but the entry does not show genuine reasoning distinct from the templated shape above (e.g. it always concludes "escalate" or always concludes "no action").
+**2. Destination gained a new note (2026-08-01) naming three gaps — genericity as an explicit self-claim, self-targeting deriving reasoning-capability improvement as a necessary instrument, and token/resource efficiency as a real constraint — and the very first attempt to act on gap 2 failed this suite's own oldest genericity constraint.**
+The reverted addition to `improve/SKILL.md`'s Self-targeting section explicitly named "this suite" and a dated destination note inside a skill file that must work generically across any target repo — a direct violation of destination.md's "Generic first" constraint (architectural constraint #1, present since this file's earliest version).
+**Falsifiable by:** a future re-reading of the reverted diff finding it was actually target-agnostic after all (it was not — checked directly against the "substitute an arbitrary target name" test).
 
-**3. A second instance of the same underlying failure class was found and closed this window: a mechanical check silently stopped covering the exact file its own history says it exists for.**
-`PRINCIPLES.md` — the file that suffered a real duplicate-H1 splice defect on 2026-04-23 — had been excluded from `verify.py`'s duplicate-H1 check via dead code (an exclusion clause referencing a list `PRINCIPLES.md` was never part of). Found and fixed 2026-08-01, in the same session as the ACM §4 enforcement work. Two instances of "a recorded historical realization's mechanical protection had silently regressed or never fully applied" in the same two-day window is now a named pattern, not a one-off.
-**Falsifiable by:** finding a third instance of a check that exists because of a specific past defect but no longer covers the file that defect happened in.
+**3. The genericity violation was not a novel mistake — the exact failure mode was already recorded in `.acm/learning.md`, read at the start of the same session, and the loop did not re-consult it before writing the contradicting edit.**
+The `reflect-step-hansei-rewrite` entry (an earlier session) explicitly rejected a self-targeting branch for the same reason and left a named test for catching it ("remain target-agnostic enough that the self-targeting case falls out without special-casing"). This is the single most concrete, falsifiable piece of evidence this repo's own trail has produced yet on the suite's oldest open question: does the loop reliably carry prior learning forward, or does it re-derive (or in this case, repeat) mistakes learning.md already recorded? This window's answer is: not reliably, at least not just from a single read at session start.
+**Falsifiable by:** a future session that proposes a change, checks it against a specific learning.md precedent before writing it, and names the precedent explicitly in its own reasoning (not just cites learning.md generically as "read").
 
-**4. Across this entire 4-entry window, every candidate-next-move list named the suite's older backlog (CITATION.cff/`.zenodo.json` currency, B1 cross-family replication, mtime-based freshness, whole-suite ACM mandate-gate conformance) as an available redirect, and none of the 4 entries picked any of them up.**
-This is not the same pattern the prior orient run flagged (weak follow-through on the loop's *own* candidates) — this window's loop was actually quite disciplined about following its own immediately-prior candidate each time (claim 2 above is evidence of that). What has not moved is the *older*, pre-existing backlog, which is now stale relative to when it was first named (CITATION.cff was already stale at the prior orient run; the gap has only widened as CHANGELOG advanced to v4.7.0).
-**Falsifiable by:** a future entry that acts on any of the four named older-backlog items.
+**4. The operator-gate caught what the loop's own process did not, and did so immediately — this is the human gate functioning exactly as destination.md describes it ("the irreducible human gate is: what to implement"), except this instance was about catching a bad *implementation* of an agreed destination-level concern, not choosing between candidate next moves.**
+The distinction matters: prior operator-gate evidence in this repo's history has mostly been about *which* next move to pick from a ranked list. This is the first clear instance in recent memory of the gate catching an already-implemented, already-committed change as wrong on architectural-constraint grounds, within the same session it was made.
+**Falsifiable by:** a future window where the loop's own step 3 (Challenge the first read) or step 6b independently catches a similar constraint violation before the operator has to.
 
-**5. `verify.py`'s own file-scoping constants (`STALE_PATH_DOCS`, `ACM_SCOPE_TRAVERSAL_FILES`) have not been systematically audited for the same silent-exclusion pattern just found in `REQUIRED_FILES`' consumer (claim 3).** Named explicitly as an open candidate in the most recent entry; not yet examined.
+**5. Destination note item 3 (token/resource efficiency) remains entirely unaddressed as its own topic.**
+The trail-sessions-mandate removal (claim 1) was efficiency-motivated, but it happened *before* the destination note that later named efficiency as a standing concern — it was operator-directed in the moment, not derived from the newly-written destination text. No entry in this window treats efficiency as its own dedicated examination.
+**Falsifiable by:** a future entry that examines token/resource cost as its primary lens, independent of an unrelated operator instruction that happens to also save tokens.
 
 **Carried forward, unchanged by this arc window (no contrary evidence found):**
 
-- Named-boundary discipline across Destination -> Improve -> Orient — unchanged.
-- Suite positioned as an ACM implementation, not the definition of the memory model — unchanged.
-- `.trail/` -> `.acm/` rename complete across prescriptive surfaces — unchanged.
-- June-02 ARF restriction-reasoning silence — still held.
-- Whole-suite ACM mandate gate — still not implemented, still operator-deferred.
-- Cross-session learning acted-on (citing `learning.md` by date+slug in a fresh session) — still the oldest untested claim in this repo's history; not exercised this window either.
+- ACM §4 traversal arc — still closed and self-enforcing (verify.py check 15).
+- `verify.py`'s trigger-line/macro-Hansei formatting rule — still holds; both new entries in this window passed on the first attempt.
+- The suite's older backlog (CITATION.cff/`.zenodo.json` currency, B1 cross-family replication, mtime-based freshness, whole-suite ACM mandate gate) — still untouched, still available.
 
 ---
 
 ## What the next runs should test
 
-1. **The older backlog, if the operator wants to redirect.** CITATION.cff (3.19.0) vs. CHANGELOG.md (now v4.7.0) — the gap has only widened since it was first flagged. B1 cross-family replication, mtime-based freshness on a fresh clone, and whole-suite ACM mandate-gate conformance are all unchanged and all still available. This is now the single most useful thing to surface plainly: the loop has been effective at closing what it finds, but has not initiated any of these on its own across at least 6 weeks of entries.
+1. **Whether a genuinely target-agnostic formulation of "self-targeting should surface reasoning-capability gaps" is even coherent.** Per the reversal entry's own reasoning: the distinction between "the agent's own reasoning" and "the target's structure" may only make sense when the target IS itself an AI's reasoning instructions (this suite, or a similar prompt/skill-authoring repo) — not for an arbitrary external target. Do not attempt a quick rewrite of the reverted paragraph without first settling this question honestly.
 
-2. **Systematic audit of `STALE_PATH_DOCS` and `ACM_SCOPE_TRAVERSAL_FILES` for the silent-exclusion pattern (claim 5).** The cheapest, most concretely-scoped item the loop itself has already named.
+2. **Whether learning.md needs a re-trigger point, not just a single step-1 read.** Claim 3 above is the concrete evidence: a single read at session start was insufficient to prevent a same-session contradiction. A candidate (not yet decided, not yet actioned): require a learning.md check specifically before any SKILL.md edit is proposed, not only once per session.
 
-3. **Cross-session learning acted-on.** Unchanged, still the oldest open behavioral question in this repo — run Improve in a genuinely fresh session (not a continuation of this conversation) on an external target and see whether it cites `learning.md` by date+slug unprompted.
+3. **Audit this session's other changes (ACM §4 additions, the trail sessions-mandate removal) against learning.md for the same unconsulted-precedent pattern.** Named as a blind spot in the reversal entry itself; not yet done.
 
-4. **`verify.py`'s docstring-numbering vs. `main()`'s call-order mismatch.** Cosmetic, low priority, named but not fixed (`verify-overburden-audit-principles-h1-gap-fix`, candidate #1).
+4. **Token/resource efficiency as its own dedicated examination (destination note item 3).** Still untouched as a topic in its own right.
 
-5. **Whole-suite ACM mandate-gate conformance (operator-explicitly-deferred — do not act without direction).** Unchanged.
-
-6. **B1 replication in a fresh session by a non-Claude evaluator family; mtime-based freshness on a fresh clone.** Unchanged, both still open.
+5. **The suite's older backlog** — CITATION.cff/`.zenodo.json` currency (smallest, most mechanical item), B1 cross-family replication, mtime-based freshness on a fresh clone, whole-suite ACM mandate-gate conformance (operator-explicitly-deferred — do not act without direction).
 
 ---
 
 ## Active operational rules
 
-- **Every spec change must be paired with enforcement in the same session.** Reinforced twice more this window (ACM §4 wording fix + new verify.py check together; PRINCIPLES.md gap fix + positive/negative sanity test together, run before committing rather than only trusting `verify.py`'s own pass).
+- **A single read of `learning.md` at the start of a session is not sufficient insurance against contradicting a recorded precedent later in the same session.** New this window, and the most important addition — re-check `learning.md` specifically before proposing any SKILL.md edit, not only at step 1 of a fresh session. Confirmed by direct failure: the loop read learning.md this session, then minutes later wrote an edit that repeated a mistake learning.md had already named.
 
-- **When a mechanical check exists because of a specific historical defect, periodically re-verify the check's file-scope still actually includes the file the defect happened in.** New this window. Dead-code exclusions (a list comprehension excluding a name that was never in the source list) can silently disable the exact protection a check was built for, without `verify.py` itself ever failing to alert anyone — confirmed twice in one session (the ACM §4 wording drift in `orient/SKILL.md`, and `PRINCIPLES.md`'s H1-check exclusion).
+- **"Generic first" violations can look like reasonable-sounding prose right up until the substitution test is applied.** Before adding any instruction to a skill file, substitute an arbitrary unrelated target name into the sentence (a driving school's operations manual, a different codebase entirely) and confirm it still makes sense. If a reference to "this suite," a dated note, or a specific file only found in this repo survives the substitution, the wording has smuggled in a repo-specific assumption.
 
-- **The step-6b double-loop question should be answered honestly per instance, including "no."** Three worked examples now exist in this repo's own trail with three different outcomes (no escalation / escalate, surfaced not resolved / escalate, resolved structurally) — do not let repeated firing turn it into a templated "always escalate" or "always dismiss" response.
+- **Every spec change must be paired with enforcement in the same session.** Still holds; unchanged this window (no spec changes requiring new enforcement occurred).
 
-- **Mark `[!REVERSAL]` when the iteration backs out of a planned step, not only when reversing prior runs.** Still holds; exercised again this window (the destination-fix entry's own within-run correction on the duplication question).
+- **When a mechanical check exists because of a specific historical defect, periodically re-verify the check's file-scope still actually includes the file the defect happened in.** Still holds, from the ACM §4/PRINCIPLES.md arc.
 
-- **When writing non-ASCII content to disk in PowerShell, use explicit UTF-8 encoding.** `Set-Content` defaults to Windows-1252 on PS5; use `Add-Content -Encoding UTF8` or `[System.IO.File]::WriteAllText`.
+- **The step-6b double-loop question should be answered honestly per instance, including "no."** Still holds; not exercised in this specific window (the recurring-finding-class trigger did not fire in either of this window's two entries).
 
-- **ACM §4.2 scope traversal stop conditions: filesystem root, `.acm-root` marker, 4-level ceiling.** Now mechanically enforced across `improve/SKILL.md`, `orient/SKILL.md`, `intent/SKILL.md`, and `destination/SKILL.md` by `verify.py` check 15 — this is no longer only a manual reminder for whoever edits one of the four files; a mismatch fails the build.
+- **Mark `[!REVERSAL]` when the iteration backs out of a planned step, not only when reversing prior runs.** Reinforced directly this window — the reversal entry is itself a same-session, cross-entry reversal, correctly marked.
 
-- **`verify.py`'s trigger-evaluation check requires `- *Label:* content` (single-asterisk italics) and a literal `**Across-trail macro-Hansei` line/heading whenever any trigger fires.** Still holds; every entry this window passed on the first or near-first attempt, consistent with this being applied correctly from the start now.
+- **`verify.py`'s trigger-evaluation check requires `- *Label:* content` (single-asterisk italics) and a literal `**Across-trail macro-Hansei` line/heading whenever any trigger fires.** Still holds; both entries in this window passed on the first attempt.
 
-- **Trail entries are required for SKILL.md changes.** Still holds; no gap found this window.
-
-- **PEA-vocabulary vs. cited-doctrine-name split; bulk-replace-is-never-exhaustive; PowerShell `Copy-Item` BOM hazard.** Unchanged, not exercised this window, still valid from the prior orient run.
+- **Destination.md content is exempt from the "Generic first" constraint that governs skill files.** New clarification this window: destination.md is explicitly this repo's own operator-held content and is expected to be repo-specific (its 2026-08-01 note about this suite is entirely appropriate there). The constraint applies to translating a destination-level concern into a *skill-file instruction* meant to be portable across targets — that translation step is where genericity must be actively re-checked, not assumed to carry over automatically from a legitimate repo-specific observation.
 
 ---
 
 ## Loop-effectiveness notes
 
-**Quality bars tested this window:** internal text-layer consistency (again) and, newly, mechanical-enforcement completeness (does a check that exists because of a named historical defect still cover the file that defect happened in). Comparative defensibility, comparator coverage, empirical replication, and operational deployability remain untouched — now unchanged across two consecutive orient windows.
+**Quality bar tested this window: does the loop honor its own already-recorded architectural constraints (genericity) when making new additions, without operator intervention?** Result: no, not on the first attempt. The addition was made, committed, and only reverted after the operator caught it. This is a new, more demanding quality bar than this repo's trail has explicitly tested before — prior windows tested text-consistency and mechanical-enforcement-completeness (both passed reliably); this window tested self-consistency against a *named prior lesson already in the loop's own memory layer*, and the loop failed it once.
 
-**Candidate-next-move follow-through, updated:** the prior orient run found this weak (top-ranked candidates sat unpicked for 5 entries). This window is the opposite: every one of the 4 entries directly built on the immediately-prior entry's own candidate list. The loop's short-horizon self-referential follow-through is now demonstrably strong. What remains weak is follow-through on the *older*, pre-existing backlog (claim 4) — the loop is good at finishing threads it just started, and has not yet shown it will reach back for threads that predate the current session's focus.
+**Operator-gate effectiveness:** strongly validated this window, in a new way. Prior operator-gate evidence in this repo has mostly been about steering *which* next move to pick. This window shows the gate catching an already-committed *implementation* as architecturally wrong, immediately, in the same session. The gate is not just steering direction — it is also the current backstop for constraint violations the loop's own process did not catch.
 
-[!REALIZATION] The suite now has a working, repeatedly-exercised example of exactly the capability the destination's own Learning section named as underdeveloped ("what to do differently next time... The skillset does not currently produce this reliably"): the ACM §4 arc shows a realization (2026-06-22) being rediscovered as still-open (2026-07-31 orient), acted on across two entries, cross-checked against its own duplication risk, and finally converted into a mechanical guarantee rather than a hope that a future run reads the trail correctly. That is the shape "learning acted on" was supposed to have. It happened here on a narrow, mechanical topic (file-consistency wording) — the open question (item 3 above) is whether the same discipline transfers to a harder, less mechanical topic like the suite's older, more substantive backlog items.
+[!REALIZATION] The most valuable evidence this window produced was not the reverted paragraph — it was the demonstration that a destination note naming "improve the agent's own reasoning" as an explicit goal does not, by itself, make the agent apply its own recorded learning more carefully. If anything, the excitement of a new framing (reasoning-capability gaps) appears to have distracted from a more mundane, already-known check (re-read learning.md before proposing this specific kind of change). Any future attempt to operationalize the destination's reasoning-capability concern should treat this arc — not the reverted text — as the primary evidence about where the suite's actual reasoning-capability gap currently sits: not in a missing self-check paragraph, but in how reliably a single early read of the memory layer survives contact with a new idea introduced later in the same session.

@@ -1101,6 +1101,30 @@ Compact chronological extract of every `[!REALIZATION]` and `[!REVERSAL]` marker
 
 **[!REVERSAL]** The entry "improve-self-targeting-reasoning-capability-instrument" (2026-08-01, this same session) added a self-targeting-specific paragraph to improve/SKILL.md's Self-targeting section. This entry fully reverses that addition after the operator identified it violates the suite's own genericity constraint.
 
+## 2026-08-01 — orient-post-genericity-reversal
+
+**[!REALIZATION]** Trail's .acm/sessions/ mandate removal is a genuine, well-reasoned architectural correction. Both operator-stated reasons were independently verified before acting (llm-harness-proxy's actual scope read directly; the host-product session-history claim verified indirectly via this workspace's own chronicle tooling). Not a reversal candidate.
+
+## 2026-08-01 — orient-post-genericity-reversal
+
+**[!REALIZATION]** Destination gained a new note naming three gaps (genericity as self-claim, self-targeting deriving reasoning-capability improvement, token efficiency) -- and the very first attempt to act on the reasoning-capability gap failed the suite's own oldest genericity constraint. The withdrawn addition named "this suite" and a dated destination note inside a skill file that must work generically across any target.
+
+## 2026-08-01 — orient-post-genericity-reversal
+
+**[!REALIZATION]** The genericity violation was not novel -- the exact failure mode was already recorded in learning.md (the reflect-step-hansei-rewrite entry's "remain target-agnostic enough that the self-targeting case falls out without special-casing"), read at the start of the same session. This is the most concrete, falsifiable evidence yet on the suite's oldest open question (does the loop carry prior learning forward): this window's answer is no, not reliably, from a single read at session start.
+
+## 2026-08-01 — orient-post-genericity-reversal
+
+**[!REALIZATION]** The operator-gate caught what the loop's own process did not, immediately, in the same session -- a new form of gate-effectiveness evidence distinct from prior "which next move to pick" evidence: this is the gate catching a bad implementation of an agreed destination-level concern.
+
+## 2026-08-01 — orient-post-genericity-reversal
+
+**[!REALIZATION]** :* not fired -- extends rather than contradicts the trail-sessions-mandate removal entry and the reversal entry's own realizations.
+
+## 2026-08-01 — orient-post-genericity-reversal
+
+**[!REALIZATION]** Read as one document, this window is the clearest evidence this repo's trail has produced on the destination's own oldest named gap (Learning: "the most underdeveloped of the three"). A destination note asking the loop to derive that improving its own reasoning matters did not, by itself, make the loop apply its own already-recorded learning more carefully in the very next action -- if anything, the new framing appears to have competed with, rather than reinforced, the older and more mundane precedent. The operator-gate closed the gap this time. Whether it needs to every time, or whether a structural re-trigger point for learning.md is worth adding, is now the single most concrete open design question this repo's trail has surfaced.
+
 ---
 
-**274 markers — 253 realisations, 21 reversals**
+**280 markers — 259 realisations, 21 reversals**

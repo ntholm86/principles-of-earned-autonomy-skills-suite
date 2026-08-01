@@ -8795,3 +8795,57 @@ Imagined-reader pushback: "You're now proposing that the real fix is 'try harder
 2. Consider whether learning.md needs a more prominent or differently-triggered read instruction -- not "read it once at step 1," but something that fires again specifically before any skill-file edit is proposed, given this entry's evidence that a single read at the start of a long session was not sufficient to prevent a directly-contradicting proposal later in the same session.
 3. Audit this session's other changes (ACM section 4 additions, trail sessions/-mandate removal) against learning.md for the same class of unconsulted-precedent mistake -- named blind spot above, not yet done.
 4. The suite's older backlog (CITATION.cff currency, B1 replication, mtime freshness, whole-suite mandate gate) remains available if the operator wants to redirect away from this thread.
+
+## 2026-08-01 - orient-post-genericity-reversal
+
+- target: skills repo (this repo)
+- operator: maintainer (Nils Holmager)
+- agent: Claude Sonnet 4.5 (GitHub Copilot)
+- skill: orient
+- outcome: orientation.md rewritten; window contains a well-reasoned architectural correction (trail sessions-mandate removal) and a self-correction cycle (a change withdrawn after being found to violate the suite's own genericity constraint) -- the correction is judged the most valuable evidence this window produced
+- delta: .acm/orientation.md rewritten (was last updated 2026-08-01 as orient-post-acm4-closure)
+
+### Scope statement
+
+Read the arc from entry orient-zero-new-arc (2026-08-01, the last orient run) through entry reversal-self-targeting-branch-violates-genericity (2026-08-01) -- 3 new entries in the same session, plus a new destination note added between them. Arc-question: what does this window's self-correction cycle reveal about the loop's actual reasoning capability, versus what the withdrawn change merely claimed to add.
+
+Freshness guard: python harness/tools/record.py history --write (168 entries), learning --write (274 markers), python verify.py (OK) -- run before forming arc-claims.
+
+### Arc-claims
+
+[!REALIZATION] Trail's .acm/sessions/ mandate removal is a genuine, well-reasoned architectural correction. Both operator-stated reasons were independently verified before acting (llm-harness-proxy's actual scope read directly; the host-product session-history claim verified indirectly via this workspace's own chronicle tooling). Not a reversal candidate.
+
+[!REALIZATION] Destination gained a new note naming three gaps (genericity as self-claim, self-targeting deriving reasoning-capability improvement, token efficiency) -- and the very first attempt to act on the reasoning-capability gap failed the suite's own oldest genericity constraint. The withdrawn addition named "this suite" and a dated destination note inside a skill file that must work generically across any target.
+
+[!REALIZATION] The genericity violation was not novel -- the exact failure mode was already recorded in learning.md (the reflect-step-hansei-rewrite entry's "remain target-agnostic enough that the self-targeting case falls out without special-casing"), read at the start of the same session. This is the most concrete, falsifiable evidence yet on the suite's oldest open question (does the loop carry prior learning forward): this window's answer is no, not reliably, from a single read at session start.
+
+[!REALIZATION] The operator-gate caught what the loop's own process did not, immediately, in the same session -- a new form of gate-effectiveness evidence distinct from prior "which next move to pick" evidence: this is the gate catching a bad implementation of an agreed destination-level concern.
+
+Destination note item 3 (token/resource efficiency) remains entirely unaddressed as its own topic; the sessions-mandate removal was efficiency-motivated but preceded the note and was operator-directed, not derived from it.
+
+### Loop-effectiveness (step 4)
+
+Quality bar tested this window: does the loop honor its own already-recorded architectural constraints (genericity) when making new additions, without operator intervention? Result: no, not on the first attempt -- caught only after the operator flagged it. This is a more demanding bar than text-consistency or mechanical-enforcement-completeness (both of which the loop has passed reliably in prior windows); this window tested self-consistency against a named prior lesson already in the loop's own memory layer, and failed it once.
+
+Operator-gate effectiveness: strongly validated in a new way this window -- catching an already-committed implementation as architecturally wrong, not just steering which candidate to pick next.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired -- this is the first orient run to cover a self-correction/reversal cycle; no prior orient window contained this pattern to recur.
+- *About to declare silence:* not fired -- this run forms substantive arc-claims and rewrites orientation.md.
+- *Contradicts prior [!REALIZATION]:* not fired -- extends rather than contradicts the trail-sessions-mandate removal entry and the reversal entry's own realizations.
+- *Operator explicitly asked:* FIRED -- operator explicitly asked to run the orient skill this session.
+
+**Across-trail macro-Hansei:**
+
+[!REALIZATION] Read as one document, this window is the clearest evidence this repo's trail has produced on the destination's own oldest named gap (Learning: "the most underdeveloped of the three"). A destination note asking the loop to derive that improving its own reasoning matters did not, by itself, make the loop apply its own already-recorded learning more carefully in the very next action -- if anything, the new framing appears to have competed with, rather than reinforced, the older and more mundane precedent. The operator-gate closed the gap this time. Whether it needs to every time, or whether a structural re-trigger point for learning.md is worth adding, is now the single most concrete open design question this repo's trail has surfaced.
+
+### Action
+
+Rewrote .acm/orientation.md in full (not append, per orient's own rule). Five new arc-claims replacing the prior four; "what next runs should test" reordered around the genericity-coherence question and the learning.md re-trigger-point question; two new operational rules added (single learning.md read is insufficient insurance; the substitution test for catching genericity violations); one clarifying rule added (destination.md content is exempt from Generic-first, the constraint applies to the destination-to-skill-file translation step). Regenerated history.md/learning.md; verify.py passed clean.
+
+### Candidate Next Moves
+
+1. Settle whether a target-agnostic formulation of "self-targeting should surface reasoning-capability gaps" is even coherent before attempting a rewrite of the withdrawn paragraph.
+2. Decide whether learning.md needs a re-trigger point before any SKILL.md edit specifically, not just a single step-1 read per session.
+3. Audit this session's other changes (ACM section 4 additions, trail sessions-mandate removal) against learning.md for the same unconsulted-precedent pattern.
