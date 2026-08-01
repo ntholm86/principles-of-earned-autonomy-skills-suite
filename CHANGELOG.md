@@ -1,5 +1,10 @@
 # Changelog
 
+## v4.17.0 — 2026-08-01
+
+### Fixed
+- **`CITATION.cff`'s `version`/`date-released` fields were stale** (3.19.0 / 2026-05-12, several months and ~4 major CHANGELOG versions behind). Synced to the version this fix itself produces (4.17.0), not the version at time of editing — otherwise the file would already be one version stale the moment this commit lands. While checking this, found a separate, more significant issue not fixed here: git tags have not been created for any v4.x release since `v4.0.0` (CHANGELOG has since moved through v4.1.0–v4.16.0 with no corresponding tags), and an existing tag named `v4.18.0` actually points to a commit whose message says "v3.18.0" — almost certainly a historical tagging typo, not a real v4.18.0 release. Neither the missing tags nor the mistagged `v4.18.0` were touched — creating/renaming/deleting tags is release-management territory and tag deletion rewrites shared history, both warranting explicit operator confirmation rather than a unilateral fix inside this entry's scope.
+
 ## v4.16.0 — 2026-08-01
 
 ### Added

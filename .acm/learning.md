@@ -5,19 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 260 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-01 — orient-post-acm4-closure
-
-**[!REALIZATION]** The suite now has a working, repeatedly-exercised example of exactly the capability the destination's own Learning section named as underdeveloped: the ACM section 4 arc shows a realization (2026-06-22) being rediscovered as still-open, acted on across two entries, cross-checked against its own duplication risk, and converted into a mechanical guarantee rather than a hope that a future run reads the trail correctly. The open question is whether the same discipline transfers to the suite's older, less mechanical backlog items -- text-consistency fixes are a much easier target for this pattern than empirical replication or mandate-gate conformance would be.
-
-## 2026-08-01 — orient-zero-new-arc
-
-**[!REALIZATION]** Two consecutive orient invocations with no work done between them is itself informative: it means the operator-gate between "run improve" and "run orient" was pulled before any new improve iteration happened. This is a legitimate, low-cost way to confirm the previous orient run's output is still the right orientation before deciding what to do next -- not a wasted invocation.
-
-## 2026-08-01 — orient-zero-new-arc
-
-**[!REALIZATION]** :* not fired -- fully consistent with and reuses the prior orient run's output unchanged.
+Showing the most recent 60 markers. 263 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-01 — orient-zero-new-arc
 
@@ -246,6 +234,18 @@ Showing the most recent 60 markers. 260 older marker(s) are in `.acm/learning-ar
 ## 2026-08-01 — trail-condensed-entry-format-for-non-decision-fixes
 
 **[!REALIZATION]** This is the first entry in this session where the operator explicitly handed over a governing-variable-level decision rather than picking from a ranked list or delegating a narrower, already-scoped choice (as with the BOM-grouping decision). Read against the arc as a whole: the operator-gate in this session has now been exercised in at least four distinct shapes -- ranked-candidate selection, narrow delegated autonomy (BOM grouping, operator unavailable), direct operator-initiated diagnostic questions (the Argyris-in-Orient gap), and now full delegation of an architectural-format decision with an explicit instruction to reason from destination and inferred intent. Each shape places different demands on the agent's judgment, and this is the first case testing whether the agent, given real latitude, converges on a *narrower* change than the destination-level revision the framing implied ("what should we do about ceremony overhead") -- which is what happened here: the decision made is smaller in destination-level footprint than the question as posed, because closer reading found the actual concern lived one layer down from where it was first framed.
+
+## 2026-08-01 — citation-cff-currency-fix-surfaces-git-tag-drift
+
+**[!REALIZATION]** This is the first time the new condensed-entry-format decision has actually been tested in practice, and it immediately produced the predicted failure mode from its own blind-spot note: a task selected specifically as a condensed-format candidate ("the smallest, most mechanical" backlog item) turned out to contain a real judgment call once actually investigated (what version number to use given the CHANGELOG/tag mismatch; whether to touch the tags at all). This is direct, fast evidence for the condensed format's own "when in doubt, use the full template" bias working as intended -- the format correctly escalated to full treatment once a real decision appeared, rather than the investigation being artificially truncated to fit a pre-chosen ceremony level.
+
+## 2026-08-01 — citation-cff-currency-fix-surfaces-git-tag-drift
+
+**[!REALIZATION]** :* not fired -- consistent with, and a further instance of, the already-recorded governing-variable diagnosis.
+
+## 2026-08-01 — citation-cff-currency-fix-surfaces-git-tag-drift
+
+**[!REALIZATION]** Per the lighter-weight-pointer convention established earlier today: the governing-variable diagnosis stands unchanged from `confirm-bom-root-cause-and-fix-verifypy` and its subsequent restatements -- this entry is the fifth instance of the same shape, now extending beyond "verify.py checks" and "file lists" into "release/tag hygiene," which broadens the diagnosis's scope slightly (it is not just a verify.py-specific problem, it is a general pattern in how this repo tracks "what is the current true state" across several independent bookkeeping mechanisms -- CHANGELOG prose, git tags, verify.py's REQUIRED_FILES/STALE_PATH_DOCS/ACM_SCOPE_TRAVERSAL_FILES lists, and now CITATION.cff -- each maintained by hand, each capable of independently drifting from the others). This broadened framing is itself worth carrying into the still-pending "systematic verify.py audit" candidate move, which should now perhaps be reframed more broadly as a systematic audit of every hand-maintained "current state" claim in the repo, not only verify.py's checks specifically.
 
 ---
 

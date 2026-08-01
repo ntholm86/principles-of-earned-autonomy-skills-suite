@@ -9781,3 +9781,69 @@ Imagined-reader pushback: "You were explicitly asked to decide this yourself, an
 3. **Exercise step 3b in a live future orient run** -- still the oldest untested item; this entry's own arc-level observation (four distinct operator-gate shapes exercised this session) is fresh material for it.
 4. **Audit `STALE_PATH_DOCS` and `ACM_SCOPE_TRAVERSAL_FILES`** for the same silent-exclusion pattern, still open.
 5. Settle whether a target-agnostic formulation of "self-targeting should surface reasoning-capability gaps" is even coherent -- still carried.
+
+## 2026-08-01 - citation-cff-currency-fix-surfaces-git-tag-drift
+
+- target: skills repo (this repo) -- CITATION.cff
+- operator: maintainer (Nils Holmager)
+- agent: Claude Sonnet 4.5 (GitHub Copilot)
+- skill: improve
+- outcome: fixed CITATION.cff's stale version/date fields; while checking, found git tags have not been created for any v4.x release since v4.0.0, plus one existing tag (v4.18.0) that appears to be a historical typo for v3.18.0 -- neither touched, both named for the operator
+- delta: CITATION.cff version 3.19.0 -> 4.17.0, date-released 2026-05-12 -> 2026-08-01; CHANGELOG.md v4.17.0 added
+
+### Interpretation of the ask
+
+Operator: "please continue." Bare, generic prompt. Self-directed from the prior entry's top-ranked candidate: "use the condensed format on the next few genuinely-simple fixes (e.g. the still-open hardcoded-count sweep, or the CITATION.cff currency fix)." I picked CITATION.cff specifically because it was already named as the smallest, most mechanical backlog item, repeatedly deferred across many prior entries -- a good test case for the condensed format I had just added.
+
+### Examination
+
+Read CITATION.cff directly: `version: "3.19.0"`, `date-released: "2026-05-12"` -- both far behind the current state (CHANGELOG.md was at v4.16.0 before this fix, dated 2026-08-01). Checked `.zenodo.json` for a similar version field -- confirmed it has none (it carries description/metadata only, no version tracking), so only CITATION.cff needed this fix.
+
+While confirming what the "correct" version number to sync to actually was, checked `git tag --list` and `git describe --tags` to establish ground truth rather than assuming CHANGELOG.md's number was itself reliable. This surfaced two real findings beyond the immediate task: (1) the full tag list shows tags up through `v4.0.0` and then nothing for any of CHANGELOG.md's subsequent v4.1.0 through v4.16.0 bumps -- meaning the tagging practice for releases has not kept pace with CHANGELOG.md's version bumps for a long time (this entire session's worth of work included); (2) a tag literally named `v4.18.0` exists, but `git log v4.18.0 -1` shows its commit message is "docs: update changelog for v3.18.0" -- the tag name almost certainly should have been `v3.18.0` (a one-digit major-version typo), and `git describe --tags` from HEAD correctly resolves to the more recently-tagged `v3.19.0` rather than the mis-numbered `v4.18.0`, confirming the anomaly is real and not a misreading on my part.
+
+### Decision
+
+[!DECISION] Fix CITATION.cff's version and date-released fields, syncing them to the version this fix itself will produce (4.17.0, since adding a CHANGELOG entry for this fix necessarily bumps the version again) rather than the pre-fix number (4.16.0) -- otherwise the file would already be one version stale the instant this commit lands, defeating the point of the fix. Precedent check: grepped learning.md/learning-archive.md for "CITATION.cff", "zenodo", "version sync" before proceeding -- found only prior entries naming this as an open backlog item, never actually executed; no contradicting precedent.
+
+[!DECISION] Do NOT touch git tags -- neither create the missing v4.1.0-v4.16.0 tags, nor rename/delete the mistagged v4.18.0 tag. Precedent check: this repo's own operational-safety guidance treats tag deletion/rewriting shared history as requiring explicit confirmation; creating a backlog of missing tags retroactively is also a release-management decision (what cadence, whether to backfill at all, whether v4.18.0's rename would break anything that already references it, e.g. a Zenodo DOI snapshot) that the operator should make, not something to decide unilaterally inside a "fix a stale citation file" task.
+
+Rejected alternative: use CHANGELOG.md's pre-fix version (4.16.0) in CITATION.cff, treating "currency" as "whatever the file said before I touched it." Rejected -- this produces an immediately-stale result the moment the fix commits, which fails the actual goal (CITATION.cff reflecting current reality) even though it looks like a completed fix.
+
+Rejected alternative: silently note the tag-drift finding in Reflection only, without naming it in CHANGELOG.md or Candidate Next Moves. Rejected -- given this repo's own established practice this session (naming discovered gaps explicitly rather than burying them, per the BOM-cleanup and check-coverage-gap entries), the tag drift deserves the same visibility, especially since fixing it involves an operator-gated action (tag rewriting).
+
+### Prediction
+
+I will update two fields in CITATION.cff and add a CHANGELOG entry. I expect python verify.py to pass clean (CITATION.cff is not part of any markdown H1/link check, and its YAML structure is unaffected). I expect this NOT to touch git tags, `.zenodo.json`, or any SKILL.md file.
+
+### Action
+
+Updated CITATION.cff's `version` to `"4.17.0"` and `date-released` to `"2026-08-01"`. Investigated git tags via `git tag --list | Sort-Object`, `git log v4.18.0 -1`, and `git merge-base HEAD v4.18.0` -- confirmed v4.18.0 is reachable from HEAD (on `main`, per `git branch --contains`) but is not the nearest tag by commit-graph distance (git describe correctly finds v3.19.0 instead), consistent with it being a historical naming error rather than a real, later v4.x release. Added CHANGELOG.md v4.17.0 entry documenting both the fix and the untouched tag-drift finding. Regenerated history.md/learning.md/learning-archive.md and ran python verify.py -- passed clean.
+
+Comparing outcome to prediction: held on every point.
+
+### Reflection
+
+[!REALIZATION] This is the first time the new condensed-entry-format decision has actually been tested in practice, and it immediately produced the predicted failure mode from its own blind-spot note: a task selected specifically as a condensed-format candidate ("the smallest, most mechanical" backlog item) turned out to contain a real judgment call once actually investigated (what version number to use given the CHANGELOG/tag mismatch; whether to touch the tags at all). This is direct, fast evidence for the condensed format's own "when in doubt, use the full template" bias working as intended -- the format correctly escalated to full treatment once a real decision appeared, rather than the investigation being artificially truncated to fit a pre-chosen ceremony level.
+
+Named blind spot: I have not determined whether the missing v4.1.0-v4.16.0 tags reflect a deliberate decision (e.g., only tagging "significant" releases) or a simple lapse in practice. Without that context, I can name the gap but not assess how urgent closing it actually is.
+
+Imagined-reader pushback: "You just spent this entry investigating git tag hygiene when the actual ask was a one-line citation fix -- isn't this exactly the kind of unplanned scope creep this session has repeatedly warned itself about?" Fair, but distinguishable from the times that warning applied: I did not act on the tag-drift finding (no tags created, none renamed/deleted) -- I investigated only as far as needed to answer the citation fix's own question honestly ("what is the correct current version?"), and named what I found without expanding today's actual changes beyond CITATION.cff and CHANGELOG.md. The scope of the CHANGE stayed narrow; only the scope of the INVESTIGATION widened, which is the same distinction already drawn in the BOM-cleanup arc between "root-cause investigation" and "the fix."
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED -- this is now the fifth distinct instance today of "investigating a small, targeted question surfaces a larger, previously-unnoticed gap" (PRINCIPLES.md H1, POSITION.md/QUICKSTART.md REQUIRED_FILES, the systemic BOM issue, the check_no_mojibake coverage gap, and now git tag drift). The governing-variable diagnosis already on record (no single canonical source of truth for what various mechanical artifacts -- checks, file lists, and now release tags -- actually claim vs. what they cover) applies again, unchanged.
+- *About to declare silence:* not fired -- this run made a change.
+- *Contradicts prior [!REALIZATION]:* not fired -- consistent with, and a further instance of, the already-recorded governing-variable diagnosis.
+- *Operator explicitly asked:* not fired -- operator gave a bare "please continue"; the topic came from the self-directed candidate list.
+
+**Across-trail macro-Hansei**
+
+[!REALIZATION] Per the lighter-weight-pointer convention established earlier today: the governing-variable diagnosis stands unchanged from `confirm-bom-root-cause-and-fix-verifypy` and its subsequent restatements -- this entry is the fifth instance of the same shape, now extending beyond "verify.py checks" and "file lists" into "release/tag hygiene," which broadens the diagnosis's scope slightly (it is not just a verify.py-specific problem, it is a general pattern in how this repo tracks "what is the current true state" across several independent bookkeeping mechanisms -- CHANGELOG prose, git tags, verify.py's REQUIRED_FILES/STALE_PATH_DOCS/ACM_SCOPE_TRAVERSAL_FILES lists, and now CITATION.cff -- each maintained by hand, each capable of independently drifting from the others). This broadened framing is itself worth carrying into the still-pending "systematic verify.py audit" candidate move, which should now perhaps be reframed more broadly as a systematic audit of every hand-maintained "current state" claim in the repo, not only verify.py's checks specifically.
+
+### Candidate Next Moves
+
+1. **Decide, with the operator, whether and how to re-establish a tagging cadence for v4.x releases** -- including whether to rename the mistagged v4.18.0 tag (destructive, needs explicit confirmation) or leave it as a documented historical anomaly.
+2. **Reframe the still-pending "systematic audit" candidate more broadly**: not just verify.py's checks, but every hand-maintained "what is the current state" claim in this repo (CHANGELOG version, git tags, CITATION.cff, verify.py's several file-scoping lists) -- per the broadened macro-Hansei framing above.
+3. **Continue testing the condensed format** on a task that turns out to genuinely have no judgment call (the still-open hardcoded-count sweep is the next candidate) -- this entry's own experience suggests picking a smaller, more contained target than "fix a stale metadata file," which turned out to have more depth than expected.
+4. **Exercise step 3b in a live future orient run** -- still the oldest untested item.
+5. Settle whether a target-agnostic formulation of "self-targeting should surface reasoning-capability gaps" is even coherent -- still carried.

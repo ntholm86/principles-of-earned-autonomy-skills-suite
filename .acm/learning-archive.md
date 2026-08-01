@@ -1045,6 +1045,18 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** :* not fired -- extends rather than contradicts the prior orient run's candidate-follow-through finding by refining it (self-referential vs. older-backlog follow-through are now distinguished).
 
+## 2026-08-01 — orient-post-acm4-closure
+
+**[!REALIZATION]** The suite now has a working, repeatedly-exercised example of exactly the capability the destination's own Learning section named as underdeveloped: the ACM section 4 arc shows a realization (2026-06-22) being rediscovered as still-open, acted on across two entries, cross-checked against its own duplication risk, and converted into a mechanical guarantee rather than a hope that a future run reads the trail correctly. The open question is whether the same discipline transfers to the suite's older, less mechanical backlog items -- text-consistency fixes are a much easier target for this pattern than empirical replication or mandate-gate conformance would be.
+
+## 2026-08-01 — orient-zero-new-arc
+
+**[!REALIZATION]** Two consecutive orient invocations with no work done between them is itself informative: it means the operator-gate between "run improve" and "run orient" was pulled before any new improve iteration happened. This is a legitimate, low-cost way to confirm the previous orient run's output is still the right orientation before deciding what to do next -- not a wasted invocation.
+
+## 2026-08-01 — orient-zero-new-arc
+
+**[!REALIZATION]** :* not fired -- fully consistent with and reuses the prior orient run's output unchanged.
+
 ---
 
-**260 markers — 240 realisations, 20 reversals**
+**263 markers — 243 realisations, 20 reversals**
