@@ -169,6 +169,7 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 162 | 2026-08-01 | acm4-sweep-complete-plus-consistency-enforcement | ACM section 4 traversal sweep confirmed complete across all 6 live skills; a real, already-manifested wording drift found and fixed in orient/SKILL.md; a new verify.py check added to catch recurrence | orient/SKILL.md 2.0.0 -> 2.0.1; verify.py gains check 15 (check_acm_scope_traversal_consistency); CHANGELOG.md v4.6.0 added |
 | ▸ 163 | 2026-08-01 | verify-overburden-audit-principles-h1-gap-fix | examined verify.py for overburden per the prior entry's candidate; found no genuine overburden, but found a real gap -- PRINCIPLES.md was silently excluded from the duplicate-H1 check that exists specifically because of a real PRINCIPLES.md defect; fixed | verify.py REQUIRED_FILES gains PRINCIPLES.md; check_required_markdown_docs() restructured so the H1 check still applies to it; CHANGELOG.md v4.7.0 added |
 | ▸ 164 | 2026-08-01 | orient-post-acm4-closure | orientation.md rewritten; ACM section 4 arc confirmed closed and self-enforcing, double-loop mechanism confirmed working across 3 discriminating instances, older backlog named as the clear next redirect if the operator wants one | .acm/orientation.md rewritten (was last updated 2026-07-31 as orient-post-argyris-window) |
+| ▸ 165 | 2026-08-01 | orient-zero-new-arc | no new arc since the last orient run -- orientation.md left unchanged; declining to manufacture arc-claims | none |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -787,4 +788,8 @@ Do not edit by hand — re-run the command to refresh.
 
 - **decided:** Add `PRINCIPLES.md` to `REQUIRED_FILES` and restructure `check_required_markdown_docs()` so the duplicate-H1 check still runs on it, while only the broken-local-link check is skipped for it (its links intentionally point to the external manifesto repo, not local paths -- the original, correct half of the old exclusion's intent).
 
-**164 runs total — 150 with changes, 14 silence**
+### Run 165 — 2026-08-01 — orient-zero-new-arc
+
+- **decided:** Do not rewrite orientation.md. The prior orient run's claims, "what next runs should test" list, and operational rules all still hold verbatim -- there is no new evidence to confirm or revise them against. Rewriting the file with no new input would either restate the same content (waste) or manufacture claims from a zero-entry window (exactly the failure mode Convergence Is Silence exists to prevent at the improve level, and the equivalent discipline for orient).
+
+**165 runs total — 151 with changes, 14 silence**

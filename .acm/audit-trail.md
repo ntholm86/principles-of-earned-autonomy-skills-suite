@@ -8546,3 +8546,48 @@ Rewrote .acm/orientation.md in full (not append, per orient's own rule). Updated
 1. If the operator wants to redirect: the older backlog (CITATION.cff currency, B1 replication, mtime freshness, whole-suite mandate gate) is the single most useful next topic -- untouched across 6+ weeks despite being named repeatedly.
 2. Systematic audit of STALE_PATH_DOCS and ACM_SCOPE_TRAVERSAL_FILES for the silent-exclusion pattern (named by the prior entry, not yet done).
 3. Fix verify.py's cosmetic docstring-numbering vs. main()'s call-order mismatch (low priority, named twice now).
+
+## 2026-08-01 - orient-zero-new-arc
+
+- target: skills repo (this repo)
+- operator: maintainer (Nils Holmager)
+- agent: Claude Sonnet 4.5 (GitHub Copilot)
+- skill: orient
+- outcome: no new arc since the last orient run -- orientation.md left unchanged; declining to manufacture arc-claims
+- delta: none
+
+### Scope statement
+
+Operator asked to run orient again. Checked the trail and git log before reading anything else: HEAD is still 316a2c6 (orient-post-acm4-closure, the immediately prior orient run), zero new commits, zero new trail entries since then. There is no new arc to read.
+
+Freshness guard run anyway (python harness/tools/record.py history --write -> 164 entries; learning --write -> 261 markers; python verify.py -> OK) to confirm the repo itself has not silently drifted, but this does not substitute for a real arc to orient against.
+
+### Decision
+
+[!DECISION] Do not rewrite orientation.md. The prior orient run's claims, "what next runs should test" list, and operational rules all still hold verbatim -- there is no new evidence to confirm or revise them against. Rewriting the file with no new input would either restate the same content (waste) or manufacture claims from a zero-entry window (exactly the failure mode Convergence Is Silence exists to prevent at the improve level, and the equivalent discipline for orient).
+
+This is itself the correct exercise of orient's own principle: "when the agent has no genuine destination-hunch to offer, it must say so" (borrowed from destination's principle, equally applicable here) -- an orient run that finds no arc must say so rather than performing one.
+
+### Action
+
+No files changed except this trail entry and the already-fresh derived artifacts. orientation.md untouched.
+
+### Reflection
+
+[!REALIZATION] Two consecutive orient invocations with no work done between them is itself informative: it means the operator-gate between "run improve" and "run orient" was pulled before any new improve iteration happened. This is a legitimate, low-cost way to confirm the previous orient run's output is still the right orientation before deciding what to do next -- not a wasted invocation.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired -- no findings were made to recur.
+- *About to declare silence:* FIRED -- this entry is a silence declaration on the arc-read itself (zero new entries to read), named and bounded: silence on "is there a new arc since 316a2c6" -- bar tested: presence of new trail entries. Bars not tested: everything the substantive orient runs already covered.
+- *Contradicts prior [!REALIZATION]:* not fired -- fully consistent with and reuses the prior orient run's output unchanged.
+- *Operator explicitly asked:* FIRED -- operator asked to run orient.
+
+**Across-trail macro-Hansei:**
+
+[!REALIZATION] The suite's own orientation.md remains: intent/SKILL.md gap already closed (this session), ACM section 4 arc closed and self-enforcing, the older backlog (CITATION.cff currency, B1 replication, mtime freshness, whole-suite mandate gate) is still the single most useful redirect if the operator wants one. Nothing in this zero-entry window changes that. Restating it here rather than in a rewritten orientation.md keeps the distinction clear: orientation.md is the agent's current synthesis of the target, not a running log of every time someone asked for it.
+
+### Candidate Next Moves
+
+1. If continuing the loop: pick up the older backlog (CITATION.cff/`.zenodo.json` currency is the smallest, most mechanical item) or the STALE_PATH_DOCS/ACM_SCOPE_TRAVERSAL_FILES silent-exclusion audit named in the prior orient run.
+2. If the operator has a new topic in mind, state it directly -- this is exactly the moment a fresh direction is cheapest to inject, since no work is in flight.
