@@ -8351,3 +8351,80 @@ Someone who knows this target better might push back on: whether closing this ga
 1. Operator-facing question (from the macro-Hansei above): should the suite adopt an explicit, stated selection criterion for "which skills need ACM section 4 traversal" (e.g., "any skill that reads .acm/destination.md to form its own reasoning, checked exhaustively against every SKILL.md in the tree") rather than relying on an inherited, possibly-incomplete list? This is offered as a genuine double-loop candidate, not actioned this run.
 2. If the operator confirms candidate 1, the next improve iteration should re-derive the list from that explicit criterion and re-check every skill file in the tree (not just the four already touched) in one pass, rather than continuing to find them one at a time.
 3. Revisit whether the near-identical ACM section 4 paragraph now duplicated across four SKILL.md files (improve, orient, intent, destination) is worth naming as an accepted tradeoff versus a shared-include mechanism -- still not examined as its own question.
+
+## 2026-08-01 - acm4-sweep-complete-plus-consistency-enforcement
+
+- target: skills repo (this repo) -- orient/SKILL.md, verify.py
+- operator: maintainer (Nils Holmager)
+- agent: Claude Sonnet 4.5 (GitHub Copilot)
+- skill: improve
+- outcome: ACM section 4 traversal sweep confirmed complete across all 6 live skills; a real, already-manifested wording drift found and fixed in orient/SKILL.md; a new verify.py check added to catch recurrence
+- delta: orient/SKILL.md 2.0.0 -> 2.0.1; verify.py gains check 15 (check_acm_scope_traversal_consistency); CHANGELOG.md v4.6.0 added
+
+### Interpretation of the ask
+
+Operator again said "run the improve skill" with no topic, and had not answered the open question from the prior entry (should the suite adopt an explicit, stated selection criterion for which skills need ACM section 4, rather than an inherited list). Per improve/SKILL.md's own guidance, silence from the operator on a destination-level policy question is a valid response and does not block ordinary improve work. I proceeded on two of the prior entry's own candidate next moves: (1) actually apply the explicit criterion mechanically this run rather than waiting for a policy decision, and (3) examine whether the ACM section 4 paragraph's duplication across files is a real waste/inconsistency risk, not a hypothetical one.
+
+### Examination
+
+Stated the criterion explicitly: "does this skill file read `.acm/destination.md` (directly or via orientation.md derived from it) to form its own reasoning about what to do?" Applied it to all 6 live skill files by direct grep for "ACM ", "parent-scope", "traversal":
+
+- improve/SKILL.md: has it (added 2026-06-22).
+- orient/SKILL.md: has it (added 2026-06-22).
+- intent/SKILL.md: has it (added 2026-07-31, this session).
+- destination/SKILL.md: has it (added 2026-07-31, this session).
+- probe/SKILL.md: confirmed exempt -- read the full file; it never reads destination.md, only writes verdicts to audit-trail.md.
+- trail/SKILL.md: confirmed exempt -- describes destination.md's role for documentation purposes but has no step where the recording agent independently interprets it.
+
+All 6 skills conform to the explicit criterion. The sweep named as candidate next move #2 in the prior two entries is complete -- no skill file is missing the paragraph it needs.
+
+Having confirmed the sweep, examined candidate #3 (is the 4-file duplication itself a problem) by reading the actual paragraph text in all 4 files verbatim rather than assuming. Found real, already-manifested drift: orient/SKILL.md's paragraph (untouched since 2026-06-22) used "operator ceiling" and omitted the "(implementation ceiling)" label on the 4-level clause, while improve/intent/destination (the latter two written this week) all use "operator-declared ceiling" and the "(implementation ceiling)" label. This is not a hypothetical waste concern -- it is a live inconsistency that existed in the tree before this run started.
+
+Checked whether fixing this requires new infrastructure (which the destination's architectural constraints forbid): the suite already links to PRINCIPLES.md rather than duplicating it, and verify.py already performs several textual-consistency checks (duplicate H1 headings, stale path tokens, trigger-evaluation format) -- adding one more mechanical check to an existing tool is not new infrastructure, it is using the tool the repo already relies on for exactly this class of problem.
+
+### Decision
+
+[!DECISION] One coherent change, two parts, executed together per this repo's own operational rule ("every spec change must be paired with enforcement in the same session"): (a) harmonize orient/SKILL.md's stop-condition wording to match the other three files, and (b) add a verify.py check that fails if any of the four files' stop-condition clause drifts from the canonical wording going forward.
+
+Rejected alternative: extract the paragraph to a shared file and have each skill link to it. Rejected because it would require either a build/include step (new infrastructure, forbidden by the destination's own constraints) or an extra read-this-other-file-too instruction (adds indirection and a step that could silently be skipped) -- worse than four self-contained, mechanically-checked copies.
+
+Rejected alternative: fix the wording only, without the verify.py check. Rejected because that repeats exactly the failure mode already paid for three times in this repo's history (PRINCIPLES.md, CHANGELOG.md, trail/README.md splice defects) -- a fix without enforcement leaves the same drift free to recur the next time any one of the four files is edited alone.
+
+Rejected alternative: declare full silence on the whole ACM section 4 thread without re-reading the actual paragraph text in all 4 files. Rejected because my first-pass reasoning (duplication is fine, no infra needed) was formed before actually reading the current text verbatim -- doing so surfaced a real defect a purely-abstract argument would have missed.
+
+### Prediction
+
+I will harmonize orient/SKILL.md's wording and add one verify.py check. I expect all 4 files to pass the new check immediately (since the harmonization happens in the same change). I expect the new check to correctly fail if the invariant substring is altered in any one file (tested directly before committing). I expect this NOT to require a shared-include mechanism or any change to probe/SKILL.md or trail/SKILL.md.
+
+### Action
+
+Edited orient/SKILL.md's ACM section 4 paragraph to match the canonical stop-condition wording used in improve/intent/destination, preserving orient's own closing sentence about arc-claims and cross-repo coordination. Bumped orient/SKILL.md 2.0.0 -> 2.0.1. Added `check_acm_scope_traversal_consistency()` to verify.py (checks presence of the "ACM section 4 Scoped Memory" heading and an exact stop-condition substring across the four files), wired into `main()`, and added as check 15 in the module docstring. Added CHANGELOG.md v4.6.0 entry covering both the wording fix and the new check.
+
+Verification: ran `python verify.py` -- passed. Additionally ran a direct Python sanity check (not the Probe skill, just basic self-verification per step 5): confirmed the invariant substring is present verbatim in all 4 files (positive case), and confirmed a synthetically mangled copy of the text correctly fails the substring check (negative case) -- the check discriminates, it does not pass trivially. Regenerated history.md/learning.md; verify.py passed clean after all edits.
+
+Comparing outcome to prediction: held on all three points.
+
+### Reflection
+
+[!REALIZATION] The ACM section 4 traversal gap-closing arc that ran across three sessions (2026-06-22 partial, 2026-07-31 x2, 2026-08-01) is now genuinely complete and, more importantly, self-defending: a future edit to any of the four files' stop-condition wording will fail verify.py immediately rather than silently drifting until a future orient or improve run happens to notice by re-reading the text verbatim, the way this run did. This closes the loop the destination's own Learning section named as underdeveloped ("what to do differently next time") in a structural way, not just a narrative one -- the lesson is now enforced by a tool, not only recorded as a realization for a future agent to rediscover.
+
+Named blind spot: the new check only verifies the *stop-condition clause*. The opening sentence and closing sentence of each paragraph are still free to vary (and do vary -- each skill's closing sentence is intentionally tailored to its own voice). I have not examined whether some other part of the paragraph, besides the stop-condition clause, is equally at risk of silent drift and equally worth a mechanical check; I chose the stop-condition clause because it is the part that changed once already (the old orientation.md recorded a prior revision to the traversal rule itself) and is the part where inconsistency would have real behavioral consequences (an agent silently using a different ceiling in one skill than another), whereas the tailored closing sentences are supposed to differ.
+
+Someone who knows this target better might push back on: whether adding a fifteenth mechanical check to verify.py is itself starting to overburden a tool that was originally "pure-Python, zero dependencies" and mechanically simple -- verify.py has grown check by check across many sessions, and at some point the file itself may deserve the same "is this component asked to do too much" scrutiny this run applied to the ACM section 4 paragraph. Not examined this run; flagged as a legitimate future question.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED -- this is the fourth same-session/arc entry addressing ACM section 4 traversal (improve step 6b addition, intent fix, destination fix, now orient harmonization plus enforcement). Applying the step 6b double-loop question to this recurrence (see macro-Hansei below).
+- *About to declare silence:* not fired -- this run made a change, after examining and rejecting a partial-silence path (declare done on the sweep, skip the duplication risk) once the actual paragraph text revealed real drift.
+- *Contradicts prior [!REALIZATION]:* not fired -- resolves, rather than contradicts, the double-loop candidate the prior entry surfaced (the selection-criterion question). Also partially supersedes my own tentative same-session judgment earlier in this run's own examination ("duplication is fine, no infra needed") -- marked as a within-run correction, not a cross-entry reversal, since I caught it before acting, per the [!REVERSAL] guidance for within-iteration backouts. [!REVERSAL] Initial path considered mid-run: declare silence on the duplication question after an abstract argument that four self-contained copies were an acceptable tradeoff. Reversed after actually reading the four paragraphs verbatim and finding orient/SKILL.md's wording had already drifted -- the abstract argument was answering the wrong question (is duplication acceptable in principle) rather than the concrete one (has this specific duplication already caused drift).
+- *Operator explicitly asked:* not fired -- operator gave a bare "run the improve skill"; the topic came from the loop's own prior candidate list and this run's own re-examination.
+
+**Across-trail macro-Hansei:**
+
+[!REALIZATION] This is the resolution to the double-loop candidate the prior entry (2026-07-31, improve-destination-acm4-traversal-fix) explicitly surfaced rather than actioned: "should the suite adopt an explicit, stated selection criterion... rather than relying on an inherited list?" This run answered it in practice rather than as policy: stating the criterion once and applying it exhaustively found that the inherited list (intent, probe, trail from the 2026-06-22 entry) had in fact missed destination/SKILL.md, confirming the double-loop concern was correct -- the governing variable (an implicit, unstated selection criterion) really had been the defect, not just the individual missing paragraphs. The fix applied here (mechanical enforcement via verify.py) is a structural answer to that governing-variable problem: it does not depend on any future scan remembering to be exhaustive, because drift is now caught regardless of how the next check is scoped.
+
+### Candidate Next Moves
+
+1. Consider whether verify.py itself (now at 15 checks, started as "pure-Python, zero dependencies... mechanically simple") warrants the same overburden scrutiny this run applied to the ACM section 4 paragraph -- named as a blind spot above, not examined.
+2. The suite's older backlog items (CITATION.cff/`.zenodo.json` currency, B1 cross-family replication, mtime-based freshness on fresh clone, whole-suite ACM mandate-gate conformance) remain untouched across this entire ACM section 4 arc (2026-06-22 through 2026-08-01) -- if the operator wants to redirect away from ACM-conformance work, these are the next-oldest named gaps.
+3. This is a natural point to run Orient again: the ACM section 4 arc that started with the 2026-07-31 orient run is now closed, and a fresh arc-read could confirm whether the loop's attention should move to one of the item-2 backlog entries or stay on structural/mechanical hardening (the verify.py-overburden question).

@@ -1,6 +1,6 @@
 ﻿---
 name: orient
-version: 2.0.0
+version: 2.0.1
 description: 'Read the trail as a single document and form arc-level claims about the target. What is the target becoming? Where has the loop''s attention been, and is that where the target''s real weight lies? What does the arc reveal that no individual iteration would surface? Writes .acm/orientation.md — the Orient-derived current orientation for the target. Destination (.acm/destination.md, with .acm/vision.md as legacy fallback), if present, is the operator-held destination and is read but never written. USE WHEN: about to declare convergence, recurring finding-class suspected, operator asks "how are we doing?", or an independent arc-read is needed without running a full improve loop.'
 argument-hint: 'The target and its trail, and optionally the specific arc-question to answer'
 ---
@@ -30,7 +30,7 @@ Full statement of the principles: [PRINCIPLES.md](../PRINCIPLES.md) — read it 
 
 Before forming any scope statement, read `.acm/destination.md` **in the target repo root** if it exists (falling back to `.acm/vision.md` if only the legacy name is present). This is the operator-held destination — what the target is for and what constraints hold across all runs. Reading it first ensures the arc is read against what the operator actually cares about, not retrofitted afterward.
 
-**ACM §4 Scoped Memory — read parent scopes first.** Before reading the repo's `.acm/destination.md`, traverse parent directories upward and read any `.acm/destination.md` found there. Stop when: filesystem root reached; a `.acm-root` marker file is found (operator ceiling — read that directory's `.acm/` then stop); or 4 levels traversed. Higher-scope mandates govern lower-scope ones. Label each scope when reading (e.g., "workspace mandate", "repo mandate"). The workspace destination gives the arc its organizational context; arc-claims made without it may miss cross-repo coordination constraints.
+**ACM §4 Scoped Memory — read parent scopes first.** Before reading the repo's `.acm/destination.md`, traverse parent directories upward and read any `.acm/destination.md` found there. Higher-scope mandates govern lower-scope ones — if a workspace or org destination conflicts with the repo destination, the higher scope wins. Label each scope when reading (e.g., "workspace mandate", "repo mandate"). Stop traversal when any of: filesystem root reached; a `.acm-root` marker file is found in a directory (operator-declared ceiling — read that directory's `.acm/` then stop); or 4 levels traversed (implementation ceiling). The workspace destination gives the arc its organizational context; arc-claims made without it may miss cross-repo coordination constraints.
 
 If no `destination.md` or `vision.md` exists at any scope, proceed — but note the absence. An Orient run on a target without a destination is reading the arc without somewhere to orient against.
 

@@ -1,5 +1,13 @@
 # Changelog
 
+## v4.6.0 — 2026-08-01
+
+### Changed
+- **`orient/SKILL.md`'s ACM §4 stop-condition wording harmonized with `improve/SKILL.md`, `intent/SKILL.md`, and `destination/SKILL.md` (`orient/SKILL.md` 2.0.0 → 2.0.1).** `orient/SKILL.md` carried the original 2026-06-22 phrasing ("operator ceiling", no "(implementation ceiling)" label) while the other three had been refined since. Found by re-deriving the ACM §4 traversal audit's own selection criterion and applying it exhaustively — the four files needed to match, not just each independently contain some form of the rule.
+
+### Added
+- **`verify.py` check 15: ACM §4 scope-traversal wording consistency.** New `check_acm_scope_traversal_consistency()` fails if `improve/SKILL.md`, `orient/SKILL.md`, `intent/SKILL.md`, or `destination/SKILL.md` is missing the "ACM §4 Scoped Memory" paragraph, or if its stop-condition clause (filesystem root, `.acm-root` marker, 4-level ceiling) has drifted from the canonical wording. Mirrors the drift class this repo has already paid for three times (PRINCIPLES.md, CHANGELOG.md, trail/README.md splice defects, 2026-04-24) — here caught mechanically at commit time instead of requiring a fresh-session evaluator to notice by hand. Paired in the same session as the wording fix, per this repo's own operational rule that every spec change must ship with enforcement.
+
 ## v4.5.0 — 2026-07-31
 
 ### Changed

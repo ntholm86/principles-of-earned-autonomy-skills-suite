@@ -30,6 +30,10 @@ Checks:
 13. Transcript-file references point to existing files.
 14. Entries under the reversal honesty contract do not narrate reversal cues
     without a `[!REVERSAL]` marker.
+15. `improve/SKILL.md`, `orient/SKILL.md`, `intent/SKILL.md`, and
+    `destination/SKILL.md` each carry the ACM §4 Scoped Memory paragraph with
+    an identical stop-condition clause (filesystem root, `.acm-root` marker,
+    4-level ceiling) — catches silent wording drift across the four copies.
 
 Exit code: 0 if all checks pass, 1 otherwise.
 """
@@ -82,6 +86,17 @@ STALE_PATH_DOCS = [
     "orient/SKILL.md",
     "probe/SKILL.md",
 ]
+
+ACM_SCOPE_TRAVERSAL_FILES = [
+    "improve/SKILL.md",
+    "orient/SKILL.md",
+    "intent/SKILL.md",
+    "destination/SKILL.md",
+]
+ACM_SCOPE_TRAVERSAL_INVARIANT = (
+    "a `.acm-root` marker file is found in a directory (operator-declared ceiling \u2014 "
+    "read that directory's `.acm/` then stop); or 4 levels traversed (implementation ceiling)"
+)
 
 FIDELITY_TEXT = re.compile(
     r"(?im)^\s*(?:\*\*fidelity:\*\*|fidelity:)\s*(.+?)\s*$"
@@ -257,6 +272,34 @@ def check_stale_path_tokens() -> list[str]:
                 failures.append(
                     f"stale trail path token in {rel}:{line}: '{match.group(0)}' — use .acm/audit-trail.md"
                 )
+    return failures
+
+
+def check_acm_scope_traversal_consistency() -> list[str]:
+    """Fail when a primary skill's ACM \u00a74 stop-condition wording drifts from the canonical form.
+
+    improve/orient/intent/destination each read parent-scope destinations before
+    forming their own reasoning (ACM \u00a74 Scoped Memory) and must state the same
+    three stop conditions in the same words, so a future edit to the rule (e.g.
+    changing the traversal ceiling) cannot silently update one file and miss the
+    others. This mirrors the drift class that previously required repair in
+    PRINCIPLES.md, CHANGELOG.md, and trail/README.md (splice defects) \u2014 here caught
+    mechanically instead of by a fresh-session evaluator noticing by hand.
+    """
+    failures: list[str] = []
+    for rel in ACM_SCOPE_TRAVERSAL_FILES:
+        path = ROOT / rel
+        if not path.exists():
+            continue
+        text = path.read_text(encoding="utf-8")
+        if "ACM \u00a74 Scoped Memory" not in text:
+            failures.append(f"{rel} is missing the 'ACM \u00a74 Scoped Memory' paragraph")
+            continue
+        if ACM_SCOPE_TRAVERSAL_INVARIANT not in text:
+            failures.append(
+                f"{rel}'s ACM \u00a74 stop-condition wording has drifted from the canonical form "
+                f"(expected exact substring: {ACM_SCOPE_TRAVERSAL_INVARIANT!r})"
+            )
     return failures
 
 
@@ -581,6 +624,7 @@ def main() -> int:
     all_failures.extend(check_no_mojibake())
     all_failures.extend(check_required_markdown_docs())
     all_failures.extend(check_stale_path_tokens())
+    all_failures.extend(check_acm_scope_traversal_consistency())
     all_failures.extend(check_session_files())
     all_failures.extend(check_transcript_references())
     all_failures.extend(check_session_fidelity_structure())
