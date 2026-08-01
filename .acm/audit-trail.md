@@ -10447,3 +10447,53 @@ None warranted: a direct capture confirmation, not a request to re-derive an arc
 ### Candidate Next Moves
 
 1. Decide whether and how to actually propose this upstream in the canonical principles-of-earned-autonomy repo - a separate, not-yet-taken action.
+
+## 2026-08-01 - exclude-trigger-label-references-from-learning-markers
+
+- target: harness/tools/record.py learning-marker parser
+- operator: maintainer (Nils Holmager)
+- agent: GitHub Copilot
+- skill: improve
+- outcome: learning.md no longer represents Trail's `Contradicts prior [!REALIZATION]` trigger label as a realization
+- delta: harness/tools/record.py narrow parser exclusion; CHANGELOG.md v4.25.0; derived learning artifacts regenerated
+
+### Interpretation of the ask
+
+Operator's bare "continue" was treated as an underspecified self-targeting Improve run. The highest-confidence hunch from the current learning surface was that entries rendered as `**[!REALIZATION]** :* not fired` were synthetic parser output, not actual conclusions, contaminating the compact memory every future run reads.
+
+### Examination
+
+`record.py` uses `MARKER.search(line)` deliberately, to preserve genuine historical inline markers. The Trail trigger label `- *Contradicts prior [!REALIZATION]:* ...` appears 75 times in the audit trail, and the same regex classified its literal reference as a realization. The generated learning surface visibly contained the resulting false entries. The discriminating check was to exclude only the exact trigger-label context, regenerate, and verify both that synthetic entries disappeared and that integrity checks still passed.
+
+### Decision
+
+[!DECISION] Add a narrow `TRIGGER_REALIZATION_REFERENCE` exclusion before the permissive marker search, rather than tightening `MARKER` globally.
+Rationale: the earlier permissive search intentionally recovered genuine historical inline markers; a global anchoring or stricter marker regex would risk reintroducing that data loss. The false-positive source is one precise Trail-label context.
+Alternative rejected: anchor all markers to line start - rejected because it undoes previously recorded support for genuine inline markers.
+Alternative rejected: leave the learning surface polluted because it remains mechanically fresh - rejected because freshness cannot compensate for false conclusions in the compact memory agents read first.
+Precedent check: learning-archive.md records the prior inline-marker parser repair and its warning that a style check produced false positives from marker mentions. This fix applies that precedent: exclude the known semantic non-marker context rather than broadly restricting valid marker syntax.
+
+### Prediction
+
+The exclusion will remove synthetic `:* not fired` learning entries while preserving legitimate inline markers and keeping `verify.py` green.
+
+### Action
+
+Added the narrow exclusion, regenerated learning.md and learning-archive.md, and ran `python verify.py`. No synthetic `**[!REALIZATION]** :*` lines remained in learning.md; the archive count fell from 286 to 198 markers; `verify.py` passed. The prediction held.
+
+### Reflection
+
+Model claim: compact memory quality depends on semantic filtering, not merely fresh derivation; an auto-generated surface can faithfully refresh a bad interpretation of its source. Blind spot: this run excluded only the known trigger label, not every possible prose reference to marker syntax elsewhere in the historical trail. An informed reader could object that the pattern deserves a parser with richer Markdown awareness; that would be a redesign only if further false-positive contexts appear, not an assumption justified by this one known source.
+
+[!REALIZATION] The most-read memory artifact was mechanically fresh yet semantically contaminated by its own Trail template. This is concrete evidence for the destination's model-capability/fidelity concern: structured artifacts reduce error only when their parser distinguishes a claim from a reference to the syntax of a claim.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired -- this is a new parser-semantic boundary, not the prior file-list coverage pattern.
+- *About to declare silence:* not fired -- a change was made.
+- *Contradicts prior [!REALIZATION]:* not fired -- confirms the earlier parser-repair precedent while narrowing its false-positive boundary.
+- *Operator explicitly asked:* not fired -- "continue" was underspecified; this direction was selected from current learning evidence.
+
+### Candidate Next Moves
+
+1. During a future run, inspect whether other marker-syntax references still enter learning.md; redesign parsing only if a second semantic false-positive class appears.

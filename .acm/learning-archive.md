@@ -395,19 +395,7 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 ## 2026-05-11 — improve-step6b-trigger-observability
 
-**[!REALIZATION]** :* not fired — checked the realisations of the last 5 entries; this run *confirms* the prior arc-claim about tactical-vs-strategic gap rather than contradicting any.
-
-## 2026-05-11 — improve-step6b-trigger-observability
-
 **[!REALIZATION]** `** The skill suite's tactical-drift problem is not only a model-capability problem; it is partly a *format* problem. The trail entry shape was a quiet contributor to the diagnosed failure mode. This run's change addresses the format contribution. The model-capability contribution is untouched and will require separate work.
-
-## 2026-05-11 — improve-trail-template-align
-
-**[!REALIZATION]** :* not fired — extends the prior arc-claim about format-as-cause; does not contradict it.
-
-## 2026-05-11 — improve-verify-trigger-contract
-
-**[!REALIZATION]** :* not fired — this run executes on the prior entry's pre-commitment; consistent with the arc.
 
 ## 2026-05-11 — improve-learning-marker-access
 
@@ -429,10 +417,6 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** `/`[!REVERSAL]` markers rather than reading recent entries in full. If a future run rediscovers a finding already marked as `[!REALIZATION]` without acknowledging the prior marker, this change failed to shift behavior — and the learning gap remains in capability, not format.
 
-## 2026-05-11 — improve-learning-marker-access
-
-**[!REALIZATION]** :* not fired — checked last 5 `[!REALIZATION]` markers; this run extends the arc-claim about format-as-cause rather than contradicting any prior realization.
-
 ## 2026-05-11 — improve-learning-artifact
 
 **[!REALIZATION]** `/`[!REVERSAL]` markers) exists. The reading-side guidance was added in iteration 4. But the compact, cheaply-readable surface for the markers does not exist — they are scattered across 4500+ lines.
@@ -443,19 +427,11 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 ## 2026-05-11 — improve-learning-artifact
 
-**[!REALIZATION]** :* not fired — extends the iteration-4 access-path realization rather than contradicting it; iteration-4's imagined-reader pushback ("markers still buried in 4500-line file") was the explicit precondition for this run.
-
-## 2026-05-11 — improve-learning-artifact
-
 **[!REALIZATION]** Vision's three pillars (memory, learning, meta-cognition) each need a *first-class compact artifact* to work cross-session. Memory has it: log.md (full) + history.md (compact). Meta-cognition has it: log.md + retrospect.md. Learning was the asymmetric one — it had only the inline markers in log.md. This run closes that asymmetry. The capability gap (acting on what you read) remains, but it can now be tested cleanly: a fresh agent in a future session that doesn't act on a learning.md item is exhibiting capability failure, not infrastructure failure.
 
 ## 2026-05-11 — improve-learning-artifact
 
 **[!REALIZATION]** The MARKER regex in record.py only matches the canonical unwrapped form `[!REALIZATION] ...`. Several historical entries (and my first draft of this one) used `**\`[!REALIZATION]\`**` — bold + inline code — which the parser silently skips. Pre-committed for next run: either tighten the canonical form's enforcement (verify.py rejects wrapped markers) or broaden the regex (record.py matches both). I caught this on my own learning.md regeneration; without that smoke-check the entry's realization would have been silently lost.
-
-## 2026-05-11 — trail-derived-artifact-freshness
-
-**[!REALIZATION]** :* not fired — the iteration-5 realization that learning needed a first-class compact artifact assumed the artifact would stay current; this run makes that assumption true. Strengthens rather than contradicts.
 
 ## 2026-05-11 — trail-derived-artifact-freshness
 
@@ -473,25 +449,9 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** ` markers", "Contradicts prior [!REALIZATION]") triggered the regex. With record.py now capturing mid-line markers correctly via `.search()`, the data-loss problem is solved at the source; the style-enforcement check is not ready and was removed.
 
-## 2026-05-11 — improve-marker-integrity
-
-**[!REALIZATION]** :* not fired — no prior realization claimed the MARKER regex was sufficient; the bug was identified and documented in iter 5.
-
-## 2026-05-11 — retrospect-after-marker-integrity
-
-**[!REALIZATION]** :* not fired — extends and confirms the May 5 arc-claims; introduces new ones without overturning prior ones.
-
-## 2026-05-11 — improve-offer-next-moves
-
-**[!REALIZATION]** :* not fired — extends the operator-gate observation from the May 11 retrospect rather than contradicting any prior realization.
-
 ## 2026-05-11 — improve-offer-next-moves
 
 **[!REVERSAL]** `. The retrospect named this as a likely confabulation pattern; closing it is structural, not cosmetic.
-
-## 2026-05-11 — improve-reversal-honesty
-
-**[!REALIZATION]** :* not fired — extends the May 11 retrospect's reversal-asymmetry claim rather than contradicting any prior realization.
 
 ## 2026-05-11 — improve-reversal-honesty
 
@@ -508,10 +468,6 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 ## 2026-05-11 — improve-reversal-honesty
 
 **[!REVERSAL]** `? The number is the baseline; the next 5 iterations after this one should show the gap closing.
-
-## 2026-05-11 — audit-reversal-density-and-frame-vision-gap
-
-**[!REALIZATION]** :* FIRED — the May 11 retrospect's claim "reversal-to-realization ratio is 2:118" is now shown to have been based on stale learning.md data; the corrected ratio is 7:119. This entry partially contradicts that retrospect claim.
 
 ## 2026-05-11 — audit-reversal-density-and-frame-vision-gap
 
@@ -543,15 +499,7 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 ## 2026-05-12 — improve-retrospect-freshness-guard
 
-**[!REALIZATION]** :* not fired - the change reinforces prior realizations about observability and explicit operational contracts.
-
-## 2026-05-12 — improve-retrospect-freshness-guard
-
 **[!REALIZATION]** The trail has moved from proving that operator-gate guidance is interpreted correctly to hardening the reliability substrate that arc reasoning depends on. This is an architectural progression: first make decisions observable, then make their derived evidence fresh by contract.
-
-## 2026-05-12 — retrospect-freshness-simulation
-
-**[!REALIZATION]** :* not fired - this entry reinforces the prior realization that freshness checks are structural, not optional.
 
 ## 2026-05-12 — retrospect-freshness-simulation
 
@@ -559,15 +507,7 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 ## 2026-05-12 — improve-retrospect-freshness-checklist
 
-**[!REALIZATION]** :* not fired - this extends the existing policy-proofing realization rather than reversing it.
-
-## 2026-05-12 — improve-retrospect-freshness-checklist
-
 **[!REALIZATION]** The arc has moved from proving one guard behavior once to making that behavior repeatable by default. Reliability now improves most when each proven contract gets an execution scaffold in the skill text itself.
-
-## 2026-05-12 — distribution-enforcement-discoverability
-
-**[!REALIZATION]** :* not fired - this work extends the policy-proofing arc (each contract gets structural backing) rather than reversing it.
 
 ## 2026-05-12 — distribution-enforcement-discoverability
 
@@ -575,15 +515,7 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 ## 2026-05-12 — docs-changelog-for-v3.18.0
 
-**[!REALIZATION]** :* not fired.
-
-## 2026-05-12 — docs-changelog-for-v3.18.0
-
 **[!REALIZATION]** This is the second time in this session a documentation/metadata change was required after a feature commit. Grouping changelog updates with the features they describe is better practice and reduces trail noise.
-
-## 2026-05-12 — cross-repo-positioning-alignment
-
-**[!REALIZATION]** :* not fired - this extends earlier conclusions about naming coherence as a trust surface.
 
 ## 2026-05-12 — cross-repo-positioning-alignment
 
@@ -595,23 +527,11 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 ## 2026-05-13 — trail-file-rename-audit-trail
 
-**[!REALIZATION]** :* not fired — checked recent realizations; none asserted `log.md` was the right name.
-
-## 2026-05-13 — trail-file-rename-audit-trail
-
 **[!REALIZATION]** The lone generic name in the suite was hiding in plain sight. Vision, Retrospect, Improve, Intent, Probe, Trail all produce artifacts that name themselves; `log.md` was the inherited Unix-conventional outlier. Once named as a defect, the fix took a single session. Lesson for future iterations: scan for generic names in artifact families and treat ambiguity as a finding-class even when no immediate confusion has been reported.
 
 ## 2026-05-13 — sync-principles-from-manifesto
 
-**[!REALIZATION]** :* not fired — no prior realization asserted that the skills copy was current.
-
-## 2026-05-13 — sync-principles-from-manifesto
-
 **[!REALIZATION]** The skills PRINCIPLES.md copy has no automated sync mechanism — it drifts every time the manifesto changes. This session exposed the drift after two manifesto commits in one session (v1.1.0 Premise addition, then P2 multi-resolution drop). If the cadence of manifesto edits increases, manual sync will become a recurring friction point. A `tools/sync-principles.py` script or a CI check comparing the two files would remove the manual step.
-
-## 2026-05-22 — vision-sourced-inference-reframe
-
-**[!REALIZATION]** :* not fired — no prior realization asserted that the "hunch" vocabulary was correct.
 
 ## 2026-05-22 — vision-sourced-inference-reframe
 
@@ -627,10 +547,6 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 ## 2026-05-23 — harness-boundary-soften-and-benchmark-matrix
 
-**[!REALIZATION]** :* FIRED — the prior trail entry that introduced the Harness Boundary Constraint asserted that verbatim JSONL extraction was the only honest substrate for internal reasoning. This iteration explicitly contradicts that as over-reach: required reasoning capture + anti-rationalization discipline is the working substrate; verbatim is the bonus tier. Reversal made visible in trail/SKILL.md 1.19.0.
-
-## 2026-05-23 — harness-boundary-soften-and-benchmark-matrix
-
 **[!REALIZATION]** The repo has twice now had to soften an enforcement that was honest-in-theory but unimplementable-in-practice (forward-only fidelity contract; now harness-boundary). The pattern: a principle is stated at maximum strength, the verifier or spec encodes it, then reality (historical entries, harness capabilities) forces a softer version. The healthy form of this loop is to publish the softening as policy (historical-era, optional verbatim) rather than quietly weakening enforcement. Both softenings now have public surfaces.
 
 ## 2026-05-23 — harness-boundary-soften-and-benchmark-matrix
@@ -640,10 +556,6 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 ## 2026-05-23 — harness-boundary-soften-and-benchmark-matrix
 
 **[!REVERSAL]** First write used Set-Content (Windows-1252 default) which corrupted em-dashes and broke verify.py UTF-8 read; re-encoded the file via System.IO.File.WriteAllText with UTF8Encoding(false) and re-verified green.
-
-## 2026-05-23 — verify-encoding-guard-required-files
-
-**[!REALIZATION]** :* not fired.
 
 ## 2026-05-23 — verify-encoding-guard-required-files
 
@@ -659,27 +571,11 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 ## 2026-05-23 — retrospect-v3-22-0-arc
 
-**[!REALIZATION]** :* FIRED — the May 11 retrospect asserted "2:118 reversal-to-realization ratio." This retrospect supersedes that claim with 12:162 (7.4%), partly from parser fix recovery and partly from 5 new reversals in entries 107–123.
-
-## 2026-05-23 — retrospect-v3-22-0-arc
-
 **[!REALIZATION]** A retrospect.md claim can be wrong at write-time if the arc-read precedes a same-session parser fix. The May 11 "2:118" claim was technically honest (it matched the artifact at the time) but the artifact was already known to be stale at the same moment. Lesson: if the arc-read includes a session that just changed a derived artifact, regenerate and re-read before forming the claim — do not rely on in-session memory of a count that may have just shifted.
-
-## 2026-05-23 — benchmark-b5-addition
-
-**[!REALIZATION]** :* not fired — This action is consistent with the `retrospect.md` finding that more benchmark evidence is needed.
-
-## 2026-05-23 — harness-dir-separation
-
-**[!REALIZATION]** :* not fired — no prior realization argued against separating development harness from user-facing skills.
 
 ## 2026-05-27 — add-de-ai-skill
 
 **[!REALIZATION]** ** *The skill suite has been quietly accumulating implicit knowledge across target-repo trails (pea-website, manifesto, etc.) that has never been hoisted back into the suite itself.* This is the second time the pattern has appeared (the first was the harness/ reorganisation in the prior trail entry). **The suite has a learning-feedback loop that is currently manual and operator-driven**: a finding accumulates across target-repo runs until an operator notices and asks for it to be codified. Worth examining whether this should remain operator-driven or whether Retrospect should look across foreign trails for patterns to hoist.
-
-## 2026-05-27 — add-de-ai-skill
-
-**[!REALIZATION]** :* not fired - no prior realisation argued against prose-finishing skills.
 
 ## 2026-05-27 — add-de-ai-skill
 
@@ -692,10 +588,6 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 ## 2026-05-27 — add-de-ai-skill
 
 **[!REVERSAL]** ; prevents the same mojibake-corruption pattern in any future session.
-
-## 2026-05-28 — rename-vision-to-destination
-
-**[!REALIZATION]** :* not fired — checked recent realisations; the closest was "the suite has been quietly accumulating implicit knowledge across foreign trails" which is orthogonal to a name change. No prior realisation argued for or against the name "Vision."
 
 ## 2026-05-28 — rename-vision-to-destination
 
@@ -715,10 +607,6 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 ## 2026-05-28 — fleet-rename-vision-to-destination
 
-**[!REALIZATION]** `:* not fired — the prior `e3d1577` realization ("the suite's vocabulary is a quietly load-bearing layer") is strengthened, not contradicted, by the demonstration that one name change has 8 downstream effects.
-
-## 2026-05-28 — fleet-rename-vision-to-destination
-
 **[!REALIZATION]** *Skills-suite renames have a fleet cost the suite has not been tracking.* The fleet-sweep capability demonstrated today (one Improve iteration coordinating an 8-repo rename) should arguably become a standing pattern for any skill-suite rename, not an ad-hoc response to operator request. A first-pass shape: every CHANGELOG entry that includes a path rename should include a "fleet sweep" checkbox the operator (or the suite itself) ticks once the operator's own repos have been migrated. This would make the unfinished `log.md` → `audit-trail.md` migration visible as outstanding work rather than as a silent forgotten obligation.
 
 ## 2026-05-28 — fleet-rename-vision-to-destination
@@ -729,29 +617,13 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REVERSAL]** *Bulk-PS loop output silently truncated by the terminal session.* On both the bulk migration loop and the recovery commit loop, the terminal returned essentially no inline output for the first call and only produced visible output on a follow-up `git log` inspection. The work had actually happened — the suppressed output created the false impression of total failure on the bulk loop and partial failure on the recovery loop. Pattern: when a long PS script returns suspiciously empty output, verify state with a separate read-only call before retrying or rolling back; do not assume "no output" means "nothing ran." This is a known PS-in-VSCode terminal interaction failure mode, not a script defect.
 
-## 2026-05-30 — Improve: name the protocol-vs-structural limitation in README
-
-**[!REALIZATION]** `:* not fired -- this entry confirms and documents the architectural understanding developed this session.
-
 ## 2026-05-30 — protocol-vs-structural-limitation-readme [correction]
 
 **[!REALIZATION]** The suite's arc of self-honesty has been converging toward this exact admission for several iterations. The five-mitigation list in Known Limitation was the penultimate step; naming "protocol, not structure" is the final honest landing. The suite is not done — harness-protocol and ai-steward are the next chapters — but the README now describes the current suite accurately rather than aspirationally.
 
-## 2026-05-30 — protocol-vs-structural-limitation-readme [correction-2]
-
-**[!REALIZATION]** `:* not fired — confirms and extends the honesty-arc realization from the prior correction.
-
-## 2026-05-29 — remove-de-ai-and-fix-destination-rename-drift
-
-**[!REALIZATION]** `:* not fired — the prior realization ("skills-suite renames have a fleet cost") is reinforced: the suite's *own* destination.md was part of the unpropagated fleet.
-
 ## 2026-05-29 — remove-de-ai-and-fix-destination-rename-drift
 
 **[!REALIZATION]** The rename-drift pattern now has three data points: (1) the original `log.md` → `audit-trail.md` rename left fleet repos behind, (2) the `vision` → `destination` rename left fleet repos behind, (3) the `vision` → `destination` rename left the *suite's own destination.md body* behind. The class is: rename sessions update references but not self-references within the renamed artifact. A future rename should include "read the body of the renamed file itself" as an explicit check.
-
-## 2026-06-01 — relocate-v2-trail-to-dottrail
-
-**[!REALIZATION]** `:* not fired — consistent with the evidence-discoverability direction.
 
 ## 2026-06-01 — iteration-count-provenance
 
@@ -759,19 +631,7 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 ## 2026-06-01 — iteration-count-provenance
 
-**[!REALIZATION]** `:* not fired — no prior realization about the iteration count exists.
-
-## 2026-06-01 — iteration-count-provenance
-
-**[!REALIZATION]** `:* not fired — this entry is consistent with the May 23 retrospect's characterization of verify.py as load-bearing infrastructure.
-
-## 2026-06-01 — iteration-count-provenance
-
 **[!REALIZATION]** The suite has a self-repairing verification architecture: when enforcement over-reaches, the correction is added as a named exception with a documented reason rather than silently softening the rule. This is the third iteration of that pattern (after forward-only fidelity and reversal honesty). The pattern is now stable enough to be named as a design principle, not just a workaround.
-
-## 2026-06-02 — arf-formalization-honest-assessment
-
-**[!REALIZATION]** `:* not fired — consistent with retrospect.md's "publication surface is the active front."
 
 ## 2026-06-02 — arf-formalization-honest-assessment
 
@@ -783,19 +643,11 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 ## 2026-06-02 — arf-tradeoff-dissolution-claim
 
-**[!REALIZATION]** `:* not fired — consistent with prior entry's finding that "externally reproducible" and "internally correct" are different axes. This entry addresses the intellectual claim axis.
-
-## 2026-06-02 — arf-tradeoff-dissolution-claim
-
 **[!REALIZATION]** The path to this claim required the prior art search. The operator's initial framing — "can I confidently claim invention?" — was not a request for reassurance. It was a precondition: the claim is only worth making if it survives an honest search. The search found no direct prior art and found two technique ancestors. The absence of direct prior art, combined with the precise identification of what the ancestors do and don't claim, produced a more rigorous claim than would have been possible without the search. The discipline of honest prior art attribution is what makes a novelty claim defensible, not what threatens it.
 
 ## 2026-06-02 — ifa-named-paradigm-opponent
 
 **[!REALIZATION]** The LinkedIn post itself is useful context for POSITION.md's framing. It shows that the restriction-first paradigm has a published, named, dated representative actively asserting its territory. This makes ARF's philosophical disagreement concrete rather than abstract. The prior art search found no prior art for ARF; this post confirms that the restriction-first paradigm it rejects is a real, published position held by real people — not a strawman.
-
-## 2026-06-02 — ifa-named-paradigm-opponent
-
-**[!REALIZATION]** `:* not fired — consistent with prior entry's claim that "citing ancestors is an argument for originality, not against it." Same logic applies here: naming the opponent sharpens the claim.
 
 ## 2026-06-02 — ifa-named-paradigm-opponent
 
@@ -807,19 +659,11 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 ## 2026-06-02 — arf-paradigm-framing-capability-ceiling
 
-**[!REALIZATION]** `:* not fired — extends the prior realization ("citing ancestors strengthens the claim") to the paradigm level ("naming the paradigm class is stronger than naming one instance").
-
-## 2026-06-02 — arf-paradigm-framing-capability-ceiling
-
 **[!REALIZATION]** POSITION.md has gone through four substantive changes in this session: (1) adjacent fields for IFA named as specific opponent; (2) ARF tradeoff-dissolution claim drafted; (3) IFA demoted to paradigm instance; (4) capability-ceiling argument added. The direction across all four is toward a more precise, more defensible, more philosophically complete claim. The operator's instinct to not give IFA a named platform was correct: the claim is stronger when positioned against a paradigm than against a framework. The session has moved POSITION.md from a document that describes what the suite does to a document that argues why the dominant paradigm is structurally insufficient and what ARF offers instead.
 
 ## 2026-06-02 — arf-thesis-sentence
 
 **[!REALIZATION]** The session arc from start to this entry: honest prior art search -> tradeoff dissolution claim -> capability ceiling argument -> paradigm-level framing -> thesis sentence. Each step was a sharpening of the same core insight. The thesis sentence is not new content — it is the compression of what was already in the document into a form that can be cited. Compression is the final step of formulation.
-
-## 2026-06-02 — arf-thesis-sentence
-
-**[!REALIZATION]** `:* not fired — consistent with the session arc.
 
 ## 2026-06-02 — arf-thesis-sentence
 
@@ -831,19 +675,11 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 ## 2026-06-02 — arf-root-cause-premise
 
-**[!REALIZATION]** `:* not fired — extends the session arc's direction.
-
-## 2026-06-02 — arf-root-cause-premise
-
 **[!REALIZATION]** The document now makes a complete argument: destructive AI action is a reasoning failure -> restriction addresses the wrong root cause -> restriction creates a capability ceiling -> demonstrated reasoning quality addresses the right root cause -> the probe is the instrument. Each step follows from the previous. The session has moved POSITION.md from a project description to a philosophical position paper with a complete argument structure, technique ancestors cited, paradigm opponent named, root cause stated, and falsifiable prediction included. This is the artifact that "engage the adjacent fields" (step 4 in "Where this is going") requires.
 
 ## 2026-06-02 — precision-correction-trust-instrument
 
 **[!REALIZATION]** Note for trail integrity: this entry was first written without required schema fields (missing target, operator, agent, outcome, trigger evaluation lines). The bad entry was uncommitted; git checkout HEAD restored the trail; all seven prior session entries (133-139) were also uncommitted and were also lost in the restore. Entries 133-139 were recovered verbatim from the session transcript JSONL and re-appended before this entry. The trail is now complete. This sequence illustrates the cost of the git checkout approach when multiple uncommitted entries are present.
-
-## 2026-06-02 — precision-correction-trust-instrument
-
-**[!REALIZATION]** `:* not fired — this entry extends and sharpens the session arc's direction. The arf-root-cause-premise entry identified the three-part chain; this entry applies it consistently.
 
 ## 2026-06-02 — precision-correction-trust-instrument
 
@@ -855,19 +691,11 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 ## 2026-06-02 — arf-scope-precision
 
-**[!REALIZATION]** `:* not fired — this sharpens the prior correction; it does not overturn it.
-
-## 2026-06-02 — arf-scope-precision
-
 **[!REALIZATION]** The recurring finding establishes a principle for this claim: the trust-instrument chain has three components (context, reasoning quality, verification) supplied by two mechanisms (Commander's Intent, ARF). Any formulation that collapses these into one — "ARF measures demonstrated reasoning quality," "transparency is the trust mechanism," "safety = observable reasoning" — is an overstatement that adjacent-field reviewers will catch. The clean formulation is: Commander's Intent → adequate context → enables genuine reasoning; ARF → tests whether reasoning is situationally responsive; the combination → demonstrated reasoning quality → the trust instrument. Future expressions must name both mechanisms and their scopes.
 
 ## 2026-06-02 — arf-normative-restriction-harms-reasoning
 
 **[!REALIZATION]** The operator's editorial insight — that enumerating scope qualifiers weakens a universal principle rather than strengthening it — is a general precision rule: a principle stated without scope is claimed universally; adding scopes is always a restriction of the claim, not a clarification of it.
-
-## 2026-06-02 — arf-normative-restriction-harms-reasoning
-
-**[!REALIZATION]** `:* not fired — consistent with and extends the existing root-cause-premise argument.
 
 ## 2026-06-02 — arf-normative-restriction-harms-reasoning
 
@@ -879,19 +707,11 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 ## 2026-06-02 — arf-restriction-narrows-reasoning-capacity
 
-**[!REALIZATION]** `:* not fired — extends and refines entry 144.
-
-## 2026-06-02 — arf-restriction-narrows-reasoning-capacity
-
 **[!REALIZATION]** The stable endpoint for the restriction-vs-reasoning comparative claim is: (1) reasoning quality → safety, no capability cost; (2) restriction → safety, by capability cost; (3) restriction eliminates (1). This three-part structure is the minimum sufficient form. Any future compression of this claim must preserve all three parts or it will revert to an overclaim. The canonical phrasing is now on record.
 
 ## 2026-06-02 — arf-restriction-decreases-reasoning-quality
 
 **[!REALIZATION]** The editorial process across this arc is itself an instance of the protocol working: operator detects overclaim → agent refines → operator confirms → loop closes. The argument being refined is an argument about the value of this kind of reasoning loop. The recursion is not incidental.
-
-## 2026-06-02 — arf-restriction-decreases-reasoning-quality
-
-**[!REALIZATION]** `:* not fired — entry 145 realization holds; this entry extends it.
 
 ## 2026-06-02 — arf-restriction-decreases-reasoning-quality
 
@@ -903,10 +723,6 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 ## 2026-06-02 — arf-restriction-claim-variant-rejections
 
-**[!REALIZATION]** `:* not fired — extends entry 146's realization.
-
-## 2026-06-02 — arf-restriction-claim-variant-rejections
-
 **[!REALIZATION]** The arc is closed. The canonical form of the restriction-vs-reasoning-quality argument is on record in entry 146. The rejection reasoning for the two main alternative phrasings is on record here. A future agent or editor reading entries 143–147 has the full decision history: what was tried, what was rejected, what was kept, and why. Observable autonomy achieved.
 
 ## 2026-06-04 — retro-named-boundary-rule-from-manifesto-arc
@@ -915,27 +731,11 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 ## 2026-06-04 — retro-named-boundary-rule-from-manifesto-arc
 
-**[!REALIZATION]** :* not fired - this entry extends the retrospect skill rather than contradicting any prior realization in this repo.
-
-## 2026-06-04 — retro-named-boundary-rule-from-manifesto-arc
-
 **[!REALIZATION]** The retrospect skill operates on targets, and the targets sometimes teach the skill how to operate better. When that happens, the promotion must be traceable from the SKILL.md back to the target's trail and the target's trail forward to the SKILL.md. This entry establishes the pattern: target trail entry surfaces the realization; skill repo trail entry records the promotion with explicit provenance; SKILL.md itself carries an inline pointer to the promotion entry so any reader of the rule can trace why it exists. Future cross-repo promotions should follow the same three-anchor pattern.
 
 ## 2026-06-04 — improve-destination-named-boundary-symmetric
 
-**[!REALIZATION]** :* not fired.
-
-## 2026-06-04 — improve-destination-named-boundary-symmetric
-
 **[!REALIZATION]** The Destination -> Improve -> Retrospect loop is the spine of the skill suite, and the named-boundary discipline now runs the full length of it. This was not visible from any single skill in isolation; it became visible only when the rule had been applied to all three. Architectural realization: when a structural rule is promoted from a target, the right next question is whether the rule has a natural domain larger than the originating skill. For the named-boundary rule, that domain is "any skill that produces a stopping signal" (silence, convergence, done). The three skills that produce stopping signals now share the discipline; skills that produce other kinds of artifacts (probes, trails, intent) do not need it.
-
-## 2026-06-22 — acm-parent-scope-traversal-propagated
-
-**[!REALIZATION]** :* not fired — extends entry 152’s realization.
-
-## 2026-06-23 — retrospect-to-orient-rename
-
-**[!REALIZATION]** :* not fired.
 
 ## 2026-06-23 — stormp-illustration-readme
 
@@ -943,15 +743,7 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 ## 2026-07-02 — rename-commanders-intent-to-operators-intent
 
-**[!REALIZATION]** :* not fired — no prior realization in the trail asserted mission/commander was the correct terminology.
-
-## 2026-07-02 — rename-commanders-intent-to-operators-intent
-
 **[!REALIZATION]** The PEA-vocabulary-vs-cited-doctrine distinction (own coined terms vs. historically-named doctrine like Auftragstaktik) is now a repeatable pattern across two consecutive rename passes in the same session. Future renames of PEA's own vocabulary should default to checking for this same split before doing a blanket replace.
-
-## 2026-07-02 — rename-sweep-gap-fix-verify-recursive-search
-
-**[!REALIZATION]** :* not fired -- consistent with, and extends, the realization already recorded in the previous entry about the PEA-vocabulary-vs-doctrine split.
 
 ## 2026-07-02 — rename-sweep-gap-fix-verify-recursive-search
 
@@ -960,10 +752,6 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 ## 2026-07-31 — improve-argyris-double-loop-6b-integration
 
 **[!REALIZATION]** The suite's architecture already had the double-loop *mechanism* (destination.md is operator-revisable; Destination skill exists to revise it) but lacked the *trigger* for recognizing when a finding warrants reaching for that mechanism instead of patching the artifact again. This gap is consistent with the destination.md Learning section's own prior claim that "Learning... is the most underdeveloped of the three [memory, learning, meta-cognition] and the most important gap for a future loop run to target" -- this change is a direct, narrow instance of closing that named gap, not a new direction.
-
-## 2026-07-31 — improve-argyris-double-loop-6b-integration
-
-**[!REALIZATION]** :* not fired -- this extends, rather than contradicts, the existing 2026-05-01 realization series about learning being the most underdeveloped of the three memory-model pillars.
 
 ## 2026-07-31 — orient-post-argyris-window
 
@@ -979,19 +767,11 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 ## 2026-07-31 — orient-post-argyris-window
 
-**[!REALIZATION]** :* not fired -- extends the existing 2026-05-01 realization series about learning being underdeveloped; does not contradict it.
-
-## 2026-07-31 — orient-post-argyris-window
-
 **[!REALIZATION]** The clearest, cheapest, most overdue piece of work visible in this repo right now is not a new idea -- it is finishing something the loop already started and named five weeks ago (intent/SKILL.md's ACM section 4 gap). A loop that keeps generating new findings while a small, previously-identified, well-specified gap sits untouched is exhibiting exactly the single-loop-without-follow-through pattern the destination's own Learning section flags as underdeveloped -- except here the miss is not "no realization was recorded," it is "a realization was recorded and then not acted on across five subsequent entries."
 
 ## 2026-07-31 — improve-intent-acm4-traversal-fix
 
 **[!REALIZATION]** This is the second consecutive improve iteration to close a gap that was named as a candidate next move in a prior run rather than originate a new finding. Read together with the orient run's own macro-Hansei ("a realization was recorded and then not acted on across five subsequent entries"), this iteration is direct evidence that naming a gap explicitly and then acting on it in the very next iteration is possible when the loop treats its own candidate-ranking as real input rather than a formality.
-
-## 2026-07-31 — improve-intent-acm4-traversal-fix
-
-**[!REALIZATION]** :* not fired -- confirms rather than contradicts the orient run's macro-Hansei about candidate-next-move follow-through.
 
 ## 2026-07-31 — improve-intent-acm4-traversal-fix
 
@@ -1003,10 +783,6 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 ## 2026-07-31 — improve-destination-acm4-traversal-fix
 
-**[!REALIZATION]** :* not fired -- extends rather than contradicts the intent-fix entry's realization about candidate-next-move follow-through.
-
-## 2026-07-31 — improve-destination-acm4-traversal-fix
-
 **[!REALIZATION]** Applying the step 6b double-loop question to this recurring-finding-class trigger: is "three same-day ACM section 4 gaps, found one at a time" a single-loop symptom or a double-loop signal? This one leans toward double-loop. The single-loop read is "each gap is a distinct small fix, keep patching them as found." The double-loop read is: the governing variable at fault is the *scanning method* used on 2026-06-22 -- it named three skills (intent, probe, trail) and implicitly treated that as the complete set of skills needing ACM section 4, when the actual criterion ("does this skill independently read destination.md to form its own reasoning") was never stated explicitly and was not applied exhaustively to every skill in the suite at that time. Naming the governing variable: the candidate-list-generation process silently narrowed "skills that read destination" to "the skills whoever wrote that entry happened to check," rather than deriving the list from the stated criterion. This is worth surfacing to the operator as a genuine destination-level candidate: should a future ACM-conformance sweep state its selection criterion explicitly and apply it to every skill file, rather than relying on an ad hoc list assembled during one entry? Routing this as a named observation rather than a silent artifact patch, per the double-loop discipline -- not resolving it unilaterally this run.
 
 ## 2026-08-01 — acm4-sweep-complete-plus-consistency-enforcement
@@ -1015,19 +791,11 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 ## 2026-08-01 — acm4-sweep-complete-plus-consistency-enforcement
 
-**[!REALIZATION]** :* not fired -- resolves, rather than contradicts, the double-loop candidate the prior entry surfaced (the selection-criterion question). Also partially supersedes my own tentative same-session judgment earlier in this run's own examination ("duplication is fine, no infra needed") -- marked as a within-run correction, not a cross-entry reversal, since I caught it before acting, per the [!REVERSAL] guidance for within-iteration backouts. [!REVERSAL] Initial path considered mid-run: declare silence on the duplication question after an abstract argument that four self-contained copies were an acceptable tradeoff. Reversed after actually reading the four paragraphs verbatim and finding orient/SKILL.md's wording had already drifted -- the abstract argument was answering the wrong question (is duplication acceptable in principle) rather than the concrete one (has this specific duplication already caused drift).
-
-## 2026-08-01 — acm4-sweep-complete-plus-consistency-enforcement
-
 **[!REALIZATION]** This is the resolution to the double-loop candidate the prior entry (2026-07-31, improve-destination-acm4-traversal-fix) explicitly surfaced rather than actioned: "should the suite adopt an explicit, stated selection criterion... rather than relying on an inherited list?" This run answered it in practice rather than as policy: stating the criterion once and applying it exhaustively found that the inherited list (intent, probe, trail from the 2026-06-22 entry) had in fact missed destination/SKILL.md, confirming the double-loop concern was correct -- the governing variable (an implicit, unstated selection criterion) really had been the defect, not just the individual missing paragraphs. The fix applied here (mechanical enforcement via verify.py) is a structural answer to that governing-variable problem: it does not depend on any future scan remembering to be exhaustive, because drift is now caught regardless of how the next check is scoped.
 
 ## 2026-08-01 — verify-overburden-audit-principles-h1-gap-fix
 
 **[!REALIZATION]** The overburden question from the prior entry's candidate list turned out to be the wrong frame for what was actually there -- not "is this tool doing too much," but "does this tool's own dead code silently exempt the one file most documented as having needed this exact check." Reading the whole file carefully, rather than answering the named question abstractly, is what surfaced the real defect; the named candidate (overburden) was answered "no" almost immediately, and the more valuable finding came from continuing to read past that answer rather than stopping there.
-
-## 2026-08-01 — verify-overburden-audit-principles-h1-gap-fix
-
-**[!REALIZATION]** :* not fired -- extends the general pattern (already recorded) that specific historical defects deserve mechanical, not just narrative, protection.
 
 ## 2026-08-01 — orient-post-acm4-closure
 
@@ -1043,128 +811,8 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 ## 2026-08-01 — orient-post-acm4-closure
 
-**[!REALIZATION]** :* not fired -- extends rather than contradicts the prior orient run's candidate-follow-through finding by refining it (self-referential vs. older-backlog follow-through are now distinguished).
-
-## 2026-08-01 — orient-post-acm4-closure
-
 **[!REALIZATION]** The suite now has a working, repeatedly-exercised example of exactly the capability the destination's own Learning section named as underdeveloped: the ACM section 4 arc shows a realization (2026-06-22) being rediscovered as still-open, acted on across two entries, cross-checked against its own duplication risk, and converted into a mechanical guarantee rather than a hope that a future run reads the trail correctly. The open question is whether the same discipline transfers to the suite's older, less mechanical backlog items -- text-consistency fixes are a much easier target for this pattern than empirical replication or mandate-gate conformance would be.
-
-## 2026-08-01 — orient-zero-new-arc
-
-**[!REALIZATION]** Two consecutive orient invocations with no work done between them is itself informative: it means the operator-gate between "run improve" and "run orient" was pulled before any new improve iteration happened. This is a legitimate, low-cost way to confirm the previous orient run's output is still the right orientation before deciding what to do next -- not a wasted invocation.
-
-## 2026-08-01 — orient-zero-new-arc
-
-**[!REALIZATION]** :* not fired -- fully consistent with and reuses the prior orient run's output unchanged.
-
-## 2026-08-01 — orient-zero-new-arc
-
-**[!REALIZATION]** The suite's own orientation.md remains: intent/SKILL.md gap already closed (this session), ACM section 4 arc closed and self-enforcing, the older backlog (CITATION.cff currency, B1 replication, mtime freshness, whole-suite mandate gate) is still the single most useful redirect if the operator wants one. Nothing in this zero-entry window changes that. Restating it here rather than in a rewritten orientation.md keeps the distinction clear: orientation.md is the agent's current synthesis of the target, not a running log of every time someone asked for it.
-
-## 2026-08-01 — trail-drop-sessions-mandate-independent-capture-exists
-
-**[!REALIZATION]** The sessions/ mandate was, from the moment it was added, an acknowledged compromise -- the trail-v1-10-0-sessions-mandatory entry made it mandatory to close "the longest-standing Observable Autonomy gap," while the very same skill's Fidelity section already ranked the artifact it mandated as the weakest possible tier. This is a case where a real constraint (no independent capture existed yet) forced a second-best mandate, and the mandate should have carried an explicit sunset condition ("remove this once independent capture exists") rather than being stated as a durable requirement. Worth carrying forward as a general practice: when a spec adopts a second-best mechanism because a better one does not yet exist, name the condition under which the second-best mechanism should be retired, not just the reason it was adopted.
-
-## 2026-08-01 — trail-drop-sessions-mandate-independent-capture-exists
-
-**[!REALIZATION]** :* FIRED -- this directly reverses the 2026-05-02 trail-v1-10-0-sessions-mandatory entry's decision to make sessions/ mandatory, and the reasoning offered there ("no independent capture mechanism existed") is explicitly named and superseded here.
-
-## 2026-08-01 — trail-drop-sessions-mandate-independent-capture-exists
-
-**[!REALIZATION]** This is a genuine instance of the suite correcting its own accumulated ceremony once the reason for that ceremony no longer holds -- not because the ceremony was wrong when adopted, but because the surrounding architecture (llm-harness-proxy, and the pre-existing but only-recently-relied-upon host product session history) changed the tradeoff. This is exactly the shape of a healthy Argyris-style double-loop correction: the governing variable ("no independent capture exists, so agent-authored capture is the best available") changed, and the downstream rule (mandatory sessions/) needed to change with it, rather than being defended as-is because it was once justified. Worth naming as a positive precedent: mandates adopted as stopgaps should be revisited when the gap they were stopping closes, and this session is the first clean example of that revisiting actually happening.
-
-## 2026-08-01 — improve-self-targeting-reasoning-capability-instrument
-
-**[!REALIZATION]** Applying the new self-check to this very run, honestly: this change is borderline by its own standard, and I want to name that rather than claim an easy win. Adding a new self-diagnostic question to a skill file is, mechanically, a textual edit to a markdown file -- indistinguishable in form from the ACM section 4 paragraph additions or the PRINCIPLES.md H1-check fix from earlier this session. What makes it different, if anything, is that its *effect* is on the agent's own future reasoning process (what questions it asks itself) rather than on the target artifact's internal consistency. I judge this as a genuine (if modest) reasoning-capability instance rather than an artifact-level one, on the same basis the 2026-07-31 Argyris double-loop addition to step 6b was judged one: both change what question the loop asks itself, not what the skill files say about something else. But I hold this loosely -- a future run, or the operator, may reasonably judge this was still "just text" and that a genuine reasoning-capability fix requires actually finding and correcting a live instance of shallow reasoning, not adding a prompt that asks a future run to look for one. Recording both readings rather than picking the flattering one.
-
-## 2026-08-01 — improve-self-targeting-reasoning-capability-instrument
-
-**[!REALIZATION]** :* not fired -- extends rather than contradicts the 2026-07-31 double-loop addition and the destination.md's own "Learning... most underdeveloped" claim.
-
-## 2026-08-01 — improve-self-targeting-reasoning-capability-instrument
-
-**[!REALIZATION]** This entry is a direct test of whether a destination note, freshly written, can be turned into a loop behavior change in the very next iteration -- not just cited as context for some future run. That much held: the note existed, and this run built on it within the same session. What remains genuinely unproven is the harder claim underneath it: whether the loop, self-targeting, can derive a reasoning-capability gap on its own initiative, without the destination note having been handed to it moments before by the operator in the same conversation. This run is evidence of "the destination note is actionable," not yet evidence of "self-targeting reliably surfaces reasoning-capability gaps unprompted." That distinction should be tested by a future self-targeting run that has NOT just had this exact gap named to it in the same session -- ideally a genuinely fresh session.
-
-## 2026-08-01 — reversal-self-targeting-branch-violates-genericity
-
-**[!REALIZATION]** The precedent that should have prevented this mistake was already sitting in learning.md -- the exact compact learning surface improve/SKILL.md step 1 instructs every run to read before examining anything, specifically framed as faster and more reliable than re-reading the full trail. I had, minutes earlier in the same session, been reasoning explicitly about "learning carry-forward" as one of the destination's named reasoning-capability concerns -- and then proceeded to make an edit that a prior recorded realization already warned against, without re-checking learning.md for exactly this class of proposal before writing it. This is a direct, live instance of the destination note's own concern (does the loop carry prior learning forward, or does it re-derive the same mistake) -- except this time the loop did not carry it forward, it repeated the mistake learning.md had already recorded. This is more honest and more useful evidence about the actual state of the suite's reasoning capability than the meta-instruction I wrote and then had to revert: the real gap is not "the Self-targeting section lacks a self-check" -- it is "the agent does not reliably re-consult learning.md immediately before proposing a skill-file change, even in the same session where it had just been discussing learning carry-forward directly."
-
-## 2026-08-01 — reversal-self-targeting-branch-violates-genericity
-
-**[!REALIZATION]** :* not fired -- this entry directly confirms and acts on the pre-existing learning.md realization rather than contradicting it; it contradicts my OWN prior entry in this session (marked as [!REVERSAL] above), which is the correct marker for that, not this trigger.
-
-## 2026-08-01 — reversal-self-targeting-branch-violates-genericity
-
-**[!REALIZATION]** This session now contains a clean, falsifiable natural experiment in the exact question the destination's 2026-08-01 note raises: can the loop derive that improving its own reasoning capability matters? The honest answer, based on this entry, is: not reliably without operator correction. The loop had direct textual access to the relevant lesson (learning.md, read at the start of the session) and made the mistake anyway when writing a new instruction under the immediate influence of a related but distinct idea (the destination note's reasoning-capability framing). The genuinely useful finding from this whole arc is not the reverted paragraph -- it is this: a destination note naming "improve the agent's own reasoning" as a goal does not, by itself, make the agent apply learning.md more carefully; if anything, the presence of an exciting new framing may have distracted from the more mundane, already-known check. Any future attempt to operationalize the destination's reasoning-capability concern should treat this as the primary evidence, not the paragraph that had to be reverted.
-
-## 2026-08-01 — reversal-self-targeting-branch-violates-genericity
-
-**[!REVERSAL]** The entry "improve-self-targeting-reasoning-capability-instrument" (2026-08-01, this same session) added a self-targeting-specific paragraph to improve/SKILL.md's Self-targeting section. This entry fully reverses that addition after the operator identified it violates the suite's own genericity constraint.
-
-## 2026-08-01 — orient-post-genericity-reversal
-
-**[!REALIZATION]** Trail's .acm/sessions/ mandate removal is a genuine, well-reasoned architectural correction. Both operator-stated reasons were independently verified before acting (llm-harness-proxy's actual scope read directly; the host-product session-history claim verified indirectly via this workspace's own chronicle tooling). Not a reversal candidate.
-
-## 2026-08-01 — orient-post-genericity-reversal
-
-**[!REALIZATION]** Destination gained a new note naming three gaps (genericity as self-claim, self-targeting deriving reasoning-capability improvement, token efficiency) -- and the very first attempt to act on the reasoning-capability gap failed the suite's own oldest genericity constraint. The withdrawn addition named "this suite" and a dated destination note inside a skill file that must work generically across any target.
-
-## 2026-08-01 — orient-post-genericity-reversal
-
-**[!REALIZATION]** The genericity violation was not novel -- the exact failure mode was already recorded in learning.md (the reflect-step-hansei-rewrite entry's "remain target-agnostic enough that the self-targeting case falls out without special-casing"), read at the start of the same session. This is the most concrete, falsifiable evidence yet on the suite's oldest open question (does the loop carry prior learning forward): this window's answer is no, not reliably, from a single read at session start.
-
-## 2026-08-01 — orient-post-genericity-reversal
-
-**[!REALIZATION]** The operator-gate caught what the loop's own process did not, immediately, in the same session -- a new form of gate-effectiveness evidence distinct from prior "which next move to pick" evidence: this is the gate catching a bad implementation of an agreed destination-level concern.
-
-## 2026-08-01 — orient-post-genericity-reversal
-
-**[!REALIZATION]** :* not fired -- extends rather than contradicts the trail-sessions-mandate removal entry and the reversal entry's own realizations.
-
-## 2026-08-01 — orient-post-genericity-reversal
-
-**[!REALIZATION]** Read as one document, this window is the clearest evidence this repo's trail has produced on the destination's own oldest named gap (Learning: "the most underdeveloped of the three"). A destination note asking the loop to derive that improving its own reasoning matters did not, by itself, make the loop apply its own already-recorded learning more carefully in the very next action -- if anything, the new framing appears to have competed with, rather than reinforced, the older and more mundane precedent. The operator-gate closed the gap this time. Whether it needs to every time, or whether a structural re-trigger point for learning.md is worth adding, is now the single most concrete open design question this repo's trail has surfaced.
-
-## 2026-08-01 — trail-decision-precedent-check-requirement
-
-**[!REALIZATION]** This entry is itself the first live test of the new requirement -- and it passed, because the precedent check was performed deliberately and stated explicitly before the Decision was finalized, not added afterward as decoration. That is a meaningfully different discipline than what happened in the withdrawn entry, where a directly relevant precedent existed in learning.md and was not re-checked before the contradicting edit was written. The difference this time was not a smarter mechanism -- it was choosing to grep learning.md for specific terms before deciding, the same action any future agent following this new marker definition would be asked to take.
-
-## 2026-08-01 — trail-decision-precedent-check-requirement
-
-**[!REALIZATION]** :* not fired -- directly acts on and extends the orient run's own realization rather than contradicting it.
-
-## 2026-08-01 — learning-md-bounded-recent-window-plus-archive
-
-**[!REALIZATION]** This is the first entry in this whole multi-turn arc that responds to destination note item 3 (token/resource efficiency) as its own dedicated concern, rather than as a side effect of an unrelated instruction (the earlier trail sessions-mandate removal was efficiency-motivated but operator-directed, not self-derived from the destination text). Unlike the reasoning-capability attempts, this one did not require touching a skill file's *behavioral* instructions at all -- it is a change to tooling (record.py) and a description update (trail/SKILL.md, improve/SKILL.md), with no risk of the genericity violation that tripped up the earlier attempt, because record.py and the .acm/ file structure are already generic (they apply identically to any target using these skills, not just this repo).
-
-## 2026-08-01 — learning-md-bounded-recent-window-plus-archive
-
-**[!REALIZATION]** :* not fired -- directly acts on the destination note and the orient run's carried-forward item without contradicting either.
-
-## 2026-08-01 — audit-learning-precedent-surfaces-position-quickstart-h1-gap-and-systemic-bom
-
-**[!REALIZATION]** This is the first entry in this arc where the new precedent-check discipline (added two entries ago) directly produced a finding neither the operator nor I had already surfaced -- the POSITION.md/QUICKSTART.md coverage gap was sitting, fully documented, in an archived realization from months earlier, and would not have been found without deliberately going back to check learning-archive.md for this session's other changes rather than continuing to defer that audit a fourth time. This is a genuinely positive data point for whether the precedent-check requirement can do real work, distinct from the earlier failure where the same kind of check was skipped.
-
-## 2026-08-01 — audit-learning-precedent-surfaces-position-quickstart-h1-gap-and-systemic-bom
-
-**[!REALIZATION]** :* not fired -- directly fulfills the carried-forward candidate from three prior entries rather than contradicting any of them.
-
-## 2026-08-01 — audit-learning-precedent-surfaces-position-quickstart-h1-gap-and-systemic-bom
-
-**[!REALIZATION]** Reading this session as one arc: the recurring pattern named above (checks with silent scope gaps) has now appeared three times in one day, each time found by actually re-reading the file/list in question rather than trusting that a prior fix generalized further than it did. The PRINCIPLES.md fix from earlier today explicitly named "audit STALE_PATH_DOCS and ACM_SCOPE_TRAVERSAL_FILES for the same silent-exclusion pattern" as a candidate next move -- that audit still has not been done, and this entry's finding (POSITION.md/QUICKSTART.md missing from REQUIRED_FILES) is arguably the same class of gap that audit was meant to catch, just in a different list (REQUIRED_FILES itself, not the other two). The governing pattern is: whenever this repo adds a new live doc (POSITION.md, QUICKSTART.md were both added well after the original REQUIRED_FILES list was written), nothing currently prompts a check of whether it needs to join every file-scoping list verify.py maintains. Fixing three individual instances of this pattern is not the same as fixing the pattern -- a genuinely systemic answer would be enumerating all of verify.py's file-scoping lists in one place and checking each new live doc against the full set, not discovering each one independently when something happens to force a look.
-
-## 2026-08-01 — confirm-bom-root-cause-and-fix-verifypy
-
-**[!REALIZATION]** The append-safety test (BOM is only written at file-creation/full-overwrite time, never reintroduced by a later append to an already-BOM-less file) is the load-bearing fact for how this cleanup can proceed safely: it means `.acm/audit-trail.md`'s BOM, once eventually stripped, would not silently reappear from this session's own continued use of `Add-Content -Encoding UTF8` for future entries -- the risk is entirely in the one-time strip operation itself, not in ongoing use. This changes the shape of the remaining work: it is a one-time, per-file migration, not a recurring maintenance burden, provided future *new* files in this repo are created via a BOM-safe path (`create_file`, or PowerShell's `-Encoding utf8NoBOM` where available, or `[System.IO.File]::WriteAllText` with an explicit `UTF8Encoding(false)`) rather than plain `-Encoding utf8`/`UTF8` in Windows PowerShell 5.1.
-
-## 2026-08-01 — confirm-bom-root-cause-and-fix-verifypy
-
-**[!REALIZATION]** :* not fired -- directly continues the sequencing plan from the immediately prior entry.
-
-## 2026-08-01 — confirm-bom-root-cause-and-fix-verifypy
-
-**[!REALIZATION]** The recurring-finding-class trigger fired, but the macro-Hansei for this specific pattern was already performed in the immediately prior entry (governing-variable diagnosis: no single canonical file-scope list in verify.py -- REQUIRED_FILES, STALE_PATH_DOCS, and ACM_SCOPE_TRAVERSAL_FILES each independently go stale). This entry does not change that diagnosis; it is a direct continuation of acting on it (root-cause confirmation, then one more fix in the already-agreed "one at a time" sequence), not a new instance requiring a fresh governing-variable read. Repeating the full macro reflection verbatim here would be ceremony without new signal -- the honest record is that the check was made, the same governing variable still applies, and no revision to it is warranted from this entry's evidence.
 
 ---
 
-**290 markers — 269 realisations, 21 reversals**
+**202 markers — 182 realisations, 20 reversals**

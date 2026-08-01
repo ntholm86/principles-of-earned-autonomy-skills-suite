@@ -1,5 +1,10 @@
 # Changelog
 
+## v4.25.0 — 2026-08-01
+
+### Fixed
+- **`record.py learning` no longer turns Trail's "Contradicts prior `[!REALIZATION]`" trigger label into a fake realization.** The parser intentionally uses a permissive mid-line marker search to preserve genuine historical markers, but that also captured the literal marker syntax inside every trigger-evaluation label. The compact learning surface was therefore polluted with synthetic entries beginning `:* not fired`. Added a narrow exclusion for that exact label context, preserving legitimate inline markers. Regeneration removed 88 synthetic archive markers while `verify.py` continued to pass.
+
 ## v4.24.0 — 2026-08-01
 
 ### Added
