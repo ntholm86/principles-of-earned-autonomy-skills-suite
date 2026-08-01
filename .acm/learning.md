@@ -5,19 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 266 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-01 — trail-drop-sessions-mandate-independent-capture-exists
-
-**[!REALIZATION]** This is a genuine instance of the suite correcting its own accumulated ceremony once the reason for that ceremony no longer holds -- not because the ceremony was wrong when adopted, but because the surrounding architecture (llm-harness-proxy, and the pre-existing but only-recently-relied-upon host product session history) changed the tradeoff. This is exactly the shape of a healthy Argyris-style double-loop correction: the governing variable ("no independent capture exists, so agent-authored capture is the best available") changed, and the downstream rule (mandatory sessions/) needed to change with it, rather than being defended as-is because it was once justified. Worth naming as a positive precedent: mandates adopted as stopgaps should be revisited when the gap they were stopping closes, and this session is the first clean example of that revisiting actually happening.
-
-## 2026-08-01 — improve-self-targeting-reasoning-capability-instrument
-
-**[!REALIZATION]** Applying the new self-check to this very run, honestly: this change is borderline by its own standard, and I want to name that rather than claim an easy win. Adding a new self-diagnostic question to a skill file is, mechanically, a textual edit to a markdown file -- indistinguishable in form from the ACM section 4 paragraph additions or the PRINCIPLES.md H1-check fix from earlier this session. What makes it different, if anything, is that its *effect* is on the agent's own future reasoning process (what questions it asks itself) rather than on the target artifact's internal consistency. I judge this as a genuine (if modest) reasoning-capability instance rather than an artifact-level one, on the same basis the 2026-07-31 Argyris double-loop addition to step 6b was judged one: both change what question the loop asks itself, not what the skill files say about something else. But I hold this loosely -- a future run, or the operator, may reasonably judge this was still "just text" and that a genuine reasoning-capability fix requires actually finding and correcting a live instance of shallow reasoning, not adding a prompt that asks a future run to look for one. Recording both readings rather than picking the flattering one.
-
-## 2026-08-01 — improve-self-targeting-reasoning-capability-instrument
-
-**[!REALIZATION]** :* not fired -- extends rather than contradicts the 2026-07-31 double-loop addition and the destination.md's own "Learning... most underdeveloped" claim.
+Showing the most recent 60 markers. 269 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-01 — improve-self-targeting-reasoning-capability-instrument
 
@@ -246,6 +234,18 @@ Showing the most recent 60 markers. 266 older marker(s) are in `.acm/learning-ar
 ## 2026-08-01 — clarify-history-learning-optional-per-acm-spec-conformance
 
 **[!REALIZATION]** Per the lighter-weight-pointer convention: the core governing-variable diagnosis (no single source of truth for several categories of "current state" claims across this repo) stands as recorded in `confirm-bom-root-cause-and-fix-verifypy` and its restatements, now broadened a second time today (first to release/tag hygiene in the CITATION.cff entry, now to this repo's own claimed relationship to an external governing spec). Both broadenings share the same root shape and do not require a new diagnosis, only an acknowledgment that the pattern's scope keeps turning out to be wider than each individual instance suggested. Worth naming as a candidate for the still-pending systematic-audit candidate move: that audit should now explicitly include checking this repo's stated relationships to external repos (agent-context-memory, evo, ai-steward, llm-harness-proxy) against those repos' actual current content, not just this repo's own internal artifacts.
+
+## 2026-08-01 — destination-note-skillsuite-as-acm-development-site
+
+**[!REALIZATION]** This destination note is qualitatively different from every prior one: all previous notes described gaps *within* this repo's own self-conception (efficiency, reasoning-capability, action-gating). This is the first note describing a *relationship* to something outside the repo as a standing destination-level expectation. If this note holds up, it changes what "done" can mean for a future Improve/Orient run on this repo -- convergence would need to also ask "did this arc produce anything that belongs upstream, and if so, was it surfaced rather than absorbed silently," which is a genuinely new dimension the existing convergence framing (silence per named quality bar) does not yet explicitly cover.
+
+## 2026-08-01 — destination-note-skillsuite-as-acm-development-site
+
+**[!REALIZATION]** :* not fired -- directly extends the immediately prior entry's factual finding into a destination-level implication, consistent with it.
+
+## 2026-08-01 — destination-note-skillsuite-as-acm-development-site
+
+**[!REALIZATION]** This entry is a live test of the destination note it just added: it recognized the Scale-gap/learning.md-pattern connection as evidence worth citing in a destination-level note, rather than only as conversational color. Whether that recognition generalizes to future, less operator-prompted instances -- the loop noticing a spec-level implication on its own initiative, the way this session has repeatedly tested whether the loop derives reasoning-capability gaps unprompted -- remains exactly as untested as every prior version of that same open question in this repo's trail.
 
 ---
 

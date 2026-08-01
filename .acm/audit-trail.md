@@ -9922,3 +9922,73 @@ Imagined-reader pushback: "You just spent significant effort reading an external
 3. **Systematically audit every verify.py check's actual implementation against its docstring/comment claim in one dedicated pass** -- still the oldest high-confidence candidate, unchanged in priority.
 4. **Exercise step 3b in a live future orient run** -- still the oldest untested item.
 5. Settle whether a target-agnostic formulation of "self-targeting should surface reasoning-capability gaps" is even coherent -- still carried.
+
+## 2026-08-01 - destination-note-skillsuite-as-acm-development-site
+
+- target: skills repo (this repo) -- .acm/destination.md
+- operator: maintainer (Nils Holmager)
+- agent: Claude Sonnet 4.5 (GitHub Copilot)
+- skill: improve
+- outcome: added a destination note naming this repo's relationship to agent-context-memory's SPEC.md as bidirectional -- the skillsuite is where ACM's own gaps and needed extensions become visible in practice, not only where the spec is implemented
+- delta: .acm/destination.md gains one new dated note (no other file changed)
+
+### Interpretation of the ask
+
+Operator's exact words, across two turns: "That also means that the skillsuite gave birth to the acm pattern" followed by "Do you understand my intention behind pointing this out? ACM should also develop (if it needs to) and realizations of such development would come through developing the skillsuite... understand my intent." Then "please continue" after I offered two next steps (draft a destination.md note first, or draft a candidate SPEC.md addition first) without specifying which.
+
+I interpreted "please continue" as authorization to proceed with both, in the order I had proposed: this repo's own destination.md first (lower-risk, this repo's own operator-held file, drafted per the Destination skill's own protocol of producing a draft the operator reviews via git diff before deciding to commit), then a candidate addition to agent-context-memory's SPEC.md as a separate, unwritten proposal for the operator's own review -- not committed to that other repo, since it has its own authorial standing this destination does not grant me authority over.
+
+### Examination
+
+Confirmed the concrete evidence for the claim directly rather than accepting the operator's framing on trust alone (consistent with this session's established discipline of checking claims against primary sources): re-read agent-context-memory/SPEC.md §5.5's comparator table, which scores ACM as not currently answering the "Scale (how to use more memory than fits?)" question that MemGPT was built to address -- the spec explicitly defers to borrowing MemGPT's mechanism for this, rather than offering an ACM-native answer. This repo's own `learning.md` bounded-window + `learning-archive.md` overflow pattern (added earlier the same session, motivated purely as a local efficiency fix) is a concrete, already-built answer to exactly this gap, compatible with ACM's trust-tier properties (still append-only, agent-authored, trace-tier). This is real, checkable evidence for the operator's claim -- not just agreement with their framing.
+
+Purpose lens applied to destination.md itself: every existing note in this file describes the repo's purpose in self-contained terms (the central question, self-targeting, efficiency) -- none names the repo's relationship to the external ACM specification as a two-way one. The prior day's trail entry (clarify-history-learning-optional-per-acm-spec-conformance) had already established the origination fact but treated it purely as a factual correction, not as a destination-level implication about what this repo should expect of itself going forward. This note closes that gap.
+
+### Decision
+
+[!DECISION] Add a new dated destination note (2026-08-01, second note this date) stating: this repo's Improve/Orient loop should recognize when a finding is about the memory model's own properties, not just this implementation's internal consistency, and treat such findings as candidate contributions back to agent-context-memory's SPEC.md rather than filing them away as local-only improvements. Cited the concrete Scale-gap/learning.md-pattern evidence directly in the note, following this destination's own established style of grounding notes in specific, checkable evidence rather than abstract principle. Precedent check: grepped learning.md/learning-archive.md for "agent-context-memory", "SPEC.md", "upstream" before drafting -- found only the immediately prior entry (clarify-history-learning-optional...), which established the factual relationship but did not yet draw this destination-level implication. This note is a direct, undisputed extension of that entry, not a repeat.
+
+[!DECISION] Deliberately did NOT specify a mechanism for recognizing "spec-level" vs. "implementation-level" findings, nor a process for proposing changes to the other repo, nor a cadence for looking for such findings -- consistent with this destination file's own established discipline (every existing dated note ends with a "deliberately not specified here" paragraph) and with Principle 1 (define the destination, not the route).
+
+[!DECISION] Did NOT write or commit anything to agent-context-memory's own files. That repo has its own authorial standing; this destination note names an expectation for this repo's own loop, not an authorization to edit another repo unilaterally.
+
+Rejected alternative: fold this into the existing 2026-08-01 note (self-targeting reasoning-capability instrument) rather than adding a new dated note. Rejected -- that note is about the loop's reasoning capability when self-targeting; this note is about a specific, external relationship (to agent-context-memory) that is conceptually distinct and deserves its own citable heading, matching how the 2026-07-29, 2026-07-31, and first 2026-08-01 notes are each already scoped to one gap.
+
+Rejected alternative: draft and commit a candidate SPEC.md change in the same iteration. Rejected -- that is a separate, cross-repo action with its own decision weight; bundling it into this destination-note addition would blur two decisions (what this repo's destination says about itself, and what should be proposed to a different repo) that deserve to be visible as distinct.
+
+### Prediction
+
+I will add one new dated section to destination.md, citing the Scale-gap/learning.md evidence concretely. I expect python verify.py to pass clean (single H1, no broken links, no mojibake). I expect this NOT to touch any other file in this repo, and NOT to write anything to agent-context-memory.
+
+### Action
+
+Read destination.md's existing dated-note style directly before drafting (matching heading format, "What this solves, stated as destination, not mechanism" structure, and the closing "deliberately not specified here" paragraph). Re-confirmed the Scale-gap citation by re-reading SPEC.md §5.5's comparator table directly rather than from memory. Appended the new note. Regenerated history.md/learning.md/learning-archive.md and ran python verify.py -- passed clean on the first attempt.
+
+Comparing outcome to prediction: held on every point.
+
+### Reflection
+
+[!REALIZATION] This destination note is qualitatively different from every prior one: all previous notes described gaps *within* this repo's own self-conception (efficiency, reasoning-capability, action-gating). This is the first note describing a *relationship* to something outside the repo as a standing destination-level expectation. If this note holds up, it changes what "done" can mean for a future Improve/Orient run on this repo -- convergence would need to also ask "did this arc produce anything that belongs upstream, and if so, was it surfaced rather than absorbed silently," which is a genuinely new dimension the existing convergence framing (silence per named quality bar) does not yet explicitly cover.
+
+Named blind spot: I have not yet drafted or shown the candidate SPEC.md addition itself -- that is queued as the next immediate action in this same conversation, not yet done. Whether the operator will actually want to propose it to agent-context-memory, versus just keeping this destination note as a standing internal expectation, is genuinely open.
+
+Imagined-reader pushback: "This note commits the repo to a new, somewhat abstract obligation ('recognize spec-level findings') with no mechanism and no test for whether it's actually happening -- how is this different from aspirational language that sounds good but changes nothing?" Fair, and the same challenge could be raised against the 2026-07-31 Argyris note or the 2026-08-01 reasoning-capability note, both of which DID subsequently produce concrete action (step 6b's double-loop question; today's evidence-gathering here). The test for whether this note is more than aspiration is the same as those: whether a future entry actually surfaces and acts on a spec-level finding, or whether the note sits unused. That test has not yet happened for this note specifically -- it is being set up right now, in the very next action of this conversation (drafting the SPEC.md candidate).
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired -- this is a new kind of destination note (relational, not internal), not a continuation of today's mechanical-artifact-coverage-gap family.
+- *About to declare silence:* not fired -- this run made a change.
+- *Contradicts prior [!REALIZATION]:* not fired -- directly extends the immediately prior entry's factual finding into a destination-level implication, consistent with it.
+- *Operator explicitly asked:* FIRED -- the operator explicitly asked "do you understand my intention" and then "please continue," both of which this entry directly acts on.
+
+**Across-trail macro-Hansei**
+
+[!REALIZATION] This entry is a live test of the destination note it just added: it recognized the Scale-gap/learning.md-pattern connection as evidence worth citing in a destination-level note, rather than only as conversational color. Whether that recognition generalizes to future, less operator-prompted instances -- the loop noticing a spec-level implication on its own initiative, the way this session has repeatedly tested whether the loop derives reasoning-capability gaps unprompted -- remains exactly as untested as every prior version of that same open question in this repo's trail.
+
+### Candidate Next Moves
+
+1. **Draft the candidate SPEC.md addition** (the Scale-gap / bounded-learning-surface pattern) as text for the operator's review -- immediate next action in this same conversation, not yet done.
+2. **Decide, with the operator, what process governs proposing changes to agent-context-memory** going forward (a PR, an issue, a conversation with that repo's own trail) -- deliberately left unspecified in the note itself, per Principle 1.
+3. **Consider whether convergence declarations on this repo should now explicitly ask "did this arc produce an upstream-worthy finding"** as a named dimension, per the reflection above -- a genuine open question for a future Orient run, not decided here.
+4. **Systematically audit every verify.py check's actual implementation against its docstring/comment claim** -- still the oldest high-confidence candidate, unchanged in priority.
+5. Settle whether a target-agnostic formulation of "self-targeting should surface reasoning-capability gaps" is even coherent -- still carried.

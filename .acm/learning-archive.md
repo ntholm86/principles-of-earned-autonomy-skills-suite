@@ -1069,6 +1069,18 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** :* FIRED -- this directly reverses the 2026-05-02 trail-v1-10-0-sessions-mandatory entry's decision to make sessions/ mandatory, and the reasoning offered there ("no independent capture mechanism existed") is explicitly named and superseded here.
 
+## 2026-08-01 — trail-drop-sessions-mandate-independent-capture-exists
+
+**[!REALIZATION]** This is a genuine instance of the suite correcting its own accumulated ceremony once the reason for that ceremony no longer holds -- not because the ceremony was wrong when adopted, but because the surrounding architecture (llm-harness-proxy, and the pre-existing but only-recently-relied-upon host product session history) changed the tradeoff. This is exactly the shape of a healthy Argyris-style double-loop correction: the governing variable ("no independent capture exists, so agent-authored capture is the best available") changed, and the downstream rule (mandatory sessions/) needed to change with it, rather than being defended as-is because it was once justified. Worth naming as a positive precedent: mandates adopted as stopgaps should be revisited when the gap they were stopping closes, and this session is the first clean example of that revisiting actually happening.
+
+## 2026-08-01 — improve-self-targeting-reasoning-capability-instrument
+
+**[!REALIZATION]** Applying the new self-check to this very run, honestly: this change is borderline by its own standard, and I want to name that rather than claim an easy win. Adding a new self-diagnostic question to a skill file is, mechanically, a textual edit to a markdown file -- indistinguishable in form from the ACM section 4 paragraph additions or the PRINCIPLES.md H1-check fix from earlier this session. What makes it different, if anything, is that its *effect* is on the agent's own future reasoning process (what questions it asks itself) rather than on the target artifact's internal consistency. I judge this as a genuine (if modest) reasoning-capability instance rather than an artifact-level one, on the same basis the 2026-07-31 Argyris double-loop addition to step 6b was judged one: both change what question the loop asks itself, not what the skill files say about something else. But I hold this loosely -- a future run, or the operator, may reasonably judge this was still "just text" and that a genuine reasoning-capability fix requires actually finding and correcting a live instance of shallow reasoning, not adding a prompt that asks a future run to look for one. Recording both readings rather than picking the flattering one.
+
+## 2026-08-01 — improve-self-targeting-reasoning-capability-instrument
+
+**[!REALIZATION]** :* not fired -- extends rather than contradicts the 2026-07-31 double-loop addition and the destination.md's own "Learning... most underdeveloped" claim.
+
 ---
 
-**266 markers — 246 realisations, 20 reversals**
+**269 markers — 249 realisations, 20 reversals**
