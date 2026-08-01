@@ -199,6 +199,7 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 192 | 2026-08-01 | deutero-learning-credited-and-closed-in-orient-step-4 | step 4 now explicitly credits Argyris and Schon's deutero-learning and closes with a routing instruction mirroring step 3b's double-loop routing | orient/SKILL.md 2.1.1 -> 2.2.0; CHANGELOG.md v4.21.0 added |
 | ▸ 193 | 2026-08-01 | merge-kaikaku-purpose-lens-threads-and-name-token-efficiency-adoption-link | captured a merged open thread (Purpose lens vs a distinct Kaikaku-fork for deutero-learning findings, left to Improve as one decision) and a new destination note naming token efficiency's link to adoption, using this session's own token spend as evidence | .acm/destination.md +2 notes (this session); no SKILL.md changes |
 | · 194 | 2026-08-01 | close-kaikaku-thread-via-existing-purpose-lens-not-new-mechanism | confirmed the operator's own suggestion was the right fix - no new Kaikaku-branch needed in Orient; one sentence now routes deutero-learning findings through Improve's existing Purpose lens/Kaikaku question, with Convergence Is Silence as the redesign validation bar | orient/SKILL.md 2.2.0 -> 2.3.0; CHANGELOG.md v4.22.0 added |
+| ▸ 195 | 2026-08-01 | restore-ooda-pdca-premortem-lineage-citations | restored PDCA, OODA, and pre-mortem lineage citations found dropped between v1's kaizen.md and v3's Improve/Orient split, first named two entries ago as a standing candidate | improve/SKILL.md 3.12.4 -> 3.13.0; orient/SKILL.md 2.3.0 -> 2.4.0; CHANGELOG.md v4.23.0 added |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -942,4 +943,4 @@ Do not edit by hand — re-run the command to refresh.
 
 - **decided:** Add one linking sentence to Orient step 4's close instead of new incremental-vs-radical branching logic.
 
-**194 runs total — 179 with changes, 15 silence**
+**195 runs total — 180 with changes, 15 silence**

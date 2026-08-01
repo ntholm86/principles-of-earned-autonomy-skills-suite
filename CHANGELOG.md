@@ -1,5 +1,10 @@
 # Changelog
 
+## v4.23.0 — 2026-08-01
+
+### Added
+- **Restored the OODA/PDCA/pre-mortem lineage citations dropped in the v1-to-v3 merge**, found earlier this session while investigating why self-targeting hadn't derived deutero-learning on its own. `archive/v2/v1_archive/kaizen.md` explicitly credited PDCA, Boyd's OODA loop, and pre-mortem analysis as inspirations; the citation was silently lost when v1/v2's Kaizen+Kaikaku+Hansei merged into v3's Improve. Restored: PDCA/OODA credited in `improve/SKILL.md`'s intro alongside the existing Kaizen/Kaikaku/Hansei lineage note; OODA credited again in `orient/SKILL.md`'s intro specifically (Boyd's insight that Orientation is the neglected, decisive phase — this skill's own namesake); pre-mortem (Klein, 2007) credited at Improve step 4a's pre-commit-prediction mechanic, which was already a pre-mortem in substance. `improve/SKILL.md` 3.12.4 -> 3.13.0; `orient/SKILL.md` 2.3.0 -> 2.4.0.
+
 ## v4.22.0 — 2026-08-01
 
 ### Added

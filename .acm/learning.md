@@ -5,11 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 287 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-01 — confirm-bom-root-cause-and-fix-verifypy
-
-**[!REALIZATION]** The append-safety test (BOM is only written at file-creation/full-overwrite time, never reintroduced by a later append to an already-BOM-less file) is the load-bearing fact for how this cleanup can proceed safely: it means `.acm/audit-trail.md`'s BOM, once eventually stripped, would not silently reappear from this session's own continued use of `Add-Content -Encoding UTF8` for future entries -- the risk is entirely in the one-time strip operation itself, not in ongoing use. This changes the shape of the remaining work: it is a one-time, per-file migration, not a recurring maintenance burden, provided future *new* files in this repo are created via a BOM-safe path (`create_file`, or PowerShell's `-Encoding utf8NoBOM` where available, or `[System.IO.File]::WriteAllText` with an explicit `UTF8Encoding(false)`) rather than plain `-Encoding utf8`/`UTF8` in Windows PowerShell 5.1.
+Showing the most recent 60 markers. 288 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-01 — confirm-bom-root-cause-and-fix-verifypy
 
@@ -246,6 +242,10 @@ Showing the most recent 60 markers. 287 older marker(s) are in `.acm/learning-ar
 ## 2026-08-01 — close-kaikaku-thread-via-existing-purpose-lens-not-new-mechanism
 
 **[!REALIZATION]** :* not fired - confirms and closes the immediately prior entries' open threads.
+
+## 2026-08-01 — restore-ooda-pdca-premortem-lineage-citations
+
+**[!REALIZATION]** :* not fired -- directly closes a candidate named in the two immediately prior entries.
 
 ---
 

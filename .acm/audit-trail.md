@@ -10361,3 +10361,25 @@ Three entries in a row in this single thread found the same shape: a perceived c
 
 1. Test the "gap is usually smaller than framed" claim against a target other than this repo before trusting it as a general property of the loop, not just this thread.
 2. Restore the OODA/pre-mortem citation dropped between v1 and v3 - still the smallest, most concrete unaddressed item from earlier in this session.
+
+## 2026-08-01 - restore-ooda-pdca-premortem-lineage-citations
+
+- target: improve/SKILL.md, orient/SKILL.md
+- operator: maintainer (Nils Holmager)
+- agent: GitHub Copilot (Claude Sonnet 5)
+- skill: improve
+- outcome: restored PDCA, OODA, and pre-mortem lineage citations found dropped between v1's kaizen.md and v3's Improve/Orient split, first named two entries ago as a standing candidate
+- delta: improve/SKILL.md 3.12.4 -> 3.13.0; orient/SKILL.md 2.3.0 -> 2.4.0; CHANGELOG.md v4.23.0 added
+
+Mechanical restoration, no judgment call: the citations already existed verbatim in archive/v2/v1_archive/kaizen.md; this entry places them back where the mechanics they describe now live (PDCA/OODA in improve/SKILL.md's intro alongside the existing Kaizen/Kaikaku/Hansei note, OODA again in orient/SKILL.md's intro since Orient is Boyd's namesake, pre-mortem at Improve step 4a's pre-commit-prediction mechanic, which already was a pre-mortem in substance). Verified with python verify.py - passed clean, no regressions.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired -- one-off restoration of an already-identified, already-named gap, not a new repeating pattern.
+- *About to declare silence:* not fired.
+- *Contradicts prior [!REALIZATION]:* not fired -- directly closes a candidate named in the two immediately prior entries.
+- *Operator explicitly asked:* not fired -- operator said "continue"; this was picked as the smallest, most concrete standing candidate per the efficiency note, not a new explicit ask.
+
+### Candidate Next Moves
+
+1. Test the "gap is usually smaller than framed" claim (named two entries ago) against a target other than this repo before trusting it as general.

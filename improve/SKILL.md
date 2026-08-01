@@ -1,6 +1,6 @@
 ---
 name: improve
-version: 3.12.4
+version: 3.13.0
 description: 'The improvement skill. Understand the ask, examine the target, challenge the first read, decide on one change (or argue for redesign, or declare silence), act, reflect on the target, and record. Combines incremental refinement, structural rethinking, and reflection on the target itself. USE WHEN: improve, audit, review, fix, refactor, redesign, evaluate, what would make this better, am I missing something.'
 argument-hint: 'The target to improve, and optionally the concern (correctness, simplicity, performance, etc.)'
 ---
@@ -12,6 +12,8 @@ argument-hint: 'The target to improve, and optionally the concern (correctness, 
 *Memory Model role: Reads the full memory layer before every run; extends it with each iteration's findings.*
 
 This is the only skill you need for most autonomous work. It combines what v2 split into Kaizen (incremental), Kaikaku (radical), and Hansei (reflection) — because in practice the agent should pick which mode the situation calls for, not be told.
+
+*Lineage:* Kaizen and Kaikaku both trace to PDCA (Plan-Do-Check-Act, Deming/Toyota) and Boyd's OODA loop — cited explicitly in this skill's own v1 ancestor but dropped when v2's three skills merged into this one. Restored here rather than left implicit.
 
 ## Governing principles
 
@@ -86,7 +88,7 @@ This step has two parts. First, decide on the work for *this* iteration. Second,
 
 Pick one of:
 
-- **One incremental change.** The single highest-leverage finding. State why it ranks above the alternatives in one sentence each. **Crucially, make a pre-commit prediction:** formulate a falsifiable prediction of what this change will achieve and what will *not* happen, before taking action ("I will change X. I expect Y. I expect Z not to happen.").
+- **One incremental change.** The single highest-leverage finding. State why it ranks above the alternatives in one sentence each. **Crucially, make a pre-commit prediction:** formulate a falsifiable prediction of what this change will achieve and what will *not* happen, before taking action ("I will change X. I expect Y. I expect Z not to happen."). This is a pre-mortem (Klein, *Harvard Business Review*, 2007) — stating the failure mode before it can happen, not diagnosing it after.
 - **Argument for redesign.** A statement of why incremental work won't pay off here, and a sketch of what redesign would look like. Stop and surface the argument; do not redesign without confirmation.
 - **Silence.** Nothing actionable was found. State what was examined and why nothing warranted change. **Silence claims must be bounded.** Name the quality bar this iteration was testing against (e.g. internal text-layer consistency, comparative defensibility under hostile external review, comparator coverage, empirical replication, operational deployability), the surfaces in scope, and the bars *not* tested by this iteration. Unbounded silence ("nothing actionable found" without naming the bar) is the form most likely to be overturned by the next operator-initiated probe testing a different bar. This advances the convergence chain (Principle 3) and is a legitimate outcome. *Origin:* this requirement mirrors the named-boundary rule in `orient/SKILL.md` step 5a; both originate in the manifesto target's retro-v201 → retro-v202 transition (2026-06-04). Full provenance in this repo's `.acm/audit-trail.md` under entry slug `retro-named-boundary-rule-from-manifesto-arc` and follow-up slug `improve-destination-named-boundary-symmetric`.
 
