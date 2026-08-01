@@ -257,8 +257,8 @@ The mandatory sequence per iteration:
 ```
 iteration 1:
   1. append entry to .acm/audit-trail.md
-  2. python <skills>/tools/record.py history --write    â† updates .acm/history.md
-  3. python <skills>/tools/record.py learning --write   â† updates .acm/learning.md
+  2. python <skills>/tools/record.py history --write    ← updates .acm/history.md
+  3. python <skills>/tools/record.py learning --write   ← updates .acm/learning.md
   4. git add .acm/audit-trail.md .acm/history.md .acm/learning.md && git commit -m "trail: <slug>-1"
   ↓ only now begin iteration 2
 

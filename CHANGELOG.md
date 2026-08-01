@@ -1,5 +1,10 @@
 # Changelog
 
+## v4.15.0 — 2026-08-01
+
+### Fixed
+- **`check_no_mojibake()` only ever detected U+FFFD (replacement character) corruption — it had no coverage for the more common windows-1252-misdecoded-UTF-8 corruption pattern (e.g. an em-dash or arrow byte-decoded as windows-1252 instead of UTF-8) that this repo's own memory notes document as having happened twice before via `Get-Content`/`Set-Content` round-trips.** Found during an unrelated hardcoded-count sweep: `INSTALLING.md` (3 instances) and `trail/SKILL.md` (2 instances) contained exactly this kind of corruption in an ASCII-arrow annotation, invisible in a normal editor view (a stray C1 control byte in the corrupted sequence suppressed rendering of the text after it in some tools). Fixed both files (replaced the corrupted 3-character sequence with the correct arrow character), then extended `check_no_mojibake()` with a new `MOJIBAKE_WIN1252` pattern so this class of corruption is caught mechanically going forward. `.acm/audit-trail.md` is exempted from only this new check (not the U+FFFD check) since its own narrative entries legitimately quote corrupted byte sequences as prose evidence — confirmed this exemption is not vacuous (the file genuinely contains one such quoted instance). Verified via positive/negative test: the clean live tree passes, and a synthetic corrupted string is correctly detected.
+
 ## v4.14.0 — 2026-08-01
 
 ### Fixed

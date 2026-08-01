@@ -9,9 +9,11 @@ Checks:
 2. Every entry heading matches `## YYYY-MM-DD — <slug>`.
 3. Entries are in non-decreasing date order.
 4. Every entry contains the mandatory metadata fields: target, agent, skill, outcome.
-5. No U+FFFD replacement characters (mojibake) or non-UTF-8 bytes anywhere in
-    the live tree, including every REQUIRED_FILE
-    (excludes archive/ and local virtual environments).
+5. No U+FFFD replacement characters, no windows-1252-misdecoded UTF-8
+    sequences (e.g. an em-dash or an arrow byte-decoded as windows-1252
+    instead of UTF-8), and no non-UTF-8 bytes anywhere in the live tree,
+    including every REQUIRED_FILE (excludes archive/ and local virtual
+    environments).
 6. Live repo files that current docs depend on exist.
 7. Required markdown docs do not contain duplicate H1 headings, and their local
     markdown links resolve.
@@ -194,6 +196,17 @@ def check_log_format() -> list[str]:
     return failures
 
 
+# Windows-1252-misdecoded UTF-8: a lead byte (0xC2/0xE2, i.e. U+00C2/U+00E2)
+# immediately followed by a code point in the ranges windows-1252 maps its
+# high byte range into. Catches corruption like an em-dash (bytes E2 80 94)
+# or an arrow (bytes E2 86 90) decoded as windows-1252 instead of UTF-8,
+# each producing a distinctive two-or-three-character garbled sequence.
+# Real UTF-8 text containing U+00C2/U+00E2 (e.g. French/Portuguese words)
+# essentially never precedes a character in these ranges, so false
+# positives are not expected in practice.
+MOJIBAKE_WIN1252 = re.compile(r"[\u00c2\u00e2][\u0080-\u009f\u2010-\u2122\u20ac]")
+
+
 def check_no_mojibake() -> list[str]:
     failures: list[str] = []
     skip_dirs = {"archive", ".git", ".venv", "venv", "__pycache__"}
@@ -201,6 +214,12 @@ def check_no_mojibake() -> list[str]:
     # GENBA_ARCHIVE.md documents a historical mojibake bug and intentionally
     # quotes the corrupted character as evidence -- not live corruption.
     skip_paths = {(".acm", "v2")}
+    # .acm/audit-trail.md is the narrative trail itself: entries that
+    # diagnose or explain a mojibake incident legitimately quote the
+    # corrupted byte sequence as prose evidence (as this repo's own trail
+    # does). This exempts it only from the windows-1252 pattern below, not
+    # from the U+FFFD check -- U+FFFD has no legitimate quoted-as-prose case.
+    skip_win1252_files = {(".acm", "audit-trail.md")}
     for path in ROOT.rglob("*"):
         if not path.is_file():
             continue
@@ -218,6 +237,10 @@ def check_no_mojibake() -> list[str]:
             continue
         if "\ufffd" in text:
             failures.append(f"replacement character (mojibake) in {path.relative_to(ROOT)}")
+        if rel_parts not in skip_win1252_files and MOJIBAKE_WIN1252.search(text):
+            failures.append(
+                f"windows-1252-misdecoded UTF-8 sequence (mojibake) in {path.relative_to(ROOT)}"
+            )
     return failures
 
 

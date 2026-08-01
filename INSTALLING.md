@@ -39,12 +39,12 @@ Copilot looks for skills at exactly **one level deep** under `.copilot/skills/`:
 .copilot/
   skills/
     intent/
-      SKILL.md     â† found
+      SKILL.md     ← found
     improve/
-      SKILL.md     â† found
+      SKILL.md     ← found
     some-folder/
       subfolder/
-        SKILL.md   â† NOT found (too deep)
+        SKILL.md   ← NOT found (too deep)
 ```
 
 **This means: do not drop the entire repo folder into your skills directory.** That adds an extra nesting level and Copilot finds nothing. Copy the individual skill folders directly.

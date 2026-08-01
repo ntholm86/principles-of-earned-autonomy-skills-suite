@@ -1021,6 +1021,18 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** This is the resolution to the double-loop candidate the prior entry (2026-07-31, improve-destination-acm4-traversal-fix) explicitly surfaced rather than actioned: "should the suite adopt an explicit, stated selection criterion... rather than relying on an inherited list?" This run answered it in practice rather than as policy: stating the criterion once and applying it exhaustively found that the inherited list (intent, probe, trail from the 2026-06-22 entry) had in fact missed destination/SKILL.md, confirming the double-loop concern was correct -- the governing variable (an implicit, unstated selection criterion) really had been the defect, not just the individual missing paragraphs. The fix applied here (mechanical enforcement via verify.py) is a structural answer to that governing-variable problem: it does not depend on any future scan remembering to be exhaustive, because drift is now caught regardless of how the next check is scoped.
 
+## 2026-08-01 — verify-overburden-audit-principles-h1-gap-fix
+
+**[!REALIZATION]** The overburden question from the prior entry's candidate list turned out to be the wrong frame for what was actually there -- not "is this tool doing too much," but "does this tool's own dead code silently exempt the one file most documented as having needed this exact check." Reading the whole file carefully, rather than answering the named question abstractly, is what surfaced the real defect; the named candidate (overburden) was answered "no" almost immediately, and the more valuable finding came from continuing to read past that answer rather than stopping there.
+
+## 2026-08-01 — verify-overburden-audit-principles-h1-gap-fix
+
+**[!REALIZATION]** :* not fired -- extends the general pattern (already recorded) that specific historical defects deserve mechanical, not just narrative, protection.
+
+## 2026-08-01 — orient-post-acm4-closure
+
+**[!REALIZATION]** The ACM section 4 arc opened 2026-06-22 and reopened as the prior orient run's top finding is now closed and self-enforcing: intent/SKILL.md and destination/SKILL.md received the traversal paragraph; orient/SKILL.md's own copy was found already drifted from the other three and harmonized; a new verify.py check (15) now fails automatically on future wording drift across all four files. This is a stronger form of "closed" than this repo's three prior silence claims (ARF restriction-reasoning, named-boundary discipline, .acm rename), which hold only because no one has touched those surfaces again -- this one holds because a mechanical check would catch a re-drift even without a human re-reading the four files side by side.
+
 ---
 
-**254 markers — 234 realisations, 20 reversals**
+**257 markers — 237 realisations, 20 reversals**

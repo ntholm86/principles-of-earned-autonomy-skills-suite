@@ -5,19 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 254 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-01 — verify-overburden-audit-principles-h1-gap-fix
-
-**[!REALIZATION]** The overburden question from the prior entry's candidate list turned out to be the wrong frame for what was actually there -- not "is this tool doing too much," but "does this tool's own dead code silently exempt the one file most documented as having needed this exact check." Reading the whole file carefully, rather than answering the named question abstractly, is what surfaced the real defect; the named candidate (overburden) was answered "no" almost immediately, and the more valuable finding came from continuing to read past that answer rather than stopping there.
-
-## 2026-08-01 — verify-overburden-audit-principles-h1-gap-fix
-
-**[!REALIZATION]** :* not fired -- extends the general pattern (already recorded) that specific historical defects deserve mechanical, not just narrative, protection.
-
-## 2026-08-01 — orient-post-acm4-closure
-
-**[!REALIZATION]** The ACM section 4 arc opened 2026-06-22 and reopened as the prior orient run's top finding is now closed and self-enforcing: intent/SKILL.md and destination/SKILL.md received the traversal paragraph; orient/SKILL.md's own copy was found already drifted from the other three and harmonized; a new verify.py check (15) now fails automatically on future wording drift across all four files. This is a stronger form of "closed" than this repo's three prior silence claims (ARF restriction-reasoning, named-boundary discipline, .acm rename), which hold only because no one has touched those surfaces again -- this one holds because a mechanical check would catch a re-drift even without a human re-reading the four files side by side.
+Showing the most recent 60 markers. 257 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-01 — orient-post-acm4-closure
 
@@ -246,6 +234,18 @@ Showing the most recent 60 markers. 254 older marker(s) are in `.acm/learning-ar
 ## 2026-08-01 — fix-lens-count-miscount-three-vs-four
 
 **[!REALIZATION]** The operator-explicitly-asked trigger firing here, combined with the "not fired" recurring-finding-class result, is worth noting precisely because it did NOT fire as recurring: this session has now seen the "fragile hardcoded specific drifts silently" root-cause shape at least three times (REQUIRED_FILES gap, ACM traversal file lists, and now this lens-count miscount) but each instance has been in different subject matter (file-scoping lists vs. prose counts), so the mechanical recurring-finding-class trigger (which tracks entry-to-entry repetition, not cross-session thematic repetition) correctly does not fire. This is itself worth naming as a limit of the trigger: it catches immediate repetition well but would not, on its own, surface "this is the third distinct instance of the same root-cause shape today" without a broader arc-level read -- exactly the kind of thing an Orient run is positioned to catch that a single Improve iteration structurally cannot.
+
+## 2026-08-01 — fix-real-mojibake-corruption-and-extend-check-no-mojibake
+
+**[!REALIZATION]** This session has now found three genuinely different classes of "a mechanical check exists but its actual coverage is narrower than its name/purpose implies": the H1-duplicate check missing PRINCIPLES.md and later POSITION.md/QUICKSTART.md, the BOM issue that no check covered at all, and now check_no_mojibake() itself -- a check whose entire job is "detect mojibake" but which only ever detected one specific corruption signature (U+FFFD) despite this repo's own documented history showing the OTHER signature (windows-1252 misdecoding) is the one that has actually caused real incidents twice. This is the same governing-variable-shaped pattern named in an earlier macro-Hansei today (no single canonical source of truth for what each check actually covers vs. what it claims to cover) showing up a fourth time, in the check most directly named for the exact problem it under-covered.
+
+## 2026-08-01 — fix-real-mojibake-corruption-and-extend-check-no-mojibake
+
+**[!REALIZATION]** :* not fired -- directly reinforces, rather than contradicts, the governing-variable diagnosis already on record.
+
+## 2026-08-01 — fix-real-mojibake-corruption-and-extend-check-no-mojibake
+
+**[!REALIZATION]** This is the fourth occurrence today of the same governing-variable-shaped recurrence (checks whose real coverage is narrower than their stated purpose), and per the imagined-reader pushback above, the accumulation itself is now the more important signal than any individual instance. A systematic audit -- reading every verify.py check function's actual implementation against its docstring/comment claim, in one pass, rather than waiting for the next accidental discovery -- is now a well-evidenced, high-confidence candidate for either a dedicated Improve iteration or the next Orient run's "what next runs should test" section. Naming this explicitly rather than letting a fifth accidental discovery make the same point yet again.
 
 ---
 

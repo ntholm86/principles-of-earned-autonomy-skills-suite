@@ -9637,3 +9637,73 @@ Imagined-reader pushback: "This is a trivial one-word fix elevated to a full tra
 3. **Audit `STALE_PATH_DOCS` and `ACM_SCOPE_TRAVERSAL_FILES`** for the same silent-exclusion pattern, still open from several entries ago.
 4. Settle whether a target-agnostic formulation of "self-targeting should surface reasoning-capability gaps" is even coherent -- still carried.
 5. The suite's older backlog (CITATION.cff currency, B1 replication, mtime freshness, whole-suite mandate gate) remains available if the operator wants to redirect.
+
+## 2026-08-01 - fix-real-mojibake-corruption-and-extend-check-no-mojibake
+
+- target: skills repo (this repo) -- INSTALLING.md, trail/SKILL.md, verify.py
+- operator: maintainer (Nils Holmager)
+- agent: Claude Sonnet 4.5 (GitHub Copilot)
+- skill: improve
+- outcome: found and fixed genuine mojibake corruption (a windows-1252-misdecoded arrow character) in two live files, invisible to the existing check_no_mojibake (which only detects U+FFFD); extended the check with a new pattern to catch this broader, more common corruption class going forward
+- delta: INSTALLING.md and trail/SKILL.md each have a corrupted 3-character sequence replaced with the correct arrow character (5 instances total); verify.py gains MOJIBAKE_WIN1252 pattern and a scoped exemption for audit-trail.md; CHANGELOG.md v4.15.0 added
+
+### Interpretation of the ask
+
+Operator confirmed "yes lets do that" in response to my ranked candidate list, which led with "sweep skill files for other fragile hardcoded counts." While executing that sweep (grepping for hardcoded numeric words like 'six skills', 'three principles' etc. across the six live SKILL.md files), a match on trail/SKILL.md's "all three files" phrase led me to read that section directly -- which surfaced something more significant than a stale count: a literal `â†\x90` sequence in a code block, immediately recognizable as the classic windows-1252-misdecoded-UTF-8 corruption pattern this repo's own memory notes already document (from two prior Get-Content/Set-Content incidents). I pivoted the iteration's actual finding to this, since it is a more serious, concrete defect than the softer hardcoded-count sweep I had started with.
+
+### Examination
+
+Purpose lens: verified the corruption was real, not a rendering artifact, by reading the raw Unicode code points directly via Python (`hex(ord(ch))` for each character) -- confirmed the three characters were U+00E2 (â), U+2020 (†), and U+0090 (a C1 control character), which is exactly the byte-for-byte windows-1252 misdecoding of UTF-8 bytes E2 86 90 -- the correct encoding of "←" (U+2190 LEFTWARDS ARROW). The embedded U+0090 control character explains why the corruption had gone unnoticed: it suppressed rendering of the text after it in several tools (terminal output, an earlier read_file view, and git diff's own rendering all showed the line truncated at the arrow, even though the underlying file bytes for the trailing text were intact and unaffected -- confirmed by diffing before/after and finding the "missing" trailing text reappear correctly once the control character was removed, not newly added).
+
+Scanned the whole live tree (excluding archive/.venv, matching check_no_mojibake's existing skip_dirs) with a regex targeting this broader corruption signature: a lead byte character (U+00C2/U+00E2) immediately followed by a code point in the ranges windows-1252 double-decoding produces. Found exactly 3 files: INSTALLING.md (3 instances), trail/SKILL.md (2 instances), and .acm/v2/GENBA.md (1 instance, already out of scope -- frozen archive). All 5 live-tree instances were the identical corrupted arrow sequence.
+
+Read check_no_mojibake()'s implementation directly rather than assuming from its name: confirmed it only ever checks for `\ufffd` (U+FFFD replacement character), a completely different corruption signature from what I just found. This is a genuine, previously-unknown coverage gap in a check whose whole purpose is catching exactly this class of defect -- the check's own name promised broader coverage than its implementation delivered.
+
+### Decision
+
+[!DECISION] Fix the 5 corrupted instances in INSTALLING.md and trail/SKILL.md by replacing the exact corrupted 3-character sequence with the correct single arrow character, using a precise literal string replacement (not a broad regex substitution) to avoid touching anything else. Precedent check: grepped learning.md/learning-archive.md for "mojibake", "windows-1252", "misdecode" before proceeding -- found only this session's own realizations about audit-trail.md's historical corruption incidents (attributed to the same root mechanism: Get-Content/Set-Content decoding as windows-1252) but no prior entry addressing this specific arrow corruption or proposing a broader check. This is new work, not a repeat.
+
+[!DECISION] Extend check_no_mojibake() with a new MOJIBAKE_WIN1252 regex pattern targeting this corruption class generally (not just the specific arrow instance found), following the "every spec change must be paired with enforcement in the same session" operational rule already established this session. Chose to add this now, rather than defer it, specifically because the live tree was already clean of the pattern once the 2 files were fixed -- unlike the earlier systemic-BOM-check deferral (which would have broken ~70 files), this extension causes zero new failures once the underlying corruption is fixed, so there is no compatibility cost to adding it immediately.
+
+[!DECISION] Exempt .acm/audit-trail.md from only the new windows-1252 check (not from the existing U+FFFD check), following the exact precedent already established for GENBA_ARCHIVE.md's skip_paths exemption (documented historical corruption quoted as prose evidence, not live corruption). Verified this exemption is not vacuous: audit-trail.md genuinely contains one real instance of the pattern in its own prose (an earlier entry this session literally quoting the corrupted em-dash sequence as an illustrative example while explaining the historical incidents).
+
+Rejected alternative: exempt audit-trail.md from the whole check_no_mojibake() function (both U+FFFD and the new pattern). Rejected -- U+FFFD has no legitimate "quoted as prose example" use case (nobody intentionally types a raw replacement character as illustrative text), so a genuine U+FFFD corruption in audit-trail.md should still be caught; only the new, more permissively-matching pattern needed the narrower exemption.
+
+Rejected alternative: reword the two corrupted files' surrounding prose instead of restoring the literal arrow character. Rejected -- the arrow was clearly the intended original content (an annotation meaning "results in"), and restoring it exactly is more faithful than rewording around the defect.
+
+### Prediction
+
+I will fix 5 corrupted character instances across 2 files and extend check_no_mojibake() with a new pattern. I expect verify.py to initially fail on its own new check (self-referential false positives from my own added comments/CHANGELOG text describing the pattern using literal examples) and require at least one round of rewording before passing clean -- a known risk given this repo's own established precedent for this exact self-reference trap. I expect the final state to pass verify.py with zero false positives on the live tree, and a positive/negative test to confirm the new check actually detects synthetic corruption.
+
+### Action
+
+Fixed the 5 corrupted instances (3 in INSTALLING.md, 2 in trail/SKILL.md) via a precise literal-string replacement, confirmed via git diff that surrounding content was preserved (the previously-invisible trailing text reappeared correctly, confirming no new content was fabricated). Extended check_no_mojibake() with MOJIBAKE_WIN1252 and the audit-trail.md-scoped exemption. Ran verify.py -- failed twice on self-referential matches: once because my own new code comment and module docstring literally quoted the corrupted example sequences, and again because my own first-draft CHANGELOG.md entry did the same. Reworded both to describe the pattern without literally embedding the corrupted bytes. Ran verify.py again -- passed clean. Ran an explicit positive/negative test: confirmed check_no_mojibake() returns no failures on the current live tree, confirmed MOJIBAKE_WIN1252 correctly matches a synthetic corrupted string, and confirmed audit-trail.md's exemption is genuinely exercised (the file contains exactly one real matching instance in its own prose, not zero).
+
+Comparing outcome to prediction: held on every point, including the predicted self-reference trap, which occurred exactly as anticipated and was resolved the same way GENBA_ARCHIVE.md's precedent already established.
+
+### Reflection
+
+[!REALIZATION] This session has now found three genuinely different classes of "a mechanical check exists but its actual coverage is narrower than its name/purpose implies": the H1-duplicate check missing PRINCIPLES.md and later POSITION.md/QUICKSTART.md, the BOM issue that no check covered at all, and now check_no_mojibake() itself -- a check whose entire job is "detect mojibake" but which only ever detected one specific corruption signature (U+FFFD) despite this repo's own documented history showing the OTHER signature (windows-1252 misdecoding) is the one that has actually caused real incidents twice. This is the same governing-variable-shaped pattern named in an earlier macro-Hansei today (no single canonical source of truth for what each check actually covers vs. what it claims to cover) showing up a fourth time, in the check most directly named for the exact problem it under-covered.
+
+Named blind spot: I found this corruption via an unplanned tangent while sweeping for a different, unrelated pattern (hardcoded counts) -- this was not the result of a systematic audit of every check's actual implementation against its docstring claim. It is likely, given the pattern's recurrence rate today, that other checks in verify.py have similar coverage gaps between what their name/comment claims and what their code actually does, and none have been systematically audited.
+
+Imagined-reader pushback: "You keep discovering these coverage gaps by accident, one at a time, while working on unrelated tasks -- at what point does 'stumbling onto real bugs while doing something else' stop being a strength and become evidence that this repo needs a deliberate, systematic self-audit of every check's docstring-vs-implementation alignment, rather than relying on serendipity?" This is a fair and increasingly pointed challenge, now surfaced four times today in different forms. The honest answer: serendipitous discovery has worked well so far (every instance found was real and fixed correctly), but it does not scale, and it provides no confidence about coverage gaps that simply haven't been stumbled into yet. This is a strong candidate for the next Orient run to evaluate explicitly, rather than another accidental Improve-iteration discovery.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED -- fourth distinct instance today of "a check's actual coverage is narrower than its stated/implied purpose" (PRINCIPLES.md H1 exclusion, POSITION.md/QUICKSTART.md REQUIRED_FILES gap, the systemic BOM issue with no check at all, and now check_no_mojibake's narrow U+FFFD-only coverage). The governing-variable diagnosis from earlier today (no single canonical source of truth for what each verify.py check actually covers) applies again, unchanged -- but the recurrence count and the fact this happened inside the very check named for the exact problem class makes this the strongest instance yet of that diagnosis.
+- *About to declare silence:* not fired -- this run made a change.
+- *Contradicts prior [!REALIZATION]:* not fired -- directly reinforces, rather than contradicts, the governing-variable diagnosis already on record.
+- *Operator explicitly asked:* FIRED -- operator confirmed proceeding with the ranked candidate ("yes lets do that"), even though the actual finding pivoted mid-investigation to something more significant than originally scoped.
+
+**Across-trail macro-Hansei**
+
+[!REALIZATION] This is the fourth occurrence today of the same governing-variable-shaped recurrence (checks whose real coverage is narrower than their stated purpose), and per the imagined-reader pushback above, the accumulation itself is now the more important signal than any individual instance. A systematic audit -- reading every verify.py check function's actual implementation against its docstring/comment claim, in one pass, rather than waiting for the next accidental discovery -- is now a well-evidenced, high-confidence candidate for either a dedicated Improve iteration or the next Orient run's "what next runs should test" section. Naming this explicitly rather than letting a fifth accidental discovery make the same point yet again.
+
+### Candidate Next Moves
+
+1. **Systematically audit every verify.py check function's actual implementation against its docstring/comment claim in one dedicated pass**, rather than continuing to rely on accidental discovery -- strongly evidenced by four recurrences today, named explicitly per the macro-Hansei above.
+2. **Finish the original hardcoded-count sweep** that this entry's investigation grew out of -- the "six skills"/"three principles" style matches found earlier were not yet individually assessed for staleness (only the "three files" one was, which led here).
+3. **Exercise step 3b in a live future orient run** -- still the oldest untested item, and now has strong material (this entry's own recurring-pattern accumulation) to reason about.
+4. **Audit `STALE_PATH_DOCS` and `ACM_SCOPE_TRAVERSAL_FILES`** for the same silent-exclusion pattern -- still open, and arguably subsumed by candidate 1's broader systematic audit.
+5. Settle whether a target-agnostic formulation of "self-targeting should surface reasoning-capability gaps" is even coherent -- still carried.
