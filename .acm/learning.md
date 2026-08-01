@@ -5,19 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 257 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-01 — orient-post-acm4-closure
-
-**[!REALIZATION]** The step-6b double-loop question (added 2026-07-31) has now fired three times in four days with three genuinely different outcomes: no-escalation-warranted (intent fix), escalation-warranted-and-surfaced-not-resolved (destination fix), escalation-answered-in-practice-and-closed-structurally (the consistency-enforcement entry). A fourth entry did not fire the trigger at all. This variance is evidence the mechanism discriminates rather than defaulting to one templated answer.
-
-## 2026-08-01 — orient-post-acm4-closure
-
-**[!REALIZATION]** A second instance of "a mechanical check silently stopped covering the exact file its own history says it exists for" was found and closed this window: PRINCIPLES.md's exclusion from the duplicate-H1 check via dead code, found the same day as the ACM section 4 enforcement work. Two instances of this failure class in one two-day window is now a named pattern.
-
-## 2026-08-01 — orient-post-acm4-closure
-
-**[!REALIZATION]** :* not fired -- extends rather than contradicts the prior orient run's candidate-follow-through finding by refining it (self-referential vs. older-backlog follow-through are now distinguished).
+Showing the most recent 60 markers. 260 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-01 — orient-post-acm4-closure
 
@@ -246,6 +234,18 @@ Showing the most recent 60 markers. 257 older marker(s) are in `.acm/learning-ar
 ## 2026-08-01 — fix-real-mojibake-corruption-and-extend-check-no-mojibake
 
 **[!REALIZATION]** This is the fourth occurrence today of the same governing-variable-shaped recurrence (checks whose real coverage is narrower than their stated purpose), and per the imagined-reader pushback above, the accumulation itself is now the more important signal than any individual instance. A systematic audit -- reading every verify.py check function's actual implementation against its docstring/comment claim, in one pass, rather than waiting for the next accidental discovery -- is now a well-evidenced, high-confidence candidate for either a dedicated Improve iteration or the next Orient run's "what next runs should test" section. Naming this explicitly rather than letting a fifth accidental discovery make the same point yet again.
+
+## 2026-08-01 — trail-condensed-entry-format-for-non-decision-fixes
+
+**[!REALIZATION]** This entry itself is a live demonstration of the distinction it creates: this decision involved multiple rejected alternatives, a re-derivation of which architectural layer the concern actually lived in, and a genuine judgment call about where to draw the condensed-format boundary -- exactly the profile that keeps the full template, not the condensed one, even though the *artifact it produces* (a new format for other, simpler future entries) is about reducing ceremony elsewhere. The decision to keep ceremony proportional to judgment, rather than uniformly reducing it, is validated by needing the full template to make this exact decision legible.
+
+## 2026-08-01 — trail-condensed-entry-format-for-non-decision-fixes
+
+**[!REALIZATION]** :* not fired -- resolves, rather than contradicts, the ceremony-overhead concern named in this session's own recent reflections.
+
+## 2026-08-01 — trail-condensed-entry-format-for-non-decision-fixes
+
+**[!REALIZATION]** This is the first entry in this session where the operator explicitly handed over a governing-variable-level decision rather than picking from a ranked list or delegating a narrower, already-scoped choice (as with the BOM-grouping decision). Read against the arc as a whole: the operator-gate in this session has now been exercised in at least four distinct shapes -- ranked-candidate selection, narrow delegated autonomy (BOM grouping, operator unavailable), direct operator-initiated diagnostic questions (the Argyris-in-Orient gap), and now full delegation of an architectural-format decision with an explicit instruction to reason from destination and inferred intent. Each shape places different demands on the agent's judgment, and this is the first case testing whether the agent, given real latitude, converges on a *narrower* change than the destination-level revision the framing implied ("what should we do about ceremony overhead") -- which is what happened here: the decision made is smaller in destination-level footprint than the question as posed, because closer reading found the actual concern lived one layer down from where it was first framed.
 
 ---
 

@@ -1,5 +1,10 @@
 # Changelog
 
+## v4.16.0 — 2026-08-01
+
+### Added
+- **`trail/SKILL.md` gains a condensed entry format for changes with no genuine judgment call** (a typo fix, a stale-count correction, a mechanical find-and-replace with an obviously correct outcome) — the full six-section template (Interpretation/Examination/Decision/Prediction/Action/Reflection) exists to make decisions legible, and forcing it onto changes with no decision either produces trivially-restated sections or ceremony padded to look substantive, itself a rationalization risk. The condensed format drops straight to a one-paragraph summary but **never drops the four-trigger evaluation or macro-Hansei** — deliberately, since that is the cheapest part of the template and the mechanism most likely to catch a pattern recurring across several small entries. The criterion is qualitative ("no genuine judgment call"), not a size/line-count threshold, consistent with this suite's own "state the goal, not the steps" principle — a size threshold would be exactly the kind of prescribed-route smuggling Principle 1 exists to prevent. `trail/SKILL.md` 2.2.0 -> 2.3.0. No change needed to `verify.py`'s trigger-evaluation check — it already parses generically by regex, not by section headings.
+
 ## v4.15.0 — 2026-08-01
 
 ### Fixed

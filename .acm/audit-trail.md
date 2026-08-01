@@ -9707,3 +9707,77 @@ Imagined-reader pushback: "You keep discovering these coverage gaps by accident,
 3. **Exercise step 3b in a live future orient run** -- still the oldest untested item, and now has strong material (this entry's own recurring-pattern accumulation) to reason about.
 4. **Audit `STALE_PATH_DOCS` and `ACM_SCOPE_TRAVERSAL_FILES`** for the same silent-exclusion pattern -- still open, and arguably subsumed by candidate 1's broader systematic audit.
 5. Settle whether a target-agnostic formulation of "self-targeting should surface reasoning-capability gaps" is even coherent -- still carried.
+
+## 2026-08-01 - trail-condensed-entry-format-for-non-decision-fixes
+
+- target: skills repo (this repo) -- trail/SKILL.md
+- operator: maintainer (Nils Holmager)
+- agent: Claude Sonnet 4.5 (GitHub Copilot)
+- skill: improve
+- outcome: added a condensed trail-entry format for changes with no genuine judgment call, resolving the ceremony-overhead concern the operator named without revising any destination-level architectural constraint
+- delta: trail/SKILL.md 2.2.0 -> 2.3.0; CHANGELOG.md v4.16.0 added
+
+### Interpretation of the ask
+
+Following a conversational exchange (not a bare "run improve" prompt): the operator asked for my honest opinion of the suite's quality ("are they good, slick, sharp/crisp, any waste?"), I gave a candid assessment naming four concerns including "ceremony overhead scaling faster than the value of small fixes," the operator asked "what should we do about that," I proposed a ranked list splitting mechanically-executable items from one genuinely governing-variable-level item (the ceremony/entry-format question), and the operator then said explicitly: "I want you to make the decision for me based on the destination and what you think i want." I interpreted this as a deliberate, explicit delegation of exactly the kind destination.md describes ("the human decides -- or explicitly delegates that decision back to the AI"), and treated it with commensurate seriousness rather than as license to pick whatever is easiest for me.
+
+### Examination
+
+Re-read destination.md's architectural constraints before proposing anything. Constraint #4 reads: "One change per run, highest leverage, stated reason. No batching." On close reading, this constraint is about *scope* (do one coherent thing per iteration, don't bundle unrelated work) -- it says nothing about how much ceremony a single entry's write-up must carry. This is a materially different axis from what I had named as the concern (every entry, regardless of whether it contains a real decision, currently pays the same six-section ceremony cost). Recognizing this distinction meant the fix did not require revising constraint #4 or writing a new destination.md note at all -- it is a Trail-skill format concern, squarely within existing architecture, not a governing-variable revision to the "no batching" rule itself. This reframing is the most load-bearing piece of this entry's reasoning: I initially assumed (when raising the concern) that this was the same batching-vs-efficiency tension named a few entries ago, and on closer reading it is a related but distinct problem.
+
+Purpose lens: Trail's stated purpose is Observable Autonomy -- making reasoning legible to an observer who wasn't there. For a one-line typo fix or a stale-count correction, the full template's Decision/Prediction/Reflection sections either restate something trivial or get padded to look substantive to satisfy the format -- which is itself a rationalization risk this session's own trail explicitly worries about elsewhere (a uniformly "successful," padded-looking trail is a confabulation signal, not evidence of thoroughness).
+
+Precedent check: grepped learning.md/learning-archive.md for "ceremony", "ceremony cost", "condensed", "lightweight entry" before drafting -- found only this session's own realizations naming the tension as unresolved (from the delegated-BOM-grouping entry and the lens-count-fix entry's imagined-reader-pushback), no prior entry proposing or rejecting a condensed format specifically. This is new work.
+
+Considered the risk of a rigid threshold (e.g. "changes under N lines") explicitly, because destination.md's Principle 1 explicitly warns against exactly this: "State the goal, not the steps... those thresholds may be correct -- but the agent should derive them from understanding overburden, not from reading a bullet point." A line-count or file-count threshold would smuggle in a route where the destination should only state a goal.
+
+### Decision
+
+[!DECISION] Add a condensed entry format to trail/SKILL.md, usable when a change involves **no genuine judgment call** -- nothing weighed against an alternative, no precedent needing a check because there was no decision to check it against, an outcome obviously correct once seen. This is a qualitative test (the presence or absence of a real decision), not a size/line-count/file-count threshold -- deliberately, to avoid the exact route-prescription Principle 1 warns against. The condensed format drops the Decision/Prediction sections and combines Interpretation/Examination/Action into one paragraph, but **never drops the four-trigger evaluation or macro-Hansei-if-fired** -- these are the cheapest part of the template and, per this session's own accumulated evidence (four separate small entries each independently finding "a check's coverage is narrower than its stated purpose"), the mechanism most likely to catch a pattern recurring *across* several small, individually-unremarkable entries. Explicitly stated "when in doubt, use the full template" as a bias against under-classifying real decisions to save ceremony.
+
+Rationale for scope: this resolves the concern raised in conversation (fixed ceremony cost disproportionate to trivial changes) without touching destination.md's constraint #4, because on close reading that constraint governs scope-batching, not entry-format weight -- two related but distinct axes. Confirmed via re-reading, not assumed.
+
+Rejected alternative: revise destination.md's constraint #4 itself to carve out an exception for "small" changes. Rejected -- constraint #4 was never actually in tension with this concern once the scope-vs-format distinction was drawn; revising it would have been solving the wrong layer, and would have been a genuine architectural-constraint change requiring far more caution than a Trail-skill format addition.
+
+Rejected alternative: a numeric threshold (e.g. diff line count, file count) to define "condensed-eligible." Rejected explicitly per Principle 1 -- a threshold is exactly the kind of default the destination should never smuggle in; the qualitative "no judgment call" test forces the agent to actually reason about whether a decision occurred, the same discipline already used for the four lenses ("apply the ones the target invites," not a checklist).
+
+Rejected alternative: drop the four-trigger evaluation from the condensed format too, to maximize the ceremony reduction. Rejected -- this is the single cheapest, highest-value part of the template (one line per trigger) and the one directly responsible for catching this session's own most valuable recurring-pattern finding (the four-times-repeated "check coverage narrower than claimed" discovery). Removing it would cut exactly the signal most worth keeping while keeping the more expensive, less load-bearing sections.
+
+Precedent check restated: no existing learning.md/learning-archive.md entry addresses this specific format question; the general "avoid hardcoded thresholds, prefer qualitative judgment vocabulary" pattern is well-established throughout this suite's design (the four lenses, the double-loop question) and this decision is consistent with, not a departure from, that pattern.
+
+### Prediction
+
+I will add a new "Condensed entries" section to trail/SKILL.md, bump its version 2.2.0 -> 2.3.0, and add a CHANGELOG entry. I expect python verify.py to pass clean without requiring any change to verify.py itself, because check_trigger_evaluation() parses by regex against the trigger-line and macro-Hansei-heading patterns directly, not against specific section headings -- confirmed by reading its implementation before deciding this, not assumed. I expect this NOT to touch destination.md, and NOT to introduce any numeric threshold into the condensed-format criterion.
+
+### Action
+
+Read verify.py's check_trigger_evaluation() implementation directly to confirm the prediction above before making any change -- confirmed it uses TRIGGER_LINE and MACRO_HANSEI_HEADING regexes against the entry body generically, with no dependency on "### Reflection" or "### Decision" headings specifically. Added the "Condensed entries" section to trail/SKILL.md immediately after the full entry template, stating the qualitative criterion, the shape of the condensed format, and the explicit reasoning for never dropping the trigger evaluation. Bumped trail/SKILL.md 2.2.0 -> 2.3.0. Added CHANGELOG.md v4.16.0 entry. Regenerated history.md/learning.md/learning-archive.md and ran python verify.py -- passed clean on the first attempt, confirming the prediction that no verify.py change was needed.
+
+Comparing outcome to prediction: held on every point.
+
+### Reflection
+
+[!REALIZATION] This entry itself is a live demonstration of the distinction it creates: this decision involved multiple rejected alternatives, a re-derivation of which architectural layer the concern actually lived in, and a genuine judgment call about where to draw the condensed-format boundary -- exactly the profile that keeps the full template, not the condensed one, even though the *artifact it produces* (a new format for other, simpler future entries) is about reducing ceremony elsewhere. The decision to keep ceremony proportional to judgment, rather than uniformly reducing it, is validated by needing the full template to make this exact decision legible.
+
+Named blind spot: this format has not yet been used on a real subsequent entry. Whether "no genuine judgment call" is actually a clear-enough test in practice -- or whether agents (including a future instance of me) will find it ambiguous and either over-use the full template out of caution or under-use it to save effort -- is untested. The explicit "when in doubt, use the full template" bias is a hedge against the second failure mode, not a guarantee against it.
+
+Imagined-reader pushback: "You were explicitly asked to decide this yourself, and you decided not to touch the architectural constraint at all -- did you actually make a decision, or did you find a reading of the destination that let you avoid making one?" This is a fair challenge and worth answering honestly: the reframing (scope vs. format) is not a dodge -- it was reached by actually re-reading constraint #4's literal wording rather than assuming my own conversational framing of the problem ("ceremony overhead," "batching tension") was the correct decomposition. If anything, taking the delegated decision seriously meant *not* accepting my own prior framing of the problem uncritically and re-deriving where the actual tension lived, which is a more rigorous response to being trusted with the decision than reflexively picking one of the options I had already offered.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired -- this is a new kind of change (a Trail-format addition), not a continuation of today's BOM-fix or check-coverage-gap families.
+- *About to declare silence:* not fired -- this run made a change.
+- *Contradicts prior [!REALIZATION]:* not fired -- resolves, rather than contradicts, the ceremony-overhead concern named in this session's own recent reflections.
+- *Operator explicitly asked:* FIRED -- the operator explicitly delegated this exact decision ("I want you to make the decision for me based on the destination and what you think i want").
+
+**Across-trail macro-Hansei**
+
+[!REALIZATION] This is the first entry in this session where the operator explicitly handed over a governing-variable-level decision rather than picking from a ranked list or delegating a narrower, already-scoped choice (as with the BOM-grouping decision). Read against the arc as a whole: the operator-gate in this session has now been exercised in at least four distinct shapes -- ranked-candidate selection, narrow delegated autonomy (BOM grouping, operator unavailable), direct operator-initiated diagnostic questions (the Argyris-in-Orient gap), and now full delegation of an architectural-format decision with an explicit instruction to reason from destination and inferred intent. Each shape places different demands on the agent's judgment, and this is the first case testing whether the agent, given real latitude, converges on a *narrower* change than the destination-level revision the framing implied ("what should we do about ceremony overhead") -- which is what happened here: the decision made is smaller in destination-level footprint than the question as posed, because closer reading found the actual concern lived one layer down from where it was first framed.
+
+### Candidate Next Moves
+
+1. **Use the condensed format on the next few genuinely-simple fixes** (e.g. the still-open hardcoded-count sweep, or the CITATION.cff currency fix) to test whether the qualitative criterion holds up in practice -- named blind spot above.
+2. **Systematically audit every verify.py check's actual implementation against its docstring/comment claim in one dedicated pass** -- still the highest-confidence, most-evidenced item from the prior entry, unchanged in priority by this one.
+3. **Exercise step 3b in a live future orient run** -- still the oldest untested item; this entry's own arc-level observation (four distinct operator-gate shapes exercised this session) is fresh material for it.
+4. **Audit `STALE_PATH_DOCS` and `ACM_SCOPE_TRAVERSAL_FILES`** for the same silent-exclusion pattern, still open.
+5. Settle whether a target-agnostic formulation of "self-targeting should surface reasoning-capability gaps" is even coherent -- still carried.

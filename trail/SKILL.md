@@ -1,6 +1,6 @@
 ---
 name: trail
-version: 2.2.0
+version: 2.3.0
 description: 'Evidence trail management. Append a structured entry to .acm/audit-trail.md IN THE TARGET REPO ROOT at the end of every substantive session — recording the interpretation of the ask, examination, decisions, actions, and reflection. The implementation of Observable Autonomy — autonomy without evidence is not delegation, it is abdication. USE WHEN: any session that produces a decision, realization, or finding — including conversations. There is no such thing as "just conversation" if a decision was made in it.'
 argument-hint: 'The target being worked on (repo, file, system) — used to populate the log entry header'
 ---
@@ -148,6 +148,41 @@ convergence was declared. The operator may pick, redirect, or ignore; the
 ranking exists as arc-level evidence of how the operator-gate steers the work,
 not as a step the operator must engage with.>
 ```
+
+---
+
+## Condensed entries (when there is no decision to record)
+
+The full template exists to make judgment calls legible — decisions, tradeoffs, rejected alternatives — to an observer who wasn't there. Not every entry contains one. A typo fix, a stale-count correction, or a mechanical find-and-replace with an obviously correct outcome carries no real Decision to justify, no alternative worth rejecting, no prediction worth stating beyond "this will fix X." Forcing the full six-section template onto this class of change adds ceremony without adding observability — the sections would either be trivially restated or padded to look substantive, which is itself a rationalization risk (Principle 2 is concerned with fabricated ceremony as much as with hidden reasoning).
+
+Use the condensed format only when the change involves **no genuine judgment call**: nothing was weighed against an alternative, no precedent needed checking because there was no decision to check it against, and the outcome was obviously correct once the defect was seen. This is a qualitative test, not a size threshold — a one-line change that involved a real tradeoff still gets the full template, and a multi-file mechanical fix with no judgment call can use the condensed one. If there is any real tradeoff, any rejected alternative worth naming, or any claim a future run might disagree with, use the full template. When in doubt, use the full template — the condensed format is for the absence of a decision, not a way to avoid documenting one that exists.
+
+The condensed shape:
+
+```markdown
+## YYYY-MM-DD — <slug>
+
+- target: <what was worked on>
+- operator: <who initiated>
+- agent: <model / provider>
+- skill: <which skill was applied>
+- outcome: <what resulted>
+- delta: <version before → after, or a one-line summary of change>
+
+<One paragraph: what was found, what was changed, and how it was verified.
+No Decision block — there was no judgment call to record.>
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* ...
+- *About to declare silence:* ...
+- *Contradicts prior [!REALIZATION]:* ...
+- *Operator explicitly asked:* ...
+
+<Macro-Hansei only if a trigger fired, per the same rule as the full template.>
+```
+
+The four-trigger evaluation and any resulting macro-Hansei are never skipped, even in condensed form — they are the cheapest part of the template and the mechanism most likely to catch a pattern recurring *across* several small, otherwise-unrelated entries (a worked example: a repo's own trail once found the same "a check's coverage is narrower than its stated purpose" defect four separate times across small, individually-unremarkable fixes in one session — only the trigger evaluation, not any single entry's own reflection, had a chance to name that as a pattern rather than four isolated notes).
 
 ---
 

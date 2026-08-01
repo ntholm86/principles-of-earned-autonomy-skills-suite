@@ -1033,6 +1033,18 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** The ACM section 4 arc opened 2026-06-22 and reopened as the prior orient run's top finding is now closed and self-enforcing: intent/SKILL.md and destination/SKILL.md received the traversal paragraph; orient/SKILL.md's own copy was found already drifted from the other three and harmonized; a new verify.py check (15) now fails automatically on future wording drift across all four files. This is a stronger form of "closed" than this repo's three prior silence claims (ARF restriction-reasoning, named-boundary discipline, .acm rename), which hold only because no one has touched those surfaces again -- this one holds because a mechanical check would catch a re-drift even without a human re-reading the four files side by side.
 
+## 2026-08-01 — orient-post-acm4-closure
+
+**[!REALIZATION]** The step-6b double-loop question (added 2026-07-31) has now fired three times in four days with three genuinely different outcomes: no-escalation-warranted (intent fix), escalation-warranted-and-surfaced-not-resolved (destination fix), escalation-answered-in-practice-and-closed-structurally (the consistency-enforcement entry). A fourth entry did not fire the trigger at all. This variance is evidence the mechanism discriminates rather than defaulting to one templated answer.
+
+## 2026-08-01 — orient-post-acm4-closure
+
+**[!REALIZATION]** A second instance of "a mechanical check silently stopped covering the exact file its own history says it exists for" was found and closed this window: PRINCIPLES.md's exclusion from the duplicate-H1 check via dead code, found the same day as the ACM section 4 enforcement work. Two instances of this failure class in one two-day window is now a named pattern.
+
+## 2026-08-01 — orient-post-acm4-closure
+
+**[!REALIZATION]** :* not fired -- extends rather than contradicts the prior orient run's candidate-follow-through finding by refining it (self-referential vs. older-backlog follow-through are now distinguished).
+
 ---
 
-**257 markers — 237 realisations, 20 reversals**
+**260 markers — 240 realisations, 20 reversals**
