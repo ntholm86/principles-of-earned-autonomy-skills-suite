@@ -1,4 +1,4 @@
-﻿---
+---
 name: orient
 version: 2.0.1
 description: 'Read the trail as a single document and form arc-level claims about the target. What is the target becoming? Where has the loop''s attention been, and is that where the target''s real weight lies? What does the arc reveal that no individual iteration would surface? Writes .acm/orientation.md — the Orient-derived current orientation for the target. Destination (.acm/destination.md, with .acm/vision.md as legacy fallback), if present, is the operator-held destination and is read but never written. USE WHEN: about to declare convergence, recurring finding-class suspected, operator asks "how are we doing?", or an independent arc-read is needed without running a full improve loop.'

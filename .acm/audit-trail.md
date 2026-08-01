@@ -9307,3 +9307,69 @@ There is no separate Decision/Action field -- Orient is observational; the artif
 **Across-trail macro-Hansei**
 
 [!REALIZATION] Claim 5 is itself the macro-Hansei output of this run, arrived at only by reading the six-entry arc as one document rather than entry-by-entry -- no single one of the four BOM-fix entries had enough surface area on its own to surface the no-batching/efficiency tension; it only became visible by comparing the sequence's cumulative ceremony cost against the destination's efficiency note as a whole. This is the kind of finding Orient exists to produce that Improve's step 6b, running inside a single iteration, structurally cannot.
+
+## 2026-08-01 - route-batching-tension-to-operator-then-fix-three-skillmd-boms
+
+- target: skills repo (this repo) -- orient/SKILL.md, probe/SKILL.md, trail/SKILL.md
+- operator: maintainer (Nils Holmager) -- unavailable to respond this run; explicit standing instruction given: "work autonomously and make good decisions"
+- agent: Claude Sonnet 4.5 (GitHub Copilot)
+- skill: improve
+- outcome: routed the no-batching/efficiency tension (named in the prior orient run) to the operator per step 6b's double-loop guidance; operator unavailable, so proceeded with the highest-confidence assumption -- a scoped middle path (grouped entry, per-file verification preserved) -- and fixed the three remaining SKILL.md files' BOMs under that revised granularity
+- delta: orient/SKILL.md, probe/SKILL.md, trail/SKILL.md each lose their leading UTF-8 BOM (1-line diff each, frontmatter delimiter only); no functional change; first entry in this sequence covering more than one file
+
+### Interpretation of the ask
+
+Operator: "use the improve skill now." Bare, generic prompt. The immediately prior orient run ranked, as its top "what next runs should test" item, a genuine double-loop finding: "one change per run, no batching" had not been examined against the evidence the BOM-fix sequence itself produced (four uniform, byte-identical, zero-surprise fixes across four separate entries/commits), while the destination separately names token/resource efficiency as a real constraint. Per improve/SKILL.md step 6b's explicit instruction for this situation -- "route it to the operator via the Destination skill rather than proposing a fifth fix for the same symptom" -- I did not treat this as license to unilaterally change the granularity, and did not treat it as license to just keep repeating the old pattern either. I surfaced it to the operator directly, framed as a sourced hunch plus a falsifiable, answerable question, before taking any action.
+
+### Examination
+
+Formed the hunch precisely (not "you probably want X" but a cited, falsifiable claim): the no-batching rule's evident purpose is independent per-file auditability, not literal one-file-per-entry ceremony; four consecutive BOM-fix entries have produced identical reasoning and zero new risk information past the first, while the 2026-08-01 destination note explicitly names efficiency as "not an optimization afterthought."
+
+Asked the operator directly via a structured question with three explicit options (keep one-per-entry; group remaining low-risk fixes into one entry with individual verification preserved; something else) rather than a vague or leading question, per Destination's own guidance that a good question is short, falsifiable, and answerable without requiring the operator to draft a spec.
+
+### Decision
+
+[!DECISION] The operator was unavailable this run ("The user is not available to respond and will review your work later. Work autonomously and make good decisions."). Per improve/SKILL.md step 1's explicit instruction for underspecified asks -- "if no operator answer is available in this run, proceed with your highest-confidence destination-hunch as an explicit assumption and continue" -- I selected the middle option I had already offered as a candidate: group the remaining low-risk BOM fixes into fewer entries, but preserve full per-file byte-diff verification inside each, rather than either extreme (continuing strict one-file-per-entry indefinitely, or batching everything with reduced scrutiny). Precedent check: grepped learning.md/learning-archive.md for "batching", "one change per run", "granularity" before deciding -- found only this session's own orient-run realization naming the tension; no pre-existing precedent either constrains or authorizes this specific resolution, so this is a genuinely new decision, not a repeat of an established rule.
+
+[!DECISION] Scoped this grouping decision narrowly: only to the three remaining plain SKILL.md files (orient, probe, trail) -- the same file-type and risk class as the four already-fixed files (verify.py, QUICKSTART.md, INSTALLING.md, record.py), with an identical, five-times-now-validated mechanism. Explicitly excluded from this grouping: the five `.acm/sessions/*.md` files (the named blind spot -- whether their exact byte content is treated as a fingerprint -- remains unresolved) and the two highest-risk files (`.acm/audit-trail.md`, `.acm/orientation.md`), which stay last regardless of the granularity decision. Precedent check: this preserves the corruption-risk-driven exclusion already established across the last four entries -- the granularity decision only relaxes ceremony for the uniform, already-proven-safe class of fix, not the two files where real risk still lives.
+
+Rejected alternative: treat "operator unavailable" as a reason to defer the whole question and just do one more single-file fix in the old pattern. Rejected -- the operator's standing instruction was explicitly "work autonomously and make good decisions," which is itself a signal to actually resolve the question with a reasoned assumption, not to sidestep it by falling back to inaction on the one thing that was asked.
+
+Rejected alternative: batch all nine remaining files (three SKILL.md, five session files, plus reconsidering audit-trail.md/orientation.md) into one entry now that a grouping decision has been made. Rejected -- the grouping decision applies only to the specific class of fix already validated four times with zero surprises; the session files and the two highest-risk files have unresolved questions of their own (fingerprint concern; corruption history) that are unrelated to the batching-versus-efficiency tension and must not be swept in under a different justification.
+
+### Prediction
+
+I will strip BOMs from all three SKILL.md files in one entry, showing per-file byte-diff and git-diff evidence for each individually. I expect all three diffs to show exactly one line changed (the BOM-prefixed frontmatter delimiter) with no other content difference. I expect python verify.py to still pass after all three changes. I expect this NOT to touch the five session files or the two highest-risk files, and NOT to reduce the per-file verification rigor just because the entry itself is now grouped.
+
+### Action
+
+Stripped all three files' BOMs in a single PowerShell loop using the identical mechanism validated four times already (utf8-sig-aware decode, UTF8Encoding(false) re-encode). Confirmed via git diff --stat that each file changed exactly 1 line (1 insertion, 1 deletion). Confirmed via full git diff that in every case the changed line is the BOM-prefixed `---` frontmatter delimiter, nothing else -- orient/SKILL.md, probe/SKILL.md, and trail/SKILL.md each individually verified, not just verified in aggregate. Regenerated history.md/learning.md/learning-archive.md and ran python verify.py -- passed clean.
+
+Comparing outcome to prediction: held on every point.
+
+### Reflection
+
+[!REALIZATION] This entry is the first direct test of whether the operator-gate can function even when the operator is not present to answer in real time -- the "work autonomously and make good decisions" instruction is a delegated form of the gate, not an absence of it. The decision made here (a scoped middle path, not either extreme) is falsifiable: if the operator reviews this later and says "no, I wanted strict one-per-entry" or "no, you should have batched everything," that would be direct evidence about how well an autonomous best-guess under real delegation matches what a present operator would have chosen. This is more informative than any of the four prior BOM-fix entries, because it is the first one testing something the arc's own orient run identified as actually uncertain, rather than repeating an already-settled mechanism.
+
+Named blind spot: I do not know whether the operator would have picked the same middle option if actually asked -- "keep one-per-entry" and "something else entirely" were both live possibilities I did not get to test. The decision is my best reasoned guess under the instruction given, not a resolved fact.
+
+Imagined-reader pushback: "You asked a question, got told to decide yourself, and then picked the exact option you yourself had pre-drafted as the compromise choice -- isn't that just doing what you wanted to do anyway, dressed up as consulting the operator?" This is a fair and important challenge. The honest answer: yes, the option chosen was one I had already surfaced, and there is no way to fully rule out that framing bias shaped which option looked most reasonable to fall back on. What mitigates but does not eliminate this: the three options were presented neutrally with rejected-alternative-style descriptions for each, not weighted toward one; the choice made is the most conservative of the three non-status-quo positions (narrower scope than "batch everything," more responsive to the named efficiency concern than "keep exactly as before"); and the decision is recorded here explicitly enough that the operator can override it on review with a single sentence. Whether that is sufficient safeguard against self-serving option selection under delegated autonomy is a question this entry raises but does not settle.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED -- fifth BOM-fix entry in the finding-class family, though the first with a materially different resolution shape (grouped rather than singular) following directly from the orient run's realization about this exact recurrence.
+- *About to declare silence:* not fired -- this run made a change.
+- *Contradicts prior [!REALIZATION]:* not fired -- directly acts on, rather than contradicts, the orient run's realization about the no-batching/efficiency tension.
+- *Operator explicitly asked:* FIRED -- the operator's standing instruction ("work autonomously and make good decisions") was a direct, if general, response to being asked this specific question; this entry exists because of that exchange, not because of a self-generated destination-hunch alone.
+
+**Across-trail macro-Hansei**
+
+[!REALIZATION] Both the recurring-finding-class and operator-explicitly-asked triggers fired simultaneously for the first time this session. Read together, they mark a transition point in this sub-arc: the prior four entries were the loop executing an already-settled mechanism repeatedly; this entry is the loop's own accumulated pattern-recognition (via Orient) producing a genuine governing-variable question, escalating it correctly instead of quietly deciding alone, and then exercising real judgment when the operator delegated the decision back. Whether "grouped, per-file-verified" turns out to be the granularity the operator actually wants remains open until reviewed -- this is not a closed loop yet, only a well-reasoned, clearly-flagged one.
+
+### Candidate Next Moves
+
+1. **Await operator review of the grouping decision made here** -- if confirmed, apply the same grouped-with-per-file-verification pattern to the remaining plain-file fixes (the five `.acm/sessions/*.md` files, once the fingerprint blind spot is resolved); if corrected, revert to whichever granularity the operator actually prefers for any remaining fixes.
+2. **Resolve the `.acm/sessions/*.md` fingerprint blind spot** before touching those five files -- still unresolved, carried three entries running now.
+3. **Decide the order and approach for `.acm/orientation.md` and `.acm/audit-trail.md`** -- still deliberately last; the grouping decision made here does not extend to either given their distinct risk profile (derived/rewritten vs. append-only-with-corruption-history).
+4. Audit `STALE_PATH_DOCS` and `ACM_SCOPE_TRAVERSAL_FILES` for the same silent-exclusion pattern, still open from several entries ago.
+5. Settle whether a target-agnostic formulation of "self-targeting should surface reasoning-capability gaps" is even coherent, still carried.

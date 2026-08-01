@@ -961,6 +961,18 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** The suite's architecture already had the double-loop *mechanism* (destination.md is operator-revisable; Destination skill exists to revise it) but lacked the *trigger* for recognizing when a finding warrants reaching for that mechanism instead of patching the artifact again. This gap is consistent with the destination.md Learning section's own prior claim that "Learning... is the most underdeveloped of the three [memory, learning, meta-cognition] and the most important gap for a future loop run to target" -- this change is a direct, narrow instance of closing that named gap, not a new direction.
 
+## 2026-07-31 — improve-argyris-double-loop-6b-integration
+
+**[!REALIZATION]** :* not fired -- this extends, rather than contradicts, the existing 2026-05-01 realization series about learning being the most underdeveloped of the three memory-model pillars.
+
+## 2026-07-31 — orient-post-argyris-window
+
+**[!REALIZATION]** Since the prior orient run, this repo's own attention has gone almost entirely to terminology and ACM-conformance surfaces, not to capability gaps -- even where two capability gaps (trail-skill ACM Mandate Gate enforcement; intent/SKILL.md's missing ACM section 4 parent-scope traversal) were explicitly named as candidate next moves in this exact window and neither was picked up by any of the 5 entries that followed.
+
+## 2026-07-31 — orient-post-argyris-window
+
+**[!REALIZATION]** intent/SKILL.md still lacks the ACM section 4 parent-scope-traversal instruction, over five weeks after entry acm-parent-scope-traversal-propagated (2026-06-22) named it as candidate #1 and added the same instruction to improve/SKILL.md and orient/SKILL.md. Confirmed by direct grep (zero hits for "ACM", "parent-scope", "traversal" in intent/SKILL.md as of this run).
+
 ---
 
-**239 markers — 219 realisations, 20 reversals**
+**242 markers — 222 realisations, 20 reversals**

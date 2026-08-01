@@ -1,4 +1,4 @@
-﻿---
+---
 name: trail
 version: 2.2.0
 description: 'Evidence trail management. Append a structured entry to .acm/audit-trail.md IN THE TARGET REPO ROOT at the end of every substantive session — recording the interpretation of the ask, examination, decisions, actions, and reflection. The implementation of Observable Autonomy — autonomy without evidence is not delegation, it is abdication. USE WHEN: any session that produces a decision, realization, or finding — including conversations. There is no such thing as "just conversation" if a decision was made in it.'
