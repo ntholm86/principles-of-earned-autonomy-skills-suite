@@ -5,15 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 281 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-01 — trail-decision-precedent-check-requirement
-
-**[!REALIZATION]** :* not fired -- directly acts on and extends the orient run's own realization rather than contradicting it.
-
-## 2026-08-01 — learning-md-bounded-recent-window-plus-archive
-
-**[!REALIZATION]** This is the first entry in this whole multi-turn arc that responds to destination note item 3 (token/resource efficiency) as its own dedicated concern, rather than as a side effect of an unrelated instruction (the earlier trail sessions-mandate removal was efficiency-motivated but operator-directed, not self-derived from the destination text). Unlike the reasoning-capability attempts, this one did not require touching a skill file's *behavioral* instructions at all -- it is a change to tooling (record.py) and a description update (trail/SKILL.md, improve/SKILL.md), with no risk of the genericity violation that tripped up the earlier attempt, because record.py and the .acm/ file structure are already generic (they apply identically to any target using these skills, not just this repo).
+Showing the most recent 60 markers. 283 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-01 — learning-md-bounded-recent-window-plus-archive
 
@@ -246,6 +238,14 @@ Showing the most recent 60 markers. 281 older marker(s) are in `.acm/learning-ar
 ## 2026-08-01 — remove-vision-md-legacy-fallback
 
 **[!REALIZATION]** No new governing-variable diagnosis needed here; this entry does not extend or contradict the day's other recurring-pattern diagnoses. It is worth noting as a distinct, positive category from those: this is the first entry today that closes a piece of the suite's OWN evolution (retiring a self-scoped temporary feature) rather than fixing a defect (encoding, file-scope, version drift). The suite's design discipline of naming removal conditions in advance, rather than leaving compatibility shims open-ended, is what made this decision fast and low-risk to make today.
+
+## 2026-08-01 — confirm-push-and-record-trail-completeness-check
+
+**[!REALIZATION]** :* not fired -- checked learning.md for prior notes on push-recording or Q&A-recording; found none, so nothing to contradict.
+
+## 2026-08-01 — confirm-push-and-record-trail-completeness-check
+
+**[!REALIZATION]** Not every operator action needs its own trail entry the instant it happens, but a real, consequential action (publishing 13 commits to a public repo) sitting unrecorded across a conversational-compaction boundary is a genuine gap worth naming: the trail's completeness currently depends on someone (here, the operator) noticing the gap, since no mechanical check verifies that every git push event has a corresponding audit-trail.md entry.
 
 ---
 
