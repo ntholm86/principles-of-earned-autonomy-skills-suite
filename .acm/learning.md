@@ -5,19 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 233 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-06-23 — stormp-illustration-readme
-
-**[!REALIZATION]** contradicted: No.
-
-## 2026-07-02 — rename-commanders-intent-to-operators-intent
-
-**[!REALIZATION]** :* not fired — no prior realization in the trail asserted mission/commander was the correct terminology.
-
-## 2026-07-02 — rename-commanders-intent-to-operators-intent
-
-**[!REALIZATION]** The PEA-vocabulary-vs-cited-doctrine distinction (own coined terms vs. historically-named doctrine like Auftragstaktik) is now a repeatable pattern across two consecutive rename passes in the same session. Future renames of PEA's own vocabulary should default to checking for this same split before doing a blanket replace.
+Showing the most recent 60 markers. 236 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-07-02 — rename-sweep-gap-fix-verify-recursive-search
 
@@ -246,6 +234,18 @@ Showing the most recent 60 markers. 233 older marker(s) are in `.acm/learning-ar
 ## 2026-08-01 — close-create-file-bom-blind-spot-and-fix-installing-md
 
 **[!REALIZATION]** Continuing to fire the recurring-finding-class trigger on every file-by-file BOM fix, while correct per the letter of the rule, is starting to produce repetitive trail entries whose macro-Hansei content is identical to the last one ("no new diagnosis, continuation of agreed plan"). This is itself worth naming as a pattern: the trigger was designed to catch *drift* across a recurring finding-class, but a deliberately-sequenced, already-diagnosed cleanup (like this BOM migration) will keep firing it every time with nothing new to say. That is not a flaw in this entry's evidence -- it is the honest, correct evaluation -- but it suggests the *next* time this trigger fires with "same diagnosis as last entry," the macro-Hansei content itself could be a single-sentence pointer to the entry where the diagnosis was actually made, rather than re-stating the reasoning. Not changing the format now (that would be a new mid-migration process change, and this entry is not the place for it); naming it as a candidate for the next dedicated verify.py/trail process discussion instead.
+
+## 2026-08-01 — fix-recordpy-bom
+
+**[!REALIZATION]** Four files into this migration (QUICKSTART.md, verify.py, INSTALLING.md, record.py), the pattern is now fully mechanical and has produced zero surprises since the QUICKSTART.md entry's original discovery -- the interesting content of this cleanup arc was front-loaded into the root-cause investigation two entries ago, not spread evenly across the remaining fixes. This matches the macro-Hansei observation from the immediately prior entry almost exactly: the remaining work is low-uncertainty repetition, and the only files where real uncertainty still exists are the two deliberately-deferred ones.
+
+## 2026-08-01 — fix-recordpy-bom
+
+**[!REALIZATION]** :* not fired.
+
+## 2026-08-01 — fix-recordpy-bom
+
+**[!REALIZATION]** Per the process observation named in the immediately prior entry's macro-Hansei (that repeated firings of this trigger with "same diagnosis as last entry" could use a lighter-weight pointer format), this entry's macro-Hansei is intentionally kept to a single pointer rather than re-deriving the diagnosis: the governing-variable finding stands as stated in the `confirm-bom-root-cause-and-fix-verifypy` entry (no single canonical file-scope list in verify.py) and the process-format question stands as named in `close-create-file-bom-blind-spot-and-fix-installing-md`. Neither is re-argued here. This is the first entry to actually apply the lighter-weight-pointer idea rather than only naming it as a future candidate -- worth watching whether this format holds up over the remaining fixes or whether it turns out to lose information a fuller restatement would have preserved.
 
 ---
 

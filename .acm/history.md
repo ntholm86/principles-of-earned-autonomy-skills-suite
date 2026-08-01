@@ -179,6 +179,7 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 172 | 2026-08-01 | audit-learning-precedent-surfaces-position-quickstart-h1-gap-and-systemic-bom | audited this session's changes against learning.md/learning-archive.md as carried forward from three prior entries; found a genuine unconsulted precedent (POSITION.md and QUICKSTART.md outside REQUIRED_FILES); fixed the coverage gap and a BOM defect it surfaced in QUICKSTART.md; discovered a much wider systemic BOM issue and deliberately did not fix it in this same iteration | verify.py REQUIRED_FILES gains POSITION.md and QUICKSTART.md; QUICKSTART.md BOM stripped; CHANGELOG.md v4.12.0 added |
 | ▸ 173 | 2026-08-01 | confirm-bom-root-cause-and-fix-verifypy | empirically confirmed the root cause of the systemic BOM issue named as the top candidate next move in the prior entry; fixed verify.py's own leading BOM as the second file in the "one at a time" sequence | verify.py loses its leading UTF-8 BOM (1-line diff, shebang line only); no functional change |
 | ▸ 174 | 2026-08-01 | close-create-file-bom-blind-spot-and-fix-installing-md | closed the create_file BOM blind spot named in the prior entry (confirmed clean); fixed INSTALLING.md's leading BOM as the third file in the one-at-a-time sequence | INSTALLING.md loses its leading UTF-8 BOM (1-line diff, H1 heading line only); no functional change |
+| ▸ 175 | 2026-08-01 | fix-recordpy-bom | fixed harness/tools/record.py's leading BOM as the fourth file in the one-at-a-time sequence, prioritized as core tooling per the prior entry's ranking | harness/tools/record.py loses its leading UTF-8 BOM (1-line diff, shebang line only); no functional change |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -844,4 +845,10 @@ Do not edit by hand — re-run the command to refresh.
 - **decided:** Fix INSTALLING.md's leading BOM using the identical, twice-validated mechanism (utf8-sig-aware decode via `[System.IO.File]::ReadAllText` with UTF8 encoding, re-encode via `UTF8Encoding(false)`, confirm byte-length diff is exactly 3). Precedent check: this is the third file fixed with this exact mechanism (QUICKSTART.md, verify.py, now INSTALLING.md) -- no new risk, no new mechanism, consistent with the established "one at a time, byte-verified" plan.
 - **decided:** Do not fix any of the other remaining live files (orient/SKILL.md, probe/SKILL.md, trail/SKILL.md, harness/tools/record.py, the five .acm/sessions/*.md files) in this same iteration, and do not touch .acm/audit-trail.md or .acm/orientation.md. Precedent check: unchanged reasoning from the prior two entries -- one file at a time, corruption-risk files last.
 
-**174 runs total — 160 with changes, 14 silence**
+### Run 175 — 2026-08-01 — fix-recordpy-bom
+
+- **decided:** Fix harness/tools/record.py's leading BOM using the identical, four-times-validated mechanism (`[System.IO.File]::ReadAllText` with UTF8 encoding to strip the BOM on read, `UTF8Encoding(false)` to write without one, byte-length diff confirms exactly 3 bytes removed). Precedent check: fourth file fixed with this exact mechanism (QUICKSTART.md, verify.py, INSTALLING.md, now record.py) -- no new risk, no new mechanism.
+- **decided:** Verify using record.py itself immediately after stripping its own BOM, before moving to verify.py -- this is a direct self-referential test (the tool that just had its BOM removed is the first thing invoked afterward), analogous to the verify.py self-test two entries ago.
+- **decided:** Do not fix orient/SKILL.md, probe/SKILL.md, trail/SKILL.md, or any .acm/sessions/*.md file in this same iteration; do not touch .acm/audit-trail.md or .acm/orientation.md. Precedent check: unchanged reasoning from the three prior entries in this sequence.
+
+**175 runs total — 161 with changes, 14 silence**

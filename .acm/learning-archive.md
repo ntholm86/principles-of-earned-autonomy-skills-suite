@@ -937,6 +937,18 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** :* not fired.
 
+## 2026-06-23 — stormp-illustration-readme
+
+**[!REALIZATION]** contradicted: No.
+
+## 2026-07-02 — rename-commanders-intent-to-operators-intent
+
+**[!REALIZATION]** :* not fired — no prior realization in the trail asserted mission/commander was the correct terminology.
+
+## 2026-07-02 — rename-commanders-intent-to-operators-intent
+
+**[!REALIZATION]** The PEA-vocabulary-vs-cited-doctrine distinction (own coined terms vs. historically-named doctrine like Auftragstaktik) is now a repeatable pattern across two consecutive rename passes in the same session. Future renames of PEA's own vocabulary should default to checking for this same split before doing a blanket replace.
+
 ---
 
-**233 markers — 213 realisations, 20 reversals**
+**236 markers — 216 realisations, 20 reversals**

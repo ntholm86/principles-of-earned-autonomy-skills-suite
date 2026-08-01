@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """record.py — append entries to .acm/audit-trail.md and digest the latest one.
 
 Replaces the kiroku-*.ps1 family from v2. Pure-Python, zero dependencies.

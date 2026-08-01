@@ -9193,3 +9193,71 @@ Imagined-reader pushback: "Three files in and this is starting to look like exac
 3. **Once several more files are fixed, reconsider whether the macro-Hansei repetition noted above warrants a lighter-weight format for "same diagnosis, no new evidence" trigger firings** -- named as a process question, not to be decided mid-migration.
 4. **Audit STALE_PATH_DOCS and ACM_SCOPE_TRAVERSAL_FILES for the same silent-exclusion pattern**, still open from two entries ago.
 5. Settle whether a target-agnostic formulation of "self-targeting should surface reasoning-capability gaps" is even coherent -- still carried, not yet done.
+
+## 2026-08-01 - fix-recordpy-bom
+
+- target: skills repo (this repo) -- harness/tools/record.py
+- operator: maintainer (Nils Holmager)
+- agent: Claude Sonnet 4.5 (GitHub Copilot)
+- skill: improve
+- outcome: fixed harness/tools/record.py's leading BOM as the fourth file in the one-at-a-time sequence, prioritized as core tooling per the prior entry's ranking
+- delta: harness/tools/record.py loses its leading UTF-8 BOM (1-line diff, shebang line only); no functional change
+
+### Interpretation of the ask
+
+Operator: "run the improve skill on the skills repo." Bare, generic prompt. Before starting, noticed a tool notification that .acm/audit-trail.md had been "edited... by the user or possibly by a formatter or another automated tool" since the last commit. Checked `git status`/`git diff` first, given this file's documented corruption history -- both were empty, confirming the working tree exactly matched the last commit and no real external edit had occurred (most likely a stale notification triggered by the commit process itself touching the file's timestamp). Proceeded only after confirming this.
+
+The prior entry's top-ranked candidate was fixing the next live file's BOM, naming harness/tools/record.py specifically as worth prioritizing over the two remaining SKILL.md files since, like verify.py, it is core tooling rather than documentation.
+
+### Examination
+
+Purpose lens: record.py is the second piece of core tooling (after verify.py) in this repo, used every single iteration this session to regenerate history.md/learning.md/learning-archive.md. Fixing its BOM continues the same low-risk-first ordering already applied to verify.py (tooling before documentation, documentation before the two highest-risk append-only/derived files).
+
+Confirmed record.py's BOM status directly: leading bytes 239/187/191 (EF BB BF), consistent with the four other still-affected live files named in two entries ago.
+
+### Decision
+
+[!DECISION] Fix harness/tools/record.py's leading BOM using the identical, four-times-validated mechanism (`[System.IO.File]::ReadAllText` with UTF8 encoding to strip the BOM on read, `UTF8Encoding(false)` to write without one, byte-length diff confirms exactly 3 bytes removed). Precedent check: fourth file fixed with this exact mechanism (QUICKSTART.md, verify.py, INSTALLING.md, now record.py) -- no new risk, no new mechanism.
+
+[!DECISION] Verify using record.py itself immediately after stripping its own BOM, before moving to verify.py -- this is a direct self-referential test (the tool that just had its BOM removed is the first thing invoked afterward), analogous to the verify.py self-test two entries ago.
+
+[!DECISION] Do not fix orient/SKILL.md, probe/SKILL.md, trail/SKILL.md, or any .acm/sessions/*.md file in this same iteration; do not touch .acm/audit-trail.md or .acm/orientation.md. Precedent check: unchanged reasoning from the three prior entries in this sequence.
+
+Rejected alternative: batch-fix the three remaining SKILL.md files in the same iteration since they are of the same file-type and risk class as each other. Rejected -- same reasoning as before: the value of the one-at-a-time discipline is independent of how similar the remaining files are to each other.
+
+### Prediction
+
+I will strip record.py's BOM and expect git diff to show exactly one line changed (the BOM-prefixed shebang) with no other content difference. I expect record.py to still execute correctly immediately afterward (self-test), and python verify.py to still pass. I expect this NOT to touch any other file.
+
+### Action
+
+Stripped record.py's BOM via the established mechanism; confirmed via raw byte-length diff that exactly 3 bytes were removed. Confirmed via git diff that exactly one line changed (the BOM-prefixed shebang, now BOM-free), clean 1-insertion/1-deletion diff stat. Ran `python harness/tools/record.py history --write` and `learning --write` immediately after the fix (self-test: the just-fixed tool regenerating derived artifacts) -- both completed normally, matching the same entry/marker counts as before the fix. Ran `python verify.py` -- passed clean.
+
+Comparing outcome to prediction: held on every point.
+
+### Reflection
+
+[!REALIZATION] Four files into this migration (QUICKSTART.md, verify.py, INSTALLING.md, record.py), the pattern is now fully mechanical and has produced zero surprises since the QUICKSTART.md entry's original discovery -- the interesting content of this cleanup arc was front-loaded into the root-cause investigation two entries ago, not spread evenly across the remaining fixes. This matches the macro-Hansei observation from the immediately prior entry almost exactly: the remaining work is low-uncertainty repetition, and the only files where real uncertainty still exists are the two deliberately-deferred ones.
+
+Named blind spot: unchanged from the prior entry -- whether anything treats the .acm/sessions/*.md files' exact byte content (including their BOM) as an identity/fingerprint check has still not been checked, and those five files remain untouched pending that check.
+
+Imagined-reader pushback: "This entry's reflection is nearly identical to the last one's -- is repeating a trail entry with almost no new content actually useful, or has this stopped being genuine reflection and become ceremony?" Fair. The honest answer: for this specific kind of deliberately-sequenced, already-diagnosed, mechanically-identical fix, the reflection genuinely is repetitive, because the target itself is not producing new information at this stage -- the four fixes really have been uniform. The alternative (skipping reflection because "nothing new to say") would remove the falsifiable per-file verification record, which is the actual value of doing this one file at a time rather than batching it. The repetition is evidence the work is exactly as low-risk as claimed, not evidence the discipline has become hollow.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED -- sixth entry today in the same file-scope/encoding-gap pattern family. Per the two prior entries, the governing-variable diagnosis (no single canonical file-scope list in verify.py) already stands, unchanged by this entry.
+- *About to declare silence:* not fired -- this run made a change.
+- *Contradicts prior [!REALIZATION]:* not fired.
+- *Operator explicitly asked:* not fired.
+
+**Across-trail macro-Hansei**
+
+[!REALIZATION] Per the process observation named in the immediately prior entry's macro-Hansei (that repeated firings of this trigger with "same diagnosis as last entry" could use a lighter-weight pointer format), this entry's macro-Hansei is intentionally kept to a single pointer rather than re-deriving the diagnosis: the governing-variable finding stands as stated in the `confirm-bom-root-cause-and-fix-verifypy` entry (no single canonical file-scope list in verify.py) and the process-format question stands as named in `close-create-file-bom-blind-spot-and-fix-installing-md`. Neither is re-argued here. This is the first entry to actually apply the lighter-weight-pointer idea rather than only naming it as a future candidate -- worth watching whether this format holds up over the remaining fixes or whether it turns out to lose information a fuller restatement would have preserved.
+
+### Candidate Next Moves
+
+1. **Fix the next live file's BOM** -- one of orient/SKILL.md, probe/SKILL.md, or trail/SKILL.md (the three remaining SKILL.md files), any order, same mechanism.
+2. **Check whether anything treats the .acm/sessions/*.md files' exact byte content as an identity/fingerprint check** before touching those five files -- carried forward unresolved for the second entry in a row.
+3. **Once the SKILL.md files and session files are done, decide how to handle .acm/orientation.md and .acm/audit-trail.md** -- the former is a derived, wholesale-rewritten file (lower risk than audit-trail.md, could plausibly go first between the two); the latter remains last given its corruption history.
+4. Audit STALE_PATH_DOCS and ACM_SCOPE_TRAVERSAL_FILES for the same silent-exclusion pattern, still open.
+5. Settle whether a target-agnostic formulation of "self-targeting should surface reasoning-capability gaps" is even coherent, still carried.
