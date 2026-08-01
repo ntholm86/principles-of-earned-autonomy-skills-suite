@@ -8985,3 +8985,75 @@ Imagined-reader pushback: "You just moved the growth problem from learning.md to
 3. Audit this session's other changes (ACM section 4 additions, trail sessions-mandate removal, the reasoning-capability attempts) against learning.md for the same unconsulted-precedent pattern -- still carried from the orient run, not yet done.
 4. Settle whether a target-agnostic formulation of "self-targeting should surface reasoning-capability gaps" is even coherent -- still carried, not yet done.
 5. The suite's older backlog (CITATION.cff currency, B1 replication, mtime freshness, whole-suite mandate gate) remains available if the operator wants to redirect.
+
+## 2026-08-01 - audit-learning-precedent-surfaces-position-quickstart-h1-gap-and-systemic-bom
+
+- target: skills repo (this repo) -- verify.py, QUICKSTART.md
+- operator: maintainer (Nils Holmager)
+- agent: Claude Sonnet 4.5 (GitHub Copilot)
+- skill: improve
+- outcome: audited this session's changes against learning.md/learning-archive.md as carried forward from three prior entries; found a genuine unconsulted precedent (POSITION.md and QUICKSTART.md outside REQUIRED_FILES); fixed the coverage gap and a BOM defect it surfaced in QUICKSTART.md; discovered a much wider systemic BOM issue and deliberately did not fix it in this same iteration
+- delta: verify.py REQUIRED_FILES gains POSITION.md and QUICKSTART.md; QUICKSTART.md BOM stripped; CHANGELOG.md v4.12.0 added
+
+### Interpretation of the ask
+
+Operator: "Okay now run the improve skill on the skills repo." Generic prompt. This candidate ("audit this session's other changes against learning.md for the same unconsulted-precedent pattern") has now been carried forward, unactioned, across three consecutive entries (the reversal entry, the orient run, and the learning-window-bounding entry). I interpreted continuing to defer it a fourth time as itself a violation of the precedent-check discipline just added -- so this iteration actually performs the audit rather than naming it again.
+
+### Examination
+
+Grepped learning.md and learning-archive.md for terms tied to this session's other changes (ACM, parent-scope, sessions/, session summary, mandate, verify.py check, duplicat*). Found a directly relevant, real precedent in learning-archive.md from the v3-era trail-README-splice-repair arc: "The verifier catches H1 duplicates only in REQUIRED_FILES. Docs not in REQUIRED_FILES (REDESIGN.md, OBSERVABLE-LOOPS.md) should also be spot-checked. Adding a broader duplicate-H1 check to verify.py would close this blind spot permanently."
+
+Checked verify.py's current REQUIRED_FILES against the actual repo root file listing: POSITION.md and QUICKSTART.md both exist as live docs but neither was in REQUIRED_FILES -- meaning check_required_markdown_docs() never analyzed either for duplicate H1s, the exact recurrence the archived realization warned about. This directly relates to, but was not caught by, this session's own earlier PRINCIPLES.md H1-check fix (verify-overburden-audit-principles-h1-gap-fix) -- that fix closed the gap for the one file the operator's session happened to be about, without applying the broader "spot-check other non-required docs" recommendation the old realization had already made.
+
+Added both files to REQUIRED_FILES and ran verify.py: passed clean on POSITION.md, but the direct positive/negative test script revealed QUICKSTART.md had zero detected H1 headings (expected one) -- traced to a leading UTF-8 BOM (`\xef\xbb\xbf`) at byte 0 of the file, which shifts the true first line so `^#\s+` in H1_HEADING (MULTILINE) never matches at the actual start of line 1. This is invisible in a normal editor view but breaks the regex-based check entirely. Confirmed check_no_mojibake would not have caught this either -- it scans for `\ufffd` (replacement character), a different byte pattern from a BOM.
+
+Curious whether this was isolated, ran a full-tree scan (same skip_dirs as check_no_mojibake) for any file starting with the BOM byte sequence. Result was far larger than expected: roughly 70+ files carry a leading BOM, including many currently-live, actively-edited files from this exact session -- verify.py, orient/SKILL.md, probe/SKILL.md, trail/SKILL.md, harness/tools/record.py, INSTALLING.md, .acm/audit-trail.md, .acm/orientation.md, and five .acm/sessions/*.md files -- plus the entire (frozen, historical) archive/v2/ tree.
+
+### Decision
+
+[!DECISION] Fix only the narrow, verified-safe scope this iteration: add POSITION.md and QUICKSTART.md to REQUIRED_FILES, and strip QUICKSTART.md's BOM (single file, confirmed via byte-level before/after inspection that the only change was the 3 leading BOM bytes -- no text content altered). Precedent check: the archived realization this fulfills ("adding a broader duplicate-H1 check would close this blind spot permanently") only asked for coverage, not for fixing every file it might reveal a defect in -- no prior entry addresses a BOM defect specifically, so there is no conflicting precedent to reconcile.
+
+[!DECISION] Do NOT attempt to strip BOMs from the other ~70 affected files in this same iteration, and do NOT add a full-tree mechanical BOM check yet. Naming this explicitly as a deliberate scope boundary, not an oversight. Precedent check: this directly follows the append-only-trails memory note's own caution about audit-trail.md's two prior corruption incidents from Get-Content/Set-Content round-trips -- treating that history as a hard constraint on this file specifically, rather than assuming a narrow BOM-only strip would be safe merely because the mechanism differs from the prior incidents.
+
+Rationale for the boundary: (1) archive/v2/ is explicitly frozen historical record per this repo's own established convention -- must not be touched regardless of encoding. (2) .acm/audit-trail.md carries the most severe corruption risk of any file in this repo -- this exact file has TWO recorded historical incidents of Get-Content/Set-Content round-trips silently mojibake-corrupting it, and stripping its BOM would require exactly that kind of read/write round-trip. The marginal benefit of removing a BOM that does not appear to break any current parsing (audit-trail.md is explicitly excluded from the H1 check, and no code reads its very first line specially) does not justify that risk inside a "quick audit" iteration. (3) Fixing ~13 other live files' BOMs correctly, verifying none of them lost content in the process, and only then adding a mechanical check that would otherwise fail on all of them, is a properly-scoped dedicated iteration in its own right -- exactly the kind of change the "one change per run, no batching" constraint exists to keep from being rushed.
+
+Rejected alternative: add a full-tree BOM check now, accepting that it will fail until every affected file is fixed. Rejected -- this would break verify.py for an indeterminate number of future commits with no immediate fix, and forcing a rushed fix of ~70 files (many outside today's actual scope) to make the check pass immediately is worse than naming the gap honestly and returning to it deliberately.
+
+Rejected alternative: silently note the wider BOM issue in reflection only, without surfacing it as an explicit candidate next move. Rejected -- given the corruption-risk history specifically tied to audit-trail.md, this needs to be visible and prioritized, not buried.
+
+### Prediction
+
+I will add two files to REQUIRED_FILES and fix one BOM. I expect verify.py to pass clean afterward. I expect the positive/negative H1 test to now succeed for both newly-covered files. I expect this NOT to touch archive/v2/, NOT to touch audit-trail.md, and NOT to introduce a new mechanical BOM check in this same iteration -- that is reserved for a dedicated future pass.
+
+### Action
+
+Added POSITION.md and QUICKSTART.md to verify.py's REQUIRED_FILES. Ran verify.py -- passed clean. Ran a direct positive/negative test (same pattern as the earlier PRINCIPLES.md fix): confirmed POSITION.md already had exactly one H1 and a synthetic duplicate would now be caught. QUICKSTART.md's test revealed the BOM issue -- fixed by re-reading the file with utf-8-sig decoding (which strips the BOM) and rewriting with plain utf-8 encoding, confirmed via raw byte inspection that the BOM was removed and no other bytes changed. Re-ran the positive/negative test after the fix -- both now pass (one H1 detected; a synthetic duplicate would be caught). Ran a full-tree scan for the BOM byte sequence across the same scope check_no_mojibake already uses -- found ~70 affected files, overwhelmingly in archive/v2/ (frozen, out of scope) but including roughly 13 live files this session has been actively editing. Added CHANGELOG.md v4.12.0 entry documenting both the narrow fix and the wider finding. Ran python verify.py after regenerating derived artifacts -- passed clean.
+
+Comparing outcome to prediction: held on every point.
+
+### Reflection
+
+[!REALIZATION] This is the first entry in this arc where the new precedent-check discipline (added two entries ago) directly produced a finding neither the operator nor I had already surfaced -- the POSITION.md/QUICKSTART.md coverage gap was sitting, fully documented, in an archived realization from months earlier, and would not have been found without deliberately going back to check learning-archive.md for this session's other changes rather than continuing to defer that audit a fourth time. This is a genuinely positive data point for whether the precedent-check requirement can do real work, distinct from the earlier failure where the same kind of check was skipped.
+
+Named blind spot: I have not determined WHY so many live files carry a BOM -- plausible candidates include PowerShell's `Add-Content -Encoding UTF8` (a known PS5.1 behavior: this specific encoding parameter writes a BOM, unlike `utf8NoBOM`), or an editor/tool default, or something in this repo's own edit tooling. I did not investigate the root cause this iteration, only the symptom's scope. A future dedicated pass should determine the mechanism before fixing all instances, or the same BOM could keep reappearing on every future edit.
+
+Imagined-reader pushback: "You found a much bigger problem than you started with and then explicitly chose not to fix most of it. Is naming a problem without fixing it actually progress, or is this just a more elaborate way of deferring the same work?" This is a fair challenge. The honest answer: naming it with full scope (which files, why audit-trail.md specifically is higher-risk than the others, what the fix would require) is more useful to whoever picks this up next than either (a) silently ignoring it, which is what a less careful iteration would have done, or (b) rushing a fix across 70 files including the one file in this entire repo with a documented corruption history, under the same time pressure that caused the genericity violation two entries ago. Whether that reasoning holds is something the operator can judge directly, which is the point of naming it explicitly rather than deciding unilaterally to either fix everything or fix nothing silently.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED -- this is the third instance this session of a mechanical check silently not covering a file its own history says it should (PRINCIPLES.md's H1-check exclusion, the ACM section 4 wording drift, and now POSITION.md/QUICKSTART.md's REQUIRED_FILES exclusion). All three share the same root shape: a check exists, a specific file falls outside its scope, and the exclusion goes unnoticed until something forces a direct look.
+- *About to declare silence:* not fired -- this run made a change.
+- *Contradicts prior [!REALIZATION]:* not fired -- directly fulfills the carried-forward candidate from three prior entries rather than contradicting any of them.
+- *Operator explicitly asked:* not fired -- operator gave a bare "run the improve skill"; the topic came from the repeatedly-carried candidate list.
+
+**Across-trail macro-Hansei:**
+
+[!REALIZATION] Reading this session as one arc: the recurring pattern named above (checks with silent scope gaps) has now appeared three times in one day, each time found by actually re-reading the file/list in question rather than trusting that a prior fix generalized further than it did. The PRINCIPLES.md fix from earlier today explicitly named "audit STALE_PATH_DOCS and ACM_SCOPE_TRAVERSAL_FILES for the same silent-exclusion pattern" as a candidate next move -- that audit still has not been done, and this entry's finding (POSITION.md/QUICKSTART.md missing from REQUIRED_FILES) is arguably the same class of gap that audit was meant to catch, just in a different list (REQUIRED_FILES itself, not the other two). The governing pattern is: whenever this repo adds a new live doc (POSITION.md, QUICKSTART.md were both added well after the original REQUIRED_FILES list was written), nothing currently prompts a check of whether it needs to join every file-scoping list verify.py maintains. Fixing three individual instances of this pattern is not the same as fixing the pattern -- a genuinely systemic answer would be enumerating all of verify.py's file-scoping lists in one place and checking each new live doc against the full set, not discovering each one independently when something happens to force a look.
+
+### Candidate Next Moves
+
+1. **Determine the root cause of the systemic BOM issue** (plausibly PowerShell's `Add-Content -Encoding UTF8` behavior, or an editor/tool default) before attempting to fix the ~13 other live files carrying one -- named blind spot above. This should rank above the STALE_PATH_DOCS/ACM_SCOPE_TRAVERSAL_FILES audit, given the corruption-risk history specifically tied to `.acm/audit-trail.md`.
+2. **Once the root cause is known, fix the ~13 live-file BOM instances one at a time with byte-level before/after verification** (the same discipline used for QUICKSTART.md here), explicitly treating `.acm/audit-trail.md` as the highest-risk, last-to-touch file given its documented corruption history -- do not batch this into one large sweep.
+3. **Audit `STALE_PATH_DOCS` and `ACM_SCOPE_TRAVERSAL_FILES` for the same silent-exclusion pattern**, and consider whether verify.py needs a single canonical "all live docs" list that every file-scoping check derives from, rather than several independently-maintained lists that can each individually go stale -- this is the systemic fix implied by the macro-Hansei above.
+4. Settle whether a target-agnostic formulation of "self-targeting should surface reasoning-capability gaps" is even coherent -- still carried, not yet done.
+5. The suite's older backlog (CITATION.cff currency, B1 replication, mtime freshness, whole-suite mandate gate) remains available if the operator wants to redirect.

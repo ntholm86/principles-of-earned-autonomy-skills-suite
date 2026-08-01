@@ -1,5 +1,10 @@
 # Changelog
 
+## v4.12.0 — 2026-08-01
+
+### Fixed
+- **`POSITION.md` and `QUICKSTART.md` were both outside `verify.py`'s `REQUIRED_FILES`, leaving them uncovered by the duplicate-H1 check — the exact blind-spot class an old (now-archived) realization explicitly warned would recur ("docs not in `REQUIRED_FILES` should also be spot-checked... adding a broader check would close this blind spot permanently").** Added both files to `REQUIRED_FILES`. While verifying coverage, found `QUICKSTART.md` had a leading UTF-8 BOM silently making its H1 undetectable by the check (0 H1s "found" rather than 1) — stripped it; confirmed via direct byte inspection this was the only content change (no visible text difference). A related, wider finding — many other live files (`verify.py`, `orient/SKILL.md`, `probe/SKILL.md`, `trail/SKILL.md`, `harness/tools/record.py`, `INSTALLING.md`, `.acm/audit-trail.md`, `.acm/orientation.md`, and several `.acm/sessions/*.md` files) also carry a leading BOM — is named but deliberately **not** fixed in this same change; see the corresponding trail entry for why.
+
 ## v4.11.0 — 2026-08-01
 
 ### Changed

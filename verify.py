@@ -50,6 +50,8 @@ REQUIRED_FILES = [
     "README.md",
     "CHANGELOG.md",
     "INSTALLING.md",
+    "QUICKSTART.md",
+    "POSITION.md",
     "harness/BENCHMARKS.md",
     "harness/benchmark-b5-target/main.py",
     "improve/SKILL.md",

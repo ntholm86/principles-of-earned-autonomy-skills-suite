@@ -901,6 +901,18 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** Explicit variant rejection with stated reasoning is more durable than a confirmed acceptance alone. A future editor who proposes "without restriction" or "Limiting capability decreases..." can read this entry and see why those forms were considered and rejected — rather than re-discovering the argument from scratch.
 
+## 2026-06-02 — arf-restriction-claim-variant-rejections
+
+**[!REALIZATION]** `:* not fired — extends entry 146's realization.
+
+## 2026-06-02 — arf-restriction-claim-variant-rejections
+
+**[!REALIZATION]** The arc is closed. The canonical form of the restriction-vs-reasoning-quality argument is on record in entry 146. The rejection reasoning for the two main alternative phrasings is on record here. A future agent or editor reading entries 143–147 has the full decision history: what was tried, what was rejected, what was kept, and why. Observable autonomy achieved.
+
+## 2026-06-04 — retro-named-boundary-rule-from-manifesto-arc
+
+**[!REALIZATION]** from the resulting retro-v202 - that a retrospect can only test the quality bars it knows about and that silence claims should carry named boundaries - is a structural property of the retrospect operation, not a manifesto-specific fact. Operator's intent: write the rule into this skill suite and record where it came from so future readers can trace it back.
+
 ---
 
-**224 markers — 204 realisations, 20 reversals**
+**227 markers — 207 realisations, 20 reversals**

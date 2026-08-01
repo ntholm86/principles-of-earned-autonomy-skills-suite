@@ -1,4 +1,4 @@
-﻿# 10-Minute First Successful Run
+# 10-Minute First Successful Run
 
 A minimal, copy-pasteable path to one real run that produces real evidence. Aim is one usable trail entry in under ten minutes.
 
