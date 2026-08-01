@@ -949,6 +949,18 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** The PEA-vocabulary-vs-cited-doctrine distinction (own coined terms vs. historically-named doctrine like Auftragstaktik) is now a repeatable pattern across two consecutive rename passes in the same session. Future renames of PEA's own vocabulary should default to checking for this same split before doing a blanket replace.
 
+## 2026-07-02 — rename-sweep-gap-fix-verify-recursive-search
+
+**[!REALIZATION]** :* not fired -- consistent with, and extends, the realization already recorded in the previous entry about the PEA-vocabulary-vs-doctrine split.
+
+## 2026-07-02 — rename-sweep-gap-fix-verify-recursive-search
+
+**[!REALIZATION]** Three consecutive entries finding new leftover occurrences of the same rename is itself the signal: a single bulk pass over natural-language prose cannot be trusted to be exhaustive, because "commander" appears in lowercase generic-role usage, inside YAML string escaping, and inside asset-generation prompts that don't look like "documentation" at first glance. The reliable method is what closed the gap each time: an unfiltered recursive grep for the bare word, followed by manual triage against the doctrine-citation exception -- not a smarter regex, but a broader, repeated sweep.
+
+## 2026-07-31 — improve-argyris-double-loop-6b-integration
+
+**[!REALIZATION]** The suite's architecture already had the double-loop *mechanism* (destination.md is operator-revisable; Destination skill exists to revise it) but lacked the *trigger* for recognizing when a finding warrants reaching for that mechanism instead of patching the artifact again. This gap is consistent with the destination.md Learning section's own prior claim that "Learning... is the most underdeveloped of the three [memory, learning, meta-cognition] and the most important gap for a future loop run to target" -- this change is a direct, narrow instance of closing that named gap, not a new direction.
+
 ---
 
-**236 markers — 216 realisations, 20 reversals**
+**239 markers — 219 realisations, 20 reversals**

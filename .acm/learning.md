@@ -5,19 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 236 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-07-02 — rename-sweep-gap-fix-verify-recursive-search
-
-**[!REALIZATION]** :* not fired -- consistent with, and extends, the realization already recorded in the previous entry about the PEA-vocabulary-vs-doctrine split.
-
-## 2026-07-02 — rename-sweep-gap-fix-verify-recursive-search
-
-**[!REALIZATION]** Three consecutive entries finding new leftover occurrences of the same rename is itself the signal: a single bulk pass over natural-language prose cannot be trusted to be exhaustive, because "commander" appears in lowercase generic-role usage, inside YAML string escaping, and inside asset-generation prompts that don't look like "documentation" at first glance. The reliable method is what closed the gap each time: an unfiltered recursive grep for the bare word, followed by manual triage against the doctrine-citation exception -- not a smarter regex, but a broader, repeated sweep.
-
-## 2026-07-31 — improve-argyris-double-loop-6b-integration
-
-**[!REALIZATION]** The suite's architecture already had the double-loop *mechanism* (destination.md is operator-revisable; Destination skill exists to revise it) but lacked the *trigger* for recognizing when a finding warrants reaching for that mechanism instead of patching the artifact again. This gap is consistent with the destination.md Learning section's own prior claim that "Learning... is the most underdeveloped of the three [memory, learning, meta-cognition] and the most important gap for a future loop run to target" -- this change is a direct, narrow instance of closing that named gap, not a new direction.
+Showing the most recent 60 markers. 239 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-07-31 — improve-argyris-double-loop-6b-integration
 
@@ -246,6 +234,18 @@ Showing the most recent 60 markers. 236 older marker(s) are in `.acm/learning-ar
 ## 2026-08-01 — fix-recordpy-bom
 
 **[!REALIZATION]** Per the process observation named in the immediately prior entry's macro-Hansei (that repeated firings of this trigger with "same diagnosis as last entry" could use a lighter-weight pointer format), this entry's macro-Hansei is intentionally kept to a single pointer rather than re-deriving the diagnosis: the governing-variable finding stands as stated in the `confirm-bom-root-cause-and-fix-verifypy` entry (no single canonical file-scope list in verify.py) and the process-format question stands as named in `close-create-file-bom-blind-spot-and-fix-installing-md`. Neither is re-argued here. This is the first entry to actually apply the lighter-weight-pointer idea rather than only naming it as a future candidate -- worth watching whether this format holds up over the remaining fixes or whether it turns out to lose information a fuller restatement would have preserved.
+
+## 2026-08-01 — orient-post-bom-cleanup-and-efficiency-check
+
+**[!REALIZATION]** "One change per run, no batching" has not yet been examined against the evidence this window produced about how uniform and low-risk byte-identical BOM fixes are -- a live tension between two destination-level concerns (rigor via no-batching, efficiency via destination note item 3) that four consecutive entries had the evidence for and did not name as a tension. This is the double-loop gap from the 2026-07-31 destination note showing up in a new, quieter place than the genericity violation.
+
+## 2026-08-01 — orient-post-bom-cleanup-and-efficiency-check
+
+**[!REALIZATION]** :* not fired -- extends rather than contradicts the prior orient run's realization about reasoning-capability gaps.
+
+## 2026-08-01 — orient-post-bom-cleanup-and-efficiency-check
+
+**[!REALIZATION]** Claim 5 is itself the macro-Hansei output of this run, arrived at only by reading the six-entry arc as one document rather than entry-by-entry -- no single one of the four BOM-fix entries had enough surface area on its own to surface the no-batching/efficiency tension; it only became visible by comparing the sequence's cumulative ceremony cost against the destination's efficiency note as a whole. This is the kind of finding Orient exists to produce that Improve's step 6b, running inside a single iteration, structurally cannot.
 
 ---
 

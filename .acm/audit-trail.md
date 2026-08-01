@@ -9261,3 +9261,49 @@ Imagined-reader pushback: "This entry's reflection is nearly identical to the la
 3. **Once the SKILL.md files and session files are done, decide how to handle .acm/orientation.md and .acm/audit-trail.md** -- the former is a derived, wholesale-rewritten file (lower risk than audit-trail.md, could plausibly go first between the two); the latter remains last given its corruption history.
 4. Audit STALE_PATH_DOCS and ACM_SCOPE_TRAVERSAL_FILES for the same silent-exclusion pattern, still open.
 5. Settle whether a target-agnostic formulation of "self-targeting should surface reasoning-capability gaps" is even coherent, still carried.
+
+## 2026-08-01 - orient-post-bom-cleanup-and-efficiency-check
+
+- target: skills repo (this repo)
+- operator: maintainer (Nils Holmager)
+- agent: Claude Sonnet 4.5 (GitHub Copilot)
+- skill: orient
+- outcome: read the 6-entry arc since the last orient run; found the new precedent-check requirement doing genuine work, efficiency addressed once then not returned to, and a previously-unnamed tension between "no batching" and the loop's own efficiency concern
+- delta: .acm/orientation.md rewritten wholesale (no code change)
+
+### Scope statement
+
+Read the arc from `orient-post-genericity-reversal` (the last orient run) through `fix-recordpy-bom` (current tail) -- 6 new entries. Three questions: (1) is the precedent-check requirement added at the start of this window doing genuine work or becoming ceremony, per its own entry's stated risk; (2) destination note item 3 (efficiency) got exactly one dedicated entry -- has it stayed addressed or did attention move on entirely; (3) the BOM cleanup sequence has produced four near-identical one-file-per-entry trail entries -- is that granularity still earning its ceremony cost, and has anyone connected that observation back to the destination's own efficiency concern.
+
+**Freshness check (run evidence):**
+- `python harness/tools/record.py history --write` -> 175 entries.
+- `python harness/tools/record.py learning --write` -> 60 recent + 236 archived markers.
+- `python verify.py` -> OK, trail integrity checks pass.
+- Gate: PASS (arc-claims allowed).
+
+### Arc-claims
+
+1. The precedent-check requirement has done genuine, verifiable work at least once (the POSITION.md/QUICKSTART.md finding), not yet degraded to ceremony.
+2. Destination note item 3 (efficiency) received exactly one dedicated entry, then attention moved fully to BOM cleanup for four entries -- still a live concern, but not sustained as its own lens since.
+3. The BOM cleanup sequence has been mechanically uniform with zero surprises since the root-cause entry -- remaining risk is concentrated in the two deliberately-deferred files, not spread across the rest.
+4. The loop noticed its own reflection becoming repetitive and adapted the macro-Hansei format mid-sequence without being told to -- a small, real piece of double-loop-relevant evidence distinct from the withdrawn self-targeting paragraph from the prior window.
+5. [!REALIZATION] "One change per run, no batching" has not yet been examined against the evidence this window produced about how uniform and low-risk byte-identical BOM fixes are -- a live tension between two destination-level concerns (rigor via no-batching, efficiency via destination note item 3) that four consecutive entries had the evidence for and did not name as a tension. This is the double-loop gap from the 2026-07-31 destination note showing up in a new, quieter place than the genericity violation.
+
+Full reasoning, falsifiability conditions, and the operational-rules extraction (PowerShell BOM mechanism, create_file safety, lighter-pointer macro-Hansei precedent) are written into `.acm/orientation.md` in full; not duplicated here per Trail's own guidance to keep the trail entry pointer-shaped when the artifact itself carries the content.
+
+### Loop-effectiveness
+
+Quality bar tested: does the loop notice when its own process ceremony (one entry + commit per file) stops being proportionate to the marginal new information produced, and does it examine that tension with the same rigor applied to the target? Result: partial. The loop noticed the repetition and adapted the reflection format (claim 4), but did not escalate that noticing into a governing-variable question (claim 5) without this orient run forcing the connection. Operator-gate effectiveness was not tested this window -- no operator correction occurred; all six entries proceeded from self-directed hunches uncontradicted.
+
+There is no separate Decision/Action field -- Orient is observational; the artifact written is `.acm/orientation.md` itself.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED -- claim 5 identifies the double-loop gap (noticing a pattern without escalating it to a governing-variable question) as itself a recurring shape across this session, distinct in surface from but structurally similar to the genericity violation two windows ago (both are cases of an existing rule going unexamined until something external forced the check).
+- *About to declare silence:* not fired -- this run produced new arc-claims, not a convergence declaration.
+- *Contradicts prior [!REALIZATION]:* not fired -- extends rather than contradicts the prior orient run's realization about reasoning-capability gaps.
+- *Operator explicitly asked:* not fired -- operator gave a bare "run orient" prompt.
+
+**Across-trail macro-Hansei**
+
+[!REALIZATION] Claim 5 is itself the macro-Hansei output of this run, arrived at only by reading the six-entry arc as one document rather than entry-by-entry -- no single one of the four BOM-fix entries had enough surface area on its own to surface the no-batching/efficiency tension; it only became visible by comparing the sequence's cumulative ceremony cost against the destination's efficiency note as a whole. This is the kind of finding Orient exists to produce that Improve's step 6b, running inside a single iteration, structurally cannot.

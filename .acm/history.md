@@ -180,6 +180,7 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 173 | 2026-08-01 | confirm-bom-root-cause-and-fix-verifypy | empirically confirmed the root cause of the systemic BOM issue named as the top candidate next move in the prior entry; fixed verify.py's own leading BOM as the second file in the "one at a time" sequence | verify.py loses its leading UTF-8 BOM (1-line diff, shebang line only); no functional change |
 | ▸ 174 | 2026-08-01 | close-create-file-bom-blind-spot-and-fix-installing-md | closed the create_file BOM blind spot named in the prior entry (confirmed clean); fixed INSTALLING.md's leading BOM as the third file in the one-at-a-time sequence | INSTALLING.md loses its leading UTF-8 BOM (1-line diff, H1 heading line only); no functional change |
 | ▸ 175 | 2026-08-01 | fix-recordpy-bom | fixed harness/tools/record.py's leading BOM as the fourth file in the one-at-a-time sequence, prioritized as core tooling per the prior entry's ranking | harness/tools/record.py loses its leading UTF-8 BOM (1-line diff, shebang line only); no functional change |
+| ▸ 176 | 2026-08-01 | orient-post-bom-cleanup-and-efficiency-check | read the 6-entry arc since the last orient run; found the new precedent-check requirement doing genuine work, efficiency addressed once then not returned to, and a previously-unnamed tension between "no batching" and the loop's own efficiency concern | .acm/orientation.md rewritten wholesale (no code change) |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -851,4 +852,4 @@ Do not edit by hand — re-run the command to refresh.
 - **decided:** Verify using record.py itself immediately after stripping its own BOM, before moving to verify.py -- this is a direct self-referential test (the tool that just had its BOM removed is the first thing invoked afterward), analogous to the verify.py self-test two entries ago.
 - **decided:** Do not fix orient/SKILL.md, probe/SKILL.md, trail/SKILL.md, or any .acm/sessions/*.md file in this same iteration; do not touch .acm/audit-trail.md or .acm/orientation.md. Precedent check: unchanged reasoning from the three prior entries in this sequence.
 
-**175 runs total — 161 with changes, 14 silence**
+**176 runs total — 162 with changes, 14 silence**
