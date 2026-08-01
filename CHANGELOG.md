@@ -1,5 +1,10 @@
 # Changelog
 
+## v4.10.0 — 2026-08-01
+
+### Changed
+- **`[!DECISION]` entries now require a precedent check against `learning.md`, not just a rationale and rejected alternative (`trail/SKILL.md` 2.0.0 → 2.1.0).** Sourced from a same-session, same-repo failure: a `learning.md` read at session start did not prevent a later decision in the same session from repeating a mistake `learning.md` had already recorded (the self-targeting genericity violation, reverted the same session). The fix is generic — it applies to any `[!DECISION]` on any target with a learning surface, not specific to this suite: state whether the target's `learning.md` was checked for anything directly relevant to *this* decision, and what was found. A single early read is evidence of good practice at session start; it is not sufficient insurance against contradicting a precedent recorded earlier in the same run once a new idea is in play.
+
 ## v4.9.1 — 2026-08-01 [correction]
 
 ### Reverted

@@ -1125,6 +1125,14 @@ Compact chronological extract of every `[!REALIZATION]` and `[!REVERSAL]` marker
 
 **[!REALIZATION]** Read as one document, this window is the clearest evidence this repo's trail has produced on the destination's own oldest named gap (Learning: "the most underdeveloped of the three"). A destination note asking the loop to derive that improving its own reasoning matters did not, by itself, make the loop apply its own already-recorded learning more carefully in the very next action -- if anything, the new framing appears to have competed with, rather than reinforced, the older and more mundane precedent. The operator-gate closed the gap this time. Whether it needs to every time, or whether a structural re-trigger point for learning.md is worth adding, is now the single most concrete open design question this repo's trail has surfaced.
 
+## 2026-08-01 — trail-decision-precedent-check-requirement
+
+**[!REALIZATION]** This entry is itself the first live test of the new requirement -- and it passed, because the precedent check was performed deliberately and stated explicitly before the Decision was finalized, not added afterward as decoration. That is a meaningfully different discipline than what happened in the withdrawn entry, where a directly relevant precedent existed in learning.md and was not re-checked before the contradicting edit was written. The difference this time was not a smarter mechanism -- it was choosing to grep learning.md for specific terms before deciding, the same action any future agent following this new marker definition would be asked to take.
+
+## 2026-08-01 — trail-decision-precedent-check-requirement
+
+**[!REALIZATION]** :* not fired -- directly acts on and extends the orient run's own realization rather than contradicting it.
+
 ---
 
-**280 markers — 259 realisations, 21 reversals**
+**282 markers — 261 realisations, 21 reversals**

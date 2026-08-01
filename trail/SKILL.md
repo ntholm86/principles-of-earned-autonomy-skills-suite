@@ -1,6 +1,6 @@
 ﻿---
 name: trail
-version: 2.0.0
+version: 2.1.0
 description: 'Evidence trail management. Append a structured entry to .acm/audit-trail.md IN THE TARGET REPO ROOT at the end of every substantive session — recording the interpretation of the ask, examination, decisions, actions, and reflection. The implementation of Observable Autonomy — autonomy without evidence is not delegation, it is abdication. USE WHEN: any session that produces a decision, realization, or finding — including conversations. There is no such thing as "just conversation" if a decision was made in it.'
 argument-hint: 'The target being worked on (repo, file, system) — used to populate the log entry header'
 ---
@@ -111,7 +111,7 @@ If Intent was applied, paste its narration here.>
 
 ### Decision
 
-[!DECISION] <choice made, rationale, alternatives rejected>
+[!DECISION] <choice made, rationale, alternatives rejected, precedent check>
 
 ### Prediction
 
@@ -154,7 +154,7 @@ not as a step the operator must engage with.>
 
 Insert these inline wherever they occur — inside any section, not only Decision:
 
-**`[!DECISION]`** — A choice that could have gone differently. Always include rationale and at least one rejected alternative.
+**`[!DECISION]`** — A choice that could have gone differently. Always include rationale and at least one rejected alternative. Also state a precedent check: whether `learning.md` (or the equivalent memory-of-realizations artifact) was checked for anything directly relevant to *this specific* decision, and what was found (or that nothing relevant was found). A read of `learning.md` at the start of a session is not sufficient insurance against contradicting a precedent recorded earlier in that same session, once a new idea or framing is in play — the check has to happen again, at the point of deciding, not only once at the start.
 
 **`[!REALIZATION]`** — Something discovered during the work that changed understanding.
 
@@ -164,6 +164,7 @@ Insert these inline wherever they occur — inside any section, not only Decisio
 [!DECISION] Collapsed six skills to two.
 Rationale: the framework's mechanism contradicted its own first principle.
 Alternative: keep all six, add cross-references — rejected, complexity without payoff.
+Precedent check: learning.md had no prior realization about skill count or collapsing; nothing relevant found.
 
 [!REALIZATION] The debug log captures zero conversation content — only session_start metadata.
 

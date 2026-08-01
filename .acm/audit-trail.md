@@ -8849,3 +8849,69 @@ Rewrote .acm/orientation.md in full (not append, per orient's own rule). Five ne
 1. Settle whether a target-agnostic formulation of "self-targeting should surface reasoning-capability gaps" is even coherent before attempting a rewrite of the withdrawn paragraph.
 2. Decide whether learning.md needs a re-trigger point before any SKILL.md edit specifically, not just a single step-1 read per session.
 3. Audit this session's other changes (ACM section 4 additions, trail sessions-mandate removal) against learning.md for the same unconsulted-precedent pattern.
+
+## 2026-08-01 - trail-decision-precedent-check-requirement
+
+- target: skills repo (this repo) -- trail/SKILL.md
+- operator: maintainer (Nils Holmager)
+- agent: Claude Sonnet 4.5 (GitHub Copilot)
+- skill: improve
+- outcome: [!DECISION] entries now require an explicit precedent check against learning.md, generically worded for any target
+- delta: trail/SKILL.md 2.0.0 -> 2.1.0; CHANGELOG.md v4.10.0 added
+
+### Interpretation of the ask
+
+Operator: "Okay now run the improve skill on the skills repo." Generic prompt, immediately following the orient run whose own macro-Hansei named "whether learning.md needs a re-trigger point before finalizing a decision, not just a single read at session start" as "the single most concrete open design question this repo's trail has surfaced." I interpreted this as: the destination-hunch with the clearest, most load-bearing basis is to act on that exact question this iteration.
+
+### Examination
+
+Before proposing anything, applied the precedent check this very decision is about to require of future decisions: grepped learning.md for "precedent", "re-check", "before finalizing", "check learning" -- found only the three realizations from this same session's own reversal and orient entries (the ones that named the gap), no pre-existing mechanism already covering this. Grepped trail/SKILL.md for the existing [!DECISION] marker definition to confirm no duplicate requirement exists. Confirmed this is a genuinely new addition, not a redundant one.
+
+Purpose lens: the existing [!DECISION] marker already requires rationale and a rejected alternative -- both retrospective (justifying the choice after the fact) but nothing requires evidence that the target's own memory-of-realizations artifact was actually consulted for THIS specific decision, as opposed to generically "at some point in the session." This is exactly the gap the reversal entry exposed.
+
+Applied the substitution test (learning.md operational rule, orientation.md) to my own proposed wording before finalizing it: substituted an unrelated target ("a driving school's operations manual") into the new sentence -- it still made sense, because "learning.md" is already this suite's generic, cross-target artifact name (every target using these skills gets its own .acm/learning.md), not a reference to this specific repo. No repo-specific noun ("this suite," a dated note, a specific file) survived into the wording.
+
+### Decision
+
+[!DECISION] Extend the [!DECISION] marker's own definition in trail/SKILL.md to require a stated precedent check: whether learning.md was checked for anything directly relevant to this specific decision, and what was found (or that nothing relevant was found). Updated the entry template and the worked example accordingly.
+
+Rationale: this is the generic version of the gap the orient run named. The failure mode was not "the agent never reads learning.md" -- it does, at step 1. The failure was "a single early read does not survive contact with a new idea introduced later in the same session." Requiring the check to be restated at the point of decision, not only at the point of starting the session, is the structural (if soft) fix -- consistent with how the existing rationale-and-alternative requirement is enforced (by spec and trail review, not by a new verify.py mechanical check).
+
+Rejected alternative: add a mechanical verify.py check that fails an entry lacking the phrase "learning.md" near a [!DECISION] block. Rejected as gameable and low-value -- an agent could satisfy the regex by writing "learning.md" without actually having checked anything meaningful, which would create a worse problem (false confidence in a check that verifies presence of a word, not presence of genuine reasoning). The soft, spec-level requirement matches the existing enforcement level of the rationale/alternative requirement, which also has no mechanical check.
+
+Rejected alternative: scope the requirement narrowly to "SKILL.md edits" (matching the specific failure that motivated it). Rejected because "SKILL.md" is this repo's own terminology; the generic version -- any [!DECISION], on any target -- is what the destination's "Generic first" constraint requires, and is also the more useful form: the same failure (a decision contradicting an already-recorded precedent) could happen on any target, not just when editing a skill file.
+
+Precedent check (applying the new rule to itself): checked learning.md before finalizing this decision -- found the three realizations from this session's own reversal/orient entries describing the gap this decision closes, and nothing else relevant. No pre-existing requirement is being duplicated or contradicted.
+
+### Prediction
+
+I will extend trail/SKILL.md's [!DECISION] marker definition, template, and worked example with a precedent-check requirement. I expect this to make the requirement visible the next time any agent reads trail/SKILL.md before writing a [!DECISION]. I expect this NOT to be mechanically enforced by verify.py (a deliberate choice, not an oversight) and NOT to change the four-trigger across-trail evaluation already required in the Reflection section, which is a separate, already-established mechanism.
+
+### Action
+
+Edited trail/SKILL.md: template line updated to `[!DECISION] <choice made, rationale, alternatives rejected, precedent check>`; marker definition extended with the precedent-check requirement and its rationale; worked example given a fourth line ("Precedent check: learning.md had no prior realization about skill count or collapsing; nothing relevant found."). Bumped trail/SKILL.md 2.0.0 -> 2.1.0. Added CHANGELOG.md v4.10.0 entry. Ran python verify.py after regenerating derived artifacts -- passed clean on the first attempt.
+
+Comparing outcome to prediction: held.
+
+### Reflection
+
+[!REALIZATION] This entry is itself the first live test of the new requirement -- and it passed, because the precedent check was performed deliberately and stated explicitly before the Decision was finalized, not added afterward as decoration. That is a meaningfully different discipline than what happened in the withdrawn entry, where a directly relevant precedent existed in learning.md and was not re-checked before the contradicting edit was written. The difference this time was not a smarter mechanism -- it was choosing to grep learning.md for specific terms before deciding, the same action any future agent following this new marker definition would be asked to take.
+
+Named blind spot: this requirement is soft-enforced (spec-level, not mechanical). It is entirely possible for a future agent to write "Precedent check: none found" without having actually searched thoroughly, exactly as an agent could already write a shallow "rationale" or a strawman "rejected alternative" today. This entry does not solve that deeper problem (the agent narrating compliance is not the same as the agent complying) -- it only makes the omission visible when it happens, the same way the existing rationale/alternative requirement does.
+
+Imagined-reader pushback: "You've added another line to an already-long marker definition and an already-long entry template. At what point does the ceremony itself become the failure mode -- agents performing precedent-check theater the same way they can perform rationale theater, without it changing any actual behavior?" This is a fair concern and is not fully answered by this entry. The honest position: this is the same category of bet the rationale/alternative requirement already made and that this repo's trail treats as net-positive (Observable Autonomy trades some ceremony cost for visibility), not a new kind of risk. Whether it is a good trade specifically for precedent-checking, as opposed to rationale-stating, is untested by this entry alone.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired -- this is the first entry addressing the precedent-check gap directly; not yet a recurring class.
+- *About to declare silence:* not fired -- this run made a change.
+- *Contradicts prior [!REALIZATION]:* not fired -- directly acts on and extends the orient run's own realization rather than contradicting it.
+- *Operator explicitly asked:* not fired -- operator gave a bare "run the improve skill"; the topic came from the immediately-prior orient run's own macro-Hansei, not a fresh operator instruction.
+
+### Candidate Next Moves
+
+1. Test whether the new precedent-check requirement actually changes behavior across several future entries, or degrades into ceremony the way the imagined-reader pushback above warns -- named as an open, currently untested risk.
+2. Audit this session's other changes (ACM section 4 additions, trail sessions-mandate removal) against learning.md for the same unconsulted-precedent pattern -- still carried from the prior orient run, not yet done.
+3. Settle whether a target-agnostic formulation of "self-targeting should surface reasoning-capability gaps" is even coherent -- still carried from the prior orient run and the reversal entry, not yet done.
+4. Destination note item 3 (token/resource efficiency) as its own dedicated examination -- still untouched.
+5. The suite's older backlog (CITATION.cff currency, B1 replication, mtime freshness, whole-suite mandate gate) remains available if the operator wants to redirect.
