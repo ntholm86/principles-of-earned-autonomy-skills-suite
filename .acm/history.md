@@ -170,6 +170,7 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 163 | 2026-08-01 | verify-overburden-audit-principles-h1-gap-fix | examined verify.py for overburden per the prior entry's candidate; found no genuine overburden, but found a real gap -- PRINCIPLES.md was silently excluded from the duplicate-H1 check that exists specifically because of a real PRINCIPLES.md defect; fixed | verify.py REQUIRED_FILES gains PRINCIPLES.md; check_required_markdown_docs() restructured so the H1 check still applies to it; CHANGELOG.md v4.7.0 added |
 | ▸ 164 | 2026-08-01 | orient-post-acm4-closure | orientation.md rewritten; ACM section 4 arc confirmed closed and self-enforcing, double-loop mechanism confirmed working across 3 discriminating instances, older backlog named as the clear next redirect if the operator wants one | .acm/orientation.md rewritten (was last updated 2026-07-31 as orient-post-argyris-window) |
 | ▸ 165 | 2026-08-01 | orient-zero-new-arc | no new arc since the last orient run -- orientation.md left unchanged; declining to manufacture arc-claims | none |
+| ▸ 166 | 2026-08-01 | trail-drop-sessions-mandate-independent-capture-exists | removed the mandatory .acm/sessions/ session-summary-writing requirement from trail/SKILL.md; audit-trail.md entry remains the sole mandatory artifact | trail/SKILL.md 1.19.0 -> 2.0.0 (breaking -- removes a prior mandate); CHANGELOG.md v4.8.0 added |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -792,4 +793,8 @@ Do not edit by hand — re-run the command to refresh.
 
 - **decided:** Do not rewrite orientation.md. The prior orient run's claims, "what next runs should test" list, and operational rules all still hold verbatim -- there is no new evidence to confirm or revise them against. Rewriting the file with no new input would either restate the same content (waste) or manufacture claims from a zero-entry window (exactly the failure mode Convergence Is Silence exists to prevent at the improve level, and the equivalent discipline for orient).
 
-**165 runs total — 151 with changes, 14 silence**
+### Run 166 — 2026-08-01 — trail-drop-sessions-mandate-independent-capture-exists
+
+- **decided:** Remove the mandatory .acm/sessions/*.md session-summary-writing requirement from trail/SKILL.md. Reframe the "Full resolution" tier and the Fidelity section to point at genuinely independent capture (harness ledger when routed through one; host product session history otherwise) instead of an agent-authored file. Keep the anti-rationalization discipline list, but scope it explicitly to the audit-trail.md entry itself (which remains mandatory) rather than to a separate session file. Bump trail 1.19.0 -> 2.0.0 (breaking, since it removes a prior mandate).
+
+**166 runs total — 152 with changes, 14 silence**

@@ -1,5 +1,10 @@
 # Changelog
 
+## v4.8.0 — 2026-08-01
+
+### Changed (BREAKING — removes a prior mandate)
+- **Trail no longer requires the agent to author a `.acm/sessions/<date>-<slug>.md` session summary (`trail/SKILL.md` 1.19.0 → 2.0.0).** This mandate was added on 2026-05-02 (`trail-v1-10-0-sessions-mandatory`) specifically because no independent, non-agent-authored capture mechanism existed at the time — an agent-authored ("reconstructed") summary was the only available substrate for the "Full resolution" tier, despite the skill's own Fidelity section already ranking it as the weakest tier ("a summary written by the audited party is evidence, but it is not independent evidence"). Two independent capture mechanisms now exist: (1) `llm-harness-proxy`, a tamper-evident hash-chained ledger for harness-routed sessions; (2) the host product's own session/conversation history (e.g. VS Code Copilot Chat's session store, already queried independently by the `chronicle` skill). Requiring the agent to additionally author its own summary duplicates weaker evidence at real token cost. The mandatory artifact remains `.acm/audit-trail.md` — the structured Interpretation/Examination/Decision/Prediction/Action/Reflection entry, which neither raw capture source provides in compact form. The "Three resolutions" table's Full tier and the Fidelity section were both updated to point at independent capture rather than agent-authored files. `.acm/sessions/` is retained only as a legacy location for entries predating this change and as an optional destination if an operator wants a transcript linked manually.
+
 ## v4.7.0 — 2026-08-01
 
 ### Fixed

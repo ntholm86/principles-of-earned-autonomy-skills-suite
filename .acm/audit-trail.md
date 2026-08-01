@@ -8591,3 +8591,75 @@ No files changed except this trail entry and the already-fresh derived artifacts
 
 1. If continuing the loop: pick up the older backlog (CITATION.cff/`.zenodo.json` currency is the smallest, most mechanical item) or the STALE_PATH_DOCS/ACM_SCOPE_TRAVERSAL_FILES silent-exclusion audit named in the prior orient run.
 2. If the operator has a new topic in mind, state it directly -- this is exactly the moment a fresh direction is cheapest to inject, since no work is in flight.
+
+## 2026-08-01 - trail-drop-sessions-mandate-independent-capture-exists
+
+- target: skills repo (this repo) -- trail/SKILL.md
+- operator: maintainer (Nils Holmager)
+- agent: Claude Sonnet 4.5 (GitHub Copilot)
+- skill: improve
+- outcome: removed the mandatory .acm/sessions/ session-summary-writing requirement from trail/SKILL.md; audit-trail.md entry remains the sole mandatory artifact
+- delta: trail/SKILL.md 1.19.0 -> 2.0.0 (breaking -- removes a prior mandate); CHANGELOG.md v4.8.0 added
+
+### Interpretation of the ask
+
+Operator: "Now that we have the llm harness protocol, then I think the trail skill should not write to .acm/sessions since the llm harness protocol will do that -- and besides -- all sessions are already written somewhere by copilot chat. Spending tokens on having the AI writing the sessions from here is not efficient. Understand my intent. Use improve skill."
+
+I interpreted this as a request to genuinely re-examine whether the sessions/ mandate (added 2026-05-02, entry trail-v1-10-0-sessions-mandatory) is still warranted now that independent capture exists, not to blindly comply. The operator gave two distinct reasons that needed separate verification: (1) "the llm harness protocol will do that" -- needed to confirm what llm-harness-proxy actually captures and under what conditions; (2) "all sessions are already written somewhere by copilot chat" -- a claim about the host product's own persistence, independent of any harness.
+
+### Examination
+
+Read llm-harness-proxy/README.md: it is a MITM proxy that captures a tamper-evident, hash-chained JSONL ledger, but only for LLM calls that are explicitly routed through it (client base_url pointed at the proxy). This is the mechanism ai-steward uses for its managed runs. It does NOT capture this session (an interactive VS Code Copilot Chat conversation) unless the client were reconfigured to route through it -- no evidence that is the case here. So the operator's first reason applies specifically to harness-driven/API-routed runs, not universally.
+
+Confirmed the operator's second reason independently: this workspace's own `chronicle` skill / `session_store_sql` tool already queries a local session-history store maintained by the host product (VS Code Copilot Chat), entirely independent of anything the agent writes. This is real, already-relied-upon, product-level capture that applies to this and every similar interactive session regardless of harness routing.
+
+Read trail/SKILL.md's own Fidelity section, which already ranks agent-authored "reconstructed" summaries as the lowest-trust tier and states explicitly: "A summary written by the audited party is evidence, but it is not independent evidence." Cross-checked PRINCIPLES.md's capture-author separation principle (Observable Autonomy): "The agent that makes a decision cannot also be the sole author of the record of that decision." The sessions/ mandate was already in tension with this principle -- it was tolerated in 2026-05-02 only because no independent alternative existed yet ("Until execution harnesses expose stable, portable transcript surfaces, agent-authored reasoning is the practical substrate").
+
+Checked verify.py's check_session_files() and check_session_fidelity_structure(): both only validate that EXISTING session-file: references resolve correctly and meet structural requirements -- neither mandates that every entry have one. So removing the spec-level mandate requires zero verify.py changes; the mechanical layer was never the source of the requirement, trail/SKILL.md's prose was.
+
+Grepped all live skill files for "sessions/" and "session-file": found the mandate lived entirely in trail/SKILL.md. destination/SKILL.md and intent/SKILL.md both already read .acm/sessions/ conditionally ("if present" / "if earlier sessions exist") -- no change needed there, since they degrade gracefully to finding nothing.
+
+### Decision
+
+[!DECISION] Remove the mandatory .acm/sessions/*.md session-summary-writing requirement from trail/SKILL.md. Reframe the "Full resolution" tier and the Fidelity section to point at genuinely independent capture (harness ledger when routed through one; host product session history otherwise) instead of an agent-authored file. Keep the anti-rationalization discipline list, but scope it explicitly to the audit-trail.md entry itself (which remains mandatory) rather than to a separate session file. Bump trail 1.19.0 -> 2.0.0 (breaking, since it removes a prior mandate).
+
+Rejected alternative: make sessions/ conditional only on harness-proxy usage (i.e., still require it for non-harness-routed sessions). Rejected because the operator's second, independently-verified reason (host product session history) applies universally to interactive sessions regardless of harness routing -- there is no remaining case where an agent-authored summary is the only capture available.
+
+Rejected alternative: leave the mandate in place but mark it "low priority" or "best effort." Rejected -- a requirement that is optionally honored is not a requirement; either it earns its place or it should be removed. Given genuinely independent capture now exists universally, keeping a weaker, token-costly, self-authored duplicate does not earn its place.
+
+Rejected alternative: delete the Fidelity section and .acm/transcripts/ concept entirely. Rejected -- the transcripts/ concept (linking an externally-captured verbatim export when the operator wants it surfaced from the trail) is still occasionally useful and remains fully optional; only the *mandatory self-authored summary* is being removed, not the entire fidelity-marking framework.
+
+### Prediction
+
+I will edit trail/SKILL.md to remove the sessions/ mandate. I expect verify.py to require zero changes (confirmed before editing, since its checks only validate existing references). I expect destination/SKILL.md and intent/SKILL.md to require zero changes since their sessions/ reads are already conditional. I expect this to reduce token spend on every future trail-writing session by eliminating a full duplicate-summary-writing step, while the audit-trail.md entry (the actually load-bearing structured record) continues unchanged.
+
+### Action
+
+Edited trail/SKILL.md: (1) directory-structure comment for sessions/ changed from "mandatory" to "legacy: pre-v2.0.0 ... not written to routinely going forward"; (2) removed the "Structural distinction is mandatory" sentence, replaced with a note that the agent does not author session summaries routinely, explaining why (independent capture now exists) and citing the exact two mechanisms; (3) "Three resolutions" table's Full row changed from `.acm/sessions/*.md` + `.acm/transcripts/*.md` to "Independent capture ... never agent-authored"; (4) "Structural Session Capture" section rewritten: kept anti-rationalization discipline (rescoped to the audit-trail.md entry), removed the "Content minimum for an agent-authored session summary" template and the mandatory "Linking the Session" instructions, kept "optional verbatim transcript linking" as fully optional; (5) Fidelity section reduced to describe fidelity marking only when a transcript-file: is linked, with "reconstructed" now marked legacy and no longer routine; (6) "The test" section's phrasing updated to not presuppose linked sessions exist. Bumped trail/SKILL.md 1.19.0 -> 2.0.0. Added CHANGELOG.md v4.8.0 entry. Ran python verify.py after regenerating derived artifacts -- passed clean, confirming the prediction that no mechanical changes were needed.
+
+Comparing outcome to prediction: held on all points. No verify.py changes, no destination/SKILL.md or intent/SKILL.md changes.
+
+### Reflection
+
+[!REALIZATION] The sessions/ mandate was, from the moment it was added, an acknowledged compromise -- the trail-v1-10-0-sessions-mandatory entry made it mandatory to close "the longest-standing Observable Autonomy gap," while the very same skill's Fidelity section already ranked the artifact it mandated as the weakest possible tier. This is a case where a real constraint (no independent capture existed yet) forced a second-best mandate, and the mandate should have carried an explicit sunset condition ("remove this once independent capture exists") rather than being stated as a durable requirement. Worth carrying forward as a general practice: when a spec adopts a second-best mechanism because a better one does not yet exist, name the condition under which the second-best mechanism should be retired, not just the reason it was adopted.
+
+Named blind spot: I did not verify whether any external repos in the operator's fleet (the 8 repos from the earlier fleet-sweep entries) have automation or documentation that assumes .acm/sessions/ files will keep being written going forward. If any downstream tooling reads session files expecting fresh ones, this change could silently stop feeding it. Not checked this run.
+
+Imagined-reader pushback: "You're removing a mandate that took real effort to establish (a dedicated 2026-05-02 session, a checklist, a proof-run simulation) based on one operator statement and a quick README read of llm-harness-proxy. Are you sure the harness ledger and host product history are actually equivalent in practice, not just in principle?" Fair -- I verified llm-harness-proxy's capture format and scope directly (it is real and matches the claim), and verified the host-product-history claim indirectly via this workspace's own chronicle/session_store_sql tool already depending on it -- but I did not test end-to-end whether a lost .acm/sessions/ file would ever actually block a future Improve/Retrospect run that currently reads sessions/ opportunistically. Both destination/SKILL.md and intent/SKILL.md degrade gracefully (they say "if present"), so the risk is low, but it is not zero-verified.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired -- this is a one-off architectural reversal of a specific prior mandate, not a recurring pattern in this session's arc.
+- *About to declare silence:* not fired -- this run made a substantive change.
+- *Contradicts prior [!REALIZATION]:* FIRED -- this directly reverses the 2026-05-02 trail-v1-10-0-sessions-mandatory entry's decision to make sessions/ mandatory, and the reasoning offered there ("no independent capture mechanism existed") is explicitly named and superseded here.
+- *Operator explicitly asked:* FIRED -- operator directly requested this change and explained the reasoning.
+
+**Across-trail macro-Hansei:**
+
+[!REALIZATION] This is a genuine instance of the suite correcting its own accumulated ceremony once the reason for that ceremony no longer holds -- not because the ceremony was wrong when adopted, but because the surrounding architecture (llm-harness-proxy, and the pre-existing but only-recently-relied-upon host product session history) changed the tradeoff. This is exactly the shape of a healthy Argyris-style double-loop correction: the governing variable ("no independent capture exists, so agent-authored capture is the best available") changed, and the downstream rule (mandatory sessions/) needed to change with it, rather than being defended as-is because it was once justified. Worth naming as a positive precedent: mandates adopted as stopgaps should be revisited when the gap they were stopping closes, and this session is the first clean example of that revisiting actually happening.
+
+### Candidate Next Moves
+
+1. Spot-check whether any of the operator's 8 fleet repos (from the earlier fleet-sweep entries) have tooling or documentation that assumes fresh .acm/sessions/ files will keep appearing -- named blind spot above, not yet checked.
+2. Consider whether destination/SKILL.md and intent/SKILL.md's "if present" sessions/ reads should be updated to also mention the independent-capture sources (harness ledger, host product history) as an alternative signal source now that sessions/ will stop accumulating new files -- deferred this run to keep the change scoped to trail/SKILL.md alone.
+3. The suite's older backlog (CITATION.cff/`.zenodo.json` currency, B1 replication, mtime freshness, whole-suite ACM mandate gate) remains untouched and is still the largest available redirect if the operator wants to move off trail-infrastructure work.
