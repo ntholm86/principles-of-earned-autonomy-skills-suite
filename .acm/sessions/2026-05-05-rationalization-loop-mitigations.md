@@ -1,4 +1,4 @@
-﻿# 2026-05-05 — rationalization-loop-mitigations
+# 2026-05-05 — rationalization-loop-mitigations
 
 fidelity: reconstructed
 

@@ -1,4 +1,4 @@
-﻿# 2026-05-05 — update-record-py-and-design-decision
+# 2026-05-05 — update-record-py-and-design-decision
 
 fidelity: reconstructed
 

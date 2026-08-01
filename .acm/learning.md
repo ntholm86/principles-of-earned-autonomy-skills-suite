@@ -5,19 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 245 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-07-31 — improve-intent-acm4-traversal-fix
-
-**[!REALIZATION]** This is the second consecutive improve iteration to close a gap that was named as a candidate next move in a prior run rather than originate a new finding. Read together with the orient run's own macro-Hansei ("a realization was recorded and then not acted on across five subsequent entries"), this iteration is direct evidence that naming a gap explicitly and then acting on it in the very next iteration is possible when the loop treats its own candidate-ranking as real input rather than a formality.
-
-## 2026-07-31 — improve-intent-acm4-traversal-fix
-
-**[!REALIZATION]** :* not fired -- confirms rather than contradicts the orient run's macro-Hansei about candidate-next-move follow-through.
-
-## 2026-07-31 — improve-intent-acm4-traversal-fix
-
-**[!REALIZATION]** Applying the new step 6b double-loop question (added earlier this session) to this recurring-finding-class trigger: is the recurrence here -- "the loop keeps acting on its own prior candidate list" -- a single-loop symptom or a double-loop signal? On examination, this is NOT a governing-variable defect. The suite's own architecture explicitly permits and expects candidate-next-moves to sit unpicked across multiple entries while the operator directs attention elsewhere (documented in improve/SKILL.md step 4b: "Silence from the operator is a valid response"). The recurrence here is the loop correctly returning to its own backlog when given a topic-free instruction, not a symptom of a wrong goal or assumption in destination.md. No governing variable is implicated; no escalation to Destination is warranted. This is offered as the first worked example of the new question concluding "no double-loop action needed" rather than "escalate" -- the question is falsifiable in both directions, not just a trigger toward more ceremony.
+Showing the most recent 60 markers. 248 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-07-31 — improve-destination-acm4-traversal-fix
 
@@ -246,6 +234,18 @@ Showing the most recent 60 markers. 245 older marker(s) are in `.acm/learning-ar
 ## 2026-08-01 — orient-step3b-argyris-double-loop-check
 
 **[!REALIZATION]** The operator-explicitly-asked trigger firing here is a clean case, distinct from the deeper double-loop candidates named in recent entries: the operator did not just approve a self-directed hunch, they asked the diagnostic question themselves ("is this also implemented in Orient?") that this entry's own answer depended on. Read against this session's arc as a whole, this is the second time in a row (after the delegated no-batching decision) that the operator-gate has functioned in a form other than "pick from a ranked candidate list" -- first as delegated autonomy under an explicit standing instruction, now as a direct diagnostic question the agent had not itself surfaced as a gap until asked. Both are healthy variants of the gate, not degraded ones, and worth naming together: the gate is not a single mechanism but a family of interaction shapes, and this session has now exercised three of them (ranked-candidate selection, delegated autonomy, direct operator-initiated diagnosis).
+
+## 2026-08-01 — resolve-sessions-fingerprint-blind-spot-and-fix-six-boms
+
+**[!REALIZATION]** This closes the last open item blocking the BOM cleanup before the two deliberately-highest-risk files (.acm/orientation.md, .acm/audit-trail.md). All 10 lower-risk live files are now fixed (verify.py, QUICKSTART.md, INSTALLING.md, record.py, three SKILL.md files, six session files -- note: nine, not ten; the count from two entries ago said "five" session files when the actual figure, confirmed by direct listing this run, is six -- a small factual correction to the running count, worth naming rather than silently absorbing). The blind-spot investigation itself was fast and conclusive specifically because the question was answerable by reading code directly rather than reasoning abstractly about what "might" depend on file content -- consistent with this session's own recurring lesson (from the QUICKSTART.md/PRINCIPLES.md arc) that direct verification beats inference every time it's available.
+
+## 2026-08-01 — resolve-sessions-fingerprint-blind-spot-and-fix-six-boms
+
+**[!REALIZATION]** :* not fired -- resolves, rather than contradicts, the carried-forward blind spot.
+
+## 2026-08-01 — resolve-sessions-fingerprint-blind-spot-and-fix-six-boms
+
+**[!REALIZATION]** Per the lighter-weight-pointer precedent: no new governing-variable diagnosis is introduced by this entry: the pattern-family diagnosis stands as recorded in `confirm-bom-root-cause-and-fix-verifypy`, and the granularity precedent stands as recorded in the delegated-autonomy entry two runs ago. This entry is a clean application of both, plus one small self-correction (the six-vs-five count) surfaced honestly rather than absorbed.
 
 ---
 

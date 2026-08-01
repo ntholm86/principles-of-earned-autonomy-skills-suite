@@ -1,4 +1,4 @@
-﻿# 2026-05-05 — update-readme-mitigations-list
+# 2026-05-05 — update-readme-mitigations-list
 
 fidelity: reconstructed
 

@@ -1,4 +1,4 @@
-﻿# 2026-05-05 - improve-record-encoding-resilience
+# 2026-05-05 - improve-record-encoding-resilience
 
 fidelity: reconstructed
 

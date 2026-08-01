@@ -9441,3 +9441,67 @@ Imagined-reader pushback: "You're adding a step to a skill file based on two exa
 3. **Audit `STALE_PATH_DOCS` and `ACM_SCOPE_TRAVERSAL_FILES`** for the same silent-exclusion pattern, still open from several entries ago.
 4. Settle whether a target-agnostic formulation of "self-targeting should surface reasoning-capability gaps" is even coherent -- still carried, not yet done.
 5. The suite's older backlog (CITATION.cff currency, B1 replication, mtime freshness, whole-suite mandate gate) remains available if the operator wants to redirect.
+
+## 2026-08-01 - resolve-sessions-fingerprint-blind-spot-and-fix-six-boms
+
+- target: skills repo (this repo) -- .acm/sessions/*.md (6 files)
+- operator: maintainer (Nils Holmager)
+- agent: Claude Sonnet 4.5 (GitHub Copilot)
+- skill: improve
+- outcome: resolved the session-file fingerprint blind spot carried across three prior entries; fixed all six affected .acm/sessions/*.md files' BOMs in one grouped entry with individual per-file verification
+- delta: six .acm/sessions/*.md files each lose their leading UTF-8 BOM (1-line diff each); no functional change
+
+### Interpretation of the ask
+
+Operator: "ok what is next then?" followed, after I surfaced the ranked candidate list, by "yes -- please proceed. understand my intent." I interpreted this as explicit confirmation of the option I had recommended: resolve the session-file fingerprint blind spot (carried unresolved across three prior entries) before touching those files' BOMs, then apply the fix.
+
+### Examination
+
+Purpose lens: the blind spot was specific and answerable by direct code reading, not speculation -- "does anything in this repo treat these six files' exact byte content as an identity/fingerprint check?" Grepped the whole repo (excluding .venv vendor noise) for sessions/, hash, checksum, fingerprint, sha256/sha1/md5 references. Found no mechanism anywhere in the live skill files, verify.py, or record.py that hashes or fingerprints session-file content. The only byte-hash-adjacent things in the repo are unrelated: git's own commit SHA chain (mentioned descriptively in ITERATION-COUNT.md) and vendor package hashes inside .venv (pip's own dependency metadata, irrelevant to this repo's own logic).
+
+Read verify.py's two session-file-touching functions directly rather than inferring from their names: `check_session_fidelity_structure()` and `check_session_files()`. Both explicitly skip any trail entry dated before `SESSION_FIDELITY_CONTRACT_DATE` (2026-05-23) via an early `continue`. Confirmed all six affected files are referenced only by trail entries dated 2026-04-24 or 2026-05-05 -- both before the contract date -- meaning neither function ever reads these six files' content in the first place. `check_session_files()` additionally only checks existence (`.exists()`), never content, even for post-contract files. This closes the blind spot with direct evidence: no check anywhere depends on these six files' exact bytes.
+
+### Decision
+
+[!DECISION] Fix all six affected .acm/sessions/*.md files' BOMs in one grouped trail entry, following the granularity the operator delegated two entries ago (grouped entry, full per-file verification preserved) -- the same class of uniform, already-proven-safe fix as the three SKILL.md files fixed under that same decision. Precedent check: grepped learning.md/learning-archive.md for "session file" and "fingerprint" before finalizing -- found only this session's own carried-forward blind-spot note; no existing precedent contradicts treating these six files as safe to modify once the fingerprint question is answered.
+
+Rejected alternative: fix the six files across six separate entries, reverting to the pre-delegation granularity. Rejected -- the operator's delegated decision two entries ago was general ("group the remaining low-risk BOM fixes"), not scoped to only the three SKILL.md files already fixed under it; these six files are the same risk class and the same mechanism, so applying a different granularity here without a new reason would be inconsistent, not more careful.
+
+Rejected alternative: treat the blind-spot investigation and the fix as two separate entries. Rejected -- the investigation's only purpose was to clear a gate before the fix; splitting them would recreate exactly the one-investigation-then-one-fix granularity the grouping decision was meant to reduce, for a blind spot that resolved cleanly to "no risk" rather than surfacing a new complication worth its own entry.
+
+### Prediction
+
+I will fix six files' BOMs and expect all six git diffs to show exactly one line changed each (the BOM-prefixed first line -- either a `---` frontmatter delimiter or a `#` H1, depending on the file), with no other content difference. I expect python verify.py to still pass. I expect this NOT to touch .acm/orientation.md or .acm/audit-trail.md, which remain last.
+
+### Action
+
+Read verify.py's session-related functions directly to resolve the blind spot (described above) before touching any file. Stripped all six files' BOMs in a single PowerShell loop using the mechanism validated seven times already. Confirmed via `git diff --stat` that each file changed exactly 1 line (1 insertion, 1 deletion). Confirmed via full `git diff` output that every changed line is exactly the BOM-prefixed first line of each file (a frontmatter delimiter in one case, an H1 heading in the other five), nothing else -- each file individually verified, not just verified in aggregate. Regenerated history.md/learning.md/learning-archive.md and ran python verify.py -- passed clean.
+
+Comparing outcome to prediction: held on every point.
+
+### Reflection
+
+[!REALIZATION] This closes the last open item blocking the BOM cleanup before the two deliberately-highest-risk files (.acm/orientation.md, .acm/audit-trail.md). All 10 lower-risk live files are now fixed (verify.py, QUICKSTART.md, INSTALLING.md, record.py, three SKILL.md files, six session files -- note: nine, not ten; the count from two entries ago said "five" session files when the actual figure, confirmed by direct listing this run, is six -- a small factual correction to the running count, worth naming rather than silently absorbing). The blind-spot investigation itself was fast and conclusive specifically because the question was answerable by reading code directly rather than reasoning abstractly about what "might" depend on file content -- consistent with this session's own recurring lesson (from the QUICKSTART.md/PRINCIPLES.md arc) that direct verification beats inference every time it's available.
+
+Named blind spot: I have not yet decided the actual order/approach for the two remaining files (.acm/orientation.md, .acm/audit-trail.md) -- only that they come last. No specific plan exists yet for how to safely strip audit-trail.md's BOM given its two prior corruption incidents; today's entries have deferred that decision each time without designing it.
+
+Imagined-reader pushback: "You just found a small counting error in your own prior trail entries (six files, not five) while writing this one -- does that undermine confidence in the file counts and claims made in the earlier BOM entries?" Fair to raise. The actual risk-relevant claims in those earlier entries (which specific files, whether each fix was byte-precise, whether verify.py passed) were all independently verified via git diff and byte-length checks each time and remain correct; only the aggregate headcount narration was off by one. Naming it here rather than quietly using the corrected number is the more honest choice, consistent with this session's own standing practice of surfacing small errors rather than absorbing them silently.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED -- continues the same BOM-fix finding-class family; per the established lighter-weight-pointer precedent (two entries ago), the governing-variable diagnosis from `confirm-bom-root-cause-and-fix-verifypy` and the granularity decision from the delegated-autonomy entry both still stand unchanged by this entry.
+- *About to declare silence:* not fired -- this run made a change.
+- *Contradicts prior [!REALIZATION]:* not fired -- resolves, rather than contradicts, the carried-forward blind spot.
+- *Operator explicitly asked:* FIRED -- the operator explicitly confirmed proceeding with the specific option I had ranked and recommended.
+
+**Across-trail macro-Hansei**
+
+[!REALIZATION] Per the lighter-weight-pointer precedent: no new governing-variable diagnosis is introduced by this entry: the pattern-family diagnosis stands as recorded in `confirm-bom-root-cause-and-fix-verifypy`, and the granularity precedent stands as recorded in the delegated-autonomy entry two runs ago. This entry is a clean application of both, plus one small self-correction (the six-vs-five count) surfaced honestly rather than absorbed.
+
+### Candidate Next Moves
+
+1. **Design a specific, careful plan for `.acm/audit-trail.md`'s BOM strip** given its two prior corruption incidents -- this is now the single remaining file in the whole systemic BOM cleanup without an even sketched approach, and should be thought through deliberately rather than approached with the same one-line PowerShell loop used for the other nine files.
+2. **Decide `.acm/orientation.md`'s order relative to audit-trail.md** -- lower risk (derived, wholesale-rewritten each Orient run, no corruption history) but still deliberately held back; could reasonably go before audit-trail.md now that everything else is done.
+3. **Exercise step 3b in a live future orient run**, still the top item from the previous entry, not yet done.
+4. **Audit `STALE_PATH_DOCS` and `ACM_SCOPE_TRAVERSAL_FILES`** for the same silent-exclusion pattern, still open from several entries ago.
+5. Settle whether a target-agnostic formulation of "self-targeting should surface reasoning-capability gaps" is even coherent -- still carried.

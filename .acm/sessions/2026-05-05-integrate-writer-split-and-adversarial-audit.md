@@ -1,4 +1,4 @@
-﻿# 2026-05-05 — integrate-writer-split-and-adversarial-audit
+# 2026-05-05 — integrate-writer-split-and-adversarial-audit
 
 fidelity: reconstructed
 
