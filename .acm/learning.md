@@ -5,19 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 230 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-06-04 — improve-destination-named-boundary-symmetric
-
-**[!REALIZATION]** The Destination -> Improve -> Retrospect loop is the spine of the skill suite, and the named-boundary discipline now runs the full length of it. This was not visible from any single skill in isolation; it became visible only when the rule had been applied to all three. Architectural realization: when a structural rule is promoted from a target, the right next question is whether the rule has a natural domain larger than the originating skill. For the named-boundary rule, that domain is "any skill that produces a stopping signal" (silence, convergence, done). The three skills that produce stopping signals now share the discipline; skills that produce other kinds of artifacts (probes, trails, intent) do not need it.
-
-## 2026-06-22 — acm-parent-scope-traversal-propagated
-
-**[!REALIZATION]** :* not fired — extends entry 152’s realization.
-
-## 2026-06-23 — retrospect-to-orient-rename
-
-**[!REALIZATION]** :* not fired.
+Showing the most recent 60 markers. 233 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-06-23 — stormp-illustration-readme
 
@@ -246,6 +234,18 @@ Showing the most recent 60 markers. 230 older marker(s) are in `.acm/learning-ar
 ## 2026-08-01 — confirm-bom-root-cause-and-fix-verifypy
 
 **[!REALIZATION]** The recurring-finding-class trigger fired, but the macro-Hansei for this specific pattern was already performed in the immediately prior entry (governing-variable diagnosis: no single canonical file-scope list in verify.py -- REQUIRED_FILES, STALE_PATH_DOCS, and ACM_SCOPE_TRAVERSAL_FILES each independently go stale). This entry does not change that diagnosis; it is a direct continuation of acting on it (root-cause confirmation, then one more fix in the already-agreed "one at a time" sequence), not a new instance requiring a fresh governing-variable read. Repeating the full macro reflection verbatim here would be ceremony without new signal -- the honest record is that the check was made, the same governing variable still applies, and no revision to it is warranted from this entry's evidence.
+
+## 2026-08-01 — close-create-file-bom-blind-spot-and-fix-installing-md
+
+**[!REALIZATION]** With create_file confirmed BOM-safe and three files now successfully migrated with the identical byte-verified mechanism, the remaining risk in this cleanup is concentrated almost entirely in the two deliberately-deferred files (.acm/audit-trail.md, .acm/orientation.md) rather than spread across the whole remaining list. The plain-file fixes (SKILL.md files, record.py, session files) are now low-uncertainty, repetitive work with a proven-safe mechanism -- the interesting remaining decision is specifically how to handle the two high-risk files, not whether the mechanism generalizes to the rest.
+
+## 2026-08-01 — close-create-file-bom-blind-spot-and-fix-installing-md
+
+**[!REALIZATION]** :* not fired -- directly continues the sequencing plan.
+
+## 2026-08-01 — close-create-file-bom-blind-spot-and-fix-installing-md
+
+**[!REALIZATION]** Continuing to fire the recurring-finding-class trigger on every file-by-file BOM fix, while correct per the letter of the rule, is starting to produce repetitive trail entries whose macro-Hansei content is identical to the last one ("no new diagnosis, continuation of agreed plan"). This is itself worth naming as a pattern: the trigger was designed to catch *drift* across a recurring finding-class, but a deliberately-sequenced, already-diagnosed cleanup (like this BOM migration) will keep firing it every time with nothing new to say. That is not a flaw in this entry's evidence -- it is the honest, correct evaluation -- but it suggests the *next* time this trigger fires with "same diagnosis as last entry," the macro-Hansei content itself could be a single-sentence pointer to the entry where the diagnosis was actually made, rather than re-stating the reasoning. Not changing the format now (that would be a new mid-migration process change, and this entry is not the place for it); naming it as a candidate for the next dedicated verify.py/trail process discussion instead.
 
 ---
 

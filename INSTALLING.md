@@ -1,4 +1,4 @@
-﻿# Installing the skills
+# Installing the skills
 
 ## One-line install (recommended)
 

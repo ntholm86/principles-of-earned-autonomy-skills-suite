@@ -9127,3 +9127,69 @@ Imagined-reader pushback: "You spent a whole iteration confirming a mechanism wh
 3. **Design the allowlist-based BOM check for verify.py** (grandfathered, growing as each file is fixed) once enough live files are actually clean to make the allowlist meaningful -- deliberately deferred again this entry, now with a clearer sense of why (the design question itself deserves its own iteration).
 4. **Audit `STALE_PATH_DOCS` and `ACM_SCOPE_TRAVERSAL_FILES` for the same silent-exclusion pattern** named in the prior entry's macro-Hansei -- still not yet done, now ranked below the BOM work given the corruption-risk urgency, but still open.
 5. Settle whether a target-agnostic formulation of "self-targeting should surface reasoning-capability gaps" is even coherent -- still carried, not yet done.
+
+## 2026-08-01 - close-create-file-bom-blind-spot-and-fix-installing-md
+
+- target: skills repo (this repo) -- INSTALLING.md
+- operator: maintainer (Nils Holmager)
+- agent: Claude Sonnet 4.5 (GitHub Copilot)
+- skill: improve
+- outcome: closed the create_file BOM blind spot named in the prior entry (confirmed clean); fixed INSTALLING.md's leading BOM as the third file in the one-at-a-time sequence
+- delta: INSTALLING.md loses its leading UTF-8 BOM (1-line diff, H1 heading line only); no functional change
+
+### Interpretation of the ask
+
+Operator: "run the improve skill on the skills repo." Bare, generic prompt. The prior entry ranked two items above the others: (1) verify whether create_file itself ever writes a BOM, since the whole cleanup plan assumes it as a safe path, and (2) fix the next live file's BOM, continuing the one-at-a-time sequence. I treated closing the blind spot as a prerequisite check before continuing the fix sequence with more confidence, then proceeded to the next file.
+
+### Examination
+
+Purpose lens: the prior entry's "safe path" claim (create_file, or explicit UTF8Encoding(false) writes, avoid the BOM that plain PowerShell -Encoding utf8/UTF8 introduces) was asserted but not tested. If create_file also wrote a BOM under some condition, every file this session has created fresh via that tool (none in this specific arc, but the tool is in active general use) could be silently affected the same way, undermining the "one-time migration, not a recurring problem" conclusion from two entries ago.
+
+Tested directly: created a small fresh file via the create_file tool with plain text content, then inspected its first three bytes with `[System.IO.File]::ReadAllBytes`. Result: `35 32 112` (`#`, space, `p` -- the literal start of "# probe"), no BOM. Confirmed create_file writes plain UTF-8 without a BOM. The blind spot is closed with evidence, not assumption.
+
+Continued the one-at-a-time fix sequence. Candidates remaining: INSTALLING.md, orient/SKILL.md, probe/SKILL.md, trail/SKILL.md, harness/tools/record.py, five .acm/sessions/*.md files, plus the two highest-risk files (.acm/audit-trail.md, .acm/orientation.md) still deliberately last. Picked INSTALLING.md next: plain markdown, no corruption history, not currently open/being edited by any other in-flight work this session.
+
+### Decision
+
+[!DECISION] Fix INSTALLING.md's leading BOM using the identical, twice-validated mechanism (utf8-sig-aware decode via `[System.IO.File]::ReadAllText` with UTF8 encoding, re-encode via `UTF8Encoding(false)`, confirm byte-length diff is exactly 3). Precedent check: this is the third file fixed with this exact mechanism (QUICKSTART.md, verify.py, now INSTALLING.md) -- no new risk, no new mechanism, consistent with the established "one at a time, byte-verified" plan.
+
+[!DECISION] Do not fix any of the other remaining live files (orient/SKILL.md, probe/SKILL.md, trail/SKILL.md, harness/tools/record.py, the five .acm/sessions/*.md files) in this same iteration, and do not touch .acm/audit-trail.md or .acm/orientation.md. Precedent check: unchanged reasoning from the prior two entries -- one file at a time, corruption-risk files last.
+
+Rejected alternative: batch-fix all remaining non-highest-risk files now that the mechanism and the create_file safety are both confirmed. Rejected -- confidence in the mechanism does not change the "one at a time" discipline; the value of per-file verification is unrelated to how many times the mechanism has already worked.
+
+### Prediction
+
+I will strip INSTALLING.md's BOM and expect git diff to show exactly one line changed (the BOM-prefixed H1 heading) with no other content difference. I expect python verify.py to still pass. I expect this NOT to touch any other file.
+
+### Action
+
+Created a temporary probe file via create_file and inspected its bytes -- confirmed no BOM, then deleted the probe file. Stripped INSTALLING.md's BOM via the established mechanism; confirmed via raw byte-length diff that exactly 3 bytes were removed. Confirmed via git diff that exactly one line changed (the BOM-prefixed H1, now BOM-free), clean 1-insertion/1-deletion diff stat. Regenerated history.md/learning.md/learning-archive.md and ran python verify.py -- passed clean.
+
+Comparing outcome to prediction: held on every point.
+
+### Reflection
+
+[!REALIZATION] With create_file confirmed BOM-safe and three files now successfully migrated with the identical byte-verified mechanism, the remaining risk in this cleanup is concentrated almost entirely in the two deliberately-deferred files (.acm/audit-trail.md, .acm/orientation.md) rather than spread across the whole remaining list. The plain-file fixes (SKILL.md files, record.py, session files) are now low-uncertainty, repetitive work with a proven-safe mechanism -- the interesting remaining decision is specifically how to handle the two high-risk files, not whether the mechanism generalizes to the rest.
+
+Named blind spot: I have not yet checked whether any of the five .acm/sessions/*.md files are still being read or relied upon by anything (the trail skill's own README was updated this session to describe them as "legacy, no longer written to" -- but "no longer written to" is not the same as "safe to modify," and I have not confirmed nothing treats their exact byte content, including the BOM, as a fingerprint or identity check).
+
+Imagined-reader pushback: "Three files in and this is starting to look like exactly the batch sweep you said you wouldn't do, just spread across several iterations instead of one -- what's actually different?" The difference is auditability, not speed: each file gets its own prediction, its own byte-diff verification, its own commit, and its own trail entry, so a reader can independently confirm each individual claim rather than trusting one aggregate claim about many files at once. The pace is a side effect of the mechanism being simple and now well-rehearsed, not evidence that the verification discipline has quietly relaxed -- each entry still names exactly one file and verifies it end to end before moving to the next.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED -- fifth entry today in the same "silent scope/encoding gap" pattern family (PRINCIPLES.md, ACM section 4, POSITION.md/QUICKSTART.md, verify.py's BOM, now INSTALLING.md's BOM). Per the two prior entries, the governing-variable diagnosis for this pattern (no single canonical file-scope list in verify.py) already stands and is unchanged by this entry -- this is a continuation of executing an already-agreed sequence, not a new instance of the pattern requiring fresh diagnosis.
+- *About to declare silence:* not fired -- this run made a change.
+- *Contradicts prior [!REALIZATION]:* not fired -- directly continues the sequencing plan.
+- *Operator explicitly asked:* not fired.
+
+**Across-trail macro-Hansei**
+
+[!REALIZATION] Continuing to fire the recurring-finding-class trigger on every file-by-file BOM fix, while correct per the letter of the rule, is starting to produce repetitive trail entries whose macro-Hansei content is identical to the last one ("no new diagnosis, continuation of agreed plan"). This is itself worth naming as a pattern: the trigger was designed to catch *drift* across a recurring finding-class, but a deliberately-sequenced, already-diagnosed cleanup (like this BOM migration) will keep firing it every time with nothing new to say. That is not a flaw in this entry's evidence -- it is the honest, correct evaluation -- but it suggests the *next* time this trigger fires with "same diagnosis as last entry," the macro-Hansei content itself could be a single-sentence pointer to the entry where the diagnosis was actually made, rather than re-stating the reasoning. Not changing the format now (that would be a new mid-migration process change, and this entry is not the place for it); naming it as a candidate for the next dedicated verify.py/trail process discussion instead.
+
+### Candidate Next Moves
+
+1. **Fix the next live file's BOM** (one of orient/SKILL.md, probe/SKILL.md, trail/SKILL.md, or harness/tools/record.py), continuing the same sequence -- record.py is worth prioritizing since, like verify.py, it is core tooling rather than documentation.
+2. **Check whether anything treats the .acm/sessions/*.md files' exact byte content (including their BOM) as an identity/fingerprint check** before modifying them -- named blind spot above, should be resolved before those five files are touched.
+3. **Once several more files are fixed, reconsider whether the macro-Hansei repetition noted above warrants a lighter-weight format for "same diagnosis, no new evidence" trigger firings** -- named as a process question, not to be decided mid-migration.
+4. **Audit STALE_PATH_DOCS and ACM_SCOPE_TRAVERSAL_FILES for the same silent-exclusion pattern**, still open from two entries ago.
+5. Settle whether a target-agnostic formulation of "self-targeting should surface reasoning-capability gaps" is even coherent -- still carried, not yet done.

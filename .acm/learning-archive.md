@@ -925,6 +925,18 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** :* not fired.
 
+## 2026-06-04 — improve-destination-named-boundary-symmetric
+
+**[!REALIZATION]** The Destination -> Improve -> Retrospect loop is the spine of the skill suite, and the named-boundary discipline now runs the full length of it. This was not visible from any single skill in isolation; it became visible only when the rule had been applied to all three. Architectural realization: when a structural rule is promoted from a target, the right next question is whether the rule has a natural domain larger than the originating skill. For the named-boundary rule, that domain is "any skill that produces a stopping signal" (silence, convergence, done). The three skills that produce stopping signals now share the discipline; skills that produce other kinds of artifacts (probes, trails, intent) do not need it.
+
+## 2026-06-22 — acm-parent-scope-traversal-propagated
+
+**[!REALIZATION]** :* not fired — extends entry 152’s realization.
+
+## 2026-06-23 — retrospect-to-orient-rename
+
+**[!REALIZATION]** :* not fired.
+
 ---
 
-**230 markers — 210 realisations, 20 reversals**
+**233 markers — 213 realisations, 20 reversals**
