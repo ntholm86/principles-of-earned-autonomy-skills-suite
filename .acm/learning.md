@@ -5,7 +5,11 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 202 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
+Showing the most recent 60 markers. 155 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
+
+## 2026-08-01 — orient-post-acm4-closure
+
+**[!REALIZATION]** The suite now has a working, repeatedly-exercised example of exactly the capability the destination's own Learning section named as underdeveloped: the ACM section 4 arc shows a realization (2026-06-22) being rediscovered as still-open, acted on across two entries, cross-checked against its own duplication risk, and converted into a mechanical guarantee rather than a hope that a future run reads the trail correctly. The open question is whether the same discipline transfers to the suite's older, less mechanical backlog items -- text-consistency fixes are a much easier target for this pattern than empirical replication or mandate-gate conformance would be.
 
 ## 2026-08-01 — orient-zero-new-arc
 
@@ -233,20 +237,16 @@ Showing the most recent 60 markers. 202 older marker(s) are in `.acm/learning-ar
 
 ## 2026-08-01 — exclude-trigger-label-references-from-learning-markers
 
-**[!REALIZATION]** ** :* not fired` were synthetic parser output, not actual conclusions, contaminating the compact memory every future run reads.
-
-## 2026-08-01 — exclude-trigger-label-references-from-learning-markers
-
-**[!REALIZATION]** :* ...` appears 75 times in the audit trail, and the same regex classified its literal reference as a realization. The generated learning surface visibly contained the resulting false entries. The discriminating check was to exclude only the exact trigger-label context, regenerate, and verify both that synthetic entries disappeared and that integrity checks still passed.
-
-## 2026-08-01 — exclude-trigger-label-references-from-learning-markers
-
-**[!REALIZATION]** ** :*` lines remained in learning.md; the archive count fell from 286 to 198 markers; `verify.py` passed. The prediction held.
-
-## 2026-08-01 — exclude-trigger-label-references-from-learning-markers
-
 **[!REALIZATION]** The most-read memory artifact was mechanically fresh yet semantically contaminated by its own Trail template. This is concrete evidence for the destination's model-capability/fidelity concern: structured artifacts reduce error only when their parser distinguishes a claim from a reference to the syntax of a claim.
+
+## 2026-08-01 — generalize-learning-marker-parser-from-context-exclusion-to-assertion-grammar
+
+**[!REALIZATION]** The prior fix demonstrated exactly why expanding exception lists is the wrong abstraction for semantic parsing: it removed the dominant false-positive class while its own explanation immediately created another. Assertion boundaries generalize; phrase exclusions do not.
+
+## 2026-08-01 — generalize-learning-marker-parser-from-context-exclusion-to-assertion-grammar
+
+**[!REVERSAL]** Reversed v4.25.0's context-specific `TRIGGER_REALIZATION_REFERENCE` strategy after its own explanatory entry produced three new fake realizations. Replaced it with left-boundary assertion grammar and a double-quoted-example guard. The seven-case matrix passed. Full regeneration reduced the archive from 198 to 153 markers (45 more references removed), preserved the eight inspected genuine inline assertions, and `verify.py` passed. Prediction held.
 
 ---
 
-**60 markers — 59 realisations, 1 reversals**
+**60 markers — 58 realisations, 2 reversals**

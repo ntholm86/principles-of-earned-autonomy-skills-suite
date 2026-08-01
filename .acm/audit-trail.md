@@ -10497,3 +10497,57 @@ Model claim: compact memory quality depends on semantic filtering, not merely fr
 ### Candidate Next Moves
 
 1. During a future run, inspect whether other marker-syntax references still enter learning.md; redesign parsing only if a second semantic false-positive class appears.
+
+## 2026-08-01 - generalize-learning-marker-parser-from-context-exclusion-to-assertion-grammar
+
+- target: harness/tools/record.py learning-marker parser
+- operator: maintainer (Nils Holmager)
+- agent: GitHub Copilot
+- skill: improve
+- outcome: replaced v4.25.0's narrow trigger-label exclusion with a general assertion grammar after the prior fix's own trail entry falsified it
+- delta: record.py marker grammar corrected; CHANGELOG.md v4.25.1; learning artifacts regenerated
+
+### Interpretation of the ask
+
+The operator's second bare "continue" requested another autonomous self-targeting pass. Reading the newly cleaned learning surface exposed three fresh fake realizations generated from the previous entry's prose references to marker syntax. The task became correcting the parser model, not finding an unrelated next item.
+
+### Examination
+
+The v4.25.0 hypothesis was too narrow: excluding one known Trail label removed 88 false markers, but any prose reference followed by whitespace still matched the permissive regex. Inspection of all 365 marker-bearing trail lines showed a stable distinction. Genuine assertions begin a line/list item or follow a completed sentence, optionally use historical Markdown wrappers, and then provide asserted text after whitespace. References occur inside prose, punctuation, code spans, or quoted examples. A comparison against the full trail retained seven genuine inline realizations and one inline reversal while rejecting the residual reference classes.
+
+### Decision
+
+[!DECISION] Replace the context-specific exclusion with an assertion grammar plus quoted-example guard.
+Rationale: semantic role is encoded by the marker's boundary, not by an expanding blacklist of places references happen to occur.
+Alternative rejected: add exclusions for the three new phrases - rejected because every future explanation could invent another phrase and repeat the defect.
+Alternative rejected: require markers only at line start - rejected because eight genuine historical inline assertions would be lost.
+Precedent check: the earlier marker-integrity entry warned that broad style enforcement produced false positives and preserved inline markers. The new grammar honors both facts: it accepts evidenced assertion forms and rejects syntax discussion without rewriting history.
+
+### Prediction
+
+A focused matrix will distinguish canonical, wrapped, inline, trigger-label, prose-reference, punctuation-reference, and quoted-example cases; full regeneration will retain genuine inline claims, remove additional false markers, and keep `verify.py` green.
+
+### Action
+
+[!REVERSAL] Reversed v4.25.0's context-specific `TRIGGER_REALIZATION_REFERENCE` strategy after its own explanatory entry produced three new fake realizations. Replaced it with left-boundary assertion grammar and a double-quoted-example guard. The seven-case matrix passed. Full regeneration reduced the archive from 198 to 153 markers (45 more references removed), preserved the eight inspected genuine inline assertions, and `verify.py` passed. Prediction held.
+
+### Reflection
+
+Model claim: marker syntax can serve as compact memory only when assertion identity is structural; permissive substring extraction converts discussion about knowledge into knowledge. Blind spot: unmatched single-quoted examples are not specially detected, though none appeared as false assertions in the full-trail comparison. An informed reader could argue for a Markdown parser; current evidence supports the smaller grammar because all observed valid and invalid historical forms separate cleanly under it.
+
+[!REALIZATION] The prior fix demonstrated exactly why expanding exception lists is the wrong abstraction for semantic parsing: it removed the dominant false-positive class while its own explanation immediately created another. Assertion boundaries generalize; phrase exclusions do not.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED -- two consecutive runs addressed marker-reference false positives; the second falsified the first fix's abstraction.
+- *About to declare silence:* not fired -- a correction was made.
+- *Contradicts prior [!REALIZATION]:* FIRED -- v4.25.0 claimed the narrow exclusion was sufficient; this entry shows it was not and marks the reversal explicitly.
+- *Operator explicitly asked:* not fired -- "continue" delegated direction selection.
+
+**Across-trail macro-Hansei**
+
+The two-entry arc moved from symptom exclusion to semantic boundary. This is double-loop correction at parser scale: the failed governing assumption was that false positives were a finite list of contexts; the replacement assumption is that true markers have an identifiable assertion grammar. The archive-count reductions (286 -> 198 -> 153) make the difference measurable rather than rhetorical.
+
+### Candidate Next Moves
+
+1. Let the corrected learning surface drive the next fresh-model self-targeting run; do not continue parser work unless another concrete false-positive class appears.

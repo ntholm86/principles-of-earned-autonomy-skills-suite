@@ -48,10 +48,9 @@ LOG = ROOT / ".acm" / "audit-trail.md"
 
 ENTRY_HEADING = re.compile(r"^##\s+(\d{4}-\d{2}-\d{2})\s+[\u2014-]\s+(.+?)\s*$")
 META_FIELD = re.compile(r"^-\s+(target|outcome|delta):\s*(.+)$")
-MARKER = re.compile(r"\[!(DECISION|REVERSAL|REALIZATION)\]\s*(.+?)\s*$")
-# The Trail trigger label cites a realization marker; it is not one.
-TRIGGER_REALIZATION_REFERENCE = re.compile(
-    r"^\s*-\s+\*Contradicts prior `?\[!REALIZATION\]`?:\*"
+MARKER = re.compile(
+    r"(?:^\s*(?:[-*]\s+|\d+\.\s+)?|[.!?][ \t]+)"
+    r"(?:\*\*`?)?\[!(DECISION|REVERSAL|REALIZATION)\](?:`?\*\*)?[ \t]+(.+?)\s*$"
 )
 
 # learning.md is read at the start of every run (improve/orient/intent step 1).
@@ -192,11 +191,8 @@ def _parse_entries(text: str) -> list[dict]:
             current[meta.group(1)] = meta.group(2).strip()
             continue
 
-        if TRIGGER_REALIZATION_REFERENCE.match(line):
-            continue
-
         marker = MARKER.search(line)
-        if marker:
+        if marker and line[: marker.start()].count('"') % 2 == 0:
             kind = marker.group(1).lower() + "s"
             current[kind].append(marker.group(2).strip())
 

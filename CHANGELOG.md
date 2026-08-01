@@ -1,5 +1,10 @@
 # Changelog
 
+## v4.25.1 — 2026-08-01
+
+### Fixed
+- **Correction: marker parsing now recognizes assertions by grammar instead of excluding one known false-positive context.** v4.25.0 excluded Trail's `Contradicts prior [!REALIZATION]` label, but its own explanatory trail entry immediately generated three new fake realizations by quoting marker syntax in prose. The parser now accepts a marker only when it begins a line/list item or follows a completed sentence, requires whitespace before the asserted text, supports the historical Markdown-wrapped forms, and rejects double-quoted examples. A seven-case executable matrix passes; full regeneration preserved genuine inline assertions and reduced the archive from 198 to 153 markers by removing 45 additional prose references.
+
 ## v4.25.0 — 2026-08-01
 
 ### Fixed
