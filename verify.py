@@ -59,6 +59,7 @@ REQUIRED_FILES = [
     "destination/SKILL.md",
     "orient/SKILL.md",
     ".acm/audit-trail.md",
+    "PRINCIPLES.md",
 ]
 
 ENTRY_HEADING = re.compile(r"^##\s+(\d{4}-\d{2}-\d{2})\s+[\u2014-]\s+(.+?)\s*$")
@@ -220,8 +221,14 @@ def check_no_mojibake() -> list[str]:
 
 def check_required_markdown_docs() -> list[str]:
     failures: list[str] = []
-    # PRINCIPLES.md is a verbatim external copy; its relative links point to its home repo
-    markdown_files = [rel for rel in REQUIRED_FILES if rel.endswith(".md") and rel not in (".acm/audit-trail.md", "PRINCIPLES.md")]
+    # PRINCIPLES.md is a verbatim external copy whose relative links point to
+    # its home repo (the manifesto), so its links are not resolved locally --
+    # but it still gets the duplicate-H1 check below. It is the exact file
+    # that suffered a real duplicate-H1 splice defect (2026-04-23,
+    # v3-principles-copy-repair); excluding it from this function entirely
+    # would silently leave that defect class unchecked for the one file it
+    # actually happened to.
+    markdown_files = [rel for rel in REQUIRED_FILES if rel.endswith(".md") and rel != ".acm/audit-trail.md"]
     for rel in markdown_files:
         path = ROOT / rel
         if not path.exists():
@@ -237,6 +244,9 @@ def check_required_markdown_docs() -> list[str]:
         analysis_text = _strip_fenced_code_blocks(text)
         if len(H1_HEADING.findall(analysis_text)) > 1:
             failures.append(f"multiple H1 headings in {rel}")
+
+        if rel == "PRINCIPLES.md":
+            continue  # links intentionally point to the external manifesto repo
 
         for raw_target in MARKDOWN_LINK.findall(analysis_text):
             target = raw_target.strip()

@@ -167,6 +167,7 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 160 | 2026-07-31 | improve-intent-acm4-traversal-fix | added the ACM section 4 parent-scope-traversal paragraph to intent/SKILL.md; gap closed | intent/SKILL.md 1.2.1 -> 1.3.0; CHANGELOG.md v4.4.0 added |
 | ▸ 161 | 2026-07-31 | improve-destination-acm4-traversal-fix | added the ACM section 4 parent-scope-traversal paragraph to destination/SKILL.md; probe and trail confirmed correctly exempt | destination/SKILL.md 2.1.0 -> 2.2.0; CHANGELOG.md v4.5.0 added |
 | ▸ 162 | 2026-08-01 | acm4-sweep-complete-plus-consistency-enforcement | ACM section 4 traversal sweep confirmed complete across all 6 live skills; a real, already-manifested wording drift found and fixed in orient/SKILL.md; a new verify.py check added to catch recurrence | orient/SKILL.md 2.0.0 -> 2.0.1; verify.py gains check 15 (check_acm_scope_traversal_consistency); CHANGELOG.md v4.6.0 added |
+| ▸ 163 | 2026-08-01 | verify-overburden-audit-principles-h1-gap-fix | examined verify.py for overburden per the prior entry's candidate; found no genuine overburden, but found a real gap -- PRINCIPLES.md was silently excluded from the duplicate-H1 check that exists specifically because of a real PRINCIPLES.md defect; fixed | verify.py REQUIRED_FILES gains PRINCIPLES.md; check_required_markdown_docs() restructured so the H1 check still applies to it; CHANGELOG.md v4.7.0 added |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -781,4 +782,8 @@ Do not edit by hand — re-run the command to refresh.
 
 - **decided:** One coherent change, two parts, executed together per this repo's own operational rule ("every spec change must be paired with enforcement in the same session"): (a) harmonize orient/SKILL.md's stop-condition wording to match the other three files, and (b) add a verify.py check that fails if any of the four files' stop-condition clause drifts from the canonical wording going forward.
 
-**162 runs total — 148 with changes, 14 silence**
+### Run 163 — 2026-08-01 — verify-overburden-audit-principles-h1-gap-fix
+
+- **decided:** Add `PRINCIPLES.md` to `REQUIRED_FILES` and restructure `check_required_markdown_docs()` so the duplicate-H1 check still runs on it, while only the broken-local-link check is skipped for it (its links intentionally point to the external manifesto repo, not local paths -- the original, correct half of the old exclusion's intent).
+
+**163 runs total — 149 with changes, 14 silence**

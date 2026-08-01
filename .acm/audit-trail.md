@@ -8428,3 +8428,65 @@ Someone who knows this target better might push back on: whether adding a fiftee
 1. Consider whether verify.py itself (now at 15 checks, started as "pure-Python, zero dependencies... mechanically simple") warrants the same overburden scrutiny this run applied to the ACM section 4 paragraph -- named as a blind spot above, not examined.
 2. The suite's older backlog items (CITATION.cff/`.zenodo.json` currency, B1 cross-family replication, mtime-based freshness on fresh clone, whole-suite ACM mandate-gate conformance) remain untouched across this entire ACM section 4 arc (2026-06-22 through 2026-08-01) -- if the operator wants to redirect away from ACM-conformance work, these are the next-oldest named gaps.
 3. This is a natural point to run Orient again: the ACM section 4 arc that started with the 2026-07-31 orient run is now closed, and a fresh arc-read could confirm whether the loop's attention should move to one of the item-2 backlog entries or stay on structural/mechanical hardening (the verify.py-overburden question).
+
+## 2026-08-01 - verify-overburden-audit-principles-h1-gap-fix
+
+- target: skills repo (this repo) -- verify.py
+- operator: maintainer (Nils Holmager)
+- agent: Claude Sonnet 4.5 (GitHub Copilot)
+- skill: improve
+- outcome: examined verify.py for overburden per the prior entry's candidate; found no genuine overburden, but found a real gap -- PRINCIPLES.md was silently excluded from the duplicate-H1 check that exists specifically because of a real PRINCIPLES.md defect; fixed
+- delta: verify.py REQUIRED_FILES gains PRINCIPLES.md; check_required_markdown_docs() restructured so the H1 check still applies to it; CHANGELOG.md v4.7.0 added
+
+### Interpretation of the ask
+
+Operator again gave a bare "run the improve skill." I picked up candidate next move #1 from the prior entry: whether verify.py itself, now at 15 checks, warrants the same overburden scrutiny it was just used to apply elsewhere.
+
+### Examination
+
+Read verify.py in full (all ~640 lines). Applied the Overburden lens directly: is this one component doing too much? Conclusion: no, in the Kaizen sense -- all 15 checks serve one cohesive purpose (trail/doc mechanical integrity), the same way a linter has many rules under one job. This is not several unrelated responsibilities bolted together; it is one responsibility applied to many facets. Overburden argument rejected.
+
+Applying the Inconsistency lens instead while reading: the module docstring numbers checks 1-15 in one order; main()'s actual call order (required_files, log_format, no_mojibake, required_markdown_docs, stale_path_tokens, acm_scope_traversal_consistency, session_files, transcript_references, session_fidelity_structure, trigger_evaluation, reversal_honesty_gate, derived_artifact_freshness) does not match that numbering. Minor, cosmetic, noted but not acted on this run (see candidate next moves).
+
+Applying the Waste lens: found a real dead-code fragment. `check_required_markdown_docs()`'s file-list comprehension excluded `"PRINCIPLES.md"` from `REQUIRED_FILES` with a comment explaining why -- but `PRINCIPLES.md` was never in `REQUIRED_FILES` to begin with, so the exclusion was a no-op. The practical effect: `PRINCIPLES.md` was never analyzed by this function at all -- not for duplicate H1s, not for broken links. This matters because `PRINCIPLES.md` is the exact file that suffered a real duplicate-H1 splice defect on 2026-04-23 (entry `v3-principles-copy-repair`, found by a fresh-session GPT-5.4 evaluator). The mechanical check that exists specifically because of that historical defect has not applied to the file it was born from, for some unknown span of this repo's history.
+
+### Decision
+
+[!DECISION] Add `PRINCIPLES.md` to `REQUIRED_FILES` and restructure `check_required_markdown_docs()` so the duplicate-H1 check still runs on it, while only the broken-local-link check is skipped for it (its links intentionally point to the external manifesto repo, not local paths -- the original, correct half of the old exclusion's intent).
+
+Rejected alternative: leave `PRINCIPLES.md` excluded entirely, since its links are external. Rejected because the link-check and the H1-check are two independent concerns bundled in one loop; excluding a file from one does not require excluding it from the other, and the H1 check is the one this file's own history says matters most.
+
+Rejected alternative: act on the docstring/main() ordering inconsistency in the same run. Rejected per the no-batching constraint -- it is real but purely cosmetic and lower-leverage than the PRINCIPLES.md gap; offered as a candidate next move instead.
+
+### Prediction
+
+I will add PRINCIPLES.md to REQUIRED_FILES and adjust one function. I expect verify.py to still pass (PRINCIPLES.md currently has exactly one H1). I expect a synthetic test with a spliced second H1 appended to PRINCIPLES.md's text to now be caught by the check, where before this fix it would not have been counted at all.
+
+### Action
+
+Added `"PRINCIPLES.md"` to `REQUIRED_FILES`. Restructured `check_required_markdown_docs()`: the file-list comprehension now only excludes `.acm/audit-trail.md`; the duplicate-H1 check runs unconditionally for every file in the list; the link-resolution loop is skipped specifically (and only) for `rel == "PRINCIPLES.md"`, with the "why" explained inline. Added CHANGELOG.md v4.7.0 entry.
+
+Verification: `python verify.py` -- passed. Direct Python sanity check (positive case): confirmed `PRINCIPLES.md` has exactly one H1 today via the same `H1_HEADING`/`_strip_fenced_code_blocks` logic verify.py uses. Negative case: appended a synthetic second `# ...` heading to a copy of PRINCIPLES.md's text in memory (not written to disk) and confirmed the H1 count became 2 -- i.e. the check would now fire on PRINCIPLES.md, which it structurally could not have done before this fix regardless of the file's actual content.
+
+Comparing outcome to prediction: held on both counts.
+
+### Reflection
+
+[!REALIZATION] The overburden question from the prior entry's candidate list turned out to be the wrong frame for what was actually there -- not "is this tool doing too much," but "does this tool's own dead code silently exempt the one file most documented as having needed this exact check." Reading the whole file carefully, rather than answering the named question abstractly, is what surfaced the real defect; the named candidate (overburden) was answered "no" almost immediately, and the more valuable finding came from continuing to read past that answer rather than stopping there.
+
+Named blind spot: I did not check whether any other REQUIRED_FILES-adjacent list (STALE_PATH_DOCS, ACM_SCOPE_TRAVERSAL_FILES) has a similar silent-exclusion or dead-code pattern for some other file. This run checked only the specific PRINCIPLES.md thread that surfaced during reading; a systematic audit of every list-comprehension exclusion clause in verify.py has not been done.
+
+Someone who knows this target better might push back on: whether PRINCIPLES.md should even be a "required file" that must exist at all -- it is described elsewhere in the repo as "a copy" of the manifesto's canonical version, and one could argue verify.py should instead check that it stays byte-identical (or semantically identical) to its source, rather than merely checking it internally has one H1. This run only closed the gap that existed (H1 check applies), not a larger question about whether the check itself is the right one for a copied external document.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired -- this is a distinct finding-class (a dead-code exclusion silently disabling a historically-motivated check) from the ACM section 4 traversal thread that closed in the prior entry.
+- *About to declare silence:* not fired -- this run made a change, after the overburden question itself resolved to "no action" and a different finding took its place.
+- *Contradicts prior [!REALIZATION]:* not fired -- extends the general pattern (already recorded) that specific historical defects deserve mechanical, not just narrative, protection.
+- *Operator explicitly asked:* not fired -- operator gave a bare "run the improve skill"; the topic came from the loop's own prior candidate list.
+
+### Candidate Next Moves
+
+1. Cosmetic: reorder verify.py's module-docstring check numbering to match main()'s actual call order, or reorder main()'s calls to match the docstring -- either direction resolves the inconsistency; not actioned this run (low leverage, batching discipline).
+2. Audit STALE_PATH_DOCS and ACM_SCOPE_TRAVERSAL_FILES for the same silent-exclusion/dead-code pattern just found in REQUIRED_FILES' consumer -- not yet done systematically.
+3. The suite's older backlog items (CITATION.cff/.zenodo.json currency, B1 cross-family replication, mtime-based freshness on fresh clone, whole-suite ACM mandate-gate conformance) remain untouched since at least 2026-06-21 -- still the largest available redirect if the operator wants to move off mechanical-hardening work.

@@ -1,5 +1,10 @@
 # Changelog
 
+## v4.7.0 — 2026-08-01
+
+### Fixed
+- **`PRINCIPLES.md` was silently excluded from `verify.py`'s duplicate-H1-heading check (check 7).** `PRINCIPLES.md` was never added to `REQUIRED_FILES`, so `check_required_markdown_docs()` never analyzed it at all — despite a comment inside that function explicitly (and vacuously) excluding it from a list it was never part of. This meant the exact check born from `PRINCIPLES.md`'s own 2026-04-23 duplicate-H1 splice defect (`v3-principles-copy-repair`) did not apply to `PRINCIPLES.md` itself. Added `PRINCIPLES.md` to `REQUIRED_FILES`; `check_required_markdown_docs()` now runs the duplicate-H1 check on it and only skips its broken-local-link check (its links intentionally point to the external manifesto repo, not local paths). Verified both that `PRINCIPLES.md` currently has exactly one H1 (passes) and that a synthetically spliced second H1 would now be caught (previously would not have been).
+
 ## v4.6.0 — 2026-08-01
 
 ### Changed
