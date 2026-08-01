@@ -1,6 +1,6 @@
 ---
 name: improve
-version: 3.11.0
+version: 3.12.0
 description: 'The improvement skill. Understand the ask, examine the target, challenge the first read, decide on one change (or argue for redesign, or declare silence), act, reflect on the target, and record. Combines incremental refinement, structural rethinking, and reflection on the target itself. USE WHEN: improve, audit, review, fix, refactor, redesign, evaluate, what would make this better, am I missing something.'
 argument-hint: 'The target to improve, and optionally the concern (correctness, simplicity, performance, etc.)'
 ---
@@ -175,6 +175,8 @@ The format spec is in [trail/SKILL.md](../trail/SKILL.md). The script `<skills>/
 ## Self-targeting
 
 This skill must be runnable on itself. If running Improve on `improve/SKILL.md` and `probe/SKILL.md` produces nothing actionable, that is evidence the skills are simple enough. If it produces a list of fixes, do them. If it produces an argument for redesign, surface it.
+
+**When the target is this suite itself, "nothing actionable" and "a list of textual fixes" are not the only two legitimate outcomes.** Per the destination's 2026-08-01 note, a self-targeting run should also ask explicitly: is the actual highest-leverage gap here in the agent's own reasoning or interpretive capability — how well it decompresses intent, how well it challenges its own governing variables (step 6b), how well it carries prior learning forward (`.acm/learning.md`) rather than re-deriving it — and not only in the wording or structure of the skill files themselves? A self-targeting run that only ever finds mechanical or textual inconsistencies has not yet derived what the destination names as a necessary instrument toward the central question. A run that finds and fixes a genuine reasoning-capability gap — a missing self-check, an under-used memory artifact, a place the loop's own examination is structurally shallow — has. Name which of the two happened in the reflection step; do not let a textual fix pass as a reasoning-capability one, or vice versa.
 
 ## What this skill does not do
 

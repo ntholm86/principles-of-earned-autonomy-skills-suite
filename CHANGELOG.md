@@ -1,5 +1,11 @@
 # Changelog
 
+## v4.9.0 — 2026-08-01
+
+### Changed
+- **Destination (`.acm/destination.md`) gains a new note naming three gaps: genericity as an explicit self-claim, self-targeting deriving reasoning-capability improvement as a necessary instrument (not just architectural tidiness), and token/resource efficiency as a real constraint.** Operator-authored, per this suite's own rule that destination.md is never written by a skill. Not itself a skill change; recorded here because the improve change below is a direct response to it.
+- **`improve/SKILL.md`'s Self-targeting section now names reasoning-capability gaps as a legitimate, distinct outcome from textual/mechanical fixes (3.11.0 → 3.12.0).** Previously the section only distinguished "nothing actionable" from "a list of fixes" or "an argument for redesign" — all three outcomes are artifact-level. Added an explicit self-check for self-targeting runs: is the highest-leverage gap actually in the agent's own reasoning/interpretive capability (intent decompression, governing-variable challenge, learning carry-forward) rather than in the skill files' wording? This is the first improve iteration to act directly on the destination note above, testing whether the loop can derive a reasoning-capability gap in itself rather than only a textual one.
+
 ## v4.8.0 — 2026-08-01
 
 ### Changed (BREAKING — removes a prior mandate)

@@ -8663,3 +8663,70 @@ Imagined-reader pushback: "You're removing a mandate that took real effort to es
 1. Spot-check whether any of the operator's 8 fleet repos (from the earlier fleet-sweep entries) have tooling or documentation that assumes fresh .acm/sessions/ files will keep appearing -- named blind spot above, not yet checked.
 2. Consider whether destination/SKILL.md and intent/SKILL.md's "if present" sessions/ reads should be updated to also mention the independent-capture sources (harness ledger, host product history) as an alternative signal source now that sessions/ will stop accumulating new files -- deferred this run to keep the change scoped to trail/SKILL.md alone.
 3. The suite's older backlog (CITATION.cff/`.zenodo.json` currency, B1 replication, mtime freshness, whole-suite ACM mandate gate) remains untouched and is still the largest available redirect if the operator wants to move off trail-infrastructure work.
+
+## 2026-08-01 - improve-self-targeting-reasoning-capability-instrument
+
+- target: skills repo (this repo) -- improve/SKILL.md, .acm/destination.md
+- operator: maintainer (Nils Holmager)
+- agent: Claude Sonnet 4.5 (GitHub Copilot)
+- skill: improve
+- outcome: added an explicit self-check to improve/SKILL.md's Self-targeting section distinguishing reasoning-capability gaps from textual/mechanical ones; first direct application of the newly-drafted destination note
+- delta: improve/SKILL.md 3.11.0 -> 3.12.0; CHANGELOG.md v4.9.0 added; .acm/destination.md's uncommitted 2026-08-01 note now committed alongside this change
+
+### Interpretation of the ask
+
+Operator: "Okay now run the improve skill on the skills repo." This followed directly from the immediately prior turn, where I helped draft a new destination note (2026-08-01) naming three gaps: (1) genericity as an explicit self-claim, (2) self-targeting should derive that improving the agent's own reasoning capability is a necessary instrument, not just architectural tidiness, (3) token/resource efficiency as a real constraint. The note was left uncommitted for operator review. The operator's "run improve" with no further comment reads as approval to proceed treating that note as live input -- the same pattern already established earlier in this session (destination note -> immediately followed by an improve run treating it as active).
+
+I interpreted this as: the most direct, honest test of the note is to apply it to this very run -- not just note it as a future concern. Per the note's own item 2, a self-targeting run should be able to derive that improving the agent's own reasoning capability is one of the necessary instruments; the strongest way to honor that is to make the loop's own self-targeting examination capable of recognizing this distinction, rather than writing a promise to consider it "later."
+
+### Examination
+
+Read improve/SKILL.md's existing "Self-targeting" section in full: it distinguishes exactly two outcomes for a self-targeting run -- "nothing actionable" (evidence the skills are simple enough) or "a list of fixes" or "an argument for redesign." All three of these are artifact-level outcomes (about the skill files' wording or structure). None of them ask the agent to consider whether the actual limiting factor is its own reasoning or interpretive capability -- a category the destination note explicitly names as a legitimate, necessary target of self-targeting improvement, distinct from mechanical fixes.
+
+Cross-checked against this session's own recent history as evidence the gap is real, not hypothetical: the last several self-targeting improve iterations in this repo (ACM section 4 traversal fixes, PRINCIPLES.md H1-check gap, orient's wording harmonization) were all genuinely valuable but were all artifact-level (paragraph text, check-scope, wording consistency) -- none targeted the agent's own reasoning process itself. The one exception is the Argyris double-loop addition to step 6b (2026-07-31), which IS a reasoning-capability improvement (it gives the loop a new self-diagnostic question about governing variables) -- but nothing in the Self-targeting section names this class of outcome as legitimate or distinguishes it from the artifact-level fixes around it. The section as written would not have prompted that addition on its own; it happened because the operator directed it explicitly.
+
+### Decision
+
+[!DECISION] Extend improve/SKILL.md's Self-targeting section with an explicit self-check: when self-targeting, ask whether the highest-leverage gap is in the agent's own reasoning/interpretive capability (intent decompression, governing-variable challenge, learning carry-forward) rather than only in the skill files' wording or structure. Require the reflection step to name which of the two happened, so a textual fix cannot pass as a reasoning-capability one or vice versa.
+
+Rejected alternative: add this as a new lens in step 2 (Examine) alongside Purpose/Inconsistency/Overburden/Waste, applicable to every target. Rejected because the distinction (reasoning-capability vs. artifact-level gap) is only coherent when the target IS the reasoning agent's own instruction set -- for an external target, there is no equivalent "is the gap in my own reasoning" question, since the agent's reasoning is not the artifact being examined. Keeping it scoped to Self-targeting avoids making step 2 more checklist-like for the 99% of targets that are not this suite.
+
+Rejected alternative: also address the efficiency gap (destination note item 3) in this same iteration. Rejected per the no-batching constraint -- reasoning-capability and efficiency are two distinct concerns the destination note names separately; addressing both in one diff would blur which change was motivated by which gap. Efficiency is offered as a candidate next move instead.
+
+Rejected alternative: attempt to find and fix an actual instance of a reasoning-capability gap elsewhere in the suite in this same run, in addition to this meta-instruction. Considered seriously -- the strongest form of "deriving" the destination note would be doing it, not writing instructions for a future self to do it. Decided against combining both in one iteration (no-batching); the meta-instruction is itself the single highest-leverage change for this run, and finding a second concrete instance is offered as the next candidate move so it gets its own dedicated examination rather than being squeezed in here.
+
+### Prediction
+
+I will add one self-check paragraph to improve/SKILL.md's Self-targeting section. I expect a future self-targeting run, when it reaches this section, to explicitly ask whether its finding is reasoning-capability or artifact-level, and to name which one honestly in its reflection. I expect this NOT to change step 2's lenses for any non-self target, and NOT to itself constitute a reasoning-capability fix by the very standard it sets -- see the honest self-assessment in Reflection below.
+
+### Action
+
+Edited improve/SKILL.md's "## Self-targeting" section: added one paragraph naming the destination note, giving a concrete self-check (three named sub-capabilities: intent decompression, governing-variable challenge, learning carry-forward), and requiring the reflection step to name which class of outcome occurred. Bumped improve/SKILL.md 3.11.0 -> 3.12.0. Added CHANGELOG.md v4.9.0 entry documenting both the destination.md note (operator-authored, not a skill change) and this improve response to it. Ran python verify.py after regenerating derived artifacts -- passed clean on the first attempt.
+
+Comparing outcome to prediction: held on the mechanical points (verify passed, no other lenses touched). The harder, honest question -- does this change itself count as a reasoning-capability fix or is it "just text" -- is addressed directly in Reflection below rather than glossed over in this section.
+
+### Reflection
+
+[!REALIZATION] Applying the new self-check to this very run, honestly: this change is borderline by its own standard, and I want to name that rather than claim an easy win. Adding a new self-diagnostic question to a skill file is, mechanically, a textual edit to a markdown file -- indistinguishable in form from the ACM section 4 paragraph additions or the PRINCIPLES.md H1-check fix from earlier this session. What makes it different, if anything, is that its *effect* is on the agent's own future reasoning process (what questions it asks itself) rather than on the target artifact's internal consistency. I judge this as a genuine (if modest) reasoning-capability instance rather than an artifact-level one, on the same basis the 2026-07-31 Argyris double-loop addition to step 6b was judged one: both change what question the loop asks itself, not what the skill files say about something else. But I hold this loosely -- a future run, or the operator, may reasonably judge this was still "just text" and that a genuine reasoning-capability fix requires actually finding and correcting a live instance of shallow reasoning, not adding a prompt that asks a future run to look for one. Recording both readings rather than picking the flattering one.
+
+Named blind spot: I did not attempt, in this same run, to find an actual live instance of a reasoning-capability gap elsewhere in the suite (e.g., in Intent's decompression logic, or in how thoroughly learning.md's realizations are actually incorporated versus merely cited). The meta-instruction addresses the *general* case; whether it produces a genuine instance on a future run is untested. This is the same "unproven on its first natural opportunity" pattern this repo's own history shows for other new mechanisms (e.g., the Vision skill's first natural-use gap named in a much earlier entry in this trail).
+
+Imagined-reader pushback: "You wrote a paragraph telling a future agent to ask itself a question. That is not 'improving the agent's own reasoning' -- that is improving the *prompt*. Real reasoning-capability improvement would look like: finding a place where the loop actually reasoned shallowly, and fixing the underlying cause, not adding one more thing to a checklist that is already fairly long." This pushback is close to my own honest self-assessment above and I do not have a fully satisfying answer to it -- only the observation that this is the same category of move as the double-loop addition already accepted in this session's arc, and that the two are either both legitimate or both suspect together.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired -- this is a new finding-class (self-targeting reasoning-vs-artifact distinction), not a repeat of a prior pattern.
+- *About to declare silence:* not fired -- this run made a change.
+- *Contradicts prior [!REALIZATION]:* not fired -- extends rather than contradicts the 2026-07-31 double-loop addition and the destination.md's own "Learning... most underdeveloped" claim.
+- *Operator explicitly asked:* FIRED -- operator directly asked to run improve immediately following a destination-drafting session explicitly about this gap.
+
+**Across-trail macro-Hansei:**
+
+[!REALIZATION] This entry is a direct test of whether a destination note, freshly written, can be turned into a loop behavior change in the very next iteration -- not just cited as context for some future run. That much held: the note existed, and this run built on it within the same session. What remains genuinely unproven is the harder claim underneath it: whether the loop, self-targeting, can derive a reasoning-capability gap on its own initiative, without the destination note having been handed to it moments before by the operator in the same conversation. This run is evidence of "the destination note is actionable," not yet evidence of "self-targeting reliably surfaces reasoning-capability gaps unprompted." That distinction should be tested by a future self-targeting run that has NOT just had this exact gap named to it in the same session -- ideally a genuinely fresh session.
+
+### Candidate Next Moves
+
+1. Attempt, in a future iteration, to find and fix an actual live instance of a reasoning-capability gap in the suite (not another meta-instruction) -- e.g. examine whether Intent's decompression step or Improve's own learning.md usage has a concrete shallow-reasoning pattern, per the named blind spot above.
+2. Address destination note item 3 (token/resource efficiency) as its own dedicated iteration -- deferred this run per no-batching.
+3. Test whether the new Self-targeting self-check actually fires usefully in a genuinely fresh session (no primed context from this conversation) -- the strongest possible validation, per the macro-Hansei above.
+4. The suite's older backlog (CITATION.cff currency, B1 replication, mtime freshness, whole-suite mandate gate) remains untouched and available if the operator wants to redirect.
