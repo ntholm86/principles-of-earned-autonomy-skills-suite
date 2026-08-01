@@ -10295,3 +10295,33 @@ Since the operator-explicitly-asked trigger fired but this is a direct continuat
 1. Implement the "Purpose lens read all the way down" reframing from the immediately prior destination note (claims and citations are part of purpose) - still unimplemented, the natural next thread.
 2. Restore the OODA/pre-mortem citation dropped between v1's kaizen.md and v3's Improve - named twice now, still not fixed.
 3. Audit Improve/SKILL.md's remaining steps (1, 2, 5, 7) for the same already-present-but-uncredited pattern found in step 4 - named blind spot above, not yet done.
+
+## 2026-08-01 - merge-kaikaku-purpose-lens-threads-and-name-token-efficiency-adoption-link
+
+- target: .acm/destination.md (capture only; no skill-file implementation this entry)
+- operator: maintainer (Nils Holmager)
+- agent: GitHub Copilot (Claude Sonnet 5)
+- skill: destination + trail
+- outcome: captured a merged open thread (Purpose lens vs a distinct Kaikaku-fork for deutero-learning findings, left to Improve as one decision) and a new destination note naming token efficiency's link to adoption, using this session's own token spend as evidence
+- delta: .acm/destination.md +2 notes (this session); no SKILL.md changes
+
+[!DECISION] Capture this turn's two threads (Purpose-lens-as-home-for-the-Kaikaku-decision, and token-efficiency-tied-to-adoption) as a single short destination note, and record this as a condensed-leaning trail entry rather than a full discursive one.
+Rationale: the operator explicitly named this session's own verbosity as evidence of the efficiency gap being discussed; responding with another long note or entry would contradict the point being made in the same breath it was raised.
+Alternative rejected: defer recording entirely until the eventual Improve implementation lands - rejected because the operator explicitly asked to capture destination and trail now, and the merge-of-two-threads is itself a real decision worth a timestamped record, independent of when it gets implemented.
+Precedent check: learning.md/learning-archive.md had no prior realization connecting token efficiency to adoption specifically, or merging the Purpose-lens and Kaikaku-fork threads; nothing relevant found.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired -- new finding (efficiency-adoption link, thread merge), not a repeat.
+- *About to declare silence:* not fired -- this entry documents a capture decision, not silence.
+- *Contradicts prior [!REALIZATION]:* not fired -- extends the existing efficiency destination note rather than contradicting it.
+- *Operator explicitly asked:* FIRED -- operator said "Yes capture destination - as we should. And trail."
+
+**Across-trail macro-Hansei**
+
+None warranted: the operator-explicitly-asked trigger here is a direct capture instruction, not a request to re-derive an arc-level claim, and no other trigger fired alongside it.
+
+### Candidate Next Moves
+
+1. Run Improve to decide whether the Purpose lens or a distinct mechanism resolves the Kaikaku-vs-incremental question for deutero-learning findings - the next concrete implementation step, deliberately not done in this entry.
+2. Keep future entries in this thread as short as this one where the underlying change is small - direct application of the efficiency note just captured.

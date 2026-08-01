@@ -197,6 +197,7 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 190 | 2026-08-01 | remove-vision-md-legacy-fallback | removed .acm/vision.md legacy-fallback support entirely across all five skill files that referenced it; the fallback was explicitly scoped at introduction as transition-period-only support | destination/SKILL.md 2.2.0 -> 2.3.0; improve/SKILL.md 3.12.3 -> 3.12.4; intent/SKILL.md 1.3.0 -> 1.3.1; orient/SKILL.md 2.1.0 -> 2.1.1; trail/SKILL.md 2.4.0 -> 2.4.1; CHANGELOG.md v4.20.0 added |
 | ▸ 191 | 2026-08-01 | confirm-push-and-record-trail-completeness-check | confirmed the prior 13 commits were pushed to origin/main; answered an operator question about learning.md's mechanics; this entry closes the gap of both being unrecorded in the trail | no code change; .acm/audit-trail.md +1 entry |
 | ▸ 192 | 2026-08-01 | deutero-learning-credited-and-closed-in-orient-step-4 | step 4 now explicitly credits Argyris and Schon's deutero-learning and closes with a routing instruction mirroring step 3b's double-loop routing | orient/SKILL.md 2.1.1 -> 2.2.0; CHANGELOG.md v4.21.0 added |
+| ▸ 193 | 2026-08-01 | merge-kaikaku-purpose-lens-threads-and-name-token-efficiency-adoption-link | captured a merged open thread (Purpose lens vs a distinct Kaikaku-fork for deutero-learning findings, left to Improve as one decision) and a new destination note naming token efficiency's link to adoption, using this session's own token spend as evidence | .acm/destination.md +2 notes (this session); no SKILL.md changes |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -932,4 +933,8 @@ Do not edit by hand — re-run the command to refresh.
 
 - **decided:** Credit Orient step 4 explicitly as Argyris and Schon's deutero-learning (Organizational Learning II, 1978), and add a closing routing paragraph mirroring step 3b's governing-variable routing - rather than adding a new standalone step or skill for deutero-learning, or mirroring this in Improve/SKILL.md.
 
-**192 runs total — 178 with changes, 14 silence**
+### Run 193 — 2026-08-01 — merge-kaikaku-purpose-lens-threads-and-name-token-efficiency-adoption-link
+
+- **decided:** Capture this turn's two threads (Purpose-lens-as-home-for-the-Kaikaku-decision, and token-efficiency-tied-to-adoption) as a single short destination note, and record this as a condensed-leaning trail entry rather than a full discursive one.
+
+**193 runs total — 179 with changes, 14 silence**

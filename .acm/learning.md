@@ -5,11 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 285 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-01 — audit-learning-precedent-surfaces-position-quickstart-h1-gap-and-systemic-bom
-
-**[!REALIZATION]** :* not fired -- directly fulfills the carried-forward candidate from three prior entries rather than contradicting any of them.
+Showing the most recent 60 markers. 286 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-01 — audit-learning-precedent-surfaces-position-quickstart-h1-gap-and-systemic-bom
 
@@ -246,6 +242,10 @@ Showing the most recent 60 markers. 285 older marker(s) are in `.acm/learning-ar
 ## 2026-08-01 — deutero-learning-credited-and-closed-in-orient-step-4
 
 **[!REALIZATION]** :* not fired -- extends, rather than contradicts, the two same-session destination notes about self-referential completeness and the OODA-citation-drop finding.
+
+## 2026-08-01 — merge-kaikaku-purpose-lens-threads-and-name-token-efficiency-adoption-link
+
+**[!REALIZATION]** :* not fired -- extends the existing efficiency destination note rather than contradicting it.
 
 ---
 
