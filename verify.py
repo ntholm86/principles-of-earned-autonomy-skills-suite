@@ -82,8 +82,10 @@ STALE_TRAIL_PATH_PATTERNS = [
 STALE_PATH_DOCS = [
     "README.md",
     "INSTALLING.md",
+    "QUICKSTART.md",
     "POSITION.md",
     "PRINCIPLES.md",
+    "harness/BENCHMARKS.md",
     "intent/SKILL.md",
     "destination/SKILL.md",
     "improve/SKILL.md",

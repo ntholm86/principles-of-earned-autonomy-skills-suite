@@ -192,6 +192,7 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 185 | 2026-08-01 | clarify-history-learning-optional-per-acm-spec-conformance | clarified that history.md, learning.md, and learning-archive.md are optional derived convenience artifacts, not required for ACM conformance -- resolved via direct evidence from the authoritative agent-context-memory SPEC.md rather than a unilateral file-count decision | trail/SKILL.md 2.3.0 -> 2.4.0; CHANGELOG.md v4.18.0 added |
 | ▸ 186 | 2026-08-01 | destination-note-skillsuite-as-acm-development-site | added a destination note naming this repo's relationship to agent-context-memory's SPEC.md as bidirectional -- the skillsuite is where ACM's own gaps and needed extensions become visible in practice, not only where the spec is implemented | .acm/destination.md gains one new dated note (no other file changed) |
 | ▸ 187 | 2026-08-01 | implement-scale-gap-in-acm-spec-repo | implemented the previously-drafted Scale-gap candidate directly in agent-context-memory/SPEC.md; committed locally there, NOT pushed pending operator confirmation (public, published repo) | no change to this repo's own files; agent-context-memory SPEC.md 0.3.0 -> 0.4.0 (commit 51e951e, local only) |
+| ▸ 188 | 2026-08-01 | systematic-verifypy-audit-closes-stale-path-docs-gap | read all 12 check functions against their docstring claims in one pass; 11 correctly scoped; found and fixed one real, currently-dormant gap in STALE_PATH_DOCS | verify.py STALE_PATH_DOCS gains QUICKSTART.md and harness/BENCHMARKS.md; CHANGELOG.md v4.19.0 added |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -918,4 +919,4 @@ Do not edit by hand — re-run the command to refresh.
 - **decided:** Do NOT push the commit to agent-context-memory's remote without explicit operator confirmation. That repo is publicly published (prior entries in its own trail reference GitHub Releases and pushes to origin/main) -- pushing to shared, public history is exactly the class of action this workspace's own destination note (2026-07-29, "a class of action no accumulated reasoning quality should auto-authorize") already names as requiring explicit human ceremony every time, independent of how sound the reasoning behind the change is.
 - **decided:** Record this as a fresh entry in this repo's own trail too, closing the loop the earlier destination note opened, even though the substantive reasoning lives in agent-context-memory's own trail -- consistent with Trail's own mandate that any session producing a decision or finding gets an entry, and this repo's own candidate-next-moves list explicitly queued "draft the candidate SPEC.md addition" as the next action.
 
-**187 runs total — 173 with changes, 14 silence**
+**188 runs total — 174 with changes, 14 silence**

@@ -1,5 +1,10 @@
 # Changelog
 
+## v4.19.0 — 2026-08-01
+
+### Fixed
+- **Systematic audit of every `verify.py` check's actual implementation against its docstring claim** (the recurring pattern named 4+ times earlier this session). 11 of 12 checks were correctly scoped. Found one real gap: `STALE_PATH_DOCS` (check #11) was missing `QUICKSTART.md` and `harness/BENCHMARKS.md`, both in `REQUIRED_FILES` but structurally uncovered by the stale-path-token check. Confirmed neither currently contains a stale path (no live corruption), so this closes a dormant gap rather than fixing an active defect. Added both to the list.
+
 ## v4.18.0 — 2026-08-01
 
 ### Fixed

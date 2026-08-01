@@ -10056,3 +10056,33 @@ Imagined-reader pushback: "You committed to a public repo's history without push
 3. **Systematically audit every verify.py check's actual implementation against its docstring/comment claim** -- still the oldest high-confidence candidate in this repo, unchanged in priority.
 4. **Exercise step 3b in a live future orient run** -- still the oldest untested item.
 5. Settle whether a target-agnostic formulation of "self-targeting should surface reasoning-capability gaps" is even coherent -- still carried.
+
+## 2026-08-01 - systematic-verifypy-audit-closes-stale-path-docs-gap
+
+- target: skills repo (this repo) -- verify.py
+- operator: maintainer (Nils Holmager)
+- agent: Claude Sonnet 4.5 (GitHub Copilot)
+- skill: improve
+- outcome: read all 12 check functions against their docstring claims in one pass; 11 correctly scoped; found and fixed one real, currently-dormant gap in STALE_PATH_DOCS
+- delta: verify.py STALE_PATH_DOCS gains QUICKSTART.md and harness/BENCHMARKS.md; CHANGELOG.md v4.19.0 added
+
+Read verify.py's module docstring (15 numbered checks) against its 12 function definitions, mapping each: check_log_format covers checks 1-4 (existence, heading format, date order, metadata fields), the remaining 11 functions map one-to-one to checks 5-15. Compared each function's actual logic to its docstring/comment claim directly rather than trusting the name. 11 of 12 were correctly scoped -- notably check_required_markdown_docs (#7) derives its file list dynamically from REQUIRED_FILES rather than a separate hardcoded list, meaning it can never drift the way STALE_PATH_DOCS and earlier REQUIRED_FILES gaps did; check_acm_scope_traversal_consistency (#15) was already confirmed complete in an earlier session entry. CHANGELOG.md and .acm/audit-trail.md's absence from STALE_PATH_DOCS is correct, not a gap -- both are historical narrative that legitimately discusses old paths by name when describing past renames (confirmed by testing: CHANGELOG.md alone produced 16 matches for the stale-path pattern, all inside historical entries describing the renames themselves).
+
+Found one real gap: STALE_PATH_DOCS was missing QUICKSTART.md and harness/BENCHMARKS.md, both present in REQUIRED_FILES. Tested both directly for the stale-path pattern before changing anything -- zero matches in either, confirming this is a dormant structural gap, not an active defect. Added both to STALE_PATH_DOCS. Ran python verify.py -- passed clean, confirming no false positives introduced. Added CHANGELOG.md v4.19.0 entry.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED -- this is the direct, deliberate resolution of the pattern named 4+ times earlier today (a check's real coverage narrower than its stated/implied scope), via a systematic pass rather than another accidental discovery.
+- *About to declare silence:* not fired -- this run made a change.
+- *Contradicts prior [!REALIZATION]:* not fired -- directly fulfills the top-ranked candidate carried across multiple prior entries.
+- *Operator explicitly asked:* FIRED -- operator said "use the improve skill to decide," and the systematic audit was the highest-confidence, most-evidenced candidate from the standing list.
+
+**Across-trail macro-Hansei**
+
+[!REALIZATION] This closes the loop the recurring-finding-class trigger has been naming all day: rather than a fifth accidental discovery of the same pattern, this entry performed the actual systematic pass and found the audit produces a much smaller yield than the accumulated anxiety about it suggested -- one dormant gap, not another BOM-scale issue. That is itself informative: the pattern recurred because each individual instance was found in a different subject area (file lists, encoding checks, version metadata, git tags), not because verify.py as a whole is unreliable. A single deliberate pass was sufficient to confirm the check suite is now in good shape, closing this as a standing concern rather than a permanently-open one.
+
+### Candidate Next Moves
+
+1. **Exercise Orient's new step 3b in a live run** -- added earlier today, never yet exercised.
+2. **Decide on the duplicate "Section 5" numbering defect found in agent-context-memory/SPEC.md** -- a different repo's decision, named but not this repo's to resolve alone.
+3. Settle whether a target-agnostic formulation of "self-targeting should surface reasoning-capability gaps" is even coherent -- still carried, deliberately not rushed.

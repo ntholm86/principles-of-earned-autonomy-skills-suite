@@ -1093,6 +1093,14 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** :* not fired -- this entry directly confirms and acts on the pre-existing learning.md realization rather than contradicting it; it contradicts my OWN prior entry in this session (marked as [!REVERSAL] above), which is the correct marker for that, not this trigger.
 
+## 2026-08-01 — reversal-self-targeting-branch-violates-genericity
+
+**[!REALIZATION]** This session now contains a clean, falsifiable natural experiment in the exact question the destination's 2026-08-01 note raises: can the loop derive that improving its own reasoning capability matters? The honest answer, based on this entry, is: not reliably without operator correction. The loop had direct textual access to the relevant lesson (learning.md, read at the start of the session) and made the mistake anyway when writing a new instruction under the immediate influence of a related but distinct idea (the destination note's reasoning-capability framing). The genuinely useful finding from this whole arc is not the reverted paragraph -- it is this: a destination note naming "improve the agent's own reasoning" as a goal does not, by itself, make the agent apply learning.md more carefully; if anything, the presence of an exciting new framing may have distracted from the more mundane, already-known check. Any future attempt to operationalize the destination's reasoning-capability concern should treat this as the primary evidence, not the paragraph that had to be reverted.
+
+## 2026-08-01 — reversal-self-targeting-branch-violates-genericity
+
+**[!REVERSAL]** The entry "improve-self-targeting-reasoning-capability-instrument" (2026-08-01, this same session) added a self-targeting-specific paragraph to improve/SKILL.md's Self-targeting section. This entry fully reverses that addition after the operator identified it violates the suite's own genericity constraint.
+
 ---
 
-**272 markers — 252 realisations, 20 reversals**
+**274 markers — 253 realisations, 21 reversals**

@@ -5,15 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 272 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-01 — reversal-self-targeting-branch-violates-genericity
-
-**[!REALIZATION]** This session now contains a clean, falsifiable natural experiment in the exact question the destination's 2026-08-01 note raises: can the loop derive that improving its own reasoning capability matters? The honest answer, based on this entry, is: not reliably without operator correction. The loop had direct textual access to the relevant lesson (learning.md, read at the start of the session) and made the mistake anyway when writing a new instruction under the immediate influence of a related but distinct idea (the destination note's reasoning-capability framing). The genuinely useful finding from this whole arc is not the reverted paragraph -- it is this: a destination note naming "improve the agent's own reasoning" as a goal does not, by itself, make the agent apply learning.md more carefully; if anything, the presence of an exciting new framing may have distracted from the more mundane, already-known check. Any future attempt to operationalize the destination's reasoning-capability concern should treat this as the primary evidence, not the paragraph that had to be reverted.
-
-## 2026-08-01 — reversal-self-targeting-branch-violates-genericity
-
-**[!REVERSAL]** The entry "improve-self-targeting-reasoning-capability-instrument" (2026-08-01, this same session) added a self-targeting-specific paragraph to improve/SKILL.md's Self-targeting section. This entry fully reverses that addition after the operator identified it violates the suite's own genericity constraint.
+Showing the most recent 60 markers. 274 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-01 — orient-post-genericity-reversal
 
@@ -247,6 +239,14 @@ Showing the most recent 60 markers. 272 older marker(s) are in `.acm/learning-ar
 
 **[!REALIZATION]** Per the lighter-weight-pointer convention: no new governing-variable diagnosis is introduced by this entry. It is the direct execution of the destination note added immediately before it in this same session, and the substantive precedent-checking and decision reasoning for the cross-repo action itself lives in agent-context-memory's own trail, not here. What is new is the confirmation that the destination note's own falsifiability test ("does a future entry actually surface and act on a spec-level finding, or does the note sit unused") has already been answered once, within the same conversation that posed it.
 
+## 2026-08-01 — systematic-verifypy-audit-closes-stale-path-docs-gap
+
+**[!REALIZATION]** :* not fired -- directly fulfills the top-ranked candidate carried across multiple prior entries.
+
+## 2026-08-01 — systematic-verifypy-audit-closes-stale-path-docs-gap
+
+**[!REALIZATION]** This closes the loop the recurring-finding-class trigger has been naming all day: rather than a fifth accidental discovery of the same pattern, this entry performed the actual systematic pass and found the audit produces a much smaller yield than the accumulated anxiety about it suggested -- one dormant gap, not another BOM-scale issue. That is itself informative: the pattern recurred because each individual instance was found in a different subject area (file lists, encoding checks, version metadata, git tags), not because verify.py as a whole is unreliable. A single deliberate pass was sufficient to confirm the check suite is now in good shape, closing this as a standing concern rather than a permanently-open one.
+
 ---
 
-**60 markers — 59 realisations, 1 reversals**
+**60 markers — 60 realisations, 0 reversals**
