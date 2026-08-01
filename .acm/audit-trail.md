@@ -10231,3 +10231,67 @@ Since the operator-explicitly-asked trigger fired, the narrow question is whethe
 
 1. Consider whether verify.py or a git pre-push hook should cross-check that pushed commits have corresponding audit-trail.md entries, closing the gap named above mechanically rather than relying on operator vigilance.
 2. Continue the standing candidate list from the last full entry (Orient step 3b live-run test; agent-context-memory Section-5 numbering decision; target-agnostic self-targeting formulation) -- none touched this turn.
+
+## 2026-08-01 - deutero-learning-credited-and-closed-in-orient-step-4
+
+- target: orient/SKILL.md step 4 ("Evaluate loop effectiveness")
+- operator: maintainer (Nils Holmager)
+- agent: GitHub Copilot (Claude Sonnet 5)
+- skill: improve
+- outcome: step 4 now explicitly credits Argyris and Schon's deutero-learning and closes with a routing instruction mirroring step 3b's double-loop routing
+- delta: orient/SKILL.md 2.1.1 -> 2.2.0; CHANGELOG.md v4.21.0 added
+
+### Interpretation of the ask
+
+Operator asked directly: "do you think we should run Improve now, with deutero-learning as the leading candidate to actually implement?" Interpreted as a request for judgment first, then execution if I agreed. Recommended yes, scoped narrowly to deutero-learning only, deliberately leaving the "Purpose lens read all the way down" reframing (from the immediately prior destination note) as a separate future iteration rather than batching both - they are related but independently verifiable, and bundling would make this iteration's prediction less falsifiable.
+
+### Examination
+
+Applied the Purpose lens to orient/SKILL.md's existing step 4 and step 3b. Found step 4 already asks substantively deutero-learning-shaped questions (is the loop finding genuine findings vs excuses, is silence earned, which quality bars are untested, what would the loop structurally miss) but two things were missing: (a) it never credited Argyris and Schon's actual three-level model (single-loop, double-loop, deutero-learning), so the connection to the already-cited Argyris 1977 in step 3b was invisible; (b) unlike step 3b, it never closed with an explicit routing instruction when a structural blind spot is actually found - it asks the questions and stops. Checked whether Improve/SKILL.md step 6b needed a parallel mechanism too: found the existing rationale ("why this belongs in Orient and not only Improve step 6b... Orient reads the whole arc at once") already correctly reserves arc-level self-examination for Orient - adding a duplicate to Improve would contradict an already-settled architectural decision without new evidence to justify revisiting it.
+
+Precedent check: grepped learning.md and learning-archive.md for "deutero", "Schon", "third level", "loop effectiveness", "learning process itself" - found nothing. Genuinely new, not a duplicate of prior work.
+
+### Decision
+
+[!DECISION] Credit Orient step 4 explicitly as Argyris and Schon's deutero-learning (Organizational Learning II, 1978), and add a closing routing paragraph mirroring step 3b's governing-variable routing - rather than adding a new standalone step or skill for deutero-learning, or mirroring this in Improve/SKILL.md.
+Rationale: step 4 already substantively asked the right questions; the gap was citation and a missing closing action, not a missing mechanism - the smallest correct fix names and closes what already existed rather than building new machinery beside it.
+Alternative rejected: a new step 4c or a standalone deutero-learning skill - rejected, would duplicate step 4's existing question set almost verbatim, adding ceremony without new capability.
+Alternative rejected: mirror this in Improve/SKILL.md step 6b - rejected, Improve's architecture already reserves arc-level self-examination for Orient for a stated reason (a single iteration lacks the surface area); duplicating it would contradict that recorded reasoning without new justification.
+Precedent check: confirmed above, nothing relevant found.
+
+### Prediction
+
+I expect this change will: (a) pass verify.py with no regressions; (b) require no change to Improve/SKILL.md; (c) NOT resolve the separate Purpose-lens reframing thread from the immediately prior destination note - that stays open; (d) NOT restore the dropped OODA/pre-mortem citation found earlier this session - named as a separate, deliberately deferred candidate, not rolled in here.
+
+### Action
+
+Edited orient/SKILL.md step 4's heading and body: added the Argyris and Schon citation and a closing paragraph instructing that a structural blind spot found in how the loop itself learns be named as a candidate revision to the loop's own mechanism and routed to the operator via Destination, mirroring step 3b. Bumped orient/SKILL.md 2.1.1 -> 2.2.0. Added CHANGELOG.md v4.21.0 entry. Ran python verify.py - passed clean, no regressions. Grepped the repo for other hardcoded references to "orient/SKILL.md 2.1.1" - found none needing update.
+
+Outcome vs prediction: matched on all four points - verify passed clean, Improve/SKILL.md untouched, Purpose-lens thread and OODA-citation restoration both remain open and named, not silently folded in.
+
+### Reflection
+
+Model of the target as a falsifiable claim: Orient's step 4 turns out to have already been deutero-learning in substance since it was written - the gap this thread surfaced was never "the loop lacks a mechanism for reflecting on its own learning process," it was "the loop had the mechanism but never recognized or credited it as an instance of the theory it already cites elsewhere in the same file." This suggests at least some of what feels like a missing cognitive gap in this framework may already be present but unlabeled, discoverable by re-reading existing steps against adjacent literature rather than by adding new machinery each time. A future run could disagree by finding a case where the missing piece really was new machinery, not just an uncredited existing one.
+
+Named blind spot: I did not re-examine Improve/SKILL.md's other steps (1, 2, 5, 7) for the same already-present-but-uncredited pattern found in step 4 - only step 6b was checked, to confirm the Orient/Improve division of labor was sound.
+
+Imagined-reader pushback: an operator who knows Argyris and Schon's model closely might push back that deutero-learning is usually described as being about an organization's whole learning system - its diagnostic categories, feedback speed, error-detection design - more broadly than "is the loop's arc-reading effective." Step 4's current scope may be a narrower slice of deutero-learning than the full concept, and a future run might find the citation is doing more work than the mechanism underneath it actually delivers.
+
+[!REALIZATION] Naming something that already exists in substance as an explicit instance of cited theory closed a real gap - the missing routing instruction - but the larger, harder question the operator named (how a Purpose-driven loop derives gaps like this on its own, generically) is not solved by this single fix. This entry is evidence for the standing destination note's claim, not a refutation of the need for the broader Purpose-lens reframing still sitting unimplemented.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired -- this is a new finding-class (uncredited-but-present mechanism), not a repeat of a prior pattern.
+- *About to declare silence:* not fired -- this entry made a change.
+- *Contradicts prior [!REALIZATION]:* not fired -- extends, rather than contradicts, the two same-session destination notes about self-referential completeness and the OODA-citation-drop finding.
+- *Operator explicitly asked:* FIRED -- the operator directly asked whether to run Improve now with deutero-learning as the leading candidate. This entry is the direct execution of that request.
+
+**Across-trail macro-Hansei**
+
+Since the operator-explicitly-asked trigger fired but this is a direct continuation of a same-session, already-diagnosed thread rather than a fresh recurring pattern, the macro-Hansei is brief: this is the second consecutive entry in this thread that found the answer was smaller and cheaper than the framing suggested (first, the Purpose-lens reframing needed no new lens, just a deeper reading of Purpose; second, deutero-learning needed no new mechanism, just naming and closing what step 4 already did). Read together, this is arc-level evidence that this repo's current defect class is under-credited or under-closed existing mechanisms, not missing ones - worth testing against a genuinely novel target in a future run before treating it as a settled arc-claim.
+
+### Candidate Next Moves
+
+1. Implement the "Purpose lens read all the way down" reframing from the immediately prior destination note (claims and citations are part of purpose) - still unimplemented, the natural next thread.
+2. Restore the OODA/pre-mortem citation dropped between v1's kaizen.md and v3's Improve - named twice now, still not fixed.
+3. Audit Improve/SKILL.md's remaining steps (1, 2, 5, 7) for the same already-present-but-uncredited pattern found in step 4 - named blind spot above, not yet done.

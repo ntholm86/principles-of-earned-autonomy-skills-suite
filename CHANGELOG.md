@@ -1,5 +1,10 @@
 # Changelog
 
+## v4.21.0 — 2026-08-01
+
+### Added
+- **`orient/SKILL.md` step 4 ("Evaluate loop effectiveness") now explicitly named as Argyris & Schon's deutero-learning** — the third level of their organizational-learning model, distinct from both single-loop (correct the action) and double-loop (correct the target's governing variable, already credited in step 3b). Step 4 already asked substantively deutero-learning-shaped questions ("is the silence earned," "what kind of finding would this loop structurally miss") but never named the lineage, and — unlike step 3b — never closed with an explicit routing instruction when it found something. Added a closing paragraph: when step 4 surfaces a structural blind spot in how the loop itself learns (an untested lens, a trigger that never fires, a trail format that hides evidence), that is named as a candidate revision to the loop's own mechanism and routed to the operator via Destination, mirroring step 3b's existing routing for governing-variable findings. Sourced from a `.acm/destination.md` note (2026-08-01) naming this exact gap, and the finding — while checking lineage — that `archive/v2/v1_archive/kaizen.md` had already cited OODA and pre-mortem analysis as inspirations, a citation silently dropped when v1/v2 Kaizen merged into v3 Improve; not restored in this entry, named as a separate candidate. `orient/SKILL.md` 2.1.1 -> 2.2.0.
+
 ## v4.20.0 — 2026-08-01
 
 ### Removed

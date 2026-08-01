@@ -1137,6 +1137,14 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** This is the first entry in this whole multi-turn arc that responds to destination note item 3 (token/resource efficiency) as its own dedicated concern, rather than as a side effect of an unrelated instruction (the earlier trail sessions-mandate removal was efficiency-motivated but operator-directed, not self-derived from the destination text). Unlike the reasoning-capability attempts, this one did not require touching a skill file's *behavioral* instructions at all -- it is a change to tooling (record.py) and a description update (trail/SKILL.md, improve/SKILL.md), with no risk of the genericity violation that tripped up the earlier attempt, because record.py and the .acm/ file structure are already generic (they apply identically to any target using these skills, not just this repo).
 
+## 2026-08-01 — learning-md-bounded-recent-window-plus-archive
+
+**[!REALIZATION]** :* not fired -- directly acts on the destination note and the orient run's carried-forward item without contradicting either.
+
+## 2026-08-01 — audit-learning-precedent-surfaces-position-quickstart-h1-gap-and-systemic-bom
+
+**[!REALIZATION]** This is the first entry in this arc where the new precedent-check discipline (added two entries ago) directly produced a finding neither the operator nor I had already surfaced -- the POSITION.md/QUICKSTART.md coverage gap was sitting, fully documented, in an archived realization from months earlier, and would not have been found without deliberately going back to check learning-archive.md for this session's other changes rather than continuing to defer that audit a fourth time. This is a genuinely positive data point for whether the precedent-check requirement can do real work, distinct from the earlier failure where the same kind of check was skipped.
+
 ---
 
-**283 markers — 262 realisations, 21 reversals**
+**285 markers — 264 realisations, 21 reversals**

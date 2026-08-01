@@ -5,15 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 283 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-01 — learning-md-bounded-recent-window-plus-archive
-
-**[!REALIZATION]** :* not fired -- directly acts on the destination note and the orient run's carried-forward item without contradicting either.
-
-## 2026-08-01 — audit-learning-precedent-surfaces-position-quickstart-h1-gap-and-systemic-bom
-
-**[!REALIZATION]** This is the first entry in this arc where the new precedent-check discipline (added two entries ago) directly produced a finding neither the operator nor I had already surfaced -- the POSITION.md/QUICKSTART.md coverage gap was sitting, fully documented, in an archived realization from months earlier, and would not have been found without deliberately going back to check learning-archive.md for this session's other changes rather than continuing to defer that audit a fourth time. This is a genuinely positive data point for whether the precedent-check requirement can do real work, distinct from the earlier failure where the same kind of check was skipped.
+Showing the most recent 60 markers. 285 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-01 — audit-learning-precedent-surfaces-position-quickstart-h1-gap-and-systemic-bom
 
@@ -246,6 +238,14 @@ Showing the most recent 60 markers. 283 older marker(s) are in `.acm/learning-ar
 ## 2026-08-01 — confirm-push-and-record-trail-completeness-check
 
 **[!REALIZATION]** Not every operator action needs its own trail entry the instant it happens, but a real, consequential action (publishing 13 commits to a public repo) sitting unrecorded across a conversational-compaction boundary is a genuine gap worth naming: the trail's completeness currently depends on someone (here, the operator) noticing the gap, since no mechanical check verifies that every git push event has a corresponding audit-trail.md entry.
+
+## 2026-08-01 — deutero-learning-credited-and-closed-in-orient-step-4
+
+**[!REALIZATION]** Naming something that already exists in substance as an explicit instance of cited theory closed a real gap - the missing routing instruction - but the larger, harder question the operator named (how a Purpose-driven loop derives gaps like this on its own, generically) is not solved by this single fix. This entry is evidence for the standing destination note's claim, not a refutation of the need for the broader Purpose-lens reframing still sitting unimplemented.
+
+## 2026-08-01 — deutero-learning-credited-and-closed-in-orient-step-4
+
+**[!REALIZATION]** :* not fired -- extends, rather than contradicts, the two same-session destination notes about self-referential completeness and the OODA-citation-drop finding.
 
 ---
 

@@ -196,6 +196,7 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 189 | 2026-08-01 | orient-how-close-to-destination | read the 12-entry arc since the last orient run and answered the operator's direct question ("how close are we to the destination") in bounded terms per named success condition -- research success and learning show real, accumulating evidence; adoption success has had zero attention this entire session | .acm/orientation.md rewritten wholesale (no code change) |
 | ▸ 190 | 2026-08-01 | remove-vision-md-legacy-fallback | removed .acm/vision.md legacy-fallback support entirely across all five skill files that referenced it; the fallback was explicitly scoped at introduction as transition-period-only support | destination/SKILL.md 2.2.0 -> 2.3.0; improve/SKILL.md 3.12.3 -> 3.12.4; intent/SKILL.md 1.3.0 -> 1.3.1; orient/SKILL.md 2.1.0 -> 2.1.1; trail/SKILL.md 2.4.0 -> 2.4.1; CHANGELOG.md v4.20.0 added |
 | ▸ 191 | 2026-08-01 | confirm-push-and-record-trail-completeness-check | confirmed the prior 13 commits were pushed to origin/main; answered an operator question about learning.md's mechanics; this entry closes the gap of both being unrecorded in the trail | no code change; .acm/audit-trail.md +1 entry |
+| ▸ 192 | 2026-08-01 | deutero-learning-credited-and-closed-in-orient-step-4 | step 4 now explicitly credits Argyris and Schon's deutero-learning and closes with a routing instruction mirroring step 3b's double-loop routing | orient/SKILL.md 2.1.1 -> 2.2.0; CHANGELOG.md v4.21.0 added |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -927,4 +928,8 @@ Do not edit by hand — re-run the command to refresh.
 - **decided:** Remove the fallback entirely rather than a partial reduction (e.g., keeping a bare "if vision.md exists, suggest renaming it" notice without treating it as a read-equivalent). Precedent check: grepped learning.md/learning-archive.md for "vision.md fallback", "legacy artifact", "transition period" before deciding -- found only the original rename entries describing the fallback's introduction and intended temporary scope; no precedent argues for a partial removal instead of a full one, and the original design already anticipated a clean removal ("may be removed in a future major version," not "may be narrowed").
 - **decided:** Bump destination/SKILL.md with a minor version increment (2.2.0 -> 2.3.0) since it owned the actual fallback *behavior* (not just a mention of it) and this changes what the skill does for a hypothetical unmigrated repo; treat the other four files' edits as patch-level (they only removed a documentation clause describing behavior destination/SKILL.md itself no longer implements, not a change to their own behavior contract).
 
-**191 runs total — 177 with changes, 14 silence**
+### Run 192 — 2026-08-01 — deutero-learning-credited-and-closed-in-orient-step-4
+
+- **decided:** Credit Orient step 4 explicitly as Argyris and Schon's deutero-learning (Organizational Learning II, 1978), and add a closing routing paragraph mirroring step 3b's governing-variable routing - rather than adding a new standalone step or skill for deutero-learning, or mirroring this in Improve/SKILL.md.
+
+**192 runs total — 178 with changes, 14 silence**

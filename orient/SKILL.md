@@ -1,6 +1,6 @@
 ---
 name: orient
-version: 2.1.1
+version: 2.2.0
 description: 'Read the trail as a single document and form arc-level claims about the target. What is the target becoming? Where has the loop''s attention been, and is that where the target''s real weight lies? What does the arc reveal that no individual iteration would surface? Writes .acm/orientation.md — the Orient-derived current orientation for the target. Destination (.acm/destination.md), if present, is the operator-held destination and is read but never written. USE WHEN: about to declare convergence, recurring finding-class suspected, operator asks "how are we doing?", or an independent arc-read is needed without running a full improve loop.'
 argument-hint: 'The target and its trail, and optionally the specific arc-question to answer'
 ---
@@ -115,9 +115,9 @@ When it resolves to "yes": name the specific governing variable implicated, writ
 
 *Why this belongs in Orient, and not only in Improve's step 6b:* step 6b fires from inside a single iteration, when that iteration happens to notice a recurring pattern. Orient reads the whole arc at once and is positioned to catch governing-variable-level recurrences that no individual iteration had enough surface area to see — exactly the kind of finding an arc-level read exists for. (Argyris, *Organizational Learning*, 1977 — single-loop learning corrects action within existing governing variables; double-loop learning questions and revises the governing variables themselves.)
 
-### 4. Evaluate loop effectiveness (when the arc warrants it)
+### 4. Evaluate loop effectiveness (Argyris & Schon's deutero-learning: is the way this loop learns itself sound?)
 
-When the arc-read surfaces questions about whether the loop is achieving what it is for, answer them. The loop's effectiveness is part of the target's story — examining it is a lens, not navel-gazing.
+When the arc-read surfaces questions about whether the loop is achieving what it is for, answer them. The loop's effectiveness is part of the target's story — examining it is a lens, not navel-gazing. Where step 3b asks whether the target's governing variables are wrong (double-loop), this step asks the next-order question: is the mechanism by which this loop itself learns, reflects, and detects errors well designed — or is the reflection process itself what needs revision? (Argyris & Schon, *Organizational Learning II*, 1978 — deutero-learning: learning about the learning system itself, distinct from correcting either the action or the governing variable.)
 
 Ask:
 
@@ -128,6 +128,8 @@ Ask:
 - If the operator could see the arc as a whole, would they say "yes, that is the right focus"?
 
 Run this step when: the loop is about to declare convergence, the finding pattern looks suspiciously tidy, or the operator explicitly asked how the loop is performing.
+
+**If this step surfaces a structural blind spot in how the loop itself learns** — a lens it never applies, a trigger that never fires, a trail format that hides the evidence it should show — that is not a target-level finding to file away among this run's arc-claims. Name the specific mechanism implicated (a lens, a trigger, a check, the trail format itself), state it as a candidate revision to the loop's own design, and route it to the operator via [Destination](../destination/SKILL.md) — the same way step 3b routes governing-variable findings. A blind spot in how the loop learns is at least as load-bearing as a blind spot in the target itself: it silently caps every future run's ability to find anything the current mechanism cannot see.
 
 ### 4b. Extract operational rules (Learning)
 
