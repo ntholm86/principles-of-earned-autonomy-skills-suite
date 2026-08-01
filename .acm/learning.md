@@ -5,19 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 248 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-07-31 — improve-destination-acm4-traversal-fix
-
-**[!REALIZATION]** Destination is the skill most exposed to the risk ACM section 4 exists to prevent, and it was the last of the four destination-reading skills to receive the fix -- not because it was judged lower priority, but because the original candidate list (from the 2026-06-22 entry) never named it at all; it named only intent, probe, and trail. The audit only surfaced destination/SKILL.md's own gap because this run explicitly asked "have I checked every skill that needs this," not because it was on anyone's list. A candidate-next-moves list is only as complete as the scan that produced it -- this is worth carrying forward as a caution about trusting an inherited candidate list as exhaustive.
-
-## 2026-07-31 — improve-destination-acm4-traversal-fix
-
-**[!REALIZATION]** :* not fired -- extends rather than contradicts the intent-fix entry's realization about candidate-next-move follow-through.
-
-## 2026-07-31 — improve-destination-acm4-traversal-fix
-
-**[!REALIZATION]** Applying the step 6b double-loop question to this recurring-finding-class trigger: is "three same-day ACM section 4 gaps, found one at a time" a single-loop symptom or a double-loop signal? This one leans toward double-loop. The single-loop read is "each gap is a distinct small fix, keep patching them as found." The double-loop read is: the governing variable at fault is the *scanning method* used on 2026-06-22 -- it named three skills (intent, probe, trail) and implicitly treated that as the complete set of skills needing ACM section 4, when the actual criterion ("does this skill independently read destination.md to form its own reasoning") was never stated explicitly and was not applied exhaustively to every skill in the suite at that time. Naming the governing variable: the candidate-list-generation process silently narrowed "skills that read destination" to "the skills whoever wrote that entry happened to check," rather than deriving the list from the stated criterion. This is worth surfacing to the operator as a genuine destination-level candidate: should a future ACM-conformance sweep state its selection criterion explicitly and apply it to every skill file, rather than relying on an ad hoc list assembled during one entry? Routing this as a named observation rather than a silent artifact patch, per the double-loop discipline -- not resolving it unilaterally this run.
+Showing the most recent 60 markers. 251 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-01 — acm4-sweep-complete-plus-consistency-enforcement
 
@@ -246,6 +234,18 @@ Showing the most recent 60 markers. 248 older marker(s) are in `.acm/learning-ar
 ## 2026-08-01 — resolve-sessions-fingerprint-blind-spot-and-fix-six-boms
 
 **[!REALIZATION]** Per the lighter-weight-pointer precedent: no new governing-variable diagnosis is introduced by this entry: the pattern-family diagnosis stands as recorded in `confirm-bom-root-cause-and-fix-verifypy`, and the granularity precedent stands as recorded in the delegated-autonomy entry two runs ago. This entry is a clean application of both, plus one small self-correction (the six-vs-five count) surfaced honestly rather than absorbed.
+
+## 2026-08-01 — fix-orientation-and-audit-trail-boms-closes-cleanup-arc
+
+**[!REALIZATION]** This closes the entire systemic BOM cleanup arc that began four entries ago as an unplanned discovery inside a REQUIRED_FILES coverage fix. Twelve files total were fixed across this arc (verify.py, QUICKSTART.md, INSTALLING.md, record.py, three SKILL.md files, six session files, orientation.md, and now audit-trail.md), zero of which suffered any content loss or corruption beyond the intended 3-byte BOM removal, each independently verified. The arc's own governing-variable question (raised via the delegated no-batching-vs-efficiency decision) was itself resolved in practice, not just in principle: this final entry groups two files of genuinely different risk profiles under one entry, but gives each the level of individual scrutiny its risk actually warrants -- a quick standard check for orientation.md, a deliberately designed and reconfirmed check for audit-trail.md. That asymmetry within a single entry is arguably the correct resolution of the tension named two entries ago: grouping should track marginal information value, not treat every file identically regardless of risk.
+
+## 2026-08-01 — fix-orientation-and-audit-trail-boms-closes-cleanup-arc
+
+**[!REALIZATION]** :* not fired -- directly fulfills the plan named as the top candidate two entries ago.
+
+## 2026-08-01 — fix-orientation-and-audit-trail-boms-closes-cleanup-arc
+
+**[!REALIZATION]** Per the established lighter-weight-pointer convention: no new governing-variable diagnosis is introduced here. The pattern-family diagnosis stands as recorded in `confirm-bom-root-cause-and-fix-verifypy`; the grouping-vs-risk resolution is this entry's own contribution, noted above, and does not contradict the delegated decision two entries ago -- it is the natural completion of applying that decision with risk-appropriate rigor rather than a uniform template.
 
 ---
 

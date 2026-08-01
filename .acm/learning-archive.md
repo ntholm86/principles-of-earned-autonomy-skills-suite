@@ -997,6 +997,18 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** Applying the new step 6b double-loop question (added earlier this session) to this recurring-finding-class trigger: is the recurrence here -- "the loop keeps acting on its own prior candidate list" -- a single-loop symptom or a double-loop signal? On examination, this is NOT a governing-variable defect. The suite's own architecture explicitly permits and expects candidate-next-moves to sit unpicked across multiple entries while the operator directs attention elsewhere (documented in improve/SKILL.md step 4b: "Silence from the operator is a valid response"). The recurrence here is the loop correctly returning to its own backlog when given a topic-free instruction, not a symptom of a wrong goal or assumption in destination.md. No governing variable is implicated; no escalation to Destination is warranted. This is offered as the first worked example of the new question concluding "no double-loop action needed" rather than "escalate" -- the question is falsifiable in both directions, not just a trigger toward more ceremony.
 
+## 2026-07-31 — improve-destination-acm4-traversal-fix
+
+**[!REALIZATION]** Destination is the skill most exposed to the risk ACM section 4 exists to prevent, and it was the last of the four destination-reading skills to receive the fix -- not because it was judged lower priority, but because the original candidate list (from the 2026-06-22 entry) never named it at all; it named only intent, probe, and trail. The audit only surfaced destination/SKILL.md's own gap because this run explicitly asked "have I checked every skill that needs this," not because it was on anyone's list. A candidate-next-moves list is only as complete as the scan that produced it -- this is worth carrying forward as a caution about trusting an inherited candidate list as exhaustive.
+
+## 2026-07-31 — improve-destination-acm4-traversal-fix
+
+**[!REALIZATION]** :* not fired -- extends rather than contradicts the intent-fix entry's realization about candidate-next-move follow-through.
+
+## 2026-07-31 — improve-destination-acm4-traversal-fix
+
+**[!REALIZATION]** Applying the step 6b double-loop question to this recurring-finding-class trigger: is "three same-day ACM section 4 gaps, found one at a time" a single-loop symptom or a double-loop signal? This one leans toward double-loop. The single-loop read is "each gap is a distinct small fix, keep patching them as found." The double-loop read is: the governing variable at fault is the *scanning method* used on 2026-06-22 -- it named three skills (intent, probe, trail) and implicitly treated that as the complete set of skills needing ACM section 4, when the actual criterion ("does this skill independently read destination.md to form its own reasoning") was never stated explicitly and was not applied exhaustively to every skill in the suite at that time. Naming the governing variable: the candidate-list-generation process silently narrowed "skills that read destination" to "the skills whoever wrote that entry happened to check," rather than deriving the list from the stated criterion. This is worth surfacing to the operator as a genuine destination-level candidate: should a future ACM-conformance sweep state its selection criterion explicitly and apply it to every skill file, rather than relying on an ad hoc list assembled during one entry? Routing this as a named observation rather than a silent artifact patch, per the double-loop discipline -- not resolving it unilaterally this run.
+
 ---
 
-**248 markers — 228 realisations, 20 reversals**
+**251 markers — 231 realisations, 20 reversals**

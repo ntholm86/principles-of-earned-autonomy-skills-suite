@@ -1,4 +1,4 @@
-﻿# orientation.md — autonomous-agent-skills
+# orientation.md — autonomous-agent-skills
 
 _Last updated: 2026-08-01 (run: orient-post-bom-cleanup-and-efficiency-check)_
 

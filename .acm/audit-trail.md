@@ -1,4 +1,4 @@
-﻿# Trail log
+# Trail log
 
 Append-only ledger of autonomous operations on this repo. See [README.md](./README.md) for the format spec. Newest entries at the bottom.
 
@@ -9505,3 +9505,73 @@ Imagined-reader pushback: "You just found a small counting error in your own pri
 3. **Exercise step 3b in a live future orient run**, still the top item from the previous entry, not yet done.
 4. **Audit `STALE_PATH_DOCS` and `ACM_SCOPE_TRAVERSAL_FILES`** for the same silent-exclusion pattern, still open from several entries ago.
 5. Settle whether a target-agnostic formulation of "self-targeting should surface reasoning-capability gaps" is even coherent -- still carried.
+
+## 2026-08-01 - fix-orientation-and-audit-trail-boms-closes-cleanup-arc
+
+- target: skills repo (this repo) -- .acm/orientation.md, .acm/audit-trail.md
+- operator: maintainer (Nils Holmager)
+- agent: Claude Sonnet 4.5 (GitHub Copilot)
+- skill: improve
+- outcome: fixed the last two files in the systemic BOM cleanup -- orientation.md (low-risk) and audit-trail.md (highest-risk, designed and executed with extra safeguards) -- closing the entire multi-entry arc
+- delta: .acm/orientation.md and .acm/audit-trail.md each lose their leading UTF-8 BOM (1-line diff each); no functional or content change; this is the twelfth and final file in the sequence
+
+### Interpretation of the ask
+
+Operator: "please proceed. understand my intent." Following the prior entry's top-ranked candidate ("design a specific, careful plan for .acm/audit-trail.md's BOM strip given its two prior corruption incidents") and its second candidate (decide orientation.md's order, noted as plausibly going first since it carries no corruption history). I interpreted "proceed" as: do both, in order of increasing risk, with audit-trail.md receiving the deliberate design step candidate #1 explicitly called for rather than the same one-line treatment used for the other ten files.
+
+### Examination
+
+Purpose lens applied specifically to risk analysis: re-read my own memory note on this exact file's history (`append-only-trails.md`) -- both documented corruption incidents were caused by PowerShell's `Get-Content`/`Set-Content` cmdlets, which in Windows PowerShell 5.1 default to decoding as windows-1252 rather than UTF-8, silently mangling non-ASCII characters (em-dashes specifically) into `â€"`-style mojibake sequences. This is a fundamentally different mechanism from the one used for the other eleven files fixed in this arc so far: `[System.IO.File]::ReadAllText($p, [System.Text.Encoding]::UTF8)` / `WriteAllText(..., UTF8Encoding(false))` -- .NET's File class called directly, bypassing PowerShell's cmdlet-level encoding defaults entirely. The historical corruption risk and the mechanism already validated eleven times are not the same risk; the eleven-file precedent is directly informative here, not just superficially similar.
+
+Checked audit-trail.md's size (909,939 bytes, confirmed BOM present) -- well within safe range for a single ReadAllText/WriteAllText call, no truncation or memory concern.
+
+Designed explicit extra safeguards beyond the standard per-file check, specific to this file's criticality: (1) capture the current commit hash before touching it, so `git checkout HEAD -- .acm/audit-trail.md` is a trivial revert path if anything looks wrong; (2) capture a baseline mojibake count (0) and entry count (179) via record.py before the operation; (3) perform the fix using only the .NET direct API, never Get-Content/Set-Content; (4) after the operation, re-check the mojibake count (must still be 0), re-run record.py and confirm the entry count is unchanged (still 179, no entries lost or duplicated), confirm git diff shows exactly one line changed, and run verify.py; (5) only commit once every one of these checks passes.
+
+Fixed orientation.md first (no corruption history, derived/rewritten wholesale each Orient run, lowest possible stakes) using the standard mechanism, verified via byte-diff and git diff before moving to audit-trail.md.
+
+### Decision
+
+[!DECISION] Fix orientation.md using the standard, eleven-times-validated mechanism with standard verification (byte-diff, git diff). Precedent check: identical risk class to the ten already-fixed plain files; no new precedent needed.
+
+[!DECISION] Fix audit-trail.md using the same underlying mechanism (the .NET direct API was never the source of the historical corruption; PowerShell's cmdlets were), but with the additional baseline-and-reconfirm safeguards described above, specifically because this file's criticality warrants verification beyond the standard byte-diff check used for the other eleven files. Precedent check: grepped learning.md/learning-archive.md for "audit-trail.md" combined with "corrupt" or "mojibake" before proceeding -- found the two historical incidents, both attributable specifically to Get-Content/Set-Content round-trips, never to direct .NET file I/O. No precedent contradicts using the .NET-based mechanism on this file; the precedent instead specifically identifies the PowerShell-cmdlet mechanism as the actual hazard, which this fix does not use.
+
+Rejected alternative: leave audit-trail.md's BOM permanently, treating "never touch the highest-risk file" as a standing rule rather than a caution to satisfy with adequate safeguards. Rejected -- a real fix mechanism exists, has been validated eleven times, and is provably distinct from what caused the historical incidents; refusing to ever apply it would be excess caution disconnected from the actual, now well-understood risk.
+
+Rejected alternative: use a PowerShell-native approach (Get-Content -Raw | Set-Content) for consistency with "how this repo usually edits files." Rejected -- this is precisely the mechanism responsible for both historical corruption incidents; consistency with a known-hazardous pattern is not a virtue here.
+
+### Prediction
+
+I will fix both files' BOMs. I expect both git diffs to show exactly one line changed each (the BOM-prefixed first line), matching the pattern of all eleven prior fixes. I expect audit-trail.md's post-fix mojibake count to remain 0 (unchanged from baseline) and its entry count via record.py to remain 179 (unchanged from baseline). I expect python verify.py to pass clean on both files.
+
+### Action
+
+Fixed orientation.md: byte-diff confirmed exactly 3 bytes removed (909,939 -> wait, that figure is audit-trail.md's; orientation.md was 15,614 -> 15,611 bytes); git diff confirmed exactly one line changed (the BOM-prefixed H1). Captured audit-trail.md's baseline before touching it: 0 existing mojibake matches, 179 entries per record.py. Fixed audit-trail.md using the .NET ReadAllText/WriteAllText mechanism: byte-diff confirmed exactly 3 bytes removed (909,939 -> 909,936). Re-ran the mojibake check -- still 0 matches, unchanged. Re-ran record.py history/learning --write -- still 179 entries, 60 recent + 248 archived markers, matching the pre-fix counts exactly (no entries lost or duplicated). Confirmed via git diff that exactly one line changed in audit-trail.md (the BOM-prefixed `# Trail log` heading), nothing else. Ran python verify.py after all fixes and artifact regeneration -- passed clean.
+
+Comparing outcome to prediction: held on every point.
+
+### Reflection
+
+[!REALIZATION] This closes the entire systemic BOM cleanup arc that began four entries ago as an unplanned discovery inside a REQUIRED_FILES coverage fix. Twelve files total were fixed across this arc (verify.py, QUICKSTART.md, INSTALLING.md, record.py, three SKILL.md files, six session files, orientation.md, and now audit-trail.md), zero of which suffered any content loss or corruption beyond the intended 3-byte BOM removal, each independently verified. The arc's own governing-variable question (raised via the delegated no-batching-vs-efficiency decision) was itself resolved in practice, not just in principle: this final entry groups two files of genuinely different risk profiles under one entry, but gives each the level of individual scrutiny its risk actually warrants -- a quick standard check for orientation.md, a deliberately designed and reconfirmed check for audit-trail.md. That asymmetry within a single entry is arguably the correct resolution of the tension named two entries ago: grouping should track marginal information value, not treat every file identically regardless of risk.
+
+Named blind spot: this is the first time in the whole arc that a file with genuine historical stakes (audit-trail.md) has actually been touched, rather than reasoned about. The verification performed here (byte-diff, git diff, mojibake re-check, entry-count re-check, verify.py) is thorough by this session's own standards, but it is still this agent's own verification -- an independent read of the committed result by the operator remains the actual final confirmation that nothing was lost, consistent with destination.md's description of the operator-gate as the backstop the trail and verification are meant to make lightweight, not replace.
+
+Imagined-reader pushback: "You just did the single riskiest operation in this whole arc, on the file with the worst track record, and called it done based on your own checks -- isn't that exactly the kind of self-assessed confidence that caused the two prior incidents in the first place?" This is the right challenge, and the honest distinction is: the two prior incidents happened because of a specific, now-identified mechanism (PowerShell cmdlet default-encoding misdetection) that this fix does not use at all -- this is not "being more careful with the same tool," it is "using a provably different tool that does not have the failure mode that caused the incidents." Whether that distinction is sufficient is something the operator can verify directly by reading the committed diff, which is exactly why it is shown here rather than only asserted.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED -- final entry in the twelve-file BOM-fix family; governing-variable diagnosis and grouping precedent both stand unchanged, per the established lighter-weight-pointer convention from three entries ago.
+- *About to declare silence:* not fired -- this run made a change (in fact, closes an arc).
+- *Contradicts prior [!REALIZATION]:* not fired -- directly fulfills the plan named as the top candidate two entries ago.
+- *Operator explicitly asked:* FIRED -- operator said "please proceed," confirming the ranked candidate.
+
+**Across-trail macro-Hansei**
+
+[!REALIZATION] Per the established lighter-weight-pointer convention: no new governing-variable diagnosis is introduced here. The pattern-family diagnosis stands as recorded in `confirm-bom-root-cause-and-fix-verifypy`; the grouping-vs-risk resolution is this entry's own contribution, noted above, and does not contradict the delegated decision two entries ago -- it is the natural completion of applying that decision with risk-appropriate rigor rather than a uniform template.
+
+### Candidate Next Moves
+
+1. **Consider whether the systemic BOM issue is now fully closed**, or whether any other file outside the originally-scoped ~13 live files (e.g. newly created files going forward) needs an ongoing safeguard -- `create_file` was already confirmed BOM-safe several entries ago; no further live files are known to carry a BOM at this point.
+2. **Exercise step 3b in a live future orient run** -- still the oldest untested item, now a good candidate given this arc's own completion provides fresh material (the grouping-vs-risk resolution named above is itself a possible recurring-pattern candidate for a future orient read).
+3. **Audit `STALE_PATH_DOCS` and `ACM_SCOPE_TRAVERSAL_FILES`** for the same silent-exclusion pattern, still open from several entries ago.
+4. Settle whether a target-agnostic formulation of "self-targeting should surface reasoning-capability gaps" is even coherent -- still carried.
+5. The suite's older backlog (CITATION.cff currency, B1 replication, mtime freshness, whole-suite mandate gate) remains available if the operator wants to redirect.
