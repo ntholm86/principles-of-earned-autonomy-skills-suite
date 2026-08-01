@@ -8915,3 +8915,73 @@ Imagined-reader pushback: "You've added another line to an already-long marker d
 3. Settle whether a target-agnostic formulation of "self-targeting should surface reasoning-capability gaps" is even coherent -- still carried from the prior orient run and the reversal entry, not yet done.
 4. Destination note item 3 (token/resource efficiency) as its own dedicated examination -- still untouched.
 5. The suite's older backlog (CITATION.cff currency, B1 replication, mtime freshness, whole-suite mandate gate) remains available if the operator wants to redirect.
+
+## 2026-08-01 - learning-md-bounded-recent-window-plus-archive
+
+- target: skills repo (this repo) -- harness/tools/record.py, trail/SKILL.md, improve/SKILL.md, verify.py
+- operator: maintainer (Nils Holmager)
+- agent: Claude Sonnet 4.5 (GitHub Copilot)
+- skill: improve
+- outcome: learning.md is now bounded to a recent window (60 markers) with older markers moved to learning-archive.md; measured reduction from 120,835 bytes to 33,880 bytes for the mandatory step-1 read
+- delta: harness/tools/record.py (learning-rendering split), trail/SKILL.md 2.1.0 -> 2.2.0, improve/SKILL.md 3.12.1 -> 3.12.2, verify.py (freshness check extended); CHANGELOG.md v4.11.0 added
+
+### Interpretation of the ask
+
+Operator: "Okay now run the improve skill on the skills repo." Generic prompt. Per improve step 1's instruction for underspecified asks, formed a destination-hunch from orientation.md's carried-forward items: destination note item 3 (token/resource efficiency) has been named since the 2026-08-01 destination note but never addressed as its own dedicated topic -- every response to that note so far has been about reasoning-capability (genericity, the self-check that was withdrawn, the precedent-check requirement), none about efficiency itself. I interpreted this as the highest-leverage, most clearly under-served direction available.
+
+### Examination
+
+Precedent check (per the new [!DECISION] requirement from the immediately prior entry): grepped learning.md for "efficiency", "token", "bounded", "archive" before proposing anything -- found only this session's own realizations about the reasoning-capability thread; nothing pre-existing about learning.md's own size or growth. Confirmed this is a genuinely new angle, not a duplicate of prior work.
+
+Purpose/Waste lenses applied with efficiency specifically in mind (per destination note item 3): considered the ACM section 4 paragraph duplication across 4 files first, but concluded it is a one-time-per-invocation cost (each skill read pays for its own copy once, not 4x), not a recurring efficiency problem -- already correctly assessed as an acceptable tradeoff in an earlier entry, no new finding there.
+
+Checked learning.md's actual size directly: `Get-Item .acm/learning.md` measured 120,835 bytes containing 282 markers before this change. This file is read at the start of every improve/orient/intent run per step 1's explicit instruction, and grows by 2-4 markers per entry with no compaction mechanism in `record.py`'s `_render_learning` -- confirmed by reading the function directly. This is a genuine, measured, recurring per-run cost, unlike the paragraph-duplication candidate, and it will keep growing without bound as the trail lengthens. This is the first candidate this session that is concretely, numerically an efficiency problem rather than an assumed one.
+
+### Decision
+
+[!DECISION] Bound `learning.md` to a recent window of the most recent 60 markers; move everything older into `.acm/learning-archive.md`, read only when the recent window doesn't cover what's needed. Mirrors the CHANGELOG.md / archive/v2 pattern already established in this repo for exactly this kind of unbounded-growth problem.
+
+Rationale: this directly targets the measured cost (a file read at the start of every run, growing without bound) rather than a hypothetical one (the ACM section 4 duplication). The fix reuses an existing, already-successful pattern in this repo rather than inventing a new one.
+
+Rejected alternative: summarize/compact older markers instead of archiving them verbatim. Rejected -- summarization would require subjective judgment calls about what to compress, risking losing exactly the kind of specific, falsifiable detail this repo's own principles require in realizations; a plain recency-window split preserves every marker's exact original wording, just relocates the older ones.
+
+Rejected alternative: prune markers entirely after N entries (delete rather than archive). Rejected -- violates the append-only spirit of the memory layer; archiving (not deleting) keeps every marker recoverable, just not in the default read path.
+
+Rejected alternative: make the window size configurable via an environment variable or CLI flag from day one. Rejected as premature -- a single reasonable constant (60) is simpler, and the file already prints exactly how many markers were kept vs. archived, making the boundary visible and adjustable later if 60 turns out to be wrong.
+
+Precedent check: confirmed above -- no existing learning.md content addressed file-size/growth; this is a new angle, not a duplicate.
+
+### Prediction
+
+I will modify record.py's learning-rendering logic to split into a bounded recent file and an archive file, update trail/SKILL.md and improve/SKILL.md's descriptions to match, and extend verify.py's freshness check to cover the new optional archive file. I expect learning.md's size to drop substantially (based on 60 markers vs. 282, expect roughly 60/282 of the current size). I expect verify.py to pass with the archive file present. I expect this NOT to lose any marker content -- every marker should still exist, either in learning.md or learning-archive.md, none deleted.
+
+### Action
+
+Edited harness/tools/record.py: added `LEARNING_RECENT_COUNT = 60` constant with an explanatory comment; added `_render_learning_page()` to render either the recent window or the archive with appropriate headers; rewrote `_render_learning()` (terminal/non-write path, unchanged full-dump behavior) and `cmd_learning()` (write path, now splits into recent + archive and writes both files, printing counts for each). Updated trail/SKILL.md's directory listing and learning.md description to mention learning-archive.md and the bounded-window behavior; bumped 2.1.0 -> 2.2.0. Updated improve/SKILL.md step 1's learning.md bullet to mention the bounded window and the archive fallback; bumped 3.12.1 -> 3.12.2. Extended verify.py's `check_derived_artifact_freshness()` to validate learning-archive.md's freshness when it exists, without requiring its existence (it is conditionally created). Added CHANGELOG.md v4.11.0 entry with the measured before/after sizes.
+
+Ran `python harness/tools/record.py learning --write`: output confirmed "wrote learning.md (60 recent markers) and learning-archive.md (222 archived markers) from 170 entries". Measured file sizes directly: learning.md 120,835 -> 33,880 bytes (72% reduction); learning-archive.md 87,578 bytes (the relocated content, not lost). Ran python verify.py -- passed clean.
+
+Comparing outcome to prediction: held fully. Size dropped roughly in proportion to the marker-count ratio (60/282 ~ 21% of markers, but the recent 60 skew slightly longer on average, landing at 28% of the original byte size -- close enough to the predicted range). No content was lost -- 60 + 222 = 282, matching the pre-change marker count exactly.
+
+### Reflection
+
+[!REALIZATION] This is the first entry in this whole multi-turn arc that responds to destination note item 3 (token/resource efficiency) as its own dedicated concern, rather than as a side effect of an unrelated instruction (the earlier trail sessions-mandate removal was efficiency-motivated but operator-directed, not self-derived from the destination text). Unlike the reasoning-capability attempts, this one did not require touching a skill file's *behavioral* instructions at all -- it is a change to tooling (record.py) and a description update (trail/SKILL.md, improve/SKILL.md), with no risk of the genericity violation that tripped up the earlier attempt, because record.py and the .acm/ file structure are already generic (they apply identically to any target using these skills, not just this repo).
+
+Named blind spot: the window size (60) is a guess, not derived from any measurement of how far back a typical run actually needs to look for relevant precedent. If 60 markers turns out to be too small (a relevant precedent falls just outside the window regularly) or too large (still growing uncomfortably before the next archive review), that would only become visible after more entries accumulate. No mechanism currently prompts a review of whether 60 is still the right number.
+
+Imagined-reader pushback: "You just moved the growth problem from learning.md to learning-archive.md, which will now grow unboundedly instead. You haven't actually solved the unbounded-growth problem, you've relocated where it manifests." This is correct and I want to name it plainly rather than claim more than the change actually does: learning-archive.md is not itself bounded and will keep growing. The claimed win is narrower than "unbounded growth solved" -- it is "the file read at the start of *every* run stays bounded; the growth is confined to a file read only occasionally, on demand." Whether learning-archive.md itself eventually needs its own compaction strategy (e.g., a second, older tier) is a legitimate future question this change does not answer.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired -- this is a new finding-class (bounding a specific derived artifact's growth), not a repeat of a prior pattern in this session.
+- *About to declare silence:* not fired -- this run made a substantive change.
+- *Contradicts prior [!REALIZATION]:* not fired -- directly acts on the destination note and the orient run's carried-forward item without contradicting either.
+- *Operator explicitly asked:* not fired -- operator gave a bare "run the improve skill"; the topic came from destination note item 3, carried forward across several entries as untouched.
+
+### Candidate Next Moves
+
+1. Decide whether learning-archive.md itself eventually needs a second-tier compaction strategy once it grows large enough to matter -- named as an open question in the imagined-reader pushback above, not yet a problem at 222 markers / 87KB but worth a future check.
+2. Reconsider whether LEARNING_RECENT_COUNT=60 is the right window size once more entries accumulate and there is evidence of whether 60 markers is too narrow or too generous for typical run needs.
+3. Audit this session's other changes (ACM section 4 additions, trail sessions-mandate removal, the reasoning-capability attempts) against learning.md for the same unconsulted-precedent pattern -- still carried from the orient run, not yet done.
+4. Settle whether a target-agnostic formulation of "self-targeting should surface reasoning-capability gaps" is even coherent -- still carried, not yet done.
+5. The suite's older backlog (CITATION.cff currency, B1 replication, mtime freshness, whole-suite mandate gate) remains available if the operator wants to redirect.

@@ -50,6 +50,14 @@ ENTRY_HEADING = re.compile(r"^##\s+(\d{4}-\d{2}-\d{2})\s+[\u2014-]\s+(.+?)\s*$")
 META_FIELD = re.compile(r"^-\s+(target|outcome|delta):\s*(.+)$")
 MARKER = re.compile(r"\[!(DECISION|REVERSAL|REALIZATION)\]\s*(.+?)\s*$")
 
+# learning.md is read at the start of every run (improve/orient/intent step 1).
+# Without a bound, it grows by every [!REALIZATION]/[!REVERSAL] marker forever,
+# making that mandatory read progressively more expensive with no ceiling.
+# Keep only the most recent N markers in the live file; older ones move to
+# learning-archive.md, read only when the recent window doesn't cover what's
+# needed. Mirrors the CHANGELOG.md / archive/v2 split already used in this repo.
+LEARNING_RECENT_COUNT = 60
+
 STUB_TEMPLATE = """\
 
 ## {date} \u2014 {slug}
@@ -279,6 +287,43 @@ def cmd_history(args: argparse.Namespace) -> int:
     return 0
 
 
+def _render_learning_page(items: list[tuple[str, str, str, str]], *, archived_count: int, is_archive: bool) -> str:
+    """Render one markdown page (recent window or archive) of learning markers."""
+    lines: list[str] = []
+    if is_archive:
+        lines.append("# Learning (archive)")
+        lines.append("")
+        lines.append("Auto-generated from `.acm/audit-trail.md` by the `record.py learning --write` command in the autonomous-agent-skills install.")
+        lines.append("Do not edit by hand — re-run the command to refresh.")
+        lines.append("")
+        lines.append("Markers older than the recent window kept in `.acm/learning.md`. Read this only when the recent window doesn't cover what you're looking for — most runs will never need it.")
+    else:
+        lines.append("# Learning")
+        lines.append("")
+        lines.append("Auto-generated from `.acm/audit-trail.md` by the `record.py learning --write` command in the autonomous-agent-skills install.")
+        lines.append("Do not edit by hand — re-run the command to refresh.")
+        lines.append("")
+        lines.append("Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.")
+        if archived_count:
+            lines.append("")
+            lines.append(f"Showing the most recent {len(items)} markers. {archived_count} older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.")
+    lines.append("")
+    if not items:
+        lines.append("_(no markers found)_")
+        return "\n".join(lines) + "\n"
+    for date, slug, kind, content in items:
+        lines.append(f"## {date} — {slug}")
+        lines.append("")
+        lines.append(f"**[!{kind}]** {content}")
+        lines.append("")
+    lines.append("---")
+    lines.append("")
+    realisation_count = sum(1 for it in items if it[2] == "REALIZATION")
+    reversal_count = len(items) - realisation_count
+    lines.append(f"**{len(items)} markers — {realisation_count} realisations, {reversal_count} reversals**")
+    return "\n".join(lines) + "\n"
+
+
 def _render_learning(entries: list[dict], markdown: bool) -> str:
     """Render the [!REALIZATION] / [!REVERSAL] markers across all entries.
 
@@ -294,30 +339,11 @@ def _render_learning(entries: list[dict], markdown: bool) -> str:
             items.append((e["date"], e["slug"], "REVERSAL", r))
 
     if markdown:
-        lines: list[str] = []
-        lines.append("# Learning")
-        lines.append("")
-        lines.append("Auto-generated from `.acm/audit-trail.md` by the `record.py learning --write` command in the autonomous-agent-skills install.")
-        lines.append("Do not edit by hand — re-run the command to refresh.")
-        lines.append("")
-        lines.append("Compact chronological extract of every `[!REALIZATION]` and `[!REVERSAL]` marker. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.")
-        lines.append("")
-        if not items:
-            lines.append("_(no markers found)_")
-            return "\n".join(lines) + "\n"
-        for date, slug, kind, content in items:
-            lines.append(f"## {date} — {slug}")
-            lines.append("")
-            lines.append(f"**[!{kind}]** {content}")
-            lines.append("")
-        lines.append(f"---")
-        lines.append("")
-        realisation_count = sum(1 for it in items if it[2] == "REALIZATION")
-        reversal_count = len(items) - realisation_count
-        lines.append(f"**{len(items)} markers — {realisation_count} realisations, {reversal_count} reversals**")
-        return "\n".join(lines) + "\n"
+        recent = items[-LEARNING_RECENT_COUNT:] if len(items) > LEARNING_RECENT_COUNT else items
+        archived_count = len(items) - len(recent)
+        return _render_learning_page(recent, archived_count=archived_count, is_archive=False)
 
-    # Terminal format
+    # Terminal format — full dump, not windowed (ad-hoc viewing, not the committed artifact).
     lines = []
     if not items:
         lines.append("(no [!REALIZATION] or [!REVERSAL] markers found)")
@@ -340,13 +366,27 @@ def cmd_learning(args: argparse.Namespace) -> int:
     text = _safe_read_log()
     entries = _parse_entries(text)
     write = getattr(args, "write", False)
-    output = _render_learning(entries, markdown=write)
     if write:
-        out_path = LOG.parent / "learning.md"
-        out_path.write_text(output, encoding="utf-8")
-        item_count = sum(len(e["realizations"]) + len(e["reversals"]) for e in entries)
-        print(f"wrote {out_path} ({item_count} markers from {len(entries)} entries)")
+        items: list[tuple[str, str, str, str]] = []
+        for e in entries:
+            for r in e["realizations"]:
+                items.append((e["date"], e["slug"], "REALIZATION", r))
+            for r in e["reversals"]:
+                items.append((e["date"], e["slug"], "REVERSAL", r))
+        recent = items[-LEARNING_RECENT_COUNT:] if len(items) > LEARNING_RECENT_COUNT else items
+        archived = items[:-LEARNING_RECENT_COUNT] if len(items) > LEARNING_RECENT_COUNT else []
+
+        learning_out = LOG.parent / "learning.md"
+        learning_out.write_text(_render_learning_page(recent, archived_count=len(archived), is_archive=False), encoding="utf-8")
+
+        archive_out = LOG.parent / "learning-archive.md"
+        if archived:
+            archive_out.write_text(_render_learning_page(archived, archived_count=0, is_archive=True), encoding="utf-8")
+            print(f"wrote {learning_out} ({len(recent)} recent markers) and {archive_out} ({len(archived)} archived markers) from {len(entries)} entries")
+        else:
+            print(f"wrote {learning_out} ({len(recent)} markers, none archived yet) from {len(entries)} entries")
     else:
+        output = _render_learning(entries, markdown=False)
         print(output)
     return 0
 

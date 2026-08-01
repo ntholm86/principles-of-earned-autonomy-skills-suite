@@ -555,6 +555,10 @@ def check_derived_artifact_freshness() -> list[str]:
     timestamp and the check correctly passes. The check catches the primary
     failure mode: agent appended to audit-trail.md but forgot to regenerate the
     derived artifacts before committing.
+
+    learning-archive.md is conditional: record.py only creates it once the
+    marker count exceeds the recent-window size, so its absence is not a
+    failure. If it exists, it must not be stale, same as the other two.
     """
     failures: list[str] = []
     if not LOG.exists():
@@ -573,6 +577,12 @@ def check_derived_artifact_freshness() -> list[str]:
                 f"stale derived artifact .acm/{artifact_name} is older than .acm/audit-trail.md — "
                 f"run: python tools/record.py {subcommand} --write"
             )
+    archive = ROOT / ".acm" / "learning-archive.md"
+    if archive.exists() and archive.stat().st_mtime < log_mtime:
+        failures.append(
+            "stale derived artifact .acm/learning-archive.md is older than .acm/audit-trail.md — "
+            "run: python tools/record.py learning --write"
+        )
     return failures
 
 

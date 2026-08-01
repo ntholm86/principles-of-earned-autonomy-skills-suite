@@ -1,5 +1,10 @@
 # Changelog
 
+## v4.11.0 — 2026-08-01
+
+### Changed
+- **`learning.md` is now bounded to a recent window instead of growing unboundedly forever (`harness/tools/record.py`, `trail/SKILL.md` 2.1.0 → 2.2.0, `improve/SKILL.md` 3.12.1 → 3.12.2, `verify.py`).** `learning.md` is read at the start of every improve/orient/intent run (a mandatory step-1 read); before this change it accumulated every `[!REALIZATION]`/`[!REVERSAL]` marker from the entire trail with no ceiling — measured at 120,835 bytes / 282 markers before this change. `record.py learning --write` now keeps only the most recent `LEARNING_RECENT_COUNT` (60) markers in `learning.md` and moves the rest to `.acm/learning-archive.md`, read only when the recent window doesn't cover what's needed. After this change: `learning.md` is 33,880 bytes (60 markers), `learning-archive.md` holds the other 222. `verify.py`'s derived-artifact-freshness check now also validates `learning-archive.md` when it exists (its absence is not a failure — it's only created once the trail is long enough). This is the first dedicated response to the destination's 2026-08-01 note naming token/resource efficiency as a real constraint, not an optimization afterthought — the prior two responses to that note were about reasoning-capability, not efficiency.
+
 ## v4.10.0 — 2026-08-01
 
 ### Changed

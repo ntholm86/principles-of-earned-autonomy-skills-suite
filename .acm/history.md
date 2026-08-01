@@ -175,6 +175,7 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 168 | 2026-08-01 | reversal-self-targeting-branch-violates-genericity | reverted the previous entry's addition to improve/SKILL.md's Self-targeting section; it violated this suite's own "Generic first" constraint and an already-recorded lesson in learning.md | improve/SKILL.md 3.12.0 -> 3.12.1 (reversal); CHANGELOG.md v4.9.1 [correction] entry added |
 | ▸ 169 | 2026-08-01 | orient-post-genericity-reversal | orientation.md rewritten; window contains a well-reasoned architectural correction (trail sessions-mandate removal) and a self-correction cycle (a change withdrawn after being found to violate the suite's own genericity constraint) -- the correction is judged the most valuable evidence this window produced | .acm/orientation.md rewritten (was last updated 2026-08-01 as orient-post-acm4-closure) |
 | ▸ 170 | 2026-08-01 | trail-decision-precedent-check-requirement | [!DECISION] entries now require an explicit precedent check against learning.md, generically worded for any target | trail/SKILL.md 2.0.0 -> 2.1.0; CHANGELOG.md v4.10.0 added |
+| ▸ 171 | 2026-08-01 | learning-md-bounded-recent-window-plus-archive | learning.md is now bounded to a recent window (60 markers) with older markers moved to learning-archive.md; measured reduction from 120,835 bytes to 33,880 bytes for the mandatory step-1 read | harness/tools/record.py (learning-rendering split), trail/SKILL.md 2.1.0 -> 2.2.0, improve/SKILL.md 3.12.1 -> 3.12.2, verify.py (freshness check extended); CHANGELOG.md v4.11.0 added |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -820,4 +821,9 @@ Do not edit by hand — re-run the command to refresh.
 - **decided:** marker definition, template, and worked example with a precedent-check requirement. I expect this to make the requirement visible the next time any agent reads trail/SKILL.md before writing a [!DECISION]. I expect this NOT to be mechanically enforced by verify.py (a deliberate choice, not an oversight) and NOT to change the four-trigger across-trail evaluation already required in the Reflection section, which is a separate, already-established mechanism.
 - **decided:** <choice made, rationale, alternatives rejected, precedent check>`; marker definition extended with the precedent-check requirement and its rationale; worked example given a fourth line ("Precedent check: learning.md had no prior realization about skill count or collapsing; nothing relevant found."). Bumped trail/SKILL.md 2.0.0 -> 2.1.0. Added CHANGELOG.md v4.10.0 entry. Ran python verify.py after regenerating derived artifacts -- passed clean on the first attempt.
 
-**170 runs total — 156 with changes, 14 silence**
+### Run 171 — 2026-08-01 — learning-md-bounded-recent-window-plus-archive
+
+- **decided:** requirement from the immediately prior entry): grepped learning.md for "efficiency", "token", "bounded", "archive" before proposing anything -- found only this session's own realizations about the reasoning-capability thread; nothing pre-existing about learning.md's own size or growth. Confirmed this is a genuinely new angle, not a duplicate of prior work.
+- **decided:** Bound `learning.md` to a recent window of the most recent 60 markers; move everything older into `.acm/learning-archive.md`, read only when the recent window doesn't cover what's needed. Mirrors the CHANGELOG.md / archive/v2 pattern already established in this repo for exactly this kind of unbounded-growth problem.
+
+**171 runs total — 157 with changes, 14 silence**
