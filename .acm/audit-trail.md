@@ -10086,3 +10086,51 @@ Found one real gap: STALE_PATH_DOCS was missing QUICKSTART.md and harness/BENCHM
 1. **Exercise Orient's new step 3b in a live run** -- added earlier today, never yet exercised.
 2. **Decide on the duplicate "Section 5" numbering defect found in agent-context-memory/SPEC.md** -- a different repo's decision, named but not this repo's to resolve alone.
 3. Settle whether a target-agnostic formulation of "self-targeting should surface reasoning-capability gaps" is even coherent -- still carried, deliberately not rushed.
+
+## 2026-08-01 - orient-how-close-to-destination
+
+- target: skills repo (this repo)
+- operator: maintainer (Nils Holmager)
+- agent: Claude Sonnet 4.5 (GitHub Copilot)
+- skill: orient
+- outcome: read the 12-entry arc since the last orient run and answered the operator's direct question ("how close are we to the destination") in bounded terms per named success condition -- research success and learning show real, accumulating evidence; adoption success has had zero attention this entire session
+- delta: .acm/orientation.md rewritten wholesale (no code change)
+
+### Scope statement
+
+Operator asked directly: "im trying to decide how close we are to the destination." Read the 12-entry arc from `orient-post-bom-cleanup-and-efficiency-check` through `systematic-verifypy-audit-closes-stale-path-docs-gap` against destination.md's own named success conditions (research success, adoption success), its "hard problem" (autonomous orientation.md derivation), and its explicit "most underdeveloped" dimension (learning) -- rather than answering conversationally, ran an actual Orient pass since this is precisely the question Orient exists to answer.
+
+**Freshness check (run evidence):**
+- `python harness/tools/record.py history --write` -> 188 entries.
+- `python harness/tools/record.py learning --write` -> 60 recent + 274 archived markers.
+- `python verify.py` -> OK, trail integrity checks pass.
+- Gate: PASS (arc-claims allowed).
+
+### Arc-claims
+
+1. This window closed the entire systemic BOM cleanup arc and resolved the prior orient run's own named "one change per run vs. efficiency" tension -- the first time a prior orient claim was picked up and acted on by a later window rather than re-named.
+2. The Argyris double-loop mechanism now exists in both improve/SKILL.md and orient/SKILL.md, closing a gap the operator asked about directly.
+3. Destination note item 3 (efficiency) got sustained, direct attention this window (two substantive entries) versus one entry six windows ago.
+4. The systematic verify.py audit -- named as the top candidate across 4+ prior entries -- was finally executed as a deliberate pass, closing with a smaller yield (one dormant gap) than the accumulated concern implied.
+5. [!REALIZATION] This window produced the first evidenced cross-repo contribution to ACM's own governing specification (agent-context-memory), completing recognition -> draft -> authorization -> implementation -> push within one conversation -- the strongest evidence yet for destination.md's "research success" condition.
+
+Full reasoning, falsifiability conditions, and the direct bounded answer to "how close to the destination" are written into .acm/orientation.md in full (a new "Direct answer to this run's arc-question" section was added specifically for this), not duplicated here.
+
+### Loop-effectiveness
+
+Quality bar tested: does the loop ever initiate an arc-level Orient pass on itself, or does that only happen when the operator asks? Result: only when asked -- twelve entries accumulated this window, several explicitly discussing process ceremony and governing-variable tensions, and none produced a self-initiated Orient run. This orient run exists because the operator asked directly. Operator-gate effectiveness: exercised in five distinct forms across this session (ranked-candidate selection, delegated autonomy, direct diagnostic questions, full architectural delegation, and now a direct arc-level question) -- more shapes than any prior window, all functioning.
+
+[!REALIZATION] The clearest finding from reading the full window as one document: every entry this session was either internal self-consistency work or a contribution to a repo the same operator also controls. Nothing gathered or produced evidence of use by anyone who is not the operator. Destination.md names both research success and adoption success as necessary; this session, for all its real velocity, advanced only the former. Named plainly in orientation.md's direct answer, not softened.
+
+There is no separate Decision/Action field -- Orient is observational; the artifact written is `.acm/orientation.md` itself.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired -- this orient run itself did not encounter a recurring pattern within its own arc-read requiring escalation; it evaluates prior windows' patterns as already resolved (claim 1) or newly closed (claim 4).
+- *About to declare silence:* not fired -- this run produced new arc-claims and a rewritten orientation.md, not a convergence declaration.
+- *Contradicts prior [!REALIZATION]:* not fired -- extends and resolves prior orient run claims (the no-batching/efficiency tension) rather than contradicting them.
+- *Operator explicitly asked:* FIRED -- operator asked directly "how close are we to the destination."
+
+**Across-trail macro-Hansei**
+
+[!REALIZATION] Read as the whole arc from the very first v3-redesign entry through today: the loop has repeatedly demonstrated it can find, diagnose, and fix genuine defects (mojibake, BOM corruption, file-scope gaps, version drift) and can even extend its own reasoning framework (double-loop learning in two skills) and contribute upstream to a different repo's specification. What it has not yet done, across the entire trail, not just this window, is produce or seek evidence that anyone other than the operator has picked this up. This is the single most load-bearing gap this repo's own destination names, and today's session -- despite being unusually productive -- did not close any distance on it. Naming this as the arc's actual state, not just this window's, since the pattern is consistent across the whole history, not new to today.

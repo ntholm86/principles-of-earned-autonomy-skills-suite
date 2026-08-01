@@ -5,23 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 274 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-01 — orient-post-genericity-reversal
-
-**[!REALIZATION]** Trail's .acm/sessions/ mandate removal is a genuine, well-reasoned architectural correction. Both operator-stated reasons were independently verified before acting (llm-harness-proxy's actual scope read directly; the host-product session-history claim verified indirectly via this workspace's own chronicle tooling). Not a reversal candidate.
-
-## 2026-08-01 — orient-post-genericity-reversal
-
-**[!REALIZATION]** Destination gained a new note naming three gaps (genericity as self-claim, self-targeting deriving reasoning-capability improvement, token efficiency) -- and the very first attempt to act on the reasoning-capability gap failed the suite's own oldest genericity constraint. The withdrawn addition named "this suite" and a dated destination note inside a skill file that must work generically across any target.
-
-## 2026-08-01 — orient-post-genericity-reversal
-
-**[!REALIZATION]** The genericity violation was not novel -- the exact failure mode was already recorded in learning.md (the reflect-step-hansei-rewrite entry's "remain target-agnostic enough that the self-targeting case falls out without special-casing"), read at the start of the same session. This is the most concrete, falsifiable evidence yet on the suite's oldest open question (does the loop carry prior learning forward): this window's answer is no, not reliably, from a single read at session start.
-
-## 2026-08-01 — orient-post-genericity-reversal
-
-**[!REALIZATION]** The operator-gate caught what the loop's own process did not, immediately, in the same session -- a new form of gate-effectiveness evidence distinct from prior "which next move to pick" evidence: this is the gate catching a bad implementation of an agreed destination-level concern.
+Showing the most recent 60 markers. 278 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-01 — orient-post-genericity-reversal
 
@@ -246,6 +230,22 @@ Showing the most recent 60 markers. 274 older marker(s) are in `.acm/learning-ar
 ## 2026-08-01 — systematic-verifypy-audit-closes-stale-path-docs-gap
 
 **[!REALIZATION]** This closes the loop the recurring-finding-class trigger has been naming all day: rather than a fifth accidental discovery of the same pattern, this entry performed the actual systematic pass and found the audit produces a much smaller yield than the accumulated anxiety about it suggested -- one dormant gap, not another BOM-scale issue. That is itself informative: the pattern recurred because each individual instance was found in a different subject area (file lists, encoding checks, version metadata, git tags), not because verify.py as a whole is unreliable. A single deliberate pass was sufficient to confirm the check suite is now in good shape, closing this as a standing concern rather than a permanently-open one.
+
+## 2026-08-01 — orient-how-close-to-destination
+
+**[!REALIZATION]** This window produced the first evidenced cross-repo contribution to ACM's own governing specification (agent-context-memory), completing recognition -> draft -> authorization -> implementation -> push within one conversation -- the strongest evidence yet for destination.md's "research success" condition.
+
+## 2026-08-01 — orient-how-close-to-destination
+
+**[!REALIZATION]** The clearest finding from reading the full window as one document: every entry this session was either internal self-consistency work or a contribution to a repo the same operator also controls. Nothing gathered or produced evidence of use by anyone who is not the operator. Destination.md names both research success and adoption success as necessary; this session, for all its real velocity, advanced only the former. Named plainly in orientation.md's direct answer, not softened.
+
+## 2026-08-01 — orient-how-close-to-destination
+
+**[!REALIZATION]** :* not fired -- extends and resolves prior orient run claims (the no-batching/efficiency tension) rather than contradicting them.
+
+## 2026-08-01 — orient-how-close-to-destination
+
+**[!REALIZATION]** Read as the whole arc from the very first v3-redesign entry through today: the loop has repeatedly demonstrated it can find, diagnose, and fix genuine defects (mojibake, BOM corruption, file-scope gaps, version drift) and can even extend its own reasoning framework (double-loop learning in two skills) and contribute upstream to a different repo's specification. What it has not yet done, across the entire trail, not just this window, is produce or seek evidence that anyone other than the operator has picked this up. This is the single most load-bearing gap this repo's own destination names, and today's session -- despite being unusually productive -- did not close any distance on it. Naming this as the arc's actual state, not just this window's, since the pattern is consistent across the whole history, not new to today.
 
 ---
 

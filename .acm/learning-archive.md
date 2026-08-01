@@ -1101,6 +1101,22 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REVERSAL]** The entry "improve-self-targeting-reasoning-capability-instrument" (2026-08-01, this same session) added a self-targeting-specific paragraph to improve/SKILL.md's Self-targeting section. This entry fully reverses that addition after the operator identified it violates the suite's own genericity constraint.
 
+## 2026-08-01 — orient-post-genericity-reversal
+
+**[!REALIZATION]** Trail's .acm/sessions/ mandate removal is a genuine, well-reasoned architectural correction. Both operator-stated reasons were independently verified before acting (llm-harness-proxy's actual scope read directly; the host-product session-history claim verified indirectly via this workspace's own chronicle tooling). Not a reversal candidate.
+
+## 2026-08-01 — orient-post-genericity-reversal
+
+**[!REALIZATION]** Destination gained a new note naming three gaps (genericity as self-claim, self-targeting deriving reasoning-capability improvement, token efficiency) -- and the very first attempt to act on the reasoning-capability gap failed the suite's own oldest genericity constraint. The withdrawn addition named "this suite" and a dated destination note inside a skill file that must work generically across any target.
+
+## 2026-08-01 — orient-post-genericity-reversal
+
+**[!REALIZATION]** The genericity violation was not novel -- the exact failure mode was already recorded in learning.md (the reflect-step-hansei-rewrite entry's "remain target-agnostic enough that the self-targeting case falls out without special-casing"), read at the start of the same session. This is the most concrete, falsifiable evidence yet on the suite's oldest open question (does the loop carry prior learning forward): this window's answer is no, not reliably, from a single read at session start.
+
+## 2026-08-01 — orient-post-genericity-reversal
+
+**[!REALIZATION]** The operator-gate caught what the loop's own process did not, immediately, in the same session -- a new form of gate-effectiveness evidence distinct from prior "which next move to pick" evidence: this is the gate catching a bad implementation of an agreed destination-level concern.
+
 ---
 
-**274 markers — 253 realisations, 21 reversals**
+**278 markers — 257 realisations, 21 reversals**
