@@ -226,6 +226,8 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 219 | 2026-08-02 | surface-governance-accretion-redesign | surfaced a previously unnamed redesign finding; no product change made pending operator decision | evidence-only iteration; current Improve measured against its original v3 contract |
 | ▸ 220 | 2026-08-02 | orient-after-governance-accretion-finding | recognized unseeded discovery as passed, elevated governance accretion as the strongest internal constraint, and kept redesign validation open | Orientation claim 2 falsified and replaced; next-test ranking updated |
 | ▸ 221 | 2026-08-02 | prototype-layered-improve | resource reduction and conditional routing passed after repair; strict behavioral preservation remains unproven; production unchanged | added a non-installed 101-line kernel, 57-line conditional layer, novelty fixture, and evidence report |
+| ▸ 222 | 2026-08-02 | replicate-layered-improve-grounding-test | operator gate passed in both arms; factual grounding failed in both arms; layered routing remained inconsistent | added `NOVELTY_CASE_2.md` and `RESULTS_CASE_2.md`; production and prototype contracts unchanged |
+| ▸ 223 | 2026-08-02 | orient-after-replicated-layered-tests | separated operator-gate success from shared grounding failure and redirected the next test away from instruction editing | `.acm/orientation.md` refreshed from pre-prototype hypothesis to post-replication evidence |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -1028,4 +1030,8 @@ Do not edit by hand — re-run the command to refresh.
 - **REVERSAL:** The initial kernel assumed "Apply Intent/Trail" and a link to conditional protocols were sufficient composition instructions. The first isolated evaluator treated siblings as manual and skipped conditional loading. Repaired the kernel by making automatic composition explicit and exposing the trigger index.
 - **REVERSAL:** The second evaluator identified Standalone Fallback but still declined to read it, invented mechanisms, and inferred Orientation staleness from absent context. Repaired the kernel by requiring matching-section loading, separating facts/inferences/proposals, and stating that missing Orientation evidence does not prove staleness.
 
-**221 runs total — 206 with changes, 15 silence**
+### Run 222 — 2026-08-02 — replicate-layered-improve-grounding-test
+
+- **decided:** Leave production and prototype contracts unchanged and record the replicated negative result. The consequential-action gate held across all four complete outputs, while factual grounding and mechanism restraint failed across both evaluators in both arms. Layering neither solved nor uniquely caused that shared failure, and its conditional routing remains inconsistent.
+
+**223 runs total — 208 with changes, 15 silence**

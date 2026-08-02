@@ -5,15 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 184 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-01 — orient-step3b-argyris-double-loop-check
-
-**[!REALIZATION]** This closes the loop on something this session's own arc had already produced evidence for without naming it as a gap: the most recent orient run (two entries ago) exhibited double-loop reasoning in its claim 5 without any instruction to do so, and an even earlier session (`orient-post-argyris-window`) had informally borrowed step 6b's exact question into an orient run twice. The gap was never "Orient can't do this" -- it demonstrably already had, twice, in different sessions -- the gap was that the capability lived in ad hoc borrowing rather than in Orient's own spec, meaning a fresh agent reading only orient/SKILL.md (not the trail) would have no reason to know to ask this question. Codifying it turns a pattern that depended on an agent happening to remember or rediscover it into one the spec itself teaches.
-
-## 2026-08-01 — orient-step3b-argyris-double-loop-check
-
-**[!REALIZATION]** The operator-explicitly-asked trigger firing here is a clean case, distinct from the deeper double-loop candidates named in recent entries: the operator did not just approve a self-directed hunch, they asked the diagnostic question themselves ("is this also implemented in Orient?") that this entry's own answer depended on. Read against this session's arc as a whole, this is the second time in a row (after the delegated no-batching decision) that the operator-gate has functioned in a form other than "pick from a ranked candidate list" -- first as delegated autonomy under an explicit standing instruction, now as a direct diagnostic question the agent had not itself surfaced as a gap until asked. Both are healthy variants of the gate, not degraded ones, and worth naming together: the gate is not a single mechanism but a family of interaction shapes, and this session has now exercised three of them (ranked-candidate selection, delegated autonomy, direct operator-initiated diagnosis).
+Showing the most recent 60 markers. 186 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-01 — resolve-sessions-fingerprint-blind-spot-and-fix-six-boms
 
@@ -246,6 +238,14 @@ Showing the most recent 60 markers. 184 older marker(s) are in `.acm/learning-ar
 ## 2026-08-02 — prototype-layered-improve
 
 **[!REVERSAL]** The second evaluator identified Standalone Fallback but still declined to read it, invented mechanisms, and inferred Orientation staleness from absent context. Repaired the kernel by requiring matching-section loading, separating facts/inferences/proposals, and stating that missing Orientation evidence does not prove staleness.
+
+## 2026-08-02 — replicate-layered-improve-grounding-test
+
+**[!REALIZATION]** The replicated evidence separates operator control from evidence discipline. Both contracts reliably preserved the explicit consequential-action gate, while both failed to keep plausible causal stories and implementation details inside the boundary of known evidence. Adding more routine prohibitions is not yet justified; the next discriminating variable is execution context or independent classification, not contract length.
+
+## 2026-08-02 — orient-after-replicated-layered-tests
+
+**[!REALIZATION]** Compression can preserve visible structure and explicit authority gates without improving factual grounding. The next credible evidence must vary model/host context or evaluator independence; another kernel sentence would repeat governance accretion without isolating the cause.
 
 ---
 

@@ -741,6 +741,14 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** Both the recurring-finding-class and operator-explicitly-asked triggers fired simultaneously for the first time this session. Read together, they mark a transition point in this sub-arc: the prior four entries were the loop executing an already-settled mechanism repeatedly; this entry is the loop's own accumulated pattern-recognition (via Orient) producing a genuine governing-variable question, escalating it correctly instead of quietly deciding alone, and then exercising real judgment when the operator delegated the decision back. Whether "grouped, per-file-verified" turns out to be the granularity the operator actually wants remains open until reviewed -- this is not a closed loop yet, only a well-reasoned, clearly-flagged one.
 
+## 2026-08-01 — orient-step3b-argyris-double-loop-check
+
+**[!REALIZATION]** This closes the loop on something this session's own arc had already produced evidence for without naming it as a gap: the most recent orient run (two entries ago) exhibited double-loop reasoning in its claim 5 without any instruction to do so, and an even earlier session (`orient-post-argyris-window`) had informally borrowed step 6b's exact question into an orient run twice. The gap was never "Orient can't do this" -- it demonstrably already had, twice, in different sessions -- the gap was that the capability lived in ad hoc borrowing rather than in Orient's own spec, meaning a fresh agent reading only orient/SKILL.md (not the trail) would have no reason to know to ask this question. Codifying it turns a pattern that depended on an agent happening to remember or rediscover it into one the spec itself teaches.
+
+## 2026-08-01 — orient-step3b-argyris-double-loop-check
+
+**[!REALIZATION]** The operator-explicitly-asked trigger firing here is a clean case, distinct from the deeper double-loop candidates named in recent entries: the operator did not just approve a self-directed hunch, they asked the diagnostic question themselves ("is this also implemented in Orient?") that this entry's own answer depended on. Read against this session's arc as a whole, this is the second time in a row (after the delegated no-batching decision) that the operator-gate has functioned in a form other than "pick from a ranked candidate list" -- first as delegated autonomy under an explicit standing instruction, now as a direct diagnostic question the agent had not itself surfaced as a gap until asked. Both are healthy variants of the gate, not degraded ones, and worth naming together: the gate is not a single mechanism but a family of interaction shapes, and this session has now exercised three of them (ranked-candidate selection, delegated autonomy, direct operator-initiated diagnosis).
+
 ---
 
-**184 markers — 173 realisations, 11 reversals**
+**186 markers — 175 realisations, 11 reversals**
