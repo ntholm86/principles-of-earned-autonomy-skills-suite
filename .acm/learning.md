@@ -5,15 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 188 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-01 — fix-orientation-and-audit-trail-boms-closes-cleanup-arc
-
-**[!REALIZATION]** This closes the entire systemic BOM cleanup arc that began four entries ago as an unplanned discovery inside a REQUIRED_FILES coverage fix. Twelve files total were fixed across this arc (verify.py, QUICKSTART.md, INSTALLING.md, record.py, three SKILL.md files, six session files, orientation.md, and now audit-trail.md), zero of which suffered any content loss or corruption beyond the intended 3-byte BOM removal, each independently verified. The arc's own governing-variable question (raised via the delegated no-batching-vs-efficiency decision) was itself resolved in practice, not just in principle: this final entry groups two files of genuinely different risk profiles under one entry, but gives each the level of individual scrutiny its risk actually warrants -- a quick standard check for orientation.md, a deliberately designed and reconfirmed check for audit-trail.md. That asymmetry within a single entry is arguably the correct resolution of the tension named two entries ago: grouping should track marginal information value, not treat every file identically regardless of risk.
-
-## 2026-08-01 — fix-orientation-and-audit-trail-boms-closes-cleanup-arc
-
-**[!REALIZATION]** Per the established lighter-weight-pointer convention: no new governing-variable diagnosis is introduced here. The pattern-family diagnosis stands as recorded in `confirm-bom-root-cause-and-fix-verifypy`; the grouping-vs-risk resolution is this entry's own contribution, noted above, and does not contradict the delegated decision two entries ago -- it is the natural completion of applying that decision with risk-appropriate rigor rather than a uniform template.
+Showing the most recent 60 markers. 190 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-01 — fix-lens-count-miscount-three-vs-four
 
@@ -246,6 +238,14 @@ Showing the most recent 60 markers. 188 older marker(s) are in `.acm/learning-ar
 ## 2026-08-02 — orient-after-replicated-layered-tests
 
 **[!REALIZATION]** The cross-model replication converted the layered-Improve arc from compression feasible but behaviorally unproven to compression feasible and not behaviorally worse, with grounding variation tracking model context. The productive next tests are routing (undertested), cross-vendor (untested), and adoption (unexercised).
+
+## 2026-08-02 — orient-after-replicated-layered-tests
+
+**[!REALIZATION]** Compression is not uniformly good or bad. In this run it coincided with BETTER factual grounding and WORSE across-run reflection depth. The prior finding that the layered arm was never worse on any dimension NO LONGER HOLDS. The likely mechanism is phrasing strength, not byte count: production mandates an explicit four-trigger evaluation with per-trigger evidence and got a double-loop reframe; the kernel asks more softly and got a one-sentence decline to escalate.
+
+## 2026-08-02 — orient-after-replicated-layered-tests
+
+**[!REALIZATION]** A contract repair generalized beyond the surface it was written for. The kernel sentence "missing Orientation context is not evidence that it is stale" was added as the iteration-2 repair during Case 1 and written about Orientation. A routing evaluator applied it correctly and unprompted to a DESTINATION gap. Repairs to this contract can transfer across surfaces rather than staying local to the case that produced them.
 
 ---
 

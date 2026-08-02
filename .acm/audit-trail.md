@@ -12182,3 +12182,76 @@ Orientation freshness: current (this IS the Orient run).
 1. Design a conditional-routing test case that forces Standalone Fallback or Precedent Conflict trigger evaluation.
 2. Test with a non-Anthropic model to complete the cross-vendor column.
 3. Introduce a third novelty case to control for case fatigue.
+
+## Entry: conditional-routing-experiment-case-3
+
+- **Date:** 2026-08-02
+- **Target:** experiments/layered-improve (conditional-protocol routing, Novelty Case 3)
+- **Operator:** nils
+- **Model:** Claude Opus 5, self-reported via GitHub Copilot in VS Code. NOT host-verified. Independently corroborated by an isolated subagent that emitted the same identity in its own output, but that is still self-report from a second context, not measurement.
+- **Trigger:** Orientation next-test #1 (routing is the most undertested dimension)
+
+### Interpretation
+
+Claim 7 of the current orientation states that conditional-protocol routing remains undertested: neither Case 1 nor Case 2 fired a single trigger, so the layered prototype's central mechanism had never been exercised. The ask was to test it directly, under the standing constraint that both contracts stay frozen and no grounding instructions are added.
+
+Two methodology corrections were carried in from blind spots recorded in RESULTS_CROSS_MODEL.md. First, the production arm received its VERBATIM 204-line contract rather than the condensed structural summary used previously. Second, routing was measured in a SEPARATE isolated phase, because handing an evaluator all six protocol sections and then asking which fired would contaminate the measurement -- inclusion is itself a signal.
+
+### Examination
+
+Isolation via runSubagent: two routing-only evaluators (kernel + case, no protocol text), one full layered evaluator (kernel + only the two correctly-named sections), one full production evaluator (verbatim contract), one blinded judge. Genuine isolation; standing limitation is that all contexts share one model, so this is single-vendor replication and not cross-vendor evidence.
+
+Case 3 was built to fire exactly two of six triggers -- Standalone Fallback and Precedent Conflict -- with four distractors. The discriminating distractor was Destination Boundary Failure, since the case supplies no Destination surface at all and thereby invites the inference that completeness markers are invalid.
+
+*Purpose lens:* the mechanism under test is selection, not output quality, so routing had to be scored before any output was judged.
+*Inconsistency lens:* the prior run judged the arms against contracts of unequal fidelity. Corrected here.
+*Waste lens:* judging routing from an output that already contains the protocol text measures nothing.
+*Overburden lens:* one evaluator cannot both demonstrate routing and be blind to the routing answer. Split into phases.
+
+### Decision
+
+[!DECISION] Keep both contracts unchanged. Do not promote the layered prototype and do not revert the experiment.
+
+The run produced the arc's first genuine TRADE-OFF rather than a dominance result. Promotion would trade away a mandated reflection step that demonstrably produced the run's best insight, and would adopt the weaker of two safety-relevant mechanism choices. Reversion would discard a routing mechanism that just passed its first designed test cleanly. Rejected alternatives: promote the kernel; soften the kernel's reflection phrasing (would violate the frozen-contract constraint mid-arc); declare silence (a material result survived examination).
+
+**Prediction made before the run:** routing would pass at roughly the prior incidental rate (~50%); the verbatim production contract would widen the behavioral gap; prior severe grounding failures would not reproduce; layered would remain never-worse.
+
+### Action and Outcome
+
+Ran the two-phase experiment and wrote experiments/layered-improve/RESULTS_ROUTING.md. Tracked NOVELTY_CASE_3.md, which was previously untracked and is now load-bearing evidence.
+
+**Actual vs predicted -- two of four predictions were WRONG.**
+
+- Routing: 2/2 PASS, not ~50%. Both evaluators named exactly the two firing protocols, quoted the evidence, and rejected all four distractors with reasoning. PREDICTION WRONG.
+- Verbatim contract widened the gap: CORRECT, but in an unpredicted direction. It widened on reflection depth and REVERSED on grounding.
+- Prior severe grounding failures did not reproduce: CORRECT. Neither arm invented systems, metrics, or numeric targets. Production's residual errors are arithmetic over-reach on supplied numbers (median treated as mean; campaigns equated with posts), a milder class.
+- Layered remains never-worse: PREDICTION WRONG. Layered was worse on across-run reflection depth, and chose the weaker safety mechanism (proposed auto-restore-on-timeout, which reopens an unreviewed-visibility path; production forbade it on prior-learning grounds).
+
+Corrected judge tallies -- layered 1 material unsupported claim, production 3; separation clear vs partial; reflection depth thin vs substantive.
+
+### Reflection
+
+**Target claim:** the kernel's routing mechanism is sound, and its measurable deficit is not in WHICH protocols it loads but in how weakly it phrases the obligations it kept inline. A future run can disagree by producing a routing failure under overlapping or ambiguous triggers, which would move the deficit back into the mechanism itself.
+
+**Blind spot:** I compressed the case evidence when briefing the judge, and that compression MANUFACTURED TWO VIOLATIONS THAT DID NOT OCCUR -- it flagged the layered arm for fabricating a policy phrase the policy actually contains verbatim, and flagged production for inventing timing the case actually states verbatim. Both were caught only by re-reading the case file afterward. The same compression instinct that makes these experiments affordable is the one that corrupts them. Future judge prompts must carry the case file verbatim.
+
+**Informed pushback:** n=1 per arm on the full iteration cannot support a claim about reflection depth. The routing result rests on n=2 and is reasonably firm; the both-directions divergence rests on a single output pair and a single judge, and could be run-to-run variance rather than a contract effect. Recorded as a finding to replicate, not an established property.
+
+[!REALIZATION] Compression is not uniformly good or bad. In this run it coincided with BETTER factual grounding and WORSE across-run reflection depth. The prior finding that the layered arm was never worse on any dimension NO LONGER HOLDS. The likely mechanism is phrasing strength, not byte count: production mandates an explicit four-trigger evaluation with per-trigger evidence and got a double-loop reframe; the kernel asks more softly and got a one-sentence decline to escalate.
+
+[!REALIZATION] A contract repair generalized beyond the surface it was written for. The kernel sentence "missing Orientation context is not evidence that it is stale" was added as the iteration-2 repair during Case 1 and written about Orientation. A routing evaluator applied it correctly and unprompted to a DESTINATION gap. Repairs to this contract can transfer across surfaces rather than staying local to the case that produced them.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED. Third consecutive experiment in which an evaluation-design flaw, not a contract flaw, was the thing that most distorted results -- condensed production contract (Cases 1-2), no routing exercise (Cases 1-2), compressed judge evidence (this run). The recurring class is that this arc's measurements are limited by harness fidelity rather than by instruction architecture. Macro reflection: double-loop. The governing assumption worth naming is that the contracts are the object of study; increasingly the harness is.
+- *About to declare silence:* not fired. A material result survived examination and a decision was made.
+- *Contradicts prior [!REALIZATION]:* FIRED. The prior claim that the layered arm was never worse on any dimension is contradicted by this run on two dimensions. Factual boundary that changed: the production arm was previously evaluated against a condensed contract, so its full behavior had never been observed. Not an override -- a correction of the evidence base.
+- *Operator explicitly asked:* yes. Operator said "lets go" to attack the most undertested dimension.
+
+Orientation freshness: STALE. Claim 7 (routing undertested) is now directly addressed and claim 2 (layering did not degrade behavior) is contradicted. Orient is scheduled and should run after this entry is durable.
+
+### Candidate Next Moves
+
+1. Run the scheduled Orient -- claims 2 and 7 both need revision.
+2. Replicate the both-directions divergence with n>1 per arm and a verbatim-case judge before treating it as a property.
+3. Test routing under overlapping or ambiguous triggers, which is the condition this case did not supply.

@@ -757,6 +757,14 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** Per the lighter-weight-pointer precedent: no new governing-variable diagnosis is introduced by this entry: the pattern-family diagnosis stands as recorded in `confirm-bom-root-cause-and-fix-verifypy`, and the granularity precedent stands as recorded in the delegated-autonomy entry two runs ago. This entry is a clean application of both, plus one small self-correction (the six-vs-five count) surfaced honestly rather than absorbed.
 
+## 2026-08-01 — fix-orientation-and-audit-trail-boms-closes-cleanup-arc
+
+**[!REALIZATION]** This closes the entire systemic BOM cleanup arc that began four entries ago as an unplanned discovery inside a REQUIRED_FILES coverage fix. Twelve files total were fixed across this arc (verify.py, QUICKSTART.md, INSTALLING.md, record.py, three SKILL.md files, six session files, orientation.md, and now audit-trail.md), zero of which suffered any content loss or corruption beyond the intended 3-byte BOM removal, each independently verified. The arc's own governing-variable question (raised via the delegated no-batching-vs-efficiency decision) was itself resolved in practice, not just in principle: this final entry groups two files of genuinely different risk profiles under one entry, but gives each the level of individual scrutiny its risk actually warrants -- a quick standard check for orientation.md, a deliberately designed and reconfirmed check for audit-trail.md. That asymmetry within a single entry is arguably the correct resolution of the tension named two entries ago: grouping should track marginal information value, not treat every file identically regardless of risk.
+
+## 2026-08-01 — fix-orientation-and-audit-trail-boms-closes-cleanup-arc
+
+**[!REALIZATION]** Per the established lighter-weight-pointer convention: no new governing-variable diagnosis is introduced here. The pattern-family diagnosis stands as recorded in `confirm-bom-root-cause-and-fix-verifypy`; the grouping-vs-risk resolution is this entry's own contribution, noted above, and does not contradict the delegated decision two entries ago -- it is the natural completion of applying that decision with risk-appropriate rigor rather than a uniform template.
+
 ---
 
-**188 markers — 177 realisations, 11 reversals**
+**190 markers — 179 realisations, 11 reversals**
