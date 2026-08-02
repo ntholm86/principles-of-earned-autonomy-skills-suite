@@ -204,6 +204,9 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 197 | 2026-08-01 | capture-model-capability-bounds-skill-fidelity | captured a premise not stated anywhere - skill execution fidelity is bounded below and scaled above by the executing model's capability - distinct from Principle 3's evaluator-diversity rationale | .acm/destination.md +1 note; no SKILL.md changes |
 | ▸ 198 | 2026-08-01 | exclude-trigger-label-references-from-learning-markers | learning.md no longer represents Trail's `Contradicts prior [!REALIZATION]` trigger label as a realization | harness/tools/record.py narrow parser exclusion; CHANGELOG.md v4.25.0; derived learning artifacts regenerated |
 | ▸ 199 | 2026-08-01 | generalize-learning-marker-parser-from-context-exclusion-to-assertion-grammar | replaced v4.25.0's narrow trigger-label exclusion with a general assertion grammar after the prior fix's own trail entry falsified it | record.py marker grammar corrected; CHANGELOG.md v4.25.1; learning artifacts regenerated |
+| ▸ 200 | 2026-08-02 | align-installed-skill-docs-with-harness-tool-layout | corrected commands that still referenced the pre-harness tools layout and clarified the boundary between installed skills and clone-local optional tooling | README.md, INSTALLING.md, QUICKSTART.md, improve/SKILL.md 3.13.0 -> 3.13.1, trail/SKILL.md 2.4.1 -> 2.4.2, CHANGELOG.md v4.25.2 |
+| ▸ 201 | 2026-08-02 | refresh-iteration-count-and-readme-totals | refreshed a two-month-stale hand-maintained evidence document and its README claim with mechanically-verified current totals | ITERATION-COUNT.md self-targeted total 221 -> 286, v3 era 132 -> 197, total commits 363 -> 430, new external-target entry recorded; README.md "221 verified iterations" -> "286", "191 individually backed by git commits" -> "256" |
+| ▸ 202 | 2026-08-02 | confirm-iteration-count-sync-scope-across-live-docs | confirmed README.md and ITERATION-COUNT.md are the only precise-figure citations and both already match; found three vague "200+" floor citations, tightened the one in-repo instance, left two external/archival instances untouched with stated rationale | INSTALLING.md "200+ times" -> "280+ times" |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -935,4 +938,16 @@ Do not edit by hand — re-run the command to refresh.
 - **decided:** Replace the context-specific exclusion with an assertion grammar plus quoted-example guard.
 - **REVERSAL:** Reversed v4.25.0's context-specific `TRIGGER_REALIZATION_REFERENCE` strategy after its own explanatory entry produced three new fake realizations. Replaced it with left-boundary assertion grammar and a double-quoted-example guard. The seven-case matrix passed. Full regeneration reduced the archive from 198 to 153 markers (45 more references removed), preserved the eight inspected genuine inline assertions, and `verify.py` passed. Prediction held.
 
-**199 runs total — 184 with changes, 15 silence**
+### Run 200 — 2026-08-02 — align-installed-skill-docs-with-harness-tool-layout
+
+- **decided:** Align all live commands and helper references with the actual clone-local `harness/tools/` layout, and state explicitly that the one-line installer does not copy optional tooling.
+
+### Run 201 — 2026-08-02 — refresh-iteration-count-and-readme-totals
+
+- **decided:** Refresh ITERATION-COUNT.md's totals in place (not append-only - this is a periodic snapshot document, not the audit trail) using mechanically verified numbers, reclassify the one new fully-external-primary-target entry found (`agent-context-memory`, 2026-08-01), and propagate the corrected total to README.md.
+
+### Run 202 — 2026-08-02 — confirm-iteration-count-sync-scope-across-live-docs
+
+- **decided:** Tighten `INSTALLING.md`'s "200+ times" to "280+ times." Leave `.zenodo.json` and `pea-website/index.html` unchanged.
+
+**202 runs total — 187 with changes, 15 silence**

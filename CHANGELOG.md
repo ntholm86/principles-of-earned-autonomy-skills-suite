@@ -1,5 +1,11 @@
 # Changelog
 
+## v4.25.2 — 2026-08-02
+
+### Fixed
+
+- **Installation and maintainer commands now match the repository's `harness/tools/` layout.** The one-line installers copy only the six skill files plus `PRINCIPLES.md`, but README/INSTALLING/QUICKSTART and the Improve/Trail helper references still advertised `tools/` paths or implied that optional tooling was installed. Hook instructions now distinguish the target repo working directory from the cloned suite script path; maintainer and `record.py` references use `harness/tools/`; and the docs state explicitly that optional tooling remains in the clone. `improve/SKILL.md` 3.13.0 -> 3.13.1; `trail/SKILL.md` 2.4.1 -> 2.4.2.
+
 ## v4.25.1 — 2026-08-01
 
 ### Fixed

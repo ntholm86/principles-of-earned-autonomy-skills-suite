@@ -1,6 +1,6 @@
 ---
 name: improve
-version: 3.13.0
+version: 3.13.1
 description: 'The improvement skill. Understand the ask, examine the target, challenge the first read, decide on one change (or argue for redesign, or declare silence), act, reflect on the target, and record. Combines incremental refinement, structural rethinking, and reflection on the target itself. USE WHEN: improve, audit, review, fix, refactor, redesign, evaluate, what would make this better, am I missing something.'
 argument-hint: 'The target to improve, and optionally the concern (correctness, simplicity, performance, etc.)'
 ---
@@ -172,7 +172,7 @@ If Trail is not installed: create the `.acm/` directory in the target repo root 
 - Reflection about the target (per step 6): a falsifiable model-claim, a named blind spot, and an imagined-reader pushback. Across-trail reflection if its triggers fired.
 - Marked moments: `[!DECISION]`, `[!REVERSAL]`, `[!REALIZATION]`.
 
-The format spec is in [trail/SKILL.md](../trail/SKILL.md). The script `<skills>/tools/record.py` can stub a new entry for you.
+The format spec is in [trail/SKILL.md](../trail/SKILL.md). If you have the skills repository clone, its optional `<skills-repo>/harness/tools/record.py` helper can stub a new entry for you; the one-line skill installer does not copy this helper.
 
 ## Self-targeting
 

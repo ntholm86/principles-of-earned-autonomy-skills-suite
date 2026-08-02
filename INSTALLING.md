@@ -20,11 +20,11 @@ The script copies all six SKILL.md files plus PRINCIPLES.md. Nothing else is ins
 
 ### Optional: enforce trail discipline with a git hook
 
-In the target repo where you'll be running the skills:
+The one-line installer does not copy optional tooling. From the target repo where you'll be running the skills, invoke the hook installer by its path in your cloned skills suite:
 
 ```
-bash tools/install-hooks.sh     # macOS / Linux
-pwsh tools/install-hooks.ps1    # Windows
+bash /path/to/autonomous-agent-skills/harness/tools/install-hooks.sh
+pwsh C:\path\to\autonomous-agent-skills\harness\tools\install-hooks.ps1
 ```
 
 This installs a pre-commit hook that rejects commits which touch substantive files without a corresponding `.acm/audit-trail.md` entry. Override with `git commit --no-verify` — the override itself is auditable.
@@ -126,12 +126,12 @@ Commit `.acm/audit-trail.md` after each session. That's the full workflow.
 
 *This section is for people running the improvement loop on the skills repo itself. If you're adopting the skills for your own project, you don't need any of this.*
 
-`tools/record.py` and `verify.py` exist to support the experiment that produced this suite — running the loop 200+ times and proving the trail is intact.
+`harness/tools/record.py` and `verify.py` exist to support the experiment that produced this suite — running the loop 280+ times and proving the trail is intact. They remain in the cloned repository and are not copied by the one-line installer.
 
-**`tools/record.py`** — generates a human-readable `history.md` from the trail log. Run from the repo root:
+**`harness/tools/record.py`** — generates a human-readable `history.md` from the trail log. Run from the repo root:
 ```
-python tools/record.py history --write    # writes .acm/history.md
-python tools/record.py summary            # prints the latest entry
+python harness/tools/record.py history --write    # writes .acm/history.md
+python harness/tools/record.py summary            # prints the latest entry
 ```
 It only writes into `.acm/`. No network calls.
 

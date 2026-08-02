@@ -10551,3 +10551,192 @@ The two-entry arc moved from symptom exclusion to semantic boundary. This is dou
 ### Candidate Next Moves
 
 1. Let the corrected learning surface drive the next fresh-model self-targeting run; do not continue parser work unless another concrete false-positive class appears.
+
+## 2026-08-02 - align-installed-skill-docs-with-harness-tool-layout
+
+- target: installation guidance and optional tooling references across the skills suite
+- operator: Nils Wendelboe Holmager
+- agent: GitHub Copilot
+- skill: improve
+- outcome: corrected commands that still referenced the pre-harness tools layout and clarified the boundary between installed skills and clone-local optional tooling
+- delta: README.md, INSTALLING.md, QUICKSTART.md, improve/SKILL.md 3.13.0 -> 3.13.1, trail/SKILL.md 2.4.1 -> 2.4.2, CHANGELOG.md v4.25.2
+
+### Interpretation of the ask
+
+Run one evidence-led Improve iteration over `C:\git\pea\skills` as a system. Success meant one verified, highest-leverage correction supported by the current destination and trail, or a bounded silence finding - not an automatic edit to the selected line in Improve.
+
+### Examination
+
+Purpose: the destination prioritizes onboarding speed, install integrity, and adoption. The recommended installers copy only six SKILL.md files plus PRINCIPLES.md, but live documentation advertised `tools/install-hooks.*`, maintainer commands advertised `tools/record.py`, and installed Improve/Trail text described record.py as present in the skills install. A disposable installation confirmed `record=False` and `hooks=False`.
+
+Inconsistency: the repository intentionally moved experiment tooling to `harness/tools/`, and QUICKSTART partially reflected that move, while README, INSTALLING, Improve, and Trail retained the older layout or an incorrect installed-tool claim.
+
+Overburden: nothing actionable found. The installer remains narrowly responsible for plain skill files; optional experiment tooling remains clone-local.
+
+Waste: nothing actionable found beyond stale command text. No new runtime mechanism was needed.
+
+Challenge: the first read suggested changing the installers to ship record.py and hooks. The current installer contract, README, and Trail design deliberately keep skill installation script-free, while record.py is optional under the current ACM contract. Turning optional tooling into installed runtime surface would be a product decision larger than the evidenced path defect.
+
+### Decision
+
+[!DECISION] Align all live commands and helper references with the actual clone-local `harness/tools/` layout, and state explicitly that the one-line installer does not copy optional tooling.
+Rationale: this makes the existing product boundary truthful and every advertised command executable without expanding the install contract.
+Alternative rejected: copy record.py and hook tooling from install.ps1/install.sh - rejected because it changes the intentionally script-free installation model and needs a separate adoption decision.
+Alternative rejected: remove all optional-tool references - rejected because record.py and the hook are useful, working capabilities for clone users and maintainers.
+Precedent check: learning-archive.md contains an older realization that downstream adoption should eventually ship hook/CI support as part of install. That is relevant but not controlling: the current installer and current docs explicitly preserve the opposite boundary. This run fixes the contradiction without silently deciding that open product question.
+
+### Prediction
+
+The corrected clone paths will run successfully from a different target repository, a fresh skill install will no longer be described as containing absent tooling, and no skill behavior will change.
+
+### Action
+
+Updated README, INSTALLING, and QUICKSTART to point hook users at the cloned suite's `harness/tools/` path while keeping the target repo as the working directory. Updated maintainer record.py commands to `harness/tools/record.py`. Updated Improve and Trail helper references to call record.py optional clone-local tooling, and applied patch version bumps plus a v4.25.2 changelog entry.
+
+Verification: `python verify.py` passed. `python C:\git\pea\skills\harness\tools\record.py summary` ran successfully from `C:\git\pea`. Invoking `C:\git\pea\skills\harness\tools\install-hooks.ps1` from a disposable Git repo installed `.git/hooks/pre-commit` and reported `hook=True`. `git diff --check` reported no whitespace errors. The prediction held: both corrected command shapes executed, the installer remained unchanged, and no behavioral instruction changed.
+
+### Reflection
+
+Model claim: the suite's installation boundary is coherent only when installed markdown remains fully functional without clone-local scripts and optional tooling is described as an explicit second layer. Blind spot: the Bash hook path was verified by code inspection but not executed on Windows; only the PowerShell installer received a live disposable-repo test. An informed reader may push back that hiding useful structural enforcement behind clone-local paths harms adoption and that the older realization to ship hook support should now win; that is a legitimate product decision, but it is larger than correcting false commands.
+
+[!REALIZATION] The verifier's stale-path coverage is semantically narrow: it catches obsolete trail filenames, but not documented executable paths that no longer exist. This installation defect survived a recent systematic verifier audit because command-path validity is a distinct quality bar from trail-path token consistency.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired - the two immediately prior entries concerned learning-marker parsing; this run found a separate install-layout drift.
+- *About to declare silence:* not fired - a verified correction was made.
+- *Contradicts prior [!REALIZATION]:* not fired - the older call to ship hook/CI as part of install remains an unresolved adoption direction, not a claim that the current installer already does so.
+- *Operator explicitly asked:* FIRED - the operator directly requested an Improve run over the skills repository.
+
+**Across-trail macro-Hansei**
+
+The operator trigger does not expose a new arc-level diagnosis beyond the current orientation's existing research-versus-adoption asymmetry. This run does sharpen that claim: onboarding commands can remain broken even while internal trail integrity is green, so adoption readiness requires executable user-journey checks rather than relying on the research harness's verifier alone.
+
+### Candidate Next Moves
+
+1. Add a focused verifier check for documented clone-local command paths so future repository layout moves cannot leave runnable examples behind.
+2. Decide explicitly whether record.py and hook support should become installer features, using adoption friction rather than historical layout as the deciding evidence.
+
+## 2026-08-02 - refresh-iteration-count-and-readme-totals
+
+- target: .acm/ITERATION-COUNT.md, README.md headline claim
+- operator: Nils Wendelboe Holmager
+- agent: GitHub Copilot
+- skill: improve
+- outcome: refreshed a two-month-stale hand-maintained evidence document and its README claim with mechanically-verified current totals
+- delta: ITERATION-COUNT.md self-targeted total 221 -> 286, v3 era 132 -> 197, total commits 363 -> 430, new external-target entry recorded; README.md "221 verified iterations" -> "286", "191 individually backed by git commits" -> "256"
+
+### Interpretation of the ask
+
+Operator pointed at ITERATION-COUNT.md and asked whether it needed updating, noting "we did a lot of self targets recently," and asked explicitly to apply the Improve skill. Interpreted as: verify whether the document's counts are actually stale against the real trail and git history, and if so, correct them with the same evidentiary rigor the document itself claims to uphold - not just bump a number on the operator's say-so.
+
+### Examination
+
+Purpose: the document's stated job is to answer "how many self-targeted iterations, and what proves it" with independently-verifiable commands. It was last updated 2026-06-01. Direct verification found: 430 total commits (doc said 363), 200 audit-trail entries via `record.py` (doc's v3-era figure was 134), and 68 trail entries dated on/after 2026-06-01. This is the same class of hand-maintained "current state" drift this session's own trail has already found repeatedly in `CITATION.cff` and `verify.py`'s file-scope lists - confirmed stale, not merely old.
+
+Inconsistency: README.md's headline claim ("221 verified iterations," "191 individually backed by git commits") is derived from this same document and would silently continue misreporting the suite's own most visible evidence claim if only the linked document were fixed.
+
+Waste/Overburden: nothing actionable beyond the stale figures themselves; the document's methodology (era table, honest reconstruction caveats, verification commands) remains sound and did not need restructuring.
+
+### Decision
+
+[!DECISION] Refresh ITERATION-COUNT.md's totals in place (not append-only - this is a periodic snapshot document, not the audit trail) using mechanically verified numbers, reclassify the one new fully-external-primary-target entry found (`agent-context-memory`, 2026-08-01), and propagate the corrected total to README.md.
+Rationale: the document's own credibility depends on matching what `git log` and `record.py` actually report; leaving it stale after two months of active work directly undermines the suite's flagship self-improvement claim.
+Alternative rejected: leave the document alone and only answer the operator's question conversationally - rejected because the operator explicitly asked to apply the Improve skill, and a known, evidenced staleness in a public-facing claim is squarely actionable.
+Alternative rejected: force the manual date-based count (68 new entries) to reconcile exactly with the mechanical delta (66) - rejected; fabricating false precision would repeat the exact hand-maintained-drift pattern this refresh is fixing. Recorded the ~2-entry discrepancy honestly instead.
+Precedent check: grepped learning.md/learning-archive.md for "iteration count", "CITATION.cff", "REQUIRED_FILES" drift precedent - found the CITATION.cff currency fix and the systematic verify.py audit as directly relevant precedent for how this repo handles hand-maintained current-state artifacts; no prior realization contradicts refreshing this one the same way.
+
+### Prediction
+
+The corrected totals will reconcile with `git log --oneline | wc -l` and `record.py history --write`'s reported entry count at time of writing; README's claim will match ITERATION-COUNT.md's total; `verify.py` will continue to pass; no skill file or behavioral instruction will change.
+
+### Action
+
+Classified all `- target:` lines in the trail dated after 2026-06-01 (196 total target lines swept, filtered to 10 non-self-referential candidates): confirmed exactly one new fully-external-primary-target entry (`implement-scale-gap-in-acm-spec-repo`, `agent-context-memory`, 2026-08-01), alongside the two pre-existing vectorium entries. Two cross-repo-touching entries (`rename-commanders-intent-to-operators-intent`, `rename-sweep-gap-fix-verify-recursive-search`, both 2026-07-02) were classified as self-targeted, since the skills repo was a co-primary target and the bulk of the work was against this repo's own vocabulary, not another codebase's independent concerns.
+
+Computed: v3 self-targeted 200 (current total per `record.py`) - 3 (external) = 197; grand total 89 (unchanged v1/v2 eras) + 197 = 286; individually-committed = 286 - 30 (bulk v1 era) = 256.
+
+Updated ITERATION-COUNT.md's header date, summary table, exclusion list, Era 4 evidence paragraph, verification-command comment, and closing paragraph; added a dated "Refresh - 2026-08-02" section documenting what changed, the commands run, the honest reconciliation gap, and the classification judgment calls. Updated README.md's headline sentence and supporting sentence to match.
+
+Verification: `python verify.py` initially failed on a pre-existing stale-derived-artifact check (history.md/learning.md older than audit-trail.md, unrelated to this content change); regenerated via `record.py history --write` and `record.py learning --write`, then `verify.py` passed. `git diff --check` reported no whitespace errors on the two edited files. Prediction held: totals reconcile with the commands run, README matches ITERATION-COUNT.md, verify.py passes, no skill behavior changed.
+
+### Reflection
+
+Model claim: this suite's own flagship evidence artifacts (ITERATION-COUNT.md, CITATION.cff, verify.py's file-scope lists) are all instances of the same unresolved governing-variable gap - hand-maintained snapshots of derivable facts, with no mechanism prompting a refresh when the underlying mechanical source moves on. Each has now been fixed once, individually, rather than the underlying pattern being closed once, generically. Blind spot: I did not check whether any other document in this repo or workspace (e.g. POSITION.md, .zenodo.json, workspace-level destination.md) also cites the "221 iterations" figure and would now disagree with the corrected total. An informed reader could reasonably push back that three individual fixes to the same drift class, across three separate sessions, is itself evidence that a single mechanical check (e.g. a `verify.py` rule asserting README's claim matches `record.py`'s live count) would be higher-leverage than continuing to fix instances by hand as they're noticed.
+
+[!REALIZATION] This is the third distinct hand-maintained "current state" artifact this repo's trail has found stale and fixed individually (CITATION.cff version/tags, verify.py's own file-scope lists, now ITERATION-COUNT.md/README's iteration claim) - each discovered independently, each fixed the same way, none converted into a standing mechanical guarantee. The recurrence across three unrelated sessions, not just within one, is stronger evidence than any single instance that the governing variable is "this repo has no mechanism that prevents a hand-counted claim from drifting," not "this one document happened to go stale."
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED - third distinct instance of the hand-maintained-snapshot-drift pattern (CITATION.cff, verify.py file-scope lists, now this), across three separate sessions rather than one contiguous cleanup arc.
+- *About to declare silence:* not fired - a verified correction was made.
+- *Contradicts prior [!REALIZATION]:* not fired - extends, rather than contradicts, the existing "no single canonical source of truth for current-state claims" diagnosis from the earlier BOM/verify.py arc.
+- *Operator explicitly asked:* FIRED - operator directly asked whether the document needed updating and to apply the Improve skill.
+
+**Across-trail macro-Hansei**
+
+Read across three sessions, not one: this repo has now independently rediscovered the same governing-variable defect three times (CITATION.cff, verify.py's own coverage lists, ITERATION-COUNT.md/README) and fixed each instance without closing the pattern itself. Per the double-loop principle already codified in this suite's own `improve/SKILL.md` step 6b, a fourth instance recurring would be strong evidence that the correct move is a standing mechanical guarantee (e.g. a `verify.py` check computing the live iteration count and comparing it against README's stated figure) rather than a fifth manual fix. Naming this explicitly now, before a fourth instance forces the point, per the destination's own efficiency concern (catching the pattern once is cheaper than three more individually-reasoned fixes).
+
+### Candidate Next Moves
+
+1. Add a `verify.py` check that computes the current self-targeted iteration count (via the same classification logic used here) and fails if README.md's stated figure disagrees, closing the recurring hand-maintained-drift pattern at its governing-variable level rather than waiting for a fourth manual instance.
+2. Grep the wider `c:\git\pea` workspace (POSITION.md, .zenodo.json, workspace-level destination.md) for other citations of the old "221" figure that this refresh did not check.
+
+## 2026-08-02 - confirm-iteration-count-sync-scope-across-live-docs
+
+- target: workspace-wide sweep for stale/inconsistent iteration-count citations
+- operator: Nils Wendelboe Holmager
+- agent: GitHub Copilot
+- skill: improve
+- outcome: confirmed README.md and ITERATION-COUNT.md are the only precise-figure citations and both already match; found three vague "200+" floor citations, tightened the one in-repo instance, left two external/archival instances untouched with stated rationale
+- delta: INSTALLING.md "200+ times" -> "280+ times"
+
+### Interpretation of the ask
+
+Operator asked directly whether the prior refresh's new number (286) had been synced into other files like README, and asked to apply the Improve skill again. Read as a verification request, not an assumption of a missed step - the prior entry's own named blind spot ("did not check whether any other document... also cites the 221 figure") made this the natural next check to close.
+
+### Examination
+
+Purpose: swept `pea/skills/**` and the wider `c:\git\pea` workspace for the old precise figures ("221", "191 individually") and for the general pattern ("iterations", "self-targeted", "ran itself"). Found zero live-document hits for the stale precise numbers - the only matches were inside `.acm/audit-trail.md` (historical, append-only, correctly describing state at the time) and `.acm/history.md` (derived render of the trail, correctly verbatim). README.md and ITERATION-COUNT.md, both edited in the prior entry, are confirmed as the only two live citations of the precise figure and both already read 286/256.
+
+Inconsistency: three separate documents state a vague "200+" floor instead of the precise figure - `INSTALLING.md` (this repo), `.zenodo.json` (this repo, Zenodo archival metadata), and `pea-website/index.html` (a different repo's published site, two occurrences). All three statements remain literally true at 286 (200+ still holds), so none is a correctness defect of the kind fixed in the prior entry.
+
+### Decision
+
+[!DECISION] Tighten `INSTALLING.md`'s "200+ times" to "280+ times." Leave `.zenodo.json` and `pea-website/index.html` unchanged.
+Rationale: `INSTALLING.md` is a live, in-repo document whose claim is cheap and low-risk to tighten, and doing so is directly responsive to the operator's sync question. `.zenodo.json` is Zenodo archival metadata that plausibly corresponds to a specific archived release snapshot rather than the live count (this repo's own trail already documents git-tag/release drift as an open, undecided question); editing it without confirming which DOI/release it represents risks misrepresenting archival provenance, a different failure mode than a stale live claim. `pea-website/index.html` is a different repository's already-published, externally-reviewed page - editing another repo's live public copy is out of this run's boundary without explicit operator direction, consistent with this repo's own precedent on cross-repo authorial standing (the `agent-context-memory` Scale-gap contribution was proposed and operator-authorized before being pushed, not edited unilaterally).
+Alternative rejected: bump all three "200+" mentions to the precise 286 figure - rejected because it would either misstate a possibly-frozen archival snapshot (`.zenodo.json`) or edit a repository this session has no operator mandate to touch (`pea-website`).
+Alternative rejected: leave `INSTALLING.md` untouched too, treating "200+" as permanently accurate and therefore not worth any edit - rejected; the operator's question was specifically about sync completeness, and a floor claim two significant milestones behind the precise headline number in the same repo is a real (if minor) inconsistency worth closing where the cost of doing so is trivial.
+Precedent check: grepped learning.md/learning-archive.md for "Zenodo", "tag drift", "archival" - found the CITATION.cff entry documenting that git tags have not been created for v4.x releases and an existing mistagged `v4.18.0` tag, both left unresolved as release-management decisions requiring operator confirmation. This is directly relevant precedent for treating `.zenodo.json` as archival-scoped and not silently editing it here.
+
+### Prediction
+
+A full-workspace grep for the precise stale figures ("221", "191 individually") will return no live-document hits, confirming the prior refresh's sync was complete; the three "200+" floor citations will remain literally true regardless of whether they are touched; `verify.py` will pass after regenerating derived artifacts.
+
+### Action
+
+Grepped `pea/skills/**` and `pea/**` (whole workspace) for the precise stale figures and for the general "iterations"/"self-targeted" pattern. Confirmed no live document outside the append-only trail and its derived history still states "221" or "191 individually." Found and classified three "200+" floor citations (`INSTALLING.md`, `.zenodo.json`, `pea-website/index.html` x2, plus a related historical mention in `nilsholmager.dk`'s own trail, correctly untouched as append-only history). Edited `INSTALLING.md` only.
+
+Verification: `python verify.py` failed only on the pre-existing derived-artifact-freshness check (history.md/learning.md older than audit-trail.md, expected before this entry's own regeneration); will regenerate immediately after this entry is appended. `git diff --check` on `INSTALLING.md` reported no whitespace errors. Prediction held: the workspace-wide sweep found no remaining precise-figure staleness, and the three floor citations remain true whether or not touched.
+
+### Reflection
+
+Model claim: this suite's evidence-currency problem has two genuinely different shapes that should not be treated identically - a **stale precise claim** (wrong once the underlying count moves; the prior entry's defect) and a **vague-but-still-true floor claim** (never wrong, only increasingly conservative). Conflating them would either under-fix (leaving a false precise number) or over-fix (churning archival/external copy that owes no one a resync). Blind spot: I did not attempt to determine which specific Zenodo DOI/release `.zenodo.json`'s "200+" text corresponds to, so I cannot say with certainty it is frozen-by-design rather than simply another instance of the same drift - I inferred this from the adjacent, already-documented tag-drift precedent rather than confirming it directly. An informed reader could push back that this inference is a convenient reason to avoid touching a file outside this repo's easy edit path, and that the honest move would have been to ask the operator which Zenodo record is live before deciding.
+
+[!REALIZATION] Not every unsynced number is the same defect. This repo's evidence-currency problem now has two named subclasses - stale-precise (fixed by resyncing) and vague-floor (a style choice, not a defect) - and treating them identically would have produced either a false fix (rewriting archival metadata on an inference) or an omission (leaving `INSTALLING.md` inconsistent with README's newly precise figure for no reason).
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired - this entry extends and refines the immediately prior entry's own named blind spot rather than discovering a new, independent instance of the drift pattern.
+- *About to declare silence:* not fired - one small change was made (`INSTALLING.md`); two others were deliberately left unchanged with reasons stated, not a bare silence claim.
+- *Contradicts prior [!REALIZATION]:* not fired - refines rather than contradicts the immediately prior entry's macro-Hansei about hand-maintained snapshot drift, by distinguishing precise-claim drift from floor-claim style.
+- *Operator explicitly asked:* FIRED - operator directly asked whether the number was synced elsewhere and to apply Improve.
+
+**Across-trail macro-Hansei**
+
+Per the lighter-weight-pointer convention established earlier in this trail: no new governing-variable diagnosis is introduced by this entry. The recurring hand-maintained-snapshot-drift diagnosis stands as recorded in the immediately prior entry (`refresh-iteration-count-and-readme-totals`). This entry's own contribution is narrower and does not revise that diagnosis: it splits "unsynced number" into stale-precise (a defect, already fixed) versus vague-floor (a style choice, not a defect), which sharpens how future instances of the pattern should be triaged rather than changing the pattern's cause.
+
+### Candidate Next Moves
+
+1. Confirm with the operator which Zenodo release `.zenodo.json`'s metadata is meant to represent before ever editing its iteration count, given the unresolved git-tag/release drift already on record.
+2. If cross-repo consistency on this figure matters to the operator, raise the `pea-website` "200+" copy as a candidate for that repo's own Improve run rather than editing it from here.

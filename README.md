@@ -14,9 +14,9 @@ Compatible with Claude (skills / Agent SDK), GitHub Copilot (custom skills), and
 
 ![The full architecture illustrated as a Storm P-style Rube Goldberg machine: Operator's Intent feeds the Improve loop, the audit trail runs as a conveyor belt through the whole machine, Orient reads the arc and feeds learning back in, and the machine converges to silence.](./stormpInspired.png)
 
-## The Suite Improved Itself — [221 verified iterations](./.acm/ITERATION-COUNT.md)
+## The Suite Improved Itself — [286 verified iterations](./.acm/ITERATION-COUNT.md)
 
-The suite ran on itself **221 times** across four eras and two complete rewrites. Each self-targeted iteration is documented in the [evidence trail](./.acm/audit-trail.md), with 191 individually backed by git commits and the remaining 30 by a bulk initial commit. The full provenance breakdown — including git SHAs, verification commands, and an honest account of what is independently verifiable — is in [ITERATION-COUNT.md](./.acm/ITERATION-COUNT.md).
+The suite ran on itself **286 times** across four eras and two complete rewrites. Each self-targeted iteration is documented in the [evidence trail](./.acm/audit-trail.md), with 256 individually backed by git commits and the remaining 30 by a bulk initial commit. The full provenance breakdown — including git SHAs, verification commands, and an honest account of what is independently verifiable — is in [ITERATION-COUNT.md](./.acm/ITERATION-COUNT.md).
 
 Convergence was declared only when **three independent evaluators from distinct model families** (Claude, Gpt, Gemini) each ran the loop and found nothing left to change.
 
@@ -124,7 +124,7 @@ Want a copy-pasteable, 10-minute path? See [QUICKSTART.md](./QUICKSTART.md).
    - `/improve review the checkout module for waste and overburden`
 4. Confirm the run produced evidence:
    - `.acm/audit-trail.md` has a new entry with outcome and delta.
-5. Optional but recommended: install the pre-commit hook (`bash tools/install-hooks.sh` or `pwsh tools/install-hooks.ps1`) to enforce trail discipline structurally.
+5. Optional but recommended: install the pre-commit hook from the cloned suite's `harness/tools/` directory (see [QUICKSTART.md](./QUICKSTART.md)) to enforce trail discipline structurally.
 
 ## Known Limitation: Stated Reasoning ≠ True Reasoning
 

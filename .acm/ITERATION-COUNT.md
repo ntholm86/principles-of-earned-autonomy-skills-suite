@@ -1,6 +1,6 @@
 # Iteration count — verified evidence
 
-_Last updated: 2026-06-01_
+_Last updated: 2026-08-02_
 
 This document answers: **how many self-targeted iterations did this skills suite go through, and what proves it?**
 
@@ -14,10 +14,10 @@ This document answers: **how many self-targeted iterations did this skills suite
 | v1 (runs 26-30) | 2026-04-18 | 5 | Single commit; reconstruction acknowledged in commit message |
 | v1 (runs 31-50) | 2026-04-18 — 2026-04-19 | 18 | Individual commits with SHAs |
 | v2 (runs 51-97) | 2026-04-19 — 2026-04-22 | 41 | Individual commits with SHAs |
-| v3 (audit-trail) | 2026-04-23 — present | 132 | Individual commits with SHAs |
-| **Total** | | **221** | |
+| v3 (audit-trail) | 2026-04-23 — present | 197 | Individual commits with SHAs |
+| **Total** | | **286** | |
 
-Excluded from count: 7 external-target runs (62, 66, 67, 76, 77 + 2 vectorium v3 entries).
+Excluded from count: 8 external-target runs (62, 66, 67, 76, 77 + 2 vectorium v3 entries + 1 agent-context-memory v3 entry, 2026-08-01).
 
 ---
 
@@ -62,7 +62,7 @@ External targets excluded:
 
 ### Era 4: v3 audit-trail (individual commits)
 
-**Evidence:** 134 entries in `.acm/audit-trail.md`, each committed individually. The audit trail format records interpretation, examination, decisions, actions, and reflection per session. Two entries target vectorium (external) — the remaining 132 are self-targeted.
+**Evidence:** 200 entries in `.acm/audit-trail.md` as of 2026-08-02 (up from 134 at the prior 2026-06-01 update of this document), each committed individually except the most recent entries pending commit at the time of this refresh. The audit trail format records interpretation, examination, decisions, actions, and reflection per session. Three entries name a different repo as their primary subject — two vectorium entries (external game engine) and one `agent-context-memory` entry (2026-08-01, contributing a memory-model fix upstream to the ACM specification this suite implements) — the remaining 197 are self-targeted.
 
 The v3 era also introduced:
 - `verify.py` — a 14-check mechanical verifier that enforces trail integrity at every commit
@@ -76,7 +76,7 @@ The v3 era also introduced:
 Anyone with access to this repository can verify the following:
 
 ```bash
-# Total commits (363 as of 2026-06-01)
+# Total commits (430 as of 2026-08-02)
 git log --oneline | wc -l
 
 # v1/v2 era commits (first 5 days)
@@ -164,4 +164,28 @@ This provenance record was created on 2026-06-01 — after the fact. The v1 era 
 
 This is a **retroactive reconstruction** of the v1 trail from the git log. We are honest about that. The git history itself is not retroactive — it has been accumulating since 2026-04-18 and its integrity is cryptographically verifiable by anyone who clones the repository.
 
-The claim of 221 self-targeted iterations is conservative. It counts only iterations that produced a GENBA entry or audit-trail entry. Many commits represent significant work (design discussions, infrastructure changes, documentation passes) that did not receive a run number. The git log contains 363 total commits; the iteration count is 221.
+The claim of 286 self-targeted iterations is conservative. It counts only iterations that produced a GENBA entry or audit-trail entry. Many commits represent significant work (design discussions, infrastructure changes, documentation passes) that did not receive a run number. The git log contains 430 total commits; the iteration count is 286.
+
+---
+
+## Refresh — 2026-08-02
+
+This document was two months stale. 66 new self-targeted entries and one new external-target entry landed in `.acm/audit-trail.md` since the 2026-06-01 update above, none of which had been reflected in the summary table, the exclusion list, or README.md's headline claim.
+
+**What changed:**
+- v3 (audit-trail) self-targeted count: 132 → 197.
+- Total self-targeted iterations: 221 → 286.
+- Total git commits: 363 → 430.
+- New external-target entry: `implement-scale-gap-in-acm-spec-repo` (2026-08-01) — primary target `agent-context-memory`, contributing a memory-model fix upstream to the ACM specification. Added to the exclusion list alongside the two existing vectorium entries.
+- `README.md`'s "221 verified iterations" and "191 individually backed by git commits" updated to 286 and 256 respectively.
+
+**Verified directly for this refresh:**
+```bash
+git log --oneline | wc -l                          # 430
+git log --oneline --after="2026-04-22" | wc -l      # 342 (v3 era)
+python harness/tools/record.py history --write      # 200 entries
+```
+
+**Honesty note on reconciliation:** a simple date-based search for entries dated on/after 2026-06-01 returns 68, two more than the 66 implied by `200 (current total) - 134 (total documented at the 2026-06-01 update)`. The discrepancy is not chased further here — it is small, and resolving it would mean auditing the exact entry set the prior update counted by hand. This is the same class of drift this repository's own trail has repeatedly found in its hand-maintained "current state" artifacts (`CITATION.cff`, `verify.py`'s file-scope lists) — a periodic snapshot document, updated by hand, drifts from a mechanically-parsed source between refreshes. Recorded here rather than silently rounded away.
+
+**Classification judgment calls made in this refresh:** two entries (`rename-commanders-intent-to-operators-intent`, `rename-sweep-gap-fix-verify-recursive-search`, both 2026-07-02) named other repos (manifesto, agent-context-memory, ai-steward, pea-website) in their `target:` field alongside this repo, because the rename swept across the whole PEA ecosystem. Both are classified as self-targeted here, consistent with this document's existing methodology: the skills repo was a co-primary target and the bulk of the reasoning and verification happened against this repo's own files, not primarily against another codebase's independent concerns — contrast with `vectorium`, a separate game engine with no shared vocabulary to rename, or the `agent-context-memory` Scale-gap entry, which added a feature to that repo's own specification with no corresponding change needed in this repo.

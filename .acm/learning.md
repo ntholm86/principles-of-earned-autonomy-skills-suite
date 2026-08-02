@@ -5,19 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 155 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-01 — orient-post-acm4-closure
-
-**[!REALIZATION]** The suite now has a working, repeatedly-exercised example of exactly the capability the destination's own Learning section named as underdeveloped: the ACM section 4 arc shows a realization (2026-06-22) being rediscovered as still-open, acted on across two entries, cross-checked against its own duplication risk, and converted into a mechanical guarantee rather than a hope that a future run reads the trail correctly. The open question is whether the same discipline transfers to the suite's older, less mechanical backlog items -- text-consistency fixes are a much easier target for this pattern than empirical replication or mandate-gate conformance would be.
-
-## 2026-08-01 — orient-zero-new-arc
-
-**[!REALIZATION]** Two consecutive orient invocations with no work done between them is itself informative: it means the operator-gate between "run improve" and "run orient" was pulled before any new improve iteration happened. This is a legitimate, low-cost way to confirm the previous orient run's output is still the right orientation before deciding what to do next -- not a wasted invocation.
-
-## 2026-08-01 — orient-zero-new-arc
-
-**[!REALIZATION]** The suite's own orientation.md remains: intent/SKILL.md gap already closed (this session), ACM section 4 arc closed and self-enforcing, the older backlog (CITATION.cff currency, B1 replication, mtime freshness, whole-suite mandate gate) is still the single most useful redirect if the operator wants one. Nothing in this zero-entry window changes that. Restating it here rather than in a rewritten orientation.md keeps the distinction clear: orientation.md is the agent's current synthesis of the target, not a running log of every time someone asked for it.
+Showing the most recent 60 markers. 158 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-01 — trail-drop-sessions-mandate-independent-capture-exists
 
@@ -246,6 +234,18 @@ Showing the most recent 60 markers. 155 older marker(s) are in `.acm/learning-ar
 ## 2026-08-01 — generalize-learning-marker-parser-from-context-exclusion-to-assertion-grammar
 
 **[!REVERSAL]** Reversed v4.25.0's context-specific `TRIGGER_REALIZATION_REFERENCE` strategy after its own explanatory entry produced three new fake realizations. Replaced it with left-boundary assertion grammar and a double-quoted-example guard. The seven-case matrix passed. Full regeneration reduced the archive from 198 to 153 markers (45 more references removed), preserved the eight inspected genuine inline assertions, and `verify.py` passed. Prediction held.
+
+## 2026-08-02 — align-installed-skill-docs-with-harness-tool-layout
+
+**[!REALIZATION]** The verifier's stale-path coverage is semantically narrow: it catches obsolete trail filenames, but not documented executable paths that no longer exist. This installation defect survived a recent systematic verifier audit because command-path validity is a distinct quality bar from trail-path token consistency.
+
+## 2026-08-02 — refresh-iteration-count-and-readme-totals
+
+**[!REALIZATION]** This is the third distinct hand-maintained "current state" artifact this repo's trail has found stale and fixed individually (CITATION.cff version/tags, verify.py's own file-scope lists, now ITERATION-COUNT.md/README's iteration claim) - each discovered independently, each fixed the same way, none converted into a standing mechanical guarantee. The recurrence across three unrelated sessions, not just within one, is stronger evidence than any single instance that the governing variable is "this repo has no mechanism that prevents a hand-counted claim from drifting," not "this one document happened to go stale."
+
+## 2026-08-02 — confirm-iteration-count-sync-scope-across-live-docs
+
+**[!REALIZATION]** Not every unsynced number is the same defect. This repo's evidence-currency problem now has two named subclasses - stale-precise (fixed by resyncing) and vague-floor (a style choice, not a defect) - and treating them identically would have produced either a false fix (rewriting archival metadata on an inference) or an omission (leaving `INSTALLING.md` inconsistent with README's newly precise figure for no reason).
 
 ---
 

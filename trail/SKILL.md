@@ -1,6 +1,6 @@
 ---
 name: trail
-version: 2.4.1
+version: 2.4.2
 description: 'Evidence trail management. Append a structured entry to .acm/audit-trail.md IN THE TARGET REPO ROOT at the end of every substantive session — recording the interpretation of the ask, examination, decisions, actions, and reflection. The implementation of Observable Autonomy — autonomy without evidence is not delegation, it is abdication. USE WHEN: any session that produces a decision, realization, or finding — including conversations. There is no such thing as "just conversation" if a decision was made in it.'
 argument-hint: 'The target being worked on (repo, file, system) — used to populate the log entry header'
 ---
@@ -48,13 +48,13 @@ Append-only ledger of autonomous operations on this repo. Newest entries at the 
 ---
 ```
 
-That's it. Nothing else gets installed into the target repo. `record.py` lives in the skills install (`tools/record.py` next to this SKILL.md) and is invoked from there — it writes into the current working directory by default, or whatever `$TRAIL_ROOT` points to.
+That's it. Nothing else gets installed into the target repo. The skills repository includes an optional helper at `harness/tools/record.py`; the one-line skill installer does not copy it. Invoke it from the clone as `<skills-repo>/harness/tools/record.py` — it writes into the current working directory by default, or whatever `$TRAIL_ROOT` points to.
 
 After appending to `audit-trail.md`, regenerate the derived artifacts and commit them together:
 
 ```
-python <skills>/tools/record.py history --write
-python <skills>/tools/record.py learning --write
+python <skills-repo>/harness/tools/record.py history --write
+python <skills-repo>/harness/tools/record.py learning --write
 git add .acm/audit-trail.md .acm/history.md .acm/learning.md
 git commit -m "trail: <slug>"
 ```
@@ -66,9 +66,9 @@ If Orient ran this session and updated `.acm/orientation.md`, include it in the 
 `history.md` and `learning.md` are derived from `audit-trail.md` and are **regenerated as part of every Trail commit** — they must not lag behind the source. `record.py` exposes both as standalone subcommands too:
 
 ```
-python <skills>/tools/record.py history           # timeline to stdout (no write)
-python <skills>/tools/record.py learning          # markers to stdout (no write)
-python <skills>/tools/record.py summary           # digest of the most recent run
+python <skills-repo>/harness/tools/record.py history           # timeline to stdout (no write)
+python <skills-repo>/harness/tools/record.py learning          # markers to stdout (no write)
+python <skills-repo>/harness/tools/record.py summary           # digest of the most recent run
 ```
 
 ```
@@ -298,15 +298,15 @@ The mandatory sequence per iteration:
 ```
 iteration 1:
   1. append entry to .acm/audit-trail.md
-  2. python <skills>/tools/record.py history --write    ← updates .acm/history.md
-  3. python <skills>/tools/record.py learning --write   ← updates .acm/learning.md
+  2. python <skills-repo>/harness/tools/record.py history --write    ← updates .acm/history.md
+  3. python <skills-repo>/harness/tools/record.py learning --write   ← updates .acm/learning.md
   4. git add .acm/audit-trail.md .acm/history.md .acm/learning.md && git commit -m "trail: <slug>-1"
   ↓ only now begin iteration 2
 
 iteration 2:
   1. append entry to .acm/audit-trail.md
-  2. python <skills>/tools/record.py history --write
-  3. python <skills>/tools/record.py learning --write
+  2. python <skills-repo>/harness/tools/record.py history --write
+  3. python <skills-repo>/harness/tools/record.py learning --write
   4. git add .acm/audit-trail.md .acm/history.md .acm/learning.md && git commit -m "trail: <slug>-2"
   ↓ only now begin iteration 3
 ...
@@ -338,8 +338,8 @@ If yes, the trail is sufficient. If no, something is missing.
 
 Trail works standalone. When Intent is also active, paste its narration verbatim into the "Interpretation of the ask" section of the log entry — this is how context carries across sessions. When Improve or Probe is also active, the log entry records what that skill examined and decided.
 
-The `<skills>/tools/record.py` script can stub a new entry for you:
+The optional `<skills-repo>/harness/tools/record.py` helper can stub a new entry for you:
 
 ```sh
-python <skills>/tools/record.py new --slug=<slug> --target=<target> --skill=trail
+python <skills-repo>/harness/tools/record.py new --slug=<slug> --target=<target> --skill=trail
 ```

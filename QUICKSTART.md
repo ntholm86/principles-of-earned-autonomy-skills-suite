@@ -60,11 +60,11 @@ If all three are present, the loop ran successfully end to end.
 
 ## Optional: lock in trail discipline
 
-In your target repo:
+The one-line installer does not copy optional tooling. From your target repo, invoke the hook installer by its path in your cloned skills suite:
 
 ```
-bash harness/tools/install-hooks.sh     # macOS / Linux
-pwsh harness/tools/install-hooks.ps1    # Windows
+bash /path/to/autonomous-agent-skills/harness/tools/install-hooks.sh
+pwsh C:\path\to\autonomous-agent-skills\harness\tools\install-hooks.ps1
 ```
 
 This rejects commits that touch substantive files without a corresponding `.acm/audit-trail.md` entry.
