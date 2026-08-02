@@ -765,6 +765,14 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** Per the established lighter-weight-pointer convention: no new governing-variable diagnosis is introduced here. The pattern-family diagnosis stands as recorded in `confirm-bom-root-cause-and-fix-verifypy`; the grouping-vs-risk resolution is this entry's own contribution, noted above, and does not contradict the delegated decision two entries ago -- it is the natural completion of applying that decision with risk-appropriate rigor rather than a uniform template.
 
+## 2026-08-01 — fix-lens-count-miscount-three-vs-four
+
+**[!REALIZATION]** This is a small but clean example of a pattern this session has now seen many times: a fragile, hardcoded specific (a count, a file list, a version number) drifting silently until something unrelated forces a direct look at the actual text. The fix this time explicitly avoided reproducing the same fragility (choosing "Several" over "Four") rather than just resolving the immediate symptom -- consistent with, and reinforcing, the systemic lesson from the REQUIRED_FILES/BOM arc earlier today.
+
+## 2026-08-01 — fix-lens-count-miscount-three-vs-four
+
+**[!REALIZATION]** The operator-explicitly-asked trigger firing here, combined with the "not fired" recurring-finding-class result, is worth noting precisely because it did NOT fire as recurring: this session has now seen the "fragile hardcoded specific drifts silently" root-cause shape at least three times (REQUIRED_FILES gap, ACM traversal file lists, and now this lens-count miscount) but each instance has been in different subject matter (file-scoping lists vs. prose counts), so the mechanical recurring-finding-class trigger (which tracks entry-to-entry repetition, not cross-session thematic repetition) correctly does not fire. This is itself worth naming as a limit of the trigger: it catches immediate repetition well but would not, on its own, surface "this is the third distinct instance of the same root-cause shape today" without a broader arc-level read -- exactly the kind of thing an Orient run is positioned to catch that a single Improve iteration structurally cannot.
+
 ---
 
-**190 markers — 179 realisations, 11 reversals**
+**192 markers — 181 realisations, 11 reversals**

@@ -5,15 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 190 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-01 — fix-lens-count-miscount-three-vs-four
-
-**[!REALIZATION]** This is a small but clean example of a pattern this session has now seen many times: a fragile, hardcoded specific (a count, a file list, a version number) drifting silently until something unrelated forces a direct look at the actual text. The fix this time explicitly avoided reproducing the same fragility (choosing "Several" over "Four") rather than just resolving the immediate symptom -- consistent with, and reinforcing, the systemic lesson from the REQUIRED_FILES/BOM arc earlier today.
-
-## 2026-08-01 — fix-lens-count-miscount-three-vs-four
-
-**[!REALIZATION]** The operator-explicitly-asked trigger firing here, combined with the "not fired" recurring-finding-class result, is worth noting precisely because it did NOT fire as recurring: this session has now seen the "fragile hardcoded specific drifts silently" root-cause shape at least three times (REQUIRED_FILES gap, ACM traversal file lists, and now this lens-count miscount) but each instance has been in different subject matter (file-scoping lists vs. prose counts), so the mechanical recurring-finding-class trigger (which tracks entry-to-entry repetition, not cross-session thematic repetition) correctly does not fire. This is itself worth naming as a limit of the trigger: it catches immediate repetition well but would not, on its own, surface "this is the third distinct instance of the same root-cause shape today" without a broader arc-level read -- exactly the kind of thing an Orient run is positioned to catch that a single Improve iteration structurally cannot.
+Showing the most recent 60 markers. 192 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-01 — fix-real-mojibake-corruption-and-extend-check-no-mojibake
 
@@ -246,6 +238,14 @@ Showing the most recent 60 markers. 190 older marker(s) are in `.acm/learning-ar
 ## 2026-08-02 — orient-after-replicated-layered-tests
 
 **[!REALIZATION]** A contract repair generalized beyond the surface it was written for. The kernel sentence "missing Orientation context is not evidence that it is stale" was added as the iteration-2 repair during Case 1 and written about Orientation. A routing evaluator applied it correctly and unprompted to a DESTINATION gap. Repairs to this contract can transfer across surfaces rather than staying local to the case that produced them.
+
+## 2026-08-02 — orient-after-conditional-routing-experiment
+
+**[!REALIZATION]** The routing experiment closed the last wholly-untested mechanism and simultaneously overturned the arc's most comfortable claim. Layering is not free: it bought grounding discipline and cost reflection depth.
+
+## 2026-08-02 — orient-after-conditional-routing-experiment
+
+**[!REALIZATION]** The research methodology is now self-correcting in a demonstrable way. The judge's two false findings were caught only because the method requires checking scored claims against source, and the derived-index defect was caught only because Orient re-derives from the trail rather than trusting a summary. Both defects were found by the process rather than by luck, which argues for repairing the harness rather than loosening the method.
 
 ---
 

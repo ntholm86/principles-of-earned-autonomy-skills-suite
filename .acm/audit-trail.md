@@ -12255,3 +12255,79 @@ Orientation freshness: STALE. Claim 7 (routing undertested) is now directly addr
 1. Run the scheduled Orient -- claims 2 and 7 both need revision.
 2. Replicate the both-directions divergence with n>1 per arm and a verbatim-case judge before treating it as a property.
 3. Test routing under overlapping or ambiguous triggers, which is the condition this case did not supply.
+
+## 2026-08-02 - orient-after-conditional-routing-experiment
+
+- target: the layered-Improve research arc after the conditional-protocol routing experiment
+- operator: Nils Wendelboe Holmager
+- agent: GitHub Copilot
+- skill: orient (automatically scheduled by Improve)
+- outcome: contradicted the never-worse claim, closed the routing claim, and named harness fidelity as the arc's new binding constraint
+- delta: `.acm/orientation.md` refreshed to eight claims; claim 2 rewritten after contradiction, claim 7 resolved, claim 8 added
+
+### Scope and freshness
+
+Scope: re-orient after the conditional-routing experiment (Case 3), which was the top-priority next test named by the prior orientation. Routing was the last wholly-untested mechanism in the layered prototype.
+
+Freshness evidence: `record.py history --write` -> 223 entries; `record.py learning --write` -> 60 recent + 190 archived; `verify.py` -> OK. Gate PASS, arc-claims allowed.
+
+**Source correction:** this read used the audit trail directly rather than `.acm/history.md`, because the derived index was found to be missing the three most recent entries. See the defect note below.
+
+### Arc-claims formed
+
+1. **Claim 2 CONTRADICTED and rewritten.** The prior claim was that layering reduced routine input "without degrading behavior," resting on the layered arm never being worse on any measured dimension. The routing experiment produced the first both-directions divergence: layered had fewer material unsupported claims (1 vs 3) and clearer fact/inference separation, but thinner across-run reflection and it chose the weaker of two safety-relevant mechanisms. The factual boundary that changed is that production had only ever been evaluated against a condensed contract, so its full behavior had never been observed. This is a correction of the evidence base, not an override.
+
+2. **Claim 4 sharpened.** The prior claim was that the ceiling is model capability rather than instruction coverage, without qualification. That holds for grounding and fails for reflection depth, where an explicitly mandated per-trigger evaluation produced observably deeper output than a softly-worded equivalent within the same model context. Prohibition text has diminishing returns; obligation text on specific reasoning moves may not.
+
+3. **Claim 7 RESOLVED.** Routing passed 2/2 under cleanly-separated triggers, with correct rejection of all four distractors and correct execution of both fired protocols. Reframed to record what remains open: routing under overlapping or ambiguous triggers. A secondary finding was that a contract repair generalized beyond its authoring surface -- a sentence written about Orientation was correctly applied to a Destination gap, unprompted.
+
+4. **New claim 8: the binding constraint is now harness fidelity, not instruction architecture.** Four consecutive measurement distortions, three in experiment design and one in tooling. Continuing to vary contracts while the harness silently drops entries and paraphrases evidence would produce confident findings about the wrong system.
+
+### Defect found during this Orient
+
+`.acm/history.md` is missing the three most recent trail entries. `harness/tools/record.py` matches entries on `^##\s+(\d{4}-\d{2}-\d{2})\s+[\u2014-]\s+(.+)$`, but those three used a `## Entry: <slug>` heading and were silently skipped. The marker regex matches anywhere in the document, so `learning.md` indexed them correctly and the gap stayed invisible. `verify.py` passes regardless, because it does not assert that every trail entry reaches the derived index.
+
+The trail itself is intact and decodes cleanly; only the derived index is blind. **No history was rewritten.** "Preserve append-only history" is a standing operational rule, and choosing between correcting the three headings and widening the parser is an operator decision, not an Orient action. This entry uses the canonical heading format so the drift is not propagated further.
+
+### Decision
+
+[!DECISION] Refresh `.acm/orientation.md` to eight claims, add five operational rules covering judge-briefing fidelity, equal-fidelity contract comparison, measure-before-reveal, derived-index verification, and UTF-8 appends. Promote the derived-index repair to the top of the next-runs list, ahead of all remaining research tests.
+
+Rejected alternatives: leave claim 2 standing with a caveat (it is contradicted, not qualified); fix the derived-index defect inside this Orient (Orient does not change the target); rewrite the three non-canonical headings (append-only rule, operator decision).
+
+### Reflection
+
+**Target claim:** the arc's frontier has moved from "is the compressed contract safe?" to "is the measurement apparatus trustworthy?" Every remaining research question on the list depends on a harness that has now been shown to drop entries silently and to distort judging through evidence paraphrase. A future run can disagree by showing the next experiment's dominant error source is contract wording rather than tooling or evaluation design.
+
+**Blind spot:** I accepted `verify.py` passing as sufficient evidence of trail health across this entire arc, including in the two prior orientations, where I cited the record.py entry counts as a freshness gate. The count was stable at 223 across an append, which was visible evidence that something was wrong, and I did not look until this run. A green check I did not read carefully is worse than no check.
+
+**Informed pushback:** a reader would say claim 2's contradiction rests on a single output pair judged once, and that reversing a standing arc-claim on n=1 is exactly the over-reading this arc keeps warning about. The honest answer is that the contradiction is strong enough to remove the old claim's confidence but not strong enough to establish the new one, which is why replication at n>1 sits at position 2 on the next-runs list and the mechanism hypothesis is marked untested.
+
+[!REALIZATION] The routing experiment closed the last wholly-untested mechanism and simultaneously overturned the arc's most comfortable claim. Layering is not free: it bought grounding discipline and cost reflection depth.
+
+[!REALIZATION] The research methodology is now self-correcting in a demonstrable way. The judge's two false findings were caught only because the method requires checking scored claims against source, and the derived-index defect was caught only because Orient re-derives from the trail rather than trusting a summary. Both defects were found by the process rather than by luck, which argues for repairing the harness rather than loosening the method.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED. Four consecutive measurement distortions traced to harness rather than contract. Escalated to arc level as claim 8. Macro reflection: double-loop -- the governing assumption that the contracts are the object of study is what needs revising, not the contracts.
+- *About to declare silence:* not fired. A contradicted claim and a tooling defect both required action.
+- *Contradicts prior [!REALIZATION]:* FIRED. The prior realization held that compression was "feasible and not behaviorally worse." Contradicted on two dimensions. Boundary change recorded above: production had never been evaluated at full fidelity.
+- *Operator explicitly asked:* yes. Operator said "lets continue" with the scheduled Orient as the sole open item.
+
+### Across-trail macro-Hansei
+
+The arc has been optimizing the wrong component. Across eight experiments the contracts have been repeatedly revised, frozen, compressed, and compared, while the apparatus that measures them accumulated four unexamined defects: a condensed contract standing in for the real one, a mechanism never exercised, evidence paraphrased into fabrication, and a derived index silently dropping entries.
+
+The last of these is the sharpest, and it deepened while this entry was being written. The three non-canonical entries were not merely absent from `history.md` -- because `verify.py` iterates the same parsed entries, they were exempt from **every** structural check it performs. The "trail integrity checks pass" result recorded against the routing experiment was therefore vacuous: that entry was never examined. Writing this entry in the canonical format immediately surfaced a genuine structural violation in it (a fired trigger with no macro-Hansei subsection) that the previous three entries would have concealed.
+
+This inverts the standing interpretation of a green check. A passing `verify.py` was being read as "the trail is sound," when it actually means "the entries the parser recognized are sound." Silent scope reduction in a validator is more dangerous than an absent validator, because it manufactures confidence in proportion to how much it skips.
+
+Governing assumption named: that the object of study is the instruction architecture. On current evidence the harness is the weaker component, and further contract variation would produce well-measured answers about a system whose measurements are not trustworthy.
+
+Orientation freshness: current (this IS the Orient run).
+
+### Candidate Next Moves
+
+1. Repair the derived-index defect and add a verify.py assertion that every `##`-level trail heading parses as an entry, so unrecognized entries fail loudly instead of being skipped. Requires an operator decision on parser-widening versus heading-correction.
+2. Re-run verification against the three unparsed entries once they are recognized, since none of them have ever been structurally checked.
+3. Replicate the both-directions divergence at n>1 per arm with a verbatim-case judge.

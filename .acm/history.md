@@ -228,6 +228,7 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 221 | 2026-08-02 | prototype-layered-improve | resource reduction and conditional routing passed after repair; strict behavioral preservation remains unproven; production unchanged | added a non-installed 101-line kernel, 57-line conditional layer, novelty fixture, and evidence report |
 | ▸ 222 | 2026-08-02 | replicate-layered-improve-grounding-test | operator gate passed in both arms; factual grounding failed in both arms; layered routing remained inconsistent | added `NOVELTY_CASE_2.md` and `RESULTS_CASE_2.md`; production and prototype contracts unchanged |
 | ▸ 223 | 2026-08-02 | orient-after-replicated-layered-tests | separated operator-gate success from shared grounding failure and redirected the next test away from instruction editing | `.acm/orientation.md` refreshed from pre-prototype hypothesis to post-replication evidence |
+| ▸ 224 | 2026-08-02 | orient-after-conditional-routing-experiment | contradicted the never-worse claim, closed the routing claim, and named harness fidelity as the arc's new binding constraint | `.acm/orientation.md` refreshed to eight claims; claim 2 rewritten after contradiction, claim 7 resolved, claim 8 added |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -1040,4 +1041,8 @@ Do not edit by hand — re-run the command to refresh.
 - **decided:** Refresh orientation.md with updated claims, add operational rule about grounding strategy, and reprioritize next-test list with routing first.
 - **decided:** Keep both contracts unchanged. Do not promote the layered prototype and do not revert the experiment.
 
-**223 runs total — 208 with changes, 15 silence**
+### Run 224 — 2026-08-02 — orient-after-conditional-routing-experiment
+
+- **decided:** Refresh `.acm/orientation.md` to eight claims, add five operational rules covering judge-briefing fidelity, equal-fidelity contract comparison, measure-before-reveal, derived-index verification, and UTF-8 appends. Promote the derived-index repair to the top of the next-runs list, ahead of all remaining research tests.
+
+**224 runs total — 209 with changes, 15 silence**
