@@ -5,15 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 179 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-01 — fix-recordpy-bom
-
-**[!REALIZATION]** Per the process observation named in the immediately prior entry's macro-Hansei (that repeated firings of this trigger with "same diagnosis as last entry" could use a lighter-weight pointer format), this entry's macro-Hansei is intentionally kept to a single pointer rather than re-deriving the diagnosis: the governing-variable finding stands as stated in the `confirm-bom-root-cause-and-fix-verifypy` entry (no single canonical file-scope list in verify.py) and the process-format question stands as named in `close-create-file-bom-blind-spot-and-fix-installing-md`. Neither is re-argued here. This is the first entry to actually apply the lighter-weight-pointer idea rather than only naming it as a future candidate -- worth watching whether this format holds up over the remaining fixes or whether it turns out to lose information a fuller restatement would have preserved.
-
-## 2026-08-01 — orient-post-bom-cleanup-and-efficiency-check
-
-**[!REALIZATION]** "One change per run, no batching" has not yet been examined against the evidence this window produced about how uniform and low-risk byte-identical BOM fixes are -- a live tension between two destination-level concerns (rigor via no-batching, efficiency via destination note item 3) that four consecutive entries had the evidence for and did not name as a tension. This is the double-loop gap from the 2026-07-31 destination note showing up in a new, quieter place than the genericity violation.
+Showing the most recent 60 markers. 181 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-01 — orient-post-bom-cleanup-and-efficiency-check
 
@@ -246,6 +238,14 @@ Showing the most recent 60 markers. 179 older marker(s) are in `.acm/learning-ar
 ## 2026-08-02 — orient-recursive-purpose-and-principles-boundary
 
 **[!REALIZATION]** The strongest current reasoning evidence is mixed in a specific way: the engine applied prior learning well enough to protect intent structurally, while still needing operator correction to avoid creating a new conceptual ceiling. Improving learning carry-forward alone does not establish equally strong intent generalization.
+
+## 2026-08-02 — surface-governance-accretion-redesign
+
+**[!REALIZATION]** The previously unnamed limitation is governance accretion: the architecture has no mechanism for safeguards to expire, consolidate, or move out of routine context after they are added. As a result, successful learning monotonically increases the instruction burden that future reasoning must carry. This is distinct from example-to-checklist collapse; it is learning that protects against past failures while progressively consuming the attention needed to discover new ones.
+
+## 2026-08-02 — orient-after-governance-accretion-finding
+
+**[!REALIZATION]** The unseeded self-improvement test succeeded at discovery and exposed a new asymmetry: the suite has strong mechanisms for turning failures into permanent instructions, but weak mechanisms for turning accumulated instructions back into smaller abstractions without losing their protections.
 
 ---
 

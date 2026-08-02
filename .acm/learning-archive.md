@@ -721,6 +721,14 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** Four files into this migration (QUICKSTART.md, verify.py, INSTALLING.md, record.py), the pattern is now fully mechanical and has produced zero surprises since the QUICKSTART.md entry's original discovery -- the interesting content of this cleanup arc was front-loaded into the root-cause investigation two entries ago, not spread evenly across the remaining fixes. This matches the macro-Hansei observation from the immediately prior entry almost exactly: the remaining work is low-uncertainty repetition, and the only files where real uncertainty still exists are the two deliberately-deferred ones.
 
+## 2026-08-01 — fix-recordpy-bom
+
+**[!REALIZATION]** Per the process observation named in the immediately prior entry's macro-Hansei (that repeated firings of this trigger with "same diagnosis as last entry" could use a lighter-weight pointer format), this entry's macro-Hansei is intentionally kept to a single pointer rather than re-deriving the diagnosis: the governing-variable finding stands as stated in the `confirm-bom-root-cause-and-fix-verifypy` entry (no single canonical file-scope list in verify.py) and the process-format question stands as named in `close-create-file-bom-blind-spot-and-fix-installing-md`. Neither is re-argued here. This is the first entry to actually apply the lighter-weight-pointer idea rather than only naming it as a future candidate -- worth watching whether this format holds up over the remaining fixes or whether it turns out to lose information a fuller restatement would have preserved.
+
+## 2026-08-01 — orient-post-bom-cleanup-and-efficiency-check
+
+**[!REALIZATION]** "One change per run, no batching" has not yet been examined against the evidence this window produced about how uniform and low-risk byte-identical BOM fixes are -- a live tension between two destination-level concerns (rigor via no-batching, efficiency via destination note item 3) that four consecutive entries had the evidence for and did not name as a tension. This is the double-loop gap from the 2026-07-31 destination note showing up in a new, quieter place than the genericity violation.
+
 ---
 
-**179 markers — 168 realisations, 11 reversals**
+**181 markers — 170 realisations, 11 reversals**

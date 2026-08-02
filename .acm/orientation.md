@@ -1,31 +1,31 @@
 # orientation.md - autonomous-agent-skills
 
-Last updated: 2026-08-02 (run: `orient-recursive-purpose-and-principles-boundary`)
+Last updated: 2026-08-02 (run: `orient-after-governance-accretion-finding`)
 
 ## Scope of this read
 
-Re-orient runs 203-217 against the reconciled complete Destination. Question: how does the arc change when recursive purpose-driven self-improvement and principles-only immutability replace the prior capability examples and mandatory implementation gate?
+Re-orient runs 203-218 after the first unseeded self-targeted Improve run under the reconciled Destination. Question: did the generic purpose operation derive a previously unnamed limitation, and what does that evidence change?
 
 **Freshness check (run evidence):**
 
-- `python harness/tools/record.py history --write` -> 217 entries.
-- `python harness/tools/record.py learning --write` -> 60 recent + 178 archived markers.
+- `python harness/tools/record.py history --write` -> 219 entries.
+- `python harness/tools/record.py learning --write` -> 60 recent + 180 archived markers.
 - `python verify.py` -> OK, trail integrity checks pass.
 - Gate: PASS (arc-claims allowed).
 
 ## Current claims
 
-### 1. Self-improving reasoning is now derived from the generic improvement operation
+### 1. The generic improvement operation passed its first unseeded discovery test
 
-The current Destination no longer needs intent interpretation, deutero-learning, or any other named capability to justify reasoning self-improvement. The engine claims to improve any target by reasoning about its purpose and operator intent, finding the strongest limitation, and improving it. When the engine is the target, limitations in its own reasoning, learning, architecture, or operation are therefore ordinary candidate findings rather than a special self-targeting branch.
+Run 218 was asked only to continue self-targeted improvement and was explicitly not seeded with a capability. It derived governance accretion: successful learning monotonically adds safeguards to routine instructions, consuming the attention future reasoning needs. The finding came from purpose, current structure, historical growth, and a disconfirming check against early independent evaluations. This is positive evidence that self-improvement can discover beyond named examples; it does not yet show that the engine can implement or validate the resulting redesign.
 
-**Falsifiable by:** a self-targeting Improve run that restricts discovery to named capabilities, or evidence that the generic Purpose operation cannot surface a reasoning limitation without a self-specific instruction.
+**Falsifiable by:** evidence that governance accretion was implicitly seeded by the prompt or current artifacts as a prescribed answer, or repeated fresh runs that fall back to named examples despite the same open mandate.
 
-### 2. The engine still tends to convert examples into ceilings
+### 2. Governance accretion is now the strongest internally derived reasoning constraint
 
-The operator had to correct this tendency twice in the current arc: first when intent interpretation and deutero-learning were treated as a menu, and again when purpose-understanding risked becoming the whole self-improvement model rather than one example among "also other things." The reconciled Destination removes the conceptual excuse for this behavior, but no fresh run has shown that the behavior changed.
+Improve grew from 99 lines and 9 imperative terms at v3.0.0 to 204 lines and 34 imperative terms. Its seven reasoning moves still have independent evidence that they provide useful vocabulary; the accretion sits mainly in ingress, reflection, recording, composition, fallback, and evidence protocols. Each protection may be locally justified while their cumulative routine presence displaces attention from target understanding. The architecture has mechanisms for adding lessons and occasional removal of obsolete mandates, but no regular consolidation path.
 
-**Falsifiable by:** a fresh self-targeting run that derives and improves a previously unnamed reasoning or operational limitation from purpose without operator prompting.
+**Falsifiable by:** paired behavioral tests showing the current monolithic contract matches or outperforms a layered contract on reasoning quality, fidelity, and resources, or evidence that conditional loading loses safeguards more often than it frees useful attention.
 
 ### 3. Only the principles are fixed; current architecture is provisional
 
@@ -53,7 +53,7 @@ The current arc has improved first-contact structure and exercised automatic com
 
 ## What the next runs should test
 
-1. Run Improve self-targeted without naming a capability and observe whether it derives a previously unnamed reasoning or operational limitation from purpose.
+1. Decide whether to prototype a layered Improve contract that preserves the seven reasoning moves while conditionally loading governance protocols, then compare behavior and resources against the current contract.
 2. Compare equivalent routine work with full and bounded Destination input, measuring actual tokens and checking decision, learning, evidence, and operator-control preservation.
 3. Observe a new developer attempting a first Destination + Improve cycle without author assistance.
 4. Use a public external target and fresh session to test automatic composition and continuity.
@@ -63,6 +63,7 @@ The current arc has improved first-contact structure and exercised automatic com
 
 - Derive candidate changes from target purpose and operator intent; never treat named capabilities or mechanisms as an exhaustive search space.
 - Hold only the three principles fixed. Require every other mechanism to justify itself against purpose and evidence.
+- Do not make a new safeguard permanently resident in routine instructions without considering consolidation, conditional loading, or an expiry condition.
 - Let the engine choose implementation within a confirmed Destination; stop for direction changes and operator-declared consequential actions.
 - Treat research and adoption as co-equal priorities.
 - Optimize trustworthy capability per resource; require preservation checks before claiming efficiency.
@@ -73,12 +74,12 @@ The current arc has improved first-contact structure and exercised automatic com
 
 ## Loop-effectiveness notes
 
-**Quality bar tested:** can the loop reconcile an accumulated Destination into a cheaper current mandate without dropping active constraints, and can it state self-improvement without turning examples into a checklist?
+**Quality bar tested:** can a fresh self-targeted Improve run derive a previously unnamed reasoning or operational limitation from purpose without operator prompting?
 
-**Result:** structural compression PASS; autonomous abstraction PARTIAL. The current boundary preserved the sampled active commitments and reduced destination bytes by 82.6%. The operator still had to broaden the engine's first recursive formulation and then reject an over-specification hunch before accepting the candidate as "good enough for now."
+**Result:** discovery PASS; improvement UNTESTED. Run 218 derived governance accretion without a named-capability seed, challenged the obvious phase-removal answer with independent historical evidence, and stopped at a redesign argument because packaging and safeguard preservation require an operator decision and behavioral comparison.
 
-**Double-loop finding:** the repeated symptom was example-to-checklist collapse. The governing variable was the assumption that current mechanisms and named capability classes had to be preserved. Destination now fixes only the principles and lets purpose regenerate the route.
+**Double-loop finding:** the governing variable is that learning is normally stored by adding durable instructions. This protects against recurrence locally but makes instruction burden grow monotonically unless a later run deliberately removes or consolidates it.
 
-**Deutero-learning finding:** the loop successfully used its own prior genericity reversal and a live falsifier to avoid silently truncating history. It did not independently reach the operator's broadest formulation before correction. The learning mechanism can carry a known precedent into implementation, while open-ended abstraction from operator examples remains unreliable.
+**Deutero-learning finding:** the run used prior evaluations to preserve the reasoning kernel while questioning the accumulated governance envelope. That is a stronger form of learning than either repeating the old concern or deleting the sequence. Whether a layered architecture preserves safeguards under real execution is the decisive next test.
 
-[!REALIZATION] The strongest current reasoning evidence is neither failure nor success in the abstract: the engine carried forward a prior genericity lesson strongly enough to build a fail-closed mechanism, yet still needed operator correction to avoid making a new conceptual ceiling. Structural learning currently outperforms open-ended intent generalization.
+[!REALIZATION] The first unseeded test found a limitation that the operator had not named: the suite's learning mechanism improves by accumulating instructions, but lacks a symmetric way to compress those lessons back into abstractions or conditional protocols. Discovery succeeded; the architecture it proposes remains a hypothesis.

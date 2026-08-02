@@ -11718,3 +11718,139 @@ The arc is moving from enumerating better reasoning mechanisms toward a generati
 1. Run Improve self-targeted without naming a capability and test whether it derives a previously unnamed reasoning or operational limitation from purpose.
 2. Measure equivalent routine work with full and bounded Destination input using actual token counts and preservation checks.
 3. Observe an unassisted newcomer completing a first Destination + Improve cycle.
+
+## 2026-08-02 - surface-governance-accretion-redesign
+
+- target: the skill suite's natural-language instruction architecture, centered on `improve/SKILL.md`
+- operator: Nils Wendelboe Holmager
+- agent: GitHub Copilot
+- skill: improve (self-targeted, unseeded capability test)
+- outcome: surfaced a previously unnamed redesign finding; no product change made pending operator decision
+- delta: evidence-only iteration; current Improve measured against its original v3 contract
+
+### Interpretation of the ask
+
+Intent narration: "continue" means run a fresh self-targeted Improve iteration under the reconciled Destination without seeding it with intent interpretation, deutero-learning, or another named capability. Success means deriving a previously unnamed limitation from purpose and evidence rather than following the examples in Orientation.
+
+Prioritized falsifiable question: does the suite's own instruction architecture force capable models through accumulated procedures that substitute remembering the route for reasoning from purpose? Proceeded under the assumption that this was the strongest untested structural uncertainty, while treating a stable or falling procedural density as the cheap disconfirming result.
+
+### Examination
+
+- **Purpose:** Improve exists to let a capable model understand a target, reason from its purpose, and choose the highest-leverage route under the principles. Its seven-move core remains coherent.
+- **Overburden:** the current `improve/SKILL.md` is 204 lines with 34 imperative terms across 16 sections. Only 50 lines span Examine through Decide; approximately 146 lines govern ingress, reflection, recording, composition, and supporting protocols.
+- **Trajectory:** original v3 Improve was 99 lines, 9 imperative terms, and 11 sections. The current contract is 2.06 times as long and has 3.78 times as many imperative terms. Representative May-to-August revisions show continued growth: 159/21, 174/22, 180/22, 183/24, then 204/34.
+- **Suite surface:** current contracts total 1,114 lines: Trail 349, Orient 218, Improve 204, Destination 164, Intent 99, Probe 80.
+- **Historical falsifier:** three early fresh evaluations considered whether numbered phases were a compliance magnet and concluded that the sequence provides useful cognitive vocabulary rather than rigid prescription. The original v3 convergence evidence therefore protects the reasoning sequence from a simplistic removal.
+- **Coverage boundary:** those evaluations examined a 99-line Improve contract. They cannot establish silence for today's 204-line contract, whose governance surface accumulated afterward.
+- **Packaging constraint:** both installers copy only each skill's `SKILL.md`, and `INSTALLING.md` promises every skill works with only that file. Moving protocols into companion files without revising distribution would silently break standalone operation.
+- **Waste:** no individual safeguard was shown to be useless. The problem is cumulative attention cost and duplicated ownership: Improve restates fallback evidence and composition behavior already owned by Intent, Trail, and Orient.
+
+### Decision
+
+[!DECISION] Surface an argument for redesign rather than delete one safeguard or remove the seven reasoning moves. Preserve the reasoning kernel; separate routine reasoning instructions from conditional governance protocols; let the default full-suite Improve delegate ingress, evidence, and orientation behavior to their owning skills; load standalone, high-fidelity, multi-iteration, and other conditional protocols only when triggered. Reconsider the single-file standalone guarantee explicitly rather than hiding the tradeoff in file movement.
+
+Rejected alternatives:
+
+- Remove numbered phases: rejected because independent early evaluators found them useful vocabulary and no new evidence isolates the sequence as the defect.
+- Delete one recent safeguard: rejected because the finding concerns cumulative architecture, and selecting one instruction by line count would be arbitrary.
+- Move text to companion files without changing packaging: rejected because current installers do not copy them and the public standalone contract would become false.
+
+Precedent check: the v3 redesign began from the same governing insight - detailed phases and orchestration can make a framework contradict Operator's Intent. The fresh evidence is not merely that the concern recurred; the contract has doubled since the prior convergence judgment, so the old decision's factual boundary no longer matches the current target.
+
+### Prediction
+
+A layered redesign can materially reduce routine instruction input and imperative density while preserving the seven reasoning moves, principle compliance, decision quality, capability-preservation checks, and trail fidelity on paired novelty tasks. Shorter text alone will not establish better reasoning, and moving text without conditional loading will not reduce token use. No implementation or improvement claim is made in this iteration.
+
+### Action
+
+No product files changed. Measured current and historical contracts, checked the earliest trail decisions and independent evaluations, verified installer behavior, and formed an implementable redesign boundary. Stopped before implementation because Improve's redesign path requires the argument to be surfaced for operator decision.
+
+### Reflection
+
+Current model: the suite's current reasoning ceiling is partly attentional architecture. Individual safeguards are locally rational, but their accumulation can turn a purpose-driven engine into an instruction-retention task. The seven-move reasoning kernel and the governance envelope now need independent justification.
+
+Blind spot: line count and imperative terms are proxies, not behavioral evidence. This run did not compare model outcomes under current and layered contracts, so it cannot say which instructions consume attention or whether a shorter kernel performs better.
+
+Expected informed pushback: every removed inline rule has a historical failure behind it, and natural-language hosts may not reliably load conditional companion protocols. The redesign must preserve failure coverage and test host behavior rather than assuming modular text behaves like modular code.
+
+[!REALIZATION] The previously unnamed limitation is governance accretion: the architecture has no mechanism for safeguards to expire, consolidate, or move out of routine context after they are added. As a result, successful learning monotonically increases the instruction burden that future reasoning must carry. This is distinct from example-to-checklist collapse; it is learning that protects against past failures while progressively consuming the attention needed to discover new ones.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED - the original v3 redesign removed procedural orchestration, the earliest self-target run flagged phase prescription, and later ceremony reductions repeatedly removed obsolete mandates; current measurements show the same governing pressure has reaccumulated.
+- *About to declare silence:* not fired - a material redesign finding was surfaced.
+- *Contradicts prior [!REALIZATION]:* FIRED - early convergence evidence said the Improve structure was appropriately bounded, but that evidence applied to a 99-line contract, not today's 204-line artifact.
+- *Operator explicitly asked:* FIRED - the operator asked to continue and see what emerged.
+
+### Across-trail macro-Hansei
+
+The suite learns mainly by adding protections after failures. It has occasionally removed obsolete ceremony, but it lacks a regular mechanism for consolidating accumulated protections into a smaller governing abstraction. This creates a ratchet: evidence improves local safety while the reasoning substrate becomes progressively more procedural. The redesign question is whether learning can compress into principles and conditional protocols instead of remaining permanently resident as routine instructions.
+
+Orientation freshness: STALE - this fresh unseeded run derived a previously unnamed limitation, falsifying Orientation claim 2's statement that no fresh run had shown changed behavior; automatic Orient scheduled after this entry becomes durable.
+
+### Candidate Next Moves
+
+1. Decide whether to prototype a layered Improve contract and paired behavioral comparison; this directly tests the redesign prediction.
+2. Observe an unassisted newcomer cycle; this remains the strongest adoption test and may reveal whether instruction accretion affects real use.
+3. Measure actual token use for equivalent bounded/full Destination runs; this remains the cleanest efficiency experiment already prepared by the prior arc.
+
+## 2026-08-02 - orient-after-governance-accretion-finding
+
+- target: runs 203-218 after the first unseeded self-targeted Improve run
+- operator: Nils Wendelboe Holmager
+- agent: GitHub Copilot
+- skill: orient (automatically scheduled by Improve)
+- outcome: recognized unseeded discovery as passed, elevated governance accretion as the strongest internal constraint, and kept redesign validation open
+- delta: Orientation claim 2 falsified and replaced; next-test ranking updated
+
+### Scope and freshness
+
+Scope: did the generic purpose operation derive a previously unnamed limitation, and what does that evidence change?
+
+- `python harness/tools/record.py history --write` -> 219 entries.
+- `python harness/tools/record.py learning --write` -> 60 recent + 180 archived markers.
+- `python verify.py` -> OK, trail integrity checks pass.
+- Gate: PASS (arc-claims allowed).
+
+### Arc claims
+
+1. The generic improvement operation passed its first unseeded discovery test: governance accretion was derived from purpose, structure, historical growth, and disconfirming evidence rather than selected from a capability list.
+2. Governance accretion is now the strongest internally derived reasoning constraint: Improve doubled from 99 to 204 lines and rose from 9 to 34 imperative terms while the reasoning sequence itself retained independent support.
+3. Only the principles remain fixed; current architecture is provisional.
+4. Delegated implementation within confirmed Destination remains active, while Improve's own redesign branch correctly stops for an operator decision before structural replacement.
+5. Destination input reduction remains structurally demonstrated while end-to-end token efficiency is unproven.
+6. Adoption and external execution fidelity remain untested.
+
+### Loop-effectiveness finding
+
+Quality bar: can a fresh self-targeted Improve run derive a previously unnamed reasoning or operational limitation from purpose without operator prompting?
+
+Result: discovery PASS; improvement UNTESTED. The run did not simply remove phases or repeat the example-to-ceiling finding. It found a cumulative learning-architecture problem, preserved the independently supported reasoning core, and bounded its redesign claim by the absence of paired behavioral evidence.
+
+Double-loop finding: the governing variable is that learning is normally stored by adding durable instructions. Local safety improves while routine instruction burden ratchets upward unless another run deliberately consolidates or retires protections.
+
+Deutero-learning finding: prior evaluations were used as disconfirming evidence, not as authority to preserve the whole current artifact. This let the run distinguish the still-supported reasoning sequence from the newly overgrown governance envelope.
+
+[!REALIZATION] The unseeded self-improvement test succeeded at discovery and exposed a new asymmetry: the suite has strong mechanisms for turning failures into permanent instructions, but weak mechanisms for turning accumulated instructions back into smaller abstractions without losing their protections.
+
+### Action and validation
+
+Updated `.acm/orientation.md` narrowly: changed scope and freshness evidence, replaced the first two claims, promoted the layered-contract comparison to the first next test, added an operational rule requiring consolidation/conditional-loading/expiry consideration for new safeguards, and revised loop-effectiveness notes. Preserved the four unaffected claims on provisional architecture, delegated implementation, bounded Destination efficiency, and external adoption/fidelity.
+
+Focused validation asserted one H1, one Current Claims section, the new run slug, removal of the falsified claim, presence of governance accretion, and the `discovery PASS; improvement UNTESTED` boundary. `git diff --check` passed.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED - instruction and ceremony accumulation recurs from v2 redesign through later mandate removals to today's measured contract growth.
+- *About to declare silence:* not fired - redesign validation and adoption tests remain open.
+- *Contradicts prior [!REALIZATION]:* FIRED - the previous Orientation said no fresh run had demonstrated discovery beyond named examples; run 218 did.
+- *Operator explicitly asked:* FIRED - the operator asked to continue; Improve marked Orientation stale after the resulting finding.
+
+### Across-trail macro-Hansei
+
+The arc now contains the first positive evidence for recursive self-improvement under the reconciled Destination, but the finding itself warns against encoding that success as another large permanent procedure. The next move should test whether the suite can compress learned governance without forgetting why each protection exists.
+
+### Candidate Next Moves
+
+1. Operator decides whether to authorize a layered Improve prototype and paired comparison.
+2. Run the independent newcomer adoption test if redesign is deferred.

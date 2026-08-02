@@ -223,6 +223,8 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 216 | 2026-08-02 | bounded-current-destination-with-full-read-fallback | added an opt-in current-destination boundary whose completeness must be reconciled and whose malformed or absent form fails closed to a full read | destination 2.5.1 -> 2.6.0; intent 1.5.1 -> 1.6.0; improve 3.15.1 -> 3.16.0; orient 2.6.1 -> 2.7.0; suite 4.27.2 -> 4.28.0 |
 | ▸ 217 | 2026-08-02 | reconcile-complete-current-destination | reconciled the full destination history into an operator-confirmed bounded current mandate | routine destination input reduced from 42,496 to 7,402 UTF-8 bytes while preserving historical provenance below the boundary |
 | ▸ 218 | 2026-08-02 | orient-recursive-purpose-and-principles-boundary | refreshed Orientation around recursive purpose-driven improvement, principles-only immutability, delegated implementation, and the remaining example-to-ceiling reasoning gap | `.acm/orientation.md` replaced with six falsifiable claims and five next tests |
+| ▸ 219 | 2026-08-02 | surface-governance-accretion-redesign | surfaced a previously unnamed redesign finding; no product change made pending operator decision | evidence-only iteration; current Improve measured against its original v3 contract |
+| ▸ 220 | 2026-08-02 | orient-after-governance-accretion-finding | recognized unseeded discovery as passed, elevated governance accretion as the strongest internal constraint, and kept redesign validation open | Orientation claim 2 falsified and replaced; next-test ranking updated |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -1015,4 +1017,8 @@ Do not edit by hand — re-run the command to refresh.
 
 - **REVERSAL:** The historical "irreducible human gate" over every implementation choice is no longer active. The operator owns and confirms the Destination; within it, implementation choice may be delegated. Direction changes and declared consequential actions remain gated.
 
-**218 runs total — 203 with changes, 15 silence**
+### Run 219 — 2026-08-02 — surface-governance-accretion-redesign
+
+- **decided:** Surface an argument for redesign rather than delete one safeguard or remove the seven reasoning moves. Preserve the reasoning kernel; separate routine reasoning instructions from conditional governance protocols; let the default full-suite Improve delegate ingress, evidence, and orientation behavior to their owning skills; load standalone, high-fidelity, multi-iteration, and other conditional protocols only when triggered. Reconsider the single-file standalone guarantee explicitly rather than hiding the tradeoff in file movement.
+
+**220 runs total — 205 with changes, 15 silence**
