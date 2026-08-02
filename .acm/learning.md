@@ -5,19 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 181 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-01 — orient-post-bom-cleanup-and-efficiency-check
-
-**[!REALIZATION]** Claim 5 is itself the macro-Hansei output of this run, arrived at only by reading the six-entry arc as one document rather than entry-by-entry -- no single one of the four BOM-fix entries had enough surface area on its own to surface the no-batching/efficiency tension; it only became visible by comparing the sequence's cumulative ceremony cost against the destination's efficiency note as a whole. This is the kind of finding Orient exists to produce that Improve's step 6b, running inside a single iteration, structurally cannot.
-
-## 2026-08-01 — route-batching-tension-to-operator-then-fix-three-skillmd-boms
-
-**[!REALIZATION]** This entry is the first direct test of whether the operator-gate can function even when the operator is not present to answer in real time -- the "work autonomously and make good decisions" instruction is a delegated form of the gate, not an absence of it. The decision made here (a scoped middle path, not either extreme) is falsifiable: if the operator reviews this later and says "no, I wanted strict one-per-entry" or "no, you should have batched everything," that would be direct evidence about how well an autonomous best-guess under real delegation matches what a present operator would have chosen. This is more informative than any of the four prior BOM-fix entries, because it is the first one testing something the arc's own orient run identified as actually uncertain, rather than repeating an already-settled mechanism.
-
-## 2026-08-01 — route-batching-tension-to-operator-then-fix-three-skillmd-boms
-
-**[!REALIZATION]** Both the recurring-finding-class and operator-explicitly-asked triggers fired simultaneously for the first time this session. Read together, they mark a transition point in this sub-arc: the prior four entries were the loop executing an already-settled mechanism repeatedly; this entry is the loop's own accumulated pattern-recognition (via Orient) producing a genuine governing-variable question, escalating it correctly instead of quietly deciding alone, and then exercising real judgment when the operator delegated the decision back. Whether "grouped, per-file-verified" turns out to be the granularity the operator actually wants remains open until reviewed -- this is not a closed loop yet, only a well-reasoned, clearly-flagged one.
+Showing the most recent 60 markers. 184 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-01 — orient-step3b-argyris-double-loop-check
 
@@ -247,6 +235,18 @@ Showing the most recent 60 markers. 181 older marker(s) are in `.acm/learning-ar
 
 **[!REALIZATION]** The unseeded self-improvement test succeeded at discovery and exposed a new asymmetry: the suite has strong mechanisms for turning failures into permanent instructions, but weak mechanisms for turning accumulated instructions back into smaller abstractions without losing their protections.
 
+## 2026-08-02 — prototype-layered-improve
+
+**[!REALIZATION]** Conditional loading is architecturally feasible but composition is itself a load-bearing protocol: the kernel must expose trigger names, ownership, and mandatory routing even when protocol bodies move out. The experiment also reveals that governance accretion and evidence discipline are separable constraints; reducing the former does not automatically improve the latter.
+
+## 2026-08-02 — prototype-layered-improve
+
+**[!REVERSAL]** The initial kernel assumed "Apply Intent/Trail" and a link to conditional protocols were sufficient composition instructions. The first isolated evaluator treated siblings as manual and skipped conditional loading. Repaired the kernel by making automatic composition explicit and exposing the trigger index.
+
+## 2026-08-02 — prototype-layered-improve
+
+**[!REVERSAL]** The second evaluator identified Standalone Fallback but still declined to read it, invented mechanisms, and inferred Orientation staleness from absent context. Repaired the kernel by requiring matching-section loading, separating facts/inferences/proposals, and stating that missing Orientation evidence does not prove staleness.
+
 ---
 
-**60 markers — 53 realisations, 7 reversals**
+**60 markers — 51 realisations, 9 reversals**

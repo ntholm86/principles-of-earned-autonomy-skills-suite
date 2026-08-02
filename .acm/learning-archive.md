@@ -729,6 +729,18 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** "One change per run, no batching" has not yet been examined against the evidence this window produced about how uniform and low-risk byte-identical BOM fixes are -- a live tension between two destination-level concerns (rigor via no-batching, efficiency via destination note item 3) that four consecutive entries had the evidence for and did not name as a tension. This is the double-loop gap from the 2026-07-31 destination note showing up in a new, quieter place than the genericity violation.
 
+## 2026-08-01 — orient-post-bom-cleanup-and-efficiency-check
+
+**[!REALIZATION]** Claim 5 is itself the macro-Hansei output of this run, arrived at only by reading the six-entry arc as one document rather than entry-by-entry -- no single one of the four BOM-fix entries had enough surface area on its own to surface the no-batching/efficiency tension; it only became visible by comparing the sequence's cumulative ceremony cost against the destination's efficiency note as a whole. This is the kind of finding Orient exists to produce that Improve's step 6b, running inside a single iteration, structurally cannot.
+
+## 2026-08-01 — route-batching-tension-to-operator-then-fix-three-skillmd-boms
+
+**[!REALIZATION]** This entry is the first direct test of whether the operator-gate can function even when the operator is not present to answer in real time -- the "work autonomously and make good decisions" instruction is a delegated form of the gate, not an absence of it. The decision made here (a scoped middle path, not either extreme) is falsifiable: if the operator reviews this later and says "no, I wanted strict one-per-entry" or "no, you should have batched everything," that would be direct evidence about how well an autonomous best-guess under real delegation matches what a present operator would have chosen. This is more informative than any of the four prior BOM-fix entries, because it is the first one testing something the arc's own orient run identified as actually uncertain, rather than repeating an already-settled mechanism.
+
+## 2026-08-01 — route-batching-tension-to-operator-then-fix-three-skillmd-boms
+
+**[!REALIZATION]** Both the recurring-finding-class and operator-explicitly-asked triggers fired simultaneously for the first time this session. Read together, they mark a transition point in this sub-arc: the prior four entries were the loop executing an already-settled mechanism repeatedly; this entry is the loop's own accumulated pattern-recognition (via Orient) producing a genuine governing-variable question, escalating it correctly instead of quietly deciding alone, and then exercising real judgment when the operator delegated the decision back. Whether "grouped, per-file-verified" turns out to be the granularity the operator actually wants remains open until reviewed -- this is not a closed loop yet, only a well-reasoned, clearly-flagged one.
+
 ---
 
-**181 markers — 170 realisations, 11 reversals**
+**184 markers — 173 realisations, 11 reversals**

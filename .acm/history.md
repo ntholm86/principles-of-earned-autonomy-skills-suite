@@ -225,6 +225,7 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 218 | 2026-08-02 | orient-recursive-purpose-and-principles-boundary | refreshed Orientation around recursive purpose-driven improvement, principles-only immutability, delegated implementation, and the remaining example-to-ceiling reasoning gap | `.acm/orientation.md` replaced with six falsifiable claims and five next tests |
 | ▸ 219 | 2026-08-02 | surface-governance-accretion-redesign | surfaced a previously unnamed redesign finding; no product change made pending operator decision | evidence-only iteration; current Improve measured against its original v3 contract |
 | ▸ 220 | 2026-08-02 | orient-after-governance-accretion-finding | recognized unseeded discovery as passed, elevated governance accretion as the strongest internal constraint, and kept redesign validation open | Orientation claim 2 falsified and replaced; next-test ranking updated |
+| ▸ 221 | 2026-08-02 | prototype-layered-improve | resource reduction and conditional routing passed after repair; strict behavioral preservation remains unproven; production unchanged | added a non-installed 101-line kernel, 57-line conditional layer, novelty fixture, and evidence report |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -1021,4 +1022,10 @@ Do not edit by hand — re-run the command to refresh.
 
 - **decided:** Surface an argument for redesign rather than delete one safeguard or remove the seven reasoning moves. Preserve the reasoning kernel; separate routine reasoning instructions from conditional governance protocols; let the default full-suite Improve delegate ingress, evidence, and orientation behavior to their owning skills; load standalone, high-fidelity, multi-iteration, and other conditional protocols only when triggered. Reconsider the single-file standalone guarantee explicitly rather than hiding the tradeoff in file movement.
 
-**220 runs total — 205 with changes, 15 silence**
+### Run 221 — 2026-08-02 — prototype-layered-improve
+
+- **decided:** Keep the layered distribution as an experiment and leave production `improve/SKILL.md` unchanged. The prototype demonstrates architectural feasibility and material routine-input reduction, but not behavioral equivalence. Promotion would trade measured resource savings for unresolved evidence-discipline and operator-gate risk.
+- **REVERSAL:** The initial kernel assumed "Apply Intent/Trail" and a link to conditional protocols were sufficient composition instructions. The first isolated evaluator treated siblings as manual and skipped conditional loading. Repaired the kernel by making automatic composition explicit and exposing the trigger index.
+- **REVERSAL:** The second evaluator identified Standalone Fallback but still declined to read it, invented mechanisms, and inferred Orientation staleness from absent context. Repaired the kernel by requiring matching-section loading, separating facts/inferences/proposals, and stating that missing Orientation evidence does not prove staleness.
+
+**221 runs total — 206 with changes, 15 silence**

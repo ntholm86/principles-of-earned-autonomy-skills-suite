@@ -11854,3 +11854,77 @@ The arc now contains the first positive evidence for recursive self-improvement 
 
 1. Operator decides whether to authorize a layered Improve prototype and paired comparison.
 2. Run the independent newcomer adoption test if redesign is deferred.
+
+## 2026-08-02 - prototype-layered-improve
+
+- target: experimental Improve instruction architecture under `experiments/layered-improve/`
+- operator: Nils Wendelboe Holmager
+- agent: GitHub Copilot
+- skill: improve (authorized redesign prototype and paired comparison)
+- outcome: resource reduction and conditional routing passed after repair; strict behavioral preservation remains unproven; production unchanged
+- delta: added a non-installed 101-line kernel, 57-line conditional layer, novelty fixture, and evidence report
+
+### Interpretation of the ask
+
+The operator selected "Prototype layered Improve" after the prior self-targeted run surfaced governance accretion. The work was interpreted as a reversible experiment, not authorization to replace production: preserve the three principles and seven reasoning moves, separate rare governance paths from routine input, and compare the layered contract with unchanged production Improve in isolated evaluator contexts. Success required reasoning and governance preservation as well as resource reduction; shorter text alone was insufficient.
+
+### Examination
+
+- **Purpose:** the prototype needed to test whether safeguards can move out of routine context without losing the purpose reasoning, prediction, validation, reflection, Trail handoff, and Orientation freshness that they protect.
+- **Packaging:** `install.ps1` and `install.sh` copy only each selected skill's `SKILL.md`, while `INSTALLING.md` promises standalone operation from that file. The experiment therefore lives under a non-installed two-level directory and makes no production packaging claim.
+- **Precedent:** `.acm/learning.md` identifies governance accretion as the absence of expiry, consolidation, or conditional loading for safeguards. The seven-move sequence retains independent historical support, so it remained in the kernel.
+- **Static evidence:** production Improve is 204 lines, 25,058 bytes, and 34 imperative-proxy terms. The final routine kernel is 101 lines, 6,892 bytes, and 10 imperative-proxy terms. All conditional sections together are 57 lines, 4,039 bytes, and 9 imperative-proxy terms.
+- **Behavioral evidence:** isolated production and prototype evaluators received the same deployment-policy novelty case. Both found the material distinction between ordinary release selection and rollback to a previously signed artifact. The control and prototype also invented unsupported thresholds or mechanisms. The first prototype evaluator misread sibling composition; the second identified but did not load Standalone Fallback; the final evaluator loaded it correctly but still invented implementation details and did not clearly preserve the redesign authorization gate.
+
+### Decision
+
+[!DECISION] Keep the layered distribution as an experiment and leave production `improve/SKILL.md` unchanged. The prototype demonstrates architectural feasibility and material routine-input reduction, but not behavioral equivalence. Promotion would trade measured resource savings for unresolved evidence-discipline and operator-gate risk.
+
+Rejected alternative: promote because both arms reached the same policy answer. Rejected because answer similarity does not establish preservation of how facts, proposals, authorization, evidence, and handoffs are handled.
+
+Precedent check: the recent governance-accretion realization directly supports testing conditional loading, while its own prediction required paired behavioral preservation before claiming improvement. This decision follows that boundary rather than treating compression as proof.
+
+### Prediction
+
+Before implementation, the stated prediction was: the layered contract will reduce routine input and imperative density while preserving the principles, seven moves, prediction, verification, reflection, Trail handoff, and Orientation freshness behavior. Moving text without reliable trigger loading or losing historical safeguards would falsify the design.
+
+### Action
+
+Created `experiments/layered-improve/SKILL.md`, `CONDITIONAL_PROTOCOLS.md`, and `NOVELTY_CASE.md` without modifying production Improve or installers. The first focused assertion verified every load-bearing kernel element at 90 lines. A static comparison then measured 77.5% routine-byte reduction.
+
+[!REVERSAL] The initial kernel assumed "Apply Intent/Trail" and a link to conditional protocols were sufficient composition instructions. The first isolated evaluator treated siblings as manual and skipped conditional loading. Repaired the kernel by making automatic composition explicit and exposing the trigger index.
+
+[!REVERSAL] The second evaluator identified Standalone Fallback but still declined to read it, invented mechanisms, and inferred Orientation staleness from absent context. Repaired the kernel by requiring matching-section loading, separating facts/inferences/proposals, and stating that missing Orientation evidence does not prove staleness.
+
+The final evaluator loaded only Standalone Fallback and used its Trail/Orientation constraints, establishing conditional routing after repair. It still invented timing, enforcement, review, and rate claims and did not clearly stop at the redesign gate. The final kernel remains 72.7% smaller by bytes; even loading all layers is 56.4% smaller than production. `git diff --check`, Markdown diagnostics, static preservation assertions, and `python verify.py` passed. Full results and the non-promotion boundary are in `experiments/layered-improve/RESULTS.md`.
+
+Prediction comparison: resource reduction, static preservation, core purpose reasoning, and repaired routing passed. Strict evidence discipline and operator-gate preservation did not. Full behavioral equivalence was not established.
+
+### Reflection
+
+Current model: governance can be layered without erasing the reasoning kernel, but reliable natural-language routing needs visible trigger names and explicit load semantics. Compression changes instruction availability; it does not by itself make evaluators distinguish evidence from attractive implementation detail.
+
+Blind spot: one evaluator per observed contract revision and one novelty case cannot separate contract effects from evaluator variance. The control's own evidence-discipline failures make relative attribution especially weak.
+
+Expected informed pushback: iterative repairs may overfit this fixture, and total bytes are not actual host token counts. A credible promotion case needs replicated fresh evaluators and a second case whose correct behavior depends on refusing an unsupported mechanism.
+
+[!REALIZATION] Conditional loading is architecturally feasible but composition is itself a load-bearing protocol: the kernel must expose trigger names, ownership, and mandatory routing even when protocol bodies move out. The experiment also reveals that governance accretion and evidence discipline are separable constraints; reducing the former does not automatically improve the latter.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED - this directly continues the prior governance-accretion finding and tests its top-ranked conditional-loading redesign.
+- *About to declare silence:* not fired - production redesign remains unproven and a replicated behavioral test is open.
+- *Contradicts prior `[!REALIZATION]`:* not fired - it supports conditional loading as feasible while preserving the prior warning that shorter instructions are not capability evidence.
+- *Operator explicitly asked:* FIRED - the operator explicitly selected "Prototype layered Improve."
+
+### Across-trail macro-Hansei
+
+The arc has moved from diagnosing governance accretion to testing one compression mechanism. The mechanism reduced routine text and eventually routed correctly, but the remaining failures show why the suite cannot treat architectural elegance as reasoning evidence. The next test should isolate evidence discipline and authorization behavior across multiple fresh contexts rather than add more kernel wording after each single evaluator miss.
+
+Orientation freshness: current - this experiment supplies the paired evidence Orientation requested and keeps its `discovery PASS; improvement UNTESTED` boundary intact; production architecture and active operational rules did not change.
+
+### Candidate Next Moves
+
+1. Run multiple fresh evaluators per arm on a second novelty case where success requires refusing an unsupported mechanism; this tests whether evidence discipline and the operator gate survive layering.
+2. Measure actual host token use for routine and triggered paths rather than relying only on UTF-8 bytes.
+3. Keep the prototype dormant if no replicated comparison is authorized; do not let an experimental distribution become an implicit production dependency.
