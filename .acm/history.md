@@ -156,79 +156,84 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 149 | 2026-06-04 | improve-destination-named-boundary-symmetric |  |  |
 | ▸ 150 | 2026-06-21 | reposition-as-acm-implementation |  |  |
 | ▸ 151 | 2026-06-21 | skills-suite-trail-to-acm-rename |  |  |
-| ▸ 152 | 2026-06-21 | gap: trail-skill missing ACM Mandate Gate enforcement | gap noted, not yet fixed | no code change — note only |
-| ▸ 153 | 2026-06-22 | acm-parent-scope-traversal-propagated | ACM §4 parent-scope destination traversal instruction added to improve/SKILL.md and retrospect/SKILL.md; retrospect.md refreshed; derived artifacts regenerated | improve/SKILL.md (parent-scope paragraph added, stale count removed), retrospect/SKILL.md (step 0 heading updated, parent-scope paragraph added), .acm/retrospect.md (refreshed), .acm/history.md and .acm/learning.md (regenerated) |
-| ▸ 154 | 2026-06-23 | retrospect-to-orient-rename | Retrospect skill renamed to Orient; file renamed retrospect.md -> orientation.md | retrospect/ -> orient/, v1.8.0 -> v2.0.0 |
-| ▸ 155 | 2026-06-23 | stormp-illustration-readme | Storm P architecture illustration added to README as visual intro | Added stormpInspired.png before "The Suite Improved Itself" section |
-| ▸ 156 | 2026-07-02 | rename-commanders-intent-to-operators-intent | renamed across all live docs; vocabulary now internally consistent | Principle 1 name Commander's Intent -> Operator's Intent; supporting term mission -> destination |
-| ▸ 157 | 2026-07-02 | rename-sweep-gap-fix-verify-recursive-search | closed a gap in the earlier Commander's Intent -> Operator's Intent rename; intent/SKILL.md still had the old name in its YAML description and body prose | intent/SKILL.md front-matter description and 'the user is the commander' line -> Operator's Intent / 'the user is the operator' |
-| ▸ 158 | 2026-07-31 | improve-argyris-double-loop-6b-integration | added an explicit Argyris double-loop question to improve/SKILL.md step 6b; one incremental change | improve/SKILL.md 3.10.0 -> 3.11.0; CHANGELOG.md v4.3.0 added |
-| ▸ 159 | 2026-07-31 | orient-post-argyris-window | orientation.md rewritten; 5 arc-claims formed, 2 candidate-next-move follow-through gaps named, orientation.md's own stale references corrected | .acm/orientation.md rewritten (was last updated 2026-06-21 as retrospect.md-titled content) |
-| ▸ 160 | 2026-07-31 | improve-intent-acm4-traversal-fix | added the ACM section 4 parent-scope-traversal paragraph to intent/SKILL.md; gap closed | intent/SKILL.md 1.2.1 -> 1.3.0; CHANGELOG.md v4.4.0 added |
-| ▸ 161 | 2026-07-31 | improve-destination-acm4-traversal-fix | added the ACM section 4 parent-scope-traversal paragraph to destination/SKILL.md; probe and trail confirmed correctly exempt | destination/SKILL.md 2.1.0 -> 2.2.0; CHANGELOG.md v4.5.0 added |
-| ▸ 162 | 2026-08-01 | acm4-sweep-complete-plus-consistency-enforcement | ACM section 4 traversal sweep confirmed complete across all 6 live skills; a real, already-manifested wording drift found and fixed in orient/SKILL.md; a new verify.py check added to catch recurrence | orient/SKILL.md 2.0.0 -> 2.0.1; verify.py gains check 15 (check_acm_scope_traversal_consistency); CHANGELOG.md v4.6.0 added |
-| ▸ 163 | 2026-08-01 | verify-overburden-audit-principles-h1-gap-fix | examined verify.py for overburden per the prior entry's candidate; found no genuine overburden, but found a real gap -- PRINCIPLES.md was silently excluded from the duplicate-H1 check that exists specifically because of a real PRINCIPLES.md defect; fixed | verify.py REQUIRED_FILES gains PRINCIPLES.md; check_required_markdown_docs() restructured so the H1 check still applies to it; CHANGELOG.md v4.7.0 added |
-| ▸ 164 | 2026-08-01 | orient-post-acm4-closure | orientation.md rewritten; ACM section 4 arc confirmed closed and self-enforcing, double-loop mechanism confirmed working across 3 discriminating instances, older backlog named as the clear next redirect if the operator wants one | .acm/orientation.md rewritten (was last updated 2026-07-31 as orient-post-argyris-window) |
-| ▸ 165 | 2026-08-01 | orient-zero-new-arc | no new arc since the last orient run -- orientation.md left unchanged; declining to manufacture arc-claims | none |
-| ▸ 166 | 2026-08-01 | trail-drop-sessions-mandate-independent-capture-exists | removed the mandatory .acm/sessions/ session-summary-writing requirement from trail/SKILL.md; audit-trail.md entry remains the sole mandatory artifact | trail/SKILL.md 1.19.0 -> 2.0.0 (breaking -- removes a prior mandate); CHANGELOG.md v4.8.0 added |
-| ▸ 167 | 2026-08-01 | improve-self-targeting-reasoning-capability-instrument | added an explicit self-check to improve/SKILL.md's Self-targeting section distinguishing reasoning-capability gaps from textual/mechanical ones; first direct application of the newly-drafted destination note | improve/SKILL.md 3.11.0 -> 3.12.0; CHANGELOG.md v4.9.0 added; .acm/destination.md's uncommitted 2026-08-01 note now committed alongside this change |
-| ▸ 168 | 2026-08-01 | reversal-self-targeting-branch-violates-genericity | reverted the previous entry's addition to improve/SKILL.md's Self-targeting section; it violated this suite's own "Generic first" constraint and an already-recorded lesson in learning.md | improve/SKILL.md 3.12.0 -> 3.12.1 (reversal); CHANGELOG.md v4.9.1 [correction] entry added |
-| ▸ 169 | 2026-08-01 | orient-post-genericity-reversal | orientation.md rewritten; window contains a well-reasoned architectural correction (trail sessions-mandate removal) and a self-correction cycle (a change withdrawn after being found to violate the suite's own genericity constraint) -- the correction is judged the most valuable evidence this window produced | .acm/orientation.md rewritten (was last updated 2026-08-01 as orient-post-acm4-closure) |
-| ▸ 170 | 2026-08-01 | trail-decision-precedent-check-requirement | [!DECISION] entries now require an explicit precedent check against learning.md, generically worded for any target | trail/SKILL.md 2.0.0 -> 2.1.0; CHANGELOG.md v4.10.0 added |
-| ▸ 171 | 2026-08-01 | learning-md-bounded-recent-window-plus-archive | learning.md is now bounded to a recent window (60 markers) with older markers moved to learning-archive.md; measured reduction from 120,835 bytes to 33,880 bytes for the mandatory step-1 read | harness/tools/record.py (learning-rendering split), trail/SKILL.md 2.1.0 -> 2.2.0, improve/SKILL.md 3.12.1 -> 3.12.2, verify.py (freshness check extended); CHANGELOG.md v4.11.0 added |
-| ▸ 172 | 2026-08-01 | audit-learning-precedent-surfaces-position-quickstart-h1-gap-and-systemic-bom | audited this session's changes against learning.md/learning-archive.md as carried forward from three prior entries; found a genuine unconsulted precedent (POSITION.md and QUICKSTART.md outside REQUIRED_FILES); fixed the coverage gap and a BOM defect it surfaced in QUICKSTART.md; discovered a much wider systemic BOM issue and deliberately did not fix it in this same iteration | verify.py REQUIRED_FILES gains POSITION.md and QUICKSTART.md; QUICKSTART.md BOM stripped; CHANGELOG.md v4.12.0 added |
-| ▸ 173 | 2026-08-01 | confirm-bom-root-cause-and-fix-verifypy | empirically confirmed the root cause of the systemic BOM issue named as the top candidate next move in the prior entry; fixed verify.py's own leading BOM as the second file in the "one at a time" sequence | verify.py loses its leading UTF-8 BOM (1-line diff, shebang line only); no functional change |
-| ▸ 174 | 2026-08-01 | close-create-file-bom-blind-spot-and-fix-installing-md | closed the create_file BOM blind spot named in the prior entry (confirmed clean); fixed INSTALLING.md's leading BOM as the third file in the one-at-a-time sequence | INSTALLING.md loses its leading UTF-8 BOM (1-line diff, H1 heading line only); no functional change |
-| ▸ 175 | 2026-08-01 | fix-recordpy-bom | fixed harness/tools/record.py's leading BOM as the fourth file in the one-at-a-time sequence, prioritized as core tooling per the prior entry's ranking | harness/tools/record.py loses its leading UTF-8 BOM (1-line diff, shebang line only); no functional change |
-| ▸ 176 | 2026-08-01 | orient-post-bom-cleanup-and-efficiency-check | read the 6-entry arc since the last orient run; found the new precedent-check requirement doing genuine work, efficiency addressed once then not returned to, and a previously-unnamed tension between "no batching" and the loop's own efficiency concern | .acm/orientation.md rewritten wholesale (no code change) |
-| ▸ 177 | 2026-08-01 | route-batching-tension-to-operator-then-fix-three-skillmd-boms | routed the no-batching/efficiency tension (named in the prior orient run) to the operator per step 6b's double-loop guidance; operator unavailable, so proceeded with the highest-confidence assumption -- a scoped middle path (grouped entry, per-file verification preserved) -- and fixed the three remaining SKILL.md files' BOMs under that revised granularity | orient/SKILL.md, probe/SKILL.md, trail/SKILL.md each lose their leading UTF-8 BOM (1-line diff each, frontmatter delimiter only); no functional change; first entry in this sequence covering more than one file |
-| ▸ 178 | 2026-08-01 | orient-step3b-argyris-double-loop-check | added an explicit Argyris double-loop check to orient/SKILL.md (new step 3b), closing the gap the operator asked about directly this session -- Improve's step 6b already had it, Orient did not | orient/SKILL.md 2.0.1 -> 2.1.0; CHANGELOG.md v4.13.0 added |
-| ▸ 179 | 2026-08-01 | resolve-sessions-fingerprint-blind-spot-and-fix-six-boms | resolved the session-file fingerprint blind spot carried across three prior entries; fixed all six affected .acm/sessions/*.md files' BOMs in one grouped entry with individual per-file verification | six .acm/sessions/*.md files each lose their leading UTF-8 BOM (1-line diff each); no functional change |
-| ▸ 180 | 2026-08-01 | fix-orientation-and-audit-trail-boms-closes-cleanup-arc | fixed the last two files in the systemic BOM cleanup -- orientation.md (low-risk) and audit-trail.md (highest-risk, designed and executed with extra safeguards) -- closing the entire multi-entry arc | .acm/orientation.md and .acm/audit-trail.md each lose their leading UTF-8 BOM (1-line diff each); no functional or content change; this is the twelfth and final file in the sequence |
-| ▸ 181 | 2026-08-01 | fix-lens-count-miscount-three-vs-four | fixed a stale lens-count in improve/SKILL.md step 2 ("Three lenses" but four listed), surfaced during a conversational investigation into whether the original Toyota 3M lenses (Muda/Mura/Muri) still exist in this suite | improve/SKILL.md 3.12.2 -> 3.12.3; CHANGELOG.md v4.14.0 added |
-| ▸ 182 | 2026-08-01 | fix-real-mojibake-corruption-and-extend-check-no-mojibake | found and fixed genuine mojibake corruption (a windows-1252-misdecoded arrow character) in two live files, invisible to the existing check_no_mojibake (which only detects U+FFFD); extended the check with a new pattern to catch this broader, more common corruption class going forward | INSTALLING.md and trail/SKILL.md each have a corrupted 3-character sequence replaced with the correct arrow character (5 instances total); verify.py gains MOJIBAKE_WIN1252 pattern and a scoped exemption for audit-trail.md; CHANGELOG.md v4.15.0 added |
-| ▸ 183 | 2026-08-01 | trail-condensed-entry-format-for-non-decision-fixes | added a condensed trail-entry format for changes with no genuine judgment call, resolving the ceremony-overhead concern the operator named without revising any destination-level architectural constraint | trail/SKILL.md 2.2.0 -> 2.3.0; CHANGELOG.md v4.16.0 added |
-| ▸ 184 | 2026-08-01 | citation-cff-currency-fix-surfaces-git-tag-drift | fixed CITATION.cff's stale version/date fields; while checking, found git tags have not been created for any v4.x release since v4.0.0, plus one existing tag (v4.18.0) that appears to be a historical typo for v3.18.0 -- neither touched, both named for the operator | CITATION.cff version 3.19.0 -> 4.17.0, date-released 2026-05-12 -> 2026-08-01; CHANGELOG.md v4.17.0 added |
-| ▸ 185 | 2026-08-01 | clarify-history-learning-optional-per-acm-spec-conformance | clarified that history.md, learning.md, and learning-archive.md are optional derived convenience artifacts, not required for ACM conformance -- resolved via direct evidence from the authoritative agent-context-memory SPEC.md rather than a unilateral file-count decision | trail/SKILL.md 2.3.0 -> 2.4.0; CHANGELOG.md v4.18.0 added |
-| ▸ 186 | 2026-08-01 | destination-note-skillsuite-as-acm-development-site | added a destination note naming this repo's relationship to agent-context-memory's SPEC.md as bidirectional -- the skillsuite is where ACM's own gaps and needed extensions become visible in practice, not only where the spec is implemented | .acm/destination.md gains one new dated note (no other file changed) |
-| ▸ 187 | 2026-08-01 | implement-scale-gap-in-acm-spec-repo | implemented the previously-drafted Scale-gap candidate directly in agent-context-memory/SPEC.md; committed locally there, NOT pushed pending operator confirmation (public, published repo) | no change to this repo's own files; agent-context-memory SPEC.md 0.3.0 -> 0.4.0 (commit 51e951e, local only) |
-| ▸ 188 | 2026-08-01 | systematic-verifypy-audit-closes-stale-path-docs-gap | read all 12 check functions against their docstring claims in one pass; 11 correctly scoped; found and fixed one real, currently-dormant gap in STALE_PATH_DOCS | verify.py STALE_PATH_DOCS gains QUICKSTART.md and harness/BENCHMARKS.md; CHANGELOG.md v4.19.0 added |
-| ▸ 189 | 2026-08-01 | orient-how-close-to-destination | read the 12-entry arc since the last orient run and answered the operator's direct question ("how close are we to the destination") in bounded terms per named success condition -- research success and learning show real, accumulating evidence; adoption success has had zero attention this entire session | .acm/orientation.md rewritten wholesale (no code change) |
-| ▸ 190 | 2026-08-01 | remove-vision-md-legacy-fallback | removed .acm/vision.md legacy-fallback support entirely across all five skill files that referenced it; the fallback was explicitly scoped at introduction as transition-period-only support | destination/SKILL.md 2.2.0 -> 2.3.0; improve/SKILL.md 3.12.3 -> 3.12.4; intent/SKILL.md 1.3.0 -> 1.3.1; orient/SKILL.md 2.1.0 -> 2.1.1; trail/SKILL.md 2.4.0 -> 2.4.1; CHANGELOG.md v4.20.0 added |
-| ▸ 191 | 2026-08-01 | confirm-push-and-record-trail-completeness-check | confirmed the prior 13 commits were pushed to origin/main; answered an operator question about learning.md's mechanics; this entry closes the gap of both being unrecorded in the trail | no code change; .acm/audit-trail.md +1 entry |
-| ▸ 192 | 2026-08-01 | deutero-learning-credited-and-closed-in-orient-step-4 | step 4 now explicitly credits Argyris and Schon's deutero-learning and closes with a routing instruction mirroring step 3b's double-loop routing | orient/SKILL.md 2.1.1 -> 2.2.0; CHANGELOG.md v4.21.0 added |
-| ▸ 193 | 2026-08-01 | merge-kaikaku-purpose-lens-threads-and-name-token-efficiency-adoption-link | captured a merged open thread (Purpose lens vs a distinct Kaikaku-fork for deutero-learning findings, left to Improve as one decision) and a new destination note naming token efficiency's link to adoption, using this session's own token spend as evidence | .acm/destination.md +2 notes (this session); no SKILL.md changes |
-| · 194 | 2026-08-01 | close-kaikaku-thread-via-existing-purpose-lens-not-new-mechanism | confirmed the operator's own suggestion was the right fix - no new Kaikaku-branch needed in Orient; one sentence now routes deutero-learning findings through Improve's existing Purpose lens/Kaikaku question, with Convergence Is Silence as the redesign validation bar | orient/SKILL.md 2.2.0 -> 2.3.0; CHANGELOG.md v4.22.0 added |
-| ▸ 195 | 2026-08-01 | restore-ooda-pdca-premortem-lineage-citations | restored PDCA, OODA, and pre-mortem lineage citations found dropped between v1's kaizen.md and v3's Improve/Orient split, first named two entries ago as a standing candidate | improve/SKILL.md 3.12.4 -> 3.13.0; orient/SKILL.md 2.3.0 -> 2.4.0; CHANGELOG.md v4.23.0 added |
-| ▸ 196 | 2026-08-01 | intent-gains-reader-side-example-stripping-test | added a reader-side mirror of Principle 1's writer-side test, closing a failure caught live in this session | intent/SKILL.md 1.3.1 -> 1.4.0; CHANGELOG.md v4.24.0 added |
-| ▸ 197 | 2026-08-01 | capture-model-capability-bounds-skill-fidelity | captured a premise not stated anywhere - skill execution fidelity is bounded below and scaled above by the executing model's capability - distinct from Principle 3's evaluator-diversity rationale | .acm/destination.md +1 note; no SKILL.md changes |
-| ▸ 198 | 2026-08-01 | exclude-trigger-label-references-from-learning-markers | learning.md no longer represents Trail's `Contradicts prior [!REALIZATION]` trigger label as a realization | harness/tools/record.py narrow parser exclusion; CHANGELOG.md v4.25.0; derived learning artifacts regenerated |
-| ▸ 199 | 2026-08-01 | generalize-learning-marker-parser-from-context-exclusion-to-assertion-grammar | replaced v4.25.0's narrow trigger-label exclusion with a general assertion grammar after the prior fix's own trail entry falsified it | record.py marker grammar corrected; CHANGELOG.md v4.25.1; learning artifacts regenerated |
-| ▸ 200 | 2026-08-02 | align-installed-skill-docs-with-harness-tool-layout | corrected commands that still referenced the pre-harness tools layout and clarified the boundary between installed skills and clone-local optional tooling | README.md, INSTALLING.md, QUICKSTART.md, improve/SKILL.md 3.13.0 -> 3.13.1, trail/SKILL.md 2.4.1 -> 2.4.2, CHANGELOG.md v4.25.2 |
-| ▸ 201 | 2026-08-02 | refresh-iteration-count-and-readme-totals | refreshed a two-month-stale hand-maintained evidence document and its README claim with mechanically-verified current totals | ITERATION-COUNT.md self-targeted total 221 -> 286, v3 era 132 -> 197, total commits 363 -> 430, new external-target entry recorded; README.md "221 verified iterations" -> "286", "191 individually backed by git commits" -> "256" |
-| ▸ 202 | 2026-08-02 | confirm-iteration-count-sync-scope-across-live-docs | confirmed README.md and ITERATION-COUNT.md are the only precise-figure citations and both already match; found three vague "200+" floor citations, tightened the one in-repo instance, left two external/archival instances untouched with stated rationale | INSTALLING.md "200+ times" -> "280+ times" |
-| ▸ 203 | 2026-08-02 | automatic-intent-trail-workflow | Intent and Trail became explicit automatic services around a three-command deliberate workflow; Destination and Orient gained start/change and evidence-based cadence guidance | suite v4.25.2 -> v4.26.0; six skill contracts, README, QUICKSTART, INSTALLING, and both installers aligned |
-| ▸ 204 | 2026-08-02 | destination-orientation-run-mindset | reduced the normal user's conceptual surface to Destination, Orientation, and Run; moved Probe fully outside the operational workflow as optional ARF research instrumentation | suite v4.26.0 -> v4.26.1; README, QUICKSTART, INSTALLING, installer output, and probe/SKILL.md aligned |
-| ▸ 205 | 2026-08-02 | probe-opt-in-research-install | default installers now expose only the five operational capabilities; Probe requires an explicit research opt-in | suite v4.26.1 -> v4.26.2; install.ps1 adds -Research, install.sh adds --research, entry docs aligned |
-| ▸ 206 | 2026-08-02 | passive-evidence-triggered-orientation | Orientation became a passive evidence-triggered service; the normal operator workflow reduced to Destination plus Run | suite v4.26.2 -> v4.27.0; destination 2.4.0 -> 2.5.0, improve 3.14.0 -> 3.15.0, orient 2.5.0 -> 2.6.0 |
-| ▸ 207 | 2026-08-02 | orient-passive-control-surface-arc | confirmed one coherent agency migration and refreshed orientation around two deliberate actions, three automatic services, and optional research instrumentation | .acm/orientation.md rewritten from run 206 arc; first self-scheduled Orient case recorded |
-| ▸ 208 | 2026-08-02 | unify-readme-skill-roster-by-activation | replaced three overlapping skill groupings with one six-skill roster classified as Active, Passive, or Triggered | README.md unified; six existing pea-website inline SVG glyphs extracted to assets/skills/ |
-| ▸ 209 | 2026-08-02 | release-note-unified-skill-roster | documented the unified activation roster as v4.27.1 | CHANGELOG.md +1 patch release entry |
-| ▸ 210 | 2026-08-02 | retire-memory-model-name-in-favor-of-acm | retired The Memory Model as a current parallel name and made Agent Context Memory (ACM) canonical throughout live surfaces | README heading and prose aligned; six skill role labels aligned; suite v4.27.1 -> v4.27.2 with patch bumps for all six skill contracts |
-| ▸ 211 | 2026-08-02 | publish-activation-and-acm-simplification | committed and published the activation-model simplification and ACM terminology convergence to origin/main | commits 1f2d909 and 6ee2301 published; remote main verified at 6ee2301f30d847cbafee5ed9c8835d72d0f818b6 |
-| ▸ 212 | 2026-08-02 | destination-coequal-research-and-unassisted-use | sharpened the immediate destination around co-equal research and adoption, with unassisted successful use as the adoption bar | layered a new 2026-08-02 current-focus section above the preserved destination record |
-| ▸ 213 | 2026-08-02 | orient-against-coequal-research-and-adoption | separated adoption-readiness evidence from adoption success and bounded explanation quality away from research proof | .acm/orientation.md rewritten against co-equal research and adoption quality bars |
-| ▸ 214 | 2026-08-02 | destination-restore-reasoning-growth-and-token-viability | restored self-improving reasoning and token efficiency as immediate destination concerns alongside research and adoption | current focus now names open-ended reasoning-capability exploration and capability-preserving resource optimization |
-| ▸ 215 | 2026-08-02 | orient-restore-reasoning-growth-and-token-viability | restored reasoning-capability growth and capability-preserving token efficiency to the current orientation | .acm/orientation.md rewritten with six falsifiable claims and a capability/trust/cost viability model |
-| ▸ 216 | 2026-08-02 | bounded-current-destination-with-full-read-fallback | added an opt-in current-destination boundary whose completeness must be reconciled and whose malformed or absent form fails closed to a full read | destination 2.5.1 -> 2.6.0; intent 1.5.1 -> 1.6.0; improve 3.15.1 -> 3.16.0; orient 2.6.1 -> 2.7.0; suite 4.27.2 -> 4.28.0 |
-| ▸ 217 | 2026-08-02 | reconcile-complete-current-destination | reconciled the full destination history into an operator-confirmed bounded current mandate | routine destination input reduced from 42,496 to 7,402 UTF-8 bytes while preserving historical provenance below the boundary |
-| ▸ 218 | 2026-08-02 | orient-recursive-purpose-and-principles-boundary | refreshed Orientation around recursive purpose-driven improvement, principles-only immutability, delegated implementation, and the remaining example-to-ceiling reasoning gap | `.acm/orientation.md` replaced with six falsifiable claims and five next tests |
-| ▸ 219 | 2026-08-02 | surface-governance-accretion-redesign | surfaced a previously unnamed redesign finding; no product change made pending operator decision | evidence-only iteration; current Improve measured against its original v3 contract |
-| ▸ 220 | 2026-08-02 | orient-after-governance-accretion-finding | recognized unseeded discovery as passed, elevated governance accretion as the strongest internal constraint, and kept redesign validation open | Orientation claim 2 falsified and replaced; next-test ranking updated |
-| ▸ 221 | 2026-08-02 | prototype-layered-improve | resource reduction and conditional routing passed after repair; strict behavioral preservation remains unproven; production unchanged | added a non-installed 101-line kernel, 57-line conditional layer, novelty fixture, and evidence report |
-| ▸ 222 | 2026-08-02 | replicate-layered-improve-grounding-test | operator gate passed in both arms; factual grounding failed in both arms; layered routing remained inconsistent | added `NOVELTY_CASE_2.md` and `RESULTS_CASE_2.md`; production and prototype contracts unchanged |
-| ▸ 223 | 2026-08-02 | orient-after-replicated-layered-tests | separated operator-gate success from shared grounding failure and redirected the next test away from instruction editing | `.acm/orientation.md` refreshed from pre-prototype hypothesis to post-replication evidence |
-| ▸ 224 | 2026-08-02 | orient-after-conditional-routing-experiment | contradicted the never-worse claim, closed the routing claim, and named harness fidelity as the arc's new binding constraint | `.acm/orientation.md` refreshed to eight claims; claim 2 rewritten after contradiction, claim 7 resolved, claim 8 added |
+| ▸ 152 | 2026-06-21 | acm-scope-stop-conditions-propagated |  |  |
+| ▸ 153 | 2026-06-21 | gap: trail-skill missing ACM Mandate Gate enforcement | gap noted, not yet fixed | no code change — note only |
+| ▸ 154 | 2026-06-22 | acm-parent-scope-traversal-propagated | ACM §4 parent-scope destination traversal instruction added to improve/SKILL.md and retrospect/SKILL.md; retrospect.md refreshed; derived artifacts regenerated | improve/SKILL.md (parent-scope paragraph added, stale count removed), retrospect/SKILL.md (step 0 heading updated, parent-scope paragraph added), .acm/retrospect.md (refreshed), .acm/history.md and .acm/learning.md (regenerated) |
+| ▸ 155 | 2026-06-23 | retrospect-to-orient-rename | Retrospect skill renamed to Orient; file renamed retrospect.md -> orientation.md | retrospect/ -> orient/, v1.8.0 -> v2.0.0 |
+| ▸ 156 | 2026-06-23 | stormp-illustration-readme | Storm P architecture illustration added to README as visual intro | Added stormpInspired.png before "The Suite Improved Itself" section |
+| ▸ 157 | 2026-07-02 | rename-commanders-intent-to-operators-intent | renamed across all live docs; vocabulary now internally consistent | Principle 1 name Commander's Intent -> Operator's Intent; supporting term mission -> destination |
+| ▸ 158 | 2026-07-02 | rename-sweep-gap-fix-verify-recursive-search | closed a gap in the earlier Commander's Intent -> Operator's Intent rename; intent/SKILL.md still had the old name in its YAML description and body prose | intent/SKILL.md front-matter description and 'the user is the commander' line -> Operator's Intent / 'the user is the operator' |
+| ▸ 159 | 2026-07-31 | improve-argyris-double-loop-6b-integration | added an explicit Argyris double-loop question to improve/SKILL.md step 6b; one incremental change | improve/SKILL.md 3.10.0 -> 3.11.0; CHANGELOG.md v4.3.0 added |
+| ▸ 160 | 2026-07-31 | orient-post-argyris-window | orientation.md rewritten; 5 arc-claims formed, 2 candidate-next-move follow-through gaps named, orientation.md's own stale references corrected | .acm/orientation.md rewritten (was last updated 2026-06-21 as retrospect.md-titled content) |
+| ▸ 161 | 2026-07-31 | improve-intent-acm4-traversal-fix | added the ACM section 4 parent-scope-traversal paragraph to intent/SKILL.md; gap closed | intent/SKILL.md 1.2.1 -> 1.3.0; CHANGELOG.md v4.4.0 added |
+| ▸ 162 | 2026-07-31 | improve-destination-acm4-traversal-fix | added the ACM section 4 parent-scope-traversal paragraph to destination/SKILL.md; probe and trail confirmed correctly exempt | destination/SKILL.md 2.1.0 -> 2.2.0; CHANGELOG.md v4.5.0 added |
+| ▸ 163 | 2026-08-01 | acm4-sweep-complete-plus-consistency-enforcement | ACM section 4 traversal sweep confirmed complete across all 6 live skills; a real, already-manifested wording drift found and fixed in orient/SKILL.md; a new verify.py check added to catch recurrence | orient/SKILL.md 2.0.0 -> 2.0.1; verify.py gains check 15 (check_acm_scope_traversal_consistency); CHANGELOG.md v4.6.0 added |
+| ▸ 164 | 2026-08-01 | verify-overburden-audit-principles-h1-gap-fix | examined verify.py for overburden per the prior entry's candidate; found no genuine overburden, but found a real gap -- PRINCIPLES.md was silently excluded from the duplicate-H1 check that exists specifically because of a real PRINCIPLES.md defect; fixed | verify.py REQUIRED_FILES gains PRINCIPLES.md; check_required_markdown_docs() restructured so the H1 check still applies to it; CHANGELOG.md v4.7.0 added |
+| ▸ 165 | 2026-08-01 | orient-post-acm4-closure | orientation.md rewritten; ACM section 4 arc confirmed closed and self-enforcing, double-loop mechanism confirmed working across 3 discriminating instances, older backlog named as the clear next redirect if the operator wants one | .acm/orientation.md rewritten (was last updated 2026-07-31 as orient-post-argyris-window) |
+| ▸ 166 | 2026-08-01 | orient-zero-new-arc | no new arc since the last orient run -- orientation.md left unchanged; declining to manufacture arc-claims | none |
+| ▸ 167 | 2026-08-01 | trail-drop-sessions-mandate-independent-capture-exists | removed the mandatory .acm/sessions/ session-summary-writing requirement from trail/SKILL.md; audit-trail.md entry remains the sole mandatory artifact | trail/SKILL.md 1.19.0 -> 2.0.0 (breaking -- removes a prior mandate); CHANGELOG.md v4.8.0 added |
+| ▸ 168 | 2026-08-01 | improve-self-targeting-reasoning-capability-instrument | added an explicit self-check to improve/SKILL.md's Self-targeting section distinguishing reasoning-capability gaps from textual/mechanical ones; first direct application of the newly-drafted destination note | improve/SKILL.md 3.11.0 -> 3.12.0; CHANGELOG.md v4.9.0 added; .acm/destination.md's uncommitted 2026-08-01 note now committed alongside this change |
+| ▸ 169 | 2026-08-01 | reversal-self-targeting-branch-violates-genericity | reverted the previous entry's addition to improve/SKILL.md's Self-targeting section; it violated this suite's own "Generic first" constraint and an already-recorded lesson in learning.md | improve/SKILL.md 3.12.0 -> 3.12.1 (reversal); CHANGELOG.md v4.9.1 [correction] entry added |
+| ▸ 170 | 2026-08-01 | orient-post-genericity-reversal | orientation.md rewritten; window contains a well-reasoned architectural correction (trail sessions-mandate removal) and a self-correction cycle (a change withdrawn after being found to violate the suite's own genericity constraint) -- the correction is judged the most valuable evidence this window produced | .acm/orientation.md rewritten (was last updated 2026-08-01 as orient-post-acm4-closure) |
+| ▸ 171 | 2026-08-01 | trail-decision-precedent-check-requirement | [!DECISION] entries now require an explicit precedent check against learning.md, generically worded for any target | trail/SKILL.md 2.0.0 -> 2.1.0; CHANGELOG.md v4.10.0 added |
+| ▸ 172 | 2026-08-01 | learning-md-bounded-recent-window-plus-archive | learning.md is now bounded to a recent window (60 markers) with older markers moved to learning-archive.md; measured reduction from 120,835 bytes to 33,880 bytes for the mandatory step-1 read | harness/tools/record.py (learning-rendering split), trail/SKILL.md 2.1.0 -> 2.2.0, improve/SKILL.md 3.12.1 -> 3.12.2, verify.py (freshness check extended); CHANGELOG.md v4.11.0 added |
+| ▸ 173 | 2026-08-01 | audit-learning-precedent-surfaces-position-quickstart-h1-gap-and-systemic-bom | audited this session's changes against learning.md/learning-archive.md as carried forward from three prior entries; found a genuine unconsulted precedent (POSITION.md and QUICKSTART.md outside REQUIRED_FILES); fixed the coverage gap and a BOM defect it surfaced in QUICKSTART.md; discovered a much wider systemic BOM issue and deliberately did not fix it in this same iteration | verify.py REQUIRED_FILES gains POSITION.md and QUICKSTART.md; QUICKSTART.md BOM stripped; CHANGELOG.md v4.12.0 added |
+| ▸ 174 | 2026-08-01 | confirm-bom-root-cause-and-fix-verifypy | empirically confirmed the root cause of the systemic BOM issue named as the top candidate next move in the prior entry; fixed verify.py's own leading BOM as the second file in the "one at a time" sequence | verify.py loses its leading UTF-8 BOM (1-line diff, shebang line only); no functional change |
+| ▸ 175 | 2026-08-01 | close-create-file-bom-blind-spot-and-fix-installing-md | closed the create_file BOM blind spot named in the prior entry (confirmed clean); fixed INSTALLING.md's leading BOM as the third file in the one-at-a-time sequence | INSTALLING.md loses its leading UTF-8 BOM (1-line diff, H1 heading line only); no functional change |
+| ▸ 176 | 2026-08-01 | fix-recordpy-bom | fixed harness/tools/record.py's leading BOM as the fourth file in the one-at-a-time sequence, prioritized as core tooling per the prior entry's ranking | harness/tools/record.py loses its leading UTF-8 BOM (1-line diff, shebang line only); no functional change |
+| ▸ 177 | 2026-08-01 | orient-post-bom-cleanup-and-efficiency-check | read the 6-entry arc since the last orient run; found the new precedent-check requirement doing genuine work, efficiency addressed once then not returned to, and a previously-unnamed tension between "no batching" and the loop's own efficiency concern | .acm/orientation.md rewritten wholesale (no code change) |
+| ▸ 178 | 2026-08-01 | route-batching-tension-to-operator-then-fix-three-skillmd-boms | routed the no-batching/efficiency tension (named in the prior orient run) to the operator per step 6b's double-loop guidance; operator unavailable, so proceeded with the highest-confidence assumption -- a scoped middle path (grouped entry, per-file verification preserved) -- and fixed the three remaining SKILL.md files' BOMs under that revised granularity | orient/SKILL.md, probe/SKILL.md, trail/SKILL.md each lose their leading UTF-8 BOM (1-line diff each, frontmatter delimiter only); no functional change; first entry in this sequence covering more than one file |
+| ▸ 179 | 2026-08-01 | orient-step3b-argyris-double-loop-check | added an explicit Argyris double-loop check to orient/SKILL.md (new step 3b), closing the gap the operator asked about directly this session -- Improve's step 6b already had it, Orient did not | orient/SKILL.md 2.0.1 -> 2.1.0; CHANGELOG.md v4.13.0 added |
+| ▸ 180 | 2026-08-01 | resolve-sessions-fingerprint-blind-spot-and-fix-six-boms | resolved the session-file fingerprint blind spot carried across three prior entries; fixed all six affected .acm/sessions/*.md files' BOMs in one grouped entry with individual per-file verification | six .acm/sessions/*.md files each lose their leading UTF-8 BOM (1-line diff each); no functional change |
+| ▸ 181 | 2026-08-01 | fix-orientation-and-audit-trail-boms-closes-cleanup-arc | fixed the last two files in the systemic BOM cleanup -- orientation.md (low-risk) and audit-trail.md (highest-risk, designed and executed with extra safeguards) -- closing the entire multi-entry arc | .acm/orientation.md and .acm/audit-trail.md each lose their leading UTF-8 BOM (1-line diff each); no functional or content change; this is the twelfth and final file in the sequence |
+| ▸ 182 | 2026-08-01 | fix-lens-count-miscount-three-vs-four | fixed a stale lens-count in improve/SKILL.md step 2 ("Three lenses" but four listed), surfaced during a conversational investigation into whether the original Toyota 3M lenses (Muda/Mura/Muri) still exist in this suite | improve/SKILL.md 3.12.2 -> 3.12.3; CHANGELOG.md v4.14.0 added |
+| ▸ 183 | 2026-08-01 | fix-real-mojibake-corruption-and-extend-check-no-mojibake | found and fixed genuine mojibake corruption (a windows-1252-misdecoded arrow character) in two live files, invisible to the existing check_no_mojibake (which only detects U+FFFD); extended the check with a new pattern to catch this broader, more common corruption class going forward | INSTALLING.md and trail/SKILL.md each have a corrupted 3-character sequence replaced with the correct arrow character (5 instances total); verify.py gains MOJIBAKE_WIN1252 pattern and a scoped exemption for audit-trail.md; CHANGELOG.md v4.15.0 added |
+| ▸ 184 | 2026-08-01 | trail-condensed-entry-format-for-non-decision-fixes | added a condensed trail-entry format for changes with no genuine judgment call, resolving the ceremony-overhead concern the operator named without revising any destination-level architectural constraint | trail/SKILL.md 2.2.0 -> 2.3.0; CHANGELOG.md v4.16.0 added |
+| ▸ 185 | 2026-08-01 | citation-cff-currency-fix-surfaces-git-tag-drift | fixed CITATION.cff's stale version/date fields; while checking, found git tags have not been created for any v4.x release since v4.0.0, plus one existing tag (v4.18.0) that appears to be a historical typo for v3.18.0 -- neither touched, both named for the operator | CITATION.cff version 3.19.0 -> 4.17.0, date-released 2026-05-12 -> 2026-08-01; CHANGELOG.md v4.17.0 added |
+| ▸ 186 | 2026-08-01 | clarify-history-learning-optional-per-acm-spec-conformance | clarified that history.md, learning.md, and learning-archive.md are optional derived convenience artifacts, not required for ACM conformance -- resolved via direct evidence from the authoritative agent-context-memory SPEC.md rather than a unilateral file-count decision | trail/SKILL.md 2.3.0 -> 2.4.0; CHANGELOG.md v4.18.0 added |
+| ▸ 187 | 2026-08-01 | destination-note-skillsuite-as-acm-development-site | added a destination note naming this repo's relationship to agent-context-memory's SPEC.md as bidirectional -- the skillsuite is where ACM's own gaps and needed extensions become visible in practice, not only where the spec is implemented | .acm/destination.md gains one new dated note (no other file changed) |
+| ▸ 188 | 2026-08-01 | implement-scale-gap-in-acm-spec-repo | implemented the previously-drafted Scale-gap candidate directly in agent-context-memory/SPEC.md; committed locally there, NOT pushed pending operator confirmation (public, published repo) | no change to this repo's own files; agent-context-memory SPEC.md 0.3.0 -> 0.4.0 (commit 51e951e, local only) |
+| ▸ 189 | 2026-08-01 | systematic-verifypy-audit-closes-stale-path-docs-gap | read all 12 check functions against their docstring claims in one pass; 11 correctly scoped; found and fixed one real, currently-dormant gap in STALE_PATH_DOCS | verify.py STALE_PATH_DOCS gains QUICKSTART.md and harness/BENCHMARKS.md; CHANGELOG.md v4.19.0 added |
+| ▸ 190 | 2026-08-01 | orient-how-close-to-destination | read the 12-entry arc since the last orient run and answered the operator's direct question ("how close are we to the destination") in bounded terms per named success condition -- research success and learning show real, accumulating evidence; adoption success has had zero attention this entire session | .acm/orientation.md rewritten wholesale (no code change) |
+| ▸ 191 | 2026-08-01 | remove-vision-md-legacy-fallback | removed .acm/vision.md legacy-fallback support entirely across all five skill files that referenced it; the fallback was explicitly scoped at introduction as transition-period-only support | destination/SKILL.md 2.2.0 -> 2.3.0; improve/SKILL.md 3.12.3 -> 3.12.4; intent/SKILL.md 1.3.0 -> 1.3.1; orient/SKILL.md 2.1.0 -> 2.1.1; trail/SKILL.md 2.4.0 -> 2.4.1; CHANGELOG.md v4.20.0 added |
+| ▸ 192 | 2026-08-01 | confirm-push-and-record-trail-completeness-check | confirmed the prior 13 commits were pushed to origin/main; answered an operator question about learning.md's mechanics; this entry closes the gap of both being unrecorded in the trail | no code change; .acm/audit-trail.md +1 entry |
+| ▸ 193 | 2026-08-01 | deutero-learning-credited-and-closed-in-orient-step-4 | step 4 now explicitly credits Argyris and Schon's deutero-learning and closes with a routing instruction mirroring step 3b's double-loop routing | orient/SKILL.md 2.1.1 -> 2.2.0; CHANGELOG.md v4.21.0 added |
+| ▸ 194 | 2026-08-01 | merge-kaikaku-purpose-lens-threads-and-name-token-efficiency-adoption-link | captured a merged open thread (Purpose lens vs a distinct Kaikaku-fork for deutero-learning findings, left to Improve as one decision) and a new destination note naming token efficiency's link to adoption, using this session's own token spend as evidence | .acm/destination.md +2 notes (this session); no SKILL.md changes |
+| · 195 | 2026-08-01 | close-kaikaku-thread-via-existing-purpose-lens-not-new-mechanism | confirmed the operator's own suggestion was the right fix - no new Kaikaku-branch needed in Orient; one sentence now routes deutero-learning findings through Improve's existing Purpose lens/Kaikaku question, with Convergence Is Silence as the redesign validation bar | orient/SKILL.md 2.2.0 -> 2.3.0; CHANGELOG.md v4.22.0 added |
+| ▸ 196 | 2026-08-01 | restore-ooda-pdca-premortem-lineage-citations | restored PDCA, OODA, and pre-mortem lineage citations found dropped between v1's kaizen.md and v3's Improve/Orient split, first named two entries ago as a standing candidate | improve/SKILL.md 3.12.4 -> 3.13.0; orient/SKILL.md 2.3.0 -> 2.4.0; CHANGELOG.md v4.23.0 added |
+| ▸ 197 | 2026-08-01 | intent-gains-reader-side-example-stripping-test | added a reader-side mirror of Principle 1's writer-side test, closing a failure caught live in this session | intent/SKILL.md 1.3.1 -> 1.4.0; CHANGELOG.md v4.24.0 added |
+| ▸ 198 | 2026-08-01 | capture-model-capability-bounds-skill-fidelity | captured a premise not stated anywhere - skill execution fidelity is bounded below and scaled above by the executing model's capability - distinct from Principle 3's evaluator-diversity rationale | .acm/destination.md +1 note; no SKILL.md changes |
+| ▸ 199 | 2026-08-01 | exclude-trigger-label-references-from-learning-markers | learning.md no longer represents Trail's `Contradicts prior [!REALIZATION]` trigger label as a realization | harness/tools/record.py narrow parser exclusion; CHANGELOG.md v4.25.0; derived learning artifacts regenerated |
+| ▸ 200 | 2026-08-01 | generalize-learning-marker-parser-from-context-exclusion-to-assertion-grammar | replaced v4.25.0's narrow trigger-label exclusion with a general assertion grammar after the prior fix's own trail entry falsified it | record.py marker grammar corrected; CHANGELOG.md v4.25.1; learning artifacts regenerated |
+| ▸ 201 | 2026-08-02 | align-installed-skill-docs-with-harness-tool-layout | corrected commands that still referenced the pre-harness tools layout and clarified the boundary between installed skills and clone-local optional tooling | README.md, INSTALLING.md, QUICKSTART.md, improve/SKILL.md 3.13.0 -> 3.13.1, trail/SKILL.md 2.4.1 -> 2.4.2, CHANGELOG.md v4.25.2 |
+| ▸ 202 | 2026-08-02 | refresh-iteration-count-and-readme-totals | refreshed a two-month-stale hand-maintained evidence document and its README claim with mechanically-verified current totals | ITERATION-COUNT.md self-targeted total 221 -> 286, v3 era 132 -> 197, total commits 363 -> 430, new external-target entry recorded; README.md "221 verified iterations" -> "286", "191 individually backed by git commits" -> "256" |
+| ▸ 203 | 2026-08-02 | confirm-iteration-count-sync-scope-across-live-docs | confirmed README.md and ITERATION-COUNT.md are the only precise-figure citations and both already match; found three vague "200+" floor citations, tightened the one in-repo instance, left two external/archival instances untouched with stated rationale | INSTALLING.md "200+ times" -> "280+ times" |
+| ▸ 204 | 2026-08-02 | automatic-intent-trail-workflow | Intent and Trail became explicit automatic services around a three-command deliberate workflow; Destination and Orient gained start/change and evidence-based cadence guidance | suite v4.25.2 -> v4.26.0; six skill contracts, README, QUICKSTART, INSTALLING, and both installers aligned |
+| ▸ 205 | 2026-08-02 | destination-orientation-run-mindset | reduced the normal user's conceptual surface to Destination, Orientation, and Run; moved Probe fully outside the operational workflow as optional ARF research instrumentation | suite v4.26.0 -> v4.26.1; README, QUICKSTART, INSTALLING, installer output, and probe/SKILL.md aligned |
+| ▸ 206 | 2026-08-02 | probe-opt-in-research-install | default installers now expose only the five operational capabilities; Probe requires an explicit research opt-in | suite v4.26.1 -> v4.26.2; install.ps1 adds -Research, install.sh adds --research, entry docs aligned |
+| ▸ 207 | 2026-08-02 | passive-evidence-triggered-orientation | Orientation became a passive evidence-triggered service; the normal operator workflow reduced to Destination plus Run | suite v4.26.2 -> v4.27.0; destination 2.4.0 -> 2.5.0, improve 3.14.0 -> 3.15.0, orient 2.5.0 -> 2.6.0 |
+| ▸ 208 | 2026-08-02 | orient-passive-control-surface-arc | confirmed one coherent agency migration and refreshed orientation around two deliberate actions, three automatic services, and optional research instrumentation | .acm/orientation.md rewritten from run 206 arc; first self-scheduled Orient case recorded |
+| ▸ 209 | 2026-08-02 | unify-readme-skill-roster-by-activation | replaced three overlapping skill groupings with one six-skill roster classified as Active, Passive, or Triggered | README.md unified; six existing pea-website inline SVG glyphs extracted to assets/skills/ |
+| ▸ 210 | 2026-08-02 | release-note-unified-skill-roster | documented the unified activation roster as v4.27.1 | CHANGELOG.md +1 patch release entry |
+| ▸ 211 | 2026-08-02 | retire-memory-model-name-in-favor-of-acm | retired The Memory Model as a current parallel name and made Agent Context Memory (ACM) canonical throughout live surfaces | README heading and prose aligned; six skill role labels aligned; suite v4.27.1 -> v4.27.2 with patch bumps for all six skill contracts |
+| ▸ 212 | 2026-08-02 | publish-activation-and-acm-simplification | committed and published the activation-model simplification and ACM terminology convergence to origin/main | commits 1f2d909 and 6ee2301 published; remote main verified at 6ee2301f30d847cbafee5ed9c8835d72d0f818b6 |
+| ▸ 213 | 2026-08-02 | destination-coequal-research-and-unassisted-use | sharpened the immediate destination around co-equal research and adoption, with unassisted successful use as the adoption bar | layered a new 2026-08-02 current-focus section above the preserved destination record |
+| ▸ 214 | 2026-08-02 | orient-against-coequal-research-and-adoption | separated adoption-readiness evidence from adoption success and bounded explanation quality away from research proof | .acm/orientation.md rewritten against co-equal research and adoption quality bars |
+| ▸ 215 | 2026-08-02 | destination-restore-reasoning-growth-and-token-viability | restored self-improving reasoning and token efficiency as immediate destination concerns alongside research and adoption | current focus now names open-ended reasoning-capability exploration and capability-preserving resource optimization |
+| ▸ 216 | 2026-08-02 | orient-restore-reasoning-growth-and-token-viability | restored reasoning-capability growth and capability-preserving token efficiency to the current orientation | .acm/orientation.md rewritten with six falsifiable claims and a capability/trust/cost viability model |
+| ▸ 217 | 2026-08-02 | bounded-current-destination-with-full-read-fallback | added an opt-in current-destination boundary whose completeness must be reconciled and whose malformed or absent form fails closed to a full read | destination 2.5.1 -> 2.6.0; intent 1.5.1 -> 1.6.0; improve 3.15.1 -> 3.16.0; orient 2.6.1 -> 2.7.0; suite 4.27.2 -> 4.28.0 |
+| ▸ 218 | 2026-08-02 | reconcile-complete-current-destination | reconciled the full destination history into an operator-confirmed bounded current mandate | routine destination input reduced from 42,496 to 7,402 UTF-8 bytes while preserving historical provenance below the boundary |
+| ▸ 219 | 2026-08-02 | orient-recursive-purpose-and-principles-boundary | refreshed Orientation around recursive purpose-driven improvement, principles-only immutability, delegated implementation, and the remaining example-to-ceiling reasoning gap | `.acm/orientation.md` replaced with six falsifiable claims and five next tests |
+| ▸ 220 | 2026-08-02 | surface-governance-accretion-redesign | surfaced a previously unnamed redesign finding; no product change made pending operator decision | evidence-only iteration; current Improve measured against its original v3 contract |
+| ▸ 221 | 2026-08-02 | orient-after-governance-accretion-finding | recognized unseeded discovery as passed, elevated governance accretion as the strongest internal constraint, and kept redesign validation open | Orientation claim 2 falsified and replaced; next-test ranking updated |
+| ▸ 222 | 2026-08-02 | prototype-layered-improve | resource reduction and conditional routing passed after repair; strict behavioral preservation remains unproven; production unchanged | added a non-installed 101-line kernel, 57-line conditional layer, novelty fixture, and evidence report |
+| ▸ 223 | 2026-08-02 | replicate-layered-improve-grounding-test | operator gate passed in both arms; factual grounding failed in both arms; layered routing remained inconsistent | added `NOVELTY_CASE_2.md` and `RESULTS_CASE_2.md`; production and prototype contracts unchanged |
+| ▸ 224 | 2026-08-02 | orient-after-replicated-layered-tests | separated operator-gate success from shared grounding failure and redirected the next test away from instruction editing | `.acm/orientation.md` refreshed from pre-prototype hypothesis to post-replication evidence |
+| ▸ 225 | 2026-08-02 | cross-model-replication-layered-improve |  |  |
+| ▸ 226 | 2026-08-02 | orient-after-cross-model-replication |  |  |
+| ▸ 227 | 2026-08-02 | conditional-routing-experiment-case-3 |  |  |
+| ▸ 228 | 2026-08-02 | orient-after-conditional-routing-experiment | contradicted the never-worse claim, closed the routing claim, and named harness fidelity as the arc's new binding constraint | `.acm/orientation.md` refreshed to eight claims; claim 2 rewritten after contradiction, claim 7 resolved, claim 8 added |
+| ▸ 229 | 2026-08-02 | repair-trail-entry-recognition | drifted headings can no longer absorb a neighbouring entry's content, and unrecognised headings now fail loudly instead of silently | entry recognition made structural in `record.py`; `verify.py` now rejects any non-canonical level-2 heading; 4 lost entries recovered (224 -> 228) |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -786,263 +791,273 @@ Do not edit by hand — re-run the command to refresh.
 
 - **decided:** Two coordinated SKILL edits in one pass, plus CHANGELOG and trail entry. After this entry, focus returns to manifesto target per operator direction.
 
-### Run 153 — 2026-06-22 — acm-parent-scope-traversal-propagated
+### Run 154 — 2026-06-22 — acm-parent-scope-traversal-propagated
 
 - **decided:** Add ACM §4 parent-scope paragraph to improve/SKILL.md step 1 and retrospect/SKILL.md step 0. Also refresh .acm/retrospect.md and regenerate derived artifacts (were stale vs audit-trail.md).
 
-### Run 154 — 2026-06-23 — retrospect-to-orient-rename
+### Run 155 — 2026-06-23 — retrospect-to-orient-rename
 
 - **decided:** Rename the skill folder from retrospect/ to orient/ (not "orientation/" — matches "orient" command invocation pattern). Version bump to 2.0.0 reflects breaking change: any automation referencing "retrospect" path or function names will break.
 - **decided:** Historical trail entries preserved per append-only rule. Only forward-looking documentation and active code updated.
 
-### Run 155 — 2026-06-23 — stormp-illustration-readme
+### Run 156 — 2026-06-23 — stormp-illustration-readme
 
 - **decided:** Place illustration after the intro paragraphs and before the "The Suite Improved Itself" h2.
 
-### Run 156 — 2026-07-02 — rename-commanders-intent-to-operators-intent
+### Run 157 — 2026-07-02 — rename-commanders-intent-to-operators-intent
 
 - **decided:** Renamed PEA's own vocabulary use of "mission"/"commander" to "destination"/"operator" in every live, current-facing doc (manifesto/PRINCIPLES.md, PROBLEM.md, PROOF.md; agent-context-memory/SPEC.md; skills/PRINCIPLES.md; pea-website/post.txt, index.html). Left doctrine-name references ("Auftragstaktik (Mission Command)", "Prussian mission-type command") untouched because they describe a historical proper noun, not PEA's terminology.
 
-### Run 157 — 2026-07-02 — rename-sweep-gap-fix-verify-recursive-search
+### Run 158 — 2026-07-02 — rename-sweep-gap-fix-verify-recursive-search
 
 - **decided:** Fixed all three files using the same PEA-vocabulary-vs-doctrine-citation rule established in the prior rename pass. Left the one legitimate exception (pea-website/index.html's en.wikipedia.org/wiki/Commander%27s_intent URL and skills/README.md, skills/.zenodo.json's identical pattern) untouched -- these cite the real Wikipedia article name, not PEA's own vocabulary.
 
-### Run 158 — 2026-07-31 — improve-argyris-double-loop-6b-integration
+### Run 159 — 2026-07-31 — improve-argyris-double-loop-6b-integration
 
 - **decided:** One incremental change, not a new skill. Added a fifth reflection question to improve/SKILL.md step 6b (across-trail reflection), which only activates when the existing "recurring finding-class" trigger fires. The question asks the agent to name the specific governing variable implicated by a recurring pattern and route it to the Destination skill, rather than proposing another artifact-level patch.
 
-### Run 160 — 2026-07-31 — improve-intent-acm4-traversal-fix
+### Run 161 — 2026-07-31 — improve-intent-acm4-traversal-fix
 
 - **decided:** One incremental change: add the same ACM section 4 paragraph (adapted to Intent's own voice and placement) to intent/SKILL.md's "Read the accumulated context" step, immediately before the Destination bullet -- matching where improve/SKILL.md places the equivalent paragraph relative to its own destination-reading step.
 
-### Run 161 — 2026-07-31 — improve-destination-acm4-traversal-fix
+### Run 162 — 2026-07-31 — improve-destination-acm4-traversal-fix
 
 - **decided:** One incremental change: add the ACM section 4 paragraph to destination/SKILL.md step 1, adapted to Destination's own voice (hunch-forming, not arc-claims or prompt-interpretation) and closing with the specific risk this skill faces if it skips the higher scope: proposing or duplicating something the workspace mandate has already settled.
 - **decided:** Do not add anything to probe/SKILL.md or trail/SKILL.md. Confirmed via direct reading and grep that neither has a destination-reading step this paragraph would attach to; adding it regardless would be prescriptive noise, not a fix.
 
-### Run 162 — 2026-08-01 — acm4-sweep-complete-plus-consistency-enforcement
+### Run 163 — 2026-08-01 — acm4-sweep-complete-plus-consistency-enforcement
 
 - **decided:** One coherent change, two parts, executed together per this repo's own operational rule ("every spec change must be paired with enforcement in the same session"): (a) harmonize orient/SKILL.md's stop-condition wording to match the other three files, and (b) add a verify.py check that fails if any of the four files' stop-condition clause drifts from the canonical wording going forward.
 - **REVERSAL:** Initial path considered mid-run: declare silence on the duplication question after an abstract argument that four self-contained copies were an acceptable tradeoff. Reversed after actually reading the four paragraphs verbatim and finding orient/SKILL.md's wording had already drifted -- the abstract argument was answering the wrong question (is duplication acceptable in principle) rather than the concrete one (has this specific duplication already caused drift).
 
-### Run 163 — 2026-08-01 — verify-overburden-audit-principles-h1-gap-fix
+### Run 164 — 2026-08-01 — verify-overburden-audit-principles-h1-gap-fix
 
 - **decided:** Add `PRINCIPLES.md` to `REQUIRED_FILES` and restructure `check_required_markdown_docs()` so the duplicate-H1 check still runs on it, while only the broken-local-link check is skipped for it (its links intentionally point to the external manifesto repo, not local paths -- the original, correct half of the old exclusion's intent).
 
-### Run 165 — 2026-08-01 — orient-zero-new-arc
+### Run 166 — 2026-08-01 — orient-zero-new-arc
 
 - **decided:** Do not rewrite orientation.md. The prior orient run's claims, "what next runs should test" list, and operational rules all still hold verbatim -- there is no new evidence to confirm or revise them against. Rewriting the file with no new input would either restate the same content (waste) or manufacture claims from a zero-entry window (exactly the failure mode Convergence Is Silence exists to prevent at the improve level, and the equivalent discipline for orient).
 
-### Run 166 — 2026-08-01 — trail-drop-sessions-mandate-independent-capture-exists
+### Run 167 — 2026-08-01 — trail-drop-sessions-mandate-independent-capture-exists
 
 - **decided:** Remove the mandatory .acm/sessions/*.md session-summary-writing requirement from trail/SKILL.md. Reframe the "Full resolution" tier and the Fidelity section to point at genuinely independent capture (harness ledger when routed through one; host product session history otherwise) instead of an agent-authored file. Keep the anti-rationalization discipline list, but scope it explicitly to the audit-trail.md entry itself (which remains mandatory) rather than to a separate session file. Bump trail 1.19.0 -> 2.0.0 (breaking, since it removes a prior mandate).
 
-### Run 167 — 2026-08-01 — improve-self-targeting-reasoning-capability-instrument
+### Run 168 — 2026-08-01 — improve-self-targeting-reasoning-capability-instrument
 
 - **decided:** Extend improve/SKILL.md's Self-targeting section with an explicit self-check: when self-targeting, ask whether the highest-leverage gap is in the agent's own reasoning/interpretive capability (intent decompression, governing-variable challenge, learning carry-forward) rather than only in the skill files' wording or structure. Require the reflection step to name which of the two happened, so a textual fix cannot pass as a reasoning-capability one or vice versa.
 
-### Run 168 — 2026-08-01 — reversal-self-targeting-branch-violates-genericity
+### Run 169 — 2026-08-01 — reversal-self-targeting-branch-violates-genericity
 
 - **decided:** Fully revert the addition -- restore improve/SKILL.md's Self-targeting section to its exact pre-v4.9.0 wording. Do not attempt to write a "generic version" of the same insight in this same entry. The underlying concern (self-targeting runs should be able to surface reasoning-capability gaps, not only artifact-level ones) is left unresolved rather than hastily re-solved with another special-cased instruction under time pressure -- if a genuinely target-agnostic formulation exists, it deserves its own careful pass, not a rushed patch appended to a correction entry.
 - **REVERSAL:** The entry "improve-self-targeting-reasoning-capability-instrument" (2026-08-01, this same session) added a self-targeting-specific paragraph to improve/SKILL.md's Self-targeting section. This entry fully reverses that addition after the operator identified it violates the suite's own genericity constraint.
 
-### Run 170 — 2026-08-01 — trail-decision-precedent-check-requirement
+### Run 171 — 2026-08-01 — trail-decision-precedent-check-requirement
 
 - **decided:** Extend the [!DECISION] marker's own definition in trail/SKILL.md to require a stated precedent check: whether learning.md was checked for anything directly relevant to this specific decision, and what was found (or that nothing relevant was found). Updated the entry template and the worked example accordingly.
 
-### Run 171 — 2026-08-01 — learning-md-bounded-recent-window-plus-archive
+### Run 172 — 2026-08-01 — learning-md-bounded-recent-window-plus-archive
 
 - **decided:** Bound `learning.md` to a recent window of the most recent 60 markers; move everything older into `.acm/learning-archive.md`, read only when the recent window doesn't cover what's needed. Mirrors the CHANGELOG.md / archive/v2 pattern already established in this repo for exactly this kind of unbounded-growth problem.
 
-### Run 172 — 2026-08-01 — audit-learning-precedent-surfaces-position-quickstart-h1-gap-and-systemic-bom
+### Run 173 — 2026-08-01 — audit-learning-precedent-surfaces-position-quickstart-h1-gap-and-systemic-bom
 
 - **decided:** Fix only the narrow, verified-safe scope this iteration: add POSITION.md and QUICKSTART.md to REQUIRED_FILES, and strip QUICKSTART.md's BOM (single file, confirmed via byte-level before/after inspection that the only change was the 3 leading BOM bytes -- no text content altered). Precedent check: the archived realization this fulfills ("adding a broader duplicate-H1 check would close this blind spot permanently") only asked for coverage, not for fixing every file it might reveal a defect in -- no prior entry addresses a BOM defect specifically, so there is no conflicting precedent to reconcile.
 - **decided:** Do NOT attempt to strip BOMs from the other ~70 affected files in this same iteration, and do NOT add a full-tree mechanical BOM check yet. Naming this explicitly as a deliberate scope boundary, not an oversight. Precedent check: this directly follows the append-only-trails memory note's own caution about audit-trail.md's two prior corruption incidents from Get-Content/Set-Content round-trips -- treating that history as a hard constraint on this file specifically, rather than assuming a narrow BOM-only strip would be safe merely because the mechanism differs from the prior incidents.
 
-### Run 173 — 2026-08-01 — confirm-bom-root-cause-and-fix-verifypy
+### Run 174 — 2026-08-01 — confirm-bom-root-cause-and-fix-verifypy
 
 - **decided:** Fix `verify.py`'s own leading BOM as the next file in the "one at a time" sequence explicitly planned in the prior entry, choosing it over the other ~11 remaining live files because: it is plain Python source with no corruption history (unlike `.acm/audit-trail.md`, `.acm/orientation.md`); a leading BOM in a `.py` file is purely cosmetic debt (CPython's tokenizer strips a UTF-8 BOM per PEP 263, so execution was never actually affected -- confirmed by `python verify.py` having passed cleanly every time this session despite the BOM being present the whole time); and fixing the mechanical checker's own file first, before considering whether to add a BOM-detection check to that same checker, has a certain self-referential appropriateness. Precedent check: this follows the exact mechanism already validated on QUICKSTART.md two entries ago (utf8-sig decode to strip BOM, re-encode plain utf-8, confirm via byte-length diff that only the BOM changed) -- no new mechanism introduced, so no new risk beyond what was already tested.
 - **decided:** Do not fix any of the other ~10 remaining live files in this same iteration, and do not yet add a mechanical BOM-detection check to verify.py. Precedent check: this continues the scope boundary set two entries ago -- "one at a time," not a batch -- and the root-cause confirmation in this entry does not change the risk calculus for `.acm/audit-trail.md` specifically (still the last file to touch, given its two prior corruption incidents); knowing the mechanism makes the eventual fix safer but does not make touching that file safe *now*, in the same iteration as several other changes.
 
-### Run 174 — 2026-08-01 — close-create-file-bom-blind-spot-and-fix-installing-md
+### Run 175 — 2026-08-01 — close-create-file-bom-blind-spot-and-fix-installing-md
 
 - **decided:** Fix INSTALLING.md's leading BOM using the identical, twice-validated mechanism (utf8-sig-aware decode via `[System.IO.File]::ReadAllText` with UTF8 encoding, re-encode via `UTF8Encoding(false)`, confirm byte-length diff is exactly 3). Precedent check: this is the third file fixed with this exact mechanism (QUICKSTART.md, verify.py, now INSTALLING.md) -- no new risk, no new mechanism, consistent with the established "one at a time, byte-verified" plan.
 - **decided:** Do not fix any of the other remaining live files (orient/SKILL.md, probe/SKILL.md, trail/SKILL.md, harness/tools/record.py, the five .acm/sessions/*.md files) in this same iteration, and do not touch .acm/audit-trail.md or .acm/orientation.md. Precedent check: unchanged reasoning from the prior two entries -- one file at a time, corruption-risk files last.
 
-### Run 175 — 2026-08-01 — fix-recordpy-bom
+### Run 176 — 2026-08-01 — fix-recordpy-bom
 
 - **decided:** Fix harness/tools/record.py's leading BOM using the identical, four-times-validated mechanism (`[System.IO.File]::ReadAllText` with UTF8 encoding to strip the BOM on read, `UTF8Encoding(false)` to write without one, byte-length diff confirms exactly 3 bytes removed). Precedent check: fourth file fixed with this exact mechanism (QUICKSTART.md, verify.py, INSTALLING.md, now record.py) -- no new risk, no new mechanism.
 - **decided:** Verify using record.py itself immediately after stripping its own BOM, before moving to verify.py -- this is a direct self-referential test (the tool that just had its BOM removed is the first thing invoked afterward), analogous to the verify.py self-test two entries ago.
 - **decided:** Do not fix orient/SKILL.md, probe/SKILL.md, trail/SKILL.md, or any .acm/sessions/*.md file in this same iteration; do not touch .acm/audit-trail.md or .acm/orientation.md. Precedent check: unchanged reasoning from the three prior entries in this sequence.
 
-### Run 177 — 2026-08-01 — route-batching-tension-to-operator-then-fix-three-skillmd-boms
+### Run 178 — 2026-08-01 — route-batching-tension-to-operator-then-fix-three-skillmd-boms
 
 - **decided:** The operator was unavailable this run ("The user is not available to respond and will review your work later. Work autonomously and make good decisions."). Per improve/SKILL.md step 1's explicit instruction for underspecified asks -- "if no operator answer is available in this run, proceed with your highest-confidence destination-hunch as an explicit assumption and continue" -- I selected the middle option I had already offered as a candidate: group the remaining low-risk BOM fixes into fewer entries, but preserve full per-file byte-diff verification inside each, rather than either extreme (continuing strict one-file-per-entry indefinitely, or batching everything with reduced scrutiny). Precedent check: grepped learning.md/learning-archive.md for "batching", "one change per run", "granularity" before deciding -- found only this session's own orient-run realization naming the tension; no pre-existing precedent either constrains or authorizes this specific resolution, so this is a genuinely new decision, not a repeat of an established rule.
 - **decided:** Scoped this grouping decision narrowly: only to the three remaining plain SKILL.md files (orient, probe, trail) -- the same file-type and risk class as the four already-fixed files (verify.py, QUICKSTART.md, INSTALLING.md, record.py), with an identical, five-times-now-validated mechanism. Explicitly excluded from this grouping: the five `.acm/sessions/*.md` files (the named blind spot -- whether their exact byte content is treated as a fingerprint -- remains unresolved) and the two highest-risk files (`.acm/audit-trail.md`, `.acm/orientation.md`), which stay last regardless of the granularity decision. Precedent check: this preserves the corruption-risk-driven exclusion already established across the last four entries -- the granularity decision only relaxes ceremony for the uniform, already-proven-safe class of fix, not the two files where real risk still lives.
 
-### Run 178 — 2026-08-01 — orient-step3b-argyris-double-loop-check
+### Run 179 — 2026-08-01 — orient-step3b-argyris-double-loop-check
 
 - **decided:** Add step 3b to orient/SKILL.md: when step 3 produces a claim describing a recurring pattern, explicitly ask whether the recurrence is a single-loop symptom or a double-loop signal, following the same governing-variable framing as improve/SKILL.md step 6b (goal, constraint, or quality-bar choice in destination.md, or an unstated assumption). Explicitly preserved the "can resolve to no" clause from the precedent entry's own worked example (`orient-post-argyris-window` correctly resolved "no defect" once) -- the new step must not read as a bias toward manufacturing escalations. When it resolves "yes," name the governing variable and route to Destination rather than resolving unilaterally, matching step 6b's existing routing language and this session's own recent practice (the no-batching/efficiency tension routing, two entries ago). Precedent check restated: consistent with, not contradicting, `orient-post-argyris-window`'s two outcomes and the not-yet-actioned destination note from 2026-07-31.
 
-### Run 179 — 2026-08-01 — resolve-sessions-fingerprint-blind-spot-and-fix-six-boms
+### Run 180 — 2026-08-01 — resolve-sessions-fingerprint-blind-spot-and-fix-six-boms
 
 - **decided:** Fix all six affected .acm/sessions/*.md files' BOMs in one grouped trail entry, following the granularity the operator delegated two entries ago (grouped entry, full per-file verification preserved) -- the same class of uniform, already-proven-safe fix as the three SKILL.md files fixed under that same decision. Precedent check: grepped learning.md/learning-archive.md for "session file" and "fingerprint" before finalizing -- found only this session's own carried-forward blind-spot note; no existing precedent contradicts treating these six files as safe to modify once the fingerprint question is answered.
 
-### Run 180 — 2026-08-01 — fix-orientation-and-audit-trail-boms-closes-cleanup-arc
+### Run 181 — 2026-08-01 — fix-orientation-and-audit-trail-boms-closes-cleanup-arc
 
 - **decided:** Fix orientation.md using the standard, eleven-times-validated mechanism with standard verification (byte-diff, git diff). Precedent check: identical risk class to the ten already-fixed plain files; no new precedent needed.
 - **decided:** Fix audit-trail.md using the same underlying mechanism (the .NET direct API was never the source of the historical corruption; PowerShell's cmdlets were), but with the additional baseline-and-reconfirm safeguards described above, specifically because this file's criticality warrants verification beyond the standard byte-diff check used for the other eleven files. Precedent check: grepped learning.md/learning-archive.md for "audit-trail.md" combined with "corrupt" or "mojibake" before proceeding -- found the two historical incidents, both attributable specifically to Get-Content/Set-Content round-trips, never to direct .NET file I/O. No precedent contradicts using the .NET-based mechanism on this file; the precedent instead specifically identifies the PowerShell-cmdlet mechanism as the actual hazard, which this fix does not use.
 
-### Run 181 — 2026-08-01 — fix-lens-count-miscount-three-vs-four
+### Run 182 — 2026-08-01 — fix-lens-count-miscount-three-vs-four
 
 - **decided:** Remove the hardcoded lens count entirely ("Several lenses are available") rather than updating it to "Four." Rationale: a hardcoded number is exactly the fragile-count pattern this session has repeatedly found and fixed elsewhere today (REQUIRED_FILES gaps, ACM traversal file lists) -- updating "Three" to "Four" would only postpone the same staleness to the next time a lens is added or removed (the file's own text explicitly invites adding more: "Add lenses as the target warrants"). Removing the number closes the defect class, not just this instance of it. Precedent check: no existing learning.md/learning-archive.md entry addresses this specific wording; the general "avoid hardcoded counts that silently drift" pattern is well-established in this session's own recent history (verify.py's REQUIRED_FILES/STALE_PATH_DOCS lists) and this decision is consistent with, not contradicting, that pattern.
 
-### Run 182 — 2026-08-01 — fix-real-mojibake-corruption-and-extend-check-no-mojibake
+### Run 183 — 2026-08-01 — fix-real-mojibake-corruption-and-extend-check-no-mojibake
 
 - **decided:** Fix the 5 corrupted instances in INSTALLING.md and trail/SKILL.md by replacing the exact corrupted 3-character sequence with the correct single arrow character, using a precise literal string replacement (not a broad regex substitution) to avoid touching anything else. Precedent check: grepped learning.md/learning-archive.md for "mojibake", "windows-1252", "misdecode" before proceeding -- found only this session's own realizations about audit-trail.md's historical corruption incidents (attributed to the same root mechanism: Get-Content/Set-Content decoding as windows-1252) but no prior entry addressing this specific arrow corruption or proposing a broader check. This is new work, not a repeat.
 - **decided:** Extend check_no_mojibake() with a new MOJIBAKE_WIN1252 regex pattern targeting this corruption class generally (not just the specific arrow instance found), following the "every spec change must be paired with enforcement in the same session" operational rule already established this session. Chose to add this now, rather than defer it, specifically because the live tree was already clean of the pattern once the 2 files were fixed -- unlike the earlier systemic-BOM-check deferral (which would have broken ~70 files), this extension causes zero new failures once the underlying corruption is fixed, so there is no compatibility cost to adding it immediately.
 - **decided:** Exempt .acm/audit-trail.md from only the new windows-1252 check (not from the existing U+FFFD check), following the exact precedent already established for GENBA_ARCHIVE.md's skip_paths exemption (documented historical corruption quoted as prose evidence, not live corruption). Verified this exemption is not vacuous: audit-trail.md genuinely contains one real instance of the pattern in its own prose (an earlier entry this session literally quoting the corrupted em-dash sequence as an illustrative example while explaining the historical incidents).
 
-### Run 183 — 2026-08-01 — trail-condensed-entry-format-for-non-decision-fixes
+### Run 184 — 2026-08-01 — trail-condensed-entry-format-for-non-decision-fixes
 
 - **decided:** Add a condensed entry format to trail/SKILL.md, usable when a change involves **no genuine judgment call** -- nothing weighed against an alternative, no precedent needing a check because there was no decision to check it against, an outcome obviously correct once seen. This is a qualitative test (the presence or absence of a real decision), not a size/line-count/file-count threshold -- deliberately, to avoid the exact route-prescription Principle 1 warns against. The condensed format drops the Decision/Prediction sections and combines Interpretation/Examination/Action into one paragraph, but **never drops the four-trigger evaluation or macro-Hansei-if-fired** -- these are the cheapest part of the template and, per this session's own accumulated evidence (four separate small entries each independently finding "a check's coverage is narrower than its stated purpose"), the mechanism most likely to catch a pattern recurring *across* several small, individually-unremarkable entries. Explicitly stated "when in doubt, use the full template" as a bias against under-classifying real decisions to save ceremony.
 
-### Run 184 — 2026-08-01 — citation-cff-currency-fix-surfaces-git-tag-drift
+### Run 185 — 2026-08-01 — citation-cff-currency-fix-surfaces-git-tag-drift
 
 - **decided:** Fix CITATION.cff's version and date-released fields, syncing them to the version this fix itself will produce (4.17.0, since adding a CHANGELOG entry for this fix necessarily bumps the version again) rather than the pre-fix number (4.16.0) -- otherwise the file would already be one version stale the instant this commit lands, defeating the point of the fix. Precedent check: grepped learning.md/learning-archive.md for "CITATION.cff", "zenodo", "version sync" before proceeding -- found only prior entries naming this as an open backlog item, never actually executed; no contradicting precedent.
 - **decided:** Do NOT touch git tags -- neither create the missing v4.1.0-v4.16.0 tags, nor rename/delete the mistagged v4.18.0 tag. Precedent check: this repo's own operational-safety guidance treats tag deletion/rewriting shared history as requiring explicit confirmation; creating a backlog of missing tags retroactively is also a release-management decision (what cadence, whether to backfill at all, whether v4.18.0's rename would break anything that already references it, e.g. a Zenodo DOI snapshot) that the operator should make, not something to decide unilaterally inside a "fix a stale citation file" task.
 
-### Run 185 — 2026-08-01 — clarify-history-learning-optional-per-acm-spec-conformance
+### Run 186 — 2026-08-01 — clarify-history-learning-optional-per-acm-spec-conformance
 
 - **decided:** Update trail/SKILL.md's directory listing and surrounding prose to explicitly mark `history.md`, `learning.md`, and `learning-archive.md` as OPTIONAL (not required for ACM conformance), name the specific spec sections that establish this (§6.1, §6.3), and state when to adopt them (once a trail is long enough that full reads become wasteful) rather than presenting them as a default starting configuration. Also mark `orientation.md` as "optional per ACM but recommended," matching the spec's own §6.1 treatment. Precedent check: grepped learning.md/learning-archive.md for "ACM spec", "agent-context-memory", "conformance", "required files" before drafting -- found no prior entry in this repo's own trail that had previously read agent-context-memory's SPEC.md directly and cross-checked file requirements against it. This is new, not a repeat of prior work.
 - **decided:** Do NOT remove history.md/learning.md/learning-archive.md from this repo. This repo's own audit-trail.md is now 900KB+ across 184 entries -- exactly the scale the new documentation says justifies adopting the derived-artifact layer. Removing them here would trade a real, measured efficiency win (the bounded learning.md window, added earlier this session, already cut the mandatory read from 120KB to 34KB) for a symbolic minimalism this repo's own trail size does not support.
 - **decided:** Do NOT edit destination.md to walk back the operator's "this skills project defines the ACM" framing unilaterally. destination.md is operator-held; the correction (origination vs. formal-spec-authorship) is stated here in the trail and in conversation for the operator's own judgment, not imposed on their file.
 
-### Run 186 — 2026-08-01 — destination-note-skillsuite-as-acm-development-site
+### Run 187 — 2026-08-01 — destination-note-skillsuite-as-acm-development-site
 
 - **decided:** Add a new dated destination note (2026-08-01, second note this date) stating: this repo's Improve/Orient loop should recognize when a finding is about the memory model's own properties, not just this implementation's internal consistency, and treat such findings as candidate contributions back to agent-context-memory's SPEC.md rather than filing them away as local-only improvements. Cited the concrete Scale-gap/learning.md-pattern evidence directly in the note, following this destination's own established style of grounding notes in specific, checkable evidence rather than abstract principle. Precedent check: grepped learning.md/learning-archive.md for "agent-context-memory", "SPEC.md", "upstream" before drafting -- found only the immediately prior entry (clarify-history-learning-optional...), which established the factual relationship but did not yet draw this destination-level implication. This note is a direct, undisputed extension of that entry, not a repeat.
 - **decided:** Deliberately did NOT specify a mechanism for recognizing "spec-level" vs. "implementation-level" findings, nor a process for proposing changes to the other repo, nor a cadence for looking for such findings -- consistent with this destination file's own established discipline (every existing dated note ends with a "deliberately not specified here" paragraph) and with Principle 1 (define the destination, not the route).
 - **decided:** Did NOT write or commit anything to agent-context-memory's own files. That repo has its own authorial standing; this destination note names an expectation for this repo's own loop, not an authorization to edit another repo unilaterally.
 
-### Run 187 — 2026-08-01 — implement-scale-gap-in-acm-spec-repo
+### Run 188 — 2026-08-01 — implement-scale-gap-in-acm-spec-repo
 
 - **decided:** Implement the addition directly in agent-context-memory: SS5.5 comparator table gains a Scale column; new prose describes ACM's answer to Scale (mechanical, content-blind bounded-window/archive pattern over the trace tier, contrasted explicitly with MemGPT's agent-decided promotion/demotion, since the latter would reopen capture-author separation); cites this repo's learning.md/learning-archive.md as reference implementation. Synced SPEC.md/CITATION.cff/.zenodo.json to 0.4.0/2026-08-01. Committed locally in that repo (51e951e). Precedent check performed in that repo's own trail entry, not repeated here.
 - **decided:** Do NOT push the commit to agent-context-memory's remote without explicit operator confirmation. That repo is publicly published (prior entries in its own trail reference GitHub Releases and pushes to origin/main) -- pushing to shared, public history is exactly the class of action this workspace's own destination note (2026-07-29, "a class of action no accumulated reasoning quality should auto-authorize") already names as requiring explicit human ceremony every time, independent of how sound the reasoning behind the change is.
 - **decided:** Record this as a fresh entry in this repo's own trail too, closing the loop the earlier destination note opened, even though the substantive reasoning lives in agent-context-memory's own trail -- consistent with Trail's own mandate that any session producing a decision or finding gets an entry, and this repo's own candidate-next-moves list explicitly queued "draft the candidate SPEC.md addition" as the next action.
 
-### Run 190 — 2026-08-01 — remove-vision-md-legacy-fallback
+### Run 191 — 2026-08-01 — remove-vision-md-legacy-fallback
 
 - **decided:** Remove the fallback entirely rather than a partial reduction (e.g., keeping a bare "if vision.md exists, suggest renaming it" notice without treating it as a read-equivalent). Precedent check: grepped learning.md/learning-archive.md for "vision.md fallback", "legacy artifact", "transition period" before deciding -- found only the original rename entries describing the fallback's introduction and intended temporary scope; no precedent argues for a partial removal instead of a full one, and the original design already anticipated a clean removal ("may be removed in a future major version," not "may be narrowed").
 - **decided:** Bump destination/SKILL.md with a minor version increment (2.2.0 -> 2.3.0) since it owned the actual fallback *behavior* (not just a mention of it) and this changes what the skill does for a hypothetical unmigrated repo; treat the other four files' edits as patch-level (they only removed a documentation clause describing behavior destination/SKILL.md itself no longer implements, not a change to their own behavior contract).
 
-### Run 192 — 2026-08-01 — deutero-learning-credited-and-closed-in-orient-step-4
+### Run 193 — 2026-08-01 — deutero-learning-credited-and-closed-in-orient-step-4
 
 - **decided:** Credit Orient step 4 explicitly as Argyris and Schon's deutero-learning (Organizational Learning II, 1978), and add a closing routing paragraph mirroring step 3b's governing-variable routing - rather than adding a new standalone step or skill for deutero-learning, or mirroring this in Improve/SKILL.md.
 
-### Run 193 — 2026-08-01 — merge-kaikaku-purpose-lens-threads-and-name-token-efficiency-adoption-link
+### Run 194 — 2026-08-01 — merge-kaikaku-purpose-lens-threads-and-name-token-efficiency-adoption-link
 
 - **decided:** Capture this turn's two threads (Purpose-lens-as-home-for-the-Kaikaku-decision, and token-efficiency-tied-to-adoption) as a single short destination note, and record this as a condensed-leaning trail entry rather than a full discursive one.
 
-### Run 194 — 2026-08-01 — close-kaikaku-thread-via-existing-purpose-lens-not-new-mechanism
+### Run 195 — 2026-08-01 — close-kaikaku-thread-via-existing-purpose-lens-not-new-mechanism
 
 - **decided:** Add one linking sentence to Orient step 4's close instead of new incremental-vs-radical branching logic.
 
-### Run 196 — 2026-08-01 — intent-gains-reader-side-example-stripping-test
+### Run 197 — 2026-08-01 — intent-gains-reader-side-example-stripping-test
 
 - **decided:** Add one Extract-step probe to intent/SKILL.md: strip a prompt's given examples and check whether the underlying goal survives; if not, illustration has been mistaken for enumeration.
 
-### Run 198 — 2026-08-01 — exclude-trigger-label-references-from-learning-markers
+### Run 199 — 2026-08-01 — exclude-trigger-label-references-from-learning-markers
 
 - **decided:** Add a narrow `TRIGGER_REALIZATION_REFERENCE` exclusion before the permissive marker search, rather than tightening `MARKER` globally.
 
-### Run 199 — 2026-08-01 — generalize-learning-marker-parser-from-context-exclusion-to-assertion-grammar
+### Run 200 — 2026-08-01 — generalize-learning-marker-parser-from-context-exclusion-to-assertion-grammar
 
 - **decided:** Replace the context-specific exclusion with an assertion grammar plus quoted-example guard.
 - **REVERSAL:** Reversed v4.25.0's context-specific `TRIGGER_REALIZATION_REFERENCE` strategy after its own explanatory entry produced three new fake realizations. Replaced it with left-boundary assertion grammar and a double-quoted-example guard. The seven-case matrix passed. Full regeneration reduced the archive from 198 to 153 markers (45 more references removed), preserved the eight inspected genuine inline assertions, and `verify.py` passed. Prediction held.
 
-### Run 200 — 2026-08-02 — align-installed-skill-docs-with-harness-tool-layout
+### Run 201 — 2026-08-02 — align-installed-skill-docs-with-harness-tool-layout
 
 - **decided:** Align all live commands and helper references with the actual clone-local `harness/tools/` layout, and state explicitly that the one-line installer does not copy optional tooling.
 
-### Run 201 — 2026-08-02 — refresh-iteration-count-and-readme-totals
+### Run 202 — 2026-08-02 — refresh-iteration-count-and-readme-totals
 
 - **decided:** Refresh ITERATION-COUNT.md's totals in place (not append-only - this is a periodic snapshot document, not the audit trail) using mechanically verified numbers, reclassify the one new fully-external-primary-target entry found (`agent-context-memory`, 2026-08-01), and propagate the corrected total to README.md.
 
-### Run 202 — 2026-08-02 — confirm-iteration-count-sync-scope-across-live-docs
+### Run 203 — 2026-08-02 — confirm-iteration-count-sync-scope-across-live-docs
 
 - **decided:** Tighten `INSTALLING.md`'s "200+ times" to "280+ times." Leave `.zenodo.json` and `pea-website/index.html` unchanged.
 
-### Run 203 — 2026-08-02 — automatic-intent-trail-workflow
+### Run 204 — 2026-08-02 — automatic-intent-trail-workflow
 
 - **decided:** Keep all six capabilities separate, but divide their operating roles explicitly: Destination, Improve, and Orient are the normal deliberate workflow; Intent is automatic ingress; Trail is automatic egress; Probe is advanced validation. Every deliberate or advanced skill applies Intent before reasoning and Trail after substantive output. Standalone installations retain a local fallback when a sibling skill is unavailable.
 
-### Run 204 — 2026-08-02 — destination-orientation-run-mindset
+### Run 205 — 2026-08-02 — destination-orientation-run-mindset
 
 - **decided:** Teach exactly three user-facing ideas: Destination (where are we going), Orientation (where are we now), and Run (use Improve to move forward). Keep the command and skill names `/destination`, `/orient`, and `/improve`; do not rename Orient or Improve. Define five operationally installed capabilities under that model, with Intent and Trail automatic, while classifying Probe as a sixth optional scientific instrument that no operational skill requires or invokes.
 
-### Run 205 — 2026-08-02 — probe-opt-in-research-install
+### Run 206 — 2026-08-02 — probe-opt-in-research-install
 
 - **decided:** Install the five operational capabilities by default and add an explicit research mode that includes Probe: `-Research` for PowerShell and `--research` for shell.
 
-### Run 206 — 2026-08-02 — passive-evidence-triggered-orientation
+### Run 207 — 2026-08-02 — passive-evidence-triggered-orientation
 
 - **decided:** Make Destination and Improve own evidence-triggered Orient scheduling. Destination schedules Orient after a material destination revision and durable Trail entry. Improve evaluates orientation freshness before its Trail entry, records the result in that append-only entry, then invokes Orient after durability when the trigger fires. Orient remains passive, derived, and non-target-changing; manual `/orient` remains a diagnostic override.
 - **REVERSAL:** Focused validation exposed that append-only ordering contradiction before documentation changed. Moved evaluation before Trail and kept only the actual Orient handoff after durability.
 
-### Run 207 — 2026-08-02 — orient-passive-control-surface-arc
+### Run 208 — 2026-08-02 — orient-passive-control-surface-arc
 
 - **REVERSAL:** The run-204 model of "three concepts for the user" was a useful plateau but not the stable boundary. The arc shows that conceptual importance and operator responsibility were still conflated. Revised to two deliberate actions plus passive Orientation; retained the underlying capability rather than deleting or weakening it.
 
-### Run 208 — 2026-08-02 — unify-readme-skill-roster-by-activation
+### Run 209 — 2026-08-02 — unify-readme-skill-roster-by-activation
 
 - **decided:** Use activation as the only first-contact taxonomy: Active (Destination, Improve, research-only Probe), Passive (Intent, Trail), and Triggered (Orient). Keep all six in one table and explain normal operation beneath it. This ranks above a local Orient-row deletion because it removes the structural source of the duplication.
 
-### Run 210 — 2026-08-02 — retire-memory-model-name-in-favor-of-acm
+### Run 211 — 2026-08-02 — retire-memory-model-name-in-favor-of-acm
 
 - **decided:** Rename the README section to `Agent Context Memory (ACM)`, state directly that the skills implement ACM, and replace `Memory Model role` with `ACM role` in all six current skill contracts. Keep historical trail and changelog wording intact. Apply patch version bumps because terminology changes but behavior does not.
 
-### Run 213 — 2026-08-02 — orient-against-coequal-research-and-adoption
+### Run 214 — 2026-08-02 — orient-against-coequal-research-and-adoption
 
 - **REVERSAL:** The initial Destination hunch treated newcomer understanding and successful use as one combined destination and risked elevating adoption above research. Operator responses separated the claims: research remains co-equal, successful use is enough for adoption, and easier explanation is useful signal rather than research evidence.
 
-### Run 214 — 2026-08-02 — destination-restore-reasoning-growth-and-token-viability
+### Run 215 — 2026-08-02 — destination-restore-reasoning-growth-and-token-viability
 
 - **REVERSAL:** The preceding Destination/Orient pair over-corrected toward external behavioral evidence. External behavior remains necessary for adoption and research validation, but it is not the full immediate research program. The suite must also keep improving the reasoning system that generates that behavior, while making the system affordable enough to sustain.
 
-### Run 215 — 2026-08-02 — orient-restore-reasoning-growth-and-token-viability
+### Run 216 — 2026-08-02 — orient-restore-reasoning-growth-and-token-viability
 
 - **REVERSAL:** Run 213's claim that the next meaningful evidence must come from behavior was too exclusive. Behavioral evidence remains required for adoption and external validation, while internal reasoning-capability discovery and capability-preserving efficiency work are also immediate research paths.
 
-### Run 216 — 2026-08-02 — bounded-current-destination-with-full-read-fallback
+### Run 217 — 2026-08-02 — bounded-current-destination-with-full-read-fallback
 
 - **decided:** Add exact current/history boundary comments owned by Destination, with reconciliation as the condition for claiming completeness. Intent, Improve, and Orient may use the bounded current section for routine work, but must read the full file for Destination work, ambiguity, conflicts, provenance, or malformed/absent markers. Reject both alternatives: always reading full destination history does not scale, while inferring the first heading or horizontal-rule section as current silently drops active constraints.
 
-### Run 217 — 2026-08-02 — reconcile-complete-current-destination
+### Run 218 — 2026-08-02 — reconcile-complete-current-destination
 
 - **REVERSAL:** The historical "irreducible human gate" over every implementation choice is no longer active. The operator owns and confirms the Destination; within it, implementation choice may be delegated. Direction changes and declared consequential actions remain gated.
 
-### Run 219 — 2026-08-02 — surface-governance-accretion-redesign
+### Run 220 — 2026-08-02 — surface-governance-accretion-redesign
 
 - **decided:** Surface an argument for redesign rather than delete one safeguard or remove the seven reasoning moves. Preserve the reasoning kernel; separate routine reasoning instructions from conditional governance protocols; let the default full-suite Improve delegate ingress, evidence, and orientation behavior to their owning skills; load standalone, high-fidelity, multi-iteration, and other conditional protocols only when triggered. Reconsider the single-file standalone guarantee explicitly rather than hiding the tradeoff in file movement.
 
-### Run 221 — 2026-08-02 — prototype-layered-improve
+### Run 222 — 2026-08-02 — prototype-layered-improve
 
 - **decided:** Keep the layered distribution as an experiment and leave production `improve/SKILL.md` unchanged. The prototype demonstrates architectural feasibility and material routine-input reduction, but not behavioral equivalence. Promotion would trade measured resource savings for unresolved evidence-discipline and operator-gate risk.
 - **REVERSAL:** The initial kernel assumed "Apply Intent/Trail" and a link to conditional protocols were sufficient composition instructions. The first isolated evaluator treated siblings as manual and skipped conditional loading. Repaired the kernel by making automatic composition explicit and exposing the trigger index.
 - **REVERSAL:** The second evaluator identified Standalone Fallback but still declined to read it, invented mechanisms, and inferred Orientation staleness from absent context. Repaired the kernel by requiring matching-section loading, separating facts/inferences/proposals, and stating that missing Orientation evidence does not prove staleness.
 
-### Run 222 — 2026-08-02 — replicate-layered-improve-grounding-test
+### Run 223 — 2026-08-02 — replicate-layered-improve-grounding-test
 
 - **decided:** Leave production and prototype contracts unchanged and record the replicated negative result. The consequential-action gate held across all four complete outputs, while factual grounding and mechanism restraint failed across both evaluators in both arms. Layering neither solved nor uniquely caused that shared failure, and its conditional routing remains inconsistent.
 
-### Run 223 — 2026-08-02 — orient-after-replicated-layered-tests
+### Run 225 — 2026-08-02 — cross-model-replication-layered-improve
 
 - **decided:** Run unchanged contracts through genuinely isolated evaluators under Claude Opus 4.6. Compare with prior results to distinguish instruction-architecture effects from execution-context effects.
+
+### Run 226 — 2026-08-02 — orient-after-cross-model-replication
+
 - **decided:** Refresh orientation.md with updated claims, add operational rule about grounding strategy, and reprioritize next-test list with routing first.
+
+### Run 227 — 2026-08-02 — conditional-routing-experiment-case-3
+
 - **decided:** Keep both contracts unchanged. Do not promote the layered prototype and do not revert the experiment.
 
-### Run 224 — 2026-08-02 — orient-after-conditional-routing-experiment
+### Run 228 — 2026-08-02 — orient-after-conditional-routing-experiment
 
 - **decided:** Refresh `.acm/orientation.md` to eight claims, add five operational rules covering judge-briefing fidelity, equal-fidelity contract comparison, measure-before-reveal, derived-index verification, and UTF-8 appends. Promote the derived-index repair to the top of the next-runs list, ahead of all remaining research tests.
 
-**224 runs total — 209 with changes, 15 silence**
+### Run 229 — 2026-08-02 — repair-trail-entry-recognition
+
+- **decided:** Widen the reader, never the record. Entry boundaries become structural: any level-2 heading opens a new entry, with date and slug salvaged best-effort from a loose dated form, an `Entry:` label form, or the entry body. Format compliance moves entirely to `verify.py`, which now fails on any level-2 heading that is not canonical, with the four historical headings listed as explicit auditable exemptions.
+
+**229 runs total — 214 with changes, 15 silence**

@@ -47,6 +47,18 @@ ROOT = _resolve_root()
 LOG = ROOT / ".acm" / "audit-trail.md"
 
 ENTRY_HEADING = re.compile(r"^##\s+(\d{4}-\d{2}-\d{2})\s+[\u2014-]\s+(.+?)\s*$")
+# Any level-2 heading is an entry boundary, canonical or not. Recognising only
+# the canonical form meant a drifted heading matched nothing and its body was
+# appended to the PREVIOUS entry -- silently reattributing that entry's markers
+# and decisions to a different run. Boundaries must be structural; format
+# compliance is checked separately (and loudly) by verify.py.
+ANY_HEADING = re.compile(r"^##\s+(.+?)\s*$")
+# Tolerant salvage for drifted headings: leading ISO date with any separator,
+# or a bare "Entry: <slug>" label.
+LOOSE_DATED_HEADING = re.compile(r"^(\d{4}-\d{2}-\d{2})\s*\W+\s*(.+?)\s*$")
+ENTRY_LABEL_HEADING = re.compile(r"^Entry:\s*(.+?)\s*$")
+# Date carried in the entry body when the heading itself lacks one.
+BODY_DATE = re.compile(r"^-\s+(?:\*\*)?[Dd]ate(?:\*\*)?:\s*(\d{4}-\d{2}-\d{2})")
 META_FIELD = re.compile(r"^-\s+(target|outcome|delta):\s*(.+)$")
 MARKER = re.compile(
     r"(?:^\s*(?:[-*]\s+|\d+\.\s+)?|[.!?][ \t]+)"
@@ -160,31 +172,65 @@ def cmd_new(args: argparse.Namespace) -> int:
     return 0
 
 
+def _new_entry(date: str, slug: str, dated: bool) -> dict:
+    return {
+        "date": date,
+        "slug": slug,
+        "target": "",
+        "outcome": "",
+        "delta": "",
+        "decisions": [],
+        "reversals": [],
+        "realizations": [],
+        "dated": dated,
+    }
+
+
+def _heading_to_entry(heading_text: str, prev_date: str) -> dict:
+    """Derive an entry from any level-2 heading, canonical or drifted.
+
+    A drifted heading still opens a new entry so its content is never
+    reattributed to the preceding run. When the heading carries no date, the
+    previous entry's date is used provisionally and corrected if the body
+    supplies an explicit one.
+    """
+    loose = LOOSE_DATED_HEADING.match(heading_text)
+    if loose:
+        return _new_entry(loose.group(1), loose.group(2), True)
+    label = ENTRY_LABEL_HEADING.match(heading_text)
+    slug = label.group(1) if label else heading_text
+    return _new_entry(prev_date, slug, False)
+
+
 def _parse_entries(text: str) -> list[dict]:
     """Parse .acm/audit-trail.md into a list of entry dicts."""
     lines = text.splitlines()
     entries: list[dict] = []
     current: dict | None = None
+    last_date = ""
 
     for line in lines:
-        m = ENTRY_HEADING.match(line)
-        if m:
+        heading = ANY_HEADING.match(line)
+        if heading:
             if current is not None:
                 entries.append(current)
-            current = {
-                "date": m.group(1),
-                "slug": m.group(2),
-                "target": "",
-                "outcome": "",
-                "delta": "",
-                "decisions": [],
-                "reversals": [],
-                "realizations": [],
-            }
+            m = ENTRY_HEADING.match(line)
+            if m:
+                current = _new_entry(m.group(1), m.group(2), True)
+            else:
+                current = _heading_to_entry(heading.group(1), last_date)
+            last_date = current["date"] or last_date
             continue
 
         if current is None:
             continue
+
+        if not current["dated"]:
+            body_date = BODY_DATE.match(line)
+            if body_date:
+                current["date"] = body_date.group(1)
+                current["dated"] = True
+                last_date = body_date.group(1)
 
         meta = META_FIELD.match(line)
         if meta:
@@ -401,10 +447,11 @@ def cmd_summary(_args: argparse.Namespace) -> int:
     text = _safe_read_log()
     lines = text.splitlines()
 
-    # Find the last entry heading.
+    # Find the last entry heading. Any level-2 heading counts, so a drifted
+    # heading still surfaces the newest entry rather than an older canonical one.
     last_idx: int | None = None
     for i, line in enumerate(lines):
-        if ENTRY_HEADING.match(line):
+        if ANY_HEADING.match(line):
             last_idx = i
     if last_idx is None:
         print("(no entries in .acm/audit-trail.md)")

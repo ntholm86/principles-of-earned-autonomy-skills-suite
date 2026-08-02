@@ -12331,3 +12331,80 @@ Orientation freshness: current (this IS the Orient run).
 1. Repair the derived-index defect and add a verify.py assertion that every `##`-level trail heading parses as an entry, so unrecognized entries fail loudly instead of being skipped. Requires an operator decision on parser-widening versus heading-correction.
 2. Re-run verification against the three unparsed entries once they are recognized, since none of them have ever been structurally checked.
 3. Replicate the both-directions divergence at n>1 per arm with a verbatim-case judge.
+
+## 2026-08-02 - repair-trail-entry-recognition
+
+- target: harness/tools/record.py and verify.py (audit-trail entry recognition)
+- operator: Nils Wendelboe Holmager
+- agent: GitHub Copilot
+- skill: improve
+- outcome: drifted headings can no longer absorb a neighbouring entry's content, and unrecognised headings now fail loudly instead of silently
+- delta: entry recognition made structural in `record.py`; `verify.py` now rejects any non-canonical level-2 heading; 4 lost entries recovered (224 -> 228)
+
+### Interpretation of the ask
+
+The operator delegated the repair decision explicitly -- "make the decision for me, based on the destination" -- alongside a standing steer: reduce tokens, but optimize thinking capability rather than trade it away; accept a small capability reduction only when the token saving is significant.
+
+Two options were open from the preceding Orient: widen the reader, or correct the three non-canonical headings in the trail. The Destination decides it without needing a judgement call. Observable Autonomy is one of exactly three fixed boundaries, and it is stated as evidence "that the agent cannot retroactively rewrite." Correcting headings is the agent retroactively rewriting durable evidence; doing it once, for however good a reason, converts that invariant from structural to discretionary. Meanwhile the same Destination states that no memory structure, mechanism, or implementation is sacred. The reader is revisable; the record is not.
+
+### Examination
+
+Reading the actual code changed the severity assessment materially. The prior Orient recorded that unrecognised entries were "silently skipped." They were not skipped. In `_parse_entries`, a heading matching neither `ENTRY_HEADING` nor the date-leading malformed pattern fell through to the body accumulator, so its lines were appended to the **previous** entry.
+
+Verified against the committed artifact: the routing experiment's `[!DECISION]` and both `[!REALIZATION]` markers were filed in `learning.md` under `orient-after-replicated-layered-tests` -- a different run from an earlier session. That is provenance corruption of the learning record, not an absent index. Any future run reading `learning.md` would have attributed today's findings to the wrong work.
+
+A fourth entry was affected: `## 2026-06-21 -- acm-scope-stop-conditions-propagated`, whose double-hyphen separator had been exempted in `verify.py` but was never handled in `record.py`.
+
+*Purpose lens:* the memory layer exists so a later session or different model can continue coherently. Misattribution defeats that purpose more completely than omission, because it is confidently wrong rather than visibly incomplete.
+*Inconsistency lens:* `verify.py` exempted the June heading while `record.py` silently mis-parsed it. Two tools reading one file disagreed about what an entry is.
+*Overburden lens:* one regex was carrying both "where does an entry begin" and "is this entry well-formed." Those are different questions and only the second should be strict.
+*Waste lens:* four entries of durable reasoning were present in the trail and absent from every derived surface.
+
+### Decision
+
+[!DECISION] Widen the reader, never the record. Entry boundaries become structural: any level-2 heading opens a new entry, with date and slug salvaged best-effort from a loose dated form, an `Entry:` label form, or the entry body. Format compliance moves entirely to `verify.py`, which now fails on any level-2 heading that is not canonical, with the four historical headings listed as explicit auditable exemptions.
+
+Rejected alternatives: correct the three headings in place (violates a fixed boundary); teach the parser the one `## Entry:` dialect (fixes this drift only, leaves the next one silent); add a history.md-coverage check without fixing the parser (detects the symptom, leaves misattribution intact).
+
+**Prediction:** entry count rises from 224 to 228, the routing markers reattach to `conditional-routing-experiment-case-3`, an injected drifted heading produces a hard failure, and no contract file changes.
+
+### Action and Outcome
+
+Edited `harness/tools/record.py` (structural boundaries, salvage regexes, body-date fallback, `cmd_summary` alignment) and `verify.py` (any-heading rejection, expanded exemption set with rationale, and a fix so the entry preceding an exempted heading is still collected rather than discarded).
+
+**Actual vs predicted -- all four predictions held.** Entry count 224 -> 228. `learning.md` now files the compression realization under `2026-08-02 - conditional-routing-experiment-case-3`, confirmed by inspection. Injecting `## Bogus Drifted Heading` produced `malformed entry heading in .acm/audit-trail.md`; the trail was restored and verification returned to green. `git diff --name-only HEAD` over `improve/SKILL.md` and both prototype files is empty.
+
+Unpredicted side observation: the regression test's use of PowerShell `Add-Content` immediately produced a mojibake failure in the temporary backup, independently reconfirming that trail appends must use an explicit UTF-8 writer.
+
+### Reflection
+
+**Falsifiable claim about the target's current state:** no level-2 heading in `.acm/audit-trail.md` can now change the derived record without either being parsed as its own entry or failing verification. The failure mode where reasoning silently migrates between entries is closed, and closing it required no change to any contract or any historical entry.
+
+**Named blind spot:** the three drifted entries are now recovered into `history.md` and `learning.md`, but they remain grandfathered out of `check_log_format`, so they have still never been structurally verified. I fixed recognition and left validation of those specific entries open, which means the trail's four oldest-known defects are indexed but unaudited. I also cannot rule out that earlier, pre-June drift exists in forms my inventory did not think to look for; I checked only level-2 headings.
+
+**Imagined-reader pushback:** someone maintaining this would say I widened the parser to tolerate sloppiness and that the real discipline is a stricter writer, not a more forgiving reader. The answer is that the reader must be forgiving precisely because the writer is a language model whose output drifts; a strict reader plus a drifting writer is what produced silent data loss. Tolerant parse, strict validate. They would also fairly note that "any level-2 heading is an entry" assumes the trail never uses `##` for anything else -- true today by inventory, and now enforced by the verifier, but it is an assumption the format could outgrow.
+
+[!REALIZATION] Silence is the dangerous failure mode, not strictness. A parser that recognised too little did more damage than one that recognised too much, because it produced confident, wrong attribution instead of a visible gap. Separating "where does a record begin" from "is this record well-formed" is the general fix: boundaries should be maximally tolerant, validation maximally strict.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* fired - fifth consecutive instance of harness fidelity rather than contract wording being the limiting defect, and the first where the harness was actively corrupting evidence rather than merely mismeasuring it. Claim 8 stands and is strengthened.
+- *About to declare silence:* not fired - a concrete defect was found, decided, repaired, and regression-tested.
+- *Contradicts prior [!REALIZATION]:* fired - the preceding Orient recorded that unrecognised entries were "silently skipped" and that the trail itself was intact. Reading the code showed the content was reattributed to neighbouring entries instead. The factual boundary that changed is that the earlier claim was inferred from output symptoms rather than from the parsing logic. The trail file is intact; the derived record was not.
+- *Operator explicitly asked:* yes - the operator delegated the decision and named the Destination as the basis.
+
+### Across-trail macro-Hansei
+
+The arc keeps discovering that its instruments are less trustworthy than the thing they measure, and this entry sharpens why that keeps happening. Every defect so far has been a *silent* one: a condensed contract standing in for the real one, a mechanism never exercised, evidence paraphrased into fabrication, a validator narrowing its own scope, and now a parser reassigning authorship. None of these announced themselves. All of them produced confident output.
+
+The governing assumption worth naming is that verification was being treated as a boolean rather than as a claim with a scope. `OK - trail integrity checks pass` was read as a statement about the trail when it was only ever a statement about the subset the tool recognised. The generalisable correction is that any check should report what it examined, not only what it concluded; a validator that cannot state its own coverage cannot be distinguished from one that is passing vacuously.
+
+This also bounds how much the arc should trust its own prior results. Claims resting on artifacts produced while the parser was misattributing markers are not invalidated, but their provenance was weaker than recorded at the time.
+
+Orientation freshness: current. The preceding Orient run named this repair as next-move 1; executing it does not invalidate the map, and claim 8 was updated in place to record the repair and the corrected severity.
+
+### Candidate Next Moves
+
+1. Replicate the both-directions divergence at n>1 per arm with a verbatim-case judge, before changing any kernel wording on n=1 evidence.
+2. Give the three grandfathered entries a structural audit that does not rewrite them.
+3. Make verifier output state its coverage (entries examined, entries exempted) so vacuous passes are visible.

@@ -81,11 +81,13 @@ Three consecutive experiments were each distorted most by an evaluation-design f
 
 A fourth instance surfaced during this Orient's own freshness gate: `.acm/history.md` was missing the three most recent trail entries. `harness/tools/record.py` recognizes entries via `^##\s+(\d{4}-\d{2}-\d{2})\s+[\u2014-]\s+(.+)$`, but those three entries use a `## Entry: <slug>` heading and are silently skipped. The marker regex matches anywhere in the document, so `learning.md` indexed them correctly and the discrepancy stayed invisible.
 
-**The defect is worse than a missing index.** `verify.py` iterates the same parsed entries, so unrecognized entries are exempt from *every* structural check it performs -- not merely absent from `history.md`. The "trail integrity checks pass" result recorded against the routing experiment was therefore vacuous: that entry was never examined. Writing this Orient's entry in the canonical format immediately surfaced a real structural violation in it (a fired trigger with no macro-Hansei subsection) that the preceding three entries would have concealed. The violation was fixed and verification now passes meaningfully.
+**The defect was worse than a missing index.** A heading matching neither the canonical pattern nor the date-leading malformed pattern fell through to the body-accumulator, so its content was appended to the **previous** entry. The three orphaned entries' `[!DECISION]` and `[!REALIZATION]` markers were therefore filed under `orient-after-replicated-layered-tests` -- a different run from an earlier session. This is provenance corruption of the learning record, not merely an absent index. `verify.py` iterated the same parsed entries, so those entries were also exempt from every structural check while still printing `OK`. The "trail integrity checks pass" result recorded against the routing experiment was vacuous: that entry was never examined.
+
+**Repaired 2026-08-02.** `record.py` now treats any level-2 heading as an unconditional entry boundary, salvaging date and slug best-effort, so drifted headings can never again absorb a neighbour's content. `verify.py` now fails on any level-2 heading that is not a canonical entry heading, with the four historical exceptions listed as explicit auditable exemptions. Entry count recovered from 224 to 228; the routing markers now resolve to `conditional-routing-experiment-case-3`. Verified by injecting a drifted heading and confirming a hard failure.
 
 **Standing interpretation inverted:** a passing `verify.py` does not mean "the trail is sound." It means "the entries the parser recognized are sound." Silent scope reduction in a validator is more dangerous than an absent validator, because it manufactures confidence in proportion to how much it skips.
 
-The trail itself is intact; only recognition is broken. No history was rewritten, because "preserve append-only history" is a standing operational rule and the remedy is an operator decision. This Orient's entry uses the canonical format so the drift is not propagated further.
+No history was rewritten. "Observable Autonomy" is a fixed boundary -- evidence the agent cannot retroactively rewrite -- so the reader was widened rather than the record corrected. The three drifted entries remain structurally unchecked and are grandfathered.
 
 **Falsifiable by:** an experiment whose dominant error source is traced to contract wording rather than evaluation or tooling design.
 
@@ -93,9 +95,9 @@ The trail itself is intact; only recognition is broken. No history was rewritten
 
 ## What the next runs should test
 
-1. **Repair the entry-recognition defect** (claim 8): decide between widening `record.py` to accept both heading forms and correcting the three non-canonical headings, then add a `verify.py` assertion that every `##`-level heading in the trail parses as an entry, so unrecognized entries fail loudly instead of being skipped. Then re-verify the three previously-unparsed entries, none of which has ever been structurally checked. This is the highest-priority item because it silently degrades both the memory layer and the validator that every subsequent run depends on.
-2. **Replicate the both-directions divergence** (claim 2) with n>1 per arm and a verbatim-case judge, before treating the reflection-depth gap as a property rather than variance.
-3. **Test routing under overlapping or ambiguous triggers** -- the condition Case 3 did not supply.
+1. **Replicate the both-directions divergence** (claim 2) at n>1 per arm with a verbatim-case judge, before treating the reflection-depth gap as a property rather than variance. This gates any change to the kernel's reflection wording.
+2. **Test routing under overlapping or ambiguous triggers** -- the condition Case 3 did not supply.
+3. **Structurally check the three grandfathered entries** by some means that does not rewrite them, since none has ever been verified.
 4. **Test with a non-Anthropic model** (GPT-4, Gemini, or equivalent) to distinguish vendor-family effects from version effects. The current evidence still spans one vendor.
 5. **Observe an unassisted newcomer cycle.** The adoption bar remains unexercised despite multiple simplification iterations.
 6. **Measure actual token use** for routine and triggered paths rather than relying on UTF-8 byte proxies.

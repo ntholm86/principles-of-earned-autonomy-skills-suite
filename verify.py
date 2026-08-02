@@ -158,7 +158,10 @@ def check_log_format() -> list[str]:
     current_date: str | None = None
     current_slug: str | None = None
     current_body: list[str] = []
-    malformed_heading = re.compile(r"^#{1,3}\s*\d{4}-\d{2}-\d{2}")
+    # Any level-2 heading must be a recognisable entry heading. Previously only
+    # date-leading headings were checked, so a dateless heading matched nothing
+    # and silently became body text of the preceding entry.
+    any_heading = re.compile(r"^##\s+\S")
     for line in text.splitlines():
         m = ENTRY_HEADING.match(line)
         if m:
@@ -166,8 +169,10 @@ def check_log_format() -> list[str]:
                 entries.append((current_date, current_slug or "", "\n".join(current_body)))
             current_date, current_slug = m.group(1), m.group(2)
             current_body = []
-        elif malformed_heading.match(line):
+        elif any_heading.match(line):
             if line.rstrip() in KNOWN_MALFORMED_HEADINGS:
+                if current_date is not None:
+                    entries.append((current_date, current_slug or "", "\n".join(current_body)))
                 current_date = None
                 current_slug = None
                 current_body = []
@@ -454,12 +459,22 @@ KNOWN_MALFORMED_SLUGS = frozenset({
     "protocol-vs-structural-limitation-readme [correction-2]",
 })
 
-# Entry headings already committed to history with a malformed separator
-# (double hyphen instead of the required em dash). Append-only discipline
-# means the historical heading text cannot be corrected in place; recorded
-# here as an explicit, auditable exemption rather than silently ignored.
+# Entry headings already committed to history in a non-canonical form.
+# Append-only discipline means the historical heading text cannot be corrected
+# in place; recorded here as explicit, auditable exemptions rather than silently
+# ignored. Every level-2 heading in the trail must either match ENTRY_HEADING or
+# appear here -- an unrecognised heading is a hard failure, because a heading
+# that matches nothing used to have its body absorbed into the PREVIOUS entry,
+# reattributing that entry's decisions and realizations to a different run.
 KNOWN_MALFORMED_HEADINGS = frozenset({
+    # Malformed separator (double hyphen instead of the required em dash).
     "## 2026-06-21 -- acm-scope-stop-conditions-propagated",
+    # Dateless "Entry:" label form, 2026-08-02. These three were invisible to
+    # both record.py and verify.py until the recognition defect was found; their
+    # markers had been filed under orient-after-replicated-layered-tests.
+    "## Entry: cross-model-replication-layered-improve",
+    "## Entry: orient-after-cross-model-replication",
+    "## Entry: conditional-routing-experiment-case-3",
 })
 
 TRIGGER_KEYWORDS = ("recurring", "silence", "contradict", "operator")

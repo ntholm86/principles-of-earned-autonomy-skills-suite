@@ -5,11 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 192 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-01 — fix-real-mojibake-corruption-and-extend-check-no-mojibake
-
-**[!REALIZATION]** This session has now found three genuinely different classes of "a mechanical check exists but its actual coverage is narrower than its name/purpose implies": the H1-duplicate check missing PRINCIPLES.md and later POSITION.md/QUICKSTART.md, the BOM issue that no check covered at all, and now check_no_mojibake() itself -- a check whose entire job is "detect mojibake" but which only ever detected one specific corruption signature (U+FFFD) despite this repo's own documented history showing the OTHER signature (windows-1252 misdecoding) is the one that has actually caused real incidents twice. This is the same governing-variable-shaped pattern named in an earlier macro-Hansei today (no single canonical source of truth for what each check actually covers vs. what it claims to cover) showing up a fourth time, in the check most directly named for the exact problem it under-covered.
+Showing the most recent 60 markers. 193 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-01 — fix-real-mojibake-corruption-and-extend-check-no-mojibake
 
@@ -223,19 +219,19 @@ Showing the most recent 60 markers. 192 older marker(s) are in `.acm/learning-ar
 
 **[!REALIZATION]** Compression can preserve visible structure and explicit authority gates without improving factual grounding. The next credible evidence must vary model/host context or evaluator independence; another kernel sentence would repeat governance accretion without isolating the cause.
 
-## 2026-08-02 — orient-after-replicated-layered-tests
+## 2026-08-02 — cross-model-replication-layered-improve
 
 **[!REALIZATION]** Factual-grounding failures in natural-language instruction contracts are primarily execution-context effects. The same contracts that failed under one model version succeeded under another without modification. This bounds the value of adding more grounding instructions -- the return on additional prohibition text is limited by model capability, not instruction coverage.
 
-## 2026-08-02 — orient-after-replicated-layered-tests
+## 2026-08-02 — orient-after-cross-model-replication
 
 **[!REALIZATION]** The cross-model replication converted the layered-Improve arc from compression feasible but behaviorally unproven to compression feasible and not behaviorally worse, with grounding variation tracking model context. The productive next tests are routing (undertested), cross-vendor (untested), and adoption (unexercised).
 
-## 2026-08-02 — orient-after-replicated-layered-tests
+## 2026-08-02 — conditional-routing-experiment-case-3
 
 **[!REALIZATION]** Compression is not uniformly good or bad. In this run it coincided with BETTER factual grounding and WORSE across-run reflection depth. The prior finding that the layered arm was never worse on any dimension NO LONGER HOLDS. The likely mechanism is phrasing strength, not byte count: production mandates an explicit four-trigger evaluation with per-trigger evidence and got a double-loop reframe; the kernel asks more softly and got a one-sentence decline to escalate.
 
-## 2026-08-02 — orient-after-replicated-layered-tests
+## 2026-08-02 — conditional-routing-experiment-case-3
 
 **[!REALIZATION]** A contract repair generalized beyond the surface it was written for. The kernel sentence "missing Orientation context is not evidence that it is stale" was added as the iteration-2 repair during Case 1 and written about Orientation. A routing evaluator applied it correctly and unprompted to a DESTINATION gap. Repairs to this contract can transfer across surfaces rather than staying local to the case that produced them.
 
@@ -246,6 +242,10 @@ Showing the most recent 60 markers. 192 older marker(s) are in `.acm/learning-ar
 ## 2026-08-02 — orient-after-conditional-routing-experiment
 
 **[!REALIZATION]** The research methodology is now self-correcting in a demonstrable way. The judge's two false findings were caught only because the method requires checking scored claims against source, and the derived-index defect was caught only because Orient re-derives from the trail rather than trusting a summary. Both defects were found by the process rather than by luck, which argues for repairing the harness rather than loosening the method.
+
+## 2026-08-02 — repair-trail-entry-recognition
+
+**[!REALIZATION]** Silence is the dangerous failure mode, not strictness. A parser that recognised too little did more damage than one that recognised too much, because it produced confident, wrong attribution instead of a visible gap. Separating "where does a record begin" from "is this record well-formed" is the general fix: boundaries should be maximally tolerant, validation maximally strict.
 
 ---
 
