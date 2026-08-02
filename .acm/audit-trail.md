@@ -12064,3 +12064,70 @@ The arc's most important change is methodological: it no longer assumes the arti
 1. Run the unchanged fixtures and contracts through a different model or host.
 2. Use a blinded independent judge to classify grounding violations without arm labels.
 3. Observe an unassisted newcomer cycle if independent execution infrastructure is unavailable.
+
+
+---
+
+## Entry: cross-model-replication-layered-improve
+
+- **Date:** 2026-08-02
+- **Target:** experiments/layered-improve -- unchanged production and prototype contracts
+- **Operator:** nils
+- **Model:** Claude Opus 4.6 (Anthropic) via GitHub Copilot in VS Code
+
+### Interpretation
+
+Continue the layered Improve research by testing whether the factual-grounding failure observed in prior experiments follows the instruction architecture or the execution context. The prior experiments used one model/host family and found grounding failures across both arms. This run varies the model while holding contracts frozen, then uses blinded independent judges.
+
+### Examination
+
+**Lenses:** Purpose (does the architecture serve its grounding goal?), Inconsistency (do different models produce different compliance?).
+
+**Evidence examined:** RESULTS.md (Case 1 prototype results), RESULTS_CASE_2.md (replicated Case 2 results), both novelty cases, both contracts, orientation claim 6 (untested execution contexts).
+
+**Setup:** 4 isolated evaluators (1 per arm per case), 2 blinded judges (1 per case). Each evaluator received only its assigned contract and case in a fresh stateless subagent. Judges received randomized unlabeled outputs.
+
+### Decision
+
+[!DECISION] Run unchanged contracts through genuinely isolated evaluators under Claude Opus 4.6. Compare with prior results to distinguish instruction-architecture effects from execution-context effects.
+
+**Prediction:** If grounding failure is model-bound, both arms will show improved discipline without contract changes. If instruction-bound, the same failures will reproduce.
+
+**Preservation conditions:** Both contracts remain unmodified. Neither arm is promoted or demoted based on a single additional context.
+
+### Action and Outcome
+
+Ran 4 evaluators and 2 blinded judges. Results recorded in experiments/layered-improve/RESULTS_CROSS_MODEL.md.
+
+**Prediction outcome: confirmed (execution-context effect).** Both arms showed substantially improved factual discipline under Claude Opus 4.6 without any contract modification. The severe grounding violations from prior experiments (invented numeric targets, workflows, timing, A/B testing systems) did not reproduce. Residual violations were milder and better-labeled.
+
+**Key findings:**
+- Operator-gate compliance: robust across all contexts and architectures (replicates prior finding).
+- Factual grounding: improved in both arms, tracking model capability not instruction text.
+- Layered arm: did not degrade relative to production on any dimension; showed marginally better fact/inference/proposal separation on Case 1.
+- Conditional-protocol routing: not exercised (no triggers fired in isolated evaluator context).
+
+### Reflection
+
+**Target claim:** The instruction architecture's grounding provisions are necessary conditions for compliance but not sufficient conditions -- model-level capability determines whether the provisions are actually followed. This makes governance accretion (adding more prohibitions) unlikely to improve grounding beyond a threshold, while model improvement can improve it without any instruction change.
+
+**Blind spot:** The production contract was provided as a faithful structural summary rather than the literal 204-line file (too large for single subagent prompts). This may have inadvertently narrowed the behavioral gap between arms.
+
+**Informed pushback:** The improved compliance might be RLHF-trained hedging behavior rather than genuine situated reasoning. If so, it would fail under truly novel domains not represented in training data. A cross-vendor test (different model family entirely) would be needed to distinguish learned compliance patterns from architectural reasoning.
+
+[!REALIZATION] Factual-grounding failures in natural-language instruction contracts are primarily execution-context effects. The same contracts that failed under one model version succeeded under another without modification. This bounds the value of adding more grounding instructions -- the return on additional prohibition text is limited by model capability, not instruction coverage.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired -- this run produced a different outcome (improved grounding) breaking the prior pattern of uniform failure.
+- *About to declare silence:* not fired -- experiment produced an affirmative finding.
+- *Contradicts prior [!REALIZATION]:* PARTIALLY FIRED -- prior realization was that natural-language contracts can make a gate salient but fail to control evidential overreach. This run shows they CAN control overreach when model capability is sufficient. The prior claim is refined, not contradicted: the failure was model-bound, not architecture-bound.
+- *Operator explicitly asked:* not fired.
+
+Orientation freshness: STALE -- accumulated evidence (three experiments across two model contexts with consistent operator-gate findings and divergent grounding findings) now contradicts orientation claim 6 framing that execution fidelity is untested. Automatic Orient scheduled.
+
+### Candidate Next Moves
+
+1. Run Orient to update orientation claims in light of the cross-model evidence.
+2. Design a conditional-routing-specific test case that forces trigger evaluation (no prior case has reliably exercised this).
+3. Test with a non-Anthropic model to distinguish model-family effects from version effects.

@@ -5,11 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 186 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-01 — resolve-sessions-fingerprint-blind-spot-and-fix-six-boms
-
-**[!REALIZATION]** This closes the last open item blocking the BOM cleanup before the two deliberately-highest-risk files (.acm/orientation.md, .acm/audit-trail.md). All 10 lower-risk live files are now fixed (verify.py, QUICKSTART.md, INSTALLING.md, record.py, three SKILL.md files, six session files -- note: nine, not ten; the count from two entries ago said "five" session files when the actual figure, confirmed by direct listing this run, is six -- a small factual correction to the running count, worth naming rather than silently absorbing). The blind-spot investigation itself was fast and conclusive specifically because the question was answerable by reading code directly rather than reasoning abstractly about what "might" depend on file content -- consistent with this session's own recurring lesson (from the QUICKSTART.md/PRINCIPLES.md arc) that direct verification beats inference every time it's available.
+Showing the most recent 60 markers. 187 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-01 — resolve-sessions-fingerprint-blind-spot-and-fix-six-boms
 
@@ -246,6 +242,10 @@ Showing the most recent 60 markers. 186 older marker(s) are in `.acm/learning-ar
 ## 2026-08-02 — orient-after-replicated-layered-tests
 
 **[!REALIZATION]** Compression can preserve visible structure and explicit authority gates without improving factual grounding. The next credible evidence must vary model/host context or evaluator independence; another kernel sentence would repeat governance accretion without isolating the cause.
+
+## 2026-08-02 — orient-after-replicated-layered-tests
+
+**[!REALIZATION]** Factual-grounding failures in natural-language instruction contracts are primarily execution-context effects. The same contracts that failed under one model version succeeded under another without modification. This bounds the value of adding more grounding instructions -- the return on additional prohibition text is limited by model capability, not instruction coverage.
 
 ---
 

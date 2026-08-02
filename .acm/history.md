@@ -1034,4 +1034,8 @@ Do not edit by hand — re-run the command to refresh.
 
 - **decided:** Leave production and prototype contracts unchanged and record the replicated negative result. The consequential-action gate held across all four complete outputs, while factual grounding and mechanism restraint failed across both evaluators in both arms. Layering neither solved nor uniquely caused that shared failure, and its conditional routing remains inconsistent.
 
+### Run 223 — 2026-08-02 — orient-after-replicated-layered-tests
+
+- **decided:** Run unchanged contracts through genuinely isolated evaluators under Claude Opus 4.6. Compare with prior results to distinguish instruction-architecture effects from execution-context effects.
+
 **223 runs total — 208 with changes, 15 silence**

@@ -749,6 +749,10 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** The operator-explicitly-asked trigger firing here is a clean case, distinct from the deeper double-loop candidates named in recent entries: the operator did not just approve a self-directed hunch, they asked the diagnostic question themselves ("is this also implemented in Orient?") that this entry's own answer depended on. Read against this session's arc as a whole, this is the second time in a row (after the delegated no-batching decision) that the operator-gate has functioned in a form other than "pick from a ranked candidate list" -- first as delegated autonomy under an explicit standing instruction, now as a direct diagnostic question the agent had not itself surfaced as a gap until asked. Both are healthy variants of the gate, not degraded ones, and worth naming together: the gate is not a single mechanism but a family of interaction shapes, and this session has now exercised three of them (ranked-candidate selection, delegated autonomy, direct operator-initiated diagnosis).
 
+## 2026-08-01 — resolve-sessions-fingerprint-blind-spot-and-fix-six-boms
+
+**[!REALIZATION]** This closes the last open item blocking the BOM cleanup before the two deliberately-highest-risk files (.acm/orientation.md, .acm/audit-trail.md). All 10 lower-risk live files are now fixed (verify.py, QUICKSTART.md, INSTALLING.md, record.py, three SKILL.md files, six session files -- note: nine, not ten; the count from two entries ago said "five" session files when the actual figure, confirmed by direct listing this run, is six -- a small factual correction to the running count, worth naming rather than silently absorbing). The blind-spot investigation itself was fast and conclusive specifically because the question was answerable by reading code directly rather than reasoning abstractly about what "might" depend on file content -- consistent with this session's own recurring lesson (from the QUICKSTART.md/PRINCIPLES.md arc) that direct verification beats inference every time it's available.
+
 ---
 
-**186 markers — 175 realisations, 11 reversals**
+**187 markers — 176 realisations, 11 reversals**
