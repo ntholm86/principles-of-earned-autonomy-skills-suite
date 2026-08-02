@@ -5,11 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 193 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-01 — fix-real-mojibake-corruption-and-extend-check-no-mojibake
-
-**[!REALIZATION]** This is the fourth occurrence today of the same governing-variable-shaped recurrence (checks whose real coverage is narrower than their stated purpose), and per the imagined-reader pushback above, the accumulation itself is now the more important signal than any individual instance. A systematic audit -- reading every verify.py check function's actual implementation against its docstring/comment claim, in one pass, rather than waiting for the next accidental discovery -- is now a well-evidenced, high-confidence candidate for either a dedicated Improve iteration or the next Orient run's "what next runs should test" section. Naming this explicitly rather than letting a fifth accidental discovery make the same point yet again.
+Showing the most recent 60 markers. 194 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-01 — trail-condensed-entry-format-for-non-decision-fixes
 
@@ -246,6 +242,10 @@ Showing the most recent 60 markers. 193 older marker(s) are in `.acm/learning-ar
 ## 2026-08-02 — repair-trail-entry-recognition
 
 **[!REALIZATION]** Silence is the dangerous failure mode, not strictness. A parser that recognised too little did more damage than one that recognised too much, because it produced confident, wrong attribution instead of a visible gap. Separating "where does a record begin" from "is this record well-formed" is the general fix: boundaries should be maximally tolerant, validation maximally strict.
+
+## 2026-08-02 — replicate-layered-divergence-n2
+
+**[!REALIZATION]** Grounding discipline, reflection depth, and decision quality are three dissociable dimensions, not facets of one "reasoning quality." This run separated all three: the best-grounded arm produced the best decision and the thinnest reflection, while the worst-grounded output produced the second-deepest reflection. The blinded judge reached the same conclusion unprompted. Any future claim that one contract "reasons better" than another is under-specified until it names which of the three it means.
 
 ---
 

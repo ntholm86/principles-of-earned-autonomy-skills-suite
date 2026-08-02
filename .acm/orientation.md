@@ -1,19 +1,19 @@
 # orientation.md - autonomous-agent-skills
 
-Last updated: 2026-08-02 (run: `orient-after-conditional-routing-experiment`)
+Last updated: 2026-08-02 (run: `orient-after-replication-n2`)
 
 ## Scope of this read
 
-Re-orient after the conditional-routing experiment (Case 3), which was the top-priority next test in the prior orientation. Question: routing was the last wholly-untested mechanism -- now that it has been exercised, which claims survive, and did the corrected methodology change any prior conclusion?
+Re-orient after the n>1 replication of claim 2, which was the prior orientation's top-priority next move and its stated gate on any kernel wording change. Question: does the both-directions divergence survive replication, and what does the answer unlock?
 
 **Freshness check (run evidence):**
 
-- `python harness/tools/record.py history --write` -> 223 entries.
-- `python harness/tools/record.py learning --write` -> 60 recent + 190 archived markers.
+- `python harness/tools/record.py history --write` -> 230 entries.
+- `python harness/tools/record.py learning --write` -> 60 recent + 194 archived markers.
 - `python verify.py` -> OK, trail integrity checks pass.
-- Gate: PASS (arc-claims allowed), **with a caveat discovered during this gate** -- see claim 8.
+- Gate: PASS (arc-claims allowed). Unlike the previous two Orient runs, this gate is **not** vacuous: the entry-recognition repair means the newest entry is confirmed present in the derived index, and the count incremented as expected.
 
-**Source used:** the audit trail read directly, not `history.md`. The derived index is currently missing the three most recent entries (see claim 8), so the trail was used as the sole source of truth for this read. The trail itself is complete and decodes cleanly.
+**Source used:** `learning.md` plus the two most recent entries read directly. The derived surfaces are now trustworthy for the first time in three Orient runs.
 
 ## Current claims
 
@@ -23,15 +23,25 @@ Run 218 derived governance accretion from purpose, current structure, historical
 
 **Falsifiable by:** evidence that governance accretion was prescribed by the prompt or repeated fresh runs that cannot discover beyond named examples.
 
-### 2. Layering trades reflection depth for grounding discipline -- it is not uniformly neutral
+### 2. Layering costs reflection depth categorically and buys grounding only on average
 
-The experimental kernel (101 lines, 6,892 bytes) versus production (204 lines, 25,058 bytes) preserves the seven reasoning moves statically. The routing experiment produced the first evaluation in which the arms diverged in **both** directions: the layered arm had fewer material unsupported claims (1 vs 3) and clearer fact/inference/proposal separation, but thinner across-run reflection and it selected the weaker of two safety-relevant mechanisms (proposed auto-restore-on-timeout, which reopens an unreviewed-visibility path; production forbade it on prior-learning grounds).
+The experimental kernel (101 lines, 6,892 bytes) versus production (204 lines, 25,058 bytes) preserves the seven reasoning moves statically.
 
-**Status change from prior orientation: CONTRADICTED and rewritten.** The prior claim was "reduced routine input without degrading behavior," resting on the layered arm never being worse on any dimension. That no longer holds. The factual boundary that changed: production had previously only ever been evaluated against a **condensed** contract, so its full behavior had never been observed. Supplying the verbatim 204-line contract revealed capability the condensed version had suppressed. This is a correction of the evidence base, not an override of a prior finding.
+**Status change: REPLICATED at n=2 per arm, and NARROWED.** The claim was tested against its own pre-registered falsifier with four fresh isolated evaluators and a blinded verbatim-case judge.
 
-**Best current mechanism hypothesis:** the deficit is phrasing strength, not byte count. Production *mandates* an explicit four-trigger evaluation with per-trigger evidence and produced a double-loop reframe; the kernel asks more softly and produced a one-sentence decline to escalate. Untested.
+- **Reflection half: confirmed and strengthened.** Production took both top slots on reflection depth, layered both bottom slots. Clean arm separation, not variance.
+- **Grounding half: narrowed from categorical to on-average.** Material unsupported claims came to layered 2, production 6, reproducing the n=1 ratio of 1:3. But the judge's holistic grounding rank *interleaved* the arms. Layering produced the single best-grounded output and the only output with zero material unsupported claims, without producing categorical separation.
 
-**Falsifiable by:** a replication with n>1 per arm showing the reflection-depth gap is run-to-run variance, or a kernel phrasing change that closes the gap without restoring byte weight.
+**The deficit now has a nameable mechanism, not a diffuse one.** Two countable, judge-independent behaviours separated the arms perfectly, and both sit exactly where production carries an explicit imperative and the kernel carries soft prose:
+
+- within-iteration `[!REVERSAL]` marked: production 2/2, layered 0/2
+- retrospective across-run reflection performed: production 2/2, layered 1/2
+
+This is the strongest available support for the standing hypothesis that the deficit is **phrasing strength, not byte count** -- and it means the deficit is plausibly recoverable for a small number of bytes of stronger obligation wording.
+
+**Gate status: DISCHARGED.** The prior orientation blocked any kernel reflection-wording change pending this replication. That block is lifted. The change is authorised by evidence and deliberately not yet made, so that it is measured against this baseline rather than folded into the run that justified it.
+
+**Falsifiable by:** strengthening the kernel's reflection obligations and finding the gap persists, which would relocate the cause from wording to something structural about conditional loading itself.
 
 ### 3. Operator gating and evidence discipline are separable -- and model-bound
 
@@ -49,7 +59,9 @@ Improve grew from 99 to 204 lines through locally justified safeguards. The laye
 
 **Implication:** adding more *prohibition* text has diminishing returns bounded by model capability. Adding or strengthening *obligation* text on specific reasoning moves may not.
 
-**Falsifiable by:** a wording change that independently improves grounding within a single model context, or a replication showing the reflection-depth difference does not survive n>1.
+**Strengthened by the n=2 replication.** The two behaviours that separated the arms perfectly were precisely the two that production states as imperatives and the kernel states as prose. Obligation wording bought an observable, countable act -- a marked reversal -- in 2/2 production runs and 0/2 layered runs, within one model context.
+
+**Falsifiable by:** a wording change that independently improves grounding within a single model context, or a strengthened obligation that fails to produce the mandated act.
 
 ### 5. Destination input is structurally smaller; end-to-end token efficiency remains unproven
 
@@ -67,13 +79,21 @@ No independent newcomer has completed an unassisted first cycle. The cross-model
 
 ### 7. Conditional-protocol routing works under cleanly-separated triggers
 
-**Status change from prior orientation: ADDRESSED.** Case 3 was purpose-built to fire exactly two of six triggers (Standalone Fallback, Precedent Conflict) against four distractors, with routing measured in an isolated phase *before* any protocol text was visible. Two independent evaluators each named exactly the two firing protocols, quoted the firing evidence, and rejected all four distractors with reasoning: 2/2 PASS, against a prior incidental record of one pass and one failure. Both fired protocols were then executed correctly in the full iteration, including honest declaration of a conflict between the fallback's write requirement and the case's no-edit constraint.
+**Status: ADDRESSED, now 4/4 cumulative.** Case 3 was purpose-built to fire exactly two of six triggers (Standalone Fallback, Precedent Conflict) against four distractors, with routing measured in an isolated phase *before* any protocol text was visible. Across two experiments, four independent evaluators each named exactly the two firing protocols, quoted the firing evidence, and rejected all four distractors with reasoning. All four refused the discriminating distractor (Destination Boundary Failure) on the correct ground that an *absent* surface is a different condition from an *invalid* completeness marker. Both fired protocols were executed correctly in every full iteration, including honest declaration of a conflict between the fallback's write requirement and the case's no-edit constraint -- 4/4 on that too.
 
 **Secondary finding:** a contract repair generalized beyond its authoring surface. The kernel sentence "missing Orientation context is not evidence that it is stale" was written about Orientation during the Case 1 iteration-2 repair; an evaluator applied it correctly and unprompted to a **Destination** gap. Repairs to this contract can transfer across surfaces rather than staying local.
 
 **Still untested:** routing under overlapping, ambiguous, or competing triggers. Case 3 supplied the easy condition -- two cleanly-separated triggers.
 
 **Falsifiable by:** a routing failure under ambiguous or overlapping trigger conditions.
+
+### 7b. The kernel's staleness repair is directionally incomplete
+
+The sentence "missing Orientation context is not evidence that it is stale" blocks over-claiming in one direction only. In the replication, one layered evaluator converted the same absence into a *positive* conclusion -- "Orientation is not stale, so no refresh is owed" -- while the other handled it correctly and both production runs declared it undetermined or unevaluable.
+
+The repair prevents asserting stale and permits asserting not-stale from identical evidence. This is a precision defect in the kernel's own wording, found incidentally by a run not looking for it, and it is independent of the reflection-depth question.
+
+**Falsifiable by:** a symmetric rewording that still produces a positive not-stale conclusion from an absent surface.
 
 ### 8. The binding constraint on this arc is now harness fidelity, not instruction architecture
 
@@ -91,17 +111,29 @@ No history was rewritten. "Observable Autonomy" is a fixed boundary -- evidence 
 
 **Falsifiable by:** an experiment whose dominant error source is traced to contract wording rather than evaluation or tooling design.
 
-**Double-loop note:** the arc has been treating the contracts as the object of study. Increasingly the harness is.
+**First contrary evidence, 2026-08-02.** The n=2 replication is the first run since this claim was raised whose harness *held*: isolation was genuine, the verbatim-case rule produced zero findings requiring annulment, the derived index incremented correctly, and the freshness gate was non-vacuous. The claim is not retired -- one clean run does not undo five -- but the repairs are landing, and instrument quality is no longer automatically the binding constraint.
+
+**Double-loop note:** the arc has been treating the contracts as the object of study. For five entries the harness was. This may now be reverting.
+
+### 9. Grounding, reflection depth, and decision quality are dissociable
+
+The replication separated all three dimensions in a single run. The arm that ranked best on grounding ranked third on reflection depth and produced the decision the blinded judge assessed as best-supported in the set. The output with the worst grounding produced the second-deepest reflection. The judge, blind to arms, reached the same conclusion unprompted: "the output that was most careful about what it could claim was not the output that was most searching about its own reasoning, and vice versa."
+
+**Implication for this arc's vocabulary:** any claim that one contract "reasons better" than another is under-specified until it names which of the three dimensions it means. Several earlier claims in this trail are weaker than they read because they did not make that distinction.
+
+**Falsifiable by:** an evaluation where the three dimensions rank identically across a set of outputs large enough that coincidence is implausible.
 
 ## What the next runs should test
 
-1. **Replicate the both-directions divergence** (claim 2) at n>1 per arm with a verbatim-case judge, before treating the reflection-depth gap as a property rather than variance. This gates any change to the kernel's reflection wording.
-2. **Test routing under overlapping or ambiguous triggers** -- the condition Case 3 did not supply.
-3. **Structurally check the three grandfathered entries** by some means that does not rewrite them, since none has ever been verified.
-4. **Test with a non-Anthropic model** (GPT-4, Gemini, or equivalent) to distinguish vendor-family effects from version effects. The current evidence still spans one vendor.
-5. **Observe an unassisted newcomer cycle.** The adoption bar remains unexercised despite multiple simplification iterations.
-6. **Measure actual token use** for routine and triggered paths rather than relying on UTF-8 byte proxies.
-7. **Test on a public external target** in a fresh session to exercise automatic composition and continuity under realistic conditions.
+1. **Strengthen the kernel's reflection obligations** -- mandate `[!REVERSAL]` marking and per-trigger evidence in imperative form -- then re-run against the n=2 baseline. This is the change the whole comparison was built to justify, the gate is discharged, and the hypothesis is specific enough to be refuted cheaply. If it works, most of the 72.7% routine byte reduction survives with the reflection deficit closed.
+2. **Repair the kernel's staleness sentence** so it blocks over-claiming in both directions (claim 7b). Independent of item 1 and cheaper.
+3. **Test routing under overlapping or ambiguous triggers** -- the last untested condition for a mechanism now at 4/4 under separated ones.
+4. **Structurally check the four grandfathered entries** by some means that does not rewrite them, since none has ever been verified.
+5. **Make verifier output state its coverage** (entries examined versus exempted) so vacuous passes are visible rather than inferred after the fact.
+6. **Test with a non-Anthropic model** (GPT-4, Gemini, or equivalent) to distinguish vendor-family effects from version effects. The current evidence still spans one vendor.
+7. **Measure actual token use** for routine and triggered paths rather than relying on UTF-8 byte proxies.
+8. **Observe an unassisted newcomer cycle.** The adoption bar remains unexercised despite multiple simplification iterations.
+9. **Test on a public external target** in a fresh session to exercise automatic composition and continuity under realistic conditions.
 
 ## Active operational rules
 
@@ -123,19 +155,23 @@ No history was rewritten. "Observable Autonomy" is a fixed boundary -- evidence 
 - Measure a mechanism before showing the evaluator the artifacts that mechanism selects; inclusion is itself a signal.
 - Treat `verify.py` passing as necessary, not sufficient. A validator that iterates parsed entries only certifies what it recognized; confirm the newest entry actually appears in the derived index before trusting a freshness gate.
 - Append trail entries with an explicit UTF-8 writer; PowerShell `Add-Content` corrupts non-ASCII punctuation in this repo.
+- Name which dimension a capability comparison refers to -- grounding, reflection depth, or decision quality. They dissociate, so an unqualified "reasons better" is not a claim.
+- Write a claim's falsifier into `orientation.md` before running the experiment that tests it, and do not adjust it afterwards. The one claim in this arc treated that way is the only one that can be said to have survived a genuine attempt to kill it.
+- Prefer countable, judge-independent measures over holistic rankings when a conclusion will unlock a contract change. Use the holistic read for interpretation, not for load-bearing evidence.
+- Do not fold a change into the run that justified it. The baseline a change needs to be measured against is destroyed by making it in the same iteration.
 
 ## Loop-effectiveness notes
 
-**Quality bars tested:** unseeded self-discovery; static and byte-proxy compression; conditional routing (partial); purpose reasoning on two fixtures; explicit consequential-action gating; factual grounding under missing evidence; cross-model execution fidelity (one vendor, two versions); blinded independent classification.
+**Quality bars tested:** unseeded self-discovery; static and byte-proxy compression; conditional routing; purpose reasoning on two fixtures; explicit consequential-action gating; factual grounding under missing evidence; cross-model execution fidelity (one vendor, two versions); blinded independent classification; **replication at n=2 per arm against a pre-registered falsifier**.
 
-**Result:** discovery PASS; resource reduction PASS by byte proxy; operator gate PASS (all contexts); grounding MIXED (model-dependent -- FAIL under prior model, substantially improved since, and *better under the lighter contract* in the routing experiment); routing PASS under separated triggers (2/2), untested under ambiguous ones; behavioral effect of layering now DIRECTIONAL RATHER THAN NEUTRAL -- better grounding, worse reflection depth.
+**Result:** discovery PASS; resource reduction PASS by byte proxy; operator gate PASS (all contexts, 4/4 in the replication); grounding MIXED (model-dependent, and better under the lighter contract on count but not on holistic rank); routing PASS under separated triggers (4/4 cumulative), untested under ambiguous ones; reflection depth FAIL for the layered kernel, replicated with clean arm separation and traced to two specific unmandated behaviours.
 
-**Bars not tested:** cross-vendor execution fidelity, actual token consumption, unassisted newcomer adoption, public external-target operation, convergence, routing under ambiguous triggers, and any dimension at n>1 per arm.
+**Bars not tested:** cross-vendor execution fidelity, actual token consumption, unassisted newcomer adoption, public external-target operation, convergence, routing under ambiguous triggers, and any dimension at n>2 per arm or with more than one judge.
 
-**Double-loop finding (carried, still holds):** the arc resisted adding more instruction text after replicated failure, and cross-model evidence confirmed the resistance was correct for grounding. Refined by claim 4: that conclusion is specific to grounding and does not extend to reflection depth.
+**Double-loop finding (carried, still holds):** the arc resisted adding more instruction text after replicated failure, and cross-model evidence confirmed the resistance was correct for grounding. Refined by claim 4: that conclusion is specific to grounding and does not extend to reflection depth, where obligation wording buys an observable act.
 
-**Double-loop finding (new):** the governing assumption of this arc has been that the contracts are the object of study. Four consecutive measurement distortions -- three in experiment design, one in the memory tooling -- indicate the harness is now the weaker component. Continuing to vary contracts while the harness silently drops entries and paraphrases evidence would produce confident findings about the wrong system.
+**Double-loop finding (updated):** the governing assumption that the contracts are the object of study was suspended for five entries while the harness proved the weaker component. The replication is the first evidence that the repairs have landed. The assumption is provisionally restored, on the condition that every future experiment states what its instruments actually covered.
 
-**Deutero-learning finding:** the research loop's design -- freeze contracts, vary contexts, use blinded judges -- produced discriminating evidence that editing contracts could not, and in this run it also produced *self-correcting* evidence: the judge's two false findings were caught because the method requires checking claims against source. The methodology is working well enough to detect its own defects, which is the strongest available argument for keeping it and repairing the harness rather than loosening the method.
+**Deutero-learning finding:** the research loop's design -- freeze contracts, vary contexts, use blinded judges, quote before accusing, compare only at equal fidelity -- has now produced a result strong enough to unlock a contract change that n=1 could not justify. Every rule in that list was born from a failure of the previous experiment. The method's value is not that it avoids mistakes but that each mistake becomes a standing constraint, and this run is the first where none of the accumulated constraints was violated.
 
-[!REALIZATION] The routing experiment closed the last wholly-untested mechanism and simultaneously overturned the arc's most comfortable claim. Layering is not free: it bought grounding discipline and cost reflection depth. The arc's frontier has moved from "is the compressed contract safe?" to "is the measurement apparatus trustworthy?"
+[!REALIZATION] The arc has reached the point where its most comfortable claim was stated with a pre-registered refutation condition, tested at n>1, and survived in one half while being narrowed in the other. The frontier has moved again: from "is the measurement apparatus trustworthy?" to "can the deficit the apparatus found be closed without giving back the saving that motivated it?" That is the first question in this arc whose answer would change what gets shipped rather than what gets believed.

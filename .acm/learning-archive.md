@@ -777,6 +777,10 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** This session has now found three genuinely different classes of "a mechanical check exists but its actual coverage is narrower than its name/purpose implies": the H1-duplicate check missing PRINCIPLES.md and later POSITION.md/QUICKSTART.md, the BOM issue that no check covered at all, and now check_no_mojibake() itself -- a check whose entire job is "detect mojibake" but which only ever detected one specific corruption signature (U+FFFD) despite this repo's own documented history showing the OTHER signature (windows-1252 misdecoding) is the one that has actually caused real incidents twice. This is the same governing-variable-shaped pattern named in an earlier macro-Hansei today (no single canonical source of truth for what each check actually covers vs. what it claims to cover) showing up a fourth time, in the check most directly named for the exact problem it under-covered.
 
+## 2026-08-01 — fix-real-mojibake-corruption-and-extend-check-no-mojibake
+
+**[!REALIZATION]** This is the fourth occurrence today of the same governing-variable-shaped recurrence (checks whose real coverage is narrower than their stated purpose), and per the imagined-reader pushback above, the accumulation itself is now the more important signal than any individual instance. A systematic audit -- reading every verify.py check function's actual implementation against its docstring/comment claim, in one pass, rather than waiting for the next accidental discovery -- is now a well-evidenced, high-confidence candidate for either a dedicated Improve iteration or the next Orient run's "what next runs should test" section. Naming this explicitly rather than letting a fifth accidental discovery make the same point yet again.
+
 ---
 
-**193 markers — 182 realisations, 11 reversals**
+**194 markers — 183 realisations, 11 reversals**

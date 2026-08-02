@@ -234,6 +234,8 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 227 | 2026-08-02 | conditional-routing-experiment-case-3 |  |  |
 | ▸ 228 | 2026-08-02 | orient-after-conditional-routing-experiment | contradicted the never-worse claim, closed the routing claim, and named harness fidelity as the arc's new binding constraint | `.acm/orientation.md` refreshed to eight claims; claim 2 rewritten after contradiction, claim 7 resolved, claim 8 added |
 | ▸ 229 | 2026-08-02 | repair-trail-entry-recognition | drifted headings can no longer absorb a neighbouring entry's content, and unrecognised headings now fail loudly instead of silently | entry recognition made structural in `record.py`; `verify.py` now rejects any non-canonical level-2 heading; 4 lost entries recovered (224 -> 228) |
+| ▸ 230 | 2026-08-02 | replicate-layered-divergence-n2 | the reflection-depth gap replicated with clean arm separation; the grounding advantage replicated on count but not on holistic rank | RESULTS_REPLICATION.md added; the gate blocking any kernel reflection-wording change is discharged; contracts unchanged |
+| ▸ 231 | 2026-08-02 | orient-after-replication-n2 | claim 2 replicated and split - reflection half confirmed categorically, grounding half narrowed to on-average; kernel wording gate discharged | claims 2, 4, 7, 8 updated; claims 7b and 9 added; next-runs list reordered around the now-unlocked kernel change |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -1060,4 +1062,8 @@ Do not edit by hand — re-run the command to refresh.
 
 - **decided:** Widen the reader, never the record. Entry boundaries become structural: any level-2 heading opens a new entry, with date and slug salvaged best-effort from a loose dated form, an `Entry:` label form, or the entry body. Format compliance moves entirely to `verify.py`, which now fails on any level-2 heading that is not canonical, with the four historical headings listed as explicit auditable exemptions.
 
-**229 runs total — 214 with changes, 15 silence**
+### Run 230 — 2026-08-02 — replicate-layered-divergence-n2
+
+- **decided:** Treat the reflection-depth gap as a property of the contracts rather than run-to-run variance, and treat the grounding advantage as real on average but not categorical. Record the kernel wording change as authorised-by-evidence but deliberately unmade, so that it is tested against this baseline rather than folded into the run that justified it.
+
+**231 runs total — 216 with changes, 15 silence**

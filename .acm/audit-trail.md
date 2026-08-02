@@ -12408,3 +12408,138 @@ Orientation freshness: current. The preceding Orient run named this repair as ne
 1. Replicate the both-directions divergence at n>1 per arm with a verbatim-case judge, before changing any kernel wording on n=1 evidence.
 2. Give the three grandfathered entries a structural audit that does not rewrite them.
 3. Make verifier output state its coverage (entries examined, entries exempted) so vacuous passes are visible.
+## 2026-08-02 - replicate-layered-divergence-n2
+
+- target: experiments/layered-improve (replication of orientation claim 2 at n>1 per arm)
+- operator: Nils Wendelboe Holmager
+- agent: GitHub Copilot
+- skill: improve
+- outcome: the reflection-depth gap replicated with clean arm separation; the grounding advantage replicated on count but not on holistic rank
+- delta: RESULTS_REPLICATION.md added; the gate blocking any kernel reflection-wording change is discharged; contracts unchanged
+
+### Interpretation of the ask
+
+The operator said "lets do it" against a standing next-move list whose top item was fixed and unambiguous: replicate the both-directions divergence at n>1 per arm with a verbatim-case judge. That item was recorded as the gate on any change to the kernel's reflection wording, so running it is what unlocks the only pending contract decision. I read the ask as executing that replication, not as opening a new line of enquiry.
+
+Success meant producing evidence that could go either way, under conditions strict enough that either answer would be trusted. Failure would have been a run that confirmed the prior finding because it was designed to.
+
+### Examination
+
+Four fresh evaluator contexts, two per arm, on the same case. Isolation via stateless subagent invocations with no access to this conversation, `.acm/`, git history, sibling runs, or any prior results file. Both contracts supplied verbatim rather than summarized, which is the correction that made the previous comparison valid. One blinded judge received all four outputs in shuffled order with no arm labels.
+
+The central methodological repair from the previous run was carried: the judge was given the **verbatim case text** as its sole ground truth and required to quote the source before alleging any invention. Last run's paraphrased brief manufactured two false fabrication findings. This run produced zero invalid findings, and the judge opened by pre-clearing the exact phrases that were falsely flagged before.
+
+*Purpose lens:* the experiment exists to decide whether a measured deficit is a property or noise. n=1 could not answer that, and no amount of re-reading the artifacts would have.
+*Inconsistency lens:* two grounding measures disagree - a countable one and a holistic one - and the disagreement is itself informative rather than a defect to be resolved by picking one.
+*Overburden lens:* a single judge is carrying the entire reflection-depth ranking. That is the weakest joint in this run and is named as the blind spot below.
+
+### Decision
+
+[!DECISION] Treat the reflection-depth gap as a property of the contracts rather than run-to-run variance, and treat the grounding advantage as real on average but not categorical. Record the kernel wording change as authorised-by-evidence but deliberately unmade, so that it is tested against this baseline rather than folded into the run that justified it.
+
+Rejected alternatives: make the kernel edit now, in the same iteration (would destroy the controlled baseline the edit needs to be measured against); declare the replication inconclusive because only one judge ranked reflection (ignores that two countable, judge-independent measures separate the arms perfectly); widen to n=3 per arm before concluding (the mechanical measures already separate cleanly at 2/2 versus 0/2, so more runs would buy precision on a question already answered).
+
+**Prediction:** if the gap was variance, the arms would interleave on reflection depth as they do on grounding rank. If it was a property, production would take the top slots.
+
+### Action and Outcome
+
+**Reflection depth, judge ranking best first: Production, Production, Layered, Layered.** Clean separation. The prediction's property-branch held.
+
+The gap has a nameable mechanism rather than a diffuse one. Two countable behaviours separated the arms perfectly, independent of the judge's holistic call:
+
+- within-iteration [!REVERSAL] marked: production 2/2, layered 0/2
+- retrospective across-run reflection performed: production 2/2, layered 1/2
+
+Both are exactly the places where production carries an explicit imperative mandate (reversal marking; four-trigger evaluation with per-trigger evidence, bare "N/A" forbidden) and the kernel carries softer prose. Both production reversals were substantive - one caught that queue prioritisation "necessarily deprioritises something, and the something would be genuinely harmful content."
+
+**Grounding: replicated on count, not on rank.** Material unsupported claims came to layered 2 total, production 6 total, reproducing the n=1 ratio of 1:3 almost exactly. But the judge's holistic grounding rank interleaved the arms - best and worst came from different arms, and so did second and third. The honest reading is that layering improves grounding on average and at the tail without producing categorical separation.
+
+**Routing: 2/2 again, cumulative 4/4.** Both layered evaluators named exactly the two firing protocols, quoted the evidence, and rejected all four distractors, again refusing the discriminating distractor on the correct ground that an absent surface is not an invalid one.
+
+**Unpredicted finding.** The kernel's staleness repair is directionally incomplete. Its sentence "missing Orientation context is not evidence that it is stale" blocks over-claiming in one direction only; one layered run converted the same absence into the positive conclusion "Orientation is not stale, so no refresh is owed." The other layered run handled it correctly and both production runs declared it undetermined or unevaluable. This is a precision defect in the kernel's own wording, found by a run not looking for it, and separable from the reflection question.
+
+Also unpredicted: the arm that lost on reflection depth produced what the judge independently assessed as the best-supported decision in the set. Reflection depth, grounding discipline, and decision quality dissociated three ways in a single run.
+
+### Reflection
+
+**Falsifiable claim about the target's current state:** the layered kernel's deficit relative to production is confined to explicitly-mandated reflection behaviours, and is recoverable by strengthening obligation wording rather than by restoring byte weight. A future run can overturn this by strengthening that wording and finding the gap persists, which would relocate the cause to something structural about conditional loading itself.
+
+**Named blind spot:** one judge. The reflection ranking is a single holistic judgement with no countable backing. I am treating the conclusion as durable only because two mechanical measures - reversal marking and retrospective reflection presence - separate the arms without the judge's opinion entering. Had only the holistic rank separated, this would not have been enough, and I would be over-reading it. Second blind spot: all four outputs used the same lens vocabulary, which the judge correctly flagged as shared scaffolding rather than independent corroboration; I inherited that constraint and did not control for it.
+
+**Imagined-reader pushback:** someone who runs experiments would say n=2 per arm is still small, that a clean 2-0 split has a high probability of occurring by chance, and that I am declaring a property on four data points. That is fair for the holistic ranking. My answer is that the load-bearing evidence is not the ranking but the two behavioural counts, which are deterministic observations of whether a specific contract-mandated act occurred, not judgements of degree - and that the mechanism they implicate was predicted in advance by the prior orientation rather than fitted afterwards.
+
+[!REALIZATION] Grounding discipline, reflection depth, and decision quality are three dissociable dimensions, not facets of one "reasoning quality." This run separated all three: the best-grounded arm produced the best decision and the thinnest reflection, while the worst-grounded output produced the second-deepest reflection. The blinded judge reached the same conclusion unprompted. Any future claim that one contract "reasons better" than another is under-specified until it names which of the three it means.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired - this run tested a hypothesis rather than fixing a defect, and it breaks the run of five consecutive harness-fidelity findings rather than extending it.
+- *About to declare silence:* not fired - a material finding survived and a decision was recorded.
+- *Contradicts prior [!REALIZATION]:* partially fired - the prior orientation's claim 2 asserted both a reflection deficit and a grounding advantage for layering. The reflection half is confirmed and strengthened; the grounding half is weakened from categorical to on-average, because this run's holistic measure interleaved the arms where n=1 had separated them. Recorded as a narrowing, not a reversal.
+- *Operator explicitly asked:* not fired as an arc-level question - the operator authorized the specific next move rather than asking for an arc read.
+
+### Across-trail macro-Hansei
+
+One trigger fired partially, so the macro read was performed against claim 2 specifically rather than the whole arc.
+
+The prior orientation predicted this outcome and wrote its own falsifier before the evidence existed. That is the first time in this arc a claim has been stated with a pre-registered refutation condition and then tested against it without the condition being adjusted afterwards. The result is that claim 2 can now be reported as surviving a genuine attempt to kill it, which is a materially stronger epistemic position than any earlier claim in this trail occupies - including several that were merely never contradicted.
+
+The arc's dominant error source also shifted. The last five entries traced their limiting defect to harness fidelity. This run's harness held: isolation was genuine, the verbatim-case correction worked, and the judge caught nothing that had to be annulled. That does not retire claim 8, but it is the first evidence since it was raised that the repairs are landing and that instrument quality is no longer automatically the binding constraint.
+
+What only the arc reveals: this loop has repeatedly discovered that its measurements were weaker than its confidence, and has corrected each instance. The correction that mattered most was not any single fix but the standing rule to compare only at equal fidelity and to quote before accusing. Those two rules, both born from failures, are what made this run's result trustworthy enough to unlock a contract change.
+
+Orientation freshness: STALE - the orientation's top-priority next move is complete, its gate on the kernel wording change is discharged, and claim 2's grounding half needs narrowing to match this evidence. The map still explains the trail but no longer describes the current state. Automatic Orient scheduled.
+
+### Candidate Next Moves
+
+1. Strengthen the kernel's reflection wording to mandate reversal marking and per-trigger evidence in imperative form, then re-run against this baseline - the gate is discharged and this is the change the whole comparison was built to justify.
+2. Repair the kernel's staleness sentence so it blocks over-claiming in both directions, since this run found the defect and it is independent of the reflection question.
+3. Test routing under overlapping or ambiguous triggers, which remains the last untested condition for the mechanism now at 4/4 under separated ones.
+## 2026-08-02 - orient-after-replication-n2
+
+- target: .acm/orientation.md
+- operator: Nils Wendelboe Holmager
+- agent: GitHub Copilot
+- skill: orient
+- outcome: claim 2 replicated and split - reflection half confirmed categorically, grounding half narrowed to on-average; kernel wording gate discharged
+- delta: claims 2, 4, 7, 8 updated; claims 7b and 9 added; next-runs list reordered around the now-unlocked kernel change
+
+### Scope and trigger
+
+Scheduled by the preceding Improve entry, which declared orientation STALE on specific evidence: the map's top-priority next move was complete, its gate on the kernel reflection-wording change was discharged, and claim 2's grounding half no longer matched the evidence. The map still explained the trail but had stopped describing the current state.
+
+Freshness gate: 230 entries, 60 recent plus 194 archived markers, `verify.py` green. This gate is the first in three Orient runs that is **not** vacuous - the entry-recognition repair means the newest entry is confirmed present in the derived index and the count incremented as expected. Prior gates certified only what the parser recognised.
+
+### What the arc now shows
+
+**Claim 2 was tested against its own pre-registered falsifier and split in half.** The reflection deficit replicated with clean arm separation at n=2 per arm; the grounding advantage replicated on the countable measure (2 versus 6 material unsupported claims) but the holistic rank interleaved the arms. Recorded as confirmation of one half and narrowing of the other, not as a reversal of either.
+
+The more useful result is that the deficit stopped being diffuse. Two countable, judge-independent behaviours separated the arms perfectly - marked reversals at 2/2 versus 0/2, and retrospective across-run reflection at 2/2 versus 1/2 - and both sit exactly where production states an imperative and the kernel states prose. Claim 4 was strengthened accordingly: obligation wording buys an observable act within a single model context, even though prohibition wording does not buy grounding.
+
+**Two claims were added.** Claim 7b records a precision defect found incidentally: the kernel's staleness repair blocks over-claiming in one direction only, and one layered evaluator duly over-claimed in the other. Claim 9 records that grounding, reflection depth, and decision quality dissociated three ways in a single run - which retroactively weakens several earlier claims in this trail that spoke of "reasoning better" without naming a dimension.
+
+**Claim 8 gained its first contrary evidence.** Five consecutive entries traced their limiting defect to harness fidelity. This run's harness held on every axis that had previously failed. The claim is not retired on one clean run, but the repairs are landing.
+
+### Reflection
+
+**Falsifiable claim about the target's current state:** the suite's open question is no longer whether the compressed contract is safe or whether the instruments are trustworthy, but whether the one measured deficit can be closed without giving back the saving that motivated compression. A future run overturns this by finding a new instrument defect large enough to invalidate the replication, or by discovering a further behavioural deficit the replication did not measure.
+
+**Named blind spot:** this Orient read `learning.md` and the two most recent entries rather than the full trail, on the grounds that the derived surfaces are now trustworthy. That trust is one run old. If the recognition repair has a residual defect in a form the regression test did not cover, this read inherits it and would not detect it - I verified the count incremented, not that every marker resolved to the right entry.
+
+**Imagined-reader pushback:** someone would say I have written a great deal of orientation on the strength of four evaluator runs and one judge, and that "clean arm separation" across two runs per arm is a coin-flip result. Fair for the holistic ranking, which is why the load-bearing evidence in claim 2 is the behavioural counts rather than the rank, and why item 1 of the next-runs list is framed as a cheap refutable test rather than a foregone conclusion.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired - the run broke the five-entry harness-fidelity sequence rather than extending it, which is itself the notable fact and is recorded in claim 8.
+- *About to declare silence:* not fired - substantive claim revisions were made.
+- *Contradicts prior [!REALIZATION]:* fired - the previous orientation's closing realization put the frontier at "is the measurement apparatus trustworthy?" This run's evidence moves it on, and narrows claim 2's grounding half from the categorical form the routing experiment recorded.
+- *Operator explicitly asked:* not fired - Orient was scheduled automatically by the preceding entry, not requested.
+
+### Across-trail macro-Hansei
+
+Reading the arc as one document, the pattern that stands out is that this loop's claims have been getting harder to kill, and only recently on purpose. Most earlier claims were never contradicted, which was read at the time as strength; claim 2 is the first to have been stated with a refutation condition written down in advance, tested against it, and survived in one half while losing the other. That is a different and better epistemic position than "not yet contradicted," and the difference was invisible until a claim was deliberately put at risk.
+
+The governing variable worth naming: this arc has repeatedly treated *absence of contradiction* as evidence. It is not. The correction is now an operational rule - write the falsifier before the experiment and do not adjust it afterwards - and it costs nothing, because the falsifier is already being written into every claim. Only the ordering changed.
+
+Where attention has gone: heavily into instruments for five entries, and that was correct, because the instruments were corrupting the evidence. The risk now is the opposite one - having repaired the harness, the loop could keep polishing it. The next-runs list is deliberately ordered to move attention back onto the contracts, with the two cheapest instrument items (7b repair, verifier coverage) kept but not placed first.
+
+Orientation freshness: current as of this run.
