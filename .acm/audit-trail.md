@@ -10740,3 +10740,515 @@ Per the lighter-weight-pointer convention established earlier in this trail: no 
 
 1. Confirm with the operator which Zenodo release `.zenodo.json`'s metadata is meant to represent before ever editing its iteration count, given the unresolved git-tag/release drift already on record.
 2. If cross-repo consistency on this figure matters to the operator, raise the `pea-website` "200+" copy as a candidate for that repo's own Improve run rather than editing it from here.
+
+## 2026-08-02 - automatic-intent-trail-workflow
+
+- target: PEA skill composition contract and newcomer workflow
+- operator: Nils Wendelboe Holmager
+- agent: GitHub Copilot
+- skill: improve (with automatic intent and trail)
+- outcome: Intent and Trail became explicit automatic services around a three-command deliberate workflow; Destination and Orient gained start/change and evidence-based cadence guidance
+- delta: suite v4.25.2 -> v4.26.0; six skill contracts, README, QUICKSTART, INSTALLING, and both installers aligned
+
+### Interpretation of the ask
+
+The operator clarified the desired operating model: users should never have to think about invoking Intent or Trail because both should always apply; Destination belongs at the start of work and whenever direction changes; Orient should run periodically between groups of iterations. The requested Improve run therefore had to change both the executable natural-language contracts and every newcomer-facing surface, while keeping Destination and Orient deliberate and preserving Probe as advanced validation.
+
+### Examination
+
+The six skills were structurally separate, but their composition language still exposed orchestration to the user. Improve delegated to Intent and Trail only "if installed"; Destination, Orient, and Probe conditionally delegated only to Trail; Intent described optional composition; Trail described standalone use without naming itself as the suite's automatic egress service. README presented all capabilities as peers, INSTALLING listed all six slash commands equally, QUICKSTART told users to invoke `/intent` after a composition failure, and both installers printed the same six-command list.
+
+The controlling boundary is the skill contract, not only the docs: changing README alone would create a promise that skill executions did not enforce. Historical evidence also ruled out copying Intent or Trail logic into every workflow skill; prior duplicated Trail implementations drifted, while the separate canonical protocol supports independent-writer mode.
+
+### Decision
+
+[!DECISION] Keep all six capabilities separate, but divide their operating roles explicitly: Destination, Improve, and Orient are the normal deliberate workflow; Intent is automatic ingress; Trail is automatic egress; Probe is advanced validation. Every deliberate or advanced skill applies Intent before reasoning and Trail after substantive output. Standalone installations retain a local fallback when a sibling skill is unavailable.
+
+Rationale: this removes user orchestration without merging ownership boundaries. Destination remains operator-held direction, Improve remains the only target-changing loop, Orient remains an arc-read, and Trail remains one canonical append protocol with an independent-writer escape hatch.
+
+Alternative rejected: merge Intent and Trail into Improve. This would leave Destination, Orient, Probe, consequential conversations, and independent-writer mode without a canonical service, while recreating the implementation-drift problem already present in the trail.
+
+Alternative rejected: make Orient run after a fixed number of Improve iterations. Iteration count is a weak proxy for whether enough evidence has accumulated to support an arc-level claim; evidence-triggered cadence preserves judgment and avoids ceremony.
+
+Precedent check: the prior learning and trail evidence about duplicated inline Trail implementations, independent-writer mode, and the 2026-05-23 `harness-dir-separation` entry all support separating user-facing simplicity from underlying capability separation. No prior realization argued that all six capabilities should remain equal user commands.
+
+### Prediction
+
+After the change, a newcomer reading README, QUICKSTART, INSTALLING, or installer output will derive the same three-action workflow. Destination, Improve, Orient, and Probe will explicitly apply Intent before reasoning and Trail after substantive output without asking the user. Standalone fallback will remain possible, no target-changing responsibility will move out of Improve, and `python verify.py` will remain green.
+
+### Action
+
+Updated all six skill contracts and bumped their versions. Intent now declares automatic ingress; Trail declares automatic egress and its direct-use escape hatches; Destination, Improve, Orient, and Probe apply both services automatically and preserve standalone fallbacks. Destination now names work start and direction change as invocation moments. Orient now names periodic, evidence-triggered cadence without a universal iteration count.
+
+Reorganized README into deliberate workflow, automatic services, and validation. Updated QUICKSTART and INSTALLING to teach the same three-command workflow and identify manual Intent/Trail invocation as diagnostic or standalone use. Updated both installer completion messages after a contradiction scan found they still presented all six commands equally. Added the v4.26.0 CHANGELOG entry.
+
+Validation: `python verify.py` passed after each edit group; `git diff --check` found no whitespace errors; the PowerShell parser accepted `install.ps1`; a focused contradiction grep returned no stale orchestration wording; VS Code diagnostics found no errors in the six skill files or installers. Bash syntax validation could not run because this Windows environment has no Bash or WSL executable. Existing Markdown lint warnings remain in older untouched regions of README, QUICKSTART, and INSTALLING.
+
+Outcome matched the prediction. One late finding widened the documented surface from ten to twelve files: installer output is part of the newcomer workflow and had to be aligned too.
+
+### Reflection
+
+Falsifiable model claim: the suite now has one public operating model across its contracts, docs, and installer output - three deliberate workflow actions, two automatic memory services, and one advanced validation capability. A future run can disprove this by finding any live first-party surface that instructs a normal user to invoke Intent or Trail as a routine step or presents all six capabilities as equivalent commands.
+
+Named blind spot: this iteration validates the natural-language contracts and static surfaces, not host-specific skill dispatch behavior. A real cold-session run is still needed to prove that an installed host consistently composes Intent and Trail without operator prompting.
+
+Imagined-reader pushback: "Calling services automatic in prose does not make composition structurally guaranteed." Correct. Within a prompt-defined skill suite, the contract is the executable mechanism available here; host-level middleware would provide a stronger guarantee but is outside this repository's current integration boundary. The cold-session test is therefore material evidence still owed, not a wording detail.
+
+[!REALIZATION] Installer completion text is part of the product contract. The first full-doc pass still missed two lines that would have taught the old six-command model at the exact moment a user begins. The contradiction scan, rather than file taxonomy, exposed the real boundary.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED - the installer leak is another instance of the trail's recurring documentation-drift class: an architectural change propagated through obvious docs but initially missed an adjacent user-facing reference.
+- *About to declare silence:* not fired - a substantive composition redesign was implemented, and cold-session behavioral validation remains open.
+- *Contradicts prior [!REALIZATION]:* not fired - this extends the established lesson that public entry points and infrastructure need separate placement but synchronized claims.
+- *Operator explicitly asked:* FIRED - the operator explicitly specified the automatic-service model and asked for Intent interpretation plus Improve.
+
+**Across-trail macro-Hansei**
+
+[!REALIZATION] The suite's complexity problem was not six separate capabilities; it was exposing six capabilities as six operator responsibilities. Earlier iterations repeatedly simplified placement and wording while preserving evidence machinery underneath. This change applies the same pattern to runtime composition: keep distinct ownership boundaries, collapse the user's required control surface. The recurring drift risk now moves to any surface that enumerates skills without also naming their operating role.
+
+### Candidate Next Moves
+
+1. Run a cold-session installation test in a fresh target: invoke Destination once, then Improve without naming Intent or Trail, and verify both interpretation narration and a durable trail entry appear automatically.
+2. Add a lightweight verifier rule that flags first-party wording which presents `/intent` or `/trail` as routine workflow commands, preventing the old taxonomy from returning.
+
+## 2026-08-02 - destination-orientation-run-mindset
+
+- target: PEA newcomer mental model and Probe's operating boundary
+- operator: Nils Wendelboe Holmager
+- agent: GitHub Copilot
+- skill: improve (with automatic intent and trail)
+- outcome: reduced the normal user's conceptual surface to Destination, Orientation, and Run; moved Probe fully outside the operational workflow as optional ARF research instrumentation
+- delta: suite v4.26.0 -> v4.26.1; README, QUICKSTART, INSTALLING, installer output, and probe/SKILL.md aligned
+
+### Interpretation of the ask
+
+The operator confirmed the architectural direction and sharpened its user-facing consequence: a new user should only need to understand Destination, Orientation, and Improve as the run/go action. Intent and Trail should disappear into automatic behavior. Probe must remain available to measure ARF, but only for scientific work and without becoming a prerequisite for the other skills. "Please continue" meant carry the prior Improve iteration through this remaining conceptual simplification, not rename or remove capabilities.
+
+### Examination
+
+README's newly added workflow table was directionally correct, but the longer "Why These Skills Exist" section still numbered Intent and Trail as peer concepts. A newcomer therefore encountered a three-command workflow and a five-concept explanation in the same document. INSTALLING.md contained a stronger contradiction: "Minimum install" recommended starting with Intent alone, while "Full install" framed all six skills equally before later calling Probe optional. Quickstart and installer output still described Probe as general advanced validation rather than research-only ARF instrumentation.
+
+Purpose lens: the public entry points did not yet achieve the operator's desired low-cognitive-load onboarding. Inconsistency lens: operational capabilities, user-facing concepts, and scientific instrumentation were mixed at the same level. Overburden lens: no capability was overburdened; the burden sat on the new user's mental model. Waste lens: the five-part README tour repeated automatic mechanics the user does not need to operate.
+
+### Decision
+
+[!DECISION] Teach exactly three user-facing ideas: Destination (where are we going), Orientation (where are we now), and Run (use Improve to move forward). Keep the command and skill names `/destination`, `/orient`, and `/improve`; do not rename Orient or Improve. Define five operationally installed capabilities under that model, with Intent and Trail automatic, while classifying Probe as a sixth optional scientific instrument that no operational skill requires or invokes.
+
+Rationale: concept names can express the operator's mindset without destabilizing existing command names or links. Distinguishing installed capability count from user concept count preserves automatic composition while removing cognitive load.
+
+Alternative rejected: rename the skills to Orientation and Run. This would create migration cost and cross-reference churn without improving the actual operating model; the current verbs remain appropriate command names.
+
+Alternative rejected: remove Probe from the repository or one-line installer. Reproducible ARF measurement is still part of the suite's research evidence. Being installed but inert unless explicitly invoked does not burden normal use once the documentation makes that boundary clear.
+
+Precedent check: `.acm/learning.md`'s newest realization from `automatic-intent-trail-workflow` states that the defect was exposing six capabilities as six operator responsibilities and recommends collapsing the required control surface while preserving ownership boundaries. This decision applies that precedent one layer further and does not contradict it.
+
+### Prediction
+
+After the edit, README, Quickstart, INSTALLING, and both installer completion messages will all teach Destination, Orientation, and Run. No first-party entry surface will recommend Intent as a starting skill, present six equal workflow skills, or describe Probe as general advanced validation. Probe's own metadata will state that it is optional ARF research and not required by the other five skills. Repository verification and PowerShell syntax parsing will remain green.
+
+### Action
+
+Reframed README's opening, skill table, conceptual explanation, workflow summary, and Probe description around Destination, Orientation, and Run. Replaced the numbered Intent/Destination/Trail/Improve/Orient tour with three concept sections and moved Intent, Trail, and Probe into one subordinate statement.
+
+Changed Quickstart's manual-copy path to five operational folders plus optional Probe. Replaced INSTALLING.md's Intent-only minimum with a five-capability operational install and separated the Probe-added research install. Updated both installer completion messages. Tightened Probe's frontmatter and body to state that it is optional scientific instrumentation, not part of normal development, and neither required nor invoked by the other skills. Added the v4.26.1 changelog entry.
+
+Validation: `python verify.py` passed; `git diff --check` found no whitespace errors; PowerShell parsed `install.ps1`; a stale-taxonomy scan returned zero matches; an affirmative scan found the three-part model and optional-ARF boundary across all intended entry surfaces. VS Code found no errors in Probe or either installer. Existing Markdown style diagnostics in older untouched fence, blockquote, table, and list regions remain outside this change.
+
+The prediction held.
+
+### Reflection
+
+Falsifiable model claim: a new user can now operate the suite with three ideas only - Destination, Orientation, and Run - even though five capabilities collaborate underneath; Probe is absent from that operating model and exists only for controlled ARF research. This claim is false if a first-party onboarding surface asks the user to learn Intent or Trail as a routine action, or implies Probe is needed for any operational skill.
+
+Named blind spot: static documentation alignment does not prove that host-side automatic skill discovery will reliably load Intent and Trail when only `/destination`, `/orient`, or `/improve` is invoked. The same cold-session behavioral test remains outstanding.
+
+Imagined-reader pushback: "Installing Probe by default still exposes it in the slash-command list, so it is not truly outside the newcomer surface." That is a real product tradeoff. The current choice favors a complete one-line research-capable install while making Probe inert and explicitly optional. If command-list visibility itself proves confusing in a cold test, the installer should gain an explicit research flag rather than relying on prose.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired - this is a direct refinement of the immediately preceding newcomer-taxonomy iteration, not a separately rediscovered instance.
+- *About to declare silence:* not fired - static wording converged, but cold-session composition and command-list visibility remain untested.
+- *Contradicts prior [!REALIZATION]:* not fired - directly extends the newest realization about collapsing operator responsibilities while retaining capability boundaries.
+- *Operator explicitly asked:* FIRED - the operator explicitly defined the three concepts, automatic services, and Probe's scientific-only role, then asked to continue.
+
+**Across-trail macro-Hansei**
+
+[!REALIZATION] The smallest honest description of the suite has three layers with different counts: three concepts for the user, five capabilities for operation, six capabilities for research. Previous descriptions kept collapsing these counts into one taxonomy, which forced either infrastructure or instrumentation into the user's mental model. Naming the layers separately resolves that tension without deleting functionality.
+
+### Candidate Next Moves
+
+1. Run a cold-session onboarding test and observe whether the installed slash-command list makes Probe feel like a required fourth concept despite the revised docs.
+2. If that test shows confusion, add an installer switch that omits Probe by default and includes it only for research installations.
+
+## 2026-08-02 - probe-opt-in-research-install
+
+- target: default skill installation surface
+- operator: Nils Wendelboe Holmager
+- agent: GitHub Copilot
+- skill: improve (with automatic intent and trail)
+- outcome: default installers now expose only the five operational capabilities; Probe requires an explicit research opt-in
+- delta: suite v4.26.1 -> v4.26.2; install.ps1 adds -Research, install.sh adds --research, entry docs aligned
+
+### Interpretation of the ask
+
+The operator said "please continue" after the prior iteration named cold-session command visibility as the top next move. Interpreted as: continue reducing the newcomer's actual command surface, not merely its documentation. The concrete unresolved question was whether installing Probe by default contradicted its new scientific-only role by exposing `/probe` alongside the operational commands.
+
+### Examination
+
+Both installers unconditionally included `probe` in their skill arrays. On a fresh install, VS Code would therefore discover `/probe` at the same level as `/destination`, `/orient`, and `/improve`, despite README, QUICKSTART, INSTALLING, and Probe itself saying it was outside normal use. No installer tests existed in the harness. The cheapest discriminating check was an isolated installation into temporary directories and exact comparison of installed folder names.
+
+Purpose lens: the executable default contradicted the three-concept onboarding purpose. Inconsistency lens: documentation classified Probe as opt-in while installation made it opt-out only by manual copying. Overburden lens: every normal user inherited one research command they did not need. Waste lens: no other installed capability could be omitted because Intent and Trail are automatic dependencies and Destination, Orient, and Improve are the operating surface.
+
+### Decision
+
+[!DECISION] Install the five operational capabilities by default and add an explicit research mode that includes Probe: `-Research` for PowerShell and `--research` for shell.
+
+Rationale: installation determines the discovered command surface. An optional scientific instrument should require an explicit scientific-use choice rather than relying on prose to explain why a visible command can be ignored.
+
+Alternative rejected: continue installing Probe by default but hide it only in documentation. This leaves the executable product contradicting the newcomer model and was the exact blind spot identified by the prior iteration.
+
+Alternative rejected: remove Probe from the installers entirely. Researchers still need a complete, reproducible installation path; one opt-in flag preserves that without burdening normal use.
+
+Precedent check: the newest `.acm/learning.md` realization distinguishes three concepts, five operational capabilities, and six research capabilities. Default-five plus research-six directly implements that distinction. No precedent requires all repository skills to be copied by the default installer.
+
+### Prediction
+
+A fresh default PowerShell install will contain exactly `destination`, `improve`, `intent`, `orient`, and `trail`; a `-Research` install will add exactly `probe`. Documentation will expose equivalent `--research` and `-Research` paths. Repository verification, whitespace checks, and PowerShell parsing will remain green. Existing installations will not have directories deleted automatically.
+
+### Action
+
+Changed `install.ps1` to build the five-skill operational list and append Probe only when `-Research` is present. Changed `install.sh` to parse an optional target plus `--research` in either order, reject a second positional argument, and append Probe only in research mode. Both installers now report whether Probe was omitted or installed.
+
+Executed `install.ps1` twice in isolated temporary directories. The default result was exactly `destination, improve, intent, orient, trail`; research mode was exactly `destination, improve, intent, orient, probe, trail`. Temporary files were removed after assertion. Updated README, QUICKSTART, INSTALLING, and CHANGELOG for v4.26.2.
+
+Validation: `python verify.py` passed; `git diff --check` found no whitespace errors; PowerShell parsed `install.ps1`; VS Code found no installer errors; contradiction search found no stale claim that default installation includes Probe. The shell diff was reviewed for argument-order and error-path behavior, but `install.sh` could not be executed because this Windows environment has only the WSL relay `bash.exe` and no installed Linux or Git Bash runtime.
+
+The prediction held for every locally executable check. The non-deletion clause also held: installers copy selected skills and do not remove existing directories.
+
+### Reflection
+
+Falsifiable model claim: on a fresh installation, the visible skill set now matches the architecture's operational boundary - five installed capabilities support three user-facing concepts, and the sixth capability appears only after an explicit research choice. This is false if either default installer creates `probe/` or if any operational skill requires it.
+
+Named blind spot: the shell research mode was not runtime-tested, and no host-level VS Code session was launched against the temporary default install to observe the rendered slash-command list. Folder discovery is inferred from VS Code's documented one-level skill discovery and this repo's own installation model.
+
+Imagined-reader pushback: "A previous all-six installation retains Probe after rerunning the new default installer." Correct. The installers intentionally do not delete existing skill folders because that could destroy local modifications. This change guarantees the fresh/default surface, not destructive migration of existing installs; an existing user can remove `probe/` explicitly if desired.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired - this closes the immediately prior iteration's named installer blind spot rather than rediscovering the taxonomy defect independently.
+- *About to declare silence:* not fired - host-level command rendering and shell runtime execution remain untested.
+- *Contradicts prior [!REALIZATION]:* not fired - directly implements the newest three/five/six layer distinction.
+- *Operator explicitly asked:* not fired - "please continue" delegated next-move selection; the installer change was inferred from the prior ranked candidate rather than specified directly.
+
+### Candidate Next Moves
+
+1. Test a fresh five-skill installation in an actual VS Code session and confirm that only Destination, Orient, and Improve need deliberate invocation while Intent and Trail compose automatically.
+2. Run both `install.sh` modes in a Linux CI job or Bash-capable environment to close the remaining platform validation gap.
+
+## 2026-08-02 - passive-evidence-triggered-orientation
+
+- target: Orientation scheduling architecture and operator workflow
+- operator: Nils Wendelboe Holmager
+- agent: GitHub Copilot
+- skill: improve (with automatic intent and trail)
+- outcome: Orientation became a passive evidence-triggered service; the normal operator workflow reduced to Destination plus Run
+- delta: suite v4.26.2 -> v4.27.0; destination 2.4.0 -> 2.5.0, improve 3.14.0 -> 3.15.0, orient 2.5.0 -> 2.6.0
+
+### Interpretation of the ask
+
+The operator proposed that Orientation is inherently passive and should not be another responsibility placed on the user, provided the architecture knows when to run it. Two examples carried the intent: orientation becomes stale when Destination changes, and it becomes stale when many Improve iterations accumulate without an arc-read. Interpreted as: reduce the deliberate workflow to Destination plus Improve/Run, and make Orient an automatic evidence-triggered control function. Rejected the literal alternative of a fixed iteration threshold because the operator said "when it makes sense" and the suite already rejects arbitrary cadence metrics.
+
+### Examination
+
+The existing contracts made Orient deliberate. Destination updated direction but did not refresh the map derived against the prior direction. Improve read orientation but had no scheduling responsibility. README, Quickstart, INSTALLING, and installer output therefore taught `/orient` as a third routine command.
+
+The current `.acm/orientation.md` provided direct historical evidence for the defect: its 2026-08-01 loop-effectiveness note said twelve entries accumulated and Orient ran only after the operator explicitly asked "how close are we to the destination." Its second next move was to test whether the loop could initiate an Orient arc-read on its own. Four more architectural iterations then accumulated in this session without an Orient run.
+
+Purpose lens: passive orientation matches Orientation's observational authority. Inconsistency lens: automatic Intent and Trail surrounded a still-manual derived-state refresh. Overburden lens: the operator was responsible for noticing internal map staleness the architecture can observe itself. Waste lens: a fixed periodic command would add ceremony on runs with no meaningful arc to synthesize.
+
+### Decision
+
+[!DECISION] Make Destination and Improve own evidence-triggered Orient scheduling. Destination schedules Orient after a material destination revision and durable Trail entry. Improve evaluates orientation freshness before its Trail entry, records the result in that append-only entry, then invokes Orient after durability when the trigger fires. Orient remains passive, derived, and non-target-changing; manual `/orient` remains a diagnostic override.
+
+Triggers are qualitative and evidence-bearing: material destination change; a meaningful arc of repeated findings, reversals, failed predictions, diverging candidates, or sustained attention; recent evidence contradicting current orientation; or approaching multi-iteration convergence. Elapsed iteration count alone is never sufficient rationale.
+
+Rationale: the actions that mutate Orientation's inputs are the nearest reliable scheduling owners. This creates automatic behavior without pretending markdown skills have a clock or host middleware.
+
+Alternative rejected: run Orient after every fixed number of Improve entries. Count is only a weak proxy for whether sequence-level evidence exists and would turn reflection into ritual.
+
+Alternative rejected: fold arc-reading into every Improve run. That would erase Orient's distinct whole-arc abstraction and impose its high token cost on iterations where no synthesis is earned.
+
+Precedent check: the current orientation itself names failure to self-initiate Orient as the open hard-problem test; recent learning says to preserve capability boundaries while collapsing operator responsibilities. The decision implements both precedents and contradicts neither.
+
+### Prediction
+
+Destination, Improve, and Orient will define one append-safe scheduling protocol; public entry points and installer output will teach only `/destination` and `/improve` as routine actions; `/orient` will remain available as an override. A stale-taxonomy scan will find no instruction to run Orient periodically. This run's own freshness check will fire from the accumulated architecture arc and trigger the first automatic Orient run under the new protocol. Repository verification will remain green.
+
+### Action
+
+Added Destination step 7: after a material destination change and durable Trail record, automatically run Orient against the changed direction. Added Improve's orientation-freshness evaluation before Trail, including the mandatory freshness line, and a post-durability handoff step. Added Orient's passive-service contract, automatic trigger provenance, and manual-override boundary.
+
+An initial draft placed the freshness evaluation after Trail durability while requiring its result inside the existing entry. [!REVERSAL] Focused validation exposed that append-only ordering contradiction before documentation changed. Moved evaluation before Trail and kept only the actual Orient handoff after durability.
+
+Updated README, QUICKSTART, INSTALLING, both installer messages, and CHANGELOG v4.27.0. The default PowerShell installer was executed in a temporary directory and printed exactly two actions plus automatic Orientation while installing the expected five capabilities. `python verify.py`, `git diff --check`, PowerShell parsing, and focused diagnostics passed. A stale-workflow scan found no normal instruction to invoke Orient periodically; its matches were explicit prohibitions and diagnostic-override wording.
+
+Outcome matched the prediction through the scheduling decision. The automatic Orient handoff follows this durable entry.
+
+### Reflection
+
+Falsifiable model claim: the architecture now has two deliberate operator actions (Destination and Run) and three automatic control services (Intent, Trail, Orientation). Orientation refreshes because its evidence changed, not because the operator remembered a maintenance command or a counter expired. This is false if a material destination change or meaningful accumulated arc can pass through the new contracts without an Orient scheduling evaluation.
+
+Named blind spot: natural-language scheduling still depends on the executing model recognizing qualitative evidence correctly. No host-level middleware enforces the freshness check, and "meaningful arc" can still be under- or over-triggered by model judgment.
+
+Imagined-reader pushback: "Without a numeric threshold this is not architecture; it is another instruction the model can ignore." The pushback is valid about enforcement strength. A fixed number would be mechanically enforceable but semantically wrong. The skill contract supplies the decision boundary available at this layer; structural middleware can later enforce that the evaluation occurred without replacing its qualitative judgment with a count.
+
+Orientation freshness: STALE — four consecutive iterations changed composition, newcomer taxonomy, and installation boundaries after an already-old orientation explicitly named failure to self-initiate Orient as an open test; automatic Orient scheduled.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED - four consecutive iterations reduced operator-facing responsibilities by moving support capabilities behind automatic boundaries.
+- *About to declare silence:* not fired - a behavioral architecture change was made and its automatic Orient handoff is still executing.
+- *Contradicts prior [!REALIZATION]:* not fired - extends the recent control-surface realizations and directly answers orientation.md's open self-initiation test.
+- *Operator explicitly asked:* FIRED - the operator explicitly proposed passive Orientation with architecture-owned triggers and asked for intent understanding.
+
+**Across-trail macro-Hansei**
+
+[!REALIZATION] The arc's repeated simplifications reveal a stronger architecture than the earlier three/five/six count: capability count and operator action count are independent. Destination and Improve are the only deliberate control inputs; Intent, Trail, and Orientation are feedback infrastructure. Probe remains external instrumentation. The suite's public model should be organized by agency - what the operator decides versus what the system maintains - rather than by how many skill files exist.
+
+### Candidate Next Moves
+
+1. Use the automatically scheduled Orient run to test whether the last five entries form a coherent architecture or merely a sequence of locally plausible taxonomy edits.
+2. In a future fresh target, observe whether qualitative orientation scheduling under-triggers or over-triggers before considering any host-level enforcement mechanism.
+
+## 2026-08-02 - orient-passive-control-surface-arc
+
+- target: PEA operating-model arc after automatic-service redesign
+- operator: Nils Wendelboe Holmager
+- agent: GitHub Copilot
+- skill: orient (automatically scheduled by Improve orientation-freshness trigger)
+- outcome: confirmed one coherent agency migration and refreshed orientation around two deliberate actions, three automatic services, and optional research instrumentation
+- delta: .acm/orientation.md rewritten from run 206 arc; first self-scheduled Orient case recorded
+
+### Interpretation of the ask
+
+Improve run `passive-evidence-triggered-orientation` marked Orientation stale and automatically scheduled this arc-read after its Trail entry became durable. Scope inherited from that trigger: determine whether runs 203-206 form a coherent architecture or merely a sequence of locally plausible taxonomy edits, measured against the destination's immediate simplicity/adoption priority and longer trustworthy-delegation question.
+
+### Freshness check
+
+- `python harness/tools/record.py history --write` -> 206 entries.
+- `python harness/tools/record.py learning --write` -> 60 recent + 163 archived markers.
+- `python verify.py` -> OK, trail integrity checks pass.
+- Gate: PASS (arc-claims allowed).
+
+### Arc claims
+
+1. Runs 203-206 are one migration of agency: Intent and Trail moved behind automatic boundaries, Probe moved outside operation, and Orientation moved from routine command to passive evidence-triggered state maintenance.
+2. The stable operating boundary is two deliberate actions (Destination and Run), three automatic control services (Intent, Trail, Orientation), and one optional research instrument (Probe).
+3. This run directly closes the prior orientation's named open test: the loop initiated an arc-read from its own stale-evidence decision rather than waiting for `/orient`. The evidence is one situated pass at the instruction layer, not proof of host-level enforcement or cross-target calibration.
+4. Evidence-based cadence is more faithful than a numeric interval, but qualitative under- and over-triggering is now the main operational uncertainty.
+5. The arc improves adoption readiness by reducing cognitive load; it still provides no independent-user adoption evidence.
+
+### Loop-effectiveness finding
+
+Quality bar: can the loop initiate a full arc-read from accumulated evidence rather than waiting for an explicit `/orient` request?
+
+Result: PASS for one situated case. Improve run 206 recorded the stale-orientation rationale before its append-only entry became durable, then invoked this Orient run afterward. A future meaningful arc without a freshness evaluation, or routine Orient invocations after isolated entries, would falsify the claimed scheduling improvement.
+
+Double-loop check: the recurring simplification pattern implicated the governing variable "every capability should be presented as an operator action." The four-run arc replaced it with an agency-based model. No Destination revision is needed because the existing destination already prioritizes immediate simplicity and onboarding speed; the architecture changed to align with it.
+
+[!REALIZATION] Orientation's importance never implied operator agency. Treating every important capability as a command was the governing mistake behind the repeated taxonomy revisions. The architecture now separates authority from maintenance: the operator controls direction and action; the system maintains interpretation, evidence, and situational awareness.
+
+### Action
+
+Rewrote `.acm/orientation.md` with five falsifiable claims, four next tests, active operational rules for append-safe scheduling, and the bounded loop-effectiveness result. Carried forward the prior orientation's adoption-evidence gap and relevant trail-safety rules; retired stale claims tied to the 2026-08-01 arc.
+
+### Reflection
+
+Falsifiable model claim: this suite's architecture is now organized by agency rather than file count. If normal operation still requires the user to schedule Orientation, or if automatic scheduling cannot distinguish meaningful arc evidence from elapsed count, this orientation is wrong.
+
+Named blind spot: all evidence comes from the suite self-targeting under the same operator and session. Cross-target model fidelity, interruption recovery, and host behavior remain untested.
+
+Imagined-reader pushback: "The operator explicitly suggested passive Orientation, so calling the resulting Orient run self-initiated overstates autonomy." The direction change was operator-originated; the scheduling event was architecture-originated. The bounded claim is only that Improve detected and executed the due arc-read without a `/orient` request after the contract existed.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED - runs 203-206 repeatedly moved non-authoritative capabilities out of the operator's routine control surface.
+- *About to declare silence:* not fired - the arc produced a new governing-variable claim and open calibration tests.
+- *Contradicts prior [!REALIZATION]:* FIRED - the immediately prior realization said the smallest honest model had three user concepts; this arc revises that claim because Orientation is important but passive, leaving only two deliberate user actions.
+- *Operator explicitly asked:* FIRED - the operator explicitly proposed passive Orientation and architecture-owned scheduling.
+
+**Across-trail macro-Hansei**
+
+[!REVERSAL] The run-204 model of "three concepts for the user" was a useful plateau but not the stable boundary. The arc shows that conceptual importance and operator responsibility were still conflated. Revised to two deliberate actions plus passive Orientation; retained the underlying capability rather than deleting or weakening it.
+
+### Candidate Next Moves
+
+1. Test Destination + Run on a fresh external target and observe automatic Intent, Trail, and Orientation behavior end to end.
+2. Gather independent-user onboarding evidence before making stronger adoption claims.
+
+## 2026-08-02 - unify-readme-skill-roster-by-activation
+
+- target: README.md skill presentation and reusable skill icons
+- operator: Nils Wendelboe Holmager
+- agent: GitHub Copilot
+- skill: improve
+- outcome: replaced three overlapping skill groupings with one six-skill roster classified as Active, Passive, or Triggered
+- delta: README.md unified; six existing pea-website inline SVG glyphs extracted to assets/skills/
+
+### Interpretation of the ask
+
+The operator's RPG analogy identifies a conceptual-model defect, not merely a table-layout issue: every skill should appear exactly once in a single roster, while activation type explains whether the operator invokes it, it always applies, or it fires automatically under conditions. Rejected the narrower interpretation of only removing Orient's duplicate row because separate operating, service, and validation groupings would still force a newcomer to reconcile competing taxonomies.
+
+### Examination
+
+- **Purpose:** the README should make the six-skill system recognizable by scanning. Splitting skills across three sections obscured the whole and duplicated Orient as both Orientation and an automatic service.
+- **Inconsistency:** the first table classified conceptual roles, the second classified implementations, and Probe sat outside both. These were valid distinctions but incompatible as the primary roster.
+- **Overburden:** Orient carried two identities in adjacent tables, making readers distinguish the Orientation state from the Orient skill before understanding activation.
+- **Waste:** explanatory prose repeated which skills were routine, automatic, or optional after the tables had already attempted to encode those facts.
+
+Challenge to the first read: the website's six SVG icons were not standalone assets; they were inline markup in `pea-website/index.html`. Referencing them directly was impossible, so the exact glyph paths had to be extracted into reusable README assets rather than redrawn.
+
+### Decision and prediction
+
+[!DECISION] Use activation as the only first-contact taxonomy: Active (Destination, Improve, research-only Probe), Passive (Intent, Trail), and Triggered (Orient). Keep all six in one table and explain normal operation beneath it. This ranks above a local Orient-row deletion because it removes the structural source of the duplication.
+
+Prediction: each skill will appear exactly once in the roster; Orient will have one unambiguous Triggered identity; Destination and Improve will remain the obvious normal operator actions; Probe will remain visibly research-only. The skill contracts, install behavior, and current Orientation will not change.
+
+### Action and verification
+
+Replaced README.md's operating-model table, automatic-services table, and standalone validation section with one icon-led six-row table. Added a three-item activation legend and a one-paragraph normal-operation summary. Extracted the exact six inline website glyphs into `assets/skills/*.svg`, with intrinsic 28 by 28 dimensions so standard Markdown images need no inline HTML.
+
+Verification:
+
+- `python verify.py` -> OK, trail integrity checks pass before this append.
+- `git diff --check` -> clean apart from existing line-ending conversion warnings.
+- XML parsing -> all six SVGs valid with `viewBox="0 0 24 24"` and 28 by 28 intrinsic dimensions.
+- README search -> exactly six linked skill rows; no old operating-model, automatic-services, validation-skill headings, or duplicate Orientation row remain.
+- VS Code diagnostics -> no diagnostics in the changed region or SVG assets; two pre-existing README diagnostics remain later in the file.
+
+Prediction result: held on every named outcome. No skill contract, installer, or orientation behavior changed.
+
+### Reflection
+
+Falsifiable model claim: activation type is the smallest complete first-contact model for this suite. A newcomer can see all capabilities at once while still distinguishing what they invoke from what the architecture supplies automatically.
+
+Named blind spot: this run validated Markdown structure and asset integrity but did not inspect GitHub's rendered table at desktop and mobile widths. The four-column table may still be dense on narrow screens.
+
+Imagined-reader pushback: "Trail is event-driven after work, so why call it Passive instead of Triggered?" In the operator's RPG model, Passive means it always applies as part of substantive work; Triggered is reserved for a conditional capability that may or may not fire. Trail has no discretionary freshness condition, while Orient does.
+
+[!REALIZATION] The prior README architecture accurately described internal composition but exposed too many valid taxonomies at once. A first-contact model should classify each capability by one question only: how does it activate? Roles, artifacts, and research status belong inside the row, not in competing rosters.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED - runs 203-207 repeatedly simplified the operator control surface, but the README still represented that architecture through overlapping groups.
+- *About to declare silence:* not fired - this run made a documentation and asset change.
+- *Contradicts prior [!REALIZATION]:* not fired - the single roster operationalizes run 207's agency-based model rather than revising it.
+- *Operator explicitly asked:* FIRED - the operator explicitly requested one table using active, passive, and automatic RPG-style activation types.
+
+**Across-trail macro-Hansei**
+
+The arc's architecture was already coherent, but its presentation still mirrored implementation ownership boundaries. The durable product lesson is that internal compositional accuracy and newcomer comprehension need different views. The README should lead with activation; deeper sections can explain state, services, and evidence flow afterward.
+
+Orientation freshness: current - this run presents the existing two-deliberate-actions, passive-services, and evidence-triggered Orientation architecture without changing its claims or operational rules.
+
+### Candidate Next Moves
+
+1. Inspect the rendered GitHub README at narrow and wide widths to test whether the four-column roster remains scannable.
+2. Reuse the extracted icon assets in other suite documentation only where they replace duplicated inline SVG rather than adding decoration.
+
+## 2026-08-02 - release-note-unified-skill-roster
+
+- target: CHANGELOG.md
+- operator: Nils Wendelboe Holmager
+- agent: GitHub Copilot
+- skill: trail (condensed follow-up to Improve run 208)
+- outcome: documented the unified activation roster as v4.27.1
+- delta: CHANGELOG.md +1 patch release entry
+
+After run 208 became durable, a check of the changelog head confirmed that recent user-facing operating-model changes are consistently release-noted. Added v4.27.1 describing the single Active/Passive/Triggered roster and reusable icon assets. This is adjacent release metadata for the already-recorded change, not another behavioral or design decision. `python verify.py` and `git diff --check` passed after the edit; CHANGELOG diagnostics are the file's pre-existing duplicate-heading pattern.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired - this is one mechanical metadata completion for the immediately preceding run.
+- *About to declare silence:* not fired - CHANGELOG.md changed.
+- *Contradicts prior [!REALIZATION]:* not fired - the note preserves run 208's activation-first model.
+- *Operator explicitly asked:* not fired - the operator requested the roster change; this release note follows repository convention.
+
+Orientation freshness: current - release metadata adds no new architectural evidence.
+
+### Candidate Next Moves
+
+1. Inspect the rendered GitHub README at narrow and wide widths to test table density and icon alignment.
+
+## 2026-08-02 - retire-memory-model-name-in-favor-of-acm
+
+- target: current README and six skill contracts
+- operator: Nils Wendelboe Holmager
+- agent: GitHub Copilot
+- skill: improve
+- outcome: retired The Memory Model as a current parallel name and made Agent Context Memory (ACM) canonical throughout live surfaces
+- delta: README heading and prose aligned; six skill role labels aligned; suite v4.27.1 -> v4.27.2 with patch bumps for all six skill contracts
+
+### Interpretation of the ask
+
+The operator is simplifying the suite's mindset for new users, not merely shortening a heading. "The Memory Model" was the suite's pre-standard name for the architecture that later became Agent Context Memory. Keeping both terms in current surfaces now teaches lineage as if it were a second concept. The intended end state is one current name, ACM, while preserving historical references as evidence of how the architecture evolved.
+
+Rejected narrower interpretation: change only `## The Memory Model (ACM Implementation)` in README.md. A live-surface search found all six skill contracts still labeled their place as `Memory Model role`, so a heading-only edit would leave the obsolete parallel vocabulary embedded in the installed skills.
+
+### Examination
+
+- **Purpose:** current onboarding should teach the standardized architecture directly as Agent Context Memory (ACM).
+- **Inconsistency:** README called ACM an implementation of a separately named Memory Model while simultaneously linking ACM as the formal standard.
+- **Waste:** the old name no longer adds explanatory value; it requires newcomers to learn a historical alias before learning the current standard.
+- **Historical integrity:** CHANGELOG and `.acm/` evidence legitimately describe the earlier term and must remain unchanged.
+
+Challenge to the first read: removing every repository occurrence would destroy historical evidence. The correct scope is current normative and onboarding surfaces only, with history preserved.
+
+### Decision and prediction
+
+[!DECISION] Rename the README section to `Agent Context Memory (ACM)`, state directly that the skills implement ACM, and replace `Memory Model role` with `ACM role` in all six current skill contracts. Keep historical trail and changelog wording intact. Apply patch version bumps because terminology changes but behavior does not.
+
+Prediction: no `Memory Model` occurrence will remain in README, QUICKSTART, INSTALLING, PRINCIPLES, or current SKILL.md files; exactly six `ACM role` labels will exist; verifier and whitespace checks will pass after derived evidence regeneration. No skill behavior, installer behavior, or Orientation claim will change.
+
+### Action and verification
+
+Updated README.md, all six SKILL.md files, and CHANGELOG.md v4.27.2. Skill versions: Destination 2.5.1, Improve 3.15.1, Intent 1.5.1, Orient 2.6.1, Probe 3.4.2, Trail 2.5.1.
+
+Focused verification before Trail append:
+
+- Live-surface search for `The Memory Model|Memory Model|memory model` -> zero matches.
+- Current skill search for `ACM role` -> exactly six matches across six skill files.
+- Skill diagnostics -> clean; README retains two pre-existing diagnostics outside the changed region.
+- `git diff --check` -> clean apart from existing line-ending conversion warnings.
+- `python verify.py` reached only the expected stale-derived-artifact gate, to be resolved after this append.
+
+Prediction result: terminology and behavior predictions held; final derived-artifact verification follows this durable entry.
+
+### Reflection
+
+Falsifiable model claim: ACM is now mature enough to stand as the suite's sole current memory-architecture name. The suite's earlier terminology belongs in provenance, not in the learning path.
+
+Named blind spot: external pages, repositories, and already-installed skill copies may still use The Memory Model. This run covers the authoritative current surfaces in this repository, not the wider ecosystem.
+
+Imagined-reader pushback: "The Memory Model is friendlier language than Agent Context Memory." That may be true descriptively, but retaining it as a proper name creates two architectures. The README can explain ACM in plain language without preserving a retired brand beside it.
+
+[!REALIZATION] Standardization changes what simplicity requires. Before ACM existed, The Memory Model gave the architecture a coherent name. After ACM became the separate standard, the same phrase became translation debt. A useful local concept can become waste when its underlying idea acquires a canonical shared name.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED - runs 203-209 repeatedly removed parallel taxonomies and excess operator concepts from the newcomer path; this run removes the remaining parallel name for the memory architecture.
+- *About to declare silence:* not fired - current documentation and six skill contracts changed.
+- *Contradicts prior [!REALIZATION]:* not fired - this extends the activation-first simplification by applying the same one-concept rule to the architecture name.
+- *Operator explicitly asked:* FIRED - the operator explicitly stated that The Memory Model has become Agent Context Memory and requested Improve.
+
+**Across-trail macro-Hansei**
+
+The recent arc is not generic copy polishing. The operator is steadily separating historical development vocabulary from the minimum current model a new user needs: two deliberate actions, activation-based skill roles, and one standardized memory architecture. The suite should retain its evolution in the evidence layer while presenting only the converged vocabulary in its entry surfaces.
+
+Orientation freshness: current - the change strengthens the existing orientation claim that newcomer comprehension should follow current agency boundaries; it does not revise behavior, direction, or operational rules.
+
+### Candidate Next Moves
+
+1. Check the public `pea-website` for current-facing Memory Model terminology and treat any migration there as a separate target with its own destination and trail.
+2. Inspect the rendered GitHub README at narrow and wide widths to validate the new activation roster visually.

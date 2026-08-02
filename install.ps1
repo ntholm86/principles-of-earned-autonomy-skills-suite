@@ -1,16 +1,20 @@
 # install.ps1 — copy PEA skills into a Copilot skills directory.
 #
 # Usage:
-#   pwsh install.ps1 [-Target <path>]
+#   pwsh install.ps1 [-Target <path>] [-Research]
 #
 # Default target: $HOME\.copilot\skills (user-global).
 param(
-    [string]$Target = (Join-Path $HOME '.copilot\skills')
+    [string]$Target = (Join-Path $HOME '.copilot\skills'),
+    [switch]$Research
 )
 
 $ErrorActionPreference = 'Stop'
 
-$skills = @('intent', 'destination', 'improve', 'trail', 'orient', 'probe')
+$skills = @('intent', 'destination', 'improve', 'trail', 'orient')
+if ($Research) {
+    $skills += 'probe'
+}
 $src = $PSScriptRoot
 
 if (-not (Test-Path $Target)) {
@@ -37,4 +41,10 @@ if (Test-Path $principles) {
 
 Write-Host ""
 Write-Host "Installed PEA skills to: $Target"
-Write-Host "Invoke in Copilot chat with /intent, /destination, /improve, /trail, /orient, /probe"
+Write-Host "Actions: Destination (/destination); Run (/improve)"
+Write-Host "Automatic: intent before work; trail afterward; orientation when evidence makes it stale"
+if ($Research) {
+    Write-Host "Research: /probe installed for ARF experiments"
+} else {
+    Write-Host "Probe omitted. Re-run with -Research only for ARF experiments"
+}

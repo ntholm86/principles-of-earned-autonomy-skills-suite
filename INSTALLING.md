@@ -9,6 +9,8 @@ bash install.sh                 # macOS / Linux  → installs to ~/.copilot/skil
 pwsh install.ps1                # Windows        → installs to $HOME\.copilot\skills
 ```
 
+The default install copies the five operational skills plus PRINCIPLES.md. Probe is omitted so normal users see only the operational command surface.
+
 To install into a project instead of user-global:
 
 ```
@@ -16,7 +18,18 @@ bash install.sh ./my-repo/.copilot/skills
 pwsh install.ps1 -Target .\my-repo\.copilot\skills
 ```
 
-The script copies all six SKILL.md files plus PRINCIPLES.md. Nothing else is installed and nothing is executed at runtime.
+To include Probe for controlled ARF research:
+
+```
+bash install.sh --research
+pwsh install.ps1 -Research
+
+# Project-local research install
+bash install.sh ./my-repo/.copilot/skills --research
+pwsh install.ps1 -Target .\my-repo\.copilot\skills -Research
+```
+
+Nothing else is installed and nothing is executed at runtime.
 
 ### Optional: enforce trail discipline with a git hook
 
@@ -51,23 +64,31 @@ Copilot looks for skills at exactly **one level deep** under `.copilot/skills/`:
 
 ---
 
-## Minimum install (one skill)
+## Operational install (recommended)
 
-To get started with just the Intent skill:
+The normal operating model uses five installed skills but only two deliberate operator actions: **Destination + Run**. Intent and Trail are automatic services; Orient passively refreshes Orientation when Destination changes or Improve detects that the accumulated evidence makes it stale.
 
 ```
 your-repo/
   .copilot/
     skills/
+      destination/
+        SKILL.md
+      orient/
+        SKILL.md
+      improve/
+        SKILL.md
       intent/
+        SKILL.md
+      trail/
         SKILL.md
 ```
 
-No sibling files required. Each skill is self-contained.
+Invoke `/destination` and `/improve`. Do not add routine `/intent`, `/trail`, or `/orient` steps; manual `/orient` remains available as a diagnostic override.
 
 ---
 
-## Full install (all six skills)
+## Research install (adds Probe)
 
 ```
 your-repo/
@@ -87,13 +108,13 @@ your-repo/
         SKILL.md
 ```
 
-That's it. The skills are plain markdown files — no scripts, no dependencies, nothing to install or execute.
+This is what the installer copies only when research mode is enabled. The skills are plain markdown files — no scripts, no dependencies, nothing to execute at runtime.
 
 Optionally copy `PRINCIPLES.md` next to the skill folders — the skills reference it but work fully without it (the principles are inlined in each SKILL.md).
 
-### Also included: Probe (research and validation)
+### Probe is optional scientific instrumentation
 
-`probe/SKILL.md` is included in the repo but is **not part of the daily workflow**. It measures [Autonomous Reasoning Fidelity](https://github.com/ntholm86/autonomous-agent-principles/blob/v1.0.0/PRINCIPLES.md#autonomous-reasoning-fidelity-operational-definition) — useful if you want to validate that the agent is genuinely reasoning and not pattern-matching. Copy it in if you need it; leave it out if you don't.
+`probe/SKILL.md` measures [Autonomous Reasoning Fidelity](https://github.com/ntholm86/autonomous-agent-principles/blob/v1.0.0/PRINCIPLES.md#autonomous-reasoning-fidelity-operational-definition). It exists so controlled ARF experiments can be reproduced. Destination, Orient, Improve, Intent, and Trail neither require nor invoke it. Install it with `--research` or `-Research` only when conducting that research; the default installer leaves it out.
 
 ---
 
@@ -145,9 +166,12 @@ Exit 0 = all checks pass, exit 1 = something is wrong.
 
 ## Using a skill
 
-Once installed, type the skill name prefixed with `/` in the Copilot chat to invoke it directly. Or just describe your task — skills whose `description` field matches will be suggested automatically.
+Once installed, remember two actions:
 
-Available slash commands: `/intent`, `/destination`, `/improve`, `/trail`, `/orient`, `/probe`
+- **Destination** (`/destination`) — where are we going?
+- **Run** (`/improve`) — what advances the destination now?
+
+Intent runs automatically before substantive work. Trail runs automatically afterward. Orient automatically refreshes Orientation after material destination changes and when Improve's evidence-based freshness check fires. Manual `/orient` remains available for diagnostics, but is not a routine workflow step. Probe is outside this operating model; `/probe` is only for controlled ARF research.
 
 Example:
 ```

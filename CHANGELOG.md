@@ -1,5 +1,41 @@
 # Changelog
 
+## v4.27.2 — 2026-08-02
+
+### Changed
+
+- **Current documentation now uses Agent Context Memory (ACM) as the single name for the suite's memory architecture.** "The Memory Model" was the suite's term before ACM became a separate standard; presenting both names now implies two concepts where only one remains. The README section is now `Agent Context Memory (ACM)`, and all six skill contracts label their place in the architecture as `ACM role`. Historical trail and changelog references remain unchanged. `destination/SKILL.md` 2.5.0 -> 2.5.1; `improve/SKILL.md` 3.15.0 -> 3.15.1; `intent/SKILL.md` 1.5.0 -> 1.5.1; `orient/SKILL.md` 2.6.0 -> 2.6.1; `probe/SKILL.md` 3.4.1 -> 3.4.2; `trail/SKILL.md` 2.5.0 -> 2.5.1.
+
+## v4.27.1 — 2026-08-02
+
+### Changed
+
+- **The README now presents all six skills in one icon-led roster classified by activation.** Active skills are deliberately invoked (Destination, Improve, and research-only Probe), Passive skills always surround substantive work (Intent and Trail), and Triggered skills fire when their conditions are met (Orient). This replaces three overlapping groupings that showed Orient twice and made readers reconcile conceptual roles with implementation services. The six existing inline glyphs from `pea-website` are now reusable SVG assets under `assets/skills/`.
+
+## v4.27.0 — 2026-08-02
+
+### Changed
+
+- **Orientation is now a passive, automatically scheduled service.** A material Destination change schedules Orient after the destination Trail entry is durable. Every Improve run evaluates orientation freshness before recording, then schedules Orient after its Trail entry when meaningful arc evidence has accumulated, the current orientation no longer explains the trail, or convergence is approaching. Raw iteration count alone never triggers an arc-read. The normal operator workflow is now two actions — `/destination` and `/improve`; `/orient` remains a manual diagnostic override. README, QUICKSTART, INSTALLING, and installer output reflect the new boundary. `destination/SKILL.md` 2.4.0 -> 2.5.0; `improve/SKILL.md` 3.14.0 -> 3.15.0; `orient/SKILL.md` 2.5.0 -> 2.6.0.
+
+## v4.26.2 — 2026-08-02
+
+### Changed
+
+- **Default installation now matches the operational command surface.** `install.sh` and `install.ps1` install the five operational capabilities by default, so Probe no longer appears in a normal user's slash-command list. Controlled ARF research explicitly opts in with `--research` or `-Research`, which adds Probe as the sixth skill. README, QUICKSTART, and INSTALLING document both modes. Executable PowerShell checks confirmed the default and research installs contain exactly five and six skill folders respectively.
+
+## v4.26.1 — 2026-08-02
+
+### Changed
+
+- **The newcomer model is now Destination, Orientation, Run.** README, QUICKSTART, INSTALLING, and installer output teach only these three operating concepts: `/destination` establishes direction, `/orient` refreshes orientation, and `/improve` runs the work. Intent and Trail remain automatic implementation services. Probe is now explicitly optional scientific instrumentation for ARF research, is not required or invoked by the other five skills, and can be omitted from operational installs. `probe/SKILL.md` 3.4.0 -> 3.4.1.
+
+## v4.26.0 — 2026-08-02
+
+### Changed
+
+- **Intent and Trail are now explicit automatic services around the three deliberate workflow skills.** Destination, Improve, Orient, and Probe automatically apply Intent before reasoning and Trail after substantive output; standalone installations retain local fallback behavior. README, QUICKSTART, and INSTALLING now teach one operating model: invoke Destination when work begins or direction changes, run Improve for the work, and run Orient periodically when accumulated evidence warrants an arc-read. Intent and Trail remain separately invokable for diagnostics, consequential work outside those workflows, missing-record repair, and independent-writer mode. `intent/SKILL.md` 1.4.0 -> 1.5.0; `destination/SKILL.md` 2.3.0 -> 2.4.0; `improve/SKILL.md` 3.13.1 -> 3.14.0; `trail/SKILL.md` 2.4.2 -> 2.5.0; `orient/SKILL.md` 2.4.0 -> 2.5.0; `probe/SKILL.md` 3.3.0 -> 3.4.0.
+
 ## v4.25.2 — 2026-08-02
 
 ### Fixed

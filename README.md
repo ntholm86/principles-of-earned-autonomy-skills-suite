@@ -2,7 +2,7 @@
 
 AI agents forget everything between sessions — and many things within a session. No memory of what was tried. No memory of why a decision was made. No memory of where you were heading. Forgets what it already created.
 
-These six skills fix that. Together they form a **Memory Model** — a persistent layer of context that survives session resets and model swaps. The agent reads it before every run. You read it to stay in control.
+The suite fixes that with two deliberate actions: set the **Destination** and **Run** Improve. The architecture maintains **Orientation** passively — refreshing its map of where the work is when direction changes or enough evidence accumulates. A persistent memory layer survives session resets and model swaps underneath that workflow.
 
 These are the skills I use daily as a software engineer to safely delegate complex goals to AI agents. When an agent runs without constraints, it creates massive technical debt. These skills force it to stay on track, double-check its assumptions, and leave a clear record of why it made each change.
 
@@ -36,21 +36,26 @@ The full trail exists, but it cannot be published in this repository because it 
 
 ## The Skills
 
-| Skill | Problem | Solution |
-| :--- | :--- | :--- |
-| **[Intent](./intent/SKILL.md)** | The agent did what you said — not what you meant | Force the agent to understand the intent behind your prompt |
-| **[Destination](./destination/SKILL.md)** | The agent doesn't know where you're heading — because it's in your head | The agent will read your mind, uncover the destination and produce `.acm/destination.md` that other skills will use |
-| **[Trail](./trail/SKILL.md)** | The work is unauditable | Logs every autonomous decision made by the agent and the reason behind it |
-| **[Improve](./improve/SKILL.md)** | The agent makes superficial, undisciplined edits | A structured, iterative improvement loop that reflects and learns before acting |
-| **[Orient](./orient/SKILL.md)** | The agent can't see its own arc | Self-evaluates the progress of all iterations and determines what is next |
+Every skill belongs to one roster. What differs is how it activates:
 
-### Validation skill
+- **Active** skills are deliberately invoked by the operator.
+- **Passive** skills apply automatically around every substantive action.
+- **Triggered** skills activate automatically when their conditions are met.
 
-**[Probe](./probe/SKILL.md)** — included for research and validation use. Constructs a "spot the difference" test to measure whether the agent is genuinely reasoning or pattern-matching. Used to validate [Autonomous Reasoning Fidelity](https://github.com/ntholm86/principles-of-earned-autonomy/blob/main/PRINCIPLES.md#autonomous-reasoning-fidelity-operational-definition) — not a skill you'd run in daily development.
+| Skill | Activation | What it does | Command or trigger |
+| :--- | :--- | :--- | :--- |
+| ![Destination icon](./assets/skills/destination.svg) **[Destination](./destination/SKILL.md)** | **Active** | Establishes where the work is going and what success means. | `/destination` when work begins or direction changes |
+| ![Improve icon](./assets/skills/improve.svg) **[Improve](./improve/SKILL.md)** | **Active** | Examines, changes, verifies, and learns toward the Destination. | `/improve` repeatedly to move the work forward |
+| ![Intent icon](./assets/skills/intent.svg) **[Intent](./intent/SKILL.md)** | **Passive** | States what the agent believes the operator means before acting. | Always applies before substantive work |
+| ![Trail icon](./assets/skills/trail.svg) **[Trail](./trail/SKILL.md)** | **Passive** | Preserves decisions, findings, actions, and reflections across sessions. | Always applies after substantive work |
+| ![Orient icon](./assets/skills/orient.svg) **[Orient](./orient/SKILL.md)** | **Triggered** | Refreshes where the work is now by reading the accumulated arc. | Destination changes or Improve finds Orientation stale; `/orient` is an override |
+| ![Probe icon](./assets/skills/probe.svg) **[Probe](./probe/SKILL.md)** | **Active** *(research only)* | Tests reasoning with controlled cases and measures [Autonomous Reasoning Fidelity](https://github.com/ntholm86/principles-of-earned-autonomy/blob/main/PRINCIPLES.md#autonomous-reasoning-fidelity-operational-definition). | `/probe` during controlled ARF research |
 
-## The Memory Model (ACM Implementation)
+In normal development, the operator activates Destination and Improve. Intent and Trail are always present, while Orient waits for evidence that its map needs refreshing. Probe sits outside normal operation as optional research instrumentation.
 
-Each skill externalizes what normally only lives inside a single model session — the goal, the destination, the decisions, the arc. Together they form a persistent memory layer that no model reset can erase.
+## Agent Context Memory (ACM)
+
+Each skill externalizes what normally only lives inside a single model session — the goal, the destination, the decisions, the arc. Together they implement Agent Context Memory: a persistent memory layer that no model reset can erase.
 
 This memory structure is formally specified by the [Agent Context Memory (ACM)](https://github.com/ntholm86/agent-context-memory) standard. ACM defines three tiers organized by trust level: Intent (`destination.md`, principal-authored), Trace (`audit-trail.md`, `orientation.md`, agent append-only), and Evidence (harness-captured session records). This suite implements the Intent and Trace tiers; the Evidence tier requires a separate harness.
 
@@ -60,56 +65,40 @@ Memory alone is just retrieval; awareness is orientation. Because `Orient` reads
 
 When you swap from Claude to Gpt to Gemini, the next model picks up this exact orientation. That accumulation is what makes the suite get smarter over time.
 
-## Why These Skills Exist
+## How The Model Works
 
-### #1: INTENT — The agent did what you wrote, not what you meant
+### Destination — Where are we going?
 
-**Problem:** The agent did literally exactly what you wrote — word-by-word — not what you actually meant.
-**Solution:** Intent forces the agent to explicitly state its interpretation of your task *before* executing anything. It acts as an early warning system for misaligned assumptions.
-
-*Rooted in [Operator's Intent](https://en.wikipedia.org/wiki/Commander%27s_intent) (U.S. Army doctrine) · [Coaching Kata](https://www.amazon.com/Toyota-Kata-Managing-Improvement-Adaptiveness/dp/0071635238) (Mike Rother, Toyota Kata) · [Socratic Method](https://plato.stanford.edu/entries/socrates/) (Stanford Encyclopedia of Philosophy)*
-
-### #2: DESTINATION — The agent drifted over time
-
-**Problem:** During a long autonomous run, the agent loses the plot, fixing minor issues rather than addressing the core architectural problem.
-**Solution:** Destination surfaces the agent's implicit assumptions about where you're heading, letting you course-correct early. Orient steps back, analyzes the full history of the work, and re-orients the loop.
+During a long autonomous run, the agent can lose the plot and optimize whatever is easiest to see. Destination surfaces the direction held by the operator so the work has an explicit purpose to advance.
 
 > "No-one knows exactly what they want."
 >
 > — David Thomas & Andrew Hunt, [The Pragmatic Programmer](https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/)
 
-### #3: TRAIL — The work is unauditable
+### Orientation — The architecture keeps its map current
 
-**Problem:** The agent modified dozens of files. You have no idea why it chose one implementation over another, making it impossible to confidently take ownership of the work.
-**Solution:** Trail enforces observable autonomy. Every decision, rationale, and discarded alternative is appended to a readable `.acm/audit-trail.md`. If it isn't logged, it didn't happen.
-
-> "Without data, you're just another person with an opinion."
->
-> — W. Edwards Deming
-
-### #4: IMPROVE — The agent makes superficial edits
-
-**Problem:** The agent edits what's easy. Typos, whitespace, obvious renames. The real problems stay untouched.
-**Solution:** Improve is the workhorse of this suite. Point it at any target and run it repeatedly. Each iteration: it examines what's there, challenges its own first instinct, makes exactly one high-leverage change, and reflects. It reads the full memory suite before every run — so it never wastes an iteration on something already tried.
-
-> "Invest in the design of the system every day."
->
-> — Kent Beck, [Extreme Programming Explained](https://www.amazon.com/Extreme-Programming-Explained-Embrace-Change/dp/0321278658)
-
-### #5: ORIENT — The agent can't see its own arc
-
-**Problem:** After 50 iterations, the agent has been diligently improving — but nobody stepped back to ask whether those 50 iterations were solving the right problem. Each step looked locally optimal. The overall arc drifted.
-**Solution:** Orient reads the entire trail history as a single document and forms arc-level claims: what is the target becoming, where has the loop's attention been, and is that where the real weight lies? It surfaces what no individual iteration would reveal.
+After many locally sensible runs, the overall arc can still drift. Orient passively reads the accumulated history as one document and refreshes the current orientation: what the target is becoming, where attention has gone, and whether that is where the real weight lies. Destination schedules it after material direction changes; Improve schedules it when the evidence forms a meaningful arc, contradicts the current map, or approaches convergence. A raw iteration count alone does not trigger it.
 
 > "Life can only be understood backwards; but it must be lived forwards."
 >
 > — Søren Kierkegaard, Journals (1843)
 
+### Run — Move toward the destination
+
+Improve is the workhorse. Point it at a target and run it repeatedly. Each run examines what is there, challenges the first read, chooses the highest-leverage move, acts, verifies, and reflects against the current Destination and Orientation.
+
+> "Invest in the design of the system every day."
+>
+> — Kent Beck, [Extreme Programming Explained](https://www.amazon.com/Extreme-Programming-Explained-Embrace-Change/dp/0321278658)
+
+Intent and Trail operate automatically around the work, and Orient maintains Orientation automatically when its evidence-based triggers fire. Probe sits outside normal operation as optional ARF research instrumentation.
+
 ## Workflow
 
-1. **Set the target:** Run `destination` first to capture where you're heading before starting work.
-2. **Execute:** Run `improve` for as many iterations as needed until you reach a plateau.
-3. **Reflect:** Run `orient` to evaluate the entire loop history and reflect on progress.
+1. **Set direction:** Run `destination` when work begins and whenever the destination materially changes. A material change automatically refreshes Orientation.
+2. **Run:** Invoke `improve` repeatedly. Intent aligns each request, Trail records each result, and Improve automatically schedules Orient when accumulated evidence makes the current orientation stale.
+
+The user remembers two commands: `/destination` and `/improve`. `/orient` remains a manual override for an explicit arc-read, not a routine responsibility.
 
 ## Quickstart (First Successful Run)
 
@@ -118,6 +107,7 @@ Want a copy-pasteable, 10-minute path? See [QUICKSTART.md](./QUICKSTART.md).
 1. Install with one command:
    - macOS / Linux: `bash install.sh`
    - Windows: `pwsh install.ps1`
+   - ARF researchers only: add `--research` on macOS/Linux or `-Research` on Windows to include Probe.
 2. In your target repo, run Destination first to set direction:
    - `/destination capture the destination for this repo and write .acm/destination.md`
 3. Run Improve on one concrete, verifiable task:

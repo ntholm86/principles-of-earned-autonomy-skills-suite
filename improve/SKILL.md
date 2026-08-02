@@ -1,6 +1,6 @@
 ---
 name: improve
-version: 3.13.1
+version: 3.15.1
 description: 'The improvement skill. Understand the ask, examine the target, challenge the first read, decide on one change (or argue for redesign, or declare silence), act, reflect on the target, and record. Combines incremental refinement, structural rethinking, and reflection on the target itself. USE WHEN: improve, audit, review, fix, refactor, redesign, evaluate, what would make this better, am I missing something.'
 argument-hint: 'The target to improve, and optionally the concern (correctness, simplicity, performance, etc.)'
 ---
@@ -9,7 +9,7 @@ argument-hint: 'The target to improve, and optionally the concern (correctness, 
 
 *Understand. Examine. Challenge. Decide. Act. Reflect. Record. Or argue convincingly that nothing should change.*
 
-*Memory Model role: Reads the full memory layer before every run; extends it with each iteration's findings.*
+*ACM role: Reads the full memory layer before every run; extends it with each iteration's findings.*
 
 This is the only skill you need for most autonomous work. It combines what v2 split into Kaizen (incremental), Kaikaku (radical), and Hansei (reflection) — because in practice the agent should pick which mode the situation calls for, not be told.
 
@@ -29,9 +29,9 @@ Full statement of the principles: [PRINCIPLES.md](../PRINCIPLES.md) — read it 
 
 ### 1. Understand the target and the ask
 
-*If [Intent](../intent/SKILL.md) is installed, apply it now — it handles this step in full. Continue to step 2 when done.*
+**Apply [Intent](../intent/SKILL.md) automatically now.** Intent is an ingress service of the full suite, not a command the operator must remember to invoke. Do not ask the operator to run it separately. Continue to step 2 when done.
 
-If Intent is not installed: before examining anything, narrate your interpretation of what you've been asked to do, in your own words. State what you believe the destination is and what would count as success. If your interpretation diverges from a literal reading of the request, say so explicitly so the operator can correct course before you act.
+If this is a standalone Improve installation and Intent is unavailable: before examining anything, narrate your interpretation of what you've been asked to do, in your own words. State what you believe the destination is and what would count as success. If your interpretation diverges from a literal reading of the request, say so explicitly so the operator can correct course before you act.
 
 If the ask is about convergence or publication readiness, read the repo's convergence-scope protocol before proceeding if it has one, then declare which layer (problem, principles, skills, cross-layer coherence) this run is evaluating.
 
@@ -156,13 +156,26 @@ For an arc-read that runs outside an improve iteration, use [Orient](../orient/S
 
 ### 7. Record
 
-*If [Trail](../trail/SKILL.md) is installed, apply it now — it handles this step in full.*
+Before applying Trail, evaluate whether this completed iteration has made `.acm/orientation.md` stale enough to require a new arc-read. This is an automatic scheduling decision; do not ask the operator to remember or invoke `/orient`.
+
+Schedule [Orient](../orient/SKILL.md) automatically when any of these evidence-bearing triggers fires:
+
+- **Destination changed:** a Destination run since the last Orient materially revised direction, constraints, priorities, or quality bars. (Destination normally handles this immediately; this trigger catches an interrupted or missed handoff.)
+- **Meaningful arc accumulated:** Improve entries since the last Orient now form a cluster whose sequence matters — repeated finding classes, reversals, failed predictions, diverging candidate moves, or sustained attention in one area. Raw count alone is insufficient.
+- **Orientation no longer explains the trail:** recent evidence contradicts an active orientation claim or operational rule, or substantial work now lies outside its stated scope.
+- **Convergence is approaching:** the loop is about to rely on silence, readiness, or convergence across more than one iteration. Orient must test the arc before that claim carries weight.
+
+Do not schedule Orient merely because one more iteration completed. There is no universal numeric interval. A long sequence can trigger the check because it provides enough evidence to form an arc, but "N iterations elapsed" is never sufficient rationale by itself; state what accumulated evidence now requires synthesis.
+
+Include one line in the Trail entry: `Orientation freshness: current` or `Orientation freshness: STALE — <evidence>; automatic Orient scheduled.` This evaluation must be inside the entry before it becomes append-only history.
+
+**Apply [Trail](../trail/SKILL.md) automatically now.** Trail is an egress service of the full suite, not a command the operator must remember to invoke. Do not ask the operator to run it separately.
 
 **High-Fidelity Mode (Writer Splitting):** If the highest level of anti-rationalization security is required, the agent running `Improve` DOES NOT write the trail. Instead, it halts here, outputting its diff, prediction, and internal reasoning. A *second, independent agent* must then be invoked to execute the `Trail` skill. This prevents a single agent from post-hoc rationalizing its own decisions.
 
 **In multi-iteration runs, this step executes after every iteration — not once at the end of all iterations.** The trail entry is the commit point for that iteration. Append it, regenerate `history.md`, and commit before starting the next iteration. A user who stops a 10-iteration run after iteration 4 must have 4 committed trail entries, not 0.
 
-If Trail is not installed: create the `.acm/` directory in the target repo root if it does not already exist, then append a single entry to `.acm/audit-trail.md` **in the target repo root** (not the skills install directory). The entry must include:
+If this is a standalone Improve installation and Trail is unavailable: create the `.acm/` directory in the target repo root if it does not already exist, then append a single entry to `.acm/audit-trail.md` **in the target repo root** (not the skills install directory). The entry must include:
 
 - Date, target, operator (if known), model identity (provider + tool-call ID prefix if observable).
 - Your interpretation of the ask.
@@ -174,6 +187,10 @@ If Trail is not installed: create the `.acm/` directory in the target repo root 
 
 The format spec is in [trail/SKILL.md](../trail/SKILL.md). If you have the skills repository clone, its optional `<skills-repo>/harness/tools/record.py` helper can stub a new entry for you; the one-line skill installer does not copy this helper.
 
+### 8. Run scheduled orientation
+
+After the Trail entry is durable, apply Orient if step 7 marked orientation stale. Orient writes its own Trail entry and refreshes `.acm/orientation.md`; it never changes the target. If orientation was current, stop without ceremony.
+
 ## Self-targeting
 
 This skill must be runnable on itself. If running Improve on `improve/SKILL.md` and `probe/SKILL.md` produces nothing actionable, that is evidence the skills are simple enough. If it produces a list of fixes, do them. If it produces an argument for redesign, surface it.
@@ -181,5 +198,5 @@ This skill must be runnable on itself. If running Improve on `improve/SKILL.md` 
 ## What this skill does not do
 
 - It does not score the target on a numerical rubric. v2 did this and the question "who made up these metrics?" never went away. Convergence — diverse independent evaluators finding nothing to change — is the only honest measure of done.
-- It does not orchestrate other skills. The other skills (Intent, Trail, Probe) run independently. Improve delegates to Intent (step 1) and Trail (step 7) when they are installed, but does not require them.
+- It does not make the operator orchestrate support skills. In the full suite, Improve automatically applies Intent at ingress (step 1), Trail at egress (step 7), and Orient when the evidence-based freshness check fires (step 8). A standalone Improve installation retains local fallback behavior when a sibling is unavailable.
 - It does not tell you when to stop. The convergence protocol in PRINCIPLES.md does.

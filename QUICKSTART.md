@@ -17,7 +17,11 @@ bash install.sh                 # macOS / Linux
 pwsh install.ps1                # Windows
 ```
 
-Or copy the six skill folders into `<your-repo>/.copilot/skills/`: `intent/`, `destination/`, `improve/`, `trail/`, `orient/`, `probe/`.
+The default installer includes the five operational skills and omits Probe, keeping the visible command surface focused on normal use. ARF researchers can add it with `bash install.sh --research` or `pwsh install.ps1 -Research`.
+
+Or copy the five operational skill folders into `<your-repo>/.copilot/skills/`: `intent/`, `destination/`, `improve/`, `trail/`, `orient/`. Add `probe/` only if you are conducting ARF research.
+
+The operator workflow is **Destination + Run**: set Destination when work begins or direction changes, then use Improve to run the work. Intent and Trail apply automatically. Orientation is refreshed automatically after material destination changes or when Improve detects that enough meaningful evidence has accumulated. Probe is optional scientific instrumentation and is not required for this workflow.
 
 ## Set the destination (3 minutes)
 
@@ -44,7 +48,7 @@ Examples:
 - `/improve remove unused imports across src/ and verify nothing breaks`
 - `/improve tighten the README quickstart so a new user can run the first example in under five minutes`
 
-The agent will narrate intent, predict an outcome before acting, make one change, verify it, and append an entry.
+The agent automatically applies Intent, narrates its interpretation, predicts an outcome before acting, makes one change, verifies it, and automatically applies Trail to append an entry.
 
 Done when: `.acm/audit-trail.md` has a new entry with `outcome:` and `delta:`.
 
@@ -57,6 +61,18 @@ Open these and skim:
 3. The change itself in the working tree.
 
 If all three are present, the loop ran successfully end to end.
+
+## Orientation happens automatically
+
+You do not need to count iterations or remember an Orient step. Destination schedules Orient after a material direction change. Improve evaluates orientation freshness after every recorded run and schedules Orient when the trail forms a meaningful arc, contradicts the current orientation, or approaches convergence.
+
+For a diagnostic arc-read at any time, you can still run:
+
+```
+/orient read the accumulated trail and tell me whether the loop is still working on the right things
+```
+
+Manual `/orient` is an override, not part of the normal workflow.
 
 ## Optional: lock in trail discipline
 
@@ -73,4 +89,4 @@ This rejects commits that touch substantive files without a corresponding `.acm/
 
 1. No `.acm/destination.md` created → re-run `/destination` and answer at least the first question.
 2. No audit entry appended → re-run `/improve` with a smaller, more concrete task.
-3. Agent did not narrate intent → ask it to apply `/intent` to your prompt first, then retry.
+3. Agent did not narrate intent → retry and report that automatic Intent composition failed; manually invoking `/intent` is a diagnostic, not a normal workflow step.
