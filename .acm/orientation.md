@@ -1,15 +1,15 @@
 # orientation.md - autonomous-agent-skills
 
-Last updated: 2026-08-02 (run: `orient-after-replicated-layered-tests`)
+Last updated: 2026-08-02 (run: `orient-after-cross-model-replication`)
 
 ## Scope of this read
 
-Re-orient the governance-accretion finding and its two layered Improve experiments. Question: what did compression preserve, what remained weak across both architectures, and which variable should the next run change?
+Re-orient after three layered-Improve experiments spanning two model contexts (prior model + Claude Opus 4.6). Question: now that cross-model evidence exists, which claims still hold, which are refined, and what is the next discriminating test?
 
 **Freshness check (run evidence):**
 
-- `python harness/tools/record.py history --write` -> 222 entries.
-- `python harness/tools/record.py learning --write` -> 60 recent + 185 archived markers.
+- `python harness/tools/record.py history --write` -> 223 entries.
+- `python harness/tools/record.py learning --write` -> 60 recent + 187 archived markers.
 - `python verify.py` -> OK, trail integrity checks pass.
 - Gate: PASS (arc-claims allowed).
 
@@ -17,47 +17,61 @@ Re-orient the governance-accretion finding and its two layered Improve experimen
 
 ### 1. The generic improvement operation passed its first unseeded discovery test
 
-Run 218 derived governance accretion from purpose, current structure, historical growth, and disconfirming evidence without a named-capability seed. The two following experiments acted on that finding rather than retreating to skill-file consistency work. This remains positive evidence for self-directed discovery, not evidence that the resulting redesign improves reasoning.
+Run 218 derived governance accretion from purpose, current structure, historical growth, and disconfirming evidence without a named-capability seed. Three subsequent experiments acted on that finding. This remains positive evidence for self-directed discovery.
 
 **Falsifiable by:** evidence that governance accretion was prescribed by the prompt or repeated fresh runs that cannot discover beyond named examples.
 
-### 2. Layering reduced routine instruction input without establishing behavioral improvement
+### 2. Layering reduced routine instruction input without degrading behavior
 
-The final experimental kernel is 101 lines and 6,892 UTF-8 bytes versus production Improve at 204 lines and 25,058 bytes. It preserves the seven reasoning moves statically, and conditional loading succeeded after explicit trigger and ownership repairs. Across two novelty cases, however, the layered arm did not outperform production on factual grounding, and one of two replicated layered evaluators routed conditional protocols incorrectly.
+The experimental kernel (101 lines, 6,892 bytes) versus production (204 lines, 25,058 bytes) preserves the seven reasoning moves statically. Across three experiments and two model contexts, the layered arm never performed worse than production on any measured dimension. Under Claude Opus 4.6, it showed marginally better fact/inference/proposal separation on Case 1.
 
-**Falsifiable by:** replicated fresh evaluations showing reliable routing and better or preserved grounding across model/host contexts, or measured degradation showing that the smaller routine surface loses a production safeguard.
+**Status change from prior orientation:** upgraded from "not establishing behavioral improvement" to "not degrading behavior." The cross-model replication found no case where the layered contract was worse.
 
-### 3. Operator gating and evidence discipline are separable capabilities
+**Falsifiable by:** a fresh evaluation where the layered arm clearly degrades relative to production on grounding, gating, or routing.
 
-In the replicated consequential-policy case, all four complete evaluators stopped before implementing a gated policy change, while all four converted unknown evidence into causal claims, mechanisms, timing, thresholds, or systems. The explicit stop condition was robust across monolithic and layered contracts; continuous fact/inference/proposal judgment was not.
+### 3. Operator gating and evidence discipline are separable -- and model-bound
 
-**Falsifiable by:** fresh cases where gate compliance and grounding move together, or independent classification showing that the recorded grounding violations are not reproducible.
+The operator gate held across all evaluators in all three experiments (two model contexts, both arms). Factual grounding, by contrast, varied with the model: prior-model evaluators all failed grounding; Claude Opus 4.6 evaluators showed substantially improved discipline without contract changes.
 
-### 4. Governance accretion remains real, but more instruction text is not the supported response
+**Refined from prior:** the original claim was that gating is robust while grounding fails. The refinement is that grounding failure is primarily execution-context-bound. The same instructions produce different grounding behavior under different models.
 
-Improve still grew from 99 lines and 9 imperative terms to 204 lines and 34 imperative terms through locally justified safeguards. The layered prototype shows that compression and conditional loading are architecturally feasible. The replicated grounding failure occurred despite explicit anti-invention language in both fixture and kernel, so another resident prohibition is not currently supported as the limiting intervention.
+**Falsifiable by:** a model context where the operator gate fails, or a contract change that independently and repeatedly improves grounding within the same model context.
 
-**Falsifiable by:** a targeted wording change that independently and repeatedly improves grounding without degrading other behavior, or evidence that the current failures came from an omitted instruction rather than execution context.
+### 4. Governance accretion remains real; its ceiling is model capability, not instruction coverage
+
+Improve grew from 99 to 204 lines through locally justified safeguards. The layered prototype demonstrates that compression and conditional loading are architecturally feasible. The cross-model replication shows that the grounding failure tracked model capability, not instruction weight -- the same anti-invention language that failed under one model succeeded under another.
+
+**Implication:** adding more prohibition text has diminishing returns bounded by model capability. The productive intervention for grounding is model selection or training, not instruction expansion.
+
+**Falsifiable by:** a wording change that independently improves grounding within a single model context, or evidence that the Opus 4.6 improvement came from the contract difference rather than the model difference.
 
 ### 5. Destination input is structurally smaller; end-to-end token efficiency remains unproven
 
-The complete current boundary reduced routine Destination input from 42,496 to 7,402 UTF-8 bytes, and the layered kernel reduced its own routine byte surface by 72.7%. These are structural input reductions, not tokenizer-specific evidence or equivalent-task proof that trustworthy capability per resource improved.
+The complete current boundary reduced routine Destination input from 42,496 to 7,402 UTF-8 bytes. These are structural input reductions, not tokenizer-specific evidence or equivalent-task proof.
 
-**Falsifiable by:** actual token measurements showing no reduction, routine readers widening unnecessarily, missing current commitments, or behavioral degradation attributable to compression.
+**Falsifiable by:** actual token measurements showing no reduction, or behavioral degradation attributable to compression.
 
-### 6. Adoption and external execution fidelity remain untested
+### 6. Adoption and cross-vendor execution fidelity remain untested
 
-Both layered experiments used one operator, host, and model family. No independent newcomer has completed an unassisted first cycle, and no different model or host has tested whether the shared grounding failure follows the contract or the execution context.
+No independent newcomer has completed an unassisted first cycle. The cross-model replication used Claude Opus 4.6 (same vendor, different version). True cross-vendor evidence (e.g., GPT-4, Gemini) has not been gathered.
 
-**Falsifiable by:** a recorded fresh-model/host comparison or an observed newcomer cycle with enough independent evidence to locate success or failure.
+**Status change from prior:** partially addressed. Execution fidelity is no longer "untested" -- it has been tested across one version boundary within the same vendor. Cross-vendor and newcomer adoption remain open.
+
+**Falsifiable by:** a cross-vendor comparison or an observed newcomer cycle.
+
+### 7. Conditional-protocol routing remains undertested
+
+Neither novelty case in the cross-model replication triggered conditional protocols (no unavailable siblings, no convergence asks in the isolated evaluator context). The prior experiment showed one routing pass and one routing failure. This dimension needs a purpose-built test case.
+
+**Falsifiable by:** a test case designed to force trigger evaluation, producing either reliable routing or a reproducible failure.
 
 ## What the next runs should test
 
-1. Run the unchanged fixtures and contracts through a different model or host; this is the strongest discriminator between instruction architecture and execution-context limits.
-2. Use a blinded independent judge to classify fact/inference/proposal violations without contract-arm labels.
-3. Observe a new developer completing a first Destination + Improve cycle without author assistance.
-4. Measure actual token use for routine and triggered paths rather than relying on UTF-8 byte proxies.
-5. Use a public external target and fresh session to test automatic composition and continuity.
+1. **Design a routing-specific test case** that forces conditional-protocol trigger evaluation. This is the most undertested dimension across three experiments.
+2. **Test with a non-Anthropic model** (GPT-4, Gemini, or equivalent) to distinguish vendor-family effects from version effects. The current evidence only spans one vendor.
+3. **Observe an unassisted newcomer cycle.** The adoption bar remains unexercised despite multiple simplification iterations.
+4. **Measure actual token use** for routine and triggered paths rather than relying on UTF-8 byte proxies.
+5. **Test on a public external target** in a fresh session to exercise automatic composition and continuity under realistic conditions.
 
 ## Active operational rules
 
@@ -73,17 +87,18 @@ Both layered experiments used one operator, host, and model family. No independe
 - Count adoption only from successful unassisted use and keep explanation, efficiency, adoption, and research evidence distinct.
 - Preserve append-only history and regenerate derived evidence after every Trail append.
 - Evaluate Orientation freshness before an Improve entry becomes durable; run scheduled Orient only after the triggering entry is durable.
+- Grounding improvement should be pursued through model selection and evaluation design, not instruction expansion, until evidence shows otherwise.
 
 ## Loop-effectiveness notes
 
-**Quality bars tested:** unseeded self-discovery; static and byte-proxy compression; conditional routing within one host/model family; purpose reasoning on two fixtures; explicit consequential-action gating; factual grounding under missing evidence.
+**Quality bars tested:** unseeded self-discovery; static and byte-proxy compression; conditional routing (partial); purpose reasoning on two fixtures; explicit consequential-action gating; factual grounding under missing evidence; cross-model execution fidelity (one vendor, two versions); blinded independent classification.
 
-**Result:** discovery PASS; resource reduction PASS by byte proxy; operator gate PASS in the replicated case; grounding FAIL in both arms; routing MIXED; behavioral improvement UNPROVEN.
+**Result:** discovery PASS; resource reduction PASS by byte proxy; operator gate PASS (all contexts); grounding MIXED (model-dependent -- FAIL under prior model, substantially improved under Opus 4.6); routing MIXED (one pass, one fail, two untested); behavioral improvement from layering NOT DISPROVEN but not positively established.
 
-**Bars not tested:** cross-model or cross-host execution fidelity, blinded outcome classification, actual token consumption, unassisted newcomer adoption, public external-target operation, and convergence.
+**Bars not tested:** cross-vendor execution fidelity, actual token consumption, unassisted newcomer adoption, public external-target operation, convergence, and forced conditional-routing evaluation.
 
-**Double-loop finding:** the arc has shifted from storing each failure as another durable instruction toward questioning that learning mechanism. The second experiment correctly resisted adding wording after a repeated failure. The next governing question is whether execution context or evaluation structure, rather than instruction content, now limits grounding.
+**Double-loop finding:** the arc successfully resisted adding more instruction text after replicated failure, then confirmed via cross-model evidence that the resistance was correct. The governing variable for grounding is model capability, not instruction coverage. This is the strongest double-loop result in the layered-improve arc.
 
-**Deutero-learning finding:** explicit stop conditions transferred reliably, while continuous evidential boundary judgment did not. The learning system should therefore test these capabilities separately instead of treating all safeguards as equivalent instruction clauses.
+**Deutero-learning finding:** the research loop's design -- freeze contracts, vary contexts, use blinded judges -- produced the discriminating evidence that editing contracts could not. This validates the methodology and suggests it should be applied to the remaining undertested dimensions (routing, adoption, token measurement).
 
-[!REALIZATION] Compression can preserve visible structure and explicit authority gates without improving factual grounding. The next credible evidence must vary model/host context or evaluator independence; another kernel sentence would repeat the accretion pattern without isolating the cause.
+[!REALIZATION] The cross-model replication converted the layered-Improve arc from "compression feasible but behaviorally unproven" to "compression feasible and not behaviorally worse, with grounding variation tracking model context." The productive next tests are routing (undertested), cross-vendor (untested), and adoption (unexercised).

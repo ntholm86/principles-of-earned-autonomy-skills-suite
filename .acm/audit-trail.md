@@ -12131,3 +12131,54 @@ Orientation freshness: STALE -- accumulated evidence (three experiments across t
 1. Run Orient to update orientation claims in light of the cross-model evidence.
 2. Design a conditional-routing-specific test case that forces trigger evaluation (no prior case has reliably exercised this).
 3. Test with a non-Anthropic model to distinguish model-family effects from version effects.
+
+---
+
+## Entry: orient-after-cross-model-replication
+
+- **Date:** 2026-08-02
+- **Target:** .acm/orientation.md (arc-level refresh after cross-model evidence)
+- **Operator:** nils
+- **Model:** Claude Opus 4.6 (Anthropic) via GitHub Copilot in VS Code
+- **Trigger:** Automatic Orient scheduled by cross-model-replication-layered-improve (orientation marked stale)
+
+### Scope
+
+Re-orient the layered-Improve research arc after three experiments spanning two model contexts. The prior orientation framed execution fidelity as untested and grounding as uniformly failing; the cross-model replication produced evidence that refines both claims.
+
+### Arc-claims formed
+
+1. **Claim 2 upgraded:** Layering went from not establishing behavioral improvement to not degrading behavior. Three experiments, two model contexts, zero cases where layered was worse.
+2. **Claim 3 refined:** Gating/grounding separability confirmed; grounding failure is model-bound, not architecture-bound.
+3. **Claim 4 sharpened:** The ceiling for grounding via instruction text is model capability. Adding prohibitions has diminishing returns.
+4. **Claim 6 partially closed:** Execution fidelity tested within one vendor (two versions). Cross-vendor and newcomer adoption remain open.
+5. **New claim 7:** Conditional-protocol routing is the most undertested dimension. Needs a purpose-built test case.
+
+### Decision
+
+[!DECISION] Refresh orientation.md with updated claims, add operational rule about grounding strategy, and reprioritize next-test list with routing first.
+
+### Reflection
+
+**Target claim:** The layered-Improve research arc has now produced its strongest positive finding: the instruction architecture is not the limiting factor for either grounding or gating. The productive research frontier has shifted from contract design to evaluation methodology and context variation.
+
+**Blind spot:** All three experiments used the same two novelty cases. Case fatigue or model memorization of these specific scenarios could explain the Opus 4.6 improvement. A genuinely novel third case would be stronger evidence.
+
+**Informed pushback:** The Opus 4.6 improvement could be superficial pattern-matching rather than genuine reasoning improvement. The model may have learned to hedge and label proposals because evaluation tasks reward that behavior in RLHF, not because it actually reasons about evidence boundaries. Novel domains outside training distribution would test this.
+
+[!REALIZATION] The cross-model replication converted the layered-Improve arc from compression feasible but behaviorally unproven to compression feasible and not behaviorally worse, with grounding variation tracking model context. The productive next tests are routing (undertested), cross-vendor (untested), and adoption (unexercised).
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired -- this run synthesizes a new result, not another instance of a prior pattern.
+- *About to declare silence:* not fired -- orientation refresh is itself an active operation.
+- *Contradicts prior [!REALIZATION]:* FIRED -- prior realization stated compression can preserve structure without improving grounding; this run refines that to say grounding improvement came from model context, not from the contract. The prior claim is not contradicted but narrowed in explanatory scope.
+- *Operator explicitly asked:* partially -- operator said lets do that in response to the scheduled Orient.
+
+Orientation freshness: current (this IS the Orient run).
+
+### Candidate Next Moves
+
+1. Design a conditional-routing test case that forces Standalone Fallback or Precedent Conflict trigger evaluation.
+2. Test with a non-Anthropic model to complete the cross-vendor column.
+3. Introduce a third novelty case to control for case fatigue.

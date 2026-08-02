@@ -5,11 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 187 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-01 — resolve-sessions-fingerprint-blind-spot-and-fix-six-boms
-
-**[!REALIZATION]** Per the lighter-weight-pointer precedent: no new governing-variable diagnosis is introduced by this entry: the pattern-family diagnosis stands as recorded in `confirm-bom-root-cause-and-fix-verifypy`, and the granularity precedent stands as recorded in the delegated-autonomy entry two runs ago. This entry is a clean application of both, plus one small self-correction (the six-vs-five count) surfaced honestly rather than absorbed.
+Showing the most recent 60 markers. 188 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-01 — fix-orientation-and-audit-trail-boms-closes-cleanup-arc
 
@@ -246,6 +242,10 @@ Showing the most recent 60 markers. 187 older marker(s) are in `.acm/learning-ar
 ## 2026-08-02 — orient-after-replicated-layered-tests
 
 **[!REALIZATION]** Factual-grounding failures in natural-language instruction contracts are primarily execution-context effects. The same contracts that failed under one model version succeeded under another without modification. This bounds the value of adding more grounding instructions -- the return on additional prohibition text is limited by model capability, not instruction coverage.
+
+## 2026-08-02 — orient-after-replicated-layered-tests
+
+**[!REALIZATION]** The cross-model replication converted the layered-Improve arc from compression feasible but behaviorally unproven to compression feasible and not behaviorally worse, with grounding variation tracking model context. The productive next tests are routing (undertested), cross-vendor (untested), and adoption (unexercised).
 
 ---
 

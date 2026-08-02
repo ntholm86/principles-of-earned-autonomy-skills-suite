@@ -1037,5 +1037,6 @@ Do not edit by hand — re-run the command to refresh.
 ### Run 223 — 2026-08-02 — orient-after-replicated-layered-tests
 
 - **decided:** Run unchanged contracts through genuinely isolated evaluators under Claude Opus 4.6. Compare with prior results to distinguish instruction-architecture effects from execution-context effects.
+- **decided:** Refresh orientation.md with updated claims, add operational rule about grounding strategy, and reprioritize next-test list with routing first.
 
 **223 runs total — 208 with changes, 15 silence**
