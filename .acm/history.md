@@ -215,6 +215,7 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 208 | 2026-08-02 | unify-readme-skill-roster-by-activation | replaced three overlapping skill groupings with one six-skill roster classified as Active, Passive, or Triggered | README.md unified; six existing pea-website inline SVG glyphs extracted to assets/skills/ |
 | ▸ 209 | 2026-08-02 | release-note-unified-skill-roster | documented the unified activation roster as v4.27.1 | CHANGELOG.md +1 patch release entry |
 | ▸ 210 | 2026-08-02 | retire-memory-model-name-in-favor-of-acm | retired The Memory Model as a current parallel name and made Agent Context Memory (ACM) canonical throughout live surfaces | README heading and prose aligned; six skill role labels aligned; suite v4.27.1 -> v4.27.2 with patch bumps for all six skill contracts |
+| ▸ 211 | 2026-08-02 | publish-activation-and-acm-simplification | committed and published the activation-model simplification and ACM terminology convergence to origin/main | commits 1f2d909 and 6ee2301 published; remote main verified at 6ee2301f30d847cbafee5ed9c8835d72d0f818b6 |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -987,4 +988,4 @@ Do not edit by hand — re-run the command to refresh.
 
 - **decided:** Rename the README section to `Agent Context Memory (ACM)`, state directly that the skills implement ACM, and replace `Memory Model role` with `ACM role` in all six current skill contracts. Keep historical trail and changelog wording intact. Apply patch version bumps because terminology changes but behavior does not.
 
-**210 runs total — 195 with changes, 15 silence**
+**211 runs total — 196 with changes, 15 silence**

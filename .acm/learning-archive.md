@@ -673,6 +673,10 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** Destination gained a new note naming three gaps (genericity as self-claim, self-targeting deriving reasoning-capability improvement, token efficiency) -- and the very first attempt to act on the reasoning-capability gap failed the suite's own oldest genericity constraint. The withdrawn addition named "this suite" and a dated destination note inside a skill file that must work generically across any target.
 
+## 2026-08-01 — orient-post-genericity-reversal
+
+**[!REALIZATION]** The genericity violation was not novel -- the exact failure mode was already recorded in learning.md (the reflect-step-hansei-rewrite entry's "remain target-agnostic enough that the self-targeting case falls out without special-casing"), read at the start of the same session. This is the most concrete, falsifiable evidence yet on the suite's oldest open question (does the loop carry prior learning forward): this window's answer is no, not reliably, from a single read at session start.
+
 ---
 
-**167 markers — 156 realisations, 11 reversals**
+**168 markers — 157 realisations, 11 reversals**

@@ -5,11 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 167 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-01 — orient-post-genericity-reversal
-
-**[!REALIZATION]** The genericity violation was not novel -- the exact failure mode was already recorded in learning.md (the reflect-step-hansei-rewrite entry's "remain target-agnostic enough that the self-targeting case falls out without special-casing"), read at the start of the same session. This is the most concrete, falsifiable evidence yet on the suite's oldest open question (does the loop carry prior learning forward): this window's answer is no, not reliably, from a single read at session start.
+Showing the most recent 60 markers. 168 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-01 — orient-post-genericity-reversal
 
@@ -246,6 +242,10 @@ Showing the most recent 60 markers. 167 older marker(s) are in `.acm/learning-ar
 ## 2026-08-02 — retire-memory-model-name-in-favor-of-acm
 
 **[!REALIZATION]** Standardization changes what simplicity requires. Before ACM existed, The Memory Model gave the architecture a coherent name. After ACM became the separate standard, the same phrase became translation debt. A useful local concept can become waste when its underlying idea acquires a canonical shared name.
+
+## 2026-08-02 — publish-activation-and-acm-simplification
+
+**[!REALIZATION]** The operator's recent changes form a coherent onboarding simplification: expose one skill roster classified by activation, require only two routine actions, and name the persistent architecture once as ACM. The implementation history remains visible in the trail, while the newcomer surface presents the converged model rather than the sequence that produced it.
 
 ---
 

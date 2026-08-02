@@ -11252,3 +11252,33 @@ Orientation freshness: current - the change strengthens the existing orientation
 
 1. Check the public `pea-website` for current-facing Memory Model terminology and treat any migration there as a separate target with its own destination and trail.
 2. Inspect the rendered GitHub README at narrow and wide widths to validate the new activation roster visually.
+
+## 2026-08-02 - publish-activation-and-acm-simplification
+
+- target: repository publication state
+- operator: Nils Wendelboe Holmager
+- agent: GitHub Copilot
+- skill: trail (condensed publication record)
+- outcome: committed and published the activation-model simplification and ACM terminology convergence to origin/main
+- delta: commits 1f2d909 and 6ee2301 published; remote main verified at 6ee2301f30d847cbafee5ed9c8835d72d0f818b6
+
+Created two meaningful commits after full verification: `1f2d909 skills: simplify activation model and standardize on ACM` contains the current suite, docs, installers, reusable icons, changelog, and append-only source trail; `6ee2301 acm: refresh evidence after activation redesign` contains only regenerated ACM views. The first commit attempt correctly failed because the repository guard required `.acm/audit-trail.md` beside substantive changes; the trail was staged and the commit retried without bypassing the guard. `python verify.py`, `git diff --check`, PowerShell installer parsing, live-terminology searches, SVG parsing, and README asset-link checks passed. `git push origin main` reported the remote already current; a subsequent `git fetch`, `git rev-parse`, and `git ls-remote` independently confirmed local HEAD, `origin/main`, and GitHub's advertised main ref all equal `6ee2301f30d847cbafee5ed9c8835d72d0f818b6`.
+
+[!REALIZATION] The operator's recent changes form a coherent onboarding simplification: expose one skill roster classified by activation, require only two routine actions, and name the persistent architecture once as ACM. The implementation history remains visible in the trail, while the newcomer surface presents the converged model rather than the sequence that produced it.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired - this entry records publication of the immediately preceding completed arc rather than another product finding.
+- *About to declare silence:* not fired - commits were created and remote publication was verified.
+- *Contradicts prior [!REALIZATION]:* not fired - remote evidence confirms the simplification arc recorded in runs 203-210.
+- *Operator explicitly asked:* FIRED - the operator explicitly requested meaningful commits and push.
+
+**Across-trail macro-Hansei**
+
+The published unit is larger than one local README edit because the operator was simplifying a whole explanatory system. The commit boundary preserves that: one reviewable product-and-source-evidence commit, followed by mechanically derived ACM views.
+
+Orientation freshness: current - publication adds evidence of delivery, not a new architectural claim.
+
+### Candidate Next Moves
+
+1. Inspect the public GitHub README at narrow and wide widths now that the activation roster is live.
