@@ -207,6 +207,14 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 200 | 2026-08-02 | align-installed-skill-docs-with-harness-tool-layout | corrected commands that still referenced the pre-harness tools layout and clarified the boundary between installed skills and clone-local optional tooling | README.md, INSTALLING.md, QUICKSTART.md, improve/SKILL.md 3.13.0 -> 3.13.1, trail/SKILL.md 2.4.1 -> 2.4.2, CHANGELOG.md v4.25.2 |
 | ▸ 201 | 2026-08-02 | refresh-iteration-count-and-readme-totals | refreshed a two-month-stale hand-maintained evidence document and its README claim with mechanically-verified current totals | ITERATION-COUNT.md self-targeted total 221 -> 286, v3 era 132 -> 197, total commits 363 -> 430, new external-target entry recorded; README.md "221 verified iterations" -> "286", "191 individually backed by git commits" -> "256" |
 | ▸ 202 | 2026-08-02 | confirm-iteration-count-sync-scope-across-live-docs | confirmed README.md and ITERATION-COUNT.md are the only precise-figure citations and both already match; found three vague "200+" floor citations, tightened the one in-repo instance, left two external/archival instances untouched with stated rationale | INSTALLING.md "200+ times" -> "280+ times" |
+| ▸ 203 | 2026-08-02 | automatic-intent-trail-workflow | Intent and Trail became explicit automatic services around a three-command deliberate workflow; Destination and Orient gained start/change and evidence-based cadence guidance | suite v4.25.2 -> v4.26.0; six skill contracts, README, QUICKSTART, INSTALLING, and both installers aligned |
+| ▸ 204 | 2026-08-02 | destination-orientation-run-mindset | reduced the normal user's conceptual surface to Destination, Orientation, and Run; moved Probe fully outside the operational workflow as optional ARF research instrumentation | suite v4.26.0 -> v4.26.1; README, QUICKSTART, INSTALLING, installer output, and probe/SKILL.md aligned |
+| ▸ 205 | 2026-08-02 | probe-opt-in-research-install | default installers now expose only the five operational capabilities; Probe requires an explicit research opt-in | suite v4.26.1 -> v4.26.2; install.ps1 adds -Research, install.sh adds --research, entry docs aligned |
+| ▸ 206 | 2026-08-02 | passive-evidence-triggered-orientation | Orientation became a passive evidence-triggered service; the normal operator workflow reduced to Destination plus Run | suite v4.26.2 -> v4.27.0; destination 2.4.0 -> 2.5.0, improve 3.14.0 -> 3.15.0, orient 2.5.0 -> 2.6.0 |
+| ▸ 207 | 2026-08-02 | orient-passive-control-surface-arc | confirmed one coherent agency migration and refreshed orientation around two deliberate actions, three automatic services, and optional research instrumentation | .acm/orientation.md rewritten from run 206 arc; first self-scheduled Orient case recorded |
+| ▸ 208 | 2026-08-02 | unify-readme-skill-roster-by-activation | replaced three overlapping skill groupings with one six-skill roster classified as Active, Passive, or Triggered | README.md unified; six existing pea-website inline SVG glyphs extracted to assets/skills/ |
+| ▸ 209 | 2026-08-02 | release-note-unified-skill-roster | documented the unified activation roster as v4.27.1 | CHANGELOG.md +1 patch release entry |
+| ▸ 210 | 2026-08-02 | retire-memory-model-name-in-favor-of-acm | retired The Memory Model as a current parallel name and made Agent Context Memory (ACM) canonical throughout live surfaces | README heading and prose aligned; six skill role labels aligned; suite v4.27.1 -> v4.27.2 with patch bumps for all six skill contracts |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -950,4 +958,33 @@ Do not edit by hand — re-run the command to refresh.
 
 - **decided:** Tighten `INSTALLING.md`'s "200+ times" to "280+ times." Leave `.zenodo.json` and `pea-website/index.html` unchanged.
 
-**202 runs total — 187 with changes, 15 silence**
+### Run 203 — 2026-08-02 — automatic-intent-trail-workflow
+
+- **decided:** Keep all six capabilities separate, but divide their operating roles explicitly: Destination, Improve, and Orient are the normal deliberate workflow; Intent is automatic ingress; Trail is automatic egress; Probe is advanced validation. Every deliberate or advanced skill applies Intent before reasoning and Trail after substantive output. Standalone installations retain a local fallback when a sibling skill is unavailable.
+
+### Run 204 — 2026-08-02 — destination-orientation-run-mindset
+
+- **decided:** Teach exactly three user-facing ideas: Destination (where are we going), Orientation (where are we now), and Run (use Improve to move forward). Keep the command and skill names `/destination`, `/orient`, and `/improve`; do not rename Orient or Improve. Define five operationally installed capabilities under that model, with Intent and Trail automatic, while classifying Probe as a sixth optional scientific instrument that no operational skill requires or invokes.
+
+### Run 205 — 2026-08-02 — probe-opt-in-research-install
+
+- **decided:** Install the five operational capabilities by default and add an explicit research mode that includes Probe: `-Research` for PowerShell and `--research` for shell.
+
+### Run 206 — 2026-08-02 — passive-evidence-triggered-orientation
+
+- **decided:** Make Destination and Improve own evidence-triggered Orient scheduling. Destination schedules Orient after a material destination revision and durable Trail entry. Improve evaluates orientation freshness before its Trail entry, records the result in that append-only entry, then invokes Orient after durability when the trigger fires. Orient remains passive, derived, and non-target-changing; manual `/orient` remains a diagnostic override.
+- **REVERSAL:** Focused validation exposed that append-only ordering contradiction before documentation changed. Moved evaluation before Trail and kept only the actual Orient handoff after durability.
+
+### Run 207 — 2026-08-02 — orient-passive-control-surface-arc
+
+- **REVERSAL:** The run-204 model of "three concepts for the user" was a useful plateau but not the stable boundary. The arc shows that conceptual importance and operator responsibility were still conflated. Revised to two deliberate actions plus passive Orientation; retained the underlying capability rather than deleting or weakening it.
+
+### Run 208 — 2026-08-02 — unify-readme-skill-roster-by-activation
+
+- **decided:** Use activation as the only first-contact taxonomy: Active (Destination, Improve, research-only Probe), Passive (Intent, Trail), and Triggered (Orient). Keep all six in one table and explain normal operation beneath it. This ranks above a local Orient-row deletion because it removes the structural source of the duplication.
+
+### Run 210 — 2026-08-02 — retire-memory-model-name-in-favor-of-acm
+
+- **decided:** Rename the README section to `Agent Context Memory (ACM)`, state directly that the skills implement ACM, and replace `Memory Model role` with `ACM role` in all six current skill contracts. Keep historical trail and changelog wording intact. Apply patch version bumps because terminology changes but behavior does not.
+
+**210 runs total — 195 with changes, 15 silence**

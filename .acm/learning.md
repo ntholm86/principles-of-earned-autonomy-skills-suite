@@ -5,43 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 158 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-01 — trail-drop-sessions-mandate-independent-capture-exists
-
-**[!REALIZATION]** The sessions/ mandate was, from the moment it was added, an acknowledged compromise -- the trail-v1-10-0-sessions-mandatory entry made it mandatory to close "the longest-standing Observable Autonomy gap," while the very same skill's Fidelity section already ranked the artifact it mandated as the weakest possible tier. This is a case where a real constraint (no independent capture existed yet) forced a second-best mandate, and the mandate should have carried an explicit sunset condition ("remove this once independent capture exists") rather than being stated as a durable requirement. Worth carrying forward as a general practice: when a spec adopts a second-best mechanism because a better one does not yet exist, name the condition under which the second-best mechanism should be retired, not just the reason it was adopted.
-
-## 2026-08-01 — trail-drop-sessions-mandate-independent-capture-exists
-
-**[!REALIZATION]** This is a genuine instance of the suite correcting its own accumulated ceremony once the reason for that ceremony no longer holds -- not because the ceremony was wrong when adopted, but because the surrounding architecture (llm-harness-proxy, and the pre-existing but only-recently-relied-upon host product session history) changed the tradeoff. This is exactly the shape of a healthy Argyris-style double-loop correction: the governing variable ("no independent capture exists, so agent-authored capture is the best available") changed, and the downstream rule (mandatory sessions/) needed to change with it, rather than being defended as-is because it was once justified. Worth naming as a positive precedent: mandates adopted as stopgaps should be revisited when the gap they were stopping closes, and this session is the first clean example of that revisiting actually happening.
-
-## 2026-08-01 — improve-self-targeting-reasoning-capability-instrument
-
-**[!REALIZATION]** Applying the new self-check to this very run, honestly: this change is borderline by its own standard, and I want to name that rather than claim an easy win. Adding a new self-diagnostic question to a skill file is, mechanically, a textual edit to a markdown file -- indistinguishable in form from the ACM section 4 paragraph additions or the PRINCIPLES.md H1-check fix from earlier this session. What makes it different, if anything, is that its *effect* is on the agent's own future reasoning process (what questions it asks itself) rather than on the target artifact's internal consistency. I judge this as a genuine (if modest) reasoning-capability instance rather than an artifact-level one, on the same basis the 2026-07-31 Argyris double-loop addition to step 6b was judged one: both change what question the loop asks itself, not what the skill files say about something else. But I hold this loosely -- a future run, or the operator, may reasonably judge this was still "just text" and that a genuine reasoning-capability fix requires actually finding and correcting a live instance of shallow reasoning, not adding a prompt that asks a future run to look for one. Recording both readings rather than picking the flattering one.
-
-## 2026-08-01 — improve-self-targeting-reasoning-capability-instrument
-
-**[!REALIZATION]** This entry is a direct test of whether a destination note, freshly written, can be turned into a loop behavior change in the very next iteration -- not just cited as context for some future run. That much held: the note existed, and this run built on it within the same session. What remains genuinely unproven is the harder claim underneath it: whether the loop, self-targeting, can derive a reasoning-capability gap on its own initiative, without the destination note having been handed to it moments before by the operator in the same conversation. This run is evidence of "the destination note is actionable," not yet evidence of "self-targeting reliably surfaces reasoning-capability gaps unprompted." That distinction should be tested by a future self-targeting run that has NOT just had this exact gap named to it in the same session -- ideally a genuinely fresh session.
-
-## 2026-08-01 — reversal-self-targeting-branch-violates-genericity
-
-**[!REALIZATION]** The precedent that should have prevented this mistake was already sitting in learning.md -- the exact compact learning surface improve/SKILL.md step 1 instructs every run to read before examining anything, specifically framed as faster and more reliable than re-reading the full trail. I had, minutes earlier in the same session, been reasoning explicitly about "learning carry-forward" as one of the destination's named reasoning-capability concerns -- and then proceeded to make an edit that a prior recorded realization already warned against, without re-checking learning.md for exactly this class of proposal before writing it. This is a direct, live instance of the destination note's own concern (does the loop carry prior learning forward, or does it re-derive the same mistake) -- except this time the loop did not carry it forward, it repeated the mistake learning.md had already recorded. This is more honest and more useful evidence about the actual state of the suite's reasoning capability than the meta-instruction I wrote and then had to revert: the real gap is not "the Self-targeting section lacks a self-check" -- it is "the agent does not reliably re-consult learning.md immediately before proposing a skill-file change, even in the same session where it had just been discussing learning carry-forward directly."
-
-## 2026-08-01 — reversal-self-targeting-branch-violates-genericity
-
-**[!REALIZATION]** This session now contains a clean, falsifiable natural experiment in the exact question the destination's 2026-08-01 note raises: can the loop derive that improving its own reasoning capability matters? The honest answer, based on this entry, is: not reliably without operator correction. The loop had direct textual access to the relevant lesson (learning.md, read at the start of the session) and made the mistake anyway when writing a new instruction under the immediate influence of a related but distinct idea (the destination note's reasoning-capability framing). The genuinely useful finding from this whole arc is not the reverted paragraph -- it is this: a destination note naming "improve the agent's own reasoning" as a goal does not, by itself, make the agent apply learning.md more carefully; if anything, the presence of an exciting new framing may have distracted from the more mundane, already-known check. Any future attempt to operationalize the destination's reasoning-capability concern should treat this as the primary evidence, not the paragraph that had to be reverted.
-
-## 2026-08-01 — reversal-self-targeting-branch-violates-genericity
-
-**[!REVERSAL]** The entry "improve-self-targeting-reasoning-capability-instrument" (2026-08-01, this same session) added a self-targeting-specific paragraph to improve/SKILL.md's Self-targeting section. This entry fully reverses that addition after the operator identified it violates the suite's own genericity constraint.
-
-## 2026-08-01 — orient-post-genericity-reversal
-
-**[!REALIZATION]** Trail's .acm/sessions/ mandate removal is a genuine, well-reasoned architectural correction. Both operator-stated reasons were independently verified before acting (llm-harness-proxy's actual scope read directly; the host-product session-history claim verified indirectly via this workspace's own chronicle tooling). Not a reversal candidate.
-
-## 2026-08-01 — orient-post-genericity-reversal
-
-**[!REALIZATION]** Destination gained a new note naming three gaps (genericity as self-claim, self-targeting deriving reasoning-capability improvement, token efficiency) -- and the very first attempt to act on the reasoning-capability gap failed the suite's own oldest genericity constraint. The withdrawn addition named "this suite" and a dated destination note inside a skill file that must work generically across any target.
+Showing the most recent 60 markers. 167 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-01 — orient-post-genericity-reversal
 
@@ -247,6 +211,42 @@ Showing the most recent 60 markers. 158 older marker(s) are in `.acm/learning-ar
 
 **[!REALIZATION]** Not every unsynced number is the same defect. This repo's evidence-currency problem now has two named subclasses - stale-precise (fixed by resyncing) and vague-floor (a style choice, not a defect) - and treating them identically would have produced either a false fix (rewriting archival metadata on an inference) or an omission (leaving `INSTALLING.md` inconsistent with README's newly precise figure for no reason).
 
+## 2026-08-02 — automatic-intent-trail-workflow
+
+**[!REALIZATION]** Installer completion text is part of the product contract. The first full-doc pass still missed two lines that would have taught the old six-command model at the exact moment a user begins. The contradiction scan, rather than file taxonomy, exposed the real boundary.
+
+## 2026-08-02 — automatic-intent-trail-workflow
+
+**[!REALIZATION]** The suite's complexity problem was not six separate capabilities; it was exposing six capabilities as six operator responsibilities. Earlier iterations repeatedly simplified placement and wording while preserving evidence machinery underneath. This change applies the same pattern to runtime composition: keep distinct ownership boundaries, collapse the user's required control surface. The recurring drift risk now moves to any surface that enumerates skills without also naming their operating role.
+
+## 2026-08-02 — destination-orientation-run-mindset
+
+**[!REALIZATION]** The smallest honest description of the suite has three layers with different counts: three concepts for the user, five capabilities for operation, six capabilities for research. Previous descriptions kept collapsing these counts into one taxonomy, which forced either infrastructure or instrumentation into the user's mental model. Naming the layers separately resolves that tension without deleting functionality.
+
+## 2026-08-02 — passive-evidence-triggered-orientation
+
+**[!REALIZATION]** The arc's repeated simplifications reveal a stronger architecture than the earlier three/five/six count: capability count and operator action count are independent. Destination and Improve are the only deliberate control inputs; Intent, Trail, and Orientation are feedback infrastructure. Probe remains external instrumentation. The suite's public model should be organized by agency - what the operator decides versus what the system maintains - rather than by how many skill files exist.
+
+## 2026-08-02 — passive-evidence-triggered-orientation
+
+**[!REVERSAL]** Focused validation exposed that append-only ordering contradiction before documentation changed. Moved evaluation before Trail and kept only the actual Orient handoff after durability.
+
+## 2026-08-02 — orient-passive-control-surface-arc
+
+**[!REALIZATION]** Orientation's importance never implied operator agency. Treating every important capability as a command was the governing mistake behind the repeated taxonomy revisions. The architecture now separates authority from maintenance: the operator controls direction and action; the system maintains interpretation, evidence, and situational awareness.
+
+## 2026-08-02 — orient-passive-control-surface-arc
+
+**[!REVERSAL]** The run-204 model of "three concepts for the user" was a useful plateau but not the stable boundary. The arc shows that conceptual importance and operator responsibility were still conflated. Revised to two deliberate actions plus passive Orientation; retained the underlying capability rather than deleting or weakening it.
+
+## 2026-08-02 — unify-readme-skill-roster-by-activation
+
+**[!REALIZATION]** The prior README architecture accurately described internal composition but exposed too many valid taxonomies at once. A first-contact model should classify each capability by one question only: how does it activate? Roles, artifacts, and research status belong inside the row, not in competing rosters.
+
+## 2026-08-02 — retire-memory-model-name-in-favor-of-acm
+
+**[!REALIZATION]** Standardization changes what simplicity requires. Before ACM existed, The Memory Model gave the architecture a coherent name. After ACM became the separate standard, the same phrase became translation debt. A useful local concept can become waste when its underlying idea acquires a canonical shared name.
+
 ---
 
-**60 markers — 58 realisations, 2 reversals**
+**60 markers — 57 realisations, 3 reversals**
