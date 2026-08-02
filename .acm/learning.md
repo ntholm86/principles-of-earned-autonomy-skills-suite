@@ -5,51 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 168 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-01 — orient-post-genericity-reversal
-
-**[!REALIZATION]** The operator-gate caught what the loop's own process did not, immediately, in the same session -- a new form of gate-effectiveness evidence distinct from prior "which next move to pick" evidence: this is the gate catching a bad implementation of an agreed destination-level concern.
-
-## 2026-08-01 — orient-post-genericity-reversal
-
-**[!REALIZATION]** Read as one document, this window is the clearest evidence this repo's trail has produced on the destination's own oldest named gap (Learning: "the most underdeveloped of the three"). A destination note asking the loop to derive that improving its own reasoning matters did not, by itself, make the loop apply its own already-recorded learning more carefully in the very next action -- if anything, the new framing appears to have competed with, rather than reinforced, the older and more mundane precedent. The operator-gate closed the gap this time. Whether it needs to every time, or whether a structural re-trigger point for learning.md is worth adding, is now the single most concrete open design question this repo's trail has surfaced.
-
-## 2026-08-01 — trail-decision-precedent-check-requirement
-
-**[!REALIZATION]** This entry is itself the first live test of the new requirement -- and it passed, because the precedent check was performed deliberately and stated explicitly before the Decision was finalized, not added afterward as decoration. That is a meaningfully different discipline than what happened in the withdrawn entry, where a directly relevant precedent existed in learning.md and was not re-checked before the contradicting edit was written. The difference this time was not a smarter mechanism -- it was choosing to grep learning.md for specific terms before deciding, the same action any future agent following this new marker definition would be asked to take.
-
-## 2026-08-01 — learning-md-bounded-recent-window-plus-archive
-
-**[!REALIZATION]** This is the first entry in this whole multi-turn arc that responds to destination note item 3 (token/resource efficiency) as its own dedicated concern, rather than as a side effect of an unrelated instruction (the earlier trail sessions-mandate removal was efficiency-motivated but operator-directed, not self-derived from the destination text). Unlike the reasoning-capability attempts, this one did not require touching a skill file's *behavioral* instructions at all -- it is a change to tooling (record.py) and a description update (trail/SKILL.md, improve/SKILL.md), with no risk of the genericity violation that tripped up the earlier attempt, because record.py and the .acm/ file structure are already generic (they apply identically to any target using these skills, not just this repo).
-
-## 2026-08-01 — audit-learning-precedent-surfaces-position-quickstart-h1-gap-and-systemic-bom
-
-**[!REALIZATION]** This is the first entry in this arc where the new precedent-check discipline (added two entries ago) directly produced a finding neither the operator nor I had already surfaced -- the POSITION.md/QUICKSTART.md coverage gap was sitting, fully documented, in an archived realization from months earlier, and would not have been found without deliberately going back to check learning-archive.md for this session's other changes rather than continuing to defer that audit a fourth time. This is a genuinely positive data point for whether the precedent-check requirement can do real work, distinct from the earlier failure where the same kind of check was skipped.
-
-## 2026-08-01 — audit-learning-precedent-surfaces-position-quickstart-h1-gap-and-systemic-bom
-
-**[!REALIZATION]** Reading this session as one arc: the recurring pattern named above (checks with silent scope gaps) has now appeared three times in one day, each time found by actually re-reading the file/list in question rather than trusting that a prior fix generalized further than it did. The PRINCIPLES.md fix from earlier today explicitly named "audit STALE_PATH_DOCS and ACM_SCOPE_TRAVERSAL_FILES for the same silent-exclusion pattern" as a candidate next move -- that audit still has not been done, and this entry's finding (POSITION.md/QUICKSTART.md missing from REQUIRED_FILES) is arguably the same class of gap that audit was meant to catch, just in a different list (REQUIRED_FILES itself, not the other two). The governing pattern is: whenever this repo adds a new live doc (POSITION.md, QUICKSTART.md were both added well after the original REQUIRED_FILES list was written), nothing currently prompts a check of whether it needs to join every file-scoping list verify.py maintains. Fixing three individual instances of this pattern is not the same as fixing the pattern -- a genuinely systemic answer would be enumerating all of verify.py's file-scoping lists in one place and checking each new live doc against the full set, not discovering each one independently when something happens to force a look.
-
-## 2026-08-01 — confirm-bom-root-cause-and-fix-verifypy
-
-**[!REALIZATION]** The append-safety test (BOM is only written at file-creation/full-overwrite time, never reintroduced by a later append to an already-BOM-less file) is the load-bearing fact for how this cleanup can proceed safely: it means `.acm/audit-trail.md`'s BOM, once eventually stripped, would not silently reappear from this session's own continued use of `Add-Content -Encoding UTF8` for future entries -- the risk is entirely in the one-time strip operation itself, not in ongoing use. This changes the shape of the remaining work: it is a one-time, per-file migration, not a recurring maintenance burden, provided future *new* files in this repo are created via a BOM-safe path (`create_file`, or PowerShell's `-Encoding utf8NoBOM` where available, or `[System.IO.File]::WriteAllText` with an explicit `UTF8Encoding(false)`) rather than plain `-Encoding utf8`/`UTF8` in Windows PowerShell 5.1.
-
-## 2026-08-01 — confirm-bom-root-cause-and-fix-verifypy
-
-**[!REALIZATION]** The recurring-finding-class trigger fired, but the macro-Hansei for this specific pattern was already performed in the immediately prior entry (governing-variable diagnosis: no single canonical file-scope list in verify.py -- REQUIRED_FILES, STALE_PATH_DOCS, and ACM_SCOPE_TRAVERSAL_FILES each independently go stale). This entry does not change that diagnosis; it is a direct continuation of acting on it (root-cause confirmation, then one more fix in the already-agreed "one at a time" sequence), not a new instance requiring a fresh governing-variable read. Repeating the full macro reflection verbatim here would be ceremony without new signal -- the honest record is that the check was made, the same governing variable still applies, and no revision to it is warranted from this entry's evidence.
-
-## 2026-08-01 — close-create-file-bom-blind-spot-and-fix-installing-md
-
-**[!REALIZATION]** With create_file confirmed BOM-safe and three files now successfully migrated with the identical byte-verified mechanism, the remaining risk in this cleanup is concentrated almost entirely in the two deliberately-deferred files (.acm/audit-trail.md, .acm/orientation.md) rather than spread across the whole remaining list. The plain-file fixes (SKILL.md files, record.py, session files) are now low-uncertainty, repetitive work with a proven-safe mechanism -- the interesting remaining decision is specifically how to handle the two high-risk files, not whether the mechanism generalizes to the rest.
-
-## 2026-08-01 — close-create-file-bom-blind-spot-and-fix-installing-md
-
-**[!REALIZATION]** Continuing to fire the recurring-finding-class trigger on every file-by-file BOM fix, while correct per the letter of the rule, is starting to produce repetitive trail entries whose macro-Hansei content is identical to the last one ("no new diagnosis, continuation of agreed plan"). This is itself worth naming as a pattern: the trigger was designed to catch *drift* across a recurring finding-class, but a deliberately-sequenced, already-diagnosed cleanup (like this BOM migration) will keep firing it every time with nothing new to say. That is not a flaw in this entry's evidence -- it is the honest, correct evaluation -- but it suggests the *next* time this trigger fires with "same diagnosis as last entry," the macro-Hansei content itself could be a single-sentence pointer to the entry where the diagnosis was actually made, rather than re-stating the reasoning. Not changing the format now (that would be a new mid-migration process change, and this entry is not the place for it); naming it as a candidate for the next dedicated verify.py/trail process discussion instead.
-
-## 2026-08-01 — fix-recordpy-bom
-
-**[!REALIZATION]** Four files into this migration (QUICKSTART.md, verify.py, INSTALLING.md, record.py), the pattern is now fully mechanical and has produced zero surprises since the QUICKSTART.md entry's original discovery -- the interesting content of this cleanup arc was front-loaded into the root-cause investigation two entries ago, not spread evenly across the remaining fixes. This matches the macro-Hansei observation from the immediately prior entry almost exactly: the remaining work is low-uncertainty repetition, and the only files where real uncertainty still exists are the two deliberately-deferred ones.
+Showing the most recent 60 markers. 179 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-01 — fix-recordpy-bom
 
@@ -247,6 +203,50 @@ Showing the most recent 60 markers. 168 older marker(s) are in `.acm/learning-ar
 
 **[!REALIZATION]** The operator's recent changes form a coherent onboarding simplification: expose one skill roster classified by activation, require only two routine actions, and name the persistent architecture once as ACM. The implementation history remains visible in the trail, while the newcomer surface presents the converged model rather than the sequence that produced it.
 
+## 2026-08-02 — destination-coequal-research-and-unassisted-use
+
+**[!REALIZATION]** The operator is not simplifying the suite to turn research into marketing. Adoption and research remain equal, and explanation quality is diagnostic rather than evidentiary. The sharper adoption claim is behavioral: can someone use the system successfully without the author, even before they can articulate its full theory?
+
+## 2026-08-02 — orient-against-coequal-research-and-adoption
+
+**[!REALIZATION]** The current plateau is not "the suite is now simple enough." It is "the suite now has a testable adoption bar and a separately bounded research bar." The next meaningful evidence must come from behavior against those bars, not from further confidence in the explanatory model itself.
+
+## 2026-08-02 — orient-against-coequal-research-and-adoption
+
+**[!REVERSAL]** The initial Destination hunch treated newcomer understanding and successful use as one combined destination and risked elevating adoption above research. Operator responses separated the claims: research remains co-equal, successful use is enough for adoption, and easier explanation is useful signal rather than research evidence.
+
+## 2026-08-02 — destination-restore-reasoning-growth-and-token-viability
+
+**[!REALIZATION]** Token efficiency and reasoning capability are not competing destination tracks. Efficiency is a viability constraint on every track: reduce resource use without reducing the capabilities that make delegation trustworthy. The target is better capability per unit of resource, not minimal tokens in isolation.
+
+## 2026-08-02 — destination-restore-reasoning-growth-and-token-viability
+
+**[!REVERSAL]** The preceding Destination/Orient pair over-corrected toward external behavioral evidence. External behavior remains necessary for adoption and research validation, but it is not the full immediate research program. The suite must also keep improving the reasoning system that generates that behavior, while making the system affordable enough to sustain.
+
+## 2026-08-02 — orient-restore-reasoning-growth-and-token-viability
+
+**[!REALIZATION]** The suite's viability equation has three inseparable terms: capability, trust, and cost. Optimizing any one by silently degrading another does not advance the destination. The useful unit is demonstrated capability and trust per resource spent, not raw feature count, explanation simplicity, or token reduction alone.
+
+## 2026-08-02 — orient-restore-reasoning-growth-and-token-viability
+
+**[!REVERSAL]** Run 213's claim that the next meaningful evidence must come from behavior was too exclusive. Behavioral evidence remains required for adoption and external validation, while internal reasoning-capability discovery and capability-preserving efficiency work are also immediate research paths.
+
+## 2026-08-02 — bounded-current-destination-with-full-read-fallback
+
+**[!REALIZATION]** The latest reasoning omission and the destination's token cost had a shared cause: active intent and historical provenance were stored together without an auditable completeness boundary. Separating their read paths can improve both carry-forward reliability and resource use, but only after reconciliation earns the boundary.
+
+## 2026-08-02 — reconcile-complete-current-destination
+
+**[!REALIZATION]** The engine's self-improvement mandate does not require a special self-targeting capability list. It follows recursively from the same generic operation used on every target: reason about purpose and intent, discover what most limits them, and improve that limitation. Fixing named capabilities would turn today's examples into tomorrow's ceiling.
+
+## 2026-08-02 — reconcile-complete-current-destination
+
+**[!REVERSAL]** The historical "irreducible human gate" over every implementation choice is no longer active. The operator owns and confirms the Destination; within it, implementation choice may be delegated. Direction changes and declared consequential actions remain gated.
+
+## 2026-08-02 — orient-recursive-purpose-and-principles-boundary
+
+**[!REALIZATION]** The strongest current reasoning evidence is mixed in a specific way: the engine applied prior learning well enough to protect intent structurally, while still needing operator correction to avoid creating a new conceptual ceiling. Improving learning carry-forward alone does not establish equally strong intent generalization.
+
 ---
 
-**60 markers — 57 realisations, 3 reversals**
+**60 markers — 53 realisations, 7 reversals**

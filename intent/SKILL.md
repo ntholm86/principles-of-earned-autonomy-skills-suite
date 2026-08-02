@@ -1,6 +1,6 @@
 ---
 name: intent
-version: 1.5.1
+version: 1.6.0
 description: 'Automatic ingress service for substantive work. Apply Operator''s Intent to the user''s own prompt before acting: interpret what the user is trying to achieve, not what they literally wrote, and narrate it so the user can correct drift before work begins. The operator should never need to invoke this skill separately. SKIP WHEN: the request is unambiguous and mechanical (a specific file read, a one-line command, a yes/no confirmation).'
 argument-hint: 'Triggered automatically by any substantive user prompt; can also be invoked explicitly: "apply intent to this request"'
 ---
@@ -45,6 +45,8 @@ A single prompt is a thin signal. Before extracting intent, read what already ex
 - **The trail** (`.acm/audit-trail.md`) — past decisions, reversals, and realisations reveal what the user has consistently cared about, what they rejected, and where things went wrong before. A pattern of `[!REVERSAL]` entries around a particular approach is stronger evidence of intent than any single prompt.
 - **The conversation** — corrections, approvals, and the moments the user stepped in all carry intent signal. A user who keeps redirecting toward simplicity is telling you something that no single prompt states explicitly.
 - **Past sessions** (`.acm/sessions/`) — if earlier sessions exist, read their intent sections. Accumulated learnings about how this user frames problems, what they consider done, and what they care about carry over.
+
+**Bounded destination reads.** If a destination contains the exact comments `<!-- current-destination: complete -->` and `<!-- destination-history -->` in that order, the content between them is the operator-confirmed complete current mandate. Read that bounded section for routine work. Read the full file when running Destination, when the current section is ambiguous or conflicts with other evidence, or when historical provenance is material to the request. If either comment is absent, malformed, or out of order, read the full file. Never infer a boundary from headings, dates, horizontal rules, or file position.
 
 If none of these exist yet — no `.acm/` at all — run **Destination** first to establish the destination before the loop starts. A loop that begins without a destination is navigating without one.
 

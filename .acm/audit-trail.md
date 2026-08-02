@@ -11282,3 +11282,439 @@ Orientation freshness: current - publication adds evidence of delivery, not a ne
 ### Candidate Next Moves
 
 1. Inspect the public GitHub README at narrow and wide widths now that the activation roster is live.
+
+## 2026-08-02 - destination-coequal-research-and-unassisted-use
+
+- target: .acm/destination.md current focus
+- operator: Nils Wendelboe Holmager
+- agent: GitHub Copilot
+- skill: destination
+- outcome: sharpened the immediate destination around co-equal research and adoption, with unassisted successful use as the adoption bar
+- delta: layered a new 2026-08-02 current-focus section above the preserved destination record
+
+### Sourced inferences
+
+1. **Initial priority hunch:** the recent arc might have promoted newcomer adoption above the research question. Evidence: operator statement, "Trying to make the skillset and its mindset easier to explain and to use for new users," plus runs 203-211 repeatedly simplifying the control surface and vocabulary.
+2. **Research relationship hunch:** easier explanation might count as evidence that the research found the right psychological primitives. Evidence: the existing destination's "recognition, not comprehension" language and the operator's RPG activation model producing a simpler account of all six skills.
+3. **Adoption quality-bar hunch:** the existing adoption condition could be sharpened from "finds them worth running" to an observable first-use outcome. Evidence: the operator emphasized both easier explanation and easier use, while the latest orientation named independent onboarding as the untested adoption gap.
+
+### Questions and operator responses
+
+1. Asked: "Is the next destination: a new developer should understand and successfully use the suite without learning its history or needing you to explain it?"
+	- Operator selected: **"Partly, but research remains equal."**
+2. Asked: "Does easier explanation count as evidence that the architecture found the right primitives, rather than only better packaging?"
+	- Operator selected: **"Useful signal, not evidence."**
+3. Asked: "Should adoption success require a cold reader to explain the model accurately and complete a first Destination + Improve cycle without your help?"
+	- Operator selected: **"Successful use is enough."**
+
+### What is now believed
+
+Research and adoption are co-equal immediate priorities. The adoption bar is behavioral: a new developer can install the suite and complete a first Destination + Improve cycle without help from the author. Accurate conceptual explanation before use is not required; understanding may deepen through use. Easier explanation remains useful as a friction signal but cannot validate the research claim. Trustworthy-delegation research still requires inspectable evidence, external targets, fidelity, auditability, and independent evaluation.
+
+### What was rejected
+
+- Rejected: replacing the research priority with an adoption-first destination.
+- Rejected: treating conceptual compression or ease of explanation as research evidence in itself.
+- Rejected: requiring a cold user to explain the model accurately before their first successful use counts as adoption.
+
+### What remains open
+
+- Where an unassisted new user first fails in the path from discovery through useful evidence.
+- Which public external target can test both first use and trustworthy delegation.
+- Whether Active/Passive/Triggered remains operationally adequate under real use.
+
+### Destination update
+
+Layered `Current focus (Destination run, 2026-08-02)` above the older destination record. Preserved all prior text and explicitly identified older Retrospect and The Memory Model terminology as historical vocabulary for current Orient and ACM concepts.
+
+[!REALIZATION] The operator is not simplifying the suite to turn research into marketing. Adoption and research remain equal, and explanation quality is diagnostic rather than evidentiary. The sharper adoption claim is behavioral: can someone use the system successfully without the author, even before they can articulate its full theory?
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED - runs 203-211 repeatedly simplified the newcomer model; this Destination run identifies the governing purpose as adoption friction reduction without demoting research.
+- *About to declare silence:* not fired - the destination materially changed.
+- *Contradicts prior [!REALIZATION]:* FIRED - the old destination tied recognition closely to whether the model found the right primitives; the operator now bounds easier explanation as a useful signal, not research evidence.
+- *Operator explicitly asked:* FIRED - the operator explicitly invoked Destination after the simplification arc.
+
+**Across-trail macro-Hansei**
+
+The arc reveals a distinction the old destination blurred: conceptual recognition may help adoption, but it cannot validate trustworthy-delegation research. The suite now has two co-equal bars that require different evidence. Successful unassisted use advances adoption; inspectable, reproducible, independently evaluated behavior advances research.
+
+Automatic handoff: destination meaning changed materially by sharpening its priorities and adoption quality bar. Orientation is stale by definition; automatic Orient scheduled after this durable Trail entry.
+
+### Candidate Next Moves
+
+1. Re-orient runs 203-211 against the confirmed co-equal research/adoption destination.
+2. Design a future external onboarding observation around successful first use without making conceptual explanation a prerequisite.
+
+## 2026-08-02 - orient-against-coequal-research-and-adoption
+
+- target: runs 203-212 against revised .acm/destination.md
+- operator: Nils Wendelboe Holmager
+- agent: GitHub Copilot
+- skill: orient (automatically scheduled by Destination)
+- outcome: separated adoption-readiness evidence from adoption success and bounded explanation quality away from research proof
+- delta: .acm/orientation.md rewritten against co-equal research and adoption quality bars
+
+### Scope and freshness
+
+Scope: re-orient runs 203-212 against the materially revised destination: research and adoption are co-equal immediate priorities; adoption is demonstrated by successful unassisted use; easier explanation is a useful friction signal but not research evidence.
+
+- `python harness/tools/record.py history --write` -> 212 entries.
+- `python harness/tools/record.py learning --write` -> 60 recent + 169 archived markers.
+- `python verify.py` -> OK, trail integrity checks pass after correcting the malformed uncommitted Destination append.
+- Gate: PASS (arc-claims allowed).
+
+### Arc claims
+
+1. The suite has advanced adoption readiness through runs 203-211 but has not demonstrated adoption success because no new developer has completed an observed unassisted first cycle.
+2. Explainability is now correctly bounded as a friction signal, not research evidence. Trustworthy-delegation claims still require fidelity, auditability, external targets, controlled probes, or independent evaluation.
+3. Active/Passive/Triggered is the current activation hypothesis, validated for textual coherence and one self-scheduled Orient case but not for newcomer behavior.
+4. Automatic composition works as an instruction-layer architecture while self-targeting, including the freshness gate blocking this Orient run until the Destination evidence was structurally complete. External host and model fidelity remain open.
+5. The next evidence gap is behavioral on both co-equal tracks: observed unassisted use for adoption and externally inspectable delegation behavior for research.
+
+### Loop-effectiveness finding
+
+Quality bar: can Destination distinguish adoption goals from research validation rather than collapsing easier explanation into evidence for both?
+
+Result: PASS for this situated dialogue. Three one-at-a-time questions corrected an adoption-first hunch, bounded explainability as signal rather than evidence, and established successful use without prior conceptual fluency as the adoption bar. The materially revised destination automatically scheduled this run.
+
+Freshness-gate result: PASS after one visible correction. The first Destination Trail append omitted the mandatory trigger evaluation; `verify.py` blocked arc formation. Because the append was uncommitted, the ledger was restored to run 211 and the complete entry was re-appended. No arc-claims were written from malformed evidence.
+
+Double-loop check: repeated simplification did not expose a wrong destination priority. It exposed one quality signal serving two governing claims. The operator separated them: lower explanation friction supports adoption readiness, while research retains independent evidence requirements.
+
+[!REVERSAL] The initial Destination hunch treated newcomer understanding and successful use as one combined destination and risked elevating adoption above research. Operator responses separated the claims: research remains co-equal, successful use is enough for adoption, and easier explanation is useful signal rather than research evidence.
+
+[!REALIZATION] The current plateau is not "the suite is now simple enough." It is "the suite now has a testable adoption bar and a separately bounded research bar." The next meaningful evidence must come from behavior against those bars, not from further confidence in the explanatory model itself.
+
+### Action
+
+Rewrote `.acm/orientation.md` with five falsifiable claims, four behavioral next tests, updated operational rules, and bounded loop-effectiveness notes. Did not modify the target or destination.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED - runs 203-211 form a sustained simplification arc whose evidence had to be reclassified against the revised destination.
+- *About to declare silence:* not fired - the run produced new bounded claims and behavioral evidence gaps.
+- *Contradicts prior [!REALIZATION]:* FIRED - the prior destination's recognition language blurred explanation quality with whether the research found the right primitives; the operator now separates those claims.
+- *Operator explicitly asked:* FIRED - the operator invoked Destination, whose material revision automatically scheduled this Orient run.
+
+**Across-trail macro-Hansei**
+
+The loop's recent attention was valid but internally concentrated. It made the suite easier to approach and clarified its architecture. Under the revised destination, that work cannot be credited twice as both adoption and research success. The arc now points outward: behavior must supply the next evidence on each track.
+
+### Candidate Next Moves
+
+1. Observe an unassisted first Destination + Improve cycle and record the first behavioral failure or success point.
+2. Select a public external target that can produce inspectable evidence about continuity, operator control, and automatic composition.
+
+## 2026-08-02 - destination-restore-reasoning-growth-and-token-viability
+
+- target: .acm/destination.md current focus
+- operator: Nils Wendelboe Holmager
+- agent: GitHub Copilot
+- skill: destination (operator correction)
+- outcome: restored self-improving reasoning and token efficiency as immediate destination concerns alongside research and adoption
+- delta: current focus now names open-ended reasoning-capability exploration and capability-preserving resource optimization
+
+### Interpretation and source
+
+The operator corrected an omission in the immediately prior Destination run: "The immediate phase of destination should still ALSO be to explore to improve its own reasoning capability, intent interpretation and deutero learning (as examples of the concepts to improve - not the full list). And it should also seek to decrease token usage - without decreasing those abilities / optimize token usage. Because high token usage can absolutely also kill this architecture."
+
+Interpretation: research and adoption remain co-equal, but the research track must explicitly include improving the agent's own reasoning capability. Intent interpretation and deutero-learning illustrate the category rather than enumerate it. Token efficiency is a cross-cutting viability constraint: reduce resource use only when reasoning, learning, operator control, and evidence integrity are preserved or improved.
+
+This is not a new direction invented in this turn. The older destination record already contains 2026-08-01 notes naming reasoning-capability self-improvement and token/resource efficiency. The 2026-08-02 current-focus layer failed to carry those commitments forward.
+
+### Destination update
+
+- Expanded the Research priority to include continued exploration of the agent's own reasoning capabilities.
+- Named intent interpretation and deutero-learning as non-exhaustive examples.
+- Added token efficiency as a cross-cutting viability constraint, explicitly rejecting savings obtained by degrading capability or trust.
+- Added immediate quality bars for continued reasoning-capability discovery and capability-preserving token reduction.
+- Added open questions about the strongest current reasoning ceiling and token spend that contributes no decision, learning, evidence, or operator-control value.
+
+[!REVERSAL] The preceding Destination/Orient pair over-corrected toward external behavioral evidence. External behavior remains necessary for adoption and research validation, but it is not the full immediate research program. The suite must also keep improving the reasoning system that generates that behavior, while making the system affordable enough to sustain.
+
+[!REALIZATION] Token efficiency and reasoning capability are not competing destination tracks. Efficiency is a viability constraint on every track: reduce resource use without reducing the capabilities that make delegation trustworthy. The target is better capability per unit of resource, not minimal tokens in isolation.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED - the older destination already named both concerns, but the new current-focus synthesis dropped them, repeating the arc's broader risk of simplification erasing load-bearing distinctions.
+- *About to declare silence:* not fired - the destination materially changed.
+- *Contradicts prior [!REALIZATION]:* FIRED - run 213 concluded that the next meaningful evidence must come from behavior against adoption and research bars; this correction restores internal reasoning-capability exploration and efficiency work as equally legitimate immediate evidence-generating work.
+- *Operator explicitly asked:* FIRED - the operator directly corrected the destination and emphasized that the named reasoning concepts are examples, not a complete list.
+
+**Across-trail macro-Hansei**
+
+The simplification arc has a recurring boundary condition: remove orchestration and translation cost without deleting the architecture's research depth. The prior Destination run preserved research as a label but narrowed its immediate evidence path too far toward external behavior. This correction restores the full loop: improve reasoning, optimize its resource cost without degradation, test the resulting behavior externally, and make the system usable by newcomers.
+
+Automatic handoff: destination meaning changed materially by restoring immediate reasoning-capability and resource-viability constraints. Orientation is stale by definition; automatic Orient scheduled after this durable Trail entry.
+
+### Candidate Next Moves
+
+1. Re-orient the recent simplification arc against reasoning growth and token viability as well as adoption and external research evidence.
+2. Identify one token-heavy mechanism whose value can be tested without prescribing a global token budget.
+
+## 2026-08-02 - orient-restore-reasoning-growth-and-token-viability
+
+- target: runs 203-214 against corrected .acm/destination.md
+- operator: Nils Wendelboe Holmager
+- agent: GitHub Copilot
+- skill: orient (automatically scheduled by Destination)
+- outcome: restored reasoning-capability growth and capability-preserving token efficiency to the current orientation
+- delta: .acm/orientation.md rewritten with six falsifiable claims and a capability/trust/cost viability model
+
+### Scope and freshness
+
+Scope: re-orient runs 203-214 against the corrected destination: research and adoption are co-equal; research includes open-ended improvement of the agent's own reasoning capabilities; token efficiency constrains every track and must not be purchased by degrading capability or trust.
+
+- `python harness/tools/record.py history --write` -> 214 entries.
+- `python harness/tools/record.py learning --write` -> 60 recent + 173 archived markers.
+- `python verify.py` -> OK, trail integrity checks pass.
+- Gate: PASS (arc-claims allowed).
+
+### Arc claims
+
+1. The immediate program has two co-equal priorities, research and adoption, plus token efficiency as a cross-cutting viability constraint.
+2. Run 213 narrowed the research program too far toward external behavior and omitted older destination commitments to reasoning self-improvement and resource efficiency.
+3. Intent interpretation and deutero-learning are examples of an open capability class, not a roadmap or exhaustive list.
+4. The simplification arc plausibly reduced cognitive and prompt overhead but has not demonstrated token efficiency through comparable measurement and capability-preservation checks.
+5. Adoption readiness has advanced while successful unassisted use remains untested.
+6. Automatic composition has situated self-targeting evidence while external host, target, and model fidelity remain open.
+
+### Loop-effectiveness finding
+
+Quality bar: can Destination simplification preserve the full research program and resource constraints rather than dropping them from the current layer?
+
+Result: FAIL then corrected. Run 212 captured co-equal research/adoption and a behavioral adoption bar but omitted immediate reasoning-capability growth and token viability despite both existing in older destination notes. The operator caught the omission in the next turn. Run 214 restored those commitments; this run refreshed the map against them.
+
+Double-loop check: the governing variable is not "minimize concepts." It is "minimize avoidable operator and resource burden while preserving or improving trustworthy capability." Simplification that erases research depth or degrades capability fails the destination even when the surface becomes easier to explain.
+
+[!REVERSAL] Run 213's claim that the next meaningful evidence must come from behavior was too exclusive. Behavioral evidence remains required for adoption and external validation, while internal reasoning-capability discovery and capability-preserving efficiency work are also immediate research paths.
+
+[!REALIZATION] The suite's viability equation has three inseparable terms: capability, trust, and cost. Optimizing any one by silently degrading another does not advance the destination. The useful unit is demonstrated capability and trust per resource spent, not raw feature count, explanation simplicity, or token reduction alone.
+
+### Action
+
+Rewrote `.acm/orientation.md` with six falsifiable claims, five next tests, operational non-degradation rules, and the failed-then-corrected loop-effectiveness result. Did not modify the destination or target.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED - the simplification arc repeatedly risks removing distinctions that carry research or governance weight.
+- *About to declare silence:* not fired - the run produced a material reversal and expanded evidence map.
+- *Contradicts prior [!REALIZATION]:* FIRED - run 213's behavior-only next-evidence conclusion was explicitly reversed.
+- *Operator explicitly asked:* FIRED - the operator corrected the Destination, which automatically scheduled this Orient run.
+
+**Across-trail macro-Hansei**
+
+The recent arc's real destination is disciplined compression: reduce operator burden, conceptual translation, and token cost while preserving or increasing reasoning and trust. Each simplification must therefore carry a preservation test. Without it, the loop can mistake subtraction for improvement.
+
+### Candidate Next Moves
+
+1. Use Improve to identify the strongest currently evidenced reasoning-capability ceiling without treating the examples in Destination as a checklist.
+2. Select one token-heavy mechanism and design a comparable before/after test that can detect capability or evidence degradation.
+
+## 2026-08-02 - bounded-current-destination-with-full-read-fallback
+
+- target: Destination storage and the Intent, Improve, and Orient destination-read contracts
+- operator: Nils Wendelboe Holmager
+- agent: GitHub Copilot
+- skill: improve
+- outcome: added an opt-in current-destination boundary whose completeness must be reconciled and whose malformed or absent form fails closed to a full read
+- delta: destination 2.5.1 -> 2.6.0; intent 1.5.1 -> 1.6.0; improve 3.15.1 -> 3.16.0; orient 2.6.1 -> 2.7.0; suite 4.27.2 -> 4.28.0
+
+### Interpretation of the ask
+
+The operator asked to continue by running Improve after correcting Destination. Intent interpretation: choose the highest-leverage currently evidenced limitation on trustworthy capability per resource spent, while treating intent interpretation and deutero-learning as examples rather than a prescribed menu.
+
+The prioritized question was: would a clearly bounded current destination, with preserved history below it, reduce recurring context cost while improving commitment carry-forward? Proceeded under the hypothesis that the growing destination was both token-heavy and insufficiently explicit about which layer constituted the complete current contract.
+
+### Examination
+
+- Purpose: routine skills must read the operator-held destination, but this repo's destination was 40,609 UTF-8 bytes and 246 lines. The apparent current layer was 5,592 bytes; preserved history was 35,017 bytes. Re-reading all layers spends resources on provenance during routine work.
+- Inconsistency: `learning.md` already uses a bounded recent surface plus archive, while the intent tier had no equivalent scaling convention despite ACM explicitly recognizing scale as a governance concern.
+- Overburden: one file served both as the active mandate and its full evolution without an authoritative boundary between those roles.
+- Waste: about 86% of the destination bytes were historical relative to the apparent current layer, but bytes are only a token-cost proxy and the current layer had not yet earned a completeness claim.
+- Falsifier: standing architectural and authorization constraints were found only in older layers. Therefore the existing first section could not safely be treated as complete, and a heading/date-based shortcut was rejected.
+- Precedent check: the 2026-08-01 genericity reversal showed that a self-targeting-specific instruction violates the suite's target-agnostic design. The selected convention is generic to any evolving destination and defaults every existing unmarked file to its prior full-read behavior.
+
+### Decision
+
+[!DECISION] Add exact current/history boundary comments owned by Destination, with reconciliation as the condition for claiming completeness. Intent, Improve, and Orient may use the bounded current section for routine work, but must read the full file for Destination work, ambiguity, conflicts, provenance, or malformed/absent markers. Reject both alternatives: always reading full destination history does not scale, while inferring the first heading or horizontal-rule section as current silently drops active constraints.
+
+### Prediction
+
+For a destination whose marked current section is complete, routine destination input will exclude preserved historical layers without dropping current commitments. Applied to this repo's measured shape after a future reconciliation, the byte proxy would fall from about 40.6 KB to about 5.6 KB, roughly an 86% reduction. This change will not reduce this repo's current read yet because its destination remains unmarked, and it does not establish an exact token reduction without tokenizer-level measurement.
+
+### Action
+
+- Added the marker format and carry-forward reconciliation requirement to Destination 2.6.0.
+- Added identical fail-closed bounded-read rules to Intent 1.6.0, Improve 3.16.0, and Orient 2.7.0.
+- Corrected Improve's ACM role text so it no longer claims every run reads the full memory layer.
+- Added the v4.28.0 release note.
+- Left `.acm/destination.md` unmarked after the falsifier found still-active constraints below its apparent current section. No efficiency result is claimed for this repo until Destination reconciles that layer with operator confirmation.
+
+Validation:
+
+- `python verify.py` -> OK, trail integrity checks pass.
+- Executable marker check -> ordered markers returned only ACTIVE; missing and reversed markers returned the full input.
+- VS Code diagnostics -> no errors in the four changed skill files; CHANGELOG retains its pre-existing repeated-heading diagnostics.
+
+Actual outcome against prediction: the generic fail-closed mechanism works and the potential byte reduction is measured, but the target repo correctly remains on full-read fallback. Capability preservation passed structurally for unmarked and malformed files; preservation for a marked real destination remains a future Destination-run test.
+
+### Reflection
+
+Current model of the target: intent-tier scale and intent fidelity are the same design problem. A cheap current surface is trustworthy only when it is explicitly complete; otherwise compression can reproduce the exact carry-forward failure it is meant to prevent.
+
+Blind spot: natural-language hosts must enact the comments and fallback correctly; this skill suite does not mechanically parse destination files. The executable check validates the stated boundary semantics, not host compliance or tokenizer-specific savings.
+
+Expected informed pushback: adding repeated read rules to three skills creates instruction duplication. That duplication is deliberate at the current packaging boundary because each skill can be installed independently; a future shared ACM reader or host-level parser could centralize enforcement.
+
+[!REALIZATION] The latest reasoning omission and the destination's token cost had a shared cause: active intent and historical provenance were stored together without an auditable completeness boundary. Separating their read paths can improve both carry-forward reliability and resource use, but only after reconciliation earns the boundary.
+
+Across-trail trigger evaluation:
+
+- Recurring finding-class: FIRED - bounded current surfaces already solved trace-tier scale in `learning.md`; this run found the analogous intent-tier problem, while the immediately prior Destination correction showed the danger of lossy synthesis.
+- About to declare silence: not fired - the run made a material contract change and leaves a live reconciliation test open.
+- Contradicts prior [!REALIZATION]: not fired - the change follows the genericity reversal and capability/trust/cost realization rather than contradicting them.
+- Operator explicitly asked: FIRED - the operator explicitly asked to continue with Improve.
+
+Across-trail macro-Hansei: the suite's recent simplification arc is converging on disciplined compression rather than minimum size. Each compressed current surface needs a preserved source, an explicit completeness claim, and a fail-closed path when that claim is absent.
+
+Orientation freshness: current - the run executes Orientation's ranked token-heavy-mechanism test and strengthens its capability/trust/cost rule without falsifying its six current claims. The map should be reconsidered after a real destination is reconciled and measured, not for the convention alone.
+
+### Candidate Next Moves
+
+1. In a deliberate Destination run, reconcile this repo's standing constraints into a complete current section, obtain operator confirmation, then compare bounded/full input with explicit commitment-preservation checks.
+2. Observe whether an unassisted newcomer completes a first Destination and Improve cycle using the simplified activation model.
+
+Trigger-label correction: the evaluations above used plain labels rather than the canonical parser-recognized labels. The substance is unchanged:
+
+- *Recurring finding-class:* FIRED - bounded current surfaces already solved trace-tier scale in `learning.md`; this run found the analogous intent-tier problem, while the immediately prior Destination correction showed the danger of lossy synthesis.
+- *About to declare silence:* not fired - the run made a material contract change and leaves a live reconciliation test open.
+- *Contradicts prior [!REALIZATION]:* not fired - the change follows the genericity reversal and capability/trust/cost realization rather than contradicting them.
+- *Operator explicitly asked:* FIRED - the operator explicitly asked to continue with Improve.
+
+### Across-trail macro-Hansei
+
+The suite's recent simplification arc is converging on disciplined compression rather than minimum size. Each compressed current surface needs a preserved source, an explicit completeness claim, and a fail-closed path when that claim is absent.
+
+## 2026-08-02 - reconcile-complete-current-destination
+
+- target: `.acm/destination.md`
+- operator: Nils Wendelboe Holmager
+- agent: GitHub Copilot
+- skill: destination
+- outcome: reconciled the full destination history into an operator-confirmed bounded current mandate
+- delta: routine destination input reduced from 42,496 to 7,402 UTF-8 bytes while preserving historical provenance below the boundary
+
+### Interpretation and source
+
+The operator confirmed the reconciliation should proceed and added the governing self-improvement relationship: "The engine can improve anything it targets by understanding the purpose of what it is targetting (through reasoning), therefore when targetting itsself it should seek it should seek to improve its own reasoning ability for the sake of better understanding the purpose of whatever it targets."
+
+The operator then corrected any narrow reading of that relationship: "reasoning about that target's purpose, reasoning about the operators intent, also other things. These are just examples of the concept of what to improve. Nothing is sacred really - except the principles."
+
+Interpretation: purpose-understanding and intent interpretation exemplify a broader, open class of capabilities. When the engine targets itself, it should be willing to improve any reasoning, learning, architectural, or operational limitation that constrains future work. Only the three Principles of Earned Autonomy are fixed; all mechanisms and current theories remain revisable.
+
+### Sourced inferences and questions
+
+1. Inference: the historical rule that a human must decide every implementation was superseded by explicit delegation within a confirmed Destination. Source: repeated autonomous Improve execution in this session and the operator's recursive self-improvement statement. Question asked: "Am I right that the historical rule 'the human always decides what to implement' is now superseded?" The operator's next correction broadened the capability class and stated that nothing except the principles is sacred; the reconciled destination therefore treats the gate as superseded while preserving operator ownership of direction and consequential-action boundaries.
+2. Inference: a first reconciliation draft risked promoting too many examples into fixed concerns. Source: the operator's explicit "also other things" and "These are just examples." Question asked after the operator initially selected "Needs revision": "Is the problem that the candidate over-specifies current mechanisms and concerns instead of leaving the engine to derive them from purpose plus the three principles?" Operator response: "I guess the candidate is good enough for now."
+
+What the agent now believes: the framework improves any target by reasoning from its purpose and operator intent toward the strongest limitation it can discover. Self-targeting applies the same operation recursively. The principles constrain this search; no present mechanism or named reasoning capability constrains what the search may discover.
+
+What was rejected: treating purpose-understanding, intent interpretation, or deutero-learning as an exhaustive self-improvement roadmap; treating current skills, architecture, gates, or memory structures as sacred; retaining mandatory human approval of every implementation choice.
+
+What remains open: which newly discovered reasoning limitation matters most next; which consequential actions should remain human-gated; and whether the reconciled candidate should become sparser in a later Destination run. "Good enough for now" confirms current use without claiming final wording.
+
+### Destination update
+
+- Replaced the provisional focus layer with a complete current mandate covering purpose, fixed principles, current priorities, authority, current operating model, quality bars, open questions, and explicit historical reconciliation.
+- Added the recursive self-improvement relationship without making its examples exhaustive.
+- Made the three principles the sole fixed architectural boundary and classified every other mechanism as revisable.
+- Superseded mandatory approval of every implementation choice while preserving operator ownership of Destination changes and human gates for declared consequential actions.
+- Preserved confidentiality, target-agnostic operation, memory/learning/meta-cognition, upstream relationships, model-capability limits, external validation, adoption, and capability-preserving efficiency.
+- Added the exact `current-destination: complete` and `destination-history` markers after operator confirmation.
+
+Validation:
+
+- Bounded extraction found exactly one ordered marker pair.
+- Required commitments were present inside the bounded section.
+- Current section: 7,402 UTF-8 bytes; full file: 42,496 bytes; byte-proxy reduction: 82.6%.
+- `git diff --check` passed.
+
+[!REALIZATION] The engine's self-improvement mandate does not require a special self-targeting capability list. It follows recursively from the same generic operation used on every target: reason about purpose and intent, discover what most limits them, and improve that limitation. Fixing named capabilities would turn today's examples into tomorrow's ceiling.
+
+[!REVERSAL] The historical "irreducible human gate" over every implementation choice is no longer active. The operator owns and confirms the Destination; within it, implementation choice may be delegated. Direction changes and declared consequential actions remain gated.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED - multiple recent runs showed simplification or synthesis dropping load-bearing distinctions; this run reconciled every active historical commitment before allowing bounded reads.
+- *About to declare silence:* not fired - the Destination materially changed and automatically schedules Orient.
+- *Contradicts prior [!REALIZATION]:* FIRED - the mandatory implementation gate and any suggestion that named reasoning capabilities define the self-improvement route are explicitly reversed.
+- *Operator explicitly asked:* FIRED - the operator approved the reconciliation and supplied the recursive self-improvement and principles-only boundary.
+
+### Across-trail macro-Hansei
+
+The arc has moved from adding reasoning mechanisms to clarifying the engine's generative rule: derive the route from purpose under fixed principles. That rule keeps self-improvement open-ended without making self-targeting a special case, and it makes current architecture provisional by design.
+
+Automatic handoff: the active Destination materially changed its theory of self-improvement, authority model, and fixed boundary. Orientation is stale by definition; automatic Orient scheduled after this entry becomes durable.
+
+## 2026-08-02 - orient-recursive-purpose-and-principles-boundary
+
+- target: runs 203-217 against the reconciled complete Destination
+- operator: Nils Wendelboe Holmager
+- agent: GitHub Copilot
+- skill: orient (automatically scheduled by Destination)
+- outcome: refreshed Orientation around recursive purpose-driven improvement, principles-only immutability, delegated implementation, and the remaining example-to-ceiling reasoning gap
+- delta: `.acm/orientation.md` replaced with six falsifiable claims and five next tests
+
+### Scope and freshness
+
+Scope: how does the arc change when recursive purpose-driven self-improvement and principles-only immutability replace the prior capability examples and mandatory implementation gate?
+
+- `python harness/tools/record.py history --write` -> 217 entries.
+- `python harness/tools/record.py learning --write` -> 60 recent + 178 archived markers.
+- `python verify.py` -> OK, trail integrity checks pass.
+- Gate: PASS (arc-claims allowed).
+
+### Arc claims
+
+1. Self-improving reasoning now follows from the engine's generic purpose-and-intent operation rather than from a named capability list.
+2. The engine still tends to convert examples into ceilings; the operator corrected that tendency twice in this arc, and no fresh run has yet shown changed behavior.
+3. Only the principles are fixed; current skills, architecture, memory structures, gates, and theories are provisional mechanisms.
+4. Delegated implementation within a confirmed Destination has replaced mandatory approval of every ordinary change.
+5. The bounded Destination establishes an 82.6% byte-proxy input reduction with structural commitment checks, while end-to-end token efficiency remains unproven.
+6. Adoption and external execution fidelity remain untested across independent newcomers, fresh targets, hosts, sessions, and model families.
+
+### Loop-effectiveness finding
+
+Quality bar: can the loop reconcile an accumulated Destination into a cheaper current mandate without dropping active constraints, and can it state self-improvement without turning examples into a checklist?
+
+Result: structural compression PASS; autonomous abstraction PARTIAL. The current boundary retained the sampled commitments and reduced destination bytes from 42,496 to 7,402. The operator still had to broaden the recursive formulation and then reject an over-specification hunch before accepting the candidate as "good enough for now."
+
+Double-loop finding: the repeated symptom was example-to-checklist collapse. The implicated governing variable was the assumption that current mechanisms and named capability classes had to be preserved. Destination now fixes only the principles and lets purpose regenerate the route.
+
+Deutero-learning finding: the loop carried a prior genericity reversal into a fail-closed implementation and used a live falsifier before compression. It did not independently reach the operator's broadest abstraction before correction. Structural learning currently outperforms open-ended intent generalization.
+
+[!REALIZATION] The strongest current reasoning evidence is mixed in a specific way: the engine applied prior learning well enough to protect intent structurally, while still needing operator correction to avoid creating a new conceptual ceiling. Improving learning carry-forward alone does not establish equally strong intent generalization.
+
+### Action and validation
+
+Replaced `.acm/orientation.md` with six claims, five ranked tests, nine operational rules, and scoped loop-effectiveness notes. The first replacement attempt was corrected by the edit tool into an append, producing duplicate old and new Orientation documents. A focused structure assertion caught the duplicate immediately; the appended old document was removed, and the same assertion then passed with one H1, one Current Claims section, the new run slug, no old run slug, and one Loop-effectiveness section. `git diff --check` passed.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED - example-to-checklist collapse recurred across capability examples, purpose-understanding, and the reconciliation hunch.
+- *About to declare silence:* not fired - five falsifiable behavioral tests remain open.
+- *Contradicts prior [!REALIZATION]:* FIRED - the previous orientation's capability-class framing is subsumed by a broader recursive purpose operation, and the old mandatory implementation gate is reversed.
+- *Operator explicitly asked:* FIRED - the operator initiated Destination reconciliation; material change automatically scheduled this run.
+
+### Across-trail macro-Hansei
+
+The arc is moving from enumerating better reasoning mechanisms toward a generative theory constrained only by the principles. The next credible evidence must show that the engine can use that freedom to discover a limitation the operator did not name, rather than merely restating the new theory.
+
+### Candidate Next Moves
+
+1. Run Improve self-targeted without naming a capability and test whether it derives a previously unnamed reasoning or operational limitation from purpose.
+2. Measure equivalent routine work with full and bounded Destination input using actual token counts and preservation checks.
+3. Observe an unassisted newcomer completing a first Destination + Improve cycle.

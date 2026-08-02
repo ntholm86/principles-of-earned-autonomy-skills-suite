@@ -216,6 +216,13 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 209 | 2026-08-02 | release-note-unified-skill-roster | documented the unified activation roster as v4.27.1 | CHANGELOG.md +1 patch release entry |
 | ▸ 210 | 2026-08-02 | retire-memory-model-name-in-favor-of-acm | retired The Memory Model as a current parallel name and made Agent Context Memory (ACM) canonical throughout live surfaces | README heading and prose aligned; six skill role labels aligned; suite v4.27.1 -> v4.27.2 with patch bumps for all six skill contracts |
 | ▸ 211 | 2026-08-02 | publish-activation-and-acm-simplification | committed and published the activation-model simplification and ACM terminology convergence to origin/main | commits 1f2d909 and 6ee2301 published; remote main verified at 6ee2301f30d847cbafee5ed9c8835d72d0f818b6 |
+| ▸ 212 | 2026-08-02 | destination-coequal-research-and-unassisted-use | sharpened the immediate destination around co-equal research and adoption, with unassisted successful use as the adoption bar | layered a new 2026-08-02 current-focus section above the preserved destination record |
+| ▸ 213 | 2026-08-02 | orient-against-coequal-research-and-adoption | separated adoption-readiness evidence from adoption success and bounded explanation quality away from research proof | .acm/orientation.md rewritten against co-equal research and adoption quality bars |
+| ▸ 214 | 2026-08-02 | destination-restore-reasoning-growth-and-token-viability | restored self-improving reasoning and token efficiency as immediate destination concerns alongside research and adoption | current focus now names open-ended reasoning-capability exploration and capability-preserving resource optimization |
+| ▸ 215 | 2026-08-02 | orient-restore-reasoning-growth-and-token-viability | restored reasoning-capability growth and capability-preserving token efficiency to the current orientation | .acm/orientation.md rewritten with six falsifiable claims and a capability/trust/cost viability model |
+| ▸ 216 | 2026-08-02 | bounded-current-destination-with-full-read-fallback | added an opt-in current-destination boundary whose completeness must be reconciled and whose malformed or absent form fails closed to a full read | destination 2.5.1 -> 2.6.0; intent 1.5.1 -> 1.6.0; improve 3.15.1 -> 3.16.0; orient 2.6.1 -> 2.7.0; suite 4.27.2 -> 4.28.0 |
+| ▸ 217 | 2026-08-02 | reconcile-complete-current-destination | reconciled the full destination history into an operator-confirmed bounded current mandate | routine destination input reduced from 42,496 to 7,402 UTF-8 bytes while preserving historical provenance below the boundary |
+| ▸ 218 | 2026-08-02 | orient-recursive-purpose-and-principles-boundary | refreshed Orientation around recursive purpose-driven improvement, principles-only immutability, delegated implementation, and the remaining example-to-ceiling reasoning gap | `.acm/orientation.md` replaced with six falsifiable claims and five next tests |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -988,4 +995,24 @@ Do not edit by hand — re-run the command to refresh.
 
 - **decided:** Rename the README section to `Agent Context Memory (ACM)`, state directly that the skills implement ACM, and replace `Memory Model role` with `ACM role` in all six current skill contracts. Keep historical trail and changelog wording intact. Apply patch version bumps because terminology changes but behavior does not.
 
-**211 runs total — 196 with changes, 15 silence**
+### Run 213 — 2026-08-02 — orient-against-coequal-research-and-adoption
+
+- **REVERSAL:** The initial Destination hunch treated newcomer understanding and successful use as one combined destination and risked elevating adoption above research. Operator responses separated the claims: research remains co-equal, successful use is enough for adoption, and easier explanation is useful signal rather than research evidence.
+
+### Run 214 — 2026-08-02 — destination-restore-reasoning-growth-and-token-viability
+
+- **REVERSAL:** The preceding Destination/Orient pair over-corrected toward external behavioral evidence. External behavior remains necessary for adoption and research validation, but it is not the full immediate research program. The suite must also keep improving the reasoning system that generates that behavior, while making the system affordable enough to sustain.
+
+### Run 215 — 2026-08-02 — orient-restore-reasoning-growth-and-token-viability
+
+- **REVERSAL:** Run 213's claim that the next meaningful evidence must come from behavior was too exclusive. Behavioral evidence remains required for adoption and external validation, while internal reasoning-capability discovery and capability-preserving efficiency work are also immediate research paths.
+
+### Run 216 — 2026-08-02 — bounded-current-destination-with-full-read-fallback
+
+- **decided:** Add exact current/history boundary comments owned by Destination, with reconciliation as the condition for claiming completeness. Intent, Improve, and Orient may use the bounded current section for routine work, but must read the full file for Destination work, ambiguity, conflicts, provenance, or malformed/absent markers. Reject both alternatives: always reading full destination history does not scale, while inferring the first heading or horizontal-rule section as current silently drops active constraints.
+
+### Run 217 — 2026-08-02 — reconcile-complete-current-destination
+
+- **REVERSAL:** The historical "irreducible human gate" over every implementation choice is no longer active. The operator owns and confirms the Destination; within it, implementation choice may be delegated. Direction changes and declared consequential actions remain gated.
+
+**218 runs total — 203 with changes, 15 silence**

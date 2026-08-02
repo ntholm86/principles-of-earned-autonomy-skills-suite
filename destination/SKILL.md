@@ -1,6 +1,6 @@
 ---
 name: destination
-version: 2.5.1
+version: 2.6.0
 description: 'Surface the agent''s in-progress guesses about where the operator is heading — what they care about, what they are circling, what the implicit destination might be — and turn those guesses into questions the operator can confirm, correct, or reject. Closes the gap between the destination the operator has explicitly stated and what the agent has picked up from their conversation, reactions, and emphasis. USE WHEN: the destination feels thin or stale, the operator is exploring rather than executing, the agent suspects it is missing implicit direction, or before a long autonomous run that will drift if the destination is unclear.'
 argument-hint: 'Optionally: the area you want hunches about (a specific concern, a recent decision, the project as a whole)'
 ---
@@ -116,6 +116,17 @@ After the conversation, capture three things:
 **Before writing: create the `.acm/` directory in the target repo root if it does not already exist.** Then write `.acm/destination.md` with the agent's current understanding of the destination. Do not ask the operator to do this — write it as part of completing the run. The destination is operator-held in the sense that the *operator commits it to git* when it reads right, and revises it before committing if anything is off. The agent's job is to produce the file; the operator's job is to decide whether it is ready to commit.
 
 If `.acm/destination.md` already exists, update it in place rather than replacing it wholesale — preserve anything the operator has written that the current inferences do not change.
+
+Keep the active mandate cheap and unambiguous to read as the destination evolves. When the current destination is complete on its own, enclose it with these exact comments and preserve superseded or historical layers below the second comment:
+
+```markdown
+<!-- current-destination: complete -->
+[The complete current scope, success criteria, constraints, priorities, and open questions]
+<!-- destination-history -->
+[Preserved evolution]
+```
+
+`complete` is a governance claim, not a formatting convenience. Before adding or retaining it, reconcile every earlier destination layer: carry each still-active commitment into the current section, or make its rejection or supersession explicit there. If that reconciliation has not been performed, omit the comments; every consuming skill will then read the full file. Never infer that a heading, horizontal rule, date, or position in the file marks a complete current destination.
 
 If the conversation produced arc-claims about the target's current state rather than destination claims, those belong in orientation.md — but orientation.md is Orient's to write. Destination surfaces them; Orient (or the next Improve run) decides what to do with them.
 

@@ -1,5 +1,11 @@
 # Changelog
 
+## v4.28.0 — 2026-08-02
+
+- Added an explicit, fail-closed current-destination boundary: Destination may mark a self-contained active mandate only after reconciling every earlier commitment, while preserving prior layers as history.
+- Intent, Improve, and Orient now read the bounded active mandate during routine work and widen to the full file for Destination work, ambiguity, conflicts, provenance, or any unmarked/malformed file.
+- This makes destination reads scale without trading away operator intent: historical layers remain available, and cheap reads are enabled only by an auditable completeness claim.
+
 ## v4.27.2 — 2026-08-02
 
 ### Changed

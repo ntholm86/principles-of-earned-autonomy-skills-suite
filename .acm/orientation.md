@@ -1,83 +1,84 @@
 # orientation.md - autonomous-agent-skills
 
-Last updated: 2026-08-02 (run: `orient-passive-control-surface-arc`)
+Last updated: 2026-08-02 (run: `orient-recursive-purpose-and-principles-boundary`)
 
 ## Scope of this read
 
-The arc from the prior orientation (`orient-how-close-to-destination`, 2026-08-01) through Improve run 206, with emphasis on runs 203-206:
-
-- `automatic-intent-trail-workflow`
-- `destination-orientation-run-mindset`
-- `probe-opt-in-research-install`
-- `passive-evidence-triggered-orientation`
-
-Arc-question inherited from Improve's automatic scheduling trigger: do these consecutive changes form a coherent operating architecture, or are they locally plausible taxonomy edits? Re-orient the suite against the destination's immediate simplicity/adoption priority and its longer research question about trustworthy delegation.
+Re-orient runs 203-217 against the reconciled complete Destination. Question: how does the arc change when recursive purpose-driven self-improvement and principles-only immutability replace the prior capability examples and mandatory implementation gate?
 
 **Freshness check (run evidence):**
 
-- `python harness/tools/record.py history --write` -> 206 entries.
-- `python harness/tools/record.py learning --write` -> 60 recent + 163 archived markers.
+- `python harness/tools/record.py history --write` -> 217 entries.
+- `python harness/tools/record.py learning --write` -> 60 recent + 178 archived markers.
 - `python verify.py` -> OK, trail integrity checks pass.
 - Gate: PASS (arc-claims allowed).
 
 ## Current claims
 
-### 1. The last four runs are one migration of agency, not four documentation cleanups
+### 1. Self-improving reasoning is now derived from the generic improvement operation
 
-Run 203 moved Intent and Trail behind automatic ingress/egress boundaries. Run 204 separated the user's conceptual model from capability count. Run 205 moved Probe outside default installation. Run 206 made Orientation passive and evidence-triggered. The shared direction is now explicit: organize the suite by who must decide, not by how many skill files exist.
+The current Destination no longer needs intent interpretation, deutero-learning, or any other named capability to justify reasoning self-improvement. The engine claims to improve any target by reasoning about its purpose and operator intent, finding the strongest limitation, and improving it. When the engine is the target, limitations in its own reasoning, learning, architecture, or operation are therefore ordinary candidate findings rather than a special self-targeting branch.
 
-**Falsifiable by:** a first-party entry surface or skill contract again making the operator routinely schedule Intent, Trail, Orient, or Probe.
+**Falsifiable by:** a self-targeting Improve run that restricts discovery to named capabilities, or evidence that the generic Purpose operation cannot surface a reasoning limitation without a self-specific instruction.
 
-### 2. The stable operating boundary is two deliberate actions, three automatic control services, and one research instrument
+### 2. The engine still tends to convert examples into ceilings
 
-The operator deliberately establishes or changes Destination and invokes Improve to Run. Intent aligns each substantive request, Trail persists each substantive result, and Orient refreshes derived Orientation when its evidence is stale. Probe remains optional ARF instrumentation. This division preserves six distinct ownership boundaries while reducing routine operator orchestration to two actions.
+The operator had to correct this tendency twice in the current arc: first when intent interpretation and deutero-learning were treated as a menu, and again when purpose-understanding risked becoming the whole self-improvement model rather than one example among "also other things." The reconciled Destination removes the conceptual excuse for this behavior, but no fresh run has shown that the behavior changed.
 
-**Falsifiable by:** an operational case where one of the three automatic services requires routine manual invocation, or where either deliberate action can be removed without losing operator authority.
+**Falsifiable by:** a fresh self-targeting run that derives and improves a previously unnamed reasoning or operational limitation from purpose without operator prompting.
 
-### 3. Automatic Orientation closes a hard problem named by the previous orientation, but only at the instruction layer
+### 3. Only the principles are fixed; current architecture is provisional
 
-The previous orientation recorded that twelve entries accumulated and Orient ran only because the operator explicitly asked how close the repo was to its destination. This run was scheduled by Improve's own freshness decision after the operator changed the governing architecture, without a `/orient` request. That is the first direct evidence that the loop can initiate an arc-read from accumulated evidence.
+The Active/Passive/Triggered taxonomy, ACM file layout, skills, lenses, gates, and current theory now have explicit implementation status rather than constitutional status. They should persist only while evidence shows that they serve the purpose and all three principles. This revises an arc that often improved mechanisms as though preserving their identities were part of success.
 
-The result is bounded: markdown contracts still depend on model fidelity. There is no host middleware proving every future Improve run evaluates freshness or that every qualitative judgment is sound.
+**Falsifiable by:** a future decision defending a current mechanism solely because it is part of the established suite, or a Destination revision that grants another element fixed status.
 
-**Falsifiable by:** a future meaningful arc accumulating without a recorded freshness evaluation, or routine over-triggering on isolated iterations with no sequence-level evidence.
+### 4. Delegated implementation has replaced mandatory approval of every change
 
-### 4. Evidence-based cadence is more faithful than a numeric interval, but its calibration is now the main operational unknown
+The operator retains authority over the Destination, direction changes, and declared consequential actions. Within that boundary, the engine may choose and implement the highest-leverage route. This matches the session's actual operating behavior and reverses the historical claim that every implementation choice passes through a human gate.
 
-The trigger contract correctly distinguishes elapsed volume from meaningful arc evidence: repeated finding classes, reversals, failed predictions, diverging candidate moves, stale claims, destination changes, and approaching convergence. This avoids turning reflection into a timer. It also transfers calibration risk to the executing model.
+**Falsifiable by:** operator correction that ordinary implementation choices still require prior approval, or evidence that delegated selection violates one of the principles.
 
-**Falsifiable by:** fresh-target evidence showing systematic under-triggering or over-triggering that a simple structural guard could prevent without replacing qualitative judgment.
+### 5. Destination input is structurally smaller; end-to-end token efficiency remains unproven
 
-### 5. The arc advances adoption readiness, not adoption evidence
+The complete current boundary reduced this repo's routine destination input from 42,496 to 7,402 UTF-8 bytes, an 82.6% byte-proxy reduction. Ordered-marker and commitment-presence checks preserved the bounded contract structurally. This is evidence of input reduction, not tokenizer-specific or equivalent-task evidence that a full run costs less while reasoning quality stays equal.
 
-The default command surface, documentation hierarchy, and passive-service composition are materially simpler for a newcomer. That advances the destination's adoption condition by reducing friction. It does not show that an independent developer adopted or trusted the suite. The prior orientation's research/adoption asymmetry therefore still stands, though the product side is better prepared for a real test.
+**Falsifiable by:** a routine reader consuming history despite valid markers, a missing active commitment discovered only below the boundary, or measured runs showing no token reduction or degraded outcomes.
 
-**Falsifiable by:** an independently observed onboarding run showing either successful unassisted adoption or confusion despite the reduced control surface.
+### 6. Adoption and external execution fidelity remain untested
+
+The current arc has improved first-contact structure and exercised automatic composition while self-targeting under one operator. No independent newcomer has completed an unassisted first cycle, and no fresh installation across another target, host, session, or model family has established execution fidelity.
+
+**Falsifiable by:** an observed fresh-target cycle that records the first success or failure point with enough independent evidence to evaluate composition.
 
 ## What the next runs should test
 
-1. Run a fresh-target, fresh-session onboarding test using only `/destination` and `/improve`; observe whether Intent and Trail compose and whether Orient schedules itself at an earned moment.
-2. Gather independent-user adoption evidence; internal simplification is now ahead of external validation.
-3. Observe several qualitative freshness decisions before adding host-level enforcement; enforce that evaluation occurred, not a fixed numeric outcome.
-4. Execute both `install.sh` modes in a Bash-capable environment to close the remaining platform validation gap.
+1. Run Improve self-targeted without naming a capability and observe whether it derives a previously unnamed reasoning or operational limitation from purpose.
+2. Compare equivalent routine work with full and bounded Destination input, measuring actual tokens and checking decision, learning, evidence, and operator-control preservation.
+3. Observe a new developer attempting a first Destination + Improve cycle without author assistance.
+4. Use a public external target and fresh session to test automatic composition and continuity.
+5. Identify which consequential actions require explicit human gates without turning examples into a universal checklist.
 
 ## Active operational rules
 
-- The operator routinely invokes only Destination and Improve. Intent, Trail, and Orient are automatic services; Probe is research-only.
-- Evaluate Orientation freshness before an Improve Trail entry becomes durable; invoke scheduled Orient only after durability.
-- Material Destination changes make existing Orientation stale by definition and schedule Orient after the Destination entry is durable.
-- Never use raw iteration count as the sole reason to run Orient. Cite the sequence-level evidence that now needs synthesis.
-- Orient is passive: it may refresh claims and operational rules, but never change the target or `.acm/destination.md`.
-- Preserve append-only history. Derived `history.md`, `learning.md`, and `learning-archive.md` must be regenerated after every Trail append.
-- Use ASCII punctuation in trail writes passed through terminal tooling; never rewrite the active audit trail in place.
-- Probe is omitted from default installation and included only with `--research` or `-Research`.
+- Derive candidate changes from target purpose and operator intent; never treat named capabilities or mechanisms as an exhaustive search space.
+- Hold only the three principles fixed. Require every other mechanism to justify itself against purpose and evidence.
+- Let the engine choose implementation within a confirmed Destination; stop for direction changes and operator-declared consequential actions.
+- Treat research and adoption as co-equal priorities.
+- Optimize trustworthy capability per resource; require preservation checks before claiming efficiency.
+- Use only the bounded current Destination for routine work when its ordered completeness markers are valid; widen to history for Destination changes, ambiguity, conflict, or provenance.
+- Count adoption only from successful unassisted use and keep explanation, efficiency, adoption, and research evidence distinct.
+- Preserve append-only history and regenerate derived evidence after every Trail append.
+- Evaluate Orientation freshness before an Improve entry becomes durable; run scheduled Orient only after the triggering entry is durable.
 
 ## Loop-effectiveness notes
 
-**Quality bar tested:** can the loop initiate a full arc-read from its own accumulated evidence rather than waiting for an explicit `/orient` request?
+**Quality bar tested:** can the loop reconcile an accumulated Destination into a cheaper current mandate without dropping active constraints, and can it state self-improvement without turning examples into a checklist?
 
-**Result:** PASS for one situated case. Improve run 206 recorded a specific stale-orientation rationale before its Trail entry became durable and then automatically handed off to this Orient run. This directly answers the open test in the previous orientation. One pass does not establish calibration reliability across targets.
+**Result:** structural compression PASS; autonomous abstraction PARTIAL. The current boundary preserved the sampled active commitments and reduced destination bytes by 82.6%. The operator still had to broaden the engine's first recursive formulation and then reject an over-specification hunch before accepting the candidate as "good enough for now."
 
-**Double-loop check:** the recurring simplification pattern implicated the governing variable "every capability should be presented as an operator action." Runs 203-206 replaced it with an agency-based model: operator decisions, automatic feedback infrastructure, and optional instrumentation. No Destination revision is required because the existing destination already prioritizes immediate simplicity and onboarding speed; the architecture changed to serve that destination more faithfully.
+**Double-loop finding:** the repeated symptom was example-to-checklist collapse. The governing variable was the assumption that current mechanisms and named capability classes had to be preserved. Destination now fixes only the principles and lets purpose regenerate the route.
 
-[!REALIZATION] The control surface is smaller than the conceptual model suggested one run ago. Orientation matters deeply, but importance does not imply operator agency. Treating every important function as a user command was the governing mistake behind the repeated taxonomy revisions. The architecture now separates authority from maintenance: the operator controls direction and action; the system maintains interpretation, evidence, and situational awareness.
+**Deutero-learning finding:** the loop successfully used its own prior genericity reversal and a live falsifier to avoid silently truncating history. It did not independently reach the operator's broadest formulation before correction. The learning mechanism can carry a known precedent into implementation, while open-ended abstraction from operator examples remains unreliable.
+
+[!REALIZATION] The strongest current reasoning evidence is neither failure nor success in the abstract: the engine carried forward a prior genericity lesson strongly enough to build a fail-closed mechanism, yet still needed operator correction to avoid making a new conceptual ceiling. Structural learning currently outperforms open-ended intent generalization.

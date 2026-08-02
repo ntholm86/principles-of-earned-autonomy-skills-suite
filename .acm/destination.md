@@ -6,6 +6,84 @@ _Renamed from `vision.md` on 2026-05-28 alongside the Vision→Destination skill
 
 ---
 
+<!-- current-destination: complete -->
+
+## Current destination (reconciled 2026-08-02)
+
+### Purpose
+
+This repository develops and tests a reasoning layer for trustworthy delegation: what architecture lets a human safely delegate real work to an AI more capable than themselves while remaining responsible for the outcome?
+
+The engine's generic theory of improvement is to reason about the purpose of whatever it targets, determine what most limits that purpose, and improve it. Understanding purpose includes understanding the operator's intent, the target's own claims and grounding, its operating context, and any other factor that reasoning reveals as material. These are examples, not an exhaustive model of reasoning.
+
+When the engine targets itself, the same theory applies recursively. It should discover and improve whatever in its own reasoning, learning, architecture, or operation most limits its ability to understand and improve future targets. Better purpose-understanding and better intent interpretation are examples of the benefit, not a prescribed self-improvement roadmap.
+
+### Fixed boundary
+
+Only the three Principles of Earned Autonomy are architectural constraints:
+
+1. **Operator's Intent:** the operator defines the destination; the agent reasons about the route.
+2. **Observable Autonomy:** autonomous work leaves trustworthy evidence that the agent cannot retroactively rewrite.
+3. **Convergence Is Silence:** completion requires diverse independent evaluators to find nothing material left to change.
+
+Everything else is revisable when reasoning and evidence support a better route. No skill, workflow, lens, memory structure, taxonomy, gate, theory, implementation, or current interpretation is sacred. A mechanism earns its continued existence by serving the purpose while respecting all three principles.
+
+### Current priorities
+
+Two priorities are co-equal:
+
+1. **Research:** continue producing bounded evidence about what trustworthy delegation requires, including negative results and improvements to the engine's own reasoning capability.
+2. **Adoption:** enable a new developer to install the suite and complete a first Destination + Improve cycle without author assistance. Successful use is the bar; conceptual fluency may develop through use.
+
+Token and resource efficiency is a cross-cutting viability constraint. Optimize trustworthy capability per unit of resource. A reduction fails if it weakens reasoning, learning, operator control, or evidence integrity; a capability improvement is not operationally viable if its cost prevents sustained use. Easier explanation is evidence of lower translation friction, not proof of research validity, adoption, or token efficiency.
+
+### Authority and autonomy
+
+The operator owns the Destination and any change to it. Within a confirmed Destination, the engine may autonomously select and implement the highest-leverage route while leaving observable evidence. The historical claim that a human must approve every implementation choice is superseded; explicit delegation can include choosing what to implement.
+
+Direction changes and operator-declared consequential actions remain human-gated. The framework should support explicit boundaries that reasoning quality or accumulated trust cannot override. Private enterprise evidence remains private when confidentiality or ownership obligations apply.
+
+### Current operating model
+
+- **Active:** Destination and Improve for normal work; Probe only for controlled ARF research.
+- **Passive:** Intent and Trail surround substantive work automatically.
+- **Triggered:** Orient refreshes Orientation when Destination changes or accumulated evidence makes the current map stale.
+- **Memory architecture:** Agent Context Memory (ACM) currently provides persistent destination, evidence, learning, and orientation across sessions and models. "The Memory Model" and Retrospect are historical names, not parallel current concepts.
+
+This operating model is a current implementation, not part of the fixed boundary. It should remain target-agnostic, human-readable, and specifiable enough for another capable agent or execution harness to implement without becoming a checklist. The protocol must preserve memory of what happened, learning that changes later behavior, and meta-cognition about what the target is becoming; the present files and skills are revisable means of providing those capabilities.
+
+The suite is both implementation and research site. Findings that concern ACM or the Principles themselves should be recognized as candidates for their canonical upstream repositories rather than silently treated as local-only changes. Local copies do not grant authority to alter those upstream works.
+
+Natural-language skills set a ceiling, not a floor: execution fidelity depends on the capability and momentary performance of the model interpreting them. The architecture must therefore test behavior across fresh installations, targets, hosts, sessions, and model families rather than infer reliability from instruction quality alone.
+
+Integration with a particular autonomous harness remains a horizon rather than the current focus. The reasoning layer should first demonstrate useful operation on real targets and be precise enough that later integration is wiring rather than reinterpretation.
+
+### Immediate quality bars
+
+1. Self-targeting runs discover and improve previously unnamed limitations in reasoning or operation rather than only repairing skill-file consistency or following named examples.
+2. A new developer completes a first Destination + Improve cycle without author help.
+3. Automatic services leave durable evidence sufficient for a later session or different model to continue coherently.
+4. Research claims stay within what public trails, reproducible probes, external targets, and independent evaluators support.
+5. Resource use decreases where possible without degrading reasoning, learning, operator control, or evidence integrity.
+6. Current mechanisms remain generic and understandable while the engine stays free to replace them with better mechanisms that preserve the principles.
+
+### Open questions
+
+- Which limitation currently places the strongest ceiling on the engine's ability to reason about any target, without restricting discovery to examples already named?
+- Where does an unassisted new user first fail: discovery, installation, Destination, Improve, or recognizing useful evidence?
+- Which public external target can test adoption and trustworthy delegation without relying on private enterprise evidence?
+- Does the Active/Passive/Triggered model survive real use, or does it hide an operational distinction users need?
+- Where are resources spent without improving decisions, learning, evidence, or operator control?
+- Which actions should remain explicitly human-gated regardless of demonstrated capability or trust?
+
+### Historical reconciliation
+
+The sections below preserve how the Destination evolved; they are provenance, not additional active instructions. Still-active commitments have been carried into this candidate. Superseded items include the May 2026 priority sequence, mandatory approval of every implementation choice, fixed use of Retrospect and the old Memory Model vocabulary, and any implication that the current skills or architecture are immutable. Older references to Commander's Intent mean Operator's Intent in the current principles.
+
+<!-- destination-history -->
+
+---
+
 ## Current focus (Destination run, 2026-05-23)
 
 The immediate direction is explicit: increase immediate simplicity and onboarding speed while tightening trust claims so they remain structurally enforceable.
