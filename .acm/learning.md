@@ -5,15 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 211 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-01 — deutero-learning-credited-and-closed-in-orient-step-4
-
-**[!REALIZATION]** Naming something that already exists in substance as an explicit instance of cited theory closed a real gap - the missing routing instruction - but the larger, harder question the operator named (how a Purpose-driven loop derives gaps like this on its own, generically) is not solved by this single fix. This entry is evidence for the standing destination note's claim, not a refutation of the need for the broader Purpose-lens reframing still sitting unimplemented.
-
-## 2026-08-01 — exclude-trigger-label-references-from-learning-markers
-
-**[!REALIZATION]** The most-read memory artifact was mechanically fresh yet semantically contaminated by its own Trail template. This is concrete evidence for the destination's model-capability/fidelity concern: structured artifacts reduce error only when their parser distinguishes a claim from a reference to the syntax of a claim.
+Showing the most recent 60 markers. 213 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-01 — generalize-learning-marker-parser-from-context-exclusion-to-assertion-grammar
 
@@ -247,6 +239,14 @@ Showing the most recent 60 markers. 211 older marker(s) are in `.acm/learning-ar
 
 **[!REALIZATION]** Independent measurement and experimental fidelity are separate gates. Solving token capture does not authorize replacing the production Improve loop with the nearest proxy-capable agent pipeline.
 
+## 2026-08-13 — preregister-copilot-cli-experiment-host
+
+**[!REALIZATION]** The host is experimentally viable only as a fully frozen stack: CLI version, suite composition, provider compression, model, prompt, permissions, and state isolation all affect measured loop behavior. "Same model and prompt" alone is not a sufficient same-host control.
+
+## 2026-08-13 — preregister-copilot-cli-experiment-host
+
+**[!REVERSAL]** The first smoke omitted Accept-Encoding: identity and failed after six model retries; the second added the already known ai-steward transport control and succeeded. During HOST.md drafting, four SHA-256 suffixes and three skill versions were initially entered from incomplete display or memory. Immediate direct hash and frontmatter checks caught them before commit, and all seven values were replaced with sourced values.
+
 ---
 
-**60 markers — 47 realisations, 13 reversals**
+**60 markers — 46 realisations, 14 reversals**

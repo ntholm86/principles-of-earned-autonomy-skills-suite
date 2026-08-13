@@ -250,6 +250,7 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 243 | 2026-08-13 | improve-preregister-work-lifecycle-snapshots | preregistered an eligible Work lifecycle and preserved the independent usage blocker | added experiments/late-stage-loop-viability/SNAPSHOTS.md; production Improve, Work, and the harness remain unchanged |
 | ▸ 244 | 2026-08-13 | replace-usage-blocker-with-host-fidelity-gate | The stale token-capture block is replaced by verified instrumentation evidence and the narrower production-host fidelity gate. | Experiment remains blocked, but for contract-preserving execution rather than missing token telemetry. |
 | ▸ 245 | 2026-08-13 | host-fidelity-gate-trigger-format-correction | Supplies canonical machine-readable trigger evaluation without rewriting the append-only source entry. | verify.py grandfathers the immutable malformed trigger block; this correction preserves its original meaning. |
+| ▸ 246 | 2026-08-13 | preregister-copilot-cli-experiment-host | Copilot CLI 1.0.79 is qualified and frozen as the same-host candidate; no selected arm has run. | Added HOST.md and advanced SNAPSHOTS.md from host-blocked to host-preregistered. |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -1123,4 +1124,9 @@ Do not edit by hand — re-run the command to refresh.
 
 - **decided:** Keep execution blocked and update the manifest to name host fidelity as the remaining gate. Reject running ai-steward because its prompt contract differs. Reject installing Copilot CLI during this run because a new host and configuration must be frozen before arm execution, not introduced implicitly after preregistration. Precedent check: recent learning rejects proxy metrics and requires actual independent usage; the new harness evidence satisfies that requirement without relaxing the same-host and production-contract controls.
 
-**245 runs total — 229 with changes, 16 silence**
+### Run 246 — 2026-08-13 — preregister-copilot-cli-experiment-host
+
+- **decided:** Freeze Copilot CLI 1.0.79 with Anthropic BYOK through the instrumented proxy, claude-sonnet-4-5, high effort, buffered transport, exact five-skill suite copies, a minimal invariant prompt, isolated per-arm homes, controlled permissions, and complete evidence capture. Reject ai-steward because it substitutes another loop. Reject using personal CLI state because unrelated skills and memory would contaminate arms. Precedent check: the preceding host-fidelity gate required operator confirmation and exact configuration before any arm; both are now satisfied without running an arm.
+- **REVERSAL:** The first smoke omitted Accept-Encoding: identity and failed after six model retries; the second added the already known ai-steward transport control and succeeded. During HOST.md drafting, four SHA-256 suffixes and three skill versions were initially entered from incomplete display or memory. Immediate direct hash and frontmatter checks caught them before commit, and all seven values were replaced with sourced values.
+
+**246 runs total — 230 with changes, 16 silence**

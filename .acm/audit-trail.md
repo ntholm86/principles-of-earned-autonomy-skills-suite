@@ -13386,3 +13386,64 @@ The prior entry included all four trigger judgments under plain labels, but veri
 - *Operator explicitly asked:* FIRED - the operator requested committed continuation.
 
 **Across-trail macro-Hansei:** The experiment has become progressively stricter as each apparent shortcut was tested: historical proxies were rejected, token capture was added, and a measured substitute loop was rejected. The arc is converging on valid execution rather than merely obtaining numbers.
+
+## 2026-08-13 - preregister-copilot-cli-experiment-host
+
+- target: experiments/late-stage-loop-viability host configuration
+- operator: Nils Holmager
+- agent: GitHub Copilot
+- skill: improve (Intent at ingress, Trail at egress)
+- outcome: Copilot CLI 1.0.79 is qualified and frozen as the same-host candidate; no selected arm has run.
+- delta: Added HOST.md and advanced SNAPSHOTS.md from host-blocked to host-preregistered.
+
+### Interpretation of the ask
+
+After Destination was triggered by the unresolved host choice, the operator selected "Install and evaluate Copilot CLI" with the explicit boundary that installation did not authorize experiment-arm execution. Intent therefore treated success as qualification and preregistration only.
+
+### Examination
+
+- CLI capability: version 1.0.79 supports noninteractive tool-using sessions, local SKILL.md discovery, Anthropic BYOK, fixed model selection, custom provider headers, permission controls, JSONL output, and isolated COPILOT_HOME state.
+- Contract identity: improve, intent, trail, destination, and orient SKILL.md files are all unchanged from protocol commit 3676411; exact SHA-256 values are recorded in HOST.md.
+- First smoke: without Accept-Encoding: identity, Copilot retried six times. The proxy wrote six chained entries with empty reason and usage null, showing compressed SSE was forwarded but not parseable by the ledger.
+- Second smoke: adding identity encoding loaded Improve 3.17.0, invoked the skill, narrated Intent, made zero file changes, exited 0, and produced five usage-bearing chained calls.
+- Suite composition: installing Improve alone caused an attempted Intent invocation to fail before standalone fallback. All five production-suite skills are therefore installed in every fresh arm home.
+
+### Decision
+
+[!DECISION] Freeze Copilot CLI 1.0.79 with Anthropic BYOK through the instrumented proxy, claude-sonnet-4-5, high effort, buffered transport, exact five-skill suite copies, a minimal invariant prompt, isolated per-arm homes, controlled permissions, and complete evidence capture. Reject ai-steward because it substitutes another loop. Reject using personal CLI state because unrelated skills and memory would contaminate arms. Precedent check: the preceding host-fidelity gate required operator confirmation and exact configuration before any arm; both are now satisfied without running an arm.
+
+### Prediction
+
+HOST.md will make every execution variable inspectable before the first arm and prevent later drift from being mistaken for lifecycle effect. It will not prove outcome quality or authorize arm execution beyond the operator's evaluation-only approval.
+
+### Action
+
+Installed Copilot CLI 1.0.79 after operator approval, inspected its provider, skill, environment, configuration, and permission contracts, created an isolated home, and ran two non-arm qualification attempts through the release proxy. Added HOST.md and updated SNAPSHOTS.md with the successful configuration and failed-compression evidence. Repository verification and git diff checks passed before this Trail append.
+
+[!REVERSAL] The first smoke omitted Accept-Encoding: identity and failed after six model retries; the second added the already known ai-steward transport control and succeeded. During HOST.md drafting, four SHA-256 suffixes and three skill versions were initially entered from incomplete display or memory. Immediate direct hash and frontmatter checks caught them before commit, and all seven values were replaced with sourced values.
+
+### Reflection
+
+[!REALIZATION] The host is experimentally viable only as a fully frozen stack: CLI version, suite composition, provider compression, model, prompt, permissions, and state isolation all affect measured loop behavior. "Same model and prompt" alone is not a sufficient same-host control.
+
+Blind spot: qualification stopped before target examination and did not prove a full Improve run can edit, validate, Trail, and commit inside a detached worktree under the frozen permissions.
+
+Imagined-reader pushback: the qualification itself used five model calls and exposed missing-sibling overhead. That smoke is excluded from all arms; the preregistered arm homes contain all five siblings from the start.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired - this run resolved the host gate rather than repeating an instrumentation or proxy-metric finding.
+- *About to declare silence:* not fired - host qualification and preregistration produced substantive evidence and artifacts.
+- *Contradicts prior [!REALIZATION]:* not fired - it operationalizes the prior distinction between independent measurement and experimental fidelity.
+- *Operator explicitly asked:* FIRED - the operator explicitly authorized Copilot CLI installation and evaluation.
+
+**Across-trail macro-Hansei:** The experiment now has eligible snapshots, independent usage capture, and a preregistered host. Each prior blocker was resolved without relaxing the question. The next meaningful evidence must come from arms, not more setup refinement.
+
+Orientation freshness: current - the setup arc now converges on executable controls and does not alter the experiment question.
+Destination need: not triggered - the operator resolved the host choice; separate authorization is still required to cross the stated evaluation-only boundary into arm execution.
+
+### Candidate Next Moves
+
+1. Ask the operator to authorize running the three preregistered arms under HOST.md, because evaluation-only approval has been exhausted.
+2. If authorized, create all detached worktrees and fresh isolated homes before the first call, then execute each arm once under the fixed command.
+3. Package outputs with lifecycle labels removed before invoking an independent blinded evaluator.

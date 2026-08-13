@@ -849,6 +849,14 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** Not every operator action needs its own trail entry the instant it happens, but a real, consequential action (publishing 13 commits to a public repo) sitting unrecorded across a conversational-compaction boundary is a genuine gap worth naming: the trail's completeness currently depends on someone (here, the operator) noticing the gap, since no mechanical check verifies that every git push event has a corresponding audit-trail.md entry.
 
+## 2026-08-01 — deutero-learning-credited-and-closed-in-orient-step-4
+
+**[!REALIZATION]** Naming something that already exists in substance as an explicit instance of cited theory closed a real gap - the missing routing instruction - but the larger, harder question the operator named (how a Purpose-driven loop derives gaps like this on its own, generically) is not solved by this single fix. This entry is evidence for the standing destination note's claim, not a refutation of the need for the broader Purpose-lens reframing still sitting unimplemented.
+
+## 2026-08-01 — exclude-trigger-label-references-from-learning-markers
+
+**[!REALIZATION]** The most-read memory artifact was mechanically fresh yet semantically contaminated by its own Trail template. This is concrete evidence for the destination's model-capability/fidelity concern: structured artifacts reduce error only when their parser distinguishes a claim from a reference to the syntax of a claim.
+
 ---
 
-**211 markers — 200 realisations, 11 reversals**
+**213 markers — 202 realisations, 11 reversals**

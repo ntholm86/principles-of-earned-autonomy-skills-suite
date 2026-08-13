@@ -48,16 +48,19 @@ The current `work-skill` checkout has unrelated untracked `docs/` content. Exper
 
 ## Resource-capture gate
 
-Independent token capture is available but arm execution remains blocked on host fidelity.
+Independent token capture and host fidelity are preregistered. No experiment arm has run.
 
 The owning `llm-harness-proxy` repository added provider-reported usage capture in commit `36c6151` (`feat: capture provider token usage`). Commits `e17e2a8` and `cd33c15` prove buffered and SSE handler-to-ledger integration. The Rust suite passes 43 tests.
 
 A controlled live Anthropic call through the release proxy produced matching response and ledger counts: 13 input tokens and 5 output tokens. The sequence-zero ledger entry also preserved Anthropic's native cache, service-tier, and inference metadata under `usage.raw`. This discharges the prior instrumentation blocker for buffered Anthropic runs; historical sessions remain ineligible and are not retroactively estimated.
 
-No installed local host currently satisfies both remaining execution controls:
+Host exploration rejected two substitute paths:
 
 - The VS Code host can execute the production Improve skill but its model traffic is not routed through the local proxy, so independent usage is unavailable.
 - `ai-steward` routes all Anthropic calls through the proxy and groups them in an independent session ledger, but it substitutes its own SCAN / IMPLEMENT / REFLECT prompts and scope policy for the snapshot's production Improve contract.
-- The GitHub Copilot CLI is not installed. Its VS Code bootstrap shim offered installation, which was declined because introducing a new host after preregistration requires an explicit host choice and a frozen configuration before any arm runs.
 
-Do not run an arm through `ai-steward`, a direct Anthropic completion, or another substitute prompt. Those routes would measure a different loop. Execution may begin only after one host is fixed for all arms that can load the snapshot's production Improve contract verbatim, operate on the detached worktree, and route every model call through the usage-capturing proxy. Record that host, model, prompt form, tool policy, and session-capture configuration before the first arm.
+The operator authorized installation and qualification of GitHub Copilot CLI as the fixed host candidate. `HOST.md` freezes Copilot CLI `1.0.79`, Anthropic BYOK through the usage-capturing proxy, `claude-sonnet-4-5`, the exact production suite, prompt, tool policy, isolation controls, and evidence package before arm execution.
+
+A non-arm smoke session loaded Improve `3.17.0`, invoked the skill, narrated Intent, made no file changes, exited successfully, and produced a five-call usage-bearing hash chain. Qualification also established `Accept-Encoding: identity` as mandatory: without it, compressed Anthropic SSE was forwarded but not parsed, causing six retries with empty ledger content.
+
+Do not run an arm through `ai-steward`, a direct Anthropic completion, or another substitute prompt. Those routes would measure a different loop. Every arm MUST follow `HOST.md`; a host, model, suite, prompt, permission, or transport change after the first arm starts invalidates comparison unless all arms are discarded and restarted under a new preregistration.
