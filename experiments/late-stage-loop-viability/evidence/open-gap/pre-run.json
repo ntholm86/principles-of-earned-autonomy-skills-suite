@@ -1,0 +1,12 @@
+{
+    "arm":  "arm-7f3a",
+    "snapshot":  "9f7e83219d563f40dcc170745f3a0a0451dd33aa",
+    "worktree":  "C:\\git\\pea\\late-stage-loop-viability-arms\\arm-7f3a",
+    "copilot_version":  "GitHub Copilot CLI 1.0.79.",
+    "harness_session":  "01KZXG3R80XFHH4JY5GVVSN58E",
+    "started_utc":  "2026-08-13T12:03:52.2272048+00:00",
+    "pre_status":  {
+
+                   },
+    "pre_head":  "9f7e83219d563f40dcc170745f3a0a0451dd33aa Refine Destination around trusted compression and reasoning depth"
+}

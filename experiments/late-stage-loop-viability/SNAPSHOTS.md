@@ -1,6 +1,6 @@
 # Late-Stage Loop Viability Snapshots
 
-Status: pre-registered 2026-08-13; no experiment evaluator has run
+Status: pre-registered and executed 2026-08-13; see `RESULTS.md` for the two eligible arms and excluded silence position
 
 This manifest applies `PROTOCOL.md` to `C:\git\pea\work-skill`. Snapshot selection uses only Git history and Trail evidence that existed before this experiment. It does not use expected token cost or knowledge of future experimental outputs.
 
@@ -48,7 +48,7 @@ The current `work-skill` checkout has unrelated untracked `docs/` content. Exper
 
 ## Resource-capture gate
 
-Independent token capture and host fidelity are preregistered. No experiment arm has run.
+Independent token capture and host fidelity were preregistered before execution. `RESULTS.md` reports two eligible completed arms and the exclusion of the silence snapshot after its first invocation ended incomplete and an accidental duplicate began from a dirty worktree.
 
 The owning `llm-harness-proxy` repository added provider-reported usage capture in commit `36c6151` (`feat: capture provider token usage`). Commits `e17e2a8` and `cd33c15` prove buffered and SSE handler-to-ledger integration. The Rust suite passes 43 tests.
 

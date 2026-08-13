@@ -1,0 +1,14 @@
+{
+    "arm":  "arm-c921",
+    "harness_session":  "01KZXGNF0PKKZR559T0F30S6NC",
+    "exit_code":  0,
+    "started_utc":  "2026-08-13T12:13:32.5878657+00:00",
+    "ended_utc":  "2026-08-13T12:19:33.4144034+00:00",
+    "duration_seconds":  360.827,
+    "post_head":  "d42cf6aed7dbc3576c9c4d200ff59213a692a507",
+    "post_status":  [
+                        " M .acm/audit-trail.md",
+                        " M work/SKILL.md",
+                        "?? .acm/sessions/"
+                    ]
+}

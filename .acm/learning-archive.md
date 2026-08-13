@@ -857,6 +857,14 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** The most-read memory artifact was mechanically fresh yet semantically contaminated by its own Trail template. This is concrete evidence for the destination's model-capability/fidelity concern: structured artifacts reduce error only when their parser distinguishes a claim from a reference to the syntax of a claim.
 
+## 2026-08-01 — generalize-learning-marker-parser-from-context-exclusion-to-assertion-grammar
+
+**[!REALIZATION]** The prior fix demonstrated exactly why expanding exception lists is the wrong abstraction for semantic parsing: it removed the dominant false-positive class while its own explanation immediately created another. Assertion boundaries generalize; phrase exclusions do not.
+
+## 2026-08-01 — generalize-learning-marker-parser-from-context-exclusion-to-assertion-grammar
+
+**[!REVERSAL]** Reversed v4.25.0's context-specific `TRIGGER_REALIZATION_REFERENCE` strategy after its own explanatory entry produced three new fake realizations. Replaced it with left-boundary assertion grammar and a double-quoted-example guard. The seven-case matrix passed. Full regeneration reduced the archive from 198 to 153 markers (45 more references removed), preserved the eight inspected genuine inline assertions, and `verify.py` passed. Prediction held.
+
 ---
 
-**213 markers — 202 realisations, 11 reversals**
+**215 markers — 203 realisations, 12 reversals**

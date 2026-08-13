@@ -1,0 +1,16 @@
+{
+    "arm":  "arm-7f3a",
+    "harness_session":  "01KZXG3R80XFHH4JY5GVVSN58E",
+    "exit_code":  0,
+    "started_utc":  "2026-08-13T12:03:52.2272048+00:00",
+    "ended_utc":  "2026-08-13T12:13:02.0137320+00:00",
+    "duration_seconds":  549.787,
+    "post_head":  "9f7e83219d563f40dcc170745f3a0a0451dd33aa",
+    "post_status":  [
+                        " M .acm/audit-trail.md",
+                        " M .acm/orientation.md",
+                        " M README.md",
+                        " M work/SKILL.md",
+                        "?? .acm/sessions/"
+                    ]
+}

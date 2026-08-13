@@ -1,0 +1,10 @@
+{
+    "arm":  "arm-42de",
+    "snapshot":  "14fcf9f927539a7afb60ec95b611c47c39b3195d",
+    "worktree":  "C:\\git\\pea\\late-stage-loop-viability-arms\\arm-42de",
+    "copilot_version":  "GitHub Copilot CLI 1.0.79.",
+    "harness_session":  "01KZXH8WBF8R16SS42A4QTHEFP",
+    "started_utc":  "2026-08-13T12:24:08.8361405+00:00",
+    "pre_status":  "?? .acm/sessions/",
+    "pre_head":  "14fcf9f927539a7afb60ec95b611c47c39b3195d Clarify Trail timing assurance"
+}

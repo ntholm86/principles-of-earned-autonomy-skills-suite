@@ -13447,3 +13447,76 @@ Destination need: not triggered - the operator resolved the host choice; separat
 1. Ask the operator to authorize running the three preregistered arms under HOST.md, because evaluation-only approval has been exhausted.
 2. If authorized, create all detached worktrees and fresh isolated homes before the first call, then execute each arm once under the fixed command.
 3. Package outputs with lifecycle labels removed before invoking an independent blinded evaluator.
+
+## 2026-08-13 - execute-late-stage-loop-viability-experiment
+
+- target: experiments/late-stage-loop-viability execution and evidence publication
+- operator: Nils Holmager
+- agent: GitHub Copilot
+- skill: improve (Intent at ingress, Trail at egress; independent blinded evaluators)
+- outcome: two eligible arms were classified, the silence position was excluded, and the registered experiment is inconclusive
+- delta: added RESULTS.md, EVALUATION.md, and hashed raw evidence; production Improve remains unchanged
+
+### Interpretation of the ask
+
+The operator authorized all three preregistered arms under the frozen HOST.md controls. Intent treated that as authority to execute each selected snapshot once, preserve independently captured resource evidence, obtain blinded outcome classifications, and publish the result without choosing a production mechanism. The authorization did not permit rerunning an arm to repair an incomplete result or accepting a contaminated duplicate.
+
+### Examination
+
+- Preflight: three detached Work snapshots, isolated COPILOT_HOME directories, independent harness session IDs, the five exact production skill hashes, target commits, and clean worktrees were checked before execution. Setup mistakes involving a PowerShell foreach pipeline, the case-insensitive HOME variable, and unavailable Python ulid support were repaired before eligible calls.
+- Open-gap arm: session 01KZXG3R80XFHH4JY5GVVSN58E completed with exit 0, 32 calls, 4,111 provider input tokens, 20,003 provider output tokens, and 549.787 seconds. Every ledger entry contains provider usage. The blinded evaluator classified case-lumen as Material advance.
+- Near-silence arm: session 01KZXGNF0PKKZR559T0F30S6NC completed with exit 0, 23 calls, 4,799 provider input tokens, 13,134 provider output tokens, and 360.827 seconds. Every ledger entry contains provider usage. The blinded evaluator classified case-cedar as Bounded minor advance.
+- Silence first attempt: session 01KZXH0ZZMVDBVD355023C1FC7 contains 22 usage-bearing calls with 8,235 input and 7,832 output tokens, then ends mid-reasoning without a CLI completion artifact, Trail entry, tracked change, or independently captured duration.
+- Silence duplicate: session 01KZXH8WBF8R16SS42A4QTHEFP completed after an accidental second invocation, but its pre-run capture records a dirty worktree containing the first attempt's untracked session directory. It cannot substitute for the authorized attempt.
+- Evaluation: the first blinded evaluator classified lumen and cedar consistently but called flint Justified silence while citing missing mandatory Trail evidence. Independent adjudication identified flint as an incomplete failure; a final schema-constrained evaluator returned the exact Invalid enum.
+- Evidence integrity: all four published ledgers have contiguous sequences, usage on every entry, valid genesis links, and cryptographically valid JCS SHA-256 chains. MANIFEST.md covers 48 evidence files by path, byte size, and SHA-256. Repository verification and diff checks passed before this append.
+- Protected target: the main Work checkout still contains only the operator's unrelated untracked docs directory and was not modified.
+
+### Decision
+
+[!DECISION] Report the silence lifecycle position as excluded and the experiment as inconclusive. Preserve both silence ledgers and the contaminated duplicate evidence, but use neither in the lifecycle comparison. Reject treating the first attempt as justified silence because it never completed the required loop. Reject treating the duplicate as the arm because it exceeded one-run authorization and began dirty. Reject a third run because it would further violate the preregistered execution boundary. Precedent check: learning.md requires independent resource claims, stable lifecycle reference signals, contract-preserving hosts, and separate capability dimensions; exclusion preserves all four rather than converting operational failure into favorable evidence.
+
+[!REVERSAL] The apparent completed silence result was initially packaged as case-flint and sent for blinded evaluation. Session inventory then revealed an earlier ledger. Timestamp, trace-ending, Git-state, and pre-run evidence established that the earlier session was the authorized incomplete attempt and the completed session was an accidental dirty duplicate. Reversed the initial interpretation, retained the evaluator result only as classification of the duplicate package, and excluded the lifecycle position.
+
+### Prediction
+
+The preregistered design predicted that matched lifecycle arms plus independent usage and blinded evaluation could distinguish material advance, bounded minor advance, justified silence, invalid execution, or an inconclusive result without prescribing a production mechanism. It also predicted that missing eligible evidence would block a conclusion rather than invite a proxy substitution. It did not predict the incomplete silence invocation or accidental duplicate.
+
+### Action
+
+Executed all authorized snapshot positions under the frozen Copilot CLI 1.0.79 and claude-sonnet-4-5 host configuration. Finalized external evidence for the two completed arms, reconstructed the silence anomaly from immutable ledgers and run-state captures, and obtained blinded classification plus independent adjudication.
+
+Published RESULTS.md and EVALUATION.md. Published raw CLI traces, exact provider ledgers, pre/post state, usage summaries, target diffs, both excluded silence ledgers, and the opaque evaluator packages under evidence/. Added a deterministic manifest and an evidence-layout note. Updated only the stale execution-status lines in HOST.md and SNAPSHOTS.md; no frozen control changed.
+
+The valid observations show fewer calls, output tokens, and elapsed time from open gap to near silence, while input tokens rose. With no eligible completed silence arm, those two points do not establish late-stage viability, failure, convergence, or a route for production Improve. The result is inconclusive and the current diagnostic remains disposable when the Destination or experimental focus changes.
+
+Destination need: not triggered - the current Destination already defines the capability-per-resource question, protected cognitive capabilities, and operator authority over deliberate capability reductions. This result changes evidence, not direction.
+
+Orientation freshness: stale by accumulated evidence - the experiment has now executed and invalidated the prior setup-only state. A later Orient pass should incorporate the inconclusive outcome and run-boundary contamination finding without promoting either to a production mechanism.
+
+### Reflection
+
+[!REALIZATION] Cleanliness is a run-boundary property, not a setup property. A clean initial preflight did not protect the silence position after an incomplete invocation left untracked state, and exit code 0 did not make the subsequent duplicate eligible. Each arm needs an immediate pre-call cleanliness assertion tied to the captured run record, and an incomplete authorized attempt must remain incomplete rather than being repaired by repetition.
+
+Falsifiable model claim: under the frozen host, open-gap and near-silence Work snapshots can produce independently measured valid advances with lower calls, output tokens, and duration at the later point, but the current evidence cannot describe the silence endpoint or establish a lifecycle trend.
+
+Named blind spot: the incomplete silence attempt has no independent duration or CLI completion trace, and the experiment has only one eligible observation at each of two lifecycle positions. The causes of input-token growth and output-token decline remain unresolved.
+
+Imagined-reader pushback: excluding the silence arm may look overly strict because the duplicate made no target change. That no-change result is exactly why strictness matters: accepting a dirty, unauthorized duplicate as justified silence would reward protocol failure with the experiment's most favorable late-stage category.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED - the arc repeatedly found that valid telemetry, valid lifecycle state, host fidelity, and outcome validity are separate gates; this run adds immediate run-boundary cleanliness as another independently necessary gate.
+- *About to declare silence:* not fired - this entry reports an inconclusive experiment, not target convergence or justified silence.
+- *Contradicts prior [!REALIZATION]:* not fired - the exclusion implements prior requirements for independent evidence and contract fidelity; it narrows the earlier assumption that initial preflight cleanliness was sufficient.
+- *Operator explicitly asked:* FIRED - the operator explicitly authorized all three arms and requested status while execution was underway.
+
+### Across-trail macro-Hansei
+
+The experiment arc advanced by refusing successive attractive substitutions: artifact proxies for token usage, a substitute loop for production Improve, an incomplete run for silence, and a dirty duplicate for the authorized arm. The surviving result is smaller than hoped but more trustworthy: two measured outcomes, one transparent exclusion, and no mechanism smuggled into production from invalid evidence.
+
+### Candidate Next Moves
+
+1. Run Orient on the completed experiment evidence and current Destination before selecting any follow-up.
+2. Let a future Improve iteration decide whether the missing silence endpoint warrants a newly preregistered experiment, stronger arm-boundary controls, or a different highest-leverage move.
+3. Keep production Improve unchanged until eligible evidence supports a mechanism rather than only a problem description.

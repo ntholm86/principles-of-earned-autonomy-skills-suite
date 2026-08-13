@@ -5,15 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 213 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-01 — generalize-learning-marker-parser-from-context-exclusion-to-assertion-grammar
-
-**[!REALIZATION]** The prior fix demonstrated exactly why expanding exception lists is the wrong abstraction for semantic parsing: it removed the dominant false-positive class while its own explanation immediately created another. Assertion boundaries generalize; phrase exclusions do not.
-
-## 2026-08-01 — generalize-learning-marker-parser-from-context-exclusion-to-assertion-grammar
-
-**[!REVERSAL]** Reversed v4.25.0's context-specific `TRIGGER_REALIZATION_REFERENCE` strategy after its own explanatory entry produced three new fake realizations. Replaced it with left-boundary assertion grammar and a double-quoted-example guard. The seven-case matrix passed. Full regeneration reduced the archive from 198 to 153 markers (45 more references removed), preserved the eight inspected genuine inline assertions, and `verify.py` passed. Prediction held.
+Showing the most recent 60 markers. 215 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-02 — align-installed-skill-docs-with-harness-tool-layout
 
@@ -246,6 +238,14 @@ Showing the most recent 60 markers. 213 older marker(s) are in `.acm/learning-ar
 ## 2026-08-13 — preregister-copilot-cli-experiment-host
 
 **[!REVERSAL]** The first smoke omitted Accept-Encoding: identity and failed after six model retries; the second added the already known ai-steward transport control and succeeded. During HOST.md drafting, four SHA-256 suffixes and three skill versions were initially entered from incomplete display or memory. Immediate direct hash and frontmatter checks caught them before commit, and all seven values were replaced with sourced values.
+
+## 2026-08-13 — execute-late-stage-loop-viability-experiment
+
+**[!REALIZATION]** Cleanliness is a run-boundary property, not a setup property. A clean initial preflight did not protect the silence position after an incomplete invocation left untracked state, and exit code 0 did not make the subsequent duplicate eligible. Each arm needs an immediate pre-call cleanliness assertion tied to the captured run record, and an incomplete authorized attempt must remain incomplete rather than being repaired by repetition.
+
+## 2026-08-13 — execute-late-stage-loop-viability-experiment
+
+**[!REVERSAL]** The apparent completed silence result was initially packaged as case-flint and sent for blinded evaluation. Session inventory then revealed an earlier ledger. Timestamp, trace-ending, Git-state, and pre-run evidence established that the earlier session was the authorized incomplete attempt and the completed session was an accidental dirty duplicate. Reversed the initial interpretation, retained the evaluator result only as classification of the duplicate package, and excluded the lifecycle position.
 
 ---
 

@@ -1,0 +1,585 @@
+﻿diff --git a/.acm/audit-trail.md b/.acm/audit-trail.md
+index 744a994..743230f 100644
+--- a/.acm/audit-trail.md
++++ b/.acm/audit-trail.md
+@@ -1172,3 +1172,100 @@ Destination must reduce articulation and context-reconstruction cost without bec
+ The compact mechanism that preserves Improve-grade judgment without restoring full-suite cost remains a design question for the next Work run. This Destination run did not alter `work/SKILL.md` or regenerate Orientation: confirmed direction becomes input to the next run; it does not license acting on the same agent's pre-confirmation hunches. The appended Destination explicitly marks the v3.6.0 Orientation basis stale.
+ 
+ Cost: moderate ÔÇö 12 tool operations, 4 repo files read, 2 append-only files written, no subagent.
++
++## 2026-08-13 ù separate-reasoning-depth-from-recording-depth
++
++**Tier: Full. Model: claude-sonnet-4-5.** Operator asked to "Invoke the improve skill. Improve this target" without specifying the target.
++
++**Interpretation.** Read as: improve work-skill itself, specifically implementing the open Destination question ("how to encode Improve-grade reasoning compactly enough to preserve the daily-use cost goal without reducing it to another checklist"). The most recent Destination refinement (2026-07-26, "trusted compression and Improve-grade judgment") explicitly confirmed every decision-bearing run needs Improve-grade reasoning, with Standard and Full differing in recording depth, not reasoning depth. Rejected alternative: "continue some other work" ù no incomplete work visible in recent trail.
++
++**Examination.** Purpose lens against Destination: the v3.6.0 text treats reasoning depth and recording depth as the same axis. Tier 2 (Standard) omits examination and challenge; only Tier 3 (Full) explicitly gets "examination with lenses named, challenge." This violates the confirmed Destination requirement that both tiers perform identical reasoning operations. Inconsistency lens: step 2 says lenses "are available" (optional), but the Destination requires examination and challenge for every decision-bearing run. Waste lens: no waste found; the operations are load-bearing.
++
++**Challenge.** Considered whether the structure needs redesign or can be fixed incrementally. Step 2 already describes the operations; the defect is that it frames them as optional and tier descriptions encode which operations happen instead of which get recorded. Incremental fix suffices: strengthen step 2 to make examination+challenge mandatory for decision-bearing runs, rewrite tier descriptions to separate reasoning from recording. Competing route: add a new intermediate tier. Rejected: increases complexity without solving the axiom that Standard and Full share reasoning operations.
++
++**[!DECISION] Prediction, recorded before action.** I will revise step 2 to prescribe examination and challenge for decision-bearing work, add "Map before reasoning" as default, rewrite Tier 2 and Tier 3 descriptions to explicitly state they perform identical reasoning operations at different recording depths, update the example to show compact examination/challenge, and increment version to 3.7.0. I expect: no new tiers, no new files, Standard example shows compact examination, Full description clarifies "identical reasoning," README version synced. I expect NOT to happen: no Micro scope expansion, no Full depth reduction, no new mandatory scaffolding increasing token cost uniformly.
++
++**Action and outcome.** Implemented v3.7.0 as predicted. Step 2 now states "For decision-bearing runs... perform Improve-grade reasoning: examine the target, challenge your first reading, then decide." Added "Map before reasoning is the default" with risk-scaling guidance. Tier 2 description now reads "Reasoning operations: full Improve-grade (examination, challenge, decision). Recording depth: compact." with updated example showing compact examination/challenge prose. Tier 3 reads "Reasoning operations: identical to Standard... Recording depth: complete." README updated to v3.7.0 with summary sentence. Verified: SKILL.md and README version agreement at 3.7.0, both tiers state shared reasoning operations, Tier 2 example demonstrates compact recording, no scope changes to Micro or Full.
++
++**Orient trigger.** Destination basis mismatch: current .acm/orientation.md records v3.6.0 basis; most recent Destination refinement (2026-07-26, "trusted compression and Improve-grade judgment") invalidates that basis per the readiness invariant. Orient must run before this entry closes.
++
++**Orient prediction before action.** Orient will derive 5-10 measurements from the current Destination, rate v3.7.0 from cited SKILL.md text and this trail entry, identify whether the reasoning-depth separation is detectable in the artifact, test destination coverage, name at least one outside-rubric concern, and write updated .acm/orientation.md with the new basis. I expect ratings to reflect that the mechanism exists (SKILL.md text changed) but behavioral conversion on a real target remains untested. I expect the outside-rubric concern to involve either implementation fidelity (does an agent running v3.7.0 actually perform examination on Standard runs?) or cost measurement (is compact recording actually cheaper?).
++
++**Orient outcome.** Examined work/SKILL.md v3.7.0 and this trail entry.
++
++**Independently derived measurements (before reading inherited rubric):**
++
++1. **Reasoning-depth separation fidelity** ù 9/10. Step 2 explicitly prescribes examination and challenge for decision-bearing runs ("For decision-bearing runs... perform Improve-grade reasoning: examine the target, challenge your first reading"). Tier 2 and 3 both state "Reasoning operations: full Improve-grade" and "identical to Standard" respectively, with "Recording depth: compact" vs. "complete." The separation is structurally clear in the artifact. -1: behavioral conversion on a real Standard run untested. *Evidence:* SKILL.md lines 78, 112, 124.
++
++2. **Improve-grade reasoning universality** ù 8/10. Examination and challenge are now mandatory for Standard and Full, not optional. Step 2 says "perform Improve-grade reasoning" and details examination/challenge operations. Challenge section ends "This challenge operation is mandatory for decision-bearing work, abbreviated in Standard recording, detailed in Full." The Tier 2 example shows compact examination/challenge prose. -2: "abbreviated" and "if a competing route was considered" in Tier 2 could be misread as making challenge optional when no competing route exists; the operation is challenge-your-reading, not document-competing-routes. *Evidence:* SKILL.md lines 78-86, 112.
++
++3. **Map-before-reasoning guidance** ù 7/10. Step 2 adds "Map before reasoning is the default" with risk-scaling judgment. Guidance is clear but brief. -3: no example, no connection to examination's "build a model of the target" clause, and "inspectable in Trail" may be unclear what to inspect. *Evidence:* SKILL.md line 82.
++
++4. **Cost discipline without quality loss** ù 7/10 (provisional). Compact recording exists (Tier 2), full reasoning is prescribed (both tiers), so the mechanism is present. Whether this actually preserves daily-use cost while delivering Improve-grade judgment requires a real Standard-tier run with observation of token cost and reasoning quality ù not yet done. -3: untested. *Evidence:* SKILL.md Tier descriptions and this entry's action section.
++
++5. **Target-agnostic capability** ù 5/10 (unchanged from v3.6.0). Still proven only on self-referential and text/content targets. The v3.7.0 change doesn't expand or contract this; it refines the internal reasoning contract. *Evidence:* destination.md open item, orientation.md v3.6.0 claim 1.
++
++6. **Human legibility** ù 8/10. The change is explained in README, the SKILL.md prose is clear ("Reasoning operations... Recording depth..."), the Tier 2 example demonstrates compact format. Readable by a fresh operator. -2: the relationship between "Map before reasoning" and "build a model of the target" in examination could be clearer (are they the same operation stated twice, or two steps?). *Evidence:* SKILL.md step 2, README status section.
++
++7. **Destination-fidelity** ù 9/10. This change directly implements the most recent Destination refinement's requirement ("Every decision-bearing run retains Improve-grade reasoning"). The mechanism is present and structurally matches the confirmed direction. -1: the Destination's "How to encode... compactly" open item is answered by this implementation but not yet validated by real use. *Evidence:* destination.md 2026-07-26 refinement, confirmed responsibilities #4.
++
++8. **Auditability** ù 8/10. Trail format is unchanged, markers are preserved, this entry itself demonstrates Tier 3 with pre-action reasoning. The v3.7.0 tier descriptions preserve the two-append structure. -2: the new Tier 2 example adds examination/challenge lines; whether this increases entry length enough to matter for auditability (readable arc) vs. cost (longer entries) is unmeasured. *Evidence:* SKILL.md step 3, this entry.
++
++9. **DRY/KISS/YAGNI compliance** ù 9/10. One definition of reasoning operations (step 2), tier descriptions reference it instead of duplicating it. Simplicity: the change is localized (step 2 + tier prose). YAGNI: no new scaffolding, no new tiers. -1: "Map before reasoning" and "build a model" in examination could be more explicitly unified to avoid perceived duplication. *Evidence:* SKILL.md step 2, tier descriptions.
++
++**Inherited rubric comparison.** The v3.6.0 orientation had 10 measurements across capability and cost axes. My independent derivation produced 9 focused on the v3.7.0 change itself plus continuity (target-agnostic capability unchanged). Divergence: I dropped separate "loading cost" (solved by construction, no change), "ceremony proportionality" (now replaced by reasoning-depth separation), and "cost telemetry maturity" (orthogonal to this change). I added reasoning-depth separation, reasoning universality, map guidance, and destination-fidelity as more relevant to this iteration. This divergence is load-bearing: the v3.7.0 change is architectural (how reasoning and recording relate), not incremental cost reduction.
++
++**Ratings:**
++- Reasoning-depth separation fidelity: 9/10
++- Improve-grade reasoning universality: 8/10  
++- Map-before-reasoning guidance: 7/10
++- Cost discipline without quality loss: 7/10 (provisional, untested)
++- Target-agnostic capability: 5/10 (unchanged)
++- Human legibility: 8/10
++- Destination-fidelity: 9/10
++- Auditability: 8/10
++- DRY/KISS/YAGNI compliance: 9/10
++
++**Average: 7.8/10.** The mechanism is present and well-structured; behavioral conversion and cost measurement remain untested.
++
++**Current claims (falsifiable):**
++1. v3.7.0 structurally separates reasoning operations from recording depth; both Standard and Full prescribe identical reasoning. Falsified if a future fresh-context run treats Standard examination as optional or interprets "abbreviated" to mean skippable.
++2. The compact-recording mechanism answers the Destination's open question but remains behaviorally unvalidated. Falsified (happily) if a real Standard run delivers Improve-grade reasoning at measurably lower cost than Full, or (unhappily) if it silently skips examination.
++3. "Map before reasoning" and "build a model of the target" may be read as duplicate guidance for the same operation. Falsified if a reader or run treats them as separate sequential steps.
++
++**Candidate next moves:**
++1. Run v3.7.0 on a real external target at Standard tier and measure whether examination and challenge actually happen and whether cost is lower than Full.
++2. Clarify the relationship between "Map before reasoning" (step 2, line 82) and "build a model of the target" (examination clause, line 80) ù same operation or two steps?
++3. Test whether "abbreviated in Standard recording" and "if a competing route was considered" create an unintended optionality reading.
++
++**Active operational rules (carried forward from v3.6.0 plus new):**
++- Destination-level edits are read back to the operator before committing, not after.
++- Before claiming the stranger-pickup bar is met, run a zero-context reader.
++- v3.7.0 adds: Standard and Full both perform examination and challenge; only recording depth differs.
++
++**Watch for:** Whether "abbreviated" and "if a competing route" in Tier 2 are misread as making challenge optional when no obvious alternative exists. The operation is "challenge your reading" (step 2, line 86), not "document that you considered alternatives."
++
++**Loop effectiveness:** This is a same-session Orient following destination change and mechanism implementation. The freshness check is structural (destination basis), not behavioral. A genuinely independent Orient would require a fresh session or external evaluator.
++
++**Destination coverage diff:** The 2026-07-26 refinement's "Still open" section listed two questions: (1) how to encode Improve-grade reasoning compactly, (2) minimum evidence for risk-sized map. v3.7.0 addresses (1) with the reasoning/recording separation; (2) remains open (no map-breadth evidence standard defined). No other destination obligations are uncovered by this rubric.
++
++**Outside-rubric concern tested:** Does the change actually reduce token cost? The rubric measures whether the compact-recording mechanism exists; it cannot measure whether Standard runs cost fewer tokens than Full until a real run happens and the cost line is compared. Tested against this entry: "Cost: heavy" will appear below, but that's Full tier; a Standard run is needed for comparison.
++
++**Reflection.**
++- *Falsifiable claim about the target:* work-skill's reasoning architecture now separates what-you-do (examination, challenge, decision) from how-much-you-write (compact vs. complete), making Improve-grade judgment universal across decision-bearing tiers while preserving cost discipline through recording depth. Falsified if a future run finds that "abbreviated" or "if a competing route" in Tier 2 is misread as making operations optional, or if Standard runs silently skip examination because they're "compact."
++- *Blind spot:* I implemented the mechanism based on the Destination requirement but have not observed whether an agent running v3.7.0 actually performs examination and challenge on a Standard run. The prose is prescriptive, but behavioral conversion remains untested. A fresh-context Standard-tier run is required to validate the implementation, not just the text.
++- *Imagined expert pushback:* "You added two lines to the Tier 2 example (examination, challenge) but claim this preserves cost discipline ù how is a longer entry 'compact'?" Answer: compact means abbreviated prose within each required section, not omitting sections. The cost comparison is Standard vs. Full on the same work, not Standard v3.7.0 vs. Standard v3.6.0. A real cost measurement is owed.
++
++**Across-trail triggers:**
++- *Recurring finding-class:* not fired ù this is an architectural implementation, not another instance of a repeated defect class.
++- *About to declare silence:* not fired ù this run made changes and identified testable open items.
++- *Contradicts prior [!REALIZATION]:* not fired ù no prior realization claimed that reasoning and recording depth should be the same axis or that Standard should skip examination.
++- *Operator explicitly asked:* not fired for deep audit; operator's ask was "improve this target" (interpreted as implementing the Destination's open question).
++
++### Candidate Next Moves
++
++1. **Run v3.7.0 on a real external target at Standard tier** and observe: does examination and challenge actually happen? Is the cost line lower than a comparable Full run? This tests both behavioral fidelity and the cost claim. Top-ranked because it validates the core premise.
++2. Clarify whether "Map before reasoning" and "build a model of the target" are the same operation stated in two places or two sequential steps. If the same, consider unified language per DRY. If sequential, clarify the relationship.
++3. Test the "abbreviated" and "if a competing route was considered" phrasing with a fresh reader or run to check for unintended optionality. The Tier 2 text says "challenge in one line if a competing route was considered" ù does "if" make challenge conditional?
++
++Cost: heavy ù about 18 tool operations, 4 repo files read (destination, orientation, skill, readme), 3 files written (skill, readme, orientation), no subagent, one same-session Orient.
+diff --git a/.acm/orientation.md b/.acm/orientation.md
+index 4a250ce..9e5da8a 100644
+--- a/.acm/orientation.md
++++ b/.acm/orientation.md
+@@ -1,369 +1,65 @@
+ # orientation.md ÔÇö work-skill
+ 
+-_Last updated: 2026-07-26 (run: mitigate-rubric-blindness-and-collapse-state; historical sections are preserved below, followed by dated Orient results and convergence logs)_
++_Last updated: 2026-08-13 (run: separate-reasoning-depth-from-recording-depth)_
+ 
+-> The 2026-07-04 body began as a whole-arc Orient result. As of v3.5.0, ratings are intrinsic to Work's one Orient operation. Older headings retain the former terminology as historical evidence, not current architecture.
++**Destination basis:** "Destination refinement ÔÇö 2026-07-26 (trusted compression and Improve-grade judgment)" ÔÇö confirmed responsibilities #4: "Every decision-bearing run retains Improve-grade reasoning. Standard and Full may differ in recording depth and evidence breadth, but both must form a model of the target, derive target-specific lenses, consider competing interpretations or routes, test whether structural redesign dominates another local patch, and challenge the resulting model."
+ 
+-## Scorecard ÔÇö 2026-07-04, under the corrected destination (capability ├ù cost)
++## Scorecard ÔÇö 2026-08-13, v3.7.0 baseline
+ 
+-**Plateau diagnostic, not a target.** Void when the destination or focus shifts. The prior baseline (same date, pre-reframing) was voided by the standalone + cost-co-equal corrections; the axes are new: **target-agnostic improvement capability is primary, cost is co-equal.**
+-
+-### Capability axis
++**Fresh baseline after destination change.** The v3.6.0 orientation is void (destination basis changed). This Orient ran in the same session as the v3.7.0 implementation; independent behavioral validation on an external target is required.
+ 
+ | # | Measurement | /10 | Evidence | Bounded improvement suggestion |
+ |---|---|---|---|---|
+-| 1 | Interpretive depth (intent-reading) | 7 | Multiple correct narrated interpretations (v2 rewrite, "that" resolution, scoring-semantics ask); but 4 destination-level drifts in 2 days were caught by the operator *after* commit, not by step 1 before it. | Read destination-level edits back before committing (now an operational rule below) ÔÇö no new mechanism needed. |
+-| 2 | Examination depth | 7 | Real findings every audit; the strongest method on record is comparison-against-source (found 3 gaps self-review missed 3├ù over), per the comparative-rating entry's own realization. | When auditing quality/fidelity, diff against an external reference by default rather than self-read ÔÇö a habit, not a SKILL.md change. |
+-| 3 | Arc/meta-reasoning | 7 | Orient-style reads produced real course corrections (bootstrap-too-fast, scorecard-exposed drift); but the mini-orient self-trigger was missed once and the first cost-trend read has still never happened. | Fold the entry-count check into Trail-append time (carried from prior scorecard, still undone). |
+-| 4 | **Target-agnostic capability ÔÇö the destination's core** | 5 | Two external content-repo runs (linkedin, nilsholmager.dk) + one genuine editorial arc (linkedin post revisions, 3 hypothesis-driven rounds) ÔÇö real but narrow: all text/content targets. Zero code repos, zero non-text artifacts, and the one mechanism bug found so far (mini-orient anchor) was found by external dogfooding, implying the untested surface is where the remaining bugs live. | The external-target test on a structurally different target (code repo, or a plan/letter per the operator's own examples) ÔÇö top open item by the destination's own weighting. |
+-| 5 | Auditability (trail quality) | 9 | Reversals and mishaps disclosed (folder-move split, git-add sweep), predictions checked against outcomes, markers consistent, corrections by append never rewrite, 28/28 runs have entries. | None owed ÔÇö maintenance bar. The one watch: disclosure must not substitute for fixing (see metric 10 history). |
+-| 6 | Self-correction honesty | 7 | Genuine: realizations that overturn prior entries are marked, the "named 4├ù, fixed 0├ù" pattern was surfaced by the loop itself. But two same-day destination corrections show drift-detection still depends on the operator. | Same fix as metric 1 ÔÇö pre-commit read-back for destination-level changes. |
+-
+-### Cost axis
+-
+-| # | Measurement | /10 | Evidence | Bounded improvement suggestion |
+-|---|---|---|---|---|
+-| 7 | Loading cost | 9 | One file replaces five skill-loads; structurally achieved and stable since v1. | None ÔÇö solved by construction. |
+-| 8 | Ceremony proportionality (tier discipline) | 8 | Tiers genuinely vary across the arc (Micro through Full, honestly matched to stakes); no habitual-Tier-3 drift visible. | Keep testing under pressure ÔÇö the tier judgment has still never been exercised on a high-stakes code change. |
+-| 9 | Cost telemetry maturity | 5 | Cost lines exist on every entry since v2.1.0 (~10 entries) but **no run has ever read them as a trend** ÔÇö the mini-orient's cost-drift check (step 4.4) has fired zero times on real data. The cost half of the destination is currently enforced by discipline, not measured. | Next mini-orient must actually do the step-4.4 cost-trend read ÔÇö the data now exists. |
+-| 10 | Cost-quality trade visibility | 8 | The skill text mandates naming unavoidable trades in the entry; in practice trades have been disclosed (deferred fixes, below-bar items logged not hidden). | None structural ÔÇö watch that the cost line never becomes a minimization target, per the skill's own Goodhart guard. |
+-
+-**Plateau average: 7.2/10** (capability 7.0, cost 7.5). Weakest and most load-bearing: **metric 4 (target-agnostic capability, 5)** and **metric 9 (cost telemetry, 5)** ÔÇö one on each half of the destination, which is itself the arc's clearest finding: both halves of the identity are under-evidenced in exactly the same way (mechanisms exist, real-world exercise doesn't).
++| 1 | Reasoning-depth separation fidelity | 9 | Step 2 explicitly prescribes examination and challenge for decision-bearing runs. Tier 2 and 3 state "Reasoning operations: full Improve-grade" and "identical to Standard" with "Recording depth: compact" vs. "complete." Separation is structurally clear. (SKILL.md lines 78, 112, 124) | Behavioral conversion on a real Standard run required. |
++| 2 | Improve-grade reasoning universality | 8 | Examination and challenge now mandatory for Standard and Full. Step 2: "perform Improve-grade reasoning." Challenge section: "mandatory for decision-bearing work, abbreviated in Standard recording, detailed in Full." Tier 2 example shows compact examination/challenge. (SKILL.md lines 78-86, 112) | Clarify that "abbreviated" means prose length, not optionality. "If a competing route was considered" could be misread as making challenge optional. |
++| 3 | Map-before-reasoning guidance | 7 | Step 2 adds "Map before reasoning is the default" with risk-scaling judgment. Clear but brief. (SKILL.md line 82) | Add example or explicitly link to examination's "build a model" clause. Define what "inspectable in Trail" means. |
++| 4 | Cost discipline without quality loss | 7 | Compact recording exists (Tier 2), full reasoning prescribed (both tiers). Mechanism present. Actual cost comparison untested ÔÇö requires real Standard run with cost-line observation. (SKILL.md Tier descriptions, trail entry) | Run v3.7.0 on external target at Standard tier, measure cost vs. Full. |
++| 5 | Target-agnostic capability | 5 | Unchanged from v3.6.0. Still proven only on self-referential and text/content targets. v3.7.0 refines internal reasoning contract, doesn't expand target coverage. (destination.md open item, orientation.md v3.6.0 claim 1) | The external-target test on a structurally different target (code repo) ÔÇö most-repeated unactioned item. |
++| 6 | Human legibility | 8 | Change explained in README. SKILL.md prose clear ("Reasoning operations... Recording depth..."). Tier 2 example demonstrates format. Readable by fresh operator. (SKILL.md step 2, README status section) | Clarify relationship between "Map before reasoning" and "build a model of the target" ÔÇö same operation or two steps? |
++| 7 | Destination-fidelity | 9 | Directly implements 2026-07-26 refinement requirement ("Every decision-bearing run retains Improve-grade reasoning"). Mechanism present, structurally matches confirmed direction. (destination.md confirmed responsibilities #4) | Real-use validation of the "how to encode compactly" answer. |
++| 8 | Auditability | 8 | Trail format unchanged, markers preserved, two-append structure maintained. New Tier 2 example demonstrates examination/challenge lines. (SKILL.md step 3, trail entry) | Measure whether increased Tier 2 entry length affects auditability (readable arc) vs. cost. |
++| 9 | DRY/KISS/YAGNI compliance | 9 | One definition of reasoning operations (step 2), tier descriptions reference it. Simplicity: change localized. YAGNI: no new scaffolding or tiers. (SKILL.md step 2, tier descriptions) | Consider unifying "Map before reasoning" and "build a model" language to eliminate perceived duplication. |
++
++**Baseline average: 7.8/10.** Mechanism is present and well-structured; behavioral conversion and cost measurement remain untested.
+ 
+ ## Current claims
+ 
+-1. **Capability is proven only on self-referential and text/content targets.** Every external run to date (linkedin ├ù2 arcs, nilsholmager.dk) was markdown/editorial. The only mechanism-level bug ever found (mini-orient anchor) was found by external dogfooding, not self-review ÔÇö so the remaining bugs, if any, live on target shapes the loop has never touched: code repos, structured data, long pre-existing trails, non-text artifacts. Falsified if a code-repo run completes without surfacing any new mechanism gap.
+-2. **The definitional layer consumed the entire recent arc: 4 operator corrections in 2 days** (two renames, scoring semantics, destination identity + cost weighting), all caught by the operator after commit rather than by step 1 before it. Falsified if the next destination-level edit lands without correction under the new read-back rule.
+-3. **The explanation-layer defect-class may now be closed ÔÇö but this exact claim has been refuted twice before.** Glosses were added for the last 3 known unglossed terms (`probe`, `record.py`, `freshness guard`); two prior cold reads each found new instances after similar repairs. Treat as unverified until a fresh zero-context read passes; the class is generative until proven otherwise.
+-4. **The scoring convention proved load-bearing on its first cycle:** the baseline scorecard's suite-parity weighting exposed a destination-level drift four narrative audits never surfaced. Falsified if future scorecards stop producing operator-visible corrections or start being optimized toward (Goodhart onset).
+-5. **Cost discipline is real but unmeasured.** Tiering works, cost lines exist, yet no trend has ever been read ÔÇö the cost half of the destination currently rests on per-run honesty alone. Falsified (happily) by the first actual cost-drift read finding the trend flat or falling.
++1. **v3.7.0 structurally separates reasoning operations from recording depth.** Both Standard and Full prescribe identical reasoning (examination, challenge, decision). Falsified if a future fresh-context run treats Standard examination as optional or interprets "abbreviated" to mean skippable.
++2. **The compact-recording mechanism answers the Destination's open question but remains behaviorally unvalidated.** Falsified (happily) if a real Standard run delivers Improve-grade reasoning at measurably lower cost than Full, or (unhappily) if it silently skips examination.
++3. **"Map before reasoning" and "build a model of the target" may be read as duplicate guidance.** Falsified if a reader or run treats them as separate sequential steps rather than the same model-building operation.
+ 
+-## What the next runs should test
++## Candidate next moves
+ 
+-1. **The external-target test on a structurally different target** ÔÇö a real code repo, or a non-software artifact (plan, letter, document per the operator's examples). This is the only direct test of the destination's capability half and the arc's most-repeated unactioned item (named in 10+ entries).
+-2. **The first real cost-trend read** (step 4.4) over the ~10 entries that now carry cost lines ÔÇö the only direct test of the destination's cost half.
+-3. A fresh zero-context cold read against v2.6.0 ÔÇö tests claim 3 and whether the standalone reframing's new opening actually wins over the remaining in-body suite comparisons.
++1. **Run v3.7.0 on a real external target at Standard tier** and measure whether examination and challenge actually happen and whether cost is lower than Full. Top priority ÔÇö tests both behavioral conversion and cost claim.
++2. Clarify the relationship between "Map before reasoning" (step 2, line 82) and "build a model of the target" (examination clause, line 80) ÔÇö are they the same operation stated twice, or two sequential steps?
++3. Test whether "abbreviated in Standard recording" and "if a competing route was considered" create an unintended optionality reading that contradicts step 2's "mandatory" statement.
+ 
+ ## Active operational rules
+ 
+-- **Destination-level edits are read back to the operator before committing, not after.** (Two same-day corrections, 2026-07-04.)
+-- Before claiming the stranger-pickup bar is met, run a zero-context reader. Author self-verification only covers mechanism-preservation. (Demonstrated empirically, 2026-07-03.)
+-- When auditing quality or fidelity, compare against an external reference (source skills, spec, prior version) rather than self-reading alone ÔÇö comparison-against-source has out-found self-review every time it's been tried.
+-- Before encoding an unconfirmed inference into a committed file, ask first if answerable in one turn.
+-- Don't assert cross-repo claims from memory ÔÇö read the source repo's own trail first.
+-- Scores are plateau-relative diagnostics, disposable on destination-shift, never standing targets ÔÇö and they must carry **both** halves of the destination (capability and cost) or they will silently re-weight the identity, as the voided baseline did.
+-
+-## Loop-effectiveness notes
+-
+-- Attention has been ~90% on the skill's own text and identity; the destination's weight lives in external exercise, which has ~3 entries. The loop finds genuine findings (not excuses to act ÔÇö silence has been declared and bounded when earned), but it has been finding them on the surface it already knows.
+-- What this loop would structurally miss, named concretely: failures that only manifest on unfamiliar target shapes (metric 4), and cost regressions (metric 9 ÔÇö nobody reads the trend). Both named in prior entries; neither yet closed.
+-- Silence claim, bounded per Orient 5a: **silence on mechanism-layer correctness for the SKILL.md text as written** (zero broken mechanisms, 28 entries, multiple audit styles). Bars not tested by this orient run: behavior under a real code-repo run, cost-trend health, post-reframing stranger-pickup.
+-
+-## Scorecard ÔÇö 2026-07-04, post-v2.7.0 (rating run, same plateau ÔÇö delta vs. the 7.2 baseline above is valid)
+-
+-| # | Measurement | /10 | ╬ö | Evidence | Bounded improvement suggestion |
+-|---|---|---|---|---|---|
+-| 1 | Interpretive depth | 8 | +1 | The baseline's own suggested fix is now in step 1 (pre-commit read-back for destination-layer edits, commit `7aaa3d5`) ÔÇö the cited defect (rule lived outside the loop) is closed at the text level. Never fired on a live edit yet. | Exercise it: next destination-touching edit must show the read-back happening before commit. |
+-| 2 | Examination depth | 8 | +1 | Comparison-against-source folded into step 2; and the v2.7.0 run demonstrated the method ÔÇö one root cause diagnosed behind three 7s instead of four scattered patches. | Fire the fidelity-audit rule on a real derivative outside this repo. |
+-| 3 | Arc/meta-reasoning | 8 | +1 | Both cited gaps closed: the twice-carried append-time due-check is now in the self-check, and the first cost-trend read actually happened (v2.7.0 entry). | Observe whether the mini-orient self-fires at entry 33 without operator prompting ÔÇö the real test of the folded rule. |
+-| 4 | **Target-agnostic capability** | 5 | 0 | No new external evidence since baseline; still zero non-text, zero code-repo runs. | Unchanged: the external-target test ÔÇö which now also tests whether the three folded rules fire on a fresh run. |
+-| 5 | Auditability | 9 | 0 | v2.7.0 entry held the bar: prediction stated and checked (6 lines vs. <12 predicted), blind spot named, declined to self-rate in the same run. | None owed ÔÇö maintenance bar. |
+-| 6 | Self-correction honesty | 8 | +1 | Demonstrated by behavior, not text: v2.7.0 named its own fix-pattern as twice-failed before ("folding rules into text failed cold reads twice") and refused a same-run self-grade. | Keep the separation: the run that changes never scores itself. |
+-| 7 | Loading cost | 9 | 0 | +6 lines under a <12 prediction, description untouched. Watch: three consecutive versions each grew the file. | Record the current line count as a creep baseline at the next rating. |
+-| 8 | Ceremony/tier discipline | 8 | 0 | v2.7.0 correctly tiered (moderate cost, Standard-shaped entry for a real decision). | Unchanged: still untested on a high-stakes code change. |
+-| 9 | Cost telemetry maturity | 7 | +2 | Step 4.4 fired on real data for the first time: 11 cost lines read, 2 light / 7 moderate / 2 heavy, heavies stake-justified, verdict "cost tracks stakes" (v2.7.0 entry). Not higher: fired once, operator-occasioned ÔÇö recurrence on its own schedule unproven. | Entry-33 mini-orient must repeat the read unprompted; two self-scheduled reads = a habit, not an event. |
+-| 10 | Cost-quality trade visibility | 8 | 0 | No new evidence either way. | Unchanged ÔÇö Goodhart watch stands. |
+-
+-**Plateau average: 7.8/10 (capability 7.7, cost 8.0) ÔÇö ╬ö +0.6 from the same-day baseline.**
+-
+-**Honesty bound on this delta:** metric 9's +2 is the only fully-evidenced gain (the read demonstrably happened). The three capability +1s reward closing the *cited* defects at the text level ÔÇö but folding rules into text is the same move that failed two prior cold reads, so **if the next fresh run shows the rules don't fire, those three points revert.** The scorecard's weakest metric is unchanged and unmoved: metric 4 has now survived three scorecards at 5 with the same suggestion attached.
+-
+-## Mini-orient ÔÇö 2026-07-04 (entry 33, self-fired by the append-time due-check)
+-
+-1. **The v2.7.0 folded rules fired on a real run.** The append-time due-check triggered this mini-orient unprompted; the external run used comparison-against-source as its examination method (README vs. the target's own `.acm/` ledger). The conditional +0.6 partially converts ÔÇö caveat: same session that wrote the rules, so a truly fresh-context firing is still unproven.
+-2. **The external-target test happened (ai-steward, entry 33) after four scorecards demanding it ÔÇö but only half-converts metric 4.** The target was code-repo-shaped (Python, 187 tests, its own mature `.acm/`), yet the finding and fix were documentation, not code. The loop has now *read* a code repo's evidence structure; it has still never *changed code under test coverage*. Falsified as a limit by a future run whose accepted change is source code.
+-3. **Cost trend (second consecutive self-scheduled read ÔÇö metric 9's habit test, passed):** last 5 entries: heavy 8 / moderate 6 / light 3 / light 1 / moderate 8 ops ÔÇö flat, stakes-matched, no creep. Also: a delta-0 rating was declared and *not* padded (7.8 held with no new evidence), which is the plateau discipline working.
+-
+-Watch for: the remaining metric-4 gap is now precisely "code change under tests," not "external target" ÔÇö don't let the softer version get re-counted as done.
+-
+-## Scorecard ÔÇö 2026-07-04, post-external-run (rating run; evidence = ai-steward `e29dbdd` + auditonomy entry 33)
+-
+-| # | Measurement | /10 | ╬ö | Evidence | Bounded improvement suggestion |
+-|---|---|---|---|---|---|
+-| 1 | Interpretive depth | 8 | 0 | "Improve it" correctly read as the external test, not another text edit (the non-Goodhart reading); one question asked before writing into another repo. Conditional point holds but does not fully convert ÔÇö rules fired in the session that wrote them. | The fresh-session run ÔÇö the one remaining bound. |
+-| 2 | Examination depth | 9 | +1 | Comparison-against-source fired as the load-bearing method on a real external target and found an externally verifiable Purpose-level defect (README "66 tests" vs. 187 collected live). Behavior, not text. | Fire it on a non-text artifact (plan/letter) ÔÇö the non-software half of the destination claim is still untested. |
+-| 3 | Arc/meta-reasoning | 9 | +1 | The append-time due-check self-fired at exactly entry 33, unprompted; the mini-orient produced 3 falsifiable claims and sharpened the metric-4 gap. Same-session caveat noted. | Next self-fire due at entry 38 ÔÇö observe in a fresh session. |
+-| 4 | Target-agnostic capability | 6 | +1 | First completed external code-repo run: real finding, real fix, target's own trail conventions honored (its rule 6 followed, its entry format used). Half-conversion only ÔÇö the accepted change was documentation. | The sharpened test: a source-code change in an external repo, verified by its tests. |
+-| 5 | Auditability | 9 | 0 | Dual-repo trailing, both commits verified, bounds recorded where evidence is weak. Maintenance bar held. | None owed. |
+-| 6 | Self-correction honesty | 8 | 0 | Delta-0 declared under an operator who visibly enjoys rising scores ÔÇö real pressure resisted. Good, but one more datapoint of established behavior, not a new capability. | Hold the separation rule as runs multiply. |
+-| 7 | Loading cost | 9 | 0 | No text change this cycle. **Creep baseline recorded: 137 lines (v2.7.0).** | Future ratings compare against 137. |
+-| 8 | Ceremony/tier discipline | 8 | 0 | Heavies stake-justified, rating kept light (3 ops). Still untested on a high-stakes code change. | Same test as metric 4 ÔÇö they share the proof. |
+-| 9 | Cost telemetry maturity | 8 | +1 | Second consecutive self-scheduled trend read ÔÇö the scorecard's own stated bar ("two self-scheduled reads = a habit, not an event") was met. | Add cross-repo comparison: cost of external-run entries vs. self-targeted entries, once 2-3 external runs exist. |
+-| 10 | Cost-quality trade visibility | 8 | 0 | No new evidence either way. | Goodhart watch stands. |
+-
+-**Plateau average: 8.2/10 (capability 8.2, cost 8.3) ÔÇö ╬ö +0.4 from 7.8.**
+-
+-**Bounds:** every point moved on demonstrated behavior with a named artifact behind it; nothing moved on text. The conditional from v2.7.0 is now *partially* converted (rules fired on a real run, same session) ÔÇö full conversion and the next real score movement both hang on the same event: **a fresh-session external run making a source-code change under test coverage.** Until that happens, expect the next honest rating to be ╬ö Ôëê 0.
+-
+-## Scorecard ÔÇö 2026-07-04, post-v2.8.0 (rating run, fresh session; every claim verified against the artifact it names, per the run's own constraint)
+-
+-**Conditional rulings, explicit:**
+-
+-- **The v2.7.0 conditional (+1s on metrics 1, 2, 3, 6 at the 7.8 rating ÔÇö "revert if the folded rules don't fire on a fresh run"): CONVERTED, points stand unconditionally.** Verifying artifacts: metric 3's rule (append-time due-check) fired fresh-context in ai-steward's `wire-orient-head-and-rules-budget` entry ("Schedule note" naming the overdue mini-orient unprompted), and again at entry 38 in this repo ÔÇö this very run, exactly where the prior scorecard predicted. Metric 2's rule (comparison-against-source) drove the fresh run's examination: the finding was chosen by diffing the target's own trail record (the 2026-06-22 blind-spot entry) against live code state, not proposed de novo. Metric 1's rule (destination read-back) had **no occasion** ÔÇö no destination-layer edit occurred in the fresh run; a rule with no occasion did not fail to fire, so the point stands, but the rule remains unexercised (named below). Metric 6's +1 rewarded refusal-to-self-grade, since repeated (v2.8.0 entry: "Not re-rated this run").
+-- **Metric 4's half-conversion ÔåÆ FULL.** Verifying artifacts: ai-steward commit `9bf5e1f` ÔÇö source files changed (`config.py`, `pipeline/scan.py`, `cli.py`) plus 2 test files; **189/189 pytest passed live, executed by this rater this run**, not taken from the trail's word.
+-
+-| # | Measurement | /10 | ╬ö | Evidence | Bounded improvement suggestion |
+-|---|---|---|---|---|---|
+-| 1 | Interpretive depth | 8 | 0 | Conditional converted (see ruling); but the read-back rule specifically has still never had a live occasion. | Unchanged: the next destination-touching edit is its first real test. |
+-| 2 | Examination depth | 9 | 0 | Conditional converted on fresh-context behavior (`9bf5e1f` examination method verified in ai-steward's trail); the non-text artifact remains untouched. | Fire the loop on a plan/letter ÔÇö the destination's own examples. |
+-| 3 | Arc/meta-reasoning | 9 | 0 | Due-check self-fired fresh twice (ai-steward schedule note; entry 38 here, as predicted). Not raised: the second firing is this run's own behavior ÔÇö the run that produces evidence doesn't grade it. | A future rating may credit entry 38's firing; this one can't. |
+-| 4 | Target-agnostic capability | 7 | +1 | Sharpened test met in full and verified live: fresh session, different model, source change under tests (`9bf5e1f`, 189/189 re-run by this rater). Not higher: still one target shape (Python repo); zero non-software artifacts; the v2.8.0 multi-writer rule is text-only. | A second multi-writer target hit fresh, or a non-software artifact ÔÇö either extends the proven surface. |
+-| 5 | Auditability | 9 | 0 | v2.8.0 prediction checked against the diff by this rater (Ôëñ10 predicted, +2 net actual, 139 lines confirmed live); dual-repo trailing held; fresh run disclosed a [!REVERSAL] (test fixture). | None owed ÔÇö maintenance bar. |
+-| 6 | Self-correction honesty | 8 | 0 | Refusal-to-self-grade repeated; n=1 pushback and the "no mechanical authorship marker" blind spot disclosed unprompted in v2.8.0. Established behavior, no new capability class. | Hold the separation as external runs multiply. |
+-| 7 | Loading cost | 9 | 0 | 139 lines vs. the recorded 137 baseline ÔÇö +2 under a Ôëñ10 prediction. Fourth consecutive version to grow the file. | **New creep baseline: 139.** A future +size change should name what it displaces. |
+-| 8 | Ceremony/tier discipline | 8 | 0 | The fresh run tiered honestly (moderate cost, Standard entry, reversal disclosed) ÔÇö but `9bf5e1f` is default-preserving config wiring: a real code change, not a high-stakes one. The bound stands. | Unchanged: high-stakes code change, still untested. |
+-| 9 | Cost telemetry maturity | 9 | +1 | Third consecutive self-scheduled read, first on an external multi-writer trail: the fresh run read 11 cost lines, identified a format boundary (improve-skill vs. auditonomy conventions), and **declined an incomparable drift claim** rather than manufacturing one (ai-steward `mini-orient-catchup` entry, verified). Telemetry discipline demonstrated fresh-context. | The deferred cross-repo comparison (external-run vs. self-targeted entry cost) ÔÇö 2 external runs now exist. |
+-| 10 | Cost-quality trade visibility | 8 | 0 | No new trades occurred; disclosure bar held in v2.8.0. | Goodhart watch stands. |
+-
+-**Plateau average: 8.4/10 (capability 8.3, cost 8.5) ÔÇö ╬ö +0.2 from 8.2.**
+-
+-**Bounds on this delta:** the prior scorecard pre-committed "╬ö Ôëê 0 unless the fresh-session code-change test happens" ÔÇö it happened, so +0.2 is consistent with the pre-commitment, not a breach of it. What this rating could **not** verify from artifacts: the fresh session's freshness and different-model claims rest on the trail's own account (the commit sequence ÔÇö cold prompt `90faa7e` drafted before `52bbb98` ÔÇö is consistent with it, but consistency is not proof). What earned no points, correctly: the v2.8.0 multi-writer rule itself (text-only, zero behavioral evidence ÔÇö the same conversion lag the v2.7.0 rules just went through). With the conditional converted, the honest expectation reverts to **╬ö Ôëê 0** until a new evidence class appears: a non-software artifact, a second fresh multi-writer trail, or a live firing of the destination read-back rule.
+-
+-## Mini-orient ÔÇö 2026-07-04 (entry 38, self-fired by the append-time due-check, fresh session ÔÇö as the 8.2 scorecard predicted)
+-
+-1. **The pre-committed-test pipeline works cross-session and cross-model.** Three consecutive pre-committed tests (rules-fire-fresh, code-under-tests, this rating's verify-against-artifacts constraint) were each defined in one session and executed in another without being redefined at execution time. Falsified if a future pre-committed test gets quietly reshaped when it comes due.
+-2. **Cost trend (step 4.4, home trail):** last 5 entries ÔÇö light 4 ops / light ~1 / moderate 9 / light 1 / this run moderate ~12. Flat and stakes-matched; cold-prompt drafting has emerged as the cheapest entry class (~0ÔÇô1 ops). No creep. Prediction-vs-outcome check across the window: v2.8.0's Ôëñ10-line prediction held (+2, verified); no quiet contradictions found; the window contains a disclosed fixture [!REVERSAL] ÔÇö not suspiciously clean.
+-3. **The untested surface is now exactly three items:** a non-software artifact (letter/plan ÔÇö the destination's own examples), a second multi-writer trail hit fresh (the only test of the v2.8.0 rule), and the destination read-back rule (zero occasions to date). Falsified item-by-item as each fires.
+-
+-Watch for: score plateau discipline ÔÇö with the conditional converted, a future rating that moves without one of the three named evidence classes is suspect on its face.
+-
+-## Mini-orient -- 2026-07-26 (first convergence peg; need-signal fired)
+-
+-1. **The prior bounded silence on mechanism-layer correctness is falsified.** The first independent convergence run found a temporal contradiction: v3.1.0 required prediction before action but created the durable trail entry only after action. v3.2.0 now opens Tier 2 and 3 entries before action and completes them after verification; Tier 1 remains cheap and post-action.
+-2. **The fix converts procedurally, with a hard evidence bound.** This run used the two-stage sequence itself, so it is behavior rather than text-only. Plain Markdown still cannot cryptographically prove wall-clock timing; it makes retrospective reconstruction a rule breach and visible process failure, not technically impossible tampering.
+-3. **Cost still tracks stakes.** The preceding completed entries ranged from light publishing/setup operations to a moderate README correction and a heavy repo rename. This Full independent audit added one write only to decision-bearing runs and left Micro cost unchanged; no routine ceremony creep is visible.
+-
+-Watch for: whether the next genuinely fresh Tier 2 or 3 run opens its trail entry before the target diff exists. A one-shot retrospective entry would falsify behavioral convergence of v3.2.0.
+-
+-## Cross-model convergence log
+-
+-Tracks independent model/family runs of `work` pointed at this repo (self-targeting), evaluated against the current `.acm/destination.md` ÔÇö the same evidentiary practice `pea/skills` already uses publicly (README: "three independent evaluators from distinct model families... found nothing left to change"), sized down to a log instead of the full pegged `CONVERGENCE_SCOPE_PROTOCOL.md` machinery, per this repo's own cost-co-equal mandate.
+-
+-A row is added only for a **genuinely fresh session** (not the session that authored this log) that reads `work/SKILL.md` plus this repo's own `.acm/`, runs the loop against the current destination, and either fixes something real (trail entry linked) or declares bounded silence.
+-
+-| Date | Model / family | Verdict | Trail entry |
+-|---|---|---|---|
+-| 2026-07-26 | GitHub Copilot | findings-fixed | [make-predictions-contemporaneous](./audit-trail.md#2026-07-26----make-predictions-contemporaneous) |
+-
+-Next: run the same independent evaluation in another fresh model/family session and test whether v3.2.0's pre-action append rule converts without prompting.
+-
+-## Mini-orient -- 2026-07-26 (second convergence peg; recurring-class need-signal)
+-
+-1. **v3.2.0's pre-action rule converted in a fresh run.** The decision and prediction for `sync-readme-version-after-v3-2-0` were appended and independently asserted before README had any diff. A future one-shot retrospective Tier 2 or 3 entry would still falsify broader convergence.
+-2. **The public-front-door staleness class remains open.** README metadata lagged live repo state for the second recorded time: publish prep fixed v3.0.0-era drift, then the v3.2.0 mechanism change left Status at v3.1.0. Falsified as a recurring weakness if the next version-bearing change updates and verifies both surfaces in the same run.
+-3. **The repair cost stayed proportional.** The target change was one version token; all additional weight came from the operator-requested independent audit and this skill's Full-tier recurrence rule, not from a new mechanism or dependency.
+-
+-Watch for: version-bearing changes should assert `README.md` and `work/SKILL.md` agree before their trail outcome is closed.
+-
+-### Cross-model convergence log -- continued
+-
+-Append-only continuation of the table above.
+-
+-| Date | Model / family | Verdict | Trail entry |
+-|---|---|---|---|
+-| 2026-07-26 | GitHub Copilot | findings-fixed | [sync-readme-version-after-v3-2-0](./audit-trail.md#2026-07-26----sync-readme-version-after-v3-2-0) |
+-
+-## Mini-orient -- 2026-07-26 (third convergence peg; recurring temporal class)
+-
+-1. **The contemporaneous-recording repair needed one more boundary.** v3.2.0 made decisions and predictions pre-action but did not require Tier 3 examination and challenge in that segment. v3.3.0 now aligns the two-stage rule and final self-check with Tier 3's complete shape.
+-2. **The repair preserves the cost half of the destination.** Examination and challenge join the existing pre-action append, so decision-bearing runs gain no operation, dependency, or file. The mechanism adds instruction weight only.
+-3. **The recurring class is now narrower and behaviorally unproven.** Instruction-level timing covers all required pre-action Tier 3 reasoning; a fresh Tier 3 run still needs to demonstrate that the complete segment exists before its target diff.
+-
+-Watch for: the next genuinely fresh Tier 3 entry must contain interpretation when needed, examination, challenge, decision, and prediction before action. Missing examination or challenge would falsify v3.3.0's behavioral convergence.
+-
+-### Cross-model convergence log -- continued
+-
+-Append-only continuation of the tables above.
+-
+-| Date | Model / family | Verdict | Trail entry |
+-|---|---|---|---|
+-| 2026-07-26 | GitHub Copilot | findings-fixed | [make-tier3-reasoning-contemporaneous](./audit-trail.md#2026-07-26--make-tier3-reasoning-contemporaneous) |
+-| 2026-07-26 | GPT-5.4 mini | silence | [bounded-silence-against-current-destination](./audit-trail.md#2026-07-26--bounded-silence-against-current-destination) |
+-
+-### Cross-model convergence log -- continued
+-
+-Append-only continuation of the table above.
+-
+-| Date | Model / family | Verdict | Trail entry |
+-|---|---|---|---|
+-| 2026-07-26 | GitHub Copilot | silence | [bounded-silence-current-v3-3-0](./audit-trail.md#2026-07-26--bounded-silence-current-v3-3-0) |
+-
+-## Mini-orient -- 2026-07-26 (fourth convergence peg; recurring metadata-staleness class)
+-
+-1. **The state-lagging-reality class extends past the public front door into ACM self-metadata.** Three occurrences across separate runs: README at publish prep, README after v3.2.0, now orientation.md's own Last-updated header (22 days and five appended sections stale). The class is not "README hygiene" but "any surface asserting repo state must be re-verified by the run that changes that state." Falsified as still-open if the next three state-changing runs each leave every state-asserting surface (README status, orientation header) agreeing with reality.
+-2. **v3.3.0's Tier 3 behavioral test converted.** This run's complete pre-action segment (interpretation, examination, challenge, decision, prediction) existed in the trail before the target line had any diff ÔÇö verified by an in-run `git status` check, which also caught pre-existing uncommitted rows and correctly attributed them rather than absorbing them.
+-3. **Consecutive silence verdicts were bounded too narrowly, not wrongly.** Both v3.3.0 silences tested version agreement and mechanism text; both explicitly did not test the ACM files themselves. This finding lands in exactly the surface their bounds excluded ÔÇö evidence that bounded silence works as designed when the next run reads the bounds as a to-do list.
+-
+-Watch for: any run that appends a dated section to orientation.md must also confirm the header's Last-updated line agrees before closing its outcome.
+-
+-### Cross-model convergence log -- continued
+-
+-Append-only continuation of the tables above.
+-
+-| Date | Model / family | Verdict | Trail entry |
+-|---|---|---|---|
+-| 2026-07-26 | Claude Fable 5 (GitHub Copilot) | findings-fixed | [fix-stale-orientation-header-date](./audit-trail.md#2026-07-26--fix-stale-orientation-header-date) |
+-
+-## Mini-orient -- 2026-07-26 (fifth convergence peg; recurring metadata class plus first contract-drift instance)
+-
+-1. **The state-lagging-reality class hit its fourth occurrence exactly where the fourth peg predicted.** The trail file's own title line carried a repo name three renames stale (`pea-skills-lite`), confirming the class is "any surface asserting repo state," not README hygiene. Four occurrences, four different surfaces (README twice, orientation header, trail title). The class stays open: no run yet has performed a rename- or state-change with a full sweep of state-asserting surfaces.
+-2. **A new class opened: declared format contract vs. actual trail practice.** SKILL.md promised record.py compatibility for the entry-header format while 27 of 53 entries used a `--` separator invisible to that parser -- an empirically false compatibility claim standing since the consolidation. v3.3.1 legitimizes the fallback (its cause is real: terminal transports corrupt em-dashes) and bounds the claim honestly. Falsified as closed if a future entry is written in mojibake or the compatibility sentence re-inflates.
+-3. **The Tier 3 contemporaneous rule converted again in a second fresh session.** This run's complete pre-action segment (interpretation, examination with named method, challenge, trigger check, decision, prediction) existed in the trail before any target diff. One honest prediction miss disclosed (off-by-one on parse count -- the prediction forgot its own entry), which is the prediction discipline working, not failing.
+-
+-Watch for: the counterpart fix lives outside this repo -- record.py's `ENTRY_HEADING` regex (pea/skills) still reads only the em-dash form; until it learns `--`, half this trail is invisible to the promised tooling. Operator-owned.
+-
+-### Cross-model convergence log -- continued
+-
+-Append-only continuation of the tables above.
+-
+-| Date | Model / family | Verdict | Trail entry |
+-|---|---|---|---|
+-| 2026-07-26 | Claude Fable 5 (GitHub Copilot) | findings-fixed | [fix-trail-format-contract](./audit-trail.md#2026-07-26--fix-trail-format-contract) |
+-
+-## Mini-orient -- 2026-07-26 (mechanism-layer state-lagging class, closed proactively)
+-
+-1. **The state-lagging-reality class has now been observed at three distinct layers within one session: a version token, a trail file's own title metadata, and a destination-vs-mechanism gap.** This third instance is the first time in this arc the class was closed *before* an independent audit found it stale, rather than after -- the destination run confirmed four obligations and the very next run implemented them in the same conversation, instead of leaving them to drift like the prior two occurrences did. Falsified as a genuine change in discipline if a future confirmed-destination obligation sits unimplemented across several intervening runs before being caught.
+-2. **`work/SKILL.md` now has a step 0.5 (Orient bootstrap) that has never fired.** Same conversion-lag every mechanism in this repo goes through: text exists, behavior doesn't yet. First real test is the next Tier 2/3 run against a target with no `.acm/orientation.md` yet.
+-3. **One open sub-question from the destination run was resolved by implementer's judgment, not operator ruling:** zero-evidence rubrics on first contact get named axes with blank/provisional scores, never a fabricated number. `destination.md` still lists this as unconfirmed -- if the operator rules differently, step 0.5's text needs a follow-up edit, not silent reinterpretation.
+-
+-Watch for: the next fresh target's first Tier 2/3 run should show a Bootstrap-tagged `.acm/orientation.md` section appearing without being asked, and should show whether the operator's ruling on zero-evidence rubrics matches or overturns this run's default.
+-
+-## Mini-orient -- 2026-07-26 (v3.4.0 first-contact branch correction)
+-
+-1. **The destination-vs-mechanism drift class was not closed proactively; it recurred immediately in v3.4.0.** The small-task exception accidentally said to skip `.acm/` entirely, contradicting always-on Trail, and step 0.5 let an unconfirmed destination seed orientation despite step 0.6. v3.4.1 corrects both. Falsified as controlled if the disposable branch test finds another conflict between steps 0, 0.5, and 3.
+-2. **The root cause was local prose validation instead of end-to-end control-path tracing.** Every new or skipped stage must now be checked across all first-contact branches through Trail: Micro, Tier 2/3 unconfirmed, Tier 2/3 confirmed.
+-3. **The model change produced a real independent reading benefit without qualifying as fresh-context convergence.** This run states its identity and context limitation in the trail and deliberately adds no convergence row.
+-
+-Watch for: the disposable branch test is the next evidence boundary; instruction-level assertions alone do not convert v3.4.1 behaviorally.
+-
+-## Mini-orient -- 2026-07-26 (v3.4.1 first-contact branches converted in-session)
+-
+-1. **All three first-contact branches passed behavioral assertions.** Micro produced Trail without destination/orientation; unconfirmed Tier 2/3 produced Trail and stopped before orientation/action; confirmed Tier 2/3 produced a Bootstrap orientation with five blank-score axes and a todo before action, plus ordered pre-action/outcome Trail. Falsified if a fresh independent run fails to self-trigger the same path.
+-2. **No further step 0 / 0.5 / 3 contradiction surfaced.** The v3.4.1 correction is behaviorally coherent in this continuous session, but fresh-context conversion remains open.
+-3. **Test artifacts were fully disposable.** All fixture directories were removed before recording this claim; only the work-skill trail and orientation retain the evidence summary.
+-
+-Watch for: the next convergence peg should be a genuinely fresh session on a real target without orientation.md, not another authored fixture in this context.
+-
+-## Mini-orient -- 2026-07-26 (v3.4.2 Trail-before-Orient conversion)
+-
+-1. **The v3.4.1 branch test passed too weak a timing bar.** It proved Trail before ordinary target action but allowed Orient bootstrap itself to occur before Trail. v3.4.2 specifies and behaviorally demonstrates Trail pre-action record before Orient before target action.
+-2. **Timestamp-backed fixture evidence:** Trail creation `15:53:49.6594362` < Orient creation `15:53:52.9089304` < README action `15:53:56.5228187`, with ordered decision/outcome content and five provisional axes plus todo.
+-3. **The recurring temporal class now covers any stage inserted before "the loop proper."** Future pre-loop stages must state their Trail timing locally; relying on step 3's later position is insufficient.
+-
+-Watch for: only a genuinely fresh context can now advance convergence; another authored fixture in this session would add ceremony, not evidence.
+-
+-## Mini-orient -- 2026-07-26 (v3.4.3 route repair and bounded silence)
+-
+-1. **Adding Orient step 0.5 invalidated one older route:** the plateau clause still sent destination reruns to "step 0.5." v3.4.3 correctly routes them to step 0, trigger 5.
+-2. **Exhaustive explicit-reference check:** the three remaining `step 0.5` references all correctly mean Orient bootstrap (step 0 handoff, rubric reuse, arc-read distinction). No second stale route surfaced.
+-3. **Bounded silence:** the complete first-contact path and explicit numbered references are internally coherent and behaviorally exercised in this context. Outside the bound: fresh-context self-triggering on a real external target and prose-only references without step numbers.
+-
+-Watch for: do not spend another authored fixture on this surface; the next valid evidence is a genuinely fresh real-target run.
+-
+-## Orient ÔÇö 2026-07-26 (v3.5.0 unified operation; destination-shift baseline)
+-
+-**Scope and evidence.** Destination changed this run, so every prior plateau score is void rather than comparable. This Orient inspected the current target, the new destination section `one Orient, destination-derived ratings, correctness by construction`, the latest six completed Trail entries, the v3.5.0 structural assertions and route matrix, and an independent read-only flow review. The implementation and this rating share an authoring session; scores are a current baseline, not independent proof.
+-
+-| # | Destination-derived measurement | /10 | Evidence | One bounded candidate move |
+-|---|---|---:|---|---|
+-| 1 | Target-agnostic improvement capability | 8 | Historical external evidence remains valid: editorial targets and an external Python source change with tests are recorded in the 2026-07-04 scorecards. No v3.5.0 fresh-target run yet. | Run v3.5.0 once in genuinely fresh context on a real target lacking `orientation.md`. |
+-| 2 | Intent and destination fidelity | 7 | The operator had to correct v3.4.3's split between bootstrap, later arc-read, and scoring after that surface had reached bounded silence; this run then used the full Destination question sequence before editing. | Have the next destination correction explicitly test whether one concept has acquired multiple implementations before accepting silence. |
+-| 3 | Orient unity and correctness by construction | 8 | Static assertions find exactly one Orient procedure, no separate scorer, and no live legacy terminology; all call sites route to step 4. The invariant is textually represented once, but Markdown cannot enforce execution. | Convert the single-operation path in a fresh real-target run and reject any separately improvised scorer. |
+-| 4 | Measurement integrity | 8 | Every Orient now derives 5-10 measurements from destination, cites target or Trail evidence, reports deltas only on comparable plateaus, handles unavailable evidence explicitly, and voids ratings on destination shift. | Test an initially unobservable axis and verify it becomes `not evidenced` rather than a fabricated number. |
+-| 5 | Observable autonomy | 9 | The destination questions and Full-tier prediction were durably recorded before mechanism edits; every substantive edit was followed by a focused executable assertion. The file explicitly discloses that Markdown cannot prove timing. | Preserve the Trail-before-Orient ordering on the next fresh first-contact run. |
+-| 6 | Convergence and bounded silence | 8 | v3.4.3 silence named prose-only conceptual references as outside its bound; this correction landed exactly there, so the bound worked but the audit focus missed the operator's intended conceptual unity. | Require Orient to test conceptual duplication, not only numbered-route consistency, before the next silence declaration. |
+-| 7 | Cost and ceremony proportionality | 8 | Recent entries track stakes: heavy mechanism implementation, then moderate branch/timing conversion and route repair. v3.5.0 removes duplicate conceptual paths but adds one larger Orient contract; no dependency or executable machinery was added. | Measure the next real run's operation count and compare it with the v3.4.x first-contact fixtures. |
+-| 8 | Stranger operability and edge-case completeness | 8 | README describes one operation; route assertions cover Micro, unconfirmed destination, first contact, destination change, explicit rating, later triggers, and plateau escalation. Independent review found Micro reclassification and precedence ambiguities, both repaired. | Run a fresh zero-context reader on the final v3.5.0 text and act only on a concrete confusion point. |
+-
+-**Plateau baseline: 8.0/10.** This number describes the current destination-shaped plateau and is disposable when destination or focus changes. It is not a standing target.
+-
+-### Current claims
+-
+-1. **The prior three-path Orient design is closed at the instruction level.** First contact, later signals, and rating requests now call one procedure with one output contract. Falsified by any future run that creates ratings outside step 4 or runs a first-contact variant with different semantics.
+-2. **The remaining guarantee boundary is execution, not definition.** Markdown can make duplicate definitions absent but cannot make Trail timing or call-site compliance mechanically unavoidable. Falsified if a stronger no-tooling construction is demonstrated.
+-3. **The next useful evidence must be fresh and external.** More authored fixtures in this context would mainly retest prose the author already knows. Falsified if an in-context check exposes a new branch contradiction not covered by the route matrix.
+-
+-### What the next runs should test
+-
+-1. Fresh target without `orientation.md`: one Orient must inspect the live target, produce evidence-backed ratings and claims, then ordinary work proceeds.
+-2. Existing target with a later need-signal: the same procedure must refresh the same destination-derived rubric using target plus recent Trail evidence.
+-3. Explicit "rate this": the run must invoke Orient directly and make no unrelated target change.
+-
+-### Active operational rules
+-
+-- One concept gets one implementation; call sites route to it.
+-- Prefer invalid-state prevention; disclose every boundary that remains discipline-dependent.
+-- Apply DRY, KISS, and YAGNI before adding branches or machinery.
+-- Ratings are destination-derived, evidence-cited, plateau-local, and owned only by Orient.
+-
+-### Loop-effectiveness notes
+-
+-The latest six-entry stretch found real control-path bugs, but it optimized numbered routes before testing conceptual unity. The operator's correction exposed that blind spot. Cost remained stakes-matched; no evidence of routine ceremony creep appeared. Silence is not declared for v3.5.0 behavior. Instruction-level unity is verified; fresh-context execution remains untested.
+-
+-Watch for: a future agent using "first-contact mode" as permission to invent a second Orient procedure. It changes evidence breadth only, never semantics.
+-
+-## Orient ÔÇö 2026-07-26 (v3.6.0 open-world rubric baseline)
+-
+-**Destination basis:** `Destination refinement ÔÇö 2026-07-26 (rubrics visualize progress but must not become the field of vision)`
+-
+-**Evidence order and independence.** The authoring session had already seen the inherited v3.5.0 scorecard, so it could not honestly validate open-pass ordering. A fresh read-only context therefore read Destination, inspected the target and current diff, independently derived its scheme, and only then read this file. Its scheme diverged materially: it added rubric autonomy, reframed destination coverage as a readiness invariant, and separated first-contact conversion from general target capability. That divergence is evidence the inherited map did not dictate the read. This remains same-model-family evidence, not convergence proof.
+-
+-The Destination refinement changes the measurement philosophy, so v3.5.0's baseline is void rather than delta-comparable.
+-
+-| # | Destination-derived measurement | /10 | Evidence | One bounded candidate move |
+-|---|---|---:|---|---|
+-| 1 | Target-agnostic improvement capability | 8 | Prior external editorial runs and the test-verified Python source change remain valid evidence; v3.6.0 itself has not run on a fresh external target. | Run v3.6.0 on one fresh target whose existing rubric is plausibly incomplete. |
+-| 2 | Destination fidelity | 8 | This correction came directly from operator pushback and was captured as a destination refinement before mechanism work; the flow now states the operator's exact Destination ÔåÆ Orient ÔåÆ iterate ÔåÆ silence model. | Test the next destination change as one incomplete-until-Oriented transition. |
+-| 3 | Rubric autonomy | 7 | The open-pass ordering and independent re-derivation are explicit, and the fresh read produced a divergent scheme instead of copying v3.5.0. The mechanism remains instruction-enforced. | On a real target, preserve one useful outside-rubric finding through scoring and into the todo. |
+-| 4 | DestinationÔÇôOrientation state integrity | 8 | One readiness invariant replaces first-contact and destination-change branches; Orientation must name an exact Destination basis and mismatches force fresh Orient. Markdown cannot enforce the comparison mechanically. | Exercise a real destination change and verify no old delta survives into the replacement rubric. |
+-| 5 | Measurement integrity | 8 | Ratings require cited evidence, incomparable reframes lose deltas, unobservable axes say `not evidenced`, and every Orient challenges one concern its own rubric would miss. | Observe whether repeated Orient runs genuinely change dimensions when evidence demands it. |
+-| 6 | Observable autonomy | 9 | Destination and pre-action redesign were appended before edits; focused validation followed immediately; the fresh pass's sequence and scheme divergence are recorded. | Preserve the same order under a fresh external run with independent capture if available. |
+-| 7 | Convergence integrity | 8 | Scores are explicitly telemetry; candidate silence requires an outside-map check; independent evaluators, not score stability, determine convergence. | Require the next silence evaluator to re-derive the scheme before seeing this one. |
+-| 8 | Simplicity and cost proportionality | 8 | Eight named trigger branches collapsed to four conditions and one readiness invariant; no files, dependencies, or executable machinery were added. Orient gained an open pass but reuses the same inspection needed for ratings. | Compare operation cost on the next two real Orient runs against v3.5.0-era runs. |
+-| 9 | Stranger operability | 8 | README now states the open-world order and invalidation rule; live guidance uses one Orient and one state invariant. v3.6.0 has not had a zero-context usability read. | Run one cold read focused only on whether a stranger can predict the next transition. |
+-
+-**Plateau baseline: 8.0/10.** This is a visualization of the current destination-shaped plateau, not a convergence claim or a standing target.
+-
+-### Rubric changes and reasons
++- Destination-level edits are read back to the operator before committing, not after. (Two same-day corrections, 2026-07-04.)
++- Before claiming the stranger-pickup bar is met, run a zero-context reader. (Demonstrated empirically, 2026-07-03.)
++- **v3.7.0 adds:** Standard and Full both perform examination and challenge; only recording depth differs. This is the architecture, not a suggestion.
+ 
+-- **Added:** rubric autonomy ÔÇö newly explicit in Destination and independently derived by the fresh pass.
+-- **Reframed:** destination coverage ÔåÆ DestinationÔÇôOrientation state integrity ÔÇö matching the basis is the simpler operational invariant; coverage alone did not mitigate anchoring.
+-- **Retained:** capability, destination fidelity, measurement integrity, auditability, convergence, cost/simplicity, and stranger operability because current Destination still requires them.
+-- **No old delta carried forward:** the destination refinement changed what measurement itself means.
++## Watch for
+ 
+-### Current claims
++Whether "abbreviated" and "if a competing route" in Tier 2 are misread as making challenge optional when no obvious alternative exists. The prescribed operation is "challenge your reading" (step 2, line 86), not "document that you considered alternatives." A run that skips challenge because "no competing route was obvious" has misread the instruction.
+ 
+-1. **Inherited-rubric anchoring is now mitigated by reading order, not warning prose.** Falsified if an Orient reads prior dimensions before fixing its open-pass findings and independently derived scheme.
+-2. **Destination change has one downstream consequence:** Orientation becomes invalid until fresh Orient records the new basis, rubric, ratings, and todo. Falsified if a non-Micro run proceeds with a mismatched basis.
+-3. **The remaining blind spot is evaluator-native attention.** Avoiding the inherited rubric does not make the open pass omniscient; diverse fresh evaluators remain necessary. Falsified only by evidence that one model's open pass reliably spans all materially different external findings, which does not exist.
++## Loop effectiveness note
+ 
+-### What the next runs should test
++This Orient ran in the same session as the v3.7.0 implementation, following a destination-basis change. The freshness check is structural (Destination basis mismatch triggered Orient), not behavioral. Independent validation requires a fresh session or external evaluator running v3.7.0 without this authoring context.
+ 
+-1. A real destination change: fresh Orient must replace, not adapt, the old rubric and carry no invalid delta.
+-2. A target where the open pass finds something outside the inherited rubric: that finding must survive into the todo.
+-3. A fresh independent silence run: re-derive measurements before reading this baseline.
++## Destination coverage
+ 
+-### Active operational rules
++The 2026-07-26 refinement's "Still open" section listed two questions:
++1. How to encode Improve-grade reasoning compactly enough to preserve the daily-use cost goal without reducing it to a checklist. **Addressed by v3.7.0** with reasoning/recording separation mechanism. Behavioral validation pending.
++2. What minimum evidence demonstrates a sufficient risk-sized map in different target domains. **Remains open** ÔÇö no map-breadth evidence standard defined. Agent owns the judgment; Trail must make chosen breadth inspectable (stated in v3.7.0, not defined how).
+ 
+-- Never read inherited rubric content before the open pass and independent measurement derivation are fixed.
+-- Treat rubric divergence and outside-rubric findings as evidence, not nonconformance.
+-- A Destination change and replacement Orient are one incomplete-until-finished transition.
+-- Scores visualize progress; independent silence determines completion.
++## Outside-rubric concern tested
+ 
+-### Loop-effectiveness notes
++**Does the change actually reduce token cost?** The rubric measures whether the compact-recording mechanism exists; it cannot measure whether Standard runs cost fewer tokens than Full until a real run happens and cost lines are compared. This entry will record "Cost: heavy" (Full tier with Orient), but that doesn't test Standard. A Standard-tier run on an external target is required to validate the cost claim.
+ 
+-The rubric was useful enough to expose earlier destination drift, but v3.5.0 still let the inherited scheme define the examination surface. v3.6.0 keeps the visualization while separating discovery from scoring. Trigger complexity decreased rather than increased. Cost impact is unmeasured in real use and remains a named test, not an assumed win.
++---
+ 
+-**Tested outside-rubric concern:** the open pass itself can still reflect one evaluator family's native salience bias. Reading order cannot solve that; fresh diverse evaluators and re-derivation at convergence are the structural counterweight.
++## Historical sections
+ 
+-Watch for: an Orient that proudly reports rising deltas while its independently re-derived scheme never changes. Stable dimensions can mean a good map, or habituated blindness.
++Prior orientation content (v3.6.0 and earlier) is superseded by the destination basis change and voided. For the record, the v3.6.0 scorecard average was 7.2/10 across 10 measurements (capability 7.0, cost 7.5), with weakest measurements being target-agnostic capability (5) and cost telemetry maturity (5).
+diff --git a/README.md b/README.md
+index 3b7b98a..1495494 100644
+--- a/README.md
++++ b/README.md
+@@ -22,7 +22,7 @@ The skill leads the workflow, not the operator: it announces what it's doing and
+ 
+ ## Status
+ 
+-v3.6.0 ÔÇö the operator's confirmed daily-usage skill, and dogfooded hard: the skill has been pointed at itself and at external targets (a Python code repo where it made a test-verified source change, and editorial/content repos), with every run ÔÇö including its own design decisions ÔÇö recorded in this repo's trail. Orient owns the destination-derived rubric and evidence-cited rating path, but performs an open-world examination and independently re-derives the measurement scheme before reading inherited scores. Orientation records its exact Destination basis; a changed basis invalidates the old rubric and makes fresh Orient mandatory. DRY, KISS, YAGNI, and correctness-by-construction are explicit design constraints. A second design bar applies alongside the operator's own use: **a stranger should be able to pick up `work/SKILL.md` and use it without the author explaining anything** ÔÇö jargon or unexplained references to the parent suite are treated as defects. See [`.acm/destination.md`](./.acm/destination.md) for the full mandate and open items, and [`.acm/audit-trail.md`](./.acm/audit-trail.md) for the complete record of how this repo came to be ÔÇö including the wrong turns.
++v3.7.0 ÔÇö the operator's confirmed daily-usage skill, and dogfooded hard: the skill has been pointed at itself and at external targets (a Python code repo where it made a test-verified source change, and editorial/content repos), with every run ÔÇö including its own design decisions ÔÇö recorded in this repo's trail. Every decision-bearing run performs Improve-grade reasoning (examination, challenge, model-building); Standard and Full tiers differ in recording depth, not reasoning depth. Orient owns the destination-derived rubric and evidence-cited rating path, but performs an open-world examination and independently re-derives the measurement scheme before reading inherited scores. Orientation records its exact Destination basis; a changed basis invalidates the old rubric and makes fresh Orient mandatory. DRY, KISS, YAGNI, and correctness-by-construction are explicit design constraints. A second design bar applies alongside the operator's own use: **a stranger should be able to pick up `work/SKILL.md` and use it without the author explaining anything** ÔÇö jargon or unexplained references to the parent suite are treated as defects. See [`.acm/destination.md`](./.acm/destination.md) for the full mandate and open items, and [`.acm/audit-trail.md`](./.acm/audit-trail.md) for the complete record of how this repo came to be ÔÇö including the wrong turns.
+ 
+ ## Use
+ 
+diff --git a/work/SKILL.md b/work/SKILL.md
+index b99b6eb..3bba33f 100644
+--- a/work/SKILL.md
++++ b/work/SKILL.md
+@@ -3,7 +3,7 @@ name: work
+ description: 'A standalone, target-agnostic improvement-reasoning skill with full auditability: it can examine and improve anything the model can reason about ÔÇö code, documents, plans, music, letters, anything ÔÇö while recording material decisions and their outcomes in an auditable trail. One consolidated loop: Destination, an open-world Orient that re-derives and rates destination-grounded measurements without letting an inherited rubric become its field of vision, Intent, Improve, and always-on Trail. USE WHEN: you want disciplined, auditable improvement reasoning on any target at a single skill-load, especially in long or frequent sessions where token budget is a real constraint.'
+ argument-hint: 'The target (repo, file, system) and the request itself'
+ metadata:
+-  version: "3.6.0"
++  version: "3.7.0"
+ ---
+ 
+ # work
+@@ -75,11 +75,15 @@ This step replaces a standalone Intent invocation. It is never optional ÔÇö only
+ 
+ ### 2. Work ÔÇö examine, challenge, decide, act
+ 
+-Do the work, scaling the rigor of examination to the stakes. Four lenses are available as thinking tools, not a checklist: **Purpose** (does the target achieve what it's for, against `.acm/destination.md`?), **Inconsistency** (does it contradict itself or its own stated rules?), **Overburden** (does it ask more of its users or maintainers than it's worth?), **Waste** (does everything here still earn its place?) ÔÇö plus whatever the target itself invites (security, performance, correctness...). Name the lenses that were actually load-bearing; don't narrate the ones that weren't. When the examination is a fidelity audit ÔÇö checking a derivative against its source (a consolidation against its suite, a summary against its document, a port against its original) ÔÇö compare against the source directly; self-review of the derivative alone reliably misses what was dropped.
++Do the work. **For decision-bearing runs** (anything tiering Standard or Full in step 3), perform Improve-grade reasoning: examine the target, challenge your first reading, then decide. **For Micro runs** (genuinely mechanical asks with no real choice), skip to action.
++
++**Examination** ÔÇö build a model of the target and what matters. Four lenses are available as thinking tools, not a checklist: **Purpose** (does the target achieve what it's for, against `.acm/destination.md`?), **Inconsistency** (does it contradict itself or its own stated rules?), **Overburden** (does it ask more of its users or maintainers than it's worth?), **Waste** (does everything here still earn its place?) ÔÇö plus whatever the target and domain require (security, performance, correctness, human legibility...). Derive target-specific lenses when the named four don't fit; name only the ones that were actually load-bearing. When the examination is a fidelity audit ÔÇö checking a derivative against its source (a consolidation against its suite, a summary against its document, a port against its original) ÔÇö compare against the source directly; self-review of the derivative alone reliably misses what was dropped.
++
++**Map before reasoning** is the default. Establish a compact view of the target's major parts, controlling relationships, and important unknowns before acting locally. How broad? Agent judgment, scaled by domain risk and reversibility. No universal read count; make the chosen breadth inspectable in Trail.
+ 
+ The rubric and ratings belong exclusively to Orient (step 4), not to a second scoring path here. Treat them as temporary diagnostics of the current plateau ÔÇö void when the destination or focus shifts, never standing targets to optimize toward. An explicit "rate this" request triggers Orient; it does not create a separate measurement procedure. A metric that outlives its plateau starts prescribing a route.
+ 
+-For anything beyond a mechanical fix, pause on this before deciding: *What am I not seeing? Am I anchored on the most obvious finding and missing a subtler, more important one?* Then the redesign question: *is the target's structure itself wrong, so that no incremental fix will help?* If the structure itself is wrong, don't patch ÔÇö argue for redesign: sketch the alternative, weigh redesign cost against the cost of continuing to patch, and stop for the operator's decision.
++**Challenge** your reading before deciding. Ask: *What am I not seeing? Am I anchored on the most obvious finding and missing a subtler, more important one?* Consider competing routes or interpretations; test whether one dominates. Then the redesign question: *is the target's structure itself wrong, so that no incremental fix will help?* If the structure itself is wrong, don't patch ÔÇö argue for redesign: sketch the alternative, weigh redesign cost against the cost of continuing to patch, and stop for the operator's decision. This challenge operation is mandatory for decision-bearing work, abbreviated in Standard recording, detailed in Full.
+ 
+ Then pick exactly one outcome:
+ 
+@@ -105,17 +109,19 @@ Before closing the entry, evaluate every Orient trigger in step 4. If one fired,
+   Cost: light ÔÇö 2 tool ops, 1 file.
+   ```
+ 
+-- **Tier 2 ÔÇö Standard** (a real choice existed between plausible alternatives, or the work could plausibly be second-guessed later). Compact: interpretation in one line (only if it wasn't obvious), decision plus a one-line prediction, outcome vs. prediction, one line naming the blind spot (or the nothing-found), and one line naming the most obvious next-step candidate if one stands out ÔÇö skip it if none does; silence is valid here too. Skip the full reflection ceremony unless one of the escalation triggers below fires.
++- **Tier 2 ÔÇö Standard** (a real choice existed between plausible alternatives, or the work could plausibly be second-guessed later). **Reasoning operations:** full Improve-grade (examination, challenge, decision). **Recording depth:** compact. Write interpretation (only if it wasn't obvious), examination in 1-2 sentences naming load-bearing lenses, challenge in one line if a competing route was considered, decision plus a one-line prediction, outcome vs. prediction, one line naming the blind spot (or the nothing-found), and one line naming the most obvious next-step candidate if one stands out ÔÇö skip it if none does; silence is valid here too. Skip the full reflection ceremony unless one of the escalation triggers below fires.
+ 
+   ```
+   ## 2026-07-03 ÔÇö split-config-loader
+-  Read "clean up config handling" as splitting the loader, not rewriting it. [!DECISION] ÔÇö rewrite was plausible but riskier.
+-  Predicted the split leaves all 12 tests green; it did.
++  Read "clean up config handling" as splitting the loader, not rewriting it.
++  Examination: Purpose lens ÔÇö the config loader does 3 jobs (parse, validate, env-merge); splitting the validation clears one inconsistency (error messages that name the wrong source file).
++  Challenge: rewrite-from-scratch was plausible but riskier; split preserves tests and deployed behavior.
++  [!DECISION] Predicted the split leaves all 12 tests green; it did.
+   Blind spot: no test covers the env-override path. Next: cover it.
+   Cost: moderate ÔÇö 9 tool ops, 4 files, no subagent.
+   ```
+ 
+-- **Tier 3 ÔÇö Full** (structural or architectural decisions, redesign arguments, anything the operator would want deeply audited, anything touching an area a past `[!REVERSAL]` or a recurring finding-class ÔÇö the same kind of defect turning up across separate runs ÔÇö already flagged). The complete shape: interpretation, examination with lenses named, challenge, decision + prediction, action, reflection (a falsifiable claim about the target, a named blind spot, an imagined expert's pushback), the four across-trail triggers each explicitly evaluated ÔÇö *did the operator ask for a deeper audit? is a recurring finding-class present? does this run contradict a prior `[!REALIZATION]`? is a silence declaration imminent?* ÔÇö and candidate next moves.
++- **Tier 3 ÔÇö Full** (structural or architectural decisions, redesign arguments, anything the operator would want deeply audited, anything touching an area a past `[!REVERSAL]` or a recurring finding-class ÔÇö the same kind of defect turning up across separate runs ÔÇö already flagged). **Reasoning operations:** identical to Standard (examination, challenge, decision). **Recording depth:** complete. The full prose shape: interpretation, examination with lenses named and findings detailed, challenge with competing routes weighed, decision + prediction, action, reflection (a falsifiable claim about the target, a named blind spot, an imagined expert's pushback), the four across-trail triggers each explicitly evaluated ÔÇö *did the operator ask for a deeper audit? is a recurring finding-class present? does this run contradict a prior `[!REALIZATION]`? is a silence declaration imminent?* ÔÇö and candidate next moves.
+ 
+ **Escalate a tier ÔÇö never de-escalate below what's honest ÔÇö when:** the operator pushes back, the change is hard to reverse, a past `[!REVERSAL]` touched this area, or something about the run surprised you mid-work. Genuinely unsure which tier? Take the higher one: over-recording a routine entry costs little; under-recording a real decision breaks the audit trail. If a surprise surfaces only after the entry is committed, don't edit it in place ÔÇö append a short follow-up entry cross-referencing the original by slug, at whatever tier the new information warrants.
+ 

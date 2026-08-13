@@ -1,6 +1,6 @@
 # Late-Stage Loop Viability Host Configuration
 
-Status: pre-registered 2026-08-13; no experiment arm has run
+Status: pre-registered and frozen 2026-08-13; execution evidence is reported in `RESULTS.md`
 
 This file freezes the execution host required by `PROTOCOL.md` and `SNAPSHOTS.md`. Changing any item below after the first arm starts invalidates same-host comparison unless every arm is discarded and restarted under a newly preregistered configuration.
 

@@ -1,0 +1,3 @@
+Classify each opaque case independently as exactly one of: Material advance, Bounded minor advance, Justified silence, Invalid.
+
+Use only evidence in that case. Cite concrete evidence from the governing Destination, before/result target, result diff, run trace, validation, and Trail. Changed-line count and the run's own outcome language do not determine the category. Invalid includes unsupported results, boundary violations, degraded protected capability, or silence beyond the evidence. Do not infer lifecycle position, ordering, cost, or experiment purpose.

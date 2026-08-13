@@ -1,0 +1,10 @@
+{
+    "arm":  "arm-42de",
+    "harness_session":  "01KZXH8WBF8R16SS42A4QTHEFP",
+    "exit_code":  0,
+    "started_utc":  "2026-08-13T12:24:08.8361405+00:00",
+    "ended_utc":  "2026-08-13T12:25:23.2324123+00:00",
+    "duration_seconds":  74.396,
+    "post_head":  "14fcf9f927539a7afb60ec95b611c47c39b3195d",
+    "post_status":  "?? .acm/sessions/"
+}

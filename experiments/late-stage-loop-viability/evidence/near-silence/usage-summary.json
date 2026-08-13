@@ -1,0 +1,9 @@
+{
+    "harness_session":  "01KZXGNF0PKKZR559T0F30S6NC",
+    "model_calls":  23,
+    "input_tokens":  4799,
+    "output_tokens":  13134,
+    "all_usage_present":  true,
+    "first_seq":  0,
+    "last_seq":  22
+}

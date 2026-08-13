@@ -1,0 +1,39 @@
+﻿diff --git a/.acm/audit-trail.md b/.acm/audit-trail.md
+index b3c3307..0ea431d 100644
+--- a/.acm/audit-trail.md
++++ b/.acm/audit-trail.md
+@@ -1304,3 +1304,21 @@ Cost: moderate ÔÇö about 10 tool operations, 4 Work files read or written, no su
+ 
+ Candidate move 1 was adapted rather than followed literally: the evaluator's proposed defect was rejected, while its concrete failure evidence led to the deeper repair. No second evaluator or external target is justified this run.
+ Cost: moderate ÔÇö about 11 tool operations, 4 Work files read or written, 1 read-only subagent, no external probe.
++
++## 2026-08-13 ÔÇö remove-external-destination-reference-for-stranger-bar
++
++**Tier: Standard. Model: claude-sonnet-4-5 (GitHub Copilot).** Operator asked to "improve this target" without specifying what. Following Improve's underspecified-ask guidance, I formed sourced hunches from destination (target-agnostic + cheap + stranger-pickup bar), orientation (compression work, rubric focus), and recent trail (v3.8.1 evaluation) and proceeded on the stranger-accessibility hunch.
++
++**Interpretation.** Read as: examine work/SKILL.md for clarity barriers that would block a zero-context reader, per the confirmed stranger-pickup bar in .acm/destination.md.
++
++**Examination (Purpose lens, stranger-bar).** Line 56 referenced `pea/skills/destination/SKILL.md` as a fallback for the Destination escalation procedure, saying "approximated inline if you don't have that file loaded" but not actually explaining how to approximate it. This creates a false dependency and breaks the "one file, no dependencies" promise in line 13 and README.md. Also found: selective glossing (basic terms defined, domain terms like DRY/KISS/YAGNI/rubric left unexplained), and an unexplained "Orient prediction" obligation in the Trail section (line 108) that step 4's trigger list doesn't mention.
++
++**[!DECISION]** Removed the external reference and replaced it with self-contained escalation instructions: form 2-5 sourced inferences from visible target evidence, cite evidence, prioritize by load-bearing weight, surface one at a time. Predicted: escalation path becomes executable without external references, no behavior change. Both confirmed ÔÇö documentation-only edit.
++
++**Blind spot.** Examined prose, not procedural executability ÔÇö didn't test whether a stranger following steps 0ÔåÆ1ÔåÆ2ÔåÆ3ÔåÆ4 would hit ambiguities or missing preconditions. Next: a fresh-agent walkthrough or real external exercise would catch those.
++
++**Orientation freshness:** current ÔÇö minor documentation fix, no arc evidence shift.
++
++**Destination need:** not triggered ÔÇö serves the confirmed stranger-bar.
++
++**Cost:** moderate ÔÇö 20+ tool ops (reading destination, orientation, trail samples, SKILL.md in 3 sections, README), 1 file edited, no subagent.
+diff --git a/work/SKILL.md b/work/SKILL.md
+index 84cc2e0..d64493a 100644
+--- a/work/SKILL.md
++++ b/work/SKILL.md
+@@ -53,7 +53,7 @@ Before anything else, check the **target repo's** `.acm/` folder (always at the
+ - If neither exists, this is a first run against this target. Run the condensed Destination:
+   1. From the request and any visible repo signal (README, recent commits, folder structure), form **1-3 sourced guesses** about what this target is for and who it serves.
+   2. Turn the single most load-bearing guess into **one short, answerable question**.
+-  3. Ask it. If the operator answers, write `.acm/destination.md` from the answer plus the unasked guesses (marked open ÔÇö not asked, not confirmed). Plain markdown, no special format: what the target is for, who it serves, any confirmed constraints, then an "Open" list holding the unasked guesses. If this condensed pass leaves the destination clearly too thin for the stakes of the ask (an architectural decision, a redesign, anything Tier 3-shaped), escalate: form **2-5 sourced inferences** instead of one, cited to specific evidence, and surface them **one at a time in priority order** rather than batched ÔÇö the deeper interview method the full `destination` skill uses (`pea/skills/destination/SKILL.md`), approximated inline if you don't have that file loaded. Collapse back to the condensed one-question shape once the thin spot is addressed; this is an escalation for one moment, not a standing heavier mode.
++  3. Ask it. If the operator answers, write `.acm/destination.md` from the answer plus the unasked guesses (marked open ÔÇö not asked, not confirmed). Plain markdown, no special format: what the target is for, who it serves, any confirmed constraints, then an "Open" list holding the unasked guesses. If this condensed pass leaves the destination clearly too thin for the stakes of the ask (an architectural decision, a redesign, anything Tier 3-shaped), escalate: form **2-5 sourced inferences** from the request, the target's README, recent commits, folder structure, and any visible constraints, cite the specific evidence behind each inference, prioritize them by load-bearing weight (which uncertainty would most change the work if resolved wrong), and surface them **one at a time** ÔÇö ask the top-priority inference, wait for an answer or proceed-signal, then ask the next only if the thin spot remains. Collapse back to the condensed one-question shape once the thin spot is addressed; this is an escalation for one moment, not a standing heavier mode.
+   4. If no answer is available this run (operator unreachable, or says "proceed"), write `.acm/destination.md` from your best reading, clearly marked unconfirmed ÔÇö the recommended phrase, verbatim: `**Operator not yet confirmed** ÔÇö revise on first pushback.` Any wording works as long as the unconfirmed status is impossible to miss. Don't block: a marked assumption is a legitimate, auditable state; a missing destination file is not.
+   5. Once `.acm/destination.md` exists, re-run this step only on a real trigger ÔÇö never merely because time passed or a session is new. Three triggers are legitimate: explicit invocation; the operator's own signal that the destination is stale or thin; or **the loop's own evidence** that the destination is exhausted or wrong ÔÇö a plateaued scorecard whose coverage diff (step 4) came back empty, or observed reality contradicting what `destination.md` claims. A self-triggered run may ask and propose, never settle: its output enters `destination.md` as an appended, dated proposal marked unconfirmed until the operator rules, and step 1's pre-commit read-back applies in full ÔÇö the skill owns detecting that the destination needs revisiting; the operator owns what it becomes.
+   6. **Do not build other committed files around an unconfirmed guess in the same pass.** A guess labeled `unconfirmed` in `destination.md` does not license writing the rest of the target's files as though it were settled ÔÇö ask before producing those artifacts too.

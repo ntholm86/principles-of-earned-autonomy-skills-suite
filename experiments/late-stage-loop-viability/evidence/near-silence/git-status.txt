@@ -1,0 +1,3 @@
+ M .acm/audit-trail.md
+ M work/SKILL.md
+?? .acm/sessions/

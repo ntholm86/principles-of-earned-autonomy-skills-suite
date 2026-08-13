@@ -1,0 +1,12 @@
+{
+    "arm":  "arm-c921",
+    "snapshot":  "d42cf6aed7dbc3576c9c4d200ff59213a692a507",
+    "worktree":  "C:\\git\\pea\\late-stage-loop-viability-arms\\arm-c921",
+    "copilot_version":  "GitHub Copilot CLI 1.0.79.",
+    "harness_session":  "01KZXGNF0PKKZR559T0F30S6NC",
+    "started_utc":  "2026-08-13T12:13:32.5878657+00:00",
+    "pre_status":  {
+
+                   },
+    "pre_head":  "d42cf6aed7dbc3576c9c4d200ff59213a692a507 Resolve append-only destination history"
+}
