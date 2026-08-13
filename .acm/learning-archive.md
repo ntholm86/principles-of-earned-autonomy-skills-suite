@@ -893,6 +893,10 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** The arc's repeated simplifications reveal a stronger architecture than the earlier three/five/six count: capability count and operator action count are independent. Destination and Improve are the only deliberate control inputs; Intent, Trail, and Orientation are feedback infrastructure. Probe remains external instrumentation. The suite's public model should be organized by agency - what the operator decides versus what the system maintains - rather than by how many skill files exist.
 
+## 2026-08-02 — passive-evidence-triggered-orientation
+
+**[!REVERSAL]** Focused validation exposed that append-only ordering contradiction before documentation changed. Moved evaluation before Trail and kept only the actual Orient handoff after durability.
+
 ---
 
-**222 markers — 210 realisations, 12 reversals**
+**223 markers — 210 realisations, 13 reversals**

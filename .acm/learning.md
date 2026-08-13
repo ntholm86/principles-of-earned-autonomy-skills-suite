@@ -5,11 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 222 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-02 — passive-evidence-triggered-orientation
-
-**[!REVERSAL]** Focused validation exposed that append-only ordering contradiction before documentation changed. Moved evaluation before Trail and kept only the actual Orient handoff after durability.
+Showing the most recent 60 markers. 223 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-02 — orient-passive-control-surface-arc
 
@@ -247,6 +243,10 @@ Showing the most recent 60 markers. 222 older marker(s) are in `.acm/learning-ar
 
 **[!REVERSAL]** Removed it before invocation, removed the fixture test cache, reinstalled with `$copilotHome` into the intended isolated temp directory, and re-established a clean fixture with exactly five skills plus PRINCIPLES.md.
 
+## 2026-08-13 — orient-after-first-run-adoption-sequence
+
+**[!REALIZATION]** The first-run frontier has advanced from installation to exact-route model availability, but no reasoning contract has yet executed. The sequence demonstrates sound chronological boundary testing and honest exclusion while also exposing a learning failure: a previously recorded host-fidelity rule was understood in the arc and still not applied before authorization.
+
 ---
 
-**60 markers — 44 realisations, 16 reversals**
+**60 markers — 45 realisations, 15 reversals**

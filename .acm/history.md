@@ -257,6 +257,7 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 250 | 2026-08-13 | improve-first-run-windows-install-probe | the preregistered cold-start probe failed at an unstated PowerShell 7 dependency before agent invocation | added experiments/first-run-adoption protocol and result; onboarding and production skill surfaces remain unchanged |
 | ▸ 251 | 2026-08-13 | improve-windows-install-command-contract | removed the unstated PowerShell 7 dependency from live Windows onboarding and verified both documented command paths | README.md, QUICKSTART.md, INSTALLING.md, install.ps1, and hook guidance now use built-in Windows PowerShell |
 | ▸ 252 | 2026-08-13 | improve-first-run-cold-start-rerun | inconclusive - the one authorized invocation ended before model execution because the frozen model was unavailable on the unqualified direct provider route | added a fresh rerun protocol, bounded result, fixture, complete CLI capture, pre/post evidence, and hash manifest; production surfaces unchanged |
+| ▸ 253 | 2026-08-13 | orient-after-first-run-adoption-sequence | installation is verified on the tested Windows host, first-run reasoning remains unobserved, and exact-route model qualification is now the earliest unresolved simulated-use boundary | refreshed orientation scope, claim 8, new host-fidelity claim 12, next-test order, operational rules, and loop-effectiveness findings |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -1158,4 +1159,4 @@ Do not edit by hand — re-run the command to refresh.
 - **decided:** Authorize one fresh cold-start model invocation against the repaired artifact, preserving incomplete attempts and treating host failure as inconclusive. This ranked above overlapping-service composition because first-run behavior was the earliest open adoption boundary, and above an independent newcomer observation because simulated operability had not yet been established. Precedent check: learning.md required immediate event-bound eligibility and a fully frozen experimental host. The invocation satisfied the former but, in retrospect, changed an unqualified provider-transport component of the latter.
 - **REVERSAL:** Removed it before invocation, removed the fixture test cache, reinstalled with `$copilotHome` into the intended isolated temp directory, and re-established a clean fixture with exactly five skills plus PRINCIPLES.md.
 
-**252 runs total — 234 with changes, 18 silence**
+**253 runs total — 235 with changes, 18 silence**

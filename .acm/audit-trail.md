@@ -13861,3 +13861,69 @@ The well-aged arc claim is that experimental eligibility and host fidelity are s
 1. Qualify an exact model and provider route without consuming another adoption authorization, then preregister a fresh cold-start attempt only after that host is demonstrably available.
 2. Test overlapping Destination-plus-Orient activation while adoption is host-blocked, because it remains an independent behavior with an already available local surface.
 3. Observe an independent developer only after simulated first-run operability succeeds, so host defects are not misclassified as human adoption friction.
+
+## 2026-08-13 - orient-after-first-run-adoption-sequence
+
+- target: full skills-suite arc after the three-step first-run adoption sequence
+- operator: Nils Holmager
+- agent: GitHub Copilot
+- skill: orient (automatically scheduled by Improve; Intent at ingress, Trail at egress)
+- outcome: installation is verified on the tested Windows host, first-run reasoning remains unobserved, and exact-route model qualification is now the earliest unresolved simulated-use boundary
+- delta: refreshed orientation scope, claim 8, new host-fidelity claim 12, next-test order, operational rules, and loop-effectiveness findings
+
+### Interpretation of the ask
+
+This Orient pass was automatically scheduled by the preceding Improve iteration because the post-Orient adoption sequence now included a documented installation failure, a verified repair, an eligible invocation stopped before model execution, two failed experiment predictions, and a setup reversal. Intent bounded the question to what that sequence changes in the current map; Orient had authority to refresh derived claims, not to change the target or choose a production mechanism.
+
+### Scope and freshness
+
+Question: what is now established about the adoption journey, where is its earliest unresolved boundary, and what did the loop fail to carry forward about host fidelity?
+
+Freshness gate passed before arc claims were formed. `history --write` produced 252 entries; `learning --write` produced 60 recent and 222 archived markers; `python verify.py` passed without stale-artifact failure.
+
+The first independent arc reader stopped before the audit-trail tail and falsely reported that the three adoption slugs were absent. Exact search located them at runs 250-252, and a corrected arc read used those entries plus the full history, learning surfaces, Destination, and prior Orientation. The corrected analysis still made two unsupported claims: it conflated the `$COPILOT_HOME` setup reversal with provider-host qualification, and inferred progressive-disclosure success even though no model loaded the skills. Both were rejected before writing Orientation.
+
+### Arc claims
+
+1. The adoption journey is no longer wholly untested: the repaired built-in Windows PowerShell command installs the exact default payload and optional hook on the tested host.
+2. Simulated first-run reasoning remains wholly unobserved. The eligible no-ACM invocation stopped at model selection, so Intent, Improve, Trail, and Destination behavior cannot be classified.
+3. Model availability is a property of the exact CLI, provider route, model, and relevant transport configuration. Retaining credentials and model name while replacing the qualified proxy with direct BYOK did not preserve availability.
+4. The three adoption runs are chronological single-loop progress, not evidence that the adoption Destination is wrong: each exposed a distinct earlier prerequisite, and the installer blocker did not recur after repair.
+5. The loop's evidence discipline is stronger than its learning carry-forward. It preserved both pre-reasoning failures honestly, but failed to apply the already recorded fully-frozen-host lesson before spending the rerun authorization.
+
+[!REALIZATION] The first-run frontier has advanced from installation to exact-route model availability, but no reasoning contract has yet executed. The sequence demonstrates sound chronological boundary testing and honest exclusion while also exposing a learning failure: a previously recorded host-fidelity rule was understood in the arc and still not applied before authorization.
+
+### Action
+
+Refreshed `.acm/orientation.md`: updated scope and freshness counts; expanded claim 8 to separate lifecycle measurement, verified installation, and untested reasoning; added falsifiable claim 12 for exact-route model availability; reordered next tests around host qualification; added the corresponding active operational rule; and updated tested bars, results, untested bars, and deutero-learning.
+
+Focused assertions confirmed the new boundaries, retained the measured lifecycle values and the conclusion that production Improve has no supported mechanism change, and passed `python verify.py` plus `git diff --check`.
+
+Destination need: not triggered - the adoption Destination remains coherent and the recurring sequence is distinct prerequisite discovery, not evidence that the governing goal is wrong.
+
+Orientation freshness: current - this entry records the arc-read that incorporates all three adoption runs.
+
+### Reflection
+
+Falsifiable model claim: after the Windows repair, the earliest demonstrated blocker in simulated first-run use is exact-route model availability; a qualified host completing the invocation would move the frontier into reasoning-contract behavior.
+
+Named blind spot: no availability inventory was captured for direct BYOK, so this Orient cannot rank restoring the proxy against selecting another model or host.
+
+Imagined-reader pushback: calling chronological testing sound may excuse preventable setup mistakes. The distinction is that the blocker sequence advances coherently, while the host mistake remains a real deutero-learning failure and is recorded as such.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED - three consecutive adoption iterations advanced through pre-reasoning boundaries, while two experiment predictions failed before the skill contract could execute.
+- *About to declare silence:* not fired - the refreshed map names several untested behavioral bars.
+- *Contradicts prior [!REALIZATION]:* not fired - the fully-frozen-host realization aged well; this arc shows failure to apply it, not evidence against it.
+- *Operator explicitly asked:* FIRED - Orient was automatically scheduled from the operator-invoked Improve run.
+
+### Across-trail macro-Hansei
+
+The well-aged realization is that adoption begins at the executable boundary and must be tested in journey order. The superseded working assumption is that a named model plus credentials remains available after changing provider transport. The target does not need a new governing variable; its learning surface needs the exact-route qualification rule to influence action before authorization rather than only explain failure afterward.
+
+### Candidate Next Moves
+
+1. Qualify an exact model and provider route with a non-experimental availability check before writing another cold-start authorization.
+2. Run a newly preregistered no-ACM cold start only after that host check passes.
+3. Preserve overlap, silence-endpoint, consequential-gate, and independent-newcomer tests as separate bars rather than treating any one as a substitute for first-run reasoning evidence.

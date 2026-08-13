@@ -1,15 +1,15 @@
 # orientation.md - autonomous-agent-skills
 
-Last updated: 2026-08-13 (run: `orient-after-late-stage-viability-experiment`)
+Last updated: 2026-08-13 (run: `orient-after-first-run-adoption-sequence`)
 
 ## Scope of this read
 
-Re-orient the full arc after the preregistered late-stage viability experiment. Question: what do the two eligible measured outcomes, excluded silence position, and subsequent protocol repair establish about trustworthy capability per resource, and what remains unsupported?
+Re-orient the full arc after the first-run sequence advanced from a documented Windows installation failure, through a verified command repair, to an eligible invocation that stopped before model execution. Question: what is now established about the adoption journey, where is its earliest unresolved boundary, and what did the loop fail to carry forward about host fidelity?
 
 **Freshness check (run evidence):**
 
-- `python harness/tools/record.py history --write` -> 248 entries.
-- `python harness/tools/record.py learning --write` -> 60 recent + 216 archived markers.
+- `python harness/tools/record.py history --write` -> 252 entries.
+- `python harness/tools/record.py learning --write` -> 60 recent + 222 archived markers.
 - `python verify.py` -> OK, trail integrity checks pass.
 - Gate: PASS (arc-claims allowed).
 
@@ -59,11 +59,13 @@ The governing mandate defines the question, the artifact version defines the ans
 
 **Falsifiable by:** convergence being claimed across runs before durable scope is confirmed, historical silence being accepted after a Destination change, operator reversal of this validity contract, or repeated use showing that a newcomer-only challenge fails to protect the lease without a full quorum rerun.
 
-### 8. Lifecycle resource use is partially measured; unassisted adoption remains untested
+### 8. Lifecycle resource use is partially measured; installation is verified but first-run reasoning remains untested
 
 The frozen-host experiment now provides provider-reported tokens, calls, and duration for matched open-gap and near-silence snapshots. Calls fell from 32 to 23, output tokens from 20,003 to 13,134, and duration from 549.787 to 360.827 seconds, while input tokens rose from 4,111 to 4,799. This is evidence about two lifecycle positions, not an end-to-end lifecycle trend or causal mechanism. No independent newcomer has completed an unassisted first Improve run without Destination setup. Structural compression, explanation simplicity, adoption, and trustworthy capability per resource remain distinct claims.
 
-**Falsifiable by:** replicated matched runs eliminating the mixed resource pattern, an eligible silence arm establishing the missing endpoint, or an observed newcomer run locating success, failure, ceremony, under-triggering, or over-triggering.
+The adoption journey is no longer wholly untested. The documented Windows command failed without an unstated PowerShell 7 dependency; the repaired built-in PowerShell command then installed the exact default payload and optional hook successfully. A fresh no-ACM invocation subsequently passed its immediate cleanliness, test, CLI-version, and skill-hash gates, but the direct provider route rejected the frozen model before reasoning began. Intent narration, target improvement, Trail creation, Destination behavior, and human adoption therefore remain untested.
+
+**Falsifiable by:** replicated matched runs eliminating the mixed resource pattern; an eligible silence arm establishing the missing endpoint; the repaired installer failing on a comparable Windows host; a completed cold-start run exercising the reasoning contract; or an observed newcomer run locating success, failure, ceremony, under-triggering, or over-triggering.
 
 ### 9. Progressive disclosure now separates current-run mandate from durable cross-run direction
 
@@ -83,13 +85,20 @@ The silence exclusion showed that a valid snapshot, frozen host, usage ledger, a
 
 **Falsifiable by:** a future host or runner providing an atomic equivalent that preserves the same eligibility evidence without a separate assertion, or repeated execution showing the written boundary still permits ambiguous replacement.
 
+### 12. Model availability belongs to the exact provider route, not to the model name or credentials alone
+
+The lifecycle experiment qualified `claude-sonnet-4-5` through the local Anthropic proxy. The cold-start rerun retained the CLI, model name, credentials, skill hashes, and isolation but removed that provider route because the proxy was not listening; direct BYOK then rejected the model before execution. This is an inconclusive host result, not evidence about Improve. The earlier realization that a host is a fully frozen stack aged well, while the rerun failed to apply it before spending its single authorization.
+
+**Falsifiable by:** the same CLI, model, and direct provider route becoming available without configuration change, or a pre-authorized availability check proving that provider transport does not affect model availability.
+
 ## What the next runs should test
 
-1. Let the next Improve run compare the value of newly authorized silence evidence against adoption and trigger-composition evidence; the failed arm does not automatically make repetition highest leverage.
-2. If the viability experiment resumes, preregister the replacement before execution, capture clean state at the invocation boundary, and preserve an incomplete run as incomplete.
-3. Observe an unassisted newcomer completing a first Improve run without Destination setup and record whether the service explanations help without becoming ceremony.
+1. Qualify an exact model and provider route with a non-experimental availability check before authorizing another cold-start invocation.
+2. After host qualification, preregister a fresh no-ACM cold-start attempt and preserve any incomplete result rather than replacing it.
+3. After simulated operability succeeds, observe an unassisted newcomer and record whether service explanations help without becoming ceremony.
 4. Test a completed run where Destination and Orient both trigger, verifying one confirmation conversation and one post-change arc refresh without duplicate handoffs.
-5. Test a consequential prompt to verify that unopposed Intent narration cannot bypass an operator-every-time gate.
+5. Compare the information value of an eligible silence endpoint against the remaining adoption and trigger-composition bars before resuming the lifecycle experiment.
+6. Test a consequential prompt to verify that unopposed Intent narration cannot bypass an operator-every-time gate.
 
 ## Active operational rules
 
@@ -115,18 +124,19 @@ The silence exclusion showed that a valid snapshot, frozen host, usage ledger, a
 - Treat operator examples of possible mechanisms as intent evidence unless they are explicitly confirmed as requirements; reason from the named problem before selecting a route.
 - Do not claim a late-stage efficiency improvement from reduced instruction or entry size alone; compare resource cost with preserved reasoning, learning, evidence, and actual trustworthy gain.
 - Attach experimental eligibility evidence to the invocation being classified: capture immediate pre-call state, preserve incomplete authorized attempts as incomplete, and never substitute a post-output duplicate without a newly recorded protocol and authorization.
+- Qualify model availability on the exact CLI, provider route, model, and relevant transport configuration before preregistering a scarce experimental invocation; credentials and a previously qualified different route are insufficient.
 - Preserve append-only history and regenerate derived evidence after every Trail append.
 
 ## Loop-effectiveness notes
 
-**Quality bars tested:** unseeded self-discovery; byte-proxy compression; cross-model execution variance within one vendor family; separated-trigger routing; explicit consequential-action gating; factual grounding under missing evidence; replicated reflection depth; trail parsing and judge-attribution fidelity; internal coherence of the single-entry contract; two-position lifecycle resource capture; blinded outcome classification; invocation-boundary eligibility reconstruction.
+**Quality bars tested:** unseeded self-discovery; byte-proxy compression; cross-model execution variance within one vendor family; separated-trigger routing; explicit consequential-action gating; factual grounding under missing evidence; replicated reflection depth; trail parsing and judge-attribution fidelity; internal coherence of the single-entry contract; two-position lifecycle resource capture; blinded outcome classification; invocation-boundary eligibility reconstruction; Windows installation compatibility; first-run host-boundary reconstruction.
 
-**Result:** discovery PASS; structural resource reduction PASS; operator gate PASS in prior explicit cases; separated routing PASS; grounding advantage MIXED BUT FAVORS LAYERED ON COUNT; reflection depth FAVORS PRODUCTION; decision quality DISSOCIATED; harness repairs PASS; single-entry text-layer coherence PASS; lifecycle resource shape INCONCLUSIVE; invalid-arm detection PASS.
+**Result:** discovery PASS; structural resource reduction PASS; operator gate PASS in prior explicit cases; separated routing PASS; grounding advantage MIXED BUT FAVORS LAYERED ON COUNT; reflection depth FAVORS PRODUCTION; decision quality DISSOCIATED; harness repairs PASS; single-entry text-layer coherence PASS; lifecycle resource shape INCONCLUSIVE; invalid-arm detection PASS; Windows default installation PASS ON TESTED HOST; first-run reasoning INCONCLUSIVE BEFORE MODEL EXECUTION.
 
-**Bars not tested:** an eligible silence endpoint; replicated lifecycle resource shape; cross-vendor execution; Destination-plus-Orient overlap; Destination trigger precision; consequential-gate preservation under silent acceptance; unassisted newcomer adoption; public external-target operation; derivation of the recursive mandate by three fresh families; and convergence before and after first Destination consolidation.
+**Bars not tested:** an eligible silence endpoint; replicated lifecycle resource shape; cross-vendor execution; completed no-ACM Improve behavior; Destination-plus-Orient overlap; Destination trigger precision; consequential-gate preservation under silent acceptance; unassisted newcomer adoption; public external-target operation; derivation of the recursive mandate by three fresh families; and convergence before and after first Destination consolidation.
 
 **Double-loop finding:** the Destination's challenge to a fixed iteration envelope remains unresolved. The two eligible points are compatible with some costs falling naturally as gains narrow, while input cost moved oppositely and silence is unobserved. The governing variable remains trustworthy capability per resource, not any chosen iteration mechanism.
 
-**Deutero-learning finding:** the research loop correctly refused to launder an incomplete attempt or dirty duplicate into a favorable silence result, and independent adjudication caught an evaluator inconsistency. Its remaining weakness is execution coupling: written controls did not prevent a duplicate invocation, so observational discipline repaired validity after failure rather than structural enforcement preventing the failure.
+**Deutero-learning finding:** the research loop correctly preserved both adoption blockers without laundering them into Improve failures and used the first result to repair installation. It then failed to carry its own fully-frozen-host lesson into the rerun: direct BYOK replaced the qualified proxy route without an availability check, consuming the one authorization before model execution. Evidence discipline preserved validity after the mistake; learning carry-forward did not prevent it.
 
-[!REALIZATION] The late-stage frontier remains evidential, but it is no longer unmeasured. Two eligible positions show that calls, output, and time can fall as gains narrow while input rises; the missing silence endpoint prevents a lifecycle conclusion. The strongest completed advance is methodological: the suite detected and excluded invalid evidence instead of converting operational failure into support for its preferred hypothesis.
+[!REALIZATION] The first-run frontier has advanced from installation to exact-route model availability, but no reasoning contract has yet executed. The sequence demonstrates sound chronological boundary testing and honest exclusion while also exposing a learning failure: a previously recorded host-fidelity rule was understood in the arc and still not applied before authorization.
