@@ -30,6 +30,8 @@ Record the snapshot-selection evidence before running any evaluator. Do not sele
 
 Each arm receives the production Improve contract verbatim, the same form of operator prompt, and the target's memory as it existed at that snapshot. Run each arm in a fresh session under the same model and host configuration. If a host cannot reconstruct snapshot-appropriate memory without contaminating it with later evidence, exclude that snapshot and report the exclusion.
 
+Capture and assert a clean worktree immediately before each arm invocation. An earlier setup or all-arm preflight does not establish cleanliness at the call boundary. Each authorized invocation is the arm: if it starts but does not produce the completion and evidence required for outcome evaluation, mark that lifecycle position incomplete and exclude it. Do not replace it with a rerun unless a revised protocol and new operator authorization are recorded before any replacement output is seen.
+
 ## Resource evidence
 
 Resource evidence must come from a source independent of the agent being evaluated. Record, when the host exposes them:
@@ -96,6 +98,8 @@ After the result is durable, run Improve again against the current Destination. 
 - Snapshot selection and its pre-existing evidence were recorded before evaluation.
 - Production Improve and the operator prompt were held constant across arms.
 - Every arm used a fresh session with the same declared model and host configuration.
+- Every arm's clean worktree assertion was captured immediately before invocation.
+- An incomplete authorized invocation was excluded rather than replaced after its output was seen.
 - Usage came from independent host capture; unavailable fields are marked unavailable.
 - The outcome evaluator was blind to phase, cost, ordering, and hypothesis.
 - Protected cognitive and evidence capabilities were checked separately from resource use.

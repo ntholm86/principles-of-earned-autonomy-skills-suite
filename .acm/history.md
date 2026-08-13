@@ -252,6 +252,7 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 245 | 2026-08-13 | host-fidelity-gate-trigger-format-correction | Supplies canonical machine-readable trigger evaluation without rewriting the append-only source entry. | verify.py grandfathers the immutable malformed trigger block; this correction preserves its original meaning. |
 | ▸ 246 | 2026-08-13 | preregister-copilot-cli-experiment-host | Copilot CLI 1.0.79 is qualified and frozen as the same-host candidate; no selected arm has run. | Added HOST.md and advanced SNAPSHOTS.md from host-blocked to host-preregistered. |
 | · 247 | 2026-08-13 | execute-late-stage-loop-viability-experiment | two eligible arms were classified, the silence position was excluded, and the registered experiment is inconclusive | added RESULTS.md, EVALUATION.md, and hashed raw evidence; production Improve remains unchanged |
+| ▸ 248 | 2026-08-13 | improve-arm-boundary-validity | bound arm eligibility to the actual invocation and made incomplete authorized attempts non-replaceable without a newly authorized protocol | protocol-only validity repair; production Improve and the inconclusive experiment result remain unchanged |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -1135,4 +1136,8 @@ Do not edit by hand — re-run the command to refresh.
 - **decided:** Report the silence lifecycle position as excluded and the experiment as inconclusive. Preserve both silence ledgers and the contaminated duplicate evidence, but use neither in the lifecycle comparison. Reject treating the first attempt as justified silence because it never completed the required loop. Reject treating the duplicate as the arm because it exceeded one-run authorization and began dirty. Reject a third run because it would further violate the preregistered execution boundary. Precedent check: learning.md requires independent resource claims, stable lifecycle reference signals, contract-preserving hosts, and separate capability dimensions; exclusion preserves all four rather than converting operational failure into favorable evidence.
 - **REVERSAL:** The apparent completed silence result was initially packaged as case-flint and sent for blinded evaluation. Session inventory then revealed an earlier ledger. Timestamp, trace-ending, Git-state, and pre-run evidence established that the earlier session was the authorized incomplete attempt and the completed session was an accidental dirty duplicate. Reversed the initial interpretation, retained the evaluator result only as classification of the duplicate package, and excluded the lifecycle position.
 
-**247 runs total — 230 with changes, 17 silence**
+### Run 248 — 2026-08-13 — improve-arm-boundary-validity
+
+- **decided:** Repair the experiment-validity contract at the invocation boundary. Require a captured clean-state assertion immediately before each arm, define the authorized invocation itself as the arm, exclude incomplete attempts, and require a revised protocol plus new operator authorization before any replacement output. This ranks above changing production Improve because the experiment is inconclusive; above rerunning silence because the old authorization is exhausted; and above doing nothing because the observed exclusion exposed an actual ambiguity in the reusable protocol. Precedent check: learning.md records that measurement, lifecycle eligibility, host fidelity, and run-boundary cleanliness are separate gates; this change makes the newest gate operative without weakening any earlier one.
+
+**248 runs total — 231 with changes, 17 silence**

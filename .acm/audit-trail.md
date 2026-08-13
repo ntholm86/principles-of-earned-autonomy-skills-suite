@@ -13520,3 +13520,66 @@ The experiment arc advanced by refusing successive attractive substitutions: art
 1. Run Orient on the completed experiment evidence and current Destination before selecting any follow-up.
 2. Let a future Improve iteration decide whether the missing silence endpoint warrants a newly preregistered experiment, stronger arm-boundary controls, or a different highest-leverage move.
 3. Keep production Improve unchanged until eligible evidence supports a mechanism rather than only a problem description.
+
+## 2026-08-13 - improve-arm-boundary-validity
+
+- target: experiments/late-stage-loop-viability/PROTOCOL.md
+- operator: Nils Holmager
+- agent: GitHub Copilot
+- skill: improve (Intent at ingress, Trail at egress)
+- outcome: bound arm eligibility to the actual invocation and made incomplete authorized attempts non-replaceable without a newly authorized protocol
+- delta: protocol-only validity repair; production Improve and the inconclusive experiment result remain unchanged
+
+### Interpretation of the ask
+
+Intent interpreted "Run the improve skill" as a fresh self-targeting iteration against the current Destination and newly completed experiment evidence. The mandate was to let Improve select the highest-leverage supported response, not to repeat the experiment or force a production Improve change. A production mechanism was rejected as the default interpretation because the experiment was explicitly inconclusive.
+
+### Examination
+
+- Purpose: the current Destination requires trustworthy capability per resource while preserving highest-leverage selection and protected cognitive capabilities.
+- New evidence: the experiment produced two eligible outcomes but no eligible silence outcome. The first silence invocation ended incomplete; a duplicate began from state left by that attempt.
+- Production Improve: the result does not establish a lifecycle trend or identify a limiting production-loop cost, so no production change is supported.
+- Protocol: PROTOCOL.md required fresh sessions and HOST.md required starting from a clean worktree, but neither bound the cleanliness assertion to the exact call boundary or settled whether an incomplete authorized invocation could be replaced after its output was observed.
+- Challenge: the obvious response was another silence run. That would repeat the protocol violation and use observed failure to revise execution after the fact. Updating production Improve would be still less supported because no mechanism was isolated.
+
+### Decision
+
+[!DECISION] Repair the experiment-validity contract at the invocation boundary. Require a captured clean-state assertion immediately before each arm, define the authorized invocation itself as the arm, exclude incomplete attempts, and require a revised protocol plus new operator authorization before any replacement output. This ranks above changing production Improve because the experiment is inconclusive; above rerunning silence because the old authorization is exhausted; and above doing nothing because the observed exclusion exposed an actual ambiguity in the reusable protocol. Precedent check: learning.md records that measurement, lifecycle eligibility, host fidelity, and run-boundary cleanliness are separate gates; this change makes the newest gate operative without weakening any earlier one.
+
+### Prediction
+
+The protocol will classify the observed silence failure unambiguously before outcome interpretation and prevent a dirty duplicate from being treated as a repair. Production Improve, protected cognitive capabilities, and the existing inconclusive result will remain unchanged. Repository verification and focused contract assertions will pass.
+
+### Action
+
+Added one arm-boundary paragraph and two validation items to PROTOCOL.md. The paragraph distinguishes setup preflight from immediate pre-call cleanliness, defines an incomplete invocation as an excluded lifecycle position, and prevents replacement after output without a newly recorded protocol and authorization.
+
+The prediction held. python verify.py and git diff --check passed. Focused assertions found every new boundary phrase, and Git confirmed improve/SKILL.md has no diff.
+
+Destination need: not triggered - the current Destination already settles the research question, protected-capability gate, and operator authority. This run repaired experimental validity within that direction.
+
+Orientation freshness: STALE - the current Orientation says lifecycle measurements do not exist, while the completed experiment now establishes two eligible measured outcomes, one excluded position, and a new run-boundary validity lesson; automatic Orient scheduled.
+
+### Reflection
+
+Falsifiable model claim: the suite's current late-stage limitation is evidential resolution rather than a demonstrated production-loop defect; valid mechanism selection remains blocked until eligible evidence describes the silence endpoint or another stronger limiter emerges.
+
+Named blind spot: this run repaired the written protocol but did not build or exercise a runner that mechanically couples the clean assertion and invocation. Natural-language execution fidelity therefore remains host-dependent.
+
+Imagined-reader pushback: adding more protocol text after a costly experiment may look like governance accretion. The requirement is scoped to research arms, directly closes the failure that invalidated one third of the experiment, and adds no routine Improve burden.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED - recent runs repeatedly separated token capture, lifecycle eligibility, host fidelity, evaluator validity, and now call-boundary state rather than treating experimental validity as one setup check.
+- *About to declare silence:* not fired - this run made a bounded protocol repair.
+- *Contradicts prior [!REALIZATION]:* not fired - it operationalizes the latest realization that cleanliness is a run-boundary property.
+- *Operator explicitly asked:* FIRED - the operator explicitly invoked Improve after reviewing the experiment result.
+
+### Across-trail macro-Hansei
+
+[!REALIZATION] Experimental validity in this suite is event-bound, not configuration-bound. A valid snapshot, host, ledger, and earlier clean preflight can all coexist with an invalid arm if the state transition into the actual invocation is not captured. Future experiment claims must attach eligibility evidence to the event they classify.
+
+### Candidate Next Moves
+
+1. Complete the automatically scheduled Orient pass so the next Improve run starts from the measured two-arm result rather than the obsolete setup-only map.
+2. After reorientation, let a fresh Improve iteration choose between newly authorized silence evidence, adoption evidence, or another stronger Destination limiter without giving this protocol repair automatic priority.

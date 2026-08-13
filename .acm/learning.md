@@ -5,11 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 215 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-02 — align-installed-skill-docs-with-harness-tool-layout
-
-**[!REALIZATION]** The verifier's stale-path coverage is semantically narrow: it catches obsolete trail filenames, but not documented executable paths that no longer exist. This installation defect survived a recent systematic verifier audit because command-path validity is a distinct quality bar from trail-path token consistency.
+Showing the most recent 60 markers. 216 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-02 — refresh-iteration-count-and-readme-totals
 
@@ -246,6 +242,10 @@ Showing the most recent 60 markers. 215 older marker(s) are in `.acm/learning-ar
 ## 2026-08-13 — execute-late-stage-loop-viability-experiment
 
 **[!REVERSAL]** The apparent completed silence result was initially packaged as case-flint and sent for blinded evaluation. Session inventory then revealed an earlier ledger. Timestamp, trace-ending, Git-state, and pre-run evidence established that the earlier session was the authorized incomplete attempt and the completed session was an accidental dirty duplicate. Reversed the initial interpretation, retained the evaluator result only as classification of the duplicate package, and excluded the lifecycle position.
+
+## 2026-08-13 — improve-arm-boundary-validity
+
+**[!REALIZATION]** Experimental validity in this suite is event-bound, not configuration-bound. A valid snapshot, host, ledger, and earlier clean preflight can all coexist with an invalid arm if the state transition into the actual invocation is not captured. Future experiment claims must attach eligibility evidence to the event they classify.
 
 ---
 
