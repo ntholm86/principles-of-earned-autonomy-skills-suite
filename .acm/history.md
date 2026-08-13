@@ -268,6 +268,7 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 261 | 2026-08-13 | freeze-destination-orient-overlap-fixture | complete fixture and trigger map frozen; no invocation executed | added seven fixture files, one trigger map, and one hash manifest |
 | ▸ 262 | 2026-08-13 | freeze-service-overlap-interactive-host | interactive host frozen; no disposable setup or invocation started | added one host record with fixed session identities and exact command shape |
 | ▸ 263 | 2026-08-13 | centralize-service-scheduling | changed - one purpose-based scheduler replaced repeated trigger taxonomies | 3,273 bytes removed from Improve, Destination, and Orient; skill versions 3.17.1, 2.7.1, and 2.7.1 |
+| ▸ 264 | 2026-08-13 | orient-after-control-simplification | Orientation refreshed; experiment queue replaced by purpose-led simplification rules |  |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -1209,4 +1210,8 @@ Do not edit by hand — re-run the command to refresh.
 
 - **decided:** Make Improve the single source of scheduling policy. It now asks two questions: whether next work depends on unsettled durable direction, and whether current Orientation still explains the governing Destination and material trail. Destination and Orient accept the named questions instead of maintaining parallel trigger taxonomies.
 
-**263 runs total — 245 with changes, 18 silence**
+### Run 264 — 2026-08-13 — orient-after-control-simplification
+
+- **REVERSAL:** The action section above says the prior and refreshed Orientation were 140 and 100 lines. A post-append executable count disproved that statement before derivation or commit. `git show HEAD:.acm/orientation.md` contains 142 lines; the refreshed file contains 86 lines, a reduction of 56 lines. The claim and priority change are unaffected. This correction is appended because the Trail is append-only.
+
+**264 runs total — 246 with changes, 18 silence**

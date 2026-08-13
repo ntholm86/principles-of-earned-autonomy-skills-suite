@@ -5,15 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 236 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-02 — reconcile-complete-current-destination
-
-**[!REALIZATION]** The engine's self-improvement mandate does not require a special self-targeting capability list. It follows recursively from the same generic operation used on every target: reason about purpose and intent, discover what most limits them, and improve that limitation. Fixing named capabilities would turn today's examples into tomorrow's ceiling.
-
-## 2026-08-02 — reconcile-complete-current-destination
-
-**[!REVERSAL]** The historical "irreducible human gate" over every implementation choice is no longer active. The operator owns and confirms the Destination; within it, implementation choice may be delegated. Direction changes and declared consequential actions remain gated.
+Showing the most recent 60 markers. 238 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-02 — orient-recursive-purpose-and-principles-boundary
 
@@ -246,6 +238,14 @@ Showing the most recent 60 markers. 236 older marker(s) are in `.acm/learning-ar
 ## 2026-08-13 — centralize-service-scheduling
 
 **[!REALIZATION]** A single entry point still carries distributed control cost when every service restates why it should run. Lightweight composition requires one scheduler and small acceptance contracts, not fewer capabilities.
+
+## 2026-08-13 — orient-after-control-simplification
+
+**[!REALIZATION]** Lightweight trustworthy delegation is not achieved by deleting capabilities or by proving every edge case. It comes from preserving load-bearing cognition and evidence while giving each control decision one owner, one purpose, and the cheapest adequate check.
+
+## 2026-08-13 — orient-after-control-simplification
+
+**[!REVERSAL]** The action section above says the prior and refreshed Orientation were 140 and 100 lines. A post-append executable count disproved that statement before derivation or commit. `git show HEAD:.acm/orientation.md` contains 142 lines; the refreshed file contains 86 lines, a reduction of 56 lines. The claim and priority change are unaffected. This correction is appended because the Trail is append-only.
 
 ---
 

@@ -949,6 +949,14 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** The latest reasoning omission and the destination's token cost had a shared cause: active intent and historical provenance were stored together without an auditable completeness boundary. Separating their read paths can improve both carry-forward reliability and resource use, but only after reconciliation earns the boundary.
 
+## 2026-08-02 — reconcile-complete-current-destination
+
+**[!REALIZATION]** The engine's self-improvement mandate does not require a special self-targeting capability list. It follows recursively from the same generic operation used on every target: reason about purpose and intent, discover what most limits them, and improve that limitation. Fixing named capabilities would turn today's examples into tomorrow's ceiling.
+
+## 2026-08-02 — reconcile-complete-current-destination
+
+**[!REVERSAL]** The historical "irreducible human gate" over every implementation choice is no longer active. The operator owns and confirms the Destination; within it, implementation choice may be delegated. Direction changes and declared consequential actions remain gated.
+
 ---
 
-**236 markers — 219 realisations, 17 reversals**
+**238 markers — 220 realisations, 18 reversals**

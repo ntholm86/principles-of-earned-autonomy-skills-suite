@@ -14570,3 +14570,55 @@ The recent arc optimized confidence in service composition by adding protocols, 
 1. Run the scheduled Orient once against the changed mandate and full trail.
 2. Use later Improve runs to challenge one remaining duplication at a time; do not create an experiment unless ordinary verification cannot distinguish the claim.
 3. Treat the current size measurement as a disposable local diagnostic, not a standing optimization target.
+
+## 2026-08-13 - orient-after-control-simplification
+
+- target: autonomous-agent-skills arc after operator-stopped overlap experiment
+- operator: Nils Holmager
+- agent: GitHub Copilot
+- skill: orient (scheduled by Improve; Trail at egress)
+- outcome: Orientation refreshed; experiment queue replaced by purpose-led simplification rules
+
+### Scope
+
+Read the arc after the operator stopped the service-overlap experiment because its purpose and direction had become hard to follow. Question: what changed when rigorous adoption research began obscuring the product goal, and what operating rule preserves trustworthy capability per token without rebuilding ceremony?
+
+Freshness gate passed before claims: history and learning were regenerated from 263 Trail entries, and `python verify.py` reported `OK - trail integrity checks pass`.
+
+### Arc claims
+
+1. Distributed orchestration policy, not missing capability, was the immediate product limiter. Suite v4.29.1 now gives full-suite scheduling one owner and overlap one execution order.
+2. Research rigor became locally purpose-defeating when each uncertainty generated another protocol, fixture, manifest, or host boundary. The interrupted overlap run produced no behavioral result and creates no duty to resume.
+3. Trustworthy capability per token is the viability criterion. Skill size is only a temporary diagnostic; cognitive and evidentiary preservation remains the boundary.
+4. Capability count and operator burden are independent. Internal services can retain distinct jobs while control policy is expressed once.
+5. Newcomer and overlap gaps remain bounded evidence gaps, not an automatic queue. They regain priority when eligible evidence or a real workflow makes them material.
+6. The operator interruption is valid loop evidence: reconstructable records did not preserve enough situational awareness for steering during execution.
+
+Each claim includes a falsifier in the refreshed `.acm/orientation.md`.
+
+### Loop effectiveness
+
+[!REALIZATION] Lightweight trustworthy delegation is not achieved by deleting capabilities or by proving every edge case. It comes from preserving load-bearing cognition and evidence while giving each control decision one owner, one purpose, and the cheapest adequate check.
+
+The loop eventually responded correctly: it stopped and cleaned disposable experiment state, preserved incompleteness, accepted the redirection, simplified the owning abstraction, and refreshed its map. It failed to detect growing operator-legibility cost before direct interruption. Future work must treat operator comprehension during execution as evidence rather than relying on final Trail reconstruction.
+
+Quality bars tested here: scheduler ownership, prompt-weight reduction, retained textual contracts, append-only evidence integrity, and operator steerability across the recent research sequence. Behavioral scheduler precision, cross-model interpretation, unassisted newcomer adoption, completed overlap, and near-silence lifecycle economics remain untested.
+
+### Orientation action
+
+Replaced the stale 140-line experiment-led map with a 100-line purpose-led Orientation. The next-run guidance now starts with one evidenced duplication at a time, ordinary verification before experiments, Trail contract simplification as a candidate rather than a mandate, and natural eligibility for blocked human or overlap evidence.
+
+No target file or Destination changed. Destination need: not triggered - the operator's governing standard is explicit and this Orient run found no unresolved durable choice.
+
+### Correction - verified Orientation size
+
+[!REVERSAL] The action section above says the prior and refreshed Orientation were 140 and 100 lines. A post-append executable count disproved that statement before derivation or commit. `git show HEAD:.acm/orientation.md` contains 142 lines; the refreshed file contains 86 lines, a reduction of 56 lines. The claim and priority change are unaffected. This correction is appended because the Trail is append-only.
+
+- *Recurring finding-class:* FIRED - orchestration and explanation cost repeatedly returned after earlier control-surface simplifications.
+- *About to declare silence:* not fired - the refreshed Orientation names directly testable simplification work.
+- *Contradicts prior `[!REALIZATION]`:* FIRED - the prior Orientation promoted more experiment execution; operator interruption showed that queue was no longer the highest-leverage route.
+- *Operator explicitly asked:* FIRED - the operator asked to preserve trustworthy capability per token while making the skills streamlined, consistent, clean, transparent, simple, DRY, KISS, and YAGNI.
+
+### Across-trail macro-Hansei
+
+The suite had already learned to reduce the operator's command surface, yet the research process recreated burden through internal orchestration prose and an expanding experiment queue. The deeper correction is to apply the same ownership rule inside the architecture and the work process: one purpose, one decision owner, and evidence proportional to the claim being distinguished.
