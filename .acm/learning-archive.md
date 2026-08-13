@@ -885,6 +885,14 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** The suite's complexity problem was not six separate capabilities; it was exposing six capabilities as six operator responsibilities. Earlier iterations repeatedly simplified placement and wording while preserving evidence machinery underneath. This change applies the same pattern to runtime composition: keep distinct ownership boundaries, collapse the user's required control surface. The recurring drift risk now moves to any surface that enumerates skills without also naming their operating role.
 
+## 2026-08-02 — destination-orientation-run-mindset
+
+**[!REALIZATION]** The smallest honest description of the suite has three layers with different counts: three concepts for the user, five capabilities for operation, six capabilities for research. Previous descriptions kept collapsing these counts into one taxonomy, which forced either infrastructure or instrumentation into the user's mental model. Naming the layers separately resolves that tension without deleting functionality.
+
+## 2026-08-02 — passive-evidence-triggered-orientation
+
+**[!REALIZATION]** The arc's repeated simplifications reveal a stronger architecture than the earlier three/five/six count: capability count and operator action count are independent. Destination and Improve are the only deliberate control inputs; Intent, Trail, and Orientation are feedback infrastructure. Probe remains external instrumentation. The suite's public model should be organized by agency - what the operator decides versus what the system maintains - rather than by how many skill files exist.
+
 ---
 
-**220 markers — 208 realisations, 12 reversals**
+**222 markers — 210 realisations, 12 reversals**

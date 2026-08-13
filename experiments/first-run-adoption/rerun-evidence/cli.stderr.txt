@@ -1,0 +1,8 @@
+node.exe : Error: Model "claude-sonnet-4-5" from --model flag is not available.
+At C:\Users\admin\AppData\Roaming\npm\copilot.ps1:24 char:5
++     & "node$exe"  "$basedir/node_modules/@github/copilot/npm-loader.j ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Error: Model "c... not available. 
+   :String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 

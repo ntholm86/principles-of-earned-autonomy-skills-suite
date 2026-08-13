@@ -5,15 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 220 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-02 — destination-orientation-run-mindset
-
-**[!REALIZATION]** The smallest honest description of the suite has three layers with different counts: three concepts for the user, five capabilities for operation, six capabilities for research. Previous descriptions kept collapsing these counts into one taxonomy, which forced either infrastructure or instrumentation into the user's mental model. Naming the layers separately resolves that tension without deleting functionality.
-
-## 2026-08-02 — passive-evidence-triggered-orientation
-
-**[!REALIZATION]** The arc's repeated simplifications reveal a stronger architecture than the earlier three/five/six count: capability count and operator action count are independent. Destination and Improve are the only deliberate control inputs; Intent, Trail, and Orientation are feedback infrastructure. Probe remains external instrumentation. The suite's public model should be organized by agency - what the operator decides versus what the system maintains - rather than by how many skill files exist.
+Showing the most recent 60 markers. 222 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-02 — passive-evidence-triggered-orientation
 
@@ -247,6 +239,14 @@ Showing the most recent 60 markers. 220 older marker(s) are in `.acm/learning-ar
 
 **[!REVERSAL]** Within this iteration, the first hook-guidance edit introduced one extra indentation level. Diff inspection exposed it; the line was realigned and diagnostics rerun before Trail.
 
+## 2026-08-13 — improve-first-run-cold-start-rerun
+
+**[!REALIZATION]** The adoption path is now blocked by experiment-host qualification before it is blocked by Improve behavior. Repairing the user journey advanced the probe one boundary, but changing from the qualified proxy route to direct BYOK changed the frozen host and invalidated the assumption that the named model remained available. Host availability must be established for the exact provider route before spending a one-invocation authorization.
+
+## 2026-08-13 — improve-first-run-cold-start-rerun
+
+**[!REVERSAL]** Removed it before invocation, removed the fixture test cache, reinstalled with `$copilotHome` into the intended isolated temp directory, and re-established a clean fixture with exactly five skills plus PRINCIPLES.md.
+
 ---
 
-**60 markers — 45 realisations, 15 reversals**
+**60 markers — 44 realisations, 16 reversals**

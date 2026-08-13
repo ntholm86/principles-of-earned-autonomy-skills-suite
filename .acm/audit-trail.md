@@ -13790,3 +13790,74 @@ The adoption arc increasingly shows that simplification claims must be tested in
 1. Preregister a new cold-start probe against the repaired artifact and continue through the no-ACM model invocation, because installation is now verified but first Improve behavior remains untested.
 2. After simulated operability is established, observe an independent developer attempting the same path, because agent-run fixtures cannot establish human adoption.
 3. Test overlapping Destination-plus-Orient activation after the first-run path, because composition remains an independent untested behavior rather than an installation concern.
+
+## 2026-08-13 - improve-first-run-cold-start-rerun
+
+- target: simulated first-run Improve behavior after the Windows installer repair
+- operator: Nils Holmager
+- agent: GitHub Copilot
+- skill: improve (Intent at ingress, Trail at egress)
+- outcome: inconclusive - the one authorized invocation ended before model execution because the frozen model was unavailable on the unqualified direct provider route
+- delta: added a fresh rerun protocol, bounded result, fixture, complete CLI capture, pre/post evidence, and hash manifest; production surfaces unchanged
+
+### Interpretation of the ask
+
+Intent interpreted "run improve skill" as the next self-targeting iteration under the current Destination, not as permission to reuse the prior failed probe. The latest committed candidate ranked a newly preregistered no-ACM cold-start invocation first. The run therefore tested the next chronological adoption boundary while preserving the distinction between simulated operability and human adoption.
+
+### Examination
+
+- Purpose: adoption remains untested beyond installation. The repaired installer had reached a verified boundary where model behavior could become the next discriminating evidence.
+- Prior protocol: its single authorization ended at the documented installation failure and could not be reused; its fixture and classification boundaries remained relevant.
+- Host: Copilot CLI 1.0.79 and provider credentials were present. The independently measured proxy on port 8475 was absent. The rerun preregistered direct Anthropic BYOK and explicitly declined resource claims.
+- Fixture: a fresh repository contained two equivalent private slug normalizers, two focused tests, a README, one clean baseline commit, and no ACM.
+- Challenge: the run correctly refused to infer human adoption from an agent fixture, but it did not challenge whether `claude-sonnet-4-5` remained available after changing the provider route from the previously qualified proxy to direct BYOK.
+- Overburden and waste: no production mechanism justified change before behavioral evidence; another documentation edit would not test the open bar.
+
+### Decision
+
+[!DECISION] Authorize one fresh cold-start model invocation against the repaired artifact, preserving incomplete attempts and treating host failure as inconclusive. This ranked above overlapping-service composition because first-run behavior was the earliest open adoption boundary, and above an independent newcomer observation because simulated operability had not yet been established. Precedent check: learning.md required immediate event-bound eligibility and a fully frozen experimental host. The invocation satisfied the former but, in retrospect, changed an unqualified provider-transport component of the latter.
+
+### Prediction
+
+The fresh agent will deduplicate slug.py, keep both tests passing, narrate Intent, and create sufficient Trail evidence without unsupported Destination. It will not establish human adoption or resource efficiency.
+
+### Action
+
+Preregistered `RERUN_PROTOCOL.md` before fixture creation. Its first boundary assertion failed only because the check expected different human-adoption wording than the protocol used; the corrected literal assertion passed without changing the protocol.
+
+Created and baseline-committed the controlled fixture. The first setup command used `$home`, which collided case-insensitively with PowerShell's read-only `$HOME`; the target expression consequently installed the six-file payload at `C:\Users\admin\skills`. Inspection showed the directory and all children shared the command's creation instant and contained only that payload. [!REVERSAL] Removed it before invocation, removed the fixture test cache, reinstalled with `$copilotHome` into the intended isolated temp directory, and re-established a clean fixture with exactly five skills plus PRINCIPLES.md.
+
+Immediately before the one model call, captured a clean worktree, absent ACM, passing tests, CLI 1.0.79, installed skill names, and hashes. The invocation exited 1 after 3.692 seconds. Standard error reported `Model "claude-sonnet-4-5" from --model flag is not available`; stdout contained only `session.mcp_servers_loaded`. No reasoning, tool action, target diff, or ACM occurred. Post-run tests passed and the fixture remained clean.
+
+The prediction failed before agent execution. Classified the result inconclusive under the preregistered host-failure rule, preserved the complete UTF-8 evidence package and SHA-256 manifest, and made no production change or token claim. A parallel terminal-validation collision later interrupted one repository-boundary command; rerunning it serially confirmed the original probe files were unchanged and the pending scope was only the new rerun package.
+
+Destination need: not triggered - the operator-confirmed Destination already prioritizes unassisted adoption and bounds evidence claims; the blocker concerns experimental route qualification, not direction.
+
+Orientation freshness: STALE - the post-Orient adoption sequence now includes an installation failure, a verified installer repair, and an eligible invocation stopped by a changed unqualified host, with two failed experiment predictions and a setup reversal; automatic Orient scheduled.
+
+### Reflection
+
+[!REALIZATION] The adoption path is now blocked by experiment-host qualification before it is blocked by Improve behavior. Repairing the user journey advanced the probe one boundary, but changing from the qualified proxy route to direct BYOK changed the frozen host and invalidated the assumption that the named model remained available. Host availability must be established for the exact provider route before spending a one-invocation authorization.
+
+Falsifiable model claim: with the current direct Anthropic BYOK route and Copilot CLI 1.0.79, `claude-sonnet-4-5` is unavailable, so no first-run reasoning claim can be obtained from this host configuration.
+
+Named blind spot: the run did not capture the model list available under direct BYOK before preregistration and cannot determine whether restoring the proxy, selecting another qualified model, or changing host is the best next route.
+
+Imagined-reader pushback: this was an avoidable host mistake rather than a limitation of the skills. That is correct; the bounded result is methodological and must not be reported as adoption evidence.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED - both adoption invocations stopped before a reasoning contract loaded, first at the shell boundary and now at model selection, while the intervening installer repair advanced only one chronological boundary.
+- *About to declare silence:* not fired - the run produced an inconclusive experiment and a host-qualification finding, not convergence.
+- *Contradicts prior [!REALIZATION]:* not fired - it confirms the prior realization that model, provider transport, and isolation jointly define the host; the mistake was failing to apply it before authorization.
+- *Operator explicitly asked:* FIRED - the operator explicitly invoked Improve.
+
+### Across-trail macro-Hansei
+
+The well-aged arc claim is that experimental eligibility and host fidelity are separate gates. The superseded working assumption was that credentials plus a named model made the direct route equivalent enough to the qualified proxy route. Attention should remain chronological, but each next boundary must be qualified before it consumes the scarce invocation it is meant to test.
+
+### Candidate Next Moves
+
+1. Qualify an exact model and provider route without consuming another adoption authorization, then preregister a fresh cold-start attempt only after that host is demonstrably available.
+2. Test overlapping Destination-plus-Orient activation while adoption is host-blocked, because it remains an independent behavior with an already available local surface.
+3. Observe an independent developer only after simulated first-run operability succeeds, so host defects are not misclassified as human adoption friction.
