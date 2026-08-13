@@ -5,11 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 240 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-02 — orient-after-governance-accretion-finding
-
-**[!REALIZATION]** The unseeded self-improvement test succeeded at discovery and exposed a new asymmetry: the suite has strong mechanisms for turning failures into permanent instructions, but weak mechanisms for turning accumulated instructions back into smaller abstractions without losing their protections.
+Showing the most recent 60 markers. 241 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-02 — prototype-layered-improve
 
@@ -246,6 +242,10 @@ Showing the most recent 60 markers. 240 older marker(s) are in `.acm/learning-ar
 ## 2026-08-13 — make-writer-splitting-deterministic
 
 **[!REALIZATION]** Removing duplicated policy is safe only after the remaining owner states branch conditions, authority, timing, and return path explicitly. Concision without those four elements moves orchestration cost into each reader's inference and produces divergent agents.
+
+## 2026-08-13 — index-experiments-as-evidence-archive
+
+**[!REALIZATION]** The experiments folder's burden was primarily semantic, not storage or runtime cost. A missing status boundary made preserved evidence look like pending work. Deleting evidence would optimize the weaker dimension while damaging the stronger one.
 
 ---
 

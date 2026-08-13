@@ -271,6 +271,7 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 264 | 2026-08-13 | orient-after-control-simplification | Orientation refreshed; experiment queue replaced by purpose-led simplification rules |  |
 | ▸ 265 | 2026-08-13 | consolidate-trail-independent-capture | changed - repeated capture and fidelity prose consolidated without changing evidence semantics | Trail 2.5.1 -> 2.5.2; 3,718 UTF-8 bytes and 22 lines removed |
 | ▸ 266 | 2026-08-13 | make-writer-splitting-deterministic | changed - activation and handoff now produce one cross-agent interpretation | Improve 3.17.1 -> 3.17.2; suite v4.29.3 |
+| ▸ 267 | 2026-08-13 | index-experiments-as-evidence-archive | changed - experiment packages classified as evidence rather than active backlog | added one root index; no experiment evidence deleted or moved |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -1224,4 +1225,8 @@ Do not edit by hand — re-run the command to refresh.
 
 - **decided:** Make the High-Fidelity branch deterministic in its owning Improve paragraph. State standard mode as the default; define explicit activation; rule out consequence-based inference; require a host-supported writer round trip before Act; specify the handoff packet; forbid the writer from recomputing Improve's decisions; and return control to Improve for step 8.
 
-**266 runs total — 248 with changes, 18 silence**
+### Run 267 — 2026-08-13 — index-experiments-as-evidence-archive
+
+- **decided:** Do not delete or move the experiment packages. Add one `experiments/README.md` that classifies all four packages, declares the directory outside the installed runtime, closes the interrupted overlap work as a queue item, and states a future evidence-preserving deletion boundary.
+
+**267 runs total — 249 with changes, 18 silence**

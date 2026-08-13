@@ -14748,3 +14748,71 @@ The last three runs establish a boundary for lightweight skills: remove repeated
 1. Audit the newly consolidated Trail capture paragraph for the same four elements: branch condition, authority, timing, and return path.
 2. Treat independent cold reads as focused validation for semantic compression, not as a reason to launch a formal experiment.
 3. Delay further byte-oriented simplification until a concrete ambiguity or duplication is identified.
+
+## 2026-08-13 - index-experiments-as-evidence-archive
+
+- target: `experiments/` repository boundary
+- operator: Nils Holmager
+- agent: GitHub Copilot
+- skill: improve (Intent at ingress, Trail at egress)
+- outcome: changed - experiment packages classified as evidence rather than active backlog
+- delta: added one root index; no experiment evidence deleted or moved
+
+### Interpretation of the ask
+
+The operator asked to "clean it up a bit" and whether deleting the experiments folder is safe. The intended outcome is lower repository and cognitive burden without deleting reasoning or evidence that supports current claims. Deletion was not authorized in advance; the run first had to establish whether the folder was product code, disposable output, or durable evidence.
+
+### Examination
+
+The four packages contain 145 files and 10,235,198 bytes. `late-stage-loop-viability/` accounts for about 9.4 MB. No installer or operational skill loads the directory, and the normal verifier has no path dependency on its contents. Runtime and installation deletion risk is therefore low.
+
+Evidence risk is high. Destination cites the layered-Improve tradeoff; Orientation cites the interrupted overlap sequence and bounded adoption evidence; learning surfaces preserve conclusions from all three research arcs. The packages contain preregistrations, raw traces, ledgers, excluded and incomplete attempts, manifests, and result boundaries. Git history would retain deleted blobs, so deleting tracked files would save checkout space but not repository history size without destructive rewriting.
+
+The local defect was discoverability: no root index explained that these are evidence packages rather than four active workstreams. In particular, `service-overlap/PROTOCOL.md` remains a frozen preregistration saying not yet executed, while the later invocation was interrupted and closed. Rewriting the protocol would corrupt preregistration; a current index can state the status without altering frozen evidence.
+
+### Decision and prediction
+
+[!DECISION] Do not delete or move the experiment packages. Add one `experiments/README.md` that classifies all four packages, declares the directory outside the installed runtime, closes the interrupted overlap work as a queue item, and states a future evidence-preserving deletion boundary.
+
+Rejected alternative: delete the full folder because Git history preserves it. Historical reachability is not a current evidence path and would make active ACM claims harder to inspect. Rejected alternative: archive or reorganize subtrees. Moving 145 files creates path churn without reducing Git size or evidence burden.
+
+Precedent check: recent learning requires incomplete and interrupted invocations to remain visible and warns against turning every evidence gap into an experiment queue. The index satisfies both.
+
+Prediction: a reader can identify every package's status and understand that none authorizes continuation; repository verification remains green; no operational behavior or reasoning capability changes.
+
+### Action and verification
+
+Added a 25-line root index with one row per package: layered Improve completed/not promoted; late-stage viability completed/inconclusive; first-run simulated Pass/human observation blocked; service overlap interrupted/closed. It states that the directory is not installed or loaded by normal operation, that presence does not create a work queue, and that deletion requires replacement evidence locations and updated live references.
+
+Assertions confirmed all four directories exist and every status, non-resumption boundary, Git-history limitation, and deletion criterion appears in the index. `python verify.py` and `git diff --check` passed. The prediction held at the repository-contract level.
+
+The unrelated modified `experiments/first-run-adoption/host-qualification-evidence/README.md` remains untouched and unstaged.
+
+Destination need: not triggered - the existing Destination already settles evidence preservation and capability-per-resource priorities.
+
+Orientation freshness: current - the index implements the current claim that experiments are bounded evidence rather than an automatic queue.
+
+### Reflection
+
+[!REALIZATION] The experiments folder's burden was primarily semantic, not storage or runtime cost. A missing status boundary made preserved evidence look like pending work. Deleting evidence would optimize the weaker dimension while damaging the stronger one.
+
+Falsifiable model claim: a new reader starting at `experiments/README.md` will not infer that service overlap should resume or that the layered prototype is a production candidate.
+
+Named blind spot: the index does not reduce checkout size. A future external evidence store could permit physical removal, but no such durable replacement exists now.
+
+Imagined-reader pushback: committed Git history is enough to recover deleted evidence. Recovery is possible, but current claims would point to absent paths and require commit archaeology; that is lower transparency, not cleanup.
+
+- *Recurring finding-class:* FIRED - research artifacts again appeared as workflow obligations because status and evidence roles were not separated.
+- *About to declare silence:* not fired - the operator asked for cleanup, not a convergence evaluation.
+- *Contradicts prior `[!REALIZATION]`:* not fired - this applies the current rule that interrupted runs remain visible without remaining active.
+- *Operator explicitly asked:* FIRED - the operator explicitly asked for cleanup and a deletion-safety judgment.
+
+### Across-trail macro-Hansei
+
+The recent arc repeatedly reduced control burden by separating capability from orchestration. The same move applies to research: preserve evidence capability, remove implied workflow authority. A status index is cheaper and more trustworthy than either deleting the evidence or treating every frozen protocol as unfinished work.
+
+### Candidate Next Moves
+
+1. Stop cleanup here unless a concrete storage, navigation, or interpretation cost remains.
+2. If physical deletion becomes necessary, first establish an independently inspectable replacement evidence location and update every live claim.
+3. Keep convergence evaluation separate from archive housekeeping.
