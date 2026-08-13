@@ -1,5 +1,9 @@
 # Changelog
 
+## v4.29.3 — 2026-08-13
+
+- **High-Fidelity writer splitting is now deterministic across agents.** Standard Trail composition is the explicit default. Independent writing activates only from an operator request or a pre-existing execution contract, never from task consequence alone. Before Act, the host must support a separate-writer round trip; Improve supplies the exact record and scheduling decisions, the writer records without recomputing them, and Improve resumes service execution afterward. `improve/SKILL.md` 3.17.1 -> 3.17.2.
+
 ## v4.29.2 — 2026-08-13
 
 - **Trail now states independent capture once.** The three observer resolutions, capture-author separation, anti-rationalization duties, optional transcript fields, and fidelity labels now live in one `Independent capture` contract instead of being repeated across the ACM overview, resolution table, migration history, structural-capture section, and fidelity section. No evidence requirement or fidelity distinction changed. `trail/SKILL.md` 2.5.1 -> 2.5.2.

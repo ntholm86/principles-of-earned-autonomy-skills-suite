@@ -14684,3 +14684,67 @@ Recent runs reveal the same architecture at two levels: scheduling policy and ev
 1. Examine whether Trail's entry-template explanation repeats the same four-trigger and reflection contract in full and condensed forms; preserve learning behavior before changing it.
 2. Challenge duplicated scoped-ACM read instructions across Intent, Destination, and Orient, but centralize only if standalone behavior remains explicit.
 3. Prefer a naturally occurring run over a new experiment to test whether compressed contracts remain legible.
+
+## 2026-08-13 - make-writer-splitting-deterministic
+
+- target: Improve High-Fidelity writer-splitting contract
+- operator: Nils Holmager
+- agent: GitHub Copilot
+- skill: improve (Intent at ingress, Trail at egress)
+- outcome: changed - activation and handoff now produce one cross-agent interpretation
+- delta: Improve 3.17.1 -> 3.17.2; suite v4.29.3
+
+### Interpretation of the ask
+
+The operator clarified the simplification mandate: "I really dont want to loose reasoning" and emphasized that different agents must interpret skill instructions the same way. The run therefore prioritizes semantic determinism over byte reduction. Rejected interpretation: continue shortening instructions because the previous reductions passed textual assertions.
+
+### Examination
+
+A narrow comparison of the recently compressed Improve and Trail contracts against Observable Autonomy found a higher-risk pre-existing ambiguity in Improve: standard automatic Trail composition sat beside High-Fidelity language activated when "the highest level" was required, but no actor or observable signal decided when that condition held.
+
+An independent cold-reading agent identified three plausible behaviors: always write automatically, always halt for an independent writer, or switch inconsistently based on perceived consequence. Historical evidence resolved the intended boundary: writer splitting relied on manual operator invocation, and an earlier evaluator had incorrectly over-triggered it from consequence alone.
+
+The independent reader proposed adding a marker file or request parameter. That mechanism was rejected as unsupported control infrastructure. Existing authority is sufficient: explicit operator request or a pre-existing execution contract.
+
+### Decision and prediction
+
+[!DECISION] Make the High-Fidelity branch deterministic in its owning Improve paragraph. State standard mode as the default; define explicit activation; rule out consequence-based inference; require a host-supported writer round trip before Act; specify the handoff packet; forbid the writer from recomputing Improve's decisions; and return control to Improve for step 8.
+
+Prediction: an independent agent will derive the same behavior for ordinary work, requested writer splitting with and without an available writer, and post-handoff service scheduling. Existing integrity checks will pass. Reasoning and evidence capability will be unchanged; the edit resolves who performs them and when.
+
+### Action and verification
+
+Replaced the subjective High-Fidelity condition with two short paragraphs covering activation and handoff. The first cold read after editing agreed on all four scenario outcomes but found that "Before acting" could still be read too late because the paragraph appears in step 7. The wording was tightened to "Before step 5 (Act)" and availability was defined as the current host being able to invoke a separate agent and return control to the run. No marker, registry, or new artifact was added.
+
+Seven executable scenario assertions passed: standard default, explicit activation, no consequence inference, pre-Act round trip, stop-before-mutation fallback, writer non-recomputation, and Improve resumption. `python verify.py` and `git diff --check` passed after both edit slices. The result matches the prediction at the instruction-contract level; cross-model behavior beyond the independent cold read remains untested.
+
+Released as suite v4.29.3 and Improve v3.17.2.
+
+Destination need: not triggered - the current Destination already requires cross-agent specifiability, human readability, and operator approval for cognitive-capability reductions.
+
+Orientation freshness: current - the run directly tests the Orientation's named cross-model interpretation risk and strengthens its capability-preserving simplification rule without changing the priority map.
+
+### Reflection
+
+[!REALIZATION] Removing duplicated policy is safe only after the remaining owner states branch conditions, authority, timing, and return path explicitly. Concision without those four elements moves orchestration cost into each reader's inference and produces divergent agents.
+
+Falsifiable model claim: agents reading Improve 3.17.2 will not activate writer splitting from task consequence alone and will not let the independent writer alter Destination or Orientation scheduling decisions.
+
+Named blind spot: one Explore agent performed the cold read in the current host. This is direct interpretation evidence, not cross-family replication or proof of runtime compliance.
+
+Imagined-reader pushback: requiring the host round trip before Act may block a high-fidelity request on simple hosts. That is intentional: silently downgrading independent authorship after mutation would violate the operator's requested evidence mode. The operator can explicitly accept standard mode before work begins.
+
+- *Recurring finding-class:* FIRED - cross-agent ambiguity is the failure mode the operator warned compression could create, and prior experiments already observed consequence-based over-triggering.
+- *About to declare silence:* not fired - this run validates one branch contract only.
+- *Contradicts prior `[!REALIZATION]`:* FIRED - the previous run claimed observable invariants made compression safe while naming cross-model interpretation as untested; this run found an ambiguous invariant in adjacent compressed control prose.
+- *Operator explicitly asked:* FIRED - the operator explicitly requested Improve and consistent interpretation without reasoning loss.
+
+### Across-trail macro-Hansei
+
+The last three runs establish a boundary for lightweight skills: remove repeated ownership and provenance, then spend enough words in the single owner to make authority and branches deterministic. Token efficiency comes from deleting duplicate interpretations, not from deleting the distinctions agents need to reason consistently.
+
+### Candidate Next Moves
+
+1. Audit the newly consolidated Trail capture paragraph for the same four elements: branch condition, authority, timing, and return path.
+2. Treat independent cold reads as focused validation for semantic compression, not as a reason to launch a formal experiment.
+3. Delay further byte-oriented simplification until a concrete ambiguity or duplication is identified.

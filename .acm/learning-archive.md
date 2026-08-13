@@ -961,6 +961,10 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** The strongest current reasoning evidence is mixed in a specific way: the engine applied prior learning well enough to protect intent structurally, while still needing operator correction to avoid creating a new conceptual ceiling. Improving learning carry-forward alone does not establish equally strong intent generalization.
 
+## 2026-08-02 — surface-governance-accretion-redesign
+
+**[!REALIZATION]** The previously unnamed limitation is governance accretion: the architecture has no mechanism for safeguards to expire, consolidate, or move out of routine context after they are added. As a result, successful learning monotonically increases the instruction burden that future reasoning must carry. This is distinct from example-to-checklist collapse; it is learning that protects against past failures while progressively consuming the attention needed to discover new ones.
+
 ---
 
-**239 markers — 221 realisations, 18 reversals**
+**240 markers — 222 realisations, 18 reversals**

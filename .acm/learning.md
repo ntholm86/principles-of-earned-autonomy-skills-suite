@@ -5,11 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 239 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-02 — surface-governance-accretion-redesign
-
-**[!REALIZATION]** The previously unnamed limitation is governance accretion: the architecture has no mechanism for safeguards to expire, consolidate, or move out of routine context after they are added. As a result, successful learning monotonically increases the instruction burden that future reasoning must carry. This is distinct from example-to-checklist collapse; it is learning that protects against past failures while progressively consuming the attention needed to discover new ones.
+Showing the most recent 60 markers. 240 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-02 — orient-after-governance-accretion-finding
 
@@ -246,6 +242,10 @@ Showing the most recent 60 markers. 239 older marker(s) are in `.acm/learning-ar
 ## 2026-08-13 — consolidate-trail-independent-capture
 
 **[!REALIZATION]** Evidence semantics survive compression when the skill states observable invariants and removes the history of why each invariant arrived. Runtime instructions need the current contract; provenance belongs in the append-only Trail and changelog.
+
+## 2026-08-13 — make-writer-splitting-deterministic
+
+**[!REALIZATION]** Removing duplicated policy is safe only after the remaining owner states branch conditions, authority, timing, and return path explicitly. Concision without those four elements moves orchestration cost into each reader's inference and produces divergent agents.
 
 ---
 
