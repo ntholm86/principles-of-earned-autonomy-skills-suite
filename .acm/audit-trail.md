@@ -14060,3 +14060,68 @@ Bars not advanced: completed no-ACM Improve behavior; Intent narration; target i
 ### Across-trail macro-Hansei
 
 The arc initially learned fully frozen host fidelity after transport failure, failed to apply it before the next scarce adoption authorization, and then applied it in the qualification iteration. The correction supports continuing chronologically from the newly resolved boundary. It does not support changing the Destination or inferring that learning carry-forward is now structurally reliable.
+
+## 2026-08-13 - improve-preregister-second-first-run-rerun
+
+- target: authorization boundary for the next simulated first-run Improve invocation
+- operator: Nils Holmager
+- agent: GitHub Copilot
+- skill: improve (Intent at ingress, Trail at egress)
+- outcome: preregistered exactly one event-eligible no-ACM invocation on the qualified proxy route
+- delta: added `SECOND_RERUN_PROTOCOL.md`; no model invocation, fixture, evidence result, or production change
+
+### Interpretation of the ask
+
+Intent interpreted "continue" as the top-ranked next move in current Orientation: preregister a fresh no-ACM cold-start attempt on the exact qualified route, bind target eligibility to the invocation event, and preserve an incomplete result rather than replacing it. The prioritized falsifiable question is whether the suite can execute one useful first Improve run after installation and route availability have been separately established.
+
+### Examination
+
+- Purpose: the Destination's adoption bar requires useful unassisted operation without prior Destination setup. The current frontier is simulated behavior before independent human observation.
+- Existing protocol: its task, fixture, behavioral hypothesis, and classification remain discriminating; only its direct-provider host clause is obsolete.
+- Host evidence: commit `c23ff0d` establishes current availability for Copilot CLI 1.0.79, `claude-sonnet-4-5`, and the frozen Anthropic proxy route, but not workflow capacity or reliability.
+- Event eligibility: prior lifecycle evidence established that clean setup state is insufficient. The new protocol requires final cleanliness, no ACM, passing tests, suite hashes, proxy identity/listener, empty ledger root, and requested session ID to be asserted serially immediately before the one call.
+- Claim boundary: a successful simulated run cannot establish human recognition, voluntary adoption, cross-model behavior, or lifecycle viability.
+- Challenge: writing a runner could mechanically tighten the boundary, but adding experiment infrastructure before the one remaining behavior probe would widen the change without evidence it is needed. A frozen serial script is sufficient and cheaper for this invocation.
+
+### Decision and prediction
+
+[!DECISION] Authorize exactly one second cold-start invocation only after committing a new protocol that restores the qualified provider route and couples immediate eligibility assertions to the call.
+
+Prediction: the exact route will either reach model execution and produce classifiable behavior against the fixed fixture, or fail visibly with enough external evidence for an Inconclusive result. No setup mutation will occur between final preflight and invocation, an incomplete call will not be replaced, and this protocol alone will not change production Improve or establish human adoption.
+
+This ranks above a newcomer observation because simulated operability is not yet established, and above trigger-overlap or silence-endpoint tests because the current Orientation places the completed no-ACM run at the earliest adoption boundary.
+
+### Action and verification
+
+Added `experiments/first-run-adoption/SECOND_RERUN_PROTOCOL.md`. It freezes the current committed suite, exact CLI/model/proxy route, identity encoding, high effort, external fixture and capture, fixed prompt, one-call authorization, serial preflight-to-call boundary, requested/emitted session-ID distinction, evidence package, and Pass/Fail/Inconclusive rules.
+
+Mechanical validation confirmed all boundary phrases, `python verify.py` passed, `git diff --check` passed, and the protocol was the only pending file. No provider process or model invocation was started in this iteration.
+
+Destination need: not triggered - the current Destination explicitly prioritizes first-run adoption and settles the authority and claim boundaries.
+
+Orientation freshness: current - this protocol executes the current map's top next move and adds no behavioral evidence yet.
+
+### Reflection
+
+[!REALIZATION] Chronological adoption testing now has a complete separation of concerns: installation evidence, route-availability evidence, and behavioral authorization are distinct checkpoints. That separation prevents a host smoke from becoming workflow evidence and prevents observed workflow output from rewriting its eligibility conditions.
+
+Falsifiable model claim: the remaining simulated-use uncertainty is behavior after model execution, not known installation or route availability, provided the invocation reproduces the frozen stack at its own boundary.
+
+Named blind spot: the route was qualified with minimal effort and no tools, while the authorized run uses high effort and broad local tools; workflow capacity remains genuinely untested.
+
+Imagined-reader pushback: a serial shell script is weaker than an atomic runner and could still admit an uncaptured transition. The protocol minimizes that gap by prohibiting setup operations between final assertions and call, but it does not claim atomicity.
+
+- *Recurring finding-class:* not fired - this iteration applies the prior prerequisite lesson and creates no new blocker.
+- *About to declare silence:* not fired - first-run reasoning and human adoption remain open.
+- *Contradicts prior `[!REALIZATION]`:* not fired - the protocol implements the event-bound eligibility and fully-frozen-host realizations.
+- *Operator explicitly asked:* FIRED - the operator asked to continue.
+
+### Across-trail macro-Hansei
+
+The arc's earlier mistake was spending authorization before qualifying the route. This iteration reverses the order structurally: qualification is committed, then authorization is committed, and only then may execution occur. The sequence supports proceeding without a Destination change; its value will be falsified if the actual invocation departs from the frozen boundary or if the resulting evidence cannot classify behavior.
+
+### Candidate Next Moves
+
+1. Execute the one authorized invocation exactly once and publish its bounded classification, because behavior after model execution is now the earliest unresolved boundary.
+2. If simulated operability passes, observe an unassisted newcomer before claiming adoption.
+3. Keep trigger overlap, consequential gating, silence endpoint, and lifecycle efficiency as independent tests rather than interpreting this protocol as progress on them.

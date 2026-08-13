@@ -260,6 +260,7 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 253 | 2026-08-13 | orient-after-first-run-adoption-sequence | installation is verified on the tested Windows host, first-run reasoning remains unobserved, and exact-route model qualification is now the earliest unresolved simulated-use boundary | refreshed orientation scope, claim 8, new host-fidelity claim 12, next-test order, operational rules, and loop-effectiveness findings |
 | ▸ 254 | 2026-08-13 | improve-qualify-first-run-host-route | qualified Copilot CLI 1.0.79, claude-sonnet-4-5, and the frozen Anthropic proxy route as currently available | added a preregistered non-experimental qualification, bounded result, complete CLI and proxy evidence, and hash manifest; no production or adoption fixture change |
 | ▸ 255 | 2026-08-13 | orient-after-host-route-qualification | refreshed Orientation from exact-route availability to the completed no-ACM Improve boundary | rewrote `.acm/orientation.md`; no Destination or production target change |
+| ▸ 256 | 2026-08-13 | improve-preregister-second-first-run-rerun | preregistered exactly one event-eligible no-ACM invocation on the qualified proxy route | added `SECOND_RERUN_PROTOCOL.md`; no model invocation, fixture, evidence result, or production change |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -1165,4 +1166,8 @@ Do not edit by hand — re-run the command to refresh.
 
 - **decided:** Run one non-experimental read-only availability call through the exact previously qualified proxy route before authorizing any new cold-start attempt. This ranked above trigger composition because it directly removed the current adoption blocker, and above selecting another model because the prior route already had frozen-host evidence. Precedent check: learning.md and Orientation both require the exact CLI, model, provider route, transport, and isolation to be qualified together; this action applies that rule before authorization rather than explaining failure afterward.
 
-**255 runs total — 237 with changes, 18 silence**
+### Run 256 — 2026-08-13 — improve-preregister-second-first-run-rerun
+
+- **decided:** Authorize exactly one second cold-start invocation only after committing a new protocol that restores the qualified provider route and couples immediate eligibility assertions to the call.
+
+**256 runs total — 238 with changes, 18 silence**

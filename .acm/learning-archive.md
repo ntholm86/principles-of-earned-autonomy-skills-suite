@@ -905,6 +905,10 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REVERSAL]** The run-204 model of "three concepts for the user" was a useful plateau but not the stable boundary. The arc shows that conceptual importance and operator responsibility were still conflated. Revised to two deliberate actions plus passive Orientation; retained the underlying capability rather than deleting or weakening it.
 
+## 2026-08-02 — unify-readme-skill-roster-by-activation
+
+**[!REALIZATION]** The prior README architecture accurately described internal composition but exposed too many valid taxonomies at once. A first-contact model should classify each capability by one question only: how does it activate? Roles, artifacts, and research status belong inside the row, not in competing rosters.
+
 ---
 
-**225 markers — 211 realisations, 14 reversals**
+**226 markers — 212 realisations, 14 reversals**

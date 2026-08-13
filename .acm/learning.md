@@ -5,11 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 225 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-02 — unify-readme-skill-roster-by-activation
-
-**[!REALIZATION]** The prior README architecture accurately described internal composition but exposed too many valid taxonomies at once. A first-contact model should classify each capability by one question only: how does it activate? Roles, artifacts, and research status belong inside the row, not in competing rosters.
+Showing the most recent 60 markers. 226 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-02 — retire-memory-model-name-in-favor-of-acm
 
@@ -246,6 +242,10 @@ Showing the most recent 60 markers. 225 older marker(s) are in `.acm/learning-ar
 ## 2026-08-13 — orient-after-host-route-qualification
 
 **[!REALIZATION]** The first-run frontier has advanced beyond installation and exact-route availability to the boundary of the first completed no-ACM Improve invocation. The arc now contains one concrete case where stored host-fidelity learning changed the next action before scarce authorization, while all reasoning and human-adoption claims remain open.
+
+## 2026-08-13 — improve-preregister-second-first-run-rerun
+
+**[!REALIZATION]** Chronological adoption testing now has a complete separation of concerns: installation evidence, route-availability evidence, and behavioral authorization are distinct checkpoints. That separation prevents a host smoke from becoming workflow evidence and prevents observed workflow output from rewriting its eligibility conditions.
 
 ---
 
