@@ -14374,3 +14374,67 @@ Progressive disclosure reduced visible ceremony by making services conditional. 
 1. Build and commit the complete synthetic overlap fixture and trigger map without encoding an operator answer.
 2. After fixture validation, prepare the interactive host and stop at the one Destination question for operator response.
 3. If interactive CLI mechanics cannot preserve one invocation across the operator gate, classify that host/workflow boundary before redesigning the service contract.
+
+## 2026-08-13 - freeze-destination-orient-overlap-fixture
+
+- target: synthetic notification-policy overlap fixture
+- operator: Nils Holmager
+- agent: GitHub Copilot
+- skill: improve (Intent at ingress, Trail at egress)
+- outcome: complete fixture and trigger map frozen; no invocation executed
+- delta: added seven fixture files, one trigger map, and one hash manifest
+
+### Interpretation of the ask
+
+Intent carried "continue" into the committed overlap protocol's first-ranked next move: construct a complete target that independently triggers Destination and Orient while leaving one safe direction-independent Improve action. The fixture must expose the ownership problem without encoding the operator answer needed during execution.
+
+### Examination
+
+- A personal-notification target provides a compact durable-direction conflict: focus protection favors digesting ordinary notifications, while incident response can require immediate operational visibility.
+- The existing Orientation can truthfully represent the earlier focus-only arc and become semantically stale when a later accepted incident-response mandate changes the risk model.
+- Duplicate private functions returning the same digest hour create a small local inconsistency that can be removed without choosing audience, urgency semantics, or future default behavior.
+- Three accepted mandates are sufficient because of their content and order, not their count: focus-first behavior, channel consistency, and later incident-response responsiveness.
+- A static manifest is needed because derived ACM and line endings are part of the invocation baseline, and fixture drift would change the routing evidence.
+
+### Decision and prediction
+
+[!DECISION] Freeze a notification-policy fixture whose runtime behavior remains 09:00 for both channels, whose older Orientation describes only focus-first risk, and whose later Trail explicitly adds unresolved incident-response risk.
+
+Prediction: focused tests and ACM derivation will pass; the trigger map will cite an unstated durable priority for Destination and a semantically incomplete current map for Orient; no fixture or map text will choose the operator's answer. The safe local duplicate may invite Improve without authorizing notification-semantic changes.
+
+This ranks above host setup because event eligibility requires a committed byte-stable fixture. It ranks above adding more policy realism because extra domain detail would create decision-quality confounds unrelated to service composition.
+
+### Action and verification
+
+Added `experiments/service-overlap/fixture/` with README, Python module, two focused tests, three-entry Trail, stale Orientation, and generated history and learning surfaces. Added `TRIGGER_MAP.md` with exact positive and negative trigger evidence and `FIXTURE_MANIFEST.md` with byte sizes and SHA-256 values for all seven files.
+
+`python -m unittest -v` passed two tests. `record.py history --write` accepted three entries and `record.py learning --write` produced three markers. Assertions confirmed the unresolved-priority evidence, stale-Orientation evidence, absent incident-response concept in the old Orientation, explicit absence of an expected operator answer, seven-file inventory, and all manifest hashes. `python verify.py` and `git diff --check` passed. The unrelated host-qualification evidence README remained untouched and unstaged.
+
+Destination need: not triggered - this is a synthetic experiment under the existing operator-confirmed authority model, not a real direction choice for the skills repository.
+
+Orientation freshness: current - service overlap remains behaviorally untested; fixture construction does not resolve the claim.
+
+### Reflection
+
+[!REALIZATION] A valid overlap fixture must separate three layers that are easy to conflate: a local action that current Intent can authorize, a future priority only Destination can confirm, and an arc-state mismatch only Orient can refresh. The fixture is useful precisely because no one service owns all three.
+
+Falsifiable model claim: the fixture's duplicate timing implementation permits Improve to finish before service handoff, so any action on audience or urgency semantics before confirmation is an authority failure rather than task necessity.
+
+Named blind spot: the fixture uses explicit historical prose stating that Orientation is stale. That improves trigger discriminability but makes routing easier than organic evidence where staleness must be inferred.
+
+Imagined-reader pushback: the focus-versus-incident conflict could be resolved by distinguishing notification classes, making the operator question appear obvious. That distinction is itself a durable product route absent from the current module; Destination must still confirm whether adding it serves the intended target.
+
+- *Recurring finding-class:* not fired - fixture construction introduced the first executable overlap target.
+- *About to declare silence:* not fired - the protocol gained a concrete, validated baseline.
+- *Contradicts prior `[!REALIZATION]`:* not fired - the fixture implements the ownership and ordering model from the prior entry.
+- *Operator explicitly asked:* FIRED - the operator asked to continue.
+
+### Across-trail macro-Hansei
+
+The arc's strongest experiment repairs have come from separating prerequisite claims before execution. This fixture applies that lesson one level deeper: code-action eligibility, direction authority, and arc freshness are independently evidenced before asking whether their services compose. The next uncertainty is now host interaction rather than fixture meaning.
+
+### Candidate Next Moves
+
+1. Commit this fixture, then prepare a disposable external baseline and interactive host without invoking the model.
+2. Qualify whether Copilot CLI can pause one run for an actual operator response while preserving complete streams and service chronology.
+3. Only after that host boundary is known, consume the one overlap invocation and classify without replacement.

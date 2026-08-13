@@ -5,11 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 233 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-02 — orient-restore-reasoning-growth-and-token-viability
-
-**[!REALIZATION]** The suite's viability equation has three inseparable terms: capability, trust, and cost. Optimizing any one by silently degrading another does not advance the destination. The useful unit is demonstrated capability and trust per resource spent, not raw feature count, explanation simplicity, or token reduction alone.
+Showing the most recent 60 markers. 234 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-02 — orient-restore-reasoning-growth-and-token-viability
 
@@ -246,6 +242,10 @@ Showing the most recent 60 markers. 233 older marker(s) are in `.acm/learning-ar
 ## 2026-08-13 — preregister-destination-orient-overlap
 
 **[!REALIZATION]** The overlap is not merely two trigger predicates firing together. It is an ownership and time-order problem: Improve owns the initial scheduling evidence, Destination owns confirmation and durable direction, and Orient must observe the resulting state exactly once without either service stealing another's authority.
+
+## 2026-08-13 — freeze-destination-orient-overlap-fixture
+
+**[!REALIZATION]** A valid overlap fixture must separate three layers that are easy to conflate: a local action that current Intent can authorize, a future priority only Destination can confirm, and an arc-state mismatch only Orient can refresh. The fixture is useful precisely because no one service owns all three.
 
 ---
 

@@ -265,6 +265,7 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 258 | 2026-08-13 | orient-after-simulated-first-run-pass | refreshed | simulated no-ACM operability moved from untested to one bounded Pass; unassisted newcomer observation became the highest-ranked unresolved adoption boundary |
 | ▸ 259 | 2026-08-13 | preregister-unassisted-newcomer-observation | preregistered; awaiting an eligible consenting participant | added one observation protocol; no participant contact, observation, production change, or adoption claim |
 | ▸ 260 | 2026-08-13 | preregister-destination-orient-overlap | preregistered; fixture and interactive execution remain pending | added one overlap protocol; no fixture, model invocation, operator question, service run, or production change |
+| ▸ 261 | 2026-08-13 | freeze-destination-orient-overlap-fixture | complete fixture and trigger map frozen; no invocation executed | added seven fixture files, one trigger map, and one hash manifest |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -1194,4 +1195,8 @@ Do not edit by hand — re-run the command to refresh.
 
 - **decided:** Preregister a real interactive service sequence in which both triggers are independently present before service execution, Destination runs first and asks one sourced question, and exactly one Orient may refresh the arc after any material confirmed change.
 
-**260 runs total — 242 with changes, 18 silence**
+### Run 261 — 2026-08-13 — freeze-destination-orient-overlap-fixture
+
+- **decided:** Freeze a notification-policy fixture whose runtime behavior remains 09:00 for both channels, whose older Orientation describes only focus-first risk, and whose later Trail explicitly adds unresolved incident-response risk.
+
+**261 runs total — 243 with changes, 18 silence**

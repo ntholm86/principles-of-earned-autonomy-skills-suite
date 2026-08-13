@@ -937,6 +937,10 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REVERSAL]** The preceding Destination/Orient pair over-corrected toward external behavioral evidence. External behavior remains necessary for adoption and research validation, but it is not the full immediate research program. The suite must also keep improving the reasoning system that generates that behavior, while making the system affordable enough to sustain.
 
+## 2026-08-02 — orient-restore-reasoning-growth-and-token-viability
+
+**[!REALIZATION]** The suite's viability equation has three inseparable terms: capability, trust, and cost. Optimizing any one by silently degrading another does not advance the destination. The useful unit is demonstrated capability and trust per resource spent, not raw feature count, explanation simplicity, or token reduction alone.
+
 ---
 
-**233 markers — 217 realisations, 16 reversals**
+**234 markers — 218 realisations, 16 reversals**
