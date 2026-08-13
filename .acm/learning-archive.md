@@ -817,6 +817,26 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** The destination note added earlier this session ("this repo is the site of ACM's own development") was tested within the same conversation that named it, and held: a concrete finding (the Scale gap, the learning.md pattern) was recognized as spec-relevant, surfaced explicitly rather than left as a local-only improvement, drafted as a candidate, and -- once authorized -- actually implemented in the correct upstream location. This is the fastest a destination note has gone from stated expectation to exercised instance in this repo's history.
 
+## 2026-08-01 — implement-scale-gap-in-acm-spec-repo
+
+**[!REALIZATION]** Per the lighter-weight-pointer convention: no new governing-variable diagnosis is introduced by this entry. It is the direct execution of the destination note added immediately before it in this same session, and the substantive precedent-checking and decision reasoning for the cross-repo action itself lives in agent-context-memory's own trail, not here. What is new is the confirmation that the destination note's own falsifiability test ("does a future entry actually surface and act on a spec-level finding, or does the note sit unused") has already been answered once, within the same conversation that posed it.
+
+## 2026-08-01 — systematic-verifypy-audit-closes-stale-path-docs-gap
+
+**[!REALIZATION]** This closes the loop the recurring-finding-class trigger has been naming all day: rather than a fifth accidental discovery of the same pattern, this entry performed the actual systematic pass and found the audit produces a much smaller yield than the accumulated anxiety about it suggested -- one dormant gap, not another BOM-scale issue. That is itself informative: the pattern recurred because each individual instance was found in a different subject area (file lists, encoding checks, version metadata, git tags), not because verify.py as a whole is unreliable. A single deliberate pass was sufficient to confirm the check suite is now in good shape, closing this as a standing concern rather than a permanently-open one.
+
+## 2026-08-01 — orient-how-close-to-destination
+
+**[!REALIZATION]** This window produced the first evidenced cross-repo contribution to ACM's own governing specification (agent-context-memory), completing recognition -> draft -> authorization -> implementation -> push within one conversation -- the strongest evidence yet for destination.md's "research success" condition.
+
+## 2026-08-01 — orient-how-close-to-destination
+
+**[!REALIZATION]** The clearest finding from reading the full window as one document: every entry this session was either internal self-consistency work or a contribution to a repo the same operator also controls. Nothing gathered or produced evidence of use by anyone who is not the operator. Destination.md names both research success and adoption success as necessary; this session, for all its real velocity, advanced only the former. Named plainly in orientation.md's direct answer, not softened.
+
+## 2026-08-01 — orient-how-close-to-destination
+
+**[!REALIZATION]** Read as the whole arc from the very first v3-redesign entry through today: the loop has repeatedly demonstrated it can find, diagnose, and fix genuine defects (mojibake, BOM corruption, file-scope gaps, version drift) and can even extend its own reasoning framework (double-loop learning in two skills) and contribute upstream to a different repo's specification. What it has not yet done, across the entire trail, not just this window, is produce or seek evidence that anyone other than the operator has picked this up. This is the single most load-bearing gap this repo's own destination names, and today's session -- despite being unusually productive -- did not close any distance on it. Naming this as the arc's actual state, not just this window's, since the pattern is consistent across the whole history, not new to today.
+
 ---
 
-**203 markers — 192 realisations, 11 reversals**
+**208 markers — 197 realisations, 11 reversals**

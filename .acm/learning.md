@@ -5,27 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 203 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-01 — implement-scale-gap-in-acm-spec-repo
-
-**[!REALIZATION]** Per the lighter-weight-pointer convention: no new governing-variable diagnosis is introduced by this entry. It is the direct execution of the destination note added immediately before it in this same session, and the substantive precedent-checking and decision reasoning for the cross-repo action itself lives in agent-context-memory's own trail, not here. What is new is the confirmation that the destination note's own falsifiability test ("does a future entry actually surface and act on a spec-level finding, or does the note sit unused") has already been answered once, within the same conversation that posed it.
-
-## 2026-08-01 — systematic-verifypy-audit-closes-stale-path-docs-gap
-
-**[!REALIZATION]** This closes the loop the recurring-finding-class trigger has been naming all day: rather than a fifth accidental discovery of the same pattern, this entry performed the actual systematic pass and found the audit produces a much smaller yield than the accumulated anxiety about it suggested -- one dormant gap, not another BOM-scale issue. That is itself informative: the pattern recurred because each individual instance was found in a different subject area (file lists, encoding checks, version metadata, git tags), not because verify.py as a whole is unreliable. A single deliberate pass was sufficient to confirm the check suite is now in good shape, closing this as a standing concern rather than a permanently-open one.
-
-## 2026-08-01 — orient-how-close-to-destination
-
-**[!REALIZATION]** This window produced the first evidenced cross-repo contribution to ACM's own governing specification (agent-context-memory), completing recognition -> draft -> authorization -> implementation -> push within one conversation -- the strongest evidence yet for destination.md's "research success" condition.
-
-## 2026-08-01 — orient-how-close-to-destination
-
-**[!REALIZATION]** The clearest finding from reading the full window as one document: every entry this session was either internal self-consistency work or a contribution to a repo the same operator also controls. Nothing gathered or produced evidence of use by anyone who is not the operator. Destination.md names both research success and adoption success as necessary; this session, for all its real velocity, advanced only the former. Named plainly in orientation.md's direct answer, not softened.
-
-## 2026-08-01 — orient-how-close-to-destination
-
-**[!REALIZATION]** Read as the whole arc from the very first v3-redesign entry through today: the loop has repeatedly demonstrated it can find, diagnose, and fix genuine defects (mojibake, BOM corruption, file-scope gaps, version drift) and can even extend its own reasoning framework (double-loop learning in two skills) and contribute upstream to a different repo's specification. What it has not yet done, across the entire trail, not just this window, is produce or seek evidence that anyone other than the operator has picked this up. This is the single most load-bearing gap this repo's own destination names, and today's session -- despite being unusually productive -- did not close any distance on it. Naming this as the arc's actual state, not just this window's, since the pattern is consistent across the whole history, not new to today.
+Showing the most recent 60 markers. 208 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-01 — remove-vision-md-legacy-fallback
 
@@ -247,6 +227,26 @@ Showing the most recent 60 markers. 203 older marker(s) are in `.acm/learning-ar
 
 **[!REVERSAL]** The two-action Destination-plus-Run model no longer describes the current authority boundary. It remains historical evidence of progressive simplification, but Improve is now the only normal control input and Destination activates from directional evidence.
 
+## 2026-08-13 — destination-late-stage-loop-cost-viability
+
+**[!REALIZATION]** The operator correction exposes a failure mode in the loop's own learning: a concrete example of a possible route can be promoted into governance before the purpose behind it has been examined. The durable lesson is to retain the failure condition and authority boundary, then let Improve derive the mechanism from target evidence.
+
+## 2026-08-13 — orient-after-late-stage-loop-cost-destination
+
+**[!REALIZATION]** Existing evidence supports instrumenting the late-stage cost problem before changing Improve. This is not postponement by default: the prior compression experiments already demonstrate that an intuitively cheaper contract can improve one reasoning property while degrading another, so identifying the actual limiting cost is part of preserving trustworthy capability.
+
+## 2026-08-13 — improve-preregister-late-stage-viability-experiment
+
+**[!REALIZATION]** Observable Autonomy must cover resource claims as well as decision claims. The Trail can prove what the agent says it changed, but it cannot prove what the reasoning cost or how much trustworthy capability the change added. Treating the existing ledger as if it contained those measurements would turn transparency into a new source of false confidence.
+
+## 2026-08-13 — improve-preregister-late-stage-viability-experiment
+
+**[!REVERSAL]** The initial examination accepted a proposed `record.py cost-benefit` command as the cheapest evidence surface. Reversed before editing after the challenge step showed that its primary measures - audit-entry lines and outcome categories parsed from agent prose - would not measure token cost or independent trustworthy gain.
+
+## 2026-08-13 — improve-late-stage-local-actionability-silence
+
+**[!REALIZATION]** The protocol exposed a second independent prerequisite beyond token capture: lifecycle evidence is usable only when the governing Destination existed at the snapshots being compared. Historical silence without a versioned reference signal can illustrate the concern, but it cannot answer the registered experiment without changing what "gain" means after the fact.
+
 ---
 
-**60 markers — 49 realisations, 11 reversals**
+**60 markers — 48 realisations, 12 reversals**

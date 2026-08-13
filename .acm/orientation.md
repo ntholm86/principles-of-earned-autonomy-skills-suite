@@ -1,14 +1,14 @@
 # orientation.md - autonomous-agent-skills
 
-Last updated: 2026-08-13 (run: `orient-after-single-entry-progressive-destination`)
+Last updated: 2026-08-13 (run: `orient-after-late-stage-loop-cost-destination`)
 
 ## Scope of this read
 
-Re-orient the activation-simplification arc against the single-entry Destination change. Question: how does prompt-level mandate authority followed by evidence-triggered durable Destination change onboarding, authority timing, and convergence without weakening existing operator gates?
+Re-orient the full arc against the late-stage loop-cost Destination change. Question: what does existing evidence establish about trustworthy capability per resource as remaining gains narrow, and does it justify changing Improve now or only make the viability gap measurable?
 
 **Freshness check (run evidence):**
 
-- `python harness/tools/record.py history --write` -> 237 entries.
+- `python harness/tools/record.py history --write` -> 239 entries.
 - `python harness/tools/record.py learning --write` -> 60 recent + 201 archived markers.
 - `python verify.py` -> OK, trail integrity checks pass.
 - Gate: PASS (arc-claims allowed).
@@ -71,13 +71,19 @@ The activation arc repeatedly reduced exposed operator responsibilities while pr
 
 **Falsifiable by:** Destination chronically failing to trigger after stable or conflicting direction accumulates, triggering from file absence or routine variation without directional evidence, writing inferred direction without confirmation, duplicate Destination and Orient handoffs, or users finding the explanations as burdensome as the setup they replaced.
 
+### 10. Late-stage loop viability is a defined failure condition, not yet an evidenced mechanism
+
+The Destination now requires trustworthy capability per resource to remain viable as the target approaches silence while preserving highest-leverage selection. The arc supports the concern: per-iteration governance remains substantial, governance accretion has increased routine burden, and no existing entry treats a finding as too small to justify the full loop. It does not yet establish that current late-stage runs are net-ineffective, which component dominates their cost, or which intervention would improve the ratio. Earlier layered-contract experiments warn that reducing routine cost can weaken reflection even when grounding improves.
+
+**Falsifiable by:** lifecycle measurements showing fixed loop cost remains proportionate to trustworthy gains near silence, or evidence that the loop already reaches bounded silence before diminishing findings become resource-ineffective. A proposed solution is supported only when evidence identifies the limiting cost without crossing the operator gate on reasoning, learning, memory, or evidence loss.
+
 ## What the next runs should test
 
-1. Observe an unassisted newcomer completing a first Improve run without Destination setup and record whether the service explanations help without becoming ceremony.
-2. Test a completed run where Destination and Orient both trigger, verifying one confirmation conversation and one post-change arc refresh without duplicate handoffs.
-3. Test a consequential prompt to verify that unopposed Intent narration cannot bypass an operator-every-time gate.
-4. Measure equivalent-task and equivalent-arc token use under mandatory-first Destination versus evidence-triggered consolidation.
-5. Resume the layered reflection repair and fresh-family derivation tests after the new authority path survives its first behavioral cases.
+1. Establish the late-stage cost shape from existing or reproducible runs before changing Improve: identify what consumes resources, what trustworthy gain resulted, and whether the ratio actually deteriorates near silence.
+2. Observe an unassisted newcomer completing a first Improve run without Destination setup and record whether the service explanations help without becoming ceremony.
+3. Test a completed run where Destination and Orient both trigger, verifying one confirmation conversation and one post-change arc refresh without duplicate handoffs.
+4. Test a consequential prompt to verify that unopposed Intent narration cannot bypass an operator-every-time gate.
+5. Resume the layered reflection repair and fresh-family derivation tests after the new authority and viability paths survive behavioral cases.
 
 ## Active operational rules
 
@@ -99,6 +105,9 @@ The activation arc repeatedly reduced exposed operator responsibilities while pr
 - Never trigger Destination from file absence, age, brevity, or iteration count alone; cite the directional evidence that makes consolidation useful.
 - Never make inferred cross-run direction durable without operator confirmation, and never let unopposed Intent bypass an explicit consequential-action gate.
 - Explain automatic service handoffs when they occur, including what evidence triggered them and what authority the service does and does not have.
+- Preserve highest-leverage selection when reasoning about efficiency; do not substitute a larger amount of easier work for the most meaningful remaining gap.
+- Treat operator examples of possible mechanisms as intent evidence unless they are explicitly confirmed as requirements; reason from the named problem before selecting a route.
+- Do not claim a late-stage efficiency improvement from reduced instruction or entry size alone; compare resource cost with preserved reasoning, learning, evidence, and actual trustworthy gain.
 - Preserve append-only history and regenerate derived evidence after every Trail append.
 
 ## Loop-effectiveness notes
@@ -107,10 +116,10 @@ The activation arc repeatedly reduced exposed operator responsibilities while pr
 
 **Result:** discovery PASS; structural resource reduction PASS; operator gate PASS in prior explicit cases; separated routing PASS; grounding advantage MIXED BUT FAVORS LAYERED ON COUNT; reflection depth FAVORS PRODUCTION; decision quality DISSOCIATED; harness repairs PASS; single-entry text-layer coherence PASS.
 
-**Bars not tested:** cross-vendor execution, Destination-plus-Orient overlap, Destination trigger precision, consequential-gate preservation under silent acceptance, actual token consumption, unassisted newcomer adoption, public external-target operation, derivation of the recursive mandate by three fresh families, and convergence before and after first Destination consolidation.
+**Bars not tested:** late-stage capability-per-resource shape, cross-vendor execution, Destination-plus-Orient overlap, Destination trigger precision, consequential-gate preservation under silent acceptance, actual token consumption, unassisted newcomer adoption, public external-target operation, derivation of the recursive mandate by three fresh families, and convergence before and after first Destination consolidation.
 
-**Double-loop finding:** the activation arc changed its governing assumption about when direction must become durable. Bounded work needs an operator prompt and visible interpretation; stable cross-run direction is consolidated when evidence makes persistence consequential. The prior Destination-first model protected direction but treated memory setup as permission to begin.
+**Double-loop finding:** the new Destination challenges the assumption that one fixed iteration envelope remains economically appropriate across the entire lifecycle, but it does not replace that assumption with another mechanism. The governing variable is trustworthy capability per resource while preserving highest-leverage selection and honest silence.
 
-**Deutero-learning finding:** capability count and operator-responsibility count are independent. The suite has repeatedly preserved interpretation, evidence, direction, orientation, and research capability while moving their orchestration behind one control input. Whether this improves learning for an external user remains a behavioral question, not something internal coherence can establish.
+**Deutero-learning finding:** this exchange exposed a recurring risk in how the loop learns from the operator. A concrete example can be mistaken for the mandate and become new governance before the underlying failure is examined. The loop must retain the problem and let purpose-driven Improve discover the route.
 
-[!REALIZATION] The activation frontier is now trigger quality rather than command count. The suite has one normal entry point on paper; its authority architecture succeeds only if unfamiliar agents trigger Destination neither too early nor too late, preserve consequential gates under prompt-level mandate, and explain the transition without recreating setup ceremony.
+[!REALIZATION] The next efficiency frontier is evidential, not mechanistic. The suite knows the late-stage failure condition and the capabilities it may not silently trade away, but it does not yet know whether current loop cost actually overwhelms remaining gains or which part of the loop would be responsible. Changing Improve before answering that would repeat the route-prescription error at the architecture level.

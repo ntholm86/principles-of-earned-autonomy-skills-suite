@@ -12993,3 +12993,253 @@ The arc has moved the adoption question from command discovery to trigger fideli
 2. Test one completed run where Destination and Orient both trigger without duplicate handoffs.
 3. Test a consequential prompt under unopposed Intent narration to verify the explicit gate still wins.
 4. Measure equivalent-task and equivalent-arc token use under the old and new activation models.
+
+## 2026-08-13 - destination-late-stage-loop-cost-viability
+
+- target: late-stage resource viability of the Improve loop
+- operator: Nils Wendelboe Holmager
+- agent: GitHub Copilot
+- skill: destination + intent + trail
+- outcome: defined the late-stage cost-effectiveness problem while leaving Improve free to discover the route
+- delta: current Destination now requires highest-leverage improvement to remain worth its fixed loop cost as the target approaches silence
+
+### Interpretation of the ask
+
+The operator identified a lifecycle problem rather than requesting a mechanism. As the gap to the Destination narrows, useful remaining changes may become smaller while an Improve iteration continues to pay substantial interpretation, examination, verification, reflection, and evidence cost. The suite should preserve pressure toward the most meaningful remaining work and optimize trustworthy capability per token across this late stage. The operator explicitly corrected the agent for turning this concern into a proposed batching and granularity design: define the problem and intent, then let Improve reason about the route.
+
+### Sourced inference and operator correction
+
+The existing bounded Destination already required trustworthy capability per resource and preserved cognitive and evidence capabilities, but it did not name the possibility that nearly fixed loop cost can overwhelm progressively smaller gains before honest silence. The operator's phrases "the highest-leverage change part is also pretty important" and "You are prescribing the route" establish both the desired outcome and the authority boundary.
+
+The resulting destination claim is: improvement must remain resource-effective across the full lifecycle, especially near convergence, without lowering the standard for what work matters or manufacturing work instead of reaching silence. Iteration size, batching, thresholds, and other mechanisms remain open questions for Improve.
+
+### Decision
+
+[!DECISION] Add the late-stage viability failure condition to the bounded current Destination and preserve highest-leverage selection as an outcome constraint, while explicitly excluding proposed mechanisms from the mandate. Alternative rejected: encode a coherent-batch or adaptive-granularity rule now. The operator rejected that as route prescription. Alternative rejected: rely on the existing generic efficiency sentence. It did not make the convergence-tail failure falsifiable and had already permitted the agent to substitute its first mechanism for the underlying problem. Precedent check: the current Destination fixes only the three principles, treats all mechanisms as revisable, and already requires the engine to select its own highest-leverage route.
+
+### Action and validation
+
+Expanded the current resource-efficiency mandate, strengthened immediate quality bar 5, added an open question about sustaining value near silence, and appended a historical note preserving the operator's correction. Focused assertions confirmed that the active mandate names full-lifecycle cost, highest-leverage remaining work, fixed-loop-cost failure, silence rather than manufactured work, and the explicit non-prescription of batching, thresholds, or iteration size. The focused Destination check and `git diff --check` passed.
+
+### What is believed now
+
+The suite's resource problem changes shape over the arc: early cost is dominated by finding and validating consequential direction; late cost may be dominated by applying the same governance envelope to diminishing but still real gains. The Destination requires viability in both phases but does not determine whether the right response is a changed work unit, reduced overhead, conditional reasoning, earlier silence, or something not yet proposed.
+
+### What was rejected
+
+The operator rejected treating batching, one coherent decision, or adaptive iteration granularity as the destination. Those remain hypotheses that Improve may accept, reject, combine, or replace after examining the target and trail.
+
+### What remains open
+
+What mechanism, if any, lets the loop preserve highest-leverage selection, evidence integrity, and honest convergence while keeping late-stage trustworthy capability worth its resource cost?
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED - governance accretion, contract compression, automatic-service simplification, and this late-stage concern all ask whether accumulated governance remains worth its recurring cost.
+- *About to declare silence:* not fired - the new lifecycle viability bar is untested and the Destination asks an open question rather than claiming convergence.
+- *Contradicts prior `[!REALIZATION]`:* FIRED - the latest Orientation named trigger quality as the activation frontier; the operator identified late-stage loop economics as an additional unresolved frontier.
+- *Operator explicitly asked:* FIRED - the operator directed the suite to retain the problem in Destination and let Improve discover the route.
+
+### Across-trail macro-Hansei
+
+[!REALIZATION] The operator correction exposes a failure mode in the loop's own learning: a concrete example of a possible route can be promoted into governance before the purpose behind it has been examined. The durable lesson is to retain the failure condition and authority boundary, then let Improve derive the mechanism from target evidence.
+
+### Orientation handoff
+
+The Destination changed materially by adding a new lifecycle quality bar and open problem. Orientation freshness: STALE - automatic Orient scheduled against the late-stage viability mandate.
+
+## 2026-08-13 - orient-after-late-stage-loop-cost-destination
+
+- target: full improvement arc under the late-stage capability-per-resource mandate
+- operator: Nils Wendelboe Holmager
+- agent: GitHub Copilot
+- skill: orient + intent + trail (automatically scheduled by Destination)
+- outcome: established late-stage loop viability as an unmeasured frontier and preserved the mechanism as an Improve decision
+- delta: Orientation now separates the evidenced failure condition from unsupported batching, granularity, threshold, or compression solutions
+
+### Scope and freshness
+
+Scope: re-orient the full arc against the late-stage loop-cost Destination change. Determine what existing evidence establishes about trustworthy capability per resource as remaining gains narrow, and whether it justifies changing Improve now or only makes the viability gap measurable.
+
+- `python harness/tools/record.py history --write` -> 239 entries.
+- `python harness/tools/record.py learning --write` -> 60 recent + 204 archived markers.
+- `python verify.py` -> OK, trail integrity checks pass.
+- Gate: PASS (arc-claims allowed).
+
+### Arc claims
+
+The prior claims about unseeded cognitive discovery, multidimensional reasoning-contract tradeoffs, separated-trigger routing, model capability, repaired evidence machinery, external authority, convergence leasing, unproven adoption, and progressive disclosure remain supported.
+
+The new claim is bounded: late-stage loop viability is a defined failure condition, not yet an evidenced mechanism. The arc makes the concern plausible because routine governance has accumulated, each iteration pays substantial reasoning and evidence cost, and no prior entry treated a finding as too small to justify the full loop. The arc does not establish that current late-stage runs are net-ineffective, which cost dominates, or which route would improve the ratio.
+
+Earlier layered-contract experiments are cautionary evidence. Reducing routine instruction input improved grounding counts while weakening reflection depth. A smaller envelope did not move every cognitive dimension together. Any route chosen now from intuition alone would risk repeating governance accretion or crossing the operator gate on cognitive-capability reduction.
+
+**Falsifiable by:** lifecycle evidence showing loop cost remains proportionate to trustworthy gains near silence, evidence that bounded silence consistently arrives before diminishing work becomes inefficient, or a reproducible intervention that improves the ratio while preserving reasoning, learning, memory, evidence, and highest-leverage selection.
+
+### Loop-effectiveness finding
+
+Quality bars tested: structural input compression, separated-trigger routing, grounding and reflection dissociation, evidence-apparatus integrity, operator gating, and text-layer coherence of the single-entry architecture.
+
+Bars not tested: late-stage capability-per-resource shape, actual token consumption across lifecycle stages, whether current Improve naturally reaches silence before inefficiency, and any candidate mechanism for the newly defined problem.
+
+Double-loop finding: the Destination challenges the assumption that one fixed iteration envelope remains economically appropriate across the entire lifecycle without replacing it with another assumed mechanism. The governing variable is trustworthy capability per resource while highest-leverage selection and honest silence remain intact.
+
+Deutero-learning finding: the agent initially promoted the operator's examples into a proposed route. This is evidence that concrete suggestions can become governance before their underlying purpose is examined. Future runs must treat examples as intent evidence unless the operator confirms them as requirements.
+
+[!REALIZATION] Existing evidence supports instrumenting the late-stage cost problem before changing Improve. This is not postponement by default: the prior compression experiments already demonstrate that an intuitively cheaper contract can improve one reasoning property while degrading another, so identifying the actual limiting cost is part of preserving trustworthy capability.
+
+### Action and validation
+
+Updated Orientation's scope and freshness evidence, added the falsifiable late-stage viability claim, reprioritized the next run toward establishing the cost shape, and added operational rules preserving highest-leverage selection, distinguishing examples from requirements, and rejecting raw size reduction as proof of efficiency. Existing unrelated claims remain in place.
+
+Focused assertions confirmed the 239-entry freshness evidence, the unproven-mechanism boundary, highest-leverage rule, problem-before-route rule, and preservation of earlier arc claims. `python verify.py` and `git diff --check` passed.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED - governance accretion, layered compression, automatic-service simplification, and late-stage loop cost all examine whether recurring governance remains worth its resource burden.
+- *About to declare silence:* not fired - the late-stage viability bar and several prior behavioral bars remain untested.
+- *Contradicts prior `[!REALIZATION]`:* FIRED - the previous Orientation named trigger quality as the next frontier; lifecycle cost viability is now an additional unresolved frontier.
+- *Operator explicitly asked:* FIRED - the operator asked the suite to retain the problem and let Improve determine the route.
+
+### Across-trail macro-Hansei
+
+The arc has enough evidence to reject naive equivalence between fewer tokens and better trustworthy capability, but not enough to reject the current iteration model. The next valid decision must be grounded in the cost and gain shape of actual work rather than in a mechanism named before examination.
+
+### Candidate Next Moves
+
+1. Establish the late-stage cost shape from reproducible evidence before changing Improve.
+2. Observe an unassisted newcomer first Improve run and capture both service value and ceremony cost.
+3. Test overlapping Destination and Orient triggers under the single-entry architecture.
+
+## 2026-08-13 - improve-preregister-late-stage-viability-experiment
+
+- target: evidence needed to solve late-stage Improve cost viability without prescribing a mechanism
+- operator: Nils Wendelboe Holmager
+- agent: GitHub Copilot
+- skill: improve + intent + trail
+- outcome: added a mechanism-neutral experiment protocol and left production Improve unchanged
+- delta: new experiments/late-stage-loop-viability/PROTOCOL.md; no production skill or verifier change
+
+### Interpretation of the ask
+
+The operator wants the suite itself to solve the late-stage capability-per-token problem from the Destination. Highest-leverage selection must remain intact. The operator's examples about combining minor work were evidence of the experienced problem, not a requested implementation. Success for this iteration is the highest-leverage move the current evidence supports, even if that move rejects an immediate production change.
+
+### Examination
+
+- **Purpose:** the suite cannot choose a trustworthy efficiency route until it can distinguish actual resource cost from evidence verbosity and actual Destination advance from changed-line volume.
+- **Existing evidence:** layered-Improve experiments prove static instruction compression is possible, but replicated results show grounding, reflection depth, and decision quality can move independently. Lower byte count is therefore insufficient evidence for better trustworthy capability per resource.
+- **Repository instrumentation:** Trail records decisions and outcomes but no tokens, duration, call count, or independent gain measure. `record.py` has no cost surface.
+- **Host evidence:** the local VS Code session store contains sessions, turns, checkpoints, and file references but no cloud `events` table or per-event token usage. Repository coverage is four interactive sessions with 96 indexed turns and no checkpoints, plus separately classified agent sessions. These proxies cannot establish token cost or trustworthy gain.
+- **Waste and overburden:** adding mandatory cost fields to Trail would increase every run's burden before the host can supply the data. Inferring cost from entry length would turn evidence verbosity into a false resource metric.
+- **Challenge:** the first read favored a `record.py cost-benefit` derivative over existing entries. That route failed scrutiny because entry lines are not reasoning tokens and outcome prose is not independently observed gain.
+
+### Decision
+
+[!DECISION] Add a pre-registered, production-neutral experiment protocol that requires independent host usage, matched lifecycle snapshots, and a blinded descriptive outcome evaluation. Freeze production Improve until evidence distinguishes current-loop viability, observed late-stage failure, or inconclusive capture. This ranks above modifying Improve because no mechanism has evidential support; above a `record.py` proxy because it would mislabel artifact size as cost and self-description as gain; and above enabling cloud sync because privacy and host configuration belong to the operator, not an autonomous repository edit. Precedent check: `learning.md` records both governance accretion and the layered experiment's grounding-reflection tradeoff; both argue for measuring preservation before adding or removing routine governance.
+
+[!REVERSAL] The initial examination accepted a proposed `record.py cost-benefit` command as the cheapest evidence surface. Reversed before editing after the challenge step showed that its primary measures - audit-entry lines and outcome categories parsed from agent prose - would not measure token cost or independent trustworthy gain.
+
+### Prediction
+
+A repository-native protocol can make the late-stage failure measurable without choosing a solution or adding routine overhead. It will require real host usage when available, independent outcome evaluation, and explicit preservation gates. It will not claim the failure already occurs, turn a diagnostic into a standing score, or modify production Improve.
+
+### Action
+
+Added `experiments/late-stage-loop-viability/PROTOCOL.md`. It compares open-gap, near-silence, and silence snapshots selected from pre-existing evidence; holds production Improve, prompt form, model, and host constant; requires independently captured tokens and related resource evidence; and blocks rather than substitutes proxies when usage is unavailable.
+
+A blinded evaluator sees the Destination, before state, diff, prediction, validation, silence claim, and Trail reasoning without lifecycle phase, usage, ordering, or hypothesis. It assigns one descriptive experimental category with cited evidence: material advance, bounded minor advance, justified silence, or invalid. The categories are explicitly temporary diagnostics rather than a standing score. Analysis keeps resource dimensions separate and routes any result back to a future Improve run without preferring a mechanism.
+
+Actual outcome matched the prediction. Focused assertions confirmed production Improve remains unchanged, batching is not preselected, audit-entry length cannot substitute for usage, missing independent usage blocks the experiment, evaluation is blinded, categories are temporary diagnostics, and no mechanism receives preference. `python verify.py` and `git diff --check` passed.
+
+Destination need: not triggered - the revised Destination directly settles the problem and authority boundary; no broader operator direction is missing.
+
+Orientation freshness: current - the protocol implements Orientation's top evidence move without contradicting its claims or choosing a production mechanism.
+
+### Reflection
+
+**Falsifiable model claim:** The suite's highest-leverage response to the late-stage viability problem is currently to make cost and gain independently observable; any production route selected before that evidence would optimize a proxy or an intuition.
+
+**Named blind spot:** The protocol is not yet executed. Local VS Code storage cannot provide actual token usage, and no target snapshots or external outcome evaluators have been selected. Its decision usefulness remains unproven until an independently instrumented host runs it.
+
+**Imagined-reader pushback:** Requiring actual token capture and blinded evaluation may cost enough to aggravate the resource problem being studied. That cost is acceptable for a bounded research experiment but would be self-defeating as a standing requirement; the protocol does not add it to routine Improve.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED - governance accretion, layered compression, and repeated measurement-apparatus repairs all show that changing cognitive contracts before measuring preserved behavior creates misleading efficiency claims.
+- *About to declare silence:* not fired - the protocol has not run and the Destination's late-stage viability bar remains open.
+- *Contradicts prior `[!REALIZATION]`:* not fired - the decision implements the current Orientation realization that the next frontier is evidential rather than mechanistic.
+- *Operator explicitly asked:* FIRED - the operator asked Improve and the skills suite to solve the problem rather than follow the agent's proposed route.
+
+### Across-trail macro-Hansei
+
+[!REALIZATION] Observable Autonomy must cover resource claims as well as decision claims. The Trail can prove what the agent says it changed, but it cannot prove what the reasoning cost or how much trustworthy capability the change added. Treating the existing ledger as if it contained those measurements would turn transparency into a new source of false confidence.
+
+### Candidate Next Moves
+
+1. Execute the protocol on a host with independent token usage and pre-register target snapshots before seeing any experimental outputs.
+2. Observe an unassisted newcomer first Improve run as a separate adoption and ceremony-cost case.
+3. Test overlapping Destination and Orient triggers under the single-entry architecture.
+
+## 2026-08-13 - improve-late-stage-local-actionability-silence
+
+- target: autonomous-agent-skills suite under the current late-stage viability mandate
+- operator: Nils Wendelboe Holmager
+- agent: GitHub Copilot
+- skill: improve + intent + trail
+- outcome: bounded silence - no locally supported target change under the current evidence
+- delta: no production, protocol, Destination, or Orientation change; append-only evidence and derived ACM refresh only
+
+### Interpretation of the ask
+
+Intent is treating "run Improve" as authority for one self-targeting iteration that selects the highest-leverage remaining gap under the current Destination, not as authority to force a change. The leading falsifiable question is whether the new late-stage protocol is locally executable and decision-producing; absent a redirect, this run tests that ahead of adoption and trigger-composition work because Orientation ranks it first.
+
+### Examination
+
+- **Purpose:** the current Destination requires trustworthy capability per resource near silence while preserving highest-leverage selection, protected cognitive capabilities, evidence integrity, and honest silence.
+- **Protocol readiness:** `experiments/late-stage-loop-viability/PROTOCOL.md` requires independent host usage and three lifecycle snapshots from a target with a versioned Destination and a recorded arc reaching bounded silence.
+- **Host evidence:** the current local session store still exposes no independent per-event token usage. The protocol therefore requires a blocked result rather than a proxy substitution.
+- **Snapshot evidence:** all unambiguous zero-change silence entries in `.acm/history.md` predate the repository's operator-held Vision/Destination, first introduced at run 68. The only later history row rendered with a silence glyph, run 195, changed `orient/SKILL.md` and therefore is not a zero-artifact-change silence endpoint. The attractive April 30 arc from repeated documentation fixes to `claude-silence-run-1` is ineligible under the protocol because its snapshots had no versioned Destination.
+- **Inconsistency:** no protocol contradiction was found. The protocol permits another target and correctly blocks a target whose historical memory cannot satisfy its experimental-unit contract.
+- **Overburden and waste:** an independent challenge proposed token-count, trail-entry-length, changed-line, and consecutive-mechanical-run heuristics plus a new `[!COST-SIGNAL]` marker. These are the exact proxies the protocol prohibits, and the new marker would conflict with Trail's fixed three-marker grammar. Adding them would create recurring governance cost without valid resource evidence.
+- **Challenge:** the first local route was to pre-register the April snapshots. Immutable commit checks showed that the near-silence and silence states were reconstructable, but chronology falsified eligibility: the durable operator-held Destination did not yet exist. No smaller local edit repairs missing independent usage or creates a qualifying historical lifecycle without changing the experiment after seeing the evidence gap.
+
+### Decision
+
+[!DECISION] Declare bounded silence against the quality bar "a locally actionable self-targeting change supported by current late-stage viability evidence." Surfaces examined: the bounded Destination, current Orientation and learning surface, production Improve and Trail contracts, the late-stage protocol, all history rows classified as silence, the April 30-May 1 commit arc, and current verifier state. Bars not tested: actual lifecycle token cost, execution on an eligible external target, blinded outcome evaluation, unassisted newcomer adoption, overlapping Destination-plus-Orient activation, cross-vendor behavior, and convergence of the current artifact. Rejected alternative: add proxy-based cost reporting to Improve, because it would contradict the protocol and create false confidence. Rejected alternative: pre-register the April lifecycle snapshots, because they predate a versioned Destination. Precedent check: `learning.md` records that instruction compression can improve grounding while weakening reflection and that resource claims need independent evidence; both support silence over an unsupported mechanism.
+
+### Prediction
+
+Recording bounded silence and refreshing derived ACM will preserve the current production and experimental contracts, make the newly established eligibility blocker durable, and leave full verification passing. It will not measure late-stage viability, execute the experiment, or establish convergence.
+
+### Action
+
+No target or protocol artifact changed. The Improve result was appended to the Trail. Derived ACM artifacts were scheduled for regeneration because their timestamps were stale relative to the current Trail before this append.
+
+Destination need: not triggered - the current Destination already settles the problem, protected capabilities, authority boundary, and highest-leverage requirement; no broader direction is missing.
+
+Orientation freshness: current - this run confirms Orientation claim 10's "defined failure condition, not yet an evidenced mechanism" and adds a local eligibility fact without changing the arc's priority or operational rules.
+
+### Reflection
+
+**Falsifiable model claim:** The suite has reached a locally blocked research boundary for late-stage viability: the next valid evidence must come from an independently instrumented run on a target whose versioned Destination predates a reconstructable path to bounded silence, not from another instruction-level proxy.
+
+**Named blind spot:** This run searched only this repository's lifecycle for eligible snapshots. It did not inspect other operator repositories for a versioned Destination plus bounded-silence arc, so a runnable external target may already exist.
+
+**Imagined-reader pushback:** A reader may argue that the pre-Destination April Vision-equivalent intent is semantically sufficient. The protocol deliberately requires a versioned governing Destination so that outcome evaluation has a stable reference signal; relaxing that condition after finding the convenient arc would weaken the pre-registration boundary.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED - governance accretion, layered compression, cost-proxy rejection, and this run repeatedly separate cheaper artifacts from independently evidenced trustworthy capability.
+- *About to declare silence:* FIRED - this run declares bounded silence for locally supported self-targeting change and names both its tested bar and excluded bars.
+- *Contradicts prior `[!REALIZATION]`:* not fired - the result confirms the latest realization that the efficiency frontier is evidential rather than mechanistic.
+- *Operator explicitly asked:* FIRED - the operator explicitly invoked Improve on this repository.
+
+### Across-trail macro-Hansei
+
+[!REALIZATION] The protocol exposed a second independent prerequisite beyond token capture: lifecycle evidence is usable only when the governing Destination existed at the snapshots being compared. Historical silence without a versioned reference signal can illustrate the concern, but it cannot answer the registered experiment without changing what "gain" means after the fact.
+
+### Candidate Next Moves
+
+1. Locate an external target whose versioned Destination predates a reconstructable bounded-silence arc and whose host can independently expose usage.
+2. Observe an unassisted newcomer first Improve run as a separate adoption and ceremony-cost case.
+3. Test overlapping Destination and Orient triggers under the single-entry architecture.

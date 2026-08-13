@@ -35,7 +35,9 @@ Two priorities are co-equal:
 1. **Research:** continue producing bounded evidence about what trustworthy delegation requires, including negative results and improvements to the engine's own reasoning capability.
 2. **Adoption:** enable a new developer to install the suite and complete a useful first Improve run without author assistance or destination setup. Improve is the single normal entry point; it applies prompt-level Intent immediately and triggers durable Destination and Orientation only when accumulated evidence makes them useful. Successful use is the bar; conceptual fluency may develop through use.
 
-Token and resource efficiency is a cross-cutting viability constraint. Optimize trustworthy capability per unit of resource. The engine may autonomously pursue reductions that preserve reasoning, memory, learning, and evidence capability. Any deliberate reduction in one of those capabilities is a consequential tradeoff that requires explicit operator approval every time, even when evidence predicts a better overall capability-per-resource result; one approval creates no standing authority for another tradeoff. No approval can waive the three principles or reduce operator control or evidence integrity below what they require. A capability improvement is not operationally viable if its cost prevents sustained use. Easier explanation is evidence of lower translation friction, not proof of research validity, adoption, or token efficiency.
+Token and resource efficiency is a cross-cutting viability constraint. Optimize trustworthy capability per unit of resource. This must hold across the full improvement lifecycle, including when progress slows and the remaining distance to the Destination narrows. A protocol that remains trustworthy but spends nearly fixed reasoning, verification, reflection, and evidence cost on progressively smaller gains may become operationally ineffective before it reaches honest silence. The engine must preserve its pressure toward the highest-leverage remaining work while discovering for itself how to keep that work worth its resource cost; the Destination does not prescribe iteration size, batching, thresholds, or another mechanism.
+
+The engine may autonomously pursue reductions that preserve reasoning, memory, learning, and evidence capability. Any deliberate reduction in one of those capabilities is a consequential tradeoff that requires explicit operator approval every time, even when evidence predicts a better overall capability-per-resource result; one approval creates no standing authority for another tradeoff. No approval can waive the three principles or reduce operator control or evidence integrity below what they require. A capability improvement is not operationally viable if its cost prevents sustained use. Easier explanation is evidence of lower translation friction, not proof of research validity, adoption, or token efficiency.
 
 ### Authority and autonomy
 
@@ -66,7 +68,7 @@ Integration with a particular autonomous harness remains a horizon rather than t
 2. A new developer completes a useful first Improve run without author help or prior Destination setup, and receives concise explanations when automatic services activate.
 3. Automatic services leave durable evidence sufficient for a later session or different model to continue coherently.
 4. Research claims stay within what public trails, reproducible probes, external targets, and independent evaluators support.
-5. Resource use decreases where possible without degrading reasoning, learning, operator control, or evidence integrity.
+5. Improvement remains resource-effective as the target approaches silence: fixed loop cost does not overwhelm the trustworthy capability gained, highest-leverage selection remains intact, and reasoning, learning, operator control, and evidence integrity are not degraded.
 6. Current mechanisms remain generic and understandable while the engine stays free to replace them with better mechanisms that preserve the principles.
 
 ### Open questions
@@ -76,6 +78,7 @@ Integration with a particular autonomous harness remains a horizon rather than t
 - Which public external target can test adoption and trustworthy delegation without relying on private enterprise evidence?
 - Does the Active/Passive/Triggered model survive real use, or does it hide an operational distinction users need?
 - Where are resources spent without improving decisions, learning, evidence, or operator control?
+- How can the engine sustain trustworthy capability per resource when the remaining gains become small, without lowering its standard for what work matters or manufacturing work instead of reaching silence?
 - Which actions should remain explicitly human-gated regardless of demonstrated capability or trust?
 
 ### Historical reconciliation
@@ -83,6 +86,14 @@ Integration with a particular autonomous harness remains a horizon rather than t
 The sections below preserve how the Destination evolved; they are provenance, not additional active instructions. Still-active commitments have been carried into this candidate. Superseded items include the May 2026 priority sequence, mandatory approval of every implementation choice, fixed use of Retrospect and the old Memory Model vocabulary, and any implication that the current skills or architecture are immutable. Older references to Commander's Intent mean Operator's Intent in the current principles.
 
 <!-- destination-history -->
+
+---
+
+## Destination note - 2026-08-13 (late-stage improvement must remain worth its loop cost)
+
+Sourced from operator clarification after the single-entry architecture was implemented. The operator observed that as a target approaches its Destination, remaining changes may become smaller while each Improve iteration continues to pay substantial interpretation, examination, verification, reflection, and Trail cost. Strictly repeating the same unit of work can therefore reduce trustworthy capability per token precisely as the loop nears convergence.
+
+The destination-level problem is lifecycle viability: preserve selection of the most meaningful remaining work, and prevent the loop's fixed governance cost from overwhelming the value of that work near silence. The operator explicitly rejected prescribing the route. Suggestions about batching, one coherent decision, thresholds, or altered iteration granularity are possible mechanisms for Improve to examine, not requirements carried into the mandate. The suite must reason from the problem and decide its own route under the three principles and the existing operator gate on cognitive-capability reductions.
 
 ---
 
