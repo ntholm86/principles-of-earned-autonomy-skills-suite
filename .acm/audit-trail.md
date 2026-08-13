@@ -13583,3 +13583,72 @@ Imagined-reader pushback: adding more protocol text after a costly experiment ma
 
 1. Complete the automatically scheduled Orient pass so the next Improve run starts from the measured two-arm result rather than the obsolete setup-only map.
 2. After reorientation, let a fresh Improve iteration choose between newly authorized silence evidence, adoption evidence, or another stronger Destination limiter without giving this protocol repair automatic priority.
+
+## 2026-08-13 - orient-after-late-stage-viability-experiment
+
+- target: autonomous-agent-skills arc after the late-stage viability experiment
+- operator: Nils Holmager
+- agent: GitHub Copilot
+- skill: orient (automatically scheduled by Improve; Intent at ingress, Trail at egress)
+- outcome: refreshed Orientation from setup-only uncertainty to a mixed two-position measurement, excluded silence endpoint, and event-bound validity rule
+- delta: .acm/orientation.md refreshed; no production skill, Destination, or experiment outcome changed
+
+### Interpretation of the ask
+
+This Orient pass was automatically scheduled by the preceding Improve iteration because the existing Orientation still said lifecycle resource use was unmeasured. Intent aligned the scope to the operator's request to run Improve: synthesize the completed experiment before any later Improve iteration selects another route. Orient had authority to refresh derived claims, not to choose or implement the next target change.
+
+### Scope and freshness
+
+Question: what do the two eligible measured outcomes, excluded silence position, and subsequent protocol repair establish about trustworthy capability per resource, and what remains unsupported?
+
+Freshness gate passed before arc claims were formed. history --write produced 248 entries; learning --write produced 60 recent and 216 archived markers; python verify.py passed with no stale-artifact failure. The worktree began at committed Improve state 0277b50.
+
+### Arc claims
+
+1. Lifecycle resource use is now partially measured. From open gap to near silence, calls fell 32 to 23, output tokens 20,003 to 13,134, and duration 549.787 to 360.827 seconds, while input tokens rose 4,111 to 4,799.
+2. The blinded outcome narrowed from Material advance to Bounded minor advance, but no eligible silence endpoint exists. Two positions cannot establish a lifecycle trend or causal production mechanism.
+3. The experiment's strongest completed validity result is negative: the suite detected and excluded an incomplete authorized attempt, dirty duplicate, and internally inconsistent evaluator label instead of converting them into justified silence.
+4. Eligibility attaches to the invocation event. Valid setup properties do not establish that the later call being classified began from valid state.
+5. Unassisted adoption, overlapping Destination-plus-Orient activation, consequential-gate preservation under silent acceptance, and cross-vendor behavior remain untested and must not disappear behind the failed silence arm.
+
+### Loop effectiveness
+
+The research loop found a real failure in its own execution and preserved it as an exclusion. That supports Observable Autonomy and falsifier discipline. The limitation is structural: written controls permitted the accidental duplicate, so evidence reconstruction repaired validity after failure rather than execution coupling preventing the failure.
+
+The recurring validity-gate pattern is not a Destination defect. The governing variable already requires trustworthy evidence and capability per resource. Token capture, lifecycle eligibility, host fidelity, evaluator validity, and invocation state are separate observations required by that variable, not repeated corrections caused by a wrong goal.
+
+[!REALIZATION] The late-stage frontier remains evidential, but it is no longer unmeasured. Two eligible positions show that calls, output, and time can fall as gains narrow while input rises; the missing silence endpoint prevents a lifecycle conclusion. The strongest completed advance is methodological: the suite detected and excluded invalid evidence instead of converting operational failure into support for its preferred hypothesis.
+
+### Action
+
+Refreshed .acm/orientation.md. Updated the stale setup-era scope and freshness evidence; revised the resource and viability claims; added event-bound eligibility as a falsifiable claim; re-ranked next tests so a failed arm does not automatically force repetition; added the invocation-boundary operating rule; and updated loop-effectiveness bars, double-loop, and deutero-learning findings.
+
+Focused assertions confirmed the measured values, inconclusive label, invocation claim, and non-priority of automatic repetition. python verify.py and git diff --check passed.
+
+Destination need: not triggered - the current Destination already holds the governing resource, authority, and evidence boundaries. The arc changes what is known, not where the operator is heading.
+
+Orientation freshness: current - this entry records the arc-read that resolves the stale setup-only claims.
+
+### Reflection
+
+Falsifiable model claim: the suite currently has enough evidence to reject a production mechanism and enough evidence to improve experiment validity, but not enough to rank completing the silence endpoint above adoption or activation-path evidence without a fresh Improve comparison.
+
+Named blind spot: this Orient pass did not independently rerun the blinded evaluator or reproduce the eligible arms; it relied on the committed hash-verified evidence package and prior adjudication.
+
+Imagined-reader pushback: preserving several open research paths can look indecisive. That is the appropriate consequence of an inconclusive experiment; selecting one path is the next Improve iteration's job, not Orient's observational authority.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED - the post-Destination arc repeatedly separated independent gates that convenient experimental summaries initially conflated.
+- *About to declare silence:* not fired - the Orientation explicitly preserves unresolved bars and does not claim convergence.
+- *Contradicts prior [!REALIZATION]:* FIRED - the prior Orientation realization said the frontier was unmeasured; the experiment now supplies two eligible measured positions while preserving the broader evidential conclusion.
+- *Operator explicitly asked:* FIRED - this service was scheduled from the operator-invoked Improve run.
+
+### Across-trail macro-Hansei
+
+The arc's well-aged claim is that efficiency cannot be inferred from smaller instructions or artifacts; provider usage and independent outcomes were required. The superseded claim is that lifecycle resource behavior was wholly unmeasured. The target now needs discriminatory evidence, not another abstract efficiency argument, while highest-leverage selection decides which unresolved bar earns that cost.
+
+### Candidate Next Moves
+
+1. Run a fresh Improve iteration that compares the expected information gain of newly authorized silence evidence, unassisted adoption evidence, and overlapping-service evidence against their cost.
+2. Preserve the protocol repair as a prerequisite if any lifecycle experiment resumes, without treating that prerequisite as a mandate to resume it.

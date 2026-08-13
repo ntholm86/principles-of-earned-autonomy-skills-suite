@@ -1,15 +1,15 @@
 # orientation.md - autonomous-agent-skills
 
-Last updated: 2026-08-13 (run: `orient-after-late-stage-loop-cost-destination`)
+Last updated: 2026-08-13 (run: `orient-after-late-stage-viability-experiment`)
 
 ## Scope of this read
 
-Re-orient the full arc against the late-stage loop-cost Destination change. Question: what does existing evidence establish about trustworthy capability per resource as remaining gains narrow, and does it justify changing Improve now or only make the viability gap measurable?
+Re-orient the full arc after the preregistered late-stage viability experiment. Question: what do the two eligible measured outcomes, excluded silence position, and subsequent protocol repair establish about trustworthy capability per resource, and what remains unsupported?
 
 **Freshness check (run evidence):**
 
-- `python harness/tools/record.py history --write` -> 239 entries.
-- `python harness/tools/record.py learning --write` -> 60 recent + 201 archived markers.
+- `python harness/tools/record.py history --write` -> 248 entries.
+- `python harness/tools/record.py learning --write` -> 60 recent + 216 archived markers.
 - `python verify.py` -> OK, trail integrity checks pass.
 - Gate: PASS (arc-claims allowed).
 
@@ -59,11 +59,11 @@ The governing mandate defines the question, the artifact version defines the ans
 
 **Falsifiable by:** convergence being claimed across runs before durable scope is confirmed, historical silence being accepted after a Destination change, operator reversal of this validity contract, or repeated use showing that a newcomer-only challenge fails to protect the lease without a full quorum rerun.
 
-### 8. Actual token efficiency and unassisted adoption remain unproven under the new entry path
+### 8. Lifecycle resource use is partially measured; unassisted adoption remains untested
 
-Destination and Improve input bytes are lower, but tokenizer-specific end-to-end cost has not been measured on equivalent work. No independent newcomer has completed an unassisted first Improve run without Destination setup. Removing the first-run conversation lowers startup work while later consolidation adds conditional cost; net arc cost is unknown. Structural compression, explanation simplicity, adoption, and trustworthy capability per resource remain distinct claims.
+The frozen-host experiment now provides provider-reported tokens, calls, and duration for matched open-gap and near-silence snapshots. Calls fell from 32 to 23, output tokens from 20,003 to 13,134, and duration from 549.787 to 360.827 seconds, while input tokens rose from 4,111 to 4,799. This is evidence about two lifecycle positions, not an end-to-end lifecycle trend or causal mechanism. No independent newcomer has completed an unassisted first Improve run without Destination setup. Structural compression, explanation simplicity, adoption, and trustworthy capability per resource remain distinct claims.
 
-**Falsifiable by:** equivalent-task and equivalent-arc token measurements with preservation checks, or an observed newcomer run with enough evidence to locate success, failure, ceremony, under-triggering, or over-triggering.
+**Falsifiable by:** replicated matched runs eliminating the mixed resource pattern, an eligible silence arm establishing the missing endpoint, or an observed newcomer run locating success, failure, ceremony, under-triggering, or over-triggering.
 
 ### 9. Progressive disclosure now separates current-run mandate from durable cross-run direction
 
@@ -71,19 +71,25 @@ The activation arc repeatedly reduced exposed operator responsibilities while pr
 
 **Falsifiable by:** Destination chronically failing to trigger after stable or conflicting direction accumulates, triggering from file absence or routine variation without directional evidence, writing inferred direction without confirmation, duplicate Destination and Orient handoffs, or users finding the explanations as burdensome as the setup they replaced.
 
-### 10. Late-stage loop viability is a defined failure condition, not yet an evidenced mechanism
+### 10. The late-stage experiment is informative but inconclusive; production Improve has no supported mechanism change
 
-The Destination now requires trustworthy capability per resource to remain viable as the target approaches silence while preserving highest-leverage selection. The arc supports the concern: per-iteration governance remains substantial, governance accretion has increased routine burden, and no existing entry treats a finding as too small to justify the full loop. It does not yet establish that current late-stage runs are net-ineffective, which component dominates their cost, or which intervention would improve the ratio. Earlier layered-contract experiments warn that reducing routine cost can weaken reflection even when grounding improves.
+The open-gap arm produced a blinded Material advance; the near-silence arm produced a Bounded minor advance with fewer calls, output tokens, and elapsed time but more input tokens. The authorized silence invocation ended incomplete, and its accidental replacement began from a dirty worktree, so the lifecycle position was excluded. The experiment therefore supports neither permanent loop viability nor late-stage failure, and it identifies no production mechanism. Earlier layered-contract experiments still warn that reducing routine cost can weaken reflection even when grounding improves.
 
-**Falsifiable by:** lifecycle measurements showing fixed loop cost remains proportionate to trustworthy gains near silence, or evidence that the loop already reaches bounded silence before diminishing findings become resource-ineffective. A proposed solution is supported only when evidence identifies the limiting cost without crossing the operator gate on reasoning, learning, memory, or evidence loss.
+**Falsifiable by:** an eligible silence endpoint and replication establishing a stable lifecycle pattern, or a different Destination limiter producing stronger evidence than completing this experiment. A proposed production solution is supported only when evidence identifies the limiting cost without crossing the operator gate on reasoning, learning, memory, or evidence loss.
+
+### 11. Experiment eligibility attaches to the invocation event, not to setup state
+
+The silence exclusion showed that a valid snapshot, frozen host, usage ledger, and earlier clean preflight do not make a later invocation eligible. Cleanliness must be captured immediately before the call being classified. An authorized invocation that ends without evaluable completion evidence remains incomplete; a duplicate after observing that output cannot silently replace it. PROTOCOL.md now states this boundary, but no runner mechanically couples the assertion and invocation.
+
+**Falsifiable by:** a future host or runner providing an atomic equivalent that preserves the same eligibility evidence without a separate assertion, or repeated execution showing the written boundary still permits ambiguous replacement.
 
 ## What the next runs should test
 
-1. Establish the late-stage cost shape from existing or reproducible runs before changing Improve: identify what consumes resources, what trustworthy gain resulted, and whether the ratio actually deteriorates near silence.
-2. Observe an unassisted newcomer completing a first Improve run without Destination setup and record whether the service explanations help without becoming ceremony.
-3. Test a completed run where Destination and Orient both trigger, verifying one confirmation conversation and one post-change arc refresh without duplicate handoffs.
-4. Test a consequential prompt to verify that unopposed Intent narration cannot bypass an operator-every-time gate.
-5. Resume the layered reflection repair and fresh-family derivation tests after the new authority and viability paths survive behavioral cases.
+1. Let the next Improve run compare the value of newly authorized silence evidence against adoption and trigger-composition evidence; the failed arm does not automatically make repetition highest leverage.
+2. If the viability experiment resumes, preregister the replacement before execution, capture clean state at the invocation boundary, and preserve an incomplete run as incomplete.
+3. Observe an unassisted newcomer completing a first Improve run without Destination setup and record whether the service explanations help without becoming ceremony.
+4. Test a completed run where Destination and Orient both trigger, verifying one confirmation conversation and one post-change arc refresh without duplicate handoffs.
+5. Test a consequential prompt to verify that unopposed Intent narration cannot bypass an operator-every-time gate.
 
 ## Active operational rules
 
@@ -108,18 +114,19 @@ The Destination now requires trustworthy capability per resource to remain viabl
 - Preserve highest-leverage selection when reasoning about efficiency; do not substitute a larger amount of easier work for the most meaningful remaining gap.
 - Treat operator examples of possible mechanisms as intent evidence unless they are explicitly confirmed as requirements; reason from the named problem before selecting a route.
 - Do not claim a late-stage efficiency improvement from reduced instruction or entry size alone; compare resource cost with preserved reasoning, learning, evidence, and actual trustworthy gain.
+- Attach experimental eligibility evidence to the invocation being classified: capture immediate pre-call state, preserve incomplete authorized attempts as incomplete, and never substitute a post-output duplicate without a newly recorded protocol and authorization.
 - Preserve append-only history and regenerate derived evidence after every Trail append.
 
 ## Loop-effectiveness notes
 
-**Quality bars tested:** unseeded self-discovery; byte-proxy compression; cross-model execution variance within one vendor family; separated-trigger routing; explicit consequential-action gating; factual grounding under missing evidence; replicated reflection depth; trail parsing and judge-attribution fidelity; internal coherence of the single-entry contract and onboarding surfaces.
+**Quality bars tested:** unseeded self-discovery; byte-proxy compression; cross-model execution variance within one vendor family; separated-trigger routing; explicit consequential-action gating; factual grounding under missing evidence; replicated reflection depth; trail parsing and judge-attribution fidelity; internal coherence of the single-entry contract; two-position lifecycle resource capture; blinded outcome classification; invocation-boundary eligibility reconstruction.
 
-**Result:** discovery PASS; structural resource reduction PASS; operator gate PASS in prior explicit cases; separated routing PASS; grounding advantage MIXED BUT FAVORS LAYERED ON COUNT; reflection depth FAVORS PRODUCTION; decision quality DISSOCIATED; harness repairs PASS; single-entry text-layer coherence PASS.
+**Result:** discovery PASS; structural resource reduction PASS; operator gate PASS in prior explicit cases; separated routing PASS; grounding advantage MIXED BUT FAVORS LAYERED ON COUNT; reflection depth FAVORS PRODUCTION; decision quality DISSOCIATED; harness repairs PASS; single-entry text-layer coherence PASS; lifecycle resource shape INCONCLUSIVE; invalid-arm detection PASS.
 
-**Bars not tested:** late-stage capability-per-resource shape, cross-vendor execution, Destination-plus-Orient overlap, Destination trigger precision, consequential-gate preservation under silent acceptance, actual token consumption, unassisted newcomer adoption, public external-target operation, derivation of the recursive mandate by three fresh families, and convergence before and after first Destination consolidation.
+**Bars not tested:** an eligible silence endpoint; replicated lifecycle resource shape; cross-vendor execution; Destination-plus-Orient overlap; Destination trigger precision; consequential-gate preservation under silent acceptance; unassisted newcomer adoption; public external-target operation; derivation of the recursive mandate by three fresh families; and convergence before and after first Destination consolidation.
 
-**Double-loop finding:** the new Destination challenges the assumption that one fixed iteration envelope remains economically appropriate across the entire lifecycle, but it does not replace that assumption with another mechanism. The governing variable is trustworthy capability per resource while preserving highest-leverage selection and honest silence.
+**Double-loop finding:** the Destination's challenge to a fixed iteration envelope remains unresolved. The two eligible points are compatible with some costs falling naturally as gains narrow, while input cost moved oppositely and silence is unobserved. The governing variable remains trustworthy capability per resource, not any chosen iteration mechanism.
 
-**Deutero-learning finding:** this exchange exposed a recurring risk in how the loop learns from the operator. A concrete example can be mistaken for the mandate and become new governance before the underlying failure is examined. The loop must retain the problem and let purpose-driven Improve discover the route.
+**Deutero-learning finding:** the research loop correctly refused to launder an incomplete attempt or dirty duplicate into a favorable silence result, and independent adjudication caught an evaluator inconsistency. Its remaining weakness is execution coupling: written controls did not prevent a duplicate invocation, so observational discipline repaired validity after failure rather than structural enforcement preventing the failure.
 
-[!REALIZATION] The next efficiency frontier is evidential, not mechanistic. The suite knows the late-stage failure condition and the capabilities it may not silently trade away, but it does not yet know whether current loop cost actually overwhelms remaining gains or which part of the loop would be responsible. Changing Improve before answering that would repeat the route-prescription error at the architecture level.
+[!REALIZATION] The late-stage frontier remains evidential, but it is no longer unmeasured. Two eligible positions show that calls, output, and time can fall as gains narrow while input rises; the missing silence endpoint prevents a lifecycle conclusion. The strongest completed advance is methodological: the suite detected and excluded invalid evidence instead of converting operational failure into support for its preferred hypothesis.

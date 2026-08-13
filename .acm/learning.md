@@ -5,11 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 216 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-02 — refresh-iteration-count-and-readme-totals
-
-**[!REALIZATION]** This is the third distinct hand-maintained "current state" artifact this repo's trail has found stale and fixed individually (CITATION.cff version/tags, verify.py's own file-scope lists, now ITERATION-COUNT.md/README's iteration claim) - each discovered independently, each fixed the same way, none converted into a standing mechanical guarantee. The recurrence across three unrelated sessions, not just within one, is stronger evidence than any single instance that the governing variable is "this repo has no mechanism that prevents a hand-counted claim from drifting," not "this one document happened to go stale."
+Showing the most recent 60 markers. 217 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-02 — confirm-iteration-count-sync-scope-across-live-docs
 
@@ -246,6 +242,10 @@ Showing the most recent 60 markers. 216 older marker(s) are in `.acm/learning-ar
 ## 2026-08-13 — improve-arm-boundary-validity
 
 **[!REALIZATION]** Experimental validity in this suite is event-bound, not configuration-bound. A valid snapshot, host, ledger, and earlier clean preflight can all coexist with an invalid arm if the state transition into the actual invocation is not captured. Future experiment claims must attach eligibility evidence to the event they classify.
+
+## 2026-08-13 — orient-after-late-stage-viability-experiment
+
+**[!REALIZATION]** The late-stage frontier remains evidential, but it is no longer unmeasured. Two eligible positions show that calls, output, and time can fall as gains narrow while input rises; the missing silence endpoint prevents a lifecycle conclusion. The strongest completed advance is methodological: the suite detected and excluded invalid evidence instead of converting operational failure into support for its preferred hypothesis.
 
 ---
 

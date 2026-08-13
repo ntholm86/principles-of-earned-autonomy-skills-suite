@@ -869,6 +869,10 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** The verifier's stale-path coverage is semantically narrow: it catches obsolete trail filenames, but not documented executable paths that no longer exist. This installation defect survived a recent systematic verifier audit because command-path validity is a distinct quality bar from trail-path token consistency.
 
+## 2026-08-02 — refresh-iteration-count-and-readme-totals
+
+**[!REALIZATION]** This is the third distinct hand-maintained "current state" artifact this repo's trail has found stale and fixed individually (CITATION.cff version/tags, verify.py's own file-scope lists, now ITERATION-COUNT.md/README's iteration claim) - each discovered independently, each fixed the same way, none converted into a standing mechanical guarantee. The recurrence across three unrelated sessions, not just within one, is stronger evidence than any single instance that the governing variable is "this repo has no mechanism that prevents a hand-counted claim from drifting," not "this one document happened to go stale."
+
 ---
 
-**216 markers — 204 realisations, 12 reversals**
+**217 markers — 205 realisations, 12 reversals**
