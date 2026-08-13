@@ -1,5 +1,11 @@
 # Changelog
 
+## v4.29.0 — 2026-08-13
+
+- **Improve is now the suite's single normal entry point.** A user's prompt, visibly interpreted by automatic Intent, authorizes the current Improve run without requiring prior ACM or Destination setup. Improve explains each service handoff, records the run through Trail, and evaluates whether continued work now needs durable direction.
+- **Destination is now evidence-triggered progressive disclosure.** Improve schedules it when accepted mandates reveal stable cross-run direction, future candidates depend on an unstated priority, mandates conflict or attract correction, a governing variable is uncertain, or widening autonomy would compound an assumption. Missing destination files and raw iteration counts never trigger it by themselves; durable direction still requires operator confirmation.
+- **First-contact documentation and installer output now teach one action: `/improve`.** Intent and Trail remain automatic, Destination and Orient are triggered services with manual overrides, and Probe remains explicit research instrumentation. `intent/SKILL.md` 1.6.0 -> 1.7.0; `improve/SKILL.md` 3.16.0 -> 3.17.0; `destination/SKILL.md` 2.6.0 -> 2.7.0.
+
 ## v4.28.0 — 2026-08-02
 
 - Added an explicit, fail-closed current-destination boundary: Destination may mark a self-contained active mandate only after reconciling every earlier commitment, while preserving prior layers as history.

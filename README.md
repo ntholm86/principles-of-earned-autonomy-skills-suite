@@ -2,7 +2,7 @@
 
 AI agents forget everything between sessions — and many things within a session. No memory of what was tried. No memory of why a decision was made. No memory of where you were heading. Forgets what it already created.
 
-The suite fixes that with two deliberate actions: set the **Destination** and **Run** Improve. The architecture maintains **Orientation** passively — refreshing its map of where the work is when direction changes or enough evidence accumulates. A persistent memory layer survives session resets and model swaps underneath that workflow.
+The suite fixes that through one deliberate action: **Run Improve**. Improve interprets the prompt, does and records the work, captures a durable **Destination** when the work grows beyond one prompt, and refreshes **Orientation** when enough evidence accumulates. A persistent memory layer survives session resets and model swaps underneath that workflow.
 
 These are the skills I use daily as a software engineer to safely delegate complex goals to AI agents. When an agent runs without constraints, it creates massive technical debt. These skills force it to stay on track, double-check its assumptions, and leave a clear record of why it made each change.
 
@@ -44,14 +44,14 @@ Every skill belongs to one roster. What differs is how it activates:
 
 | Skill | Activation | What it does | Command or trigger |
 | :--- | :--- | :--- | :--- |
-| ![Destination icon](./assets/skills/destination.svg) **[Destination](./destination/SKILL.md)** | **Active** | Establishes where the work is going and what success means. | `/destination` when work begins or direction changes |
-| ![Improve icon](./assets/skills/improve.svg) **[Improve](./improve/SKILL.md)** | **Active** | Examines, changes, verifies, and learns toward the Destination. | `/improve` repeatedly to move the work forward |
+| ![Destination icon](./assets/skills/destination.svg) **[Destination](./destination/SKILL.md)** | **Triggered** | Consolidates accepted prompt mandates into durable cross-run direction through operator-confirmed questions. | Improve finds that continued work needs broader direction; `/destination` is an override |
+| ![Improve icon](./assets/skills/improve.svg) **[Improve](./improve/SKILL.md)** | **Active** | Interprets the prompt, examines, changes, verifies, learns, and coordinates the suite. | `/improve` to begin and continue work |
 | ![Intent icon](./assets/skills/intent.svg) **[Intent](./intent/SKILL.md)** | **Passive** | States what the agent believes the operator means before acting. | Always applies before substantive work |
 | ![Trail icon](./assets/skills/trail.svg) **[Trail](./trail/SKILL.md)** | **Passive** | Preserves decisions, findings, actions, and reflections across sessions. | Always applies after substantive work |
 | ![Orient icon](./assets/skills/orient.svg) **[Orient](./orient/SKILL.md)** | **Triggered** | Refreshes where the work is now by reading the accumulated arc. | Destination changes or Improve finds Orientation stale; `/orient` is an override |
 | ![Probe icon](./assets/skills/probe.svg) **[Probe](./probe/SKILL.md)** | **Active** *(research only)* | Tests reasoning with controlled cases and measures [Autonomous Reasoning Fidelity](https://github.com/ntholm86/principles-of-earned-autonomy/blob/main/PRINCIPLES.md#autonomous-reasoning-fidelity-operational-definition). | `/probe` during controlled ARF research |
 
-In normal development, the operator activates Destination and Improve. Intent and Trail are always present, while Orient waits for evidence that its map needs refreshing. Probe sits outside normal operation as optional research instrumentation.
+In normal development, the operator activates Improve. Intent and Trail are always present; Destination and Orient wait for evidence that durable direction or a refreshed map is needed. Probe sits outside normal operation as optional research instrumentation.
 
 ## Agent Context Memory (ACM)
 
@@ -69,7 +69,7 @@ When you swap from Claude to Gpt to Gemini, the next model picks up this exact o
 
 ### Destination — Where are we going?
 
-During a long autonomous run, the agent can lose the plot and optimize whatever is easiest to see. Destination surfaces the direction held by the operator so the work has an explicit purpose to advance.
+Each narrated Intent gives Improve a mandate for the current prompt. When accepted mandates accumulate, conflict, or expose an unresolved priority, Improve triggers Destination to consolidate them into durable cross-run direction. Destination asks one sourced question at a time and never turns an unconfirmed agent inference into operator-held direction.
 
 > "No-one knows exactly what they want."
 >
@@ -85,20 +85,20 @@ After many locally sensible runs, the overall arc can still drift. Orient passiv
 
 ### Run — Move toward the destination
 
-Improve is the workhorse. Point it at a target and run it repeatedly. Each run examines what is there, challenges the first read, chooses the highest-leverage move, acts, verifies, and reflects against the current Destination and Orientation.
+Improve is the workhorse and the single normal entry point. Point it at a target and run it. Each run applies Intent, explains its interpretation, examines what is there, challenges the first read, chooses the highest-leverage move, acts, verifies, records through Trail, and explains any automatic Destination or Orient handoff when the evidence triggers one.
 
 > "Invest in the design of the system every day."
 >
 > — Kent Beck, [Extreme Programming Explained](https://www.amazon.com/Extreme-Programming-Explained-Embrace-Change/dp/0321278658)
 
-Intent and Trail operate automatically around the work, and Orient maintains Orientation automatically when its evidence-based triggers fire. Probe sits outside normal operation as optional ARF research instrumentation.
+Intent and Trail operate automatically around the work. Destination and Orient activate automatically when their evidence-based triggers fire. Probe sits outside normal operation as optional ARF research instrumentation.
 
 ## Workflow
 
-1. **Set direction:** Run `destination` when work begins and whenever the destination materially changes. A material change automatically refreshes Orientation.
-2. **Run:** Invoke `improve` repeatedly. Intent aligns each request, Trail records each result, and Improve automatically schedules Orient when accumulated evidence makes the current orientation stale.
+1. **Run:** Invoke `improve` with a concrete prompt. Intent narrates the mandate, Improve acts and verifies, and Trail records the result.
+2. **Keep going:** Invoke `improve` again when there is more work. Improve automatically schedules Destination when broader direction needs confirmation and Orient when accumulated evidence makes the current orientation stale.
 
-The user remembers two commands: `/destination` and `/improve`. `/orient` remains a manual override for an explicit arc-read, not a routine responsibility.
+The user remembers one command: `/improve`. `/destination` and `/orient` remain manual overrides, not routine responsibilities.
 
 ## Quickstart (First Successful Run)
 
@@ -108,13 +108,11 @@ Want a copy-pasteable, 10-minute path? See [QUICKSTART.md](./QUICKSTART.md).
    - macOS / Linux: `bash install.sh`
    - Windows: `pwsh install.ps1`
    - ARF researchers only: add `--research` on macOS/Linux or `-Research` on Windows to include Probe.
-2. In your target repo, run Destination first to set direction:
-   - `/destination capture the destination for this repo and write .acm/destination.md`
-3. Run Improve on one concrete, verifiable task:
+2. In your target repo, run Improve on one concrete, verifiable task:
    - `/improve review the checkout module for waste and overburden`
-4. Confirm the run produced evidence:
+3. Confirm the run produced evidence:
    - `.acm/audit-trail.md` has a new entry with outcome and delta.
-5. Optional but recommended: install the pre-commit hook from the cloned suite's `harness/tools/` directory (see [QUICKSTART.md](./QUICKSTART.md)) to enforce trail discipline structurally.
+4. Optional but recommended: install the pre-commit hook from the cloned suite's `harness/tools/` directory (see [QUICKSTART.md](./QUICKSTART.md)) to enforce trail discipline structurally.
 
 ## Known Limitation: Stated Reasoning ≠ True Reasoning
 

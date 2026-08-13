@@ -66,7 +66,7 @@ Copilot looks for skills at exactly **one level deep** under `.copilot/skills/`:
 
 ## Operational install (recommended)
 
-The normal operating model uses five installed skills but only two deliberate operator actions: **Destination + Run**. Intent and Trail are automatic services; Orient passively refreshes Orientation when Destination changes or Improve detects that the accumulated evidence makes it stale.
+The normal operating model uses five installed skills but only one deliberate operator action: **Run Improve**. Intent and Trail are automatic services; Destination and Orient activate when Improve detects that accumulated evidence needs durable direction or a refreshed map.
 
 ```
 your-repo/
@@ -84,7 +84,7 @@ your-repo/
         SKILL.md
 ```
 
-Invoke `/destination` and `/improve`. Do not add routine `/intent`, `/trail`, or `/orient` steps; manual `/orient` remains available as a diagnostic override.
+Invoke `/improve`. Do not add routine `/intent`, `/destination`, `/trail`, or `/orient` steps; manual `/destination` and `/orient` remain available as overrides.
 
 ---
 
@@ -166,12 +166,11 @@ Exit 0 = all checks pass, exit 1 = something is wrong.
 
 ## Using a skill
 
-Once installed, remember two actions:
+Once installed, remember one action:
 
-- **Destination** (`/destination`) — where are we going?
-- **Run** (`/improve`) — what advances the destination now?
+- **Run** (`/improve`) — interpret this prompt, advance the work, and coordinate the suite.
 
-Intent runs automatically before substantive work. Trail runs automatically afterward. Orient automatically refreshes Orientation after material destination changes and when Improve's evidence-based freshness check fires. Manual `/orient` remains available for diagnostics, but is not a routine workflow step. Probe is outside this operating model; `/probe` is only for controlled ARF research.
+Intent runs automatically before substantive work. Trail runs automatically afterward. Improve triggers Destination when broader direction needs operator confirmation and Orient when the evidence-based freshness check fires. Manual `/destination` and `/orient` remain available as overrides, but are not routine workflow steps. Probe is outside this operating model; `/probe` is only for controlled ARF research.
 
 Example:
 ```

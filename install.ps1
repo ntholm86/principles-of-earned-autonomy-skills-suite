@@ -41,8 +41,8 @@ if (Test-Path $principles) {
 
 Write-Host ""
 Write-Host "Installed PEA skills to: $Target"
-Write-Host "Actions: Destination (/destination); Run (/improve)"
-Write-Host "Automatic: intent before work; trail afterward; orientation when evidence makes it stale"
+Write-Host "Action: Run (/improve)"
+Write-Host "Automatic: intent before work; trail afterward; destination and orientation when evidence requires them"
 if ($Research) {
     Write-Host "Research: /probe installed for ARF experiments"
 } else {

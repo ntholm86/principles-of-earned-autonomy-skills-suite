@@ -56,8 +56,8 @@ fi
 
 echo ""
 echo "Installed PEA skills to: $DST"
-echo "Actions: Destination (/destination); Run (/improve)"
-echo "Automatic: intent before work; trail afterward; orientation when evidence makes it stale"
+echo "Action: Run (/improve)"
+echo "Automatic: intent before work; trail afterward; destination and orientation when evidence requires them"
 if [ "$RESEARCH" -eq 1 ]; then
   echo "Research: /probe installed for ARF experiments"
 else

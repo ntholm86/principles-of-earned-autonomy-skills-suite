@@ -5,43 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 194 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-01 — trail-condensed-entry-format-for-non-decision-fixes
-
-**[!REALIZATION]** This entry itself is a live demonstration of the distinction it creates: this decision involved multiple rejected alternatives, a re-derivation of which architectural layer the concern actually lived in, and a genuine judgment call about where to draw the condensed-format boundary -- exactly the profile that keeps the full template, not the condensed one, even though the *artifact it produces* (a new format for other, simpler future entries) is about reducing ceremony elsewhere. The decision to keep ceremony proportional to judgment, rather than uniformly reducing it, is validated by needing the full template to make this exact decision legible.
-
-## 2026-08-01 — trail-condensed-entry-format-for-non-decision-fixes
-
-**[!REALIZATION]** This is the first entry in this session where the operator explicitly handed over a governing-variable-level decision rather than picking from a ranked list or delegating a narrower, already-scoped choice (as with the BOM-grouping decision). Read against the arc as a whole: the operator-gate in this session has now been exercised in at least four distinct shapes -- ranked-candidate selection, narrow delegated autonomy (BOM grouping, operator unavailable), direct operator-initiated diagnostic questions (the Argyris-in-Orient gap), and now full delegation of an architectural-format decision with an explicit instruction to reason from destination and inferred intent. Each shape places different demands on the agent's judgment, and this is the first case testing whether the agent, given real latitude, converges on a *narrower* change than the destination-level revision the framing implied ("what should we do about ceremony overhead") -- which is what happened here: the decision made is smaller in destination-level footprint than the question as posed, because closer reading found the actual concern lived one layer down from where it was first framed.
-
-## 2026-08-01 — citation-cff-currency-fix-surfaces-git-tag-drift
-
-**[!REALIZATION]** This is the first time the new condensed-entry-format decision has actually been tested in practice, and it immediately produced the predicted failure mode from its own blind-spot note: a task selected specifically as a condensed-format candidate ("the smallest, most mechanical" backlog item) turned out to contain a real judgment call once actually investigated (what version number to use given the CHANGELOG/tag mismatch; whether to touch the tags at all). This is direct, fast evidence for the condensed format's own "when in doubt, use the full template" bias working as intended -- the format correctly escalated to full treatment once a real decision appeared, rather than the investigation being artificially truncated to fit a pre-chosen ceremony level.
-
-## 2026-08-01 — citation-cff-currency-fix-surfaces-git-tag-drift
-
-**[!REALIZATION]** Per the lighter-weight-pointer convention established earlier today: the governing-variable diagnosis stands unchanged from `confirm-bom-root-cause-and-fix-verifypy` and its subsequent restatements -- this entry is the fifth instance of the same shape, now extending beyond "verify.py checks" and "file lists" into "release/tag hygiene," which broadens the diagnosis's scope slightly (it is not just a verify.py-specific problem, it is a general pattern in how this repo tracks "what is the current true state" across several independent bookkeeping mechanisms -- CHANGELOG prose, git tags, verify.py's REQUIRED_FILES/STALE_PATH_DOCS/ACM_SCOPE_TRAVERSAL_FILES lists, and now CITATION.cff -- each maintained by hand, each capable of independently drifting from the others). This broadened framing is itself worth carrying into the still-pending "systematic verify.py audit" candidate move, which should now perhaps be reframed more broadly as a systematic audit of every hand-maintained "current state" claim in the repo, not only verify.py's checks specifically.
-
-## 2026-08-01 — clarify-history-learning-optional-per-acm-spec-conformance
-
-**[!REALIZATION]** This is the sixth distinct instance today of "a claim (this time, an operator-stated premise, not a mechanical check) turned out to be checkable and slightly inaccurate once actually verified against a primary source rather than accepted or inferred" -- following PRINCIPLES.md's H1 gap, the POSITION.md/QUICKSTART.md REQUIRED_FILES gap, the systemic BOM issue, check_no_mojibake's narrow coverage, and the git tag drift. This one is different in kind from the prior five: those were all mechanical artifacts within this repo; this one is a conceptual/architectural claim about this repo's relationship to an external spec. The same discipline (check the primary source directly, don't reason from memory or file-name pattern-matching) resolved it the same way.
-
-## 2026-08-01 — clarify-history-learning-optional-per-acm-spec-conformance
-
-**[!REALIZATION]** Per the lighter-weight-pointer convention: the core governing-variable diagnosis (no single source of truth for several categories of "current state" claims across this repo) stands as recorded in `confirm-bom-root-cause-and-fix-verifypy` and its restatements, now broadened a second time today (first to release/tag hygiene in the CITATION.cff entry, now to this repo's own claimed relationship to an external governing spec). Both broadenings share the same root shape and do not require a new diagnosis, only an acknowledgment that the pattern's scope keeps turning out to be wider than each individual instance suggested. Worth naming as a candidate for the still-pending systematic-audit candidate move: that audit should now explicitly include checking this repo's stated relationships to external repos (agent-context-memory, evo, ai-steward, llm-harness-proxy) against those repos' actual current content, not just this repo's own internal artifacts.
-
-## 2026-08-01 — destination-note-skillsuite-as-acm-development-site
-
-**[!REALIZATION]** This destination note is qualitatively different from every prior one: all previous notes described gaps *within* this repo's own self-conception (efficiency, reasoning-capability, action-gating). This is the first note describing a *relationship* to something outside the repo as a standing destination-level expectation. If this note holds up, it changes what "done" can mean for a future Improve/Orient run on this repo -- convergence would need to also ask "did this arc produce anything that belongs upstream, and if so, was it surfaced rather than absorbed silently," which is a genuinely new dimension the existing convergence framing (silence per named quality bar) does not yet explicitly cover.
-
-## 2026-08-01 — destination-note-skillsuite-as-acm-development-site
-
-**[!REALIZATION]** This entry is a live test of the destination note it just added: it recognized the Scale-gap/learning.md-pattern connection as evidence worth citing in a destination-level note, rather than only as conversational color. Whether that recognition generalizes to future, less operator-prompted instances -- the loop noticing a spec-level implication on its own initiative, the way this session has repeatedly tested whether the loop derives reasoning-capability gaps unprompted -- remains exactly as untested as every prior version of that same open question in this repo's trail.
-
-## 2026-08-01 — implement-scale-gap-in-acm-spec-repo
-
-**[!REALIZATION]** The destination note added earlier this session ("this repo is the site of ACM's own development") was tested within the same conversation that named it, and held: a concrete finding (the Scale gap, the learning.md pattern) was recognized as spec-relevant, surfaced explicitly rather than left as a local-only improvement, drafted as a candidate, and -- once authorized -- actually implemented in the correct upstream location. This is the fastest a destination note has gone from stated expectation to exercised instance in this repo's history.
+Showing the most recent 60 markers. 203 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-01 — implement-scale-gap-in-acm-spec-repo
 
@@ -247,6 +211,42 @@ Showing the most recent 60 markers. 194 older marker(s) are in `.acm/learning-ar
 
 **[!REALIZATION]** Grounding discipline, reflection depth, and decision quality are three dissociable dimensions, not facets of one "reasoning quality." This run separated all three: the best-grounded arm produced the best decision and the thinnest reflection, while the worst-grounded output produced the second-deepest reflection. The blinded judge reached the same conclusion unprompted. Any future claim that one contract "reasons better" than another is under-specified until it names which of the three it means.
 
+## 2026-08-09 — clarify-productive-self-improvement-paradox
+
+**[!REALIZATION]** The paradox is not a defect to remove; it is the engine of cognitive development, provided its two external boundaries remain intact. The operator owns changes to the reference signal, and diverse independent evaluation determines silence only relative to the current signal. Inside those boundaries, reasoning about purpose recursively makes reasoning, memory, learning, reversals, decisions, boundaries, insights, instructions, and their resource cost legitimate improvement targets whenever evidence shows they limit future work.
+
+## 2026-08-09 — destination-convergence-lease-and-model-frontier
+
+**[!REALIZATION]** Convergence has three version coordinates, not one: the Destination version defines the question, the artifact version defines the answer being inspected, and the model frontier defines the strongest currently available challenge. Silence is current only for that triple. A new evaluator advances the challenge coordinate; an artifact change resets evaluation of the answer; a Destination change replaces the question and invalidates the entire prior chain.
+
+## 2026-08-09 — orient-after-convergence-lease
+
+**[!REALIZATION]** The current frontier is no longer whether compression is possible. It is whether the measured reflection deficit can be repaired without surrendering grounding and resource advantages, while fresh model families independently verify that the Destination elicits the intended recursive cognition and convergence boundaries.
+
+## 2026-08-09 — destination-gate-cognitive-capability-reductions
+
+**[!REALIZATION]** The two external boundaries around recursive cognitive improvement now have an internal authority corollary. The operator owns not only changes to the Destination, but also each deliberate decision to sacrifice part of the cognitive machinery used to pursue it. The engine may discover, measure, and recommend the tradeoff; it cannot authorize its own cognitive loss.
+
+## 2026-08-09 — orient-after-cognitive-capability-gate
+
+**[!REALIZATION]** Recursive cognitive improvement cannot safely authorize its own cognitive sacrifice. The same engine may identify both the efficiency gain and the capability loss, but treating its aggregate judgment as sufficient would collapse proposer, affected system, and authorizer into one role. The operator-every-time gate preserves the recursion while preventing that collapse.
+
+## 2026-08-13 — improve-single-entry-progressive-destination
+
+**[!REALIZATION]** Progressive disclosure is now an authority architecture rather than only an onboarding technique: current-run authority comes directly from the operator's prompt and visible interpretation, while durable cross-run authority is captured only when evidence makes the distinction consequential enough to ask.
+
+## 2026-08-13 — improve-single-entry-progressive-destination
+
+**[!REVERSAL]** The two-action Destination-plus-Run model was a productive simplification but still conflated durable memory with permission to begin. Prompt-level Intent already carries operator authority for bounded current work. Destination earns its place later, when accepted mandates need consolidation across an arc.
+
+## 2026-08-13 — orient-after-single-entry-progressive-destination
+
+**[!REALIZATION]** The activation frontier is now trigger quality rather than command count. The suite has one normal entry point on paper; its authority architecture succeeds only if unfamiliar agents trigger Destination neither too early nor too late, preserve consequential gates under prompt-level mandate, and explain the transition without recreating setup ceremony.
+
+## 2026-08-13 — orient-after-single-entry-progressive-destination
+
+**[!REVERSAL]** The two-action Destination-plus-Run model no longer describes the current authority boundary. It remains historical evidence of progressive simplification, but Improve is now the only normal control input and Destination activates from directional evidence.
+
 ---
 
-**60 markers — 51 realisations, 9 reversals**
+**60 markers — 49 realisations, 11 reversals**

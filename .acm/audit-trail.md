@@ -12543,3 +12543,453 @@ The governing variable worth naming: this arc has repeatedly treated *absence of
 Where attention has gone: heavily into instruments for five entries, and that was correct, because the instruments were corrupting the evidence. The risk now is the opposite one - having repaired the harness, the loop could keep polishing it. The next-runs list is deliberately ordered to move attention back onto the contracts, with the two cheapest instrument items (7b repair, verifier coverage) kept but not placed first.
 
 Orientation freshness: current as of this run.
+
+## 2026-08-09 - clarify-productive-self-improvement-paradox
+
+- target: the skills suite's Destination and recursive cognitive-improvement mandate
+- operator: Nils Wendelboe Holmager
+- agent: GitHub Copilot
+- skill: intent + trail (direct conversation capture)
+- outcome: confirmed that the current Destination deliberately creates recursive pressure to improve cognition while reserving Destination authority to the operator and bounding convergence to the current Destination
+- delta: no product artifact changed; the operator-confirmed interpretation and its limits are now durable evidence
+
+### Interpretation of the ask
+
+The operator's true question was whether the Destination is defined so that self-targeting naturally makes the suite seek improvements to its own cognitive ability: reasoning, memory, retention, storage of reversals, decisions, boundaries, insights, instructions, and other capabilities that affect future understanding and action. The request was not to add those examples as a prescribed capability checklist. It was to confirm that the generic purpose rule creates this recursive pressure by itself, then preserve the conclusion in the Trail.
+
+The operator explicitly confirmed two boundaries from the preceding discussion:
+
+- "The agent may challenge and surface its interpretation."
+- "The agent may discover that the Destination is ambiguous or inadequate."
+- "Only the operator may settle a changed Destination."
+
+The operator also confirmed that convergence is always relative to the current Destination.
+
+### Examination
+
+The bounded current Destination already states that the engine reasons about a target's purpose, finds what most limits that purpose, and improves it. It then applies the same theory recursively: when self-targeting, the engine should discover and improve limitations in its own "reasoning, learning, architecture, or operation" that constrain future understanding and improvement. The operating model additionally requires memory of what happened, learning that changes later behavior, and meta-cognition about what the target is becoming. Token efficiency is defined as trustworthy capability per resource rather than token minimization.
+
+The current Destination therefore already creates the intended productive paradox. The system uses its present cognition to improve the cognition with which it interprets and pursues its purpose. Each improvement can expose limitations that the previous cognitive system could not see. The recursion has no internally provable final state, so completion cannot mean cognitive completeness. Convergence can only mean that diverse independent evaluators found no material change justified under the current operator-held Destination, evidence, tested boundaries, and available capabilities.
+
+The three confirmed authority statements prevent recursive purpose-understanding from becoming unauthorized purpose-authorship. The agent may challenge its interpretation and identify insufficiency, but a changed reference signal becomes authoritative only through the operator.
+
+### Decision
+
+[!DECISION] Treat recursive cognitive improvement as an intended consequence of the existing generic Destination, not as a separate co-equal purpose or a list of named faculties to optimize. Preserve the authority split: the agent challenges and surfaces; the operator settles Destination changes. Preserve silence as convergence under the current Destination, not proof that no better cognition could ever exist. Alternative rejected: amend the Destination immediately with an exhaustive list of reasoning, memory, reversal, boundary, insight, and instruction capabilities. That would turn illustrations into a ceiling and duplicate the current recursive mandate. Precedent check: recent `learning.md` entries already conclude that self-improvement follows from generic purpose reasoning, that capability/trust/cost are inseparable, and that named capabilities must not become a roadmap. This decision clarifies rather than contradicts those findings.
+
+### Prediction
+
+Recording this interpretation will let a fresh session distinguish three things that could otherwise collapse together: improving cognition, authoring the Destination, and declaring convergence. It will not prove that the suite reliably discovers cognitive limitations without operator prompting, nor that any particular memory or reasoning change improves behavior.
+
+### Action
+
+Appended this entry without changing `.acm/destination.md`. The conversation produced a confirmed interpretation of the existing mandate, not an operator request to revise the mandate itself. The durable record preserves the operator's wording, the productive recursion, the authority boundary, and the relative stopping condition.
+
+### Reflection
+
+**Falsifiable claim about the target's current state:** The current bounded Destination is sufficient to require cognitive self-improvement when cognition is the limiting variable, without naming a fixed inventory of cognitive faculties. A fresh capable evaluator should be able to derive that requirement from the Purpose, recursive self-targeting, operating-model, and quality-bar sections without seeing this conversation.
+
+**Named blind spot:** This conversation establishes semantic sufficiency by close reading and operator confirmation. It does not establish execution fidelity. A model may still under-read the generic mandate, over-focus on mechanical consistency, or convert the examples in this entry into a checklist.
+
+**Imagined-reader pushback:** The phrase "should discover and improve" may permit cognitive improvement without making it operationally unavoidable, and the quality bars may still reward visible repository changes more readily than changes in reasoning behavior. That objection requires a fresh unseeded behavioral test, not more destination wording by default.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED - the trail repeatedly returns to whether generic purpose reasoning can derive previously unnamed cognitive and architectural limitations without operator seeds.
+- *About to declare silence:* not fired - this entry confirms the meaning of convergence but does not evaluate convergence.
+- *Contradicts prior `[!REALIZATION]`:* not fired - it extends the findings that recursive purpose implies self-improvement and that capability, trust, and resource cost must be evaluated together.
+- *Operator explicitly asked:* FIRED - the operator directly requested Trail capture and clarified the true intent behind the preceding questions.
+
+### Across-trail macro-Hansei
+
+[!REALIZATION] The paradox is not a defect to remove; it is the engine of cognitive development, provided its two external boundaries remain intact. The operator owns changes to the reference signal, and diverse independent evaluation determines silence only relative to the current signal. Inside those boundaries, reasoning about purpose recursively makes reasoning, memory, learning, reversals, decisions, boundaries, insights, instructions, and their resource cost legitimate improvement targets whenever evidence shows they limit future work.
+
+### Candidate Next Moves
+
+1. Give the bounded current Destination alone to fresh model families and test whether they independently derive cognitive self-improvement, operator-only Destination settlement, and Destination-relative convergence without those conclusions being seeded.
+2. Observe whether a future unseeded self-targeting run selects a cognitive limitation over a mechanical repository defect when evidence makes the cognitive limitation more consequential.
+3. Keep the Destination unchanged unless those tests show that capable fresh evaluators systematically fail to derive the intended recursive mandate.
+
+## 2026-08-09 - destination-convergence-lease-and-model-frontier
+
+- target: convergence validity in `.acm/destination.md`
+- operator: Nils Wendelboe Holmager
+- agent: GitHub Copilot
+- skill: destination + intent + trail
+- outcome: defined convergence as a renewable lease over the current Destination, artifact, and available model frontier, with a three-family operational quorum
+- delta: active Destination and preserved history now distinguish model-frontier challenge, artifact reset, and Destination invalidation
+
+### Interpretation of the ask
+
+The operator confirmed that convergence is held by the best available models rather than permanently established. When a materially more capable model becomes available, it must get an independent attempt. When the Destination changes, the old convergence result is invalid because every evaluator answered a different question. To bound token use, the standing quorum should be three flagship models or an equivalent small frontier set.
+
+I interpreted "three flagship models" as three current frontier-capable models from distinct independently developed model families, selected by the operator using capability evidence and practical access. I did not interpret it as a permanent vendor list or as requiring all three prior evaluators to rerun whenever a fourth model appears and finds silence.
+
+### Examination
+
+The active Destination already required cross-family testing and the principles already required three fresh, family-diverse silence runs, with any artifact change resetting the chain. Neither surface stated how convergence ages when model capability advances, nor did the Destination explicitly say that changing its own reference signal invalidates every prior peg.
+
+The operator's clarification resolves that temporal gap while preserving token efficiency. A new frontier model challenges the unchanged artifact once. Silence renews confidence without replaying the whole quorum. If the challenge changes the artifact, Principle 3 already requires a fresh three-family chain on the changed state. A Destination change invalidates all pegs immediately because the evaluation target's purpose and quality boundaries may have changed.
+
+### Decision
+
+[!DECISION] Add a convergence-lease rule to the active Destination and preserve its provenance below the history marker. The lease is scoped to Destination, artifact, and available model frontier. Its minimum quorum is three fresh independent evaluations by frontier-capable models from distinct families. A new qualifying model gets one independent challenge; silence preserves the existing lease, artifact change resets the chain, and Destination change invalidates it completely. Alternative rejected: require all three models to rerun after every model release. That spends the full quorum when the artifact and reference signal are unchanged and the newcomer found no defect. Alternative rejected: name three vendors permanently. That would age immediately and confuse model availability with evaluator independence. Precedent check: the trail repeatedly enforces three distinct families and artifact-change resets, but no prior realization defines capability-frontier aging; this extends rather than reverses those precedents.
+
+### Prediction
+
+The new wording will let a future evaluator decide whether convergence remains current after a model release, artifact change, or Destination change without inventing a policy. It will not mechanically determine which model qualifies as frontier-capable, because that remains an operator judgment responsive to changing capability evidence and access.
+
+### Action
+
+Added the rule under `Authority and autonomy` inside the bounded current Destination and added a dated provenance note immediately below `<!-- destination-history -->`. Preserved the existing Destination history and did not modify the canonical principles copy.
+
+Focused validation confirmed ordered completeness markers, inclusion of both invalidation rules inside the active boundary, and a clean Markdown diff.
+
+### Reflection
+
+**Falsifiable claim about the target's current state:** The Destination now defines convergence validity across the three events that matter: evaluator capability advances, the evaluated artifact changes, and the operator-held reference signal changes.
+
+**Named blind spot:** "Frontier-capable" remains a judgment under uncertainty. Vendor release labels can overstate capability, and practical access can lag public availability. The operator gate prevents automatic churn but does not make selection objective.
+
+**Imagined-reader pushback:** A newly released model from the same family may share enough blind spots that its challenge adds little independent evidence. The rule requires the challenge because capability can advance within a family, but it does not let that model replace one of the three distinct-family quorum members.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED - convergence scope and evaluator-family independence recur throughout the trail, but temporal aging against model progress was previously unnamed.
+- *About to declare silence:* not fired - this run changes the validity contract rather than claiming convergence.
+- *Contradicts prior `[!REALIZATION]`:* not fired - preserves three-family independence and artifact reset while adding model-frontier and Destination invalidation.
+- *Operator explicitly asked:* FIRED - the operator explicitly settled how model progress, Destination change, and token economy should affect convergence.
+
+### Across-trail macro-Hansei
+
+[!REALIZATION] Convergence has three version coordinates, not one: the Destination version defines the question, the artifact version defines the answer being inspected, and the model frontier defines the strongest currently available challenge. Silence is current only for that triple. A new evaluator advances the challenge coordinate; an artifact change resets evaluation of the answer; a Destination change replaces the question and invalidates the entire prior chain.
+
+### Candidate Next Moves
+
+1. Re-orient the accumulated arc against the new convergence lease so future runs stop treating historical silence as timeless evidence.
+2. When the next frontier model becomes available, test whether one newcomer challenge is operationally sufficient or exposes a need to refine lease renewal.
+3. Keep model selection operator-held until repeated use reveals a generic, evidence-grounded selection rule worth considering.
+
+## 2026-08-09 - orient-after-convergence-lease
+
+- target: post-layering research arc under the changed convergence Destination
+- operator: Nils Wendelboe Holmager
+- agent: GitHub Copilot
+- skill: orient + intent + trail (automatically scheduled by Destination)
+- outcome: refreshed Orientation through run 233 and integrated the recursive-cognition boundary and three-coordinate convergence lease
+- delta: `.acm/orientation.md` advanced from the run-222 replication state to the post-routing, post-harness-repair, post-Destination-change state
+
+### Scope and freshness
+
+Scope: re-orient the post-layering arc against the changed Destination. Determine what the cross-model experiments, routing replications, harness repairs, recursive-cognition clarification, and convergence lease now establish, and where attention should move next.
+
+- `python harness/tools/record.py history --write` -> 233 entries.
+- `python harness/tools/record.py learning --write` -> 60 recent + 196 archived markers.
+- `python verify.py` -> OK, trail integrity checks pass.
+- Gate: PASS (arc-claims allowed).
+
+The first post-edit verifier run found the three derived artifacts older than the ledger despite an earlier regeneration. Regenerating history and learning immediately cleared the freshness gate; no arc-claim was accepted while the gate was failing.
+
+### Arc claims
+
+1. Generic purpose reasoning has produced at least one unseeded cognitive-architecture finding: governance accretion. The operator-confirmed recursive mandate follows from purpose rather than a capability checklist, but fresh-family derivation remains untested.
+2. Layering has a measured tradeoff rather than a single quality result: fewer unsupported grounding claims on average, weaker explicit reversal marking and across-run reflection, preserved operator gating, and decision quality that does not track either dimension perfectly.
+3. Conditional routing passed four of four evaluations under separated triggers; composition under overlapping or ambiguous triggers remains unknown.
+4. Model capability and obligation architecture affect different failure classes. Grounding changed across model contexts without contract changes; explicit obligations correlated with observable reflection acts within one context.
+5. The repaired evidence apparatus is credible enough to resume contract experiments. Tolerant entry recognition, strict validation, verbatim judge evidence, and corrected marker parsing survived the latest replication without another dominant apparatus defect.
+6. Recursive cognitive improvement is bounded externally: the operator alone settles Destination changes, and independent evaluators determine silence relative to the current Destination.
+7. Convergence is now a renewable lease over Destination, artifact, and model frontier. New model challenge, artifact reset, and Destination invalidation are distinct events.
+8. Actual token efficiency, cross-vendor execution, overlapping-trigger composition, and unassisted adoption remain unproven.
+
+Each claim and its falsifier is recorded in the refreshed `.acm/orientation.md`.
+
+### Loop-effectiveness finding
+
+Quality bars tested: unseeded discovery, byte-proxy compression, within-vendor model variance, separated-trigger routing, consequential-action gating, factual grounding under missing evidence, replicated reflection depth, trail parsing, and judge-attribution fidelity.
+
+Bars not tested: cross-vendor execution, overlapping-trigger composition, actual token consumption, unassisted newcomer adoption, public external-target operation, three-family derivation of the recursive mandate, and convergence under the new lease.
+
+Double-loop finding: the arc changed two governing assumptions. Measurement apparatus can dominate apparent contract behavior, and absence of contradiction is not positive evidence. Claims now need falsifiers stated before the experiment.
+
+Deutero-learning finding: memory capture and evaluation machinery determine what the loop can learn. Silent entry loss and paraphrased evidence altered the apparent history, making tolerant capture, strict validation, verbatim judging, and bounded derived memory part of the cognitive architecture.
+
+[!REALIZATION] The current frontier is no longer whether compression is possible. It is whether the measured reflection deficit can be repaired without surrendering grounding and resource advantages, while fresh model families independently verify that the Destination elicits the intended recursive cognition and convergence boundaries.
+
+### Action and validation
+
+Replaced the stale Orientation claims, next tests, operational rules, and loop-effectiveness boundaries. Preserved evidence-backed rules on purpose derivation, principles-only fixed boundaries, delegated implementation, bounded Destination reads, resource viability, and append-only memory. Added rules for reasoning-dimension separation, obligation wording, tolerant capture plus strict validation, verbatim judge evidence, pre-stated falsifiers, reported check scope, and the convergence lease.
+
+Focused assertions confirmed one Orientation title, the run slug, 233-entry freshness evidence, the convergence-lease claim, reasoning-dimension separation, and an explicit untested-bars boundary. `git diff --check` passed. The full verifier passed after derived artifacts were regenerated.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED - the post-222 arc repeatedly separated instruction behavior from measurement-apparatus behavior and repeatedly revised claims when new evidence discriminated between them.
+- *About to declare silence:* not fired - the new Destination invalidates old convergence and several behavioral bars remain open.
+- *Contradicts prior `[!REALIZATION]`:* FIRED - the run-222 Orientation said grounding failed in both arms and routing was mixed; later cross-model and routing evidence narrowed or overturned both claims.
+- *Operator explicitly asked:* FIRED - the operator changed the Destination-level validity rule that triggered this re-orientation.
+
+### Across-trail macro-Hansei
+
+The arc now has a cleaner separation of powers and evidence. The operator versions the question through Destination, the artifact versions the proposed answer, and the model frontier versions the strongest available challenge. Inside that frame, the research method has learned to separate cognitive dimensions and to distrust any conclusion whose measurement apparatus has not itself survived adversarial inspection.
+
+### Candidate Next Moves
+
+1. Strengthen the layered kernel's reflection and reversal obligations, then rerun against the replicated baseline.
+2. Test the Orientation-staleness rule in both directions and conditional routing under overlapping triggers.
+3. Give the bounded Destination alone to three fresh frontier-capable model families and test independent derivation of the recursive mandate and convergence boundaries.
+4. Observe an unassisted newcomer cycle and measure actual tokens on equivalent work.
+
+## 2026-08-09 - destination-gate-cognitive-capability-reductions
+
+- target: authority over cognitive-capability versus resource-efficiency tradeoffs
+- operator: Nils Wendelboe Holmager
+- agent: GitHub Copilot
+- skill: destination + intent + trail
+- outcome: operator confirmed that every deliberate reduction in reasoning, memory, learning, or evidence capability requires explicit operator approval
+- delta: active Destination now permits autonomous capability-preserving efficiency work while gating each capability-reducing tradeoff individually
+
+### Interpretation of the ask
+
+The operator asked whether this was the right moment to use Destination by reading the full session and full Agent Context Memory. I interpreted that as a request for a real reconciliation pass, not another immediate wording edit: read the accumulated direction, form sourced falsifiable hunches, and ask the one question whose answer would most change the mandate.
+
+### Sourced hunch and question
+
+The full read found that the active Destination simultaneously required trustworthy capability per resource and said reductions weakening reasoning or learning fail, while the layered-Improve evidence showed an actual dimensional tradeoff: lower routine input and better grounding counts coincided with weaker reflection depth. Runs `replicate-layered-divergence-n2`, `clarify-productive-self-improvement-paradox`, and `orient-after-convergence-lease` made the collision visible without assigning authority to settle it.
+
+The highest-impact hunch was that recursive cognitive self-improvement needs an explicit authority boundary when efficiency gains require deliberate cognitive-capability loss. The question asked was: "Who should authorize a deliberate reduction in reasoning, memory, learning, or evidence capability when the agent predicts a better overall capability-per-resource result?"
+
+The operator selected: "Operator every time."
+
+### Decision
+
+[!DECISION] Reconcile the Destination so the engine may autonomously pursue resource reductions that preserve cognitive and evidence capability, while every deliberate reduction in reasoning, memory, learning, or evidence capability requires explicit operator approval for that specific tradeoff. One approval grants no standing authority, and no approval can waive the three principles. Alternative rejected: let the agent decide autonomously whenever aggregate capability per resource appears better. That would make the self-improving system the sole judge of which part of its own cognition may be sacrificed. Alternative rejected: prohibit all dimensional tradeoffs categorically. The operator chose authorization, not prohibition, and the experiments show that useful designs can improve one dimension while weakening another. Precedent check: the existing Destination already human-gates direction changes and declared consequential actions; this decision identifies deliberate cognitive-capability reduction as one such action class.
+
+### Prediction
+
+The revised Destination will let future agents distinguish capability-preserving efficiency work from capability-reducing tradeoffs and stop for operator authorization in the latter case. It will not automatically detect every hidden capability loss; measurement and independent evaluation remain necessary to reveal whether a proposed "preserving" reduction actually degrades behavior.
+
+### Action
+
+Replaced the absolute "a reduction fails" sentence with a capability-preserving autonomy rule and an operator-every-time gate. Added a dated provenance layer below the Destination history marker. Preserved the convergence lease, principles-only fixed boundary, and current research/adoption priorities.
+
+Focused validation confirmed that the bounded active mandate contains the per-tradeoff approval rule, no-standing-authority rule, and non-waivable-principles boundary. `git diff --check` passed.
+
+### Reflection
+
+**Falsifiable claim about the target's current state:** The Destination now defines who has authority when resource efficiency and cognitive capability conflict, rather than pretending the conflict cannot occur.
+
+**Named blind spot:** Capability loss can be indirect or delayed. An agent may honestly classify a change as capability-preserving when the current measurements fail to detect degradation, so the gate depends on tests broad enough to expose the tradeoff.
+
+**Imagined-reader pushback:** Requiring approval "every time" could create repeated ceremony for a well-understood class of reversible experiments. That friction is intentional under the operator's answer; a future Destination run may revisit it only through another explicit operator decision.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED - capability, trust, and cost have repeatedly been treated as inseparable, but the authority rule for real dimensional tradeoffs remained unstated.
+- *About to declare silence:* not fired - this run changes the mandate and invalidates prior convergence.
+- *Contradicts prior `[!REALIZATION]`:* not fired - it operationalizes the prior claim that capability and efficiency are not separate tracks.
+- *Operator explicitly asked:* FIRED - the operator requested the full Destination reconciliation and explicitly selected the authority answer.
+
+### Across-trail macro-Hansei
+
+[!REALIZATION] The two external boundaries around recursive cognitive improvement now have an internal authority corollary. The operator owns not only changes to the Destination, but also each deliberate decision to sacrifice part of the cognitive machinery used to pursue it. The engine may discover, measure, and recommend the tradeoff; it cannot authorize its own cognitive loss.
+
+### Candidate Next Moves
+
+1. Re-orient the current arc so the layered-kernel experiment is treated as an operator-gated capability tradeoff rather than an ordinary wording optimization.
+2. Make future efficiency experiments state in advance which cognitive and evidence capabilities must be preserved and what observation would trigger the operator gate.
+3. Continue the fresh-family derivation test after this authority boundary is included in the bounded Destination.
+
+## 2026-08-09 - orient-after-cognitive-capability-gate
+
+- target: post-layering research arc under the operator-every-time cognitive-capability gate
+- operator: Nils Wendelboe Holmager
+- agent: GitHub Copilot
+- skill: orient + intent + trail (automatically scheduled by Destination)
+- outcome: reframed efficiency experimentation and layered-kernel adoption around explicit operator authority over deliberate cognitive-capability loss
+- delta: Orientation now distinguishes autonomous experimentation from operator-gated acceptance of a capability-reducing result
+
+### Scope and freshness
+
+Scope: re-orient the post-layering arc against the operator-every-time capability gate. Determine how explicit operator authority over cognitive-capability reductions changes the layered experiment, future efficiency work, and the recursive self-improvement boundary.
+
+- `python harness/tools/record.py history --write` -> 235 entries.
+- `python harness/tools/record.py learning --write` -> 60 recent + 198 archived markers.
+- `python verify.py` -> OK, trail integrity checks pass.
+- Gate: PASS (arc-claims allowed).
+
+### Arc revision
+
+The prior eight claims remain supported, with one material authority refinement:
+
+- The grounding-reflection tradeoff may be explored autonomously, but adopting a design while deliberately accepting cognitive or evidence capability loss now requires explicit operator approval for that tradeoff.
+- Recursive self-improvement remains broad in what it may discover and propose. It is not broad in what it may sacrifice: the operator owns each deliberate reduction in reasoning, memory, learning, or evidence capability.
+- A prior approval does not become standing authority. Each tradeoff returns to the operator gate.
+- Future efficiency experiments must state preservation criteria and the observation that would reveal capability loss before action, so the gate cannot be avoided by relabeling a tradeoff after the result.
+
+The layered-kernel next test therefore remains valid as an experiment. Any later adoption decision must either show preservation of the named capabilities or stop for operator approval of the measured residual loss.
+
+### Loop-effectiveness finding
+
+This Destination run corrected an assumption hidden inside the prior efficiency rule: "preserve capability" was treated as if capability were one scalar property. The experiments already showed grounding, reflection, decision quality, and gate compliance dissociate. Once capability is multidimensional, efficiency optimization necessarily needs an authority rule for tradeoffs rather than a claim that no tradeoff occurred.
+
+[!REALIZATION] Recursive cognitive improvement cannot safely authorize its own cognitive sacrifice. The same engine may identify both the efficiency gain and the capability loss, but treating its aggregate judgment as sufficient would collapse proposer, affected system, and authorizer into one role. The operator-every-time gate preserves the recursion while preventing that collapse.
+
+### Action and validation
+
+Updated Orientation's scope, freshness evidence, layering claim, recursive-authority claim and falsifier, top next test, operational rules, and concluding realization. Added explicit rules to pre-state capability-preservation criteria and stop whenever evidence crosses the operator-gate threshold.
+
+Focused assertions confirmed 235-entry freshness evidence, the operator-every-time gate, no-standing-authority rule, and experiment-trigger requirement. `python verify.py` and `git diff --check` passed.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED - the arc repeatedly separated capability dimensions but had not assigned authority when they conflict.
+- *About to declare silence:* not fired - the Destination change invalidates prior convergence and the layered tradeoff remains under test.
+- *Contradicts prior `[!REALIZATION]`:* not fired - sharpens the prior claim that capability, trust, and cost are inseparable by assigning the unresolved tradeoff to the operator.
+- *Operator explicitly asked:* FIRED - the operator invoked Destination and explicitly selected "Operator every time."
+
+### Across-trail macro-Hansei
+
+The full session moved from a recursive-improvement paradox to a separation of powers. The operator owns the purpose, independent evaluators bound claims of completion, and the operator also authorizes each deliberate sacrifice in the cognitive machinery between those boundaries. The agent retains freedom to discover routes and tradeoffs; it does not gain authority by being the system capable of describing them best.
+
+### Candidate Next Moves
+
+1. Run the layered reflection repair as a preservation experiment with pre-stated grounding, reflection, decision, and gate criteria.
+2. Give the updated bounded Destination to three fresh model families and test whether they derive all three authority boundaries without this session.
+3. Observe whether the operator-every-time gate becomes costly ceremony in repeated reversible experiments before proposing any relaxation.
+
+## 2026-08-13 - improve-single-entry-progressive-destination
+
+- target: skills-suite activation architecture and newcomer workflow
+- operator: Nils Wendelboe Holmager
+- agent: GitHub Copilot
+- skill: improve + intent + destination + trail
+- outcome: made Improve the single normal entry point and changed Destination from required setup to evidence-triggered consolidation of accepted prompt mandates
+- delta: intent 1.6.0 -> 1.7.0; improve 3.16.0 -> 3.17.0; destination 2.6.0 -> 2.7.0; suite 4.28.0 -> 4.29.0
+
+### Interpretation of the ask
+
+The operator wants the suite to hold a new user's hand through one command. A prompt, visibly interpreted by Intent and left uncorrected, is the mandate for the current Improve run. Requiring a complete Destination before useful work is unnecessary friction, especially while the operator is still discovering what they want. Improve should coordinate the whole suite: Intent and Trail every run, Destination when accumulated work makes durable direction useful, and Orient when the arc needs a refreshed map. The rejected interpretation was to merge Destination into Intent or let agent inference silently become durable operator direction; prompt authority is local to the accepted run, while cross-run direction remains conversational and operator-confirmed.
+
+### Examination
+
+- **Purpose:** the current two-action workflow contradicted the adoption priority by requiring destination articulation before a newcomer could experience the useful Intent-plus-Improve loop.
+- **Inconsistency:** Intent required Destination when no ACM existed even though its own narrated interpretation already made the current prompt's mandate visible and correctable.
+- **Overburden:** Destination was authorizing one bounded prompt instead of consolidating direction that needed to survive several prompts and sessions.
+- **Waste:** README, Quickstart, Installing, and both installer completion messages taught setup ceremony that the current-run mandate did not require.
+- **Challenge:** removing Destination entirely would collapse current-run authority and durable cross-run authority. Keeping it as an evidence-triggered, operator-confirmed service preserves that distinction while removing first-run friction.
+
+### Decision
+
+[!DECISION] Make Improve the suite's single normal entry point. Intent establishes the visible mandate for each run; silence after clear narration permits that run to proceed. Improve evaluates Destination need from directional evidence before recording, then invokes Destination after the completed run unless unresolved direction already blocks safe action. Destination synthesizes accepted mandates and asks only unresolved sourced questions. Alternative rejected: retain Destination as mandatory first-run setup, because it front-loads articulation before the work has produced evidence. Alternative rejected: infer and write durable Destination automatically, because that would let the agent convert its own interpretation into operator-held direction. Precedent check: `learning.md` records the 2026-08-02 progression from six exposed responsibilities to two deliberate actions and explicitly frames operator action count as independent of capability count. This change continues that pattern while revising the prior two-action plateau.
+
+### Prediction
+
+A fresh user will now be instructed to invoke only `/improve`; a first run without ACM will proceed under narrated Intent; every completed run will evaluate whether broader direction is now useful; and durable Destination will still require operator confirmation. Orient's evidence-based cadence and Probe's research-only role will not change.
+
+### Action
+
+Updated Intent to permit a no-ACM first run under a narrated prompt mandate and to explain its handoff to Improve. Updated Improve to declare itself the single entry point, add pre-action and post-action Destination triggers, record Destination need beside Orientation freshness, and run scheduled services in authority-preserving order. Updated Destination to accept an absent destination as a valid early state, activate from directional evidence rather than file absence or iteration count, and synthesize prior accepted mandates before asking one unresolved question.
+
+Updated README, QUICKSTART, INSTALLING, install.ps1, and install.sh so first-contact surfaces teach one action. Updated the operator-confirmed bounded Destination so adoption now means a useful first Improve run without author help or destination setup, and the operating model classifies Improve as active while Destination and Orient are triggered. Added the v4.29.0 changelog entry.
+
+Actual outcome matched the prediction. Focused repository integrity checks passed; `git diff --check` passed; PowerShell installer parsing passed; and a stale-workflow scan found only an intentional service-order sentence plus preserved historical destination text. Bash syntax validation could not run because this Windows environment has no `/bin/bash`; no shell behavior changed beyond two `echo` strings.
+
+Destination need: TRIGGERED - the accepted conversation mandates materially changed the suite's durable activation model; resolved through explicit operator confirmation before implementation.
+
+Orientation freshness: STALE - the current Orientation still describes two deliberate actions and an unassisted Destination-plus-Improve adoption bar; automatic Orient scheduled.
+
+### Reflection
+
+**Falsifiable model claim:** The suite now has one operator control input for normal work and four internal operational services whose activation follows either every-run composition or evidence, without reducing the distinct authority boundaries those services enforce.
+
+**Named blind spot:** The natural-language trigger has not yet been exercised by an unassisted newcomer or by a case where Destination and Orient become eligible in the same completed run.
+
+**Imagined-reader pushback:** Treating silence after Intent narration as permission may be too weak for consequential work. The change does not alter explicit human gates for consequential actions, but first-use testing must verify that agents preserve that distinction rather than generalizing silence into universal authorization.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED - the August 2 arc repeatedly reduced exposed operator responsibilities while preserving distinct internal capabilities; this removes the remaining setup responsibility.
+- *About to declare silence:* not fired - the change creates two explicit behavioral tests and does not claim adoption success.
+- *Contradicts prior `[!REALIZATION]`:* FIRED - `orient-passive-control-surface-arc` called two deliberate actions the stable boundary; current operator intent and the prompt-mandate analysis revise that plateau.
+- *Operator explicitly asked:* FIRED - the operator explicitly confirmed the single-entry architecture and asked Improve to implement it.
+
+### Across-trail macro-Hansei
+
+[!REVERSAL] The two-action Destination-plus-Run model was a productive simplification but still conflated durable memory with permission to begin. Prompt-level Intent already carries operator authority for bounded current work. Destination earns its place later, when accepted mandates need consolidation across an arc.
+
+[!REALIZATION] Progressive disclosure is now an authority architecture rather than only an onboarding technique: current-run authority comes directly from the operator's prompt and visible interpretation, while durable cross-run authority is captured only when evidence makes the distinction consequential enough to ask.
+
+### Candidate Next Moves
+
+1. Observe an unassisted newcomer completing a first Improve run and record whether the service explanations are sufficient without becoming ceremony.
+2. Test a completed run where Destination and Orient both trigger, verifying one Destination conversation and one post-change arc refresh without duplicate handoffs.
+3. Test a consequential prompt to verify that unopposed Intent narration does not bypass an explicit operator-every-time gate.
+
+## 2026-08-13 - orient-after-single-entry-progressive-destination
+
+- target: full activation-simplification arc after the single-entry Destination change
+- operator: Nils Wendelboe Holmager
+- agent: GitHub Copilot
+- skill: orient + intent + trail (automatically scheduled by Improve after material Destination change)
+- outcome: refreshed Orientation around prompt-level current-run mandate, evidence-triggered durable Destination, and the behavioral tests now required
+- delta: Orientation retains prior research claims while replacing the two-action adoption model with a one-entry authority model and explicit trigger falsifiers
+
+### Scope and freshness
+
+Scope: re-orient the activation-simplification arc against the single-entry Destination change. Determine how prompt-level mandate authority followed by evidence-triggered durable Destination changes onboarding, authority timing, and convergence without weakening existing operator gates.
+
+- `python harness/tools/record.py history --write` -> 237 entries.
+- `python harness/tools/record.py learning --write` -> 60 recent + 201 archived markers.
+- `python verify.py` -> OK, trail integrity checks pass.
+- Gate: PASS (arc-claims allowed).
+
+### Arc revision
+
+The full arc supports one new authority claim and three revisions while leaving the earlier cognitive-architecture, routing, model-capability, and evidence-apparatus claims intact:
+
+1. Progressive disclosure now separates current-run mandate from durable cross-run direction. An unopposed visible Intent interpretation permits bounded current work; only an operator-confirmed Destination makes accepted mandates durable across an arc.
+2. Recursive cognitive improvement remains externally bounded. Prompt authority does not authorize cross-run direction, cognitive-capability sacrifice, or bypass of an explicit consequential-action gate.
+3. Convergence remains a lease over mandate, artifact, and model frontier, but a prompt-level mandate scopes only its run. Cross-run convergence cannot be claimed before durable scope is confirmed.
+4. Adoption and token efficiency remain unproven under the new path. Removing first-run Destination reduces startup work and adds conditional consolidation cost later; only equivalent-arc measurement can establish the net result.
+
+The reasoning-contract grounding-reflection result remains valid and is now explicitly separated from activation permission timing. Conditional-routing evidence still covers separated triggers only; Destination-plus-Orient overlap remains untested.
+
+### Loop-effectiveness finding
+
+Quality bars tested: the prior unseeded-discovery, compression, within-vendor variance, separated routing, explicit gate, grounding, reflection, parser, and judge-attribution bars; plus internal text-layer coherence of the new single-entry contracts and onboarding surfaces.
+
+Result: prior results remain as recorded; single-entry text-layer coherence PASS.
+
+Bars not tested: unassisted newcomer adoption, Destination trigger precision, Destination-plus-Orient overlap, consequential-gate preservation under silent acceptance, actual token cost, cross-vendor execution, external-target operation, fresh-family derivation, and convergence before and after first Destination consolidation.
+
+Double-loop finding: the arc changed its governing assumption about when direction must become durable. A prompt and visible interpretation are sufficient for bounded work; persistence becomes an operator question when accumulated evidence makes it consequential. The Destination-first model protected direction but treated memory setup as permission to begin.
+
+Deutero-learning finding: capability count and operator-responsibility count are independent. The suite preserved interpretation, evidence, direction, orientation, and research capability while progressively moving orchestration behind one control input. External behavior must now determine whether that learning transfers beyond self-targeting.
+
+[!REALIZATION] The activation frontier is now trigger quality rather than command count. The suite has one normal entry point on paper; its authority architecture succeeds only if unfamiliar agents trigger Destination neither too early nor too late, preserve consequential gates under prompt-level mandate, and explain the transition without recreating setup ceremony.
+
+### Action and validation
+
+Rewrote Orientation's scope and freshness evidence, narrowly respecified the layered-contract claim, replaced the authority, convergence, and adoption claims, and added the falsifiable progressive-disclosure claim. Reprioritized the next runs around newcomer behavior, overlapping services, consequential gates, and equivalent-arc resource measurement. Added active rules for prompt-only operation without Destination, evidence-bearing triggers, confirmation of durable direction, and concise service explanations.
+
+Focused assertions confirmed the 237-entry freshness evidence, preservation of the generic-purpose and repaired-apparatus claims, the new progressive-disclosure claim, explicit lack of newcomer evidence, and the Destination-plus-Orient test gap. `python verify.py` and `git diff --check` passed.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED - the activation arc repeatedly reduced exposed operator responsibilities while preserving internal capabilities, moving from six commands to two actions and now one entry point.
+- *About to declare silence:* not fired - the refreshed Orientation names multiple untested behavioral bars and makes no adoption or convergence claim.
+- *Contradicts prior `[!REALIZATION]`:* FIRED - the August 2 Orient called two deliberate actions the stable operating boundary; the current arc shows that Destination setup still conflated durable memory with permission to begin.
+- *Operator explicitly asked:* FIRED - the operator explicitly confirmed the single-entry architecture and directed Improve to implement it.
+
+### Across-trail macro-Hansei
+
+[!REVERSAL] The two-action Destination-plus-Run model no longer describes the current authority boundary. It remains historical evidence of progressive simplification, but Improve is now the only normal control input and Destination activates from directional evidence.
+
+The arc has moved the adoption question from command discovery to trigger fidelity. Internal coherence is established; whether the suite actually holds an unfamiliar user's hand depends on observable timing, explanations, and preserved gates in live use.
+
+### Candidate Next Moves
+
+1. Observe an unassisted newcomer completing a first Improve run without Destination setup.
+2. Test one completed run where Destination and Orient both trigger without duplicate handoffs.
+3. Test a consequential prompt under unopposed Intent narration to verify the explicit gate still wins.
+4. Measure equivalent-task and equivalent-arc token use under the old and new activation models.

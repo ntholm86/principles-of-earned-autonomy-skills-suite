@@ -21,21 +21,9 @@ The default installer includes the five operational skills and omits Probe, keep
 
 Or copy the five operational skill folders into `<your-repo>/.copilot/skills/`: `intent/`, `destination/`, `improve/`, `trail/`, `orient/`. Add `probe/` only if you are conducting ARF research.
 
-The operator workflow is **Destination + Run**: set Destination when work begins or direction changes, then use Improve to run the work. Intent and Trail apply automatically. Orientation is refreshed automatically after material destination changes or when Improve detects that enough meaningful evidence has accumulated. Probe is optional scientific instrumentation and is not required for this workflow.
+The operator workflow is **Run Improve**. Intent interprets each prompt, Trail records each result, and Improve automatically triggers Destination or Orient when accumulated evidence makes durable direction or a refreshed map useful. Probe is optional scientific instrumentation and is not required for this workflow.
 
-## Set the destination (3 minutes)
-
-In your target repo, ask the agent:
-
-```
-/destination capture the destination for this repo and write .acm/destination.md
-```
-
-When asked, answer briefly. One or two sentences per question is enough. The output is `.acm/destination.md`.
-
-Done when: `.acm/destination.md` exists and you would not rewrite it from scratch tomorrow.
-
-## Run one improve iteration (4 minutes)
+## Run one improve iteration (7 minutes)
 
 Pick one small, verifiable thing. Then ask the agent:
 
@@ -48,7 +36,7 @@ Examples:
 - `/improve remove unused imports across src/ and verify nothing breaks`
 - `/improve tighten the README quickstart so a new user can run the first example in under five minutes`
 
-The agent automatically applies Intent, narrates its interpretation, predicts an outcome before acting, makes one change, verifies it, and automatically applies Trail to append an entry.
+The agent automatically applies Intent, explains the mandate it inferred from your prompt, predicts an outcome before acting, makes one change, verifies it, and applies Trail. If continuing safely now requires broader direction, it explains why and invokes Destination after the completed run to ask one sourced question at a time.
 
 Done when: `.acm/audit-trail.md` has a new entry with `outcome:` and `delta:`.
 
@@ -56,15 +44,15 @@ Done when: `.acm/audit-trail.md` has a new entry with `outcome:` and `delta:`.
 
 Open these and skim:
 
-1. `.acm/destination.md` — destination is captured.
-2. `.acm/audit-trail.md` — new entry has interpretation, decision, action, and outcome.
-3. The change itself in the working tree.
+1. `.acm/audit-trail.md` — the new entry has interpretation, decision, action, and outcome.
+2. The change itself in the working tree.
+3. `.acm/destination.md`, if Improve found enough directional evidence to trigger Destination.
 
-If all three are present, the loop ran successfully end to end.
+The first two are sufficient for a successful first run. Destination is created when the work needs durable cross-run direction, not as setup ceremony.
 
 ## Orientation happens automatically
 
-You do not need to count iterations or remember an Orient step. Destination schedules Orient after a material direction change. Improve evaluates orientation freshness after every recorded run and schedules Orient when the trail forms a meaningful arc, contradicts the current orientation, or approaches convergence.
+You do not need to count iterations or remember an Orient step. A material Destination change schedules Orient. Improve also evaluates orientation freshness after every recorded run and schedules Orient when the trail forms a meaningful arc, contradicts the current orientation, or approaches convergence.
 
 For a diagnostic arc-read at any time, you can still run:
 
@@ -87,6 +75,6 @@ This rejects commits that touch substantive files without a corresponding `.acm/
 
 ## If something went wrong
 
-1. No `.acm/destination.md` created → re-run `/destination` and answer at least the first question.
-2. No audit entry appended → re-run `/improve` with a smaller, more concrete task.
-3. Agent did not narrate intent → retry and report that automatic Intent composition failed; manually invoking `/intent` is a diagnostic, not a normal workflow step.
+1. No audit entry appended → re-run `/improve` with a smaller, more concrete task.
+2. Agent did not narrate intent → retry and report that automatic Intent composition failed; manually invoking `/intent` is a diagnostic, not a normal workflow step.
+3. Destination triggered without directional evidence → ask the agent to name the accepted mandates or unresolved choice that triggered it; a missing file or iteration count is not sufficient.

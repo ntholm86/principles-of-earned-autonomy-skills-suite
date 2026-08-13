@@ -33,9 +33,9 @@ Everything else is revisable when reasoning and evidence support a better route.
 Two priorities are co-equal:
 
 1. **Research:** continue producing bounded evidence about what trustworthy delegation requires, including negative results and improvements to the engine's own reasoning capability.
-2. **Adoption:** enable a new developer to install the suite and complete a first Destination + Improve cycle without author assistance. Successful use is the bar; conceptual fluency may develop through use.
+2. **Adoption:** enable a new developer to install the suite and complete a useful first Improve run without author assistance or destination setup. Improve is the single normal entry point; it applies prompt-level Intent immediately and triggers durable Destination and Orientation only when accumulated evidence makes them useful. Successful use is the bar; conceptual fluency may develop through use.
 
-Token and resource efficiency is a cross-cutting viability constraint. Optimize trustworthy capability per unit of resource. A reduction fails if it weakens reasoning, learning, operator control, or evidence integrity; a capability improvement is not operationally viable if its cost prevents sustained use. Easier explanation is evidence of lower translation friction, not proof of research validity, adoption, or token efficiency.
+Token and resource efficiency is a cross-cutting viability constraint. Optimize trustworthy capability per unit of resource. The engine may autonomously pursue reductions that preserve reasoning, memory, learning, and evidence capability. Any deliberate reduction in one of those capabilities is a consequential tradeoff that requires explicit operator approval every time, even when evidence predicts a better overall capability-per-resource result; one approval creates no standing authority for another tradeoff. No approval can waive the three principles or reduce operator control or evidence integrity below what they require. A capability improvement is not operationally viable if its cost prevents sustained use. Easier explanation is evidence of lower translation friction, not proof of research validity, adoption, or token efficiency.
 
 ### Authority and autonomy
 
@@ -43,11 +43,13 @@ The operator owns the Destination and any change to it. Within a confirmed Desti
 
 Direction changes and operator-declared consequential actions remain human-gated. The framework should support explicit boundaries that reasoning quality or accumulated trust cannot override. Private enterprise evidence remains private when confidentiality or ownership obligations apply.
 
+Convergence is a renewable lease tied to the current Destination, artifact, and available model frontier. The operational minimum is three independent fresh-session evaluations by current frontier-capable models from three distinct model families. When a newly available model plausibly extends that frontier, it must independently challenge the converged artifact. Silence renews the lease without forcing the existing evaluators to rerun; a material change resets the chain and requires three fresh family-diverse evaluations of the changed artifact. Any Destination change invalidates all prior convergence evidence for the old Destination and starts a new three-family evaluation chain. Model selection remains an operator judgment based on capability evidence and practical access, rather than a permanent vendor or model list.
+
 ### Current operating model
 
-- **Active:** Destination and Improve for normal work; Probe only for controlled ARF research.
+- **Active:** Improve as the single entry point for normal work; Probe only for controlled ARF research.
 - **Passive:** Intent and Trail surround substantive work automatically.
-- **Triggered:** Orient refreshes Orientation when Destination changes or accumulated evidence makes the current map stale.
+- **Triggered:** Destination consolidates accepted prompt mandates when continued work needs durable direction; Orient refreshes Orientation when Destination changes or accumulated evidence makes the current map stale.
 - **Memory architecture:** Agent Context Memory (ACM) currently provides persistent destination, evidence, learning, and orientation across sessions and models. "The Memory Model" and Retrospect are historical names, not parallel current concepts.
 
 This operating model is a current implementation, not part of the fixed boundary. It should remain target-agnostic, human-readable, and specifiable enough for another capable agent or execution harness to implement without becoming a checklist. The protocol must preserve memory of what happened, learning that changes later behavior, and meta-cognition about what the target is becoming; the present files and skills are revisable means of providing those capabilities.
@@ -61,7 +63,7 @@ Integration with a particular autonomous harness remains a horizon rather than t
 ### Immediate quality bars
 
 1. Self-targeting runs discover and improve previously unnamed limitations in reasoning or operation rather than only repairing skill-file consistency or following named examples.
-2. A new developer completes a first Destination + Improve cycle without author help.
+2. A new developer completes a useful first Improve run without author help or prior Destination setup, and receives concise explanations when automatic services activate.
 3. Automatic services leave durable evidence sufficient for a later session or different model to continue coherently.
 4. Research claims stay within what public trails, reproducible probes, external targets, and independent evaluators support.
 5. Resource use decreases where possible without degrading reasoning, learning, operator control, or evidence integrity.
@@ -70,7 +72,7 @@ Integration with a particular autonomous harness remains a horizon rather than t
 ### Open questions
 
 - Which limitation currently places the strongest ceiling on the engine's ability to reason about any target, without restricting discovery to examples already named?
-- Where does an unassisted new user first fail: discovery, installation, Destination, Improve, or recognizing useful evidence?
+- Where does an unassisted new user first fail: discovery, installation, first Improve, understanding an automatic handoff, or recognizing useful evidence?
 - Which public external target can test adoption and trustworthy delegation without relying on private enterprise evidence?
 - Does the Active/Passive/Triggered model survive real use, or does it hide an operational distinction users need?
 - Where are resources spent without improving decisions, learning, evidence, or operator control?
@@ -81,6 +83,24 @@ Integration with a particular autonomous harness remains a horizon rather than t
 The sections below preserve how the Destination evolved; they are provenance, not additional active instructions. Still-active commitments have been carried into this candidate. Superseded items include the May 2026 priority sequence, mandatory approval of every implementation choice, fixed use of Retrospect and the old Memory Model vocabulary, and any implication that the current skills or architecture are immutable. Older references to Commander's Intent mean Operator's Intent in the current principles.
 
 <!-- destination-history -->
+
+---
+
+## Destination note - 2026-08-09 (cognitive-capability reductions are operator-gated)
+
+Sourced from a full-session and full-ACM Destination reconciliation. The highest-impact hunch asked who should authorize a deliberate reduction in reasoning, memory, learning, or evidence capability when an agent predicts a better overall capability-per-resource result. The operator answered: "Operator every time."
+
+This settles the collision exposed by the layered-Improve experiments, where lower routine input and better grounding counts coincided with weaker reflection depth. The agent may discover the tradeoff, gather evidence, and propose it. It may not decide that a cognitive-capability loss is justified by efficiency. Each deliberate reduction requires explicit operator approval for that specific tradeoff; approval does not create precedent authority for future reductions. The principles remain non-waivable.
+
+---
+
+## Destination note - 2026-08-09 (convergence is leased against Destination and model frontier)
+
+Sourced from operator clarification in session: convergence is held by the best currently available models, a newly released frontier model must get an independent attempt, and a Destination change invalidates convergence completely. The operator proposed three flagship models as the practical limit for token efficiency.
+
+The resulting boundary separates two invalidation events. A newly available frontier model challenges the existing result; if it finds silence, the prior independent evaluations need not be repeated, while any material artifact change resets the chain under the existing Principle 3 rule. A Destination change is deeper: prior evaluations answered a different question, so none count toward convergence under the new reference signal. The operational quorum remains three current frontier-capable models from distinct model families, selected by the operator using available capability evidence and access rather than a frozen vendor list.
+
+This is a destination-level validity condition, not a claim that three models prove permanent completeness. It bounds resource use while keeping convergence responsive to both changed purpose and increased evaluator capability.
 
 ---
 
