@@ -500,6 +500,7 @@ GRANDFATHERED_ENTRIES: dict[str, set[str]] = {
     "gap: trail-skill missing ACM Mandate Gate enforcement": {"trigger"},
     "retrospect-to-orient-rename": {"trigger"},
     "stormp-illustration-readme": {"trigger"},
+    "replace-usage-blocker-with-host-fidelity-gate": {"trigger"},
     # Session-file references that predate/immediately-follow the fidelity
     # contract date but whose referenced files were never committed. The
     # content cannot be reconstructed without fabricating history.

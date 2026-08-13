@@ -845,6 +845,10 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** No new governing-variable diagnosis needed here; this entry does not extend or contradict the day's other recurring-pattern diagnoses. It is worth noting as a distinct, positive category from those: this is the first entry today that closes a piece of the suite's OWN evolution (retiring a self-scoped temporary feature) rather than fixing a defect (encoding, file-scope, version drift). The suite's design discipline of naming removal conditions in advance, rather than leaving compatibility shims open-ended, is what made this decision fast and low-risk to make today.
 
+## 2026-08-01 — confirm-push-and-record-trail-completeness-check
+
+**[!REALIZATION]** Not every operator action needs its own trail entry the instant it happens, but a real, consequential action (publishing 13 commits to a public repo) sitting unrecorded across a conversational-compaction boundary is a genuine gap worth naming: the trail's completeness currently depends on someone (here, the operator) noticing the gap, since no mechanical check verifies that every git push event has a corresponding audit-trail.md entry.
+
 ---
 
-**210 markers — 199 realisations, 11 reversals**
+**211 markers — 200 realisations, 11 reversals**

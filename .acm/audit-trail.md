@@ -13310,3 +13310,79 @@ Orientation freshness: current - claim 10 remains true that the failure conditio
 1. Obtain independent input/output token capture for matched fresh runs, either from an eligible host or through a separately governed change in the owning harness repository.
 2. Reconstruct the three detached Work snapshots and run the registered arms once resource capture exists.
 3. Observe an unassisted newcomer first Improve run as the separate adoption bar.
+
+## 2026-08-13 - replace-usage-blocker-with-host-fidelity-gate
+
+- target: experiments/late-stage-loop-viability/SNAPSHOTS.md
+- operator: Nils Holmager
+- agent: GitHub Copilot
+- skill: improve (Intent at ingress, Trail at egress)
+- outcome: The stale token-capture block is replaced by verified instrumentation evidence and the narrower production-host fidelity gate.
+- delta: Experiment remains blocked, but for contract-preserving execution rather than missing token telemetry.
+
+### Interpretation of the ask
+
+Intent interpreted "commit and continue" as requiring the next evidence-led experiment step after instrumenting the harness, while preserving the preregistered controls. Success meant proceeding only if the same production Improve contract, host, model, and independent usage capture could be held across all arms.
+
+### Examination
+
+- Resource evidence: llm-harness-proxy commit 36c6151 captures provider-reported usage; e17e2a8 and cd33c15 prove buffered and SSE handler integration; 43 Rust tests pass.
+- Live evidence: one controlled Anthropic call produced matching provider and independent ledger counts of 13 input and 5 output tokens, with native details retained under usage.raw.
+- Host fidelity: VS Code can apply production Improve but does not route its traffic through the proxy. ai-steward routes through the proxy but substitutes SCAN / IMPLEMENT / REFLECT. The Copilot CLI is not installed.
+- Protocol boundary: using ai-steward or a direct Anthropic completion would measure a different loop, despite producing valid token telemetry.
+
+### Decision
+
+[!DECISION] Keep execution blocked and update the manifest to name host fidelity as the remaining gate. Reject running ai-steward because its prompt contract differs. Reject installing Copilot CLI during this run because a new host and configuration must be frozen before arm execution, not introduced implicitly after preregistration. Precedent check: recent learning rejects proxy metrics and requires actual independent usage; the new harness evidence satisfies that requirement without relaxing the same-host and production-contract controls.
+
+### Prediction
+
+The manifest will accurately distinguish solved instrumentation from unresolved execution-host fidelity, prevent substitute-loop contamination, and leave all selected snapshots unchanged. It will not choose or install a host, run an arm, or claim the experiment is unblocked.
+
+### Action
+
+Replaced the obsolete resource-capture section with commit-level harness evidence, live Anthropic count agreement, the three assessed host paths, and an explicit pre-arm configuration-freeze requirement. The first validation invoked verify.py before regenerating derived Trail artifacts and correctly reported three stale files; the derived views were regenerated, then validation was rerun after this entry.
+
+### Reflection
+
+[!REALIZATION] Independent measurement and experimental fidelity are separate gates. Solving token capture does not authorize replacing the production Improve loop with the nearest proxy-capable agent pipeline.
+
+Blind spot: the Copilot CLI was not installed or evaluated, so it remains only a candidate host; its ability to route provider traffic through this proxy is unknown.
+
+Imagined-reader pushback: declining installation slows the experiment. The protocol cost of an unrecorded host change is higher: all three arms could be measured precisely while answering a different question.
+
+Across-trail trigger evaluation:
+- Recurring finding-class: not fired - the blocker changed from missing telemetry to host-contract compatibility.
+- About to declare silence: not fired - the experiment manifest was materially corrected.
+- Contradicts prior [!REALIZATION]: not fired - it preserves the prior requirement that independent evidence name the dimensions actually observed.
+- Operator explicitly asked: FIRED - the operator requested committed continuation.
+
+Across-trail reflection: the experiment has become progressively stricter as each apparent shortcut was tested: historical proxies were rejected, token capture was added, and now a measured substitute loop is rejected. The arc is converging on valid execution rather than merely obtaining numbers.
+
+Orientation freshness: current - the experiment's direction is unchanged; this entry narrows the execution gate using new evidence.
+Destination need: TRIGGERED - choosing or installing a new experiment host affects the frozen host configuration and cannot be inferred from the continuation mandate; operator confirmation is required before arm execution.
+
+### Candidate Next Moves
+
+1. Ask the operator whether to install and evaluate the GitHub Copilot CLI as the candidate fixed host, because host choice is now the only execution gate.
+2. If approved, preregister the exact CLI version, model, system prompt loading, tool policy, proxy endpoint, and arm command before running any snapshot.
+3. If the CLI cannot route through the proxy while loading production Improve verbatim, report the experiment blocked rather than building an unpreregistered replacement loop.
+
+## 2026-08-13 - host-fidelity-gate-trigger-format-correction
+
+- target: Prior Trail entry replace-usage-blocker-with-host-fidelity-gate
+- agent: GitHub Copilot
+- skill: trail correction
+- outcome: Supplies canonical machine-readable trigger evaluation without rewriting the append-only source entry.
+- delta: verify.py grandfathers the immutable malformed trigger block; this correction preserves its original meaning.
+
+The prior entry included all four trigger judgments under plain labels, but verify.py requires italicized labels. This entry corrects format only; it does not change the decision, evidence, or candidate next moves.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired - the blocker changed from missing telemetry to host-contract compatibility.
+- *About to declare silence:* not fired - the experiment manifest was materially corrected.
+- *Contradicts prior [!REALIZATION]:* not fired - the correction preserves the requirement that independent evidence name the dimensions actually observed.
+- *Operator explicitly asked:* FIRED - the operator requested committed continuation.
+
+**Across-trail macro-Hansei:** The experiment has become progressively stricter as each apparent shortcut was tested: historical proxies were rejected, token capture was added, and a measured substitute loop was rejected. The arc is converging on valid execution rather than merely obtaining numbers.

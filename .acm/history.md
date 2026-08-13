@@ -248,6 +248,8 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 241 | 2026-08-13 | improve-preregister-late-stage-viability-experiment | added a mechanism-neutral experiment protocol and left production Improve unchanged | new experiments/late-stage-loop-viability/PROTOCOL.md; no production skill or verifier change |
 | · 242 | 2026-08-13 | improve-late-stage-local-actionability-silence | bounded silence - no locally supported target change under the current evidence | no production, protocol, Destination, or Orientation change; append-only evidence and derived ACM refresh only |
 | ▸ 243 | 2026-08-13 | improve-preregister-work-lifecycle-snapshots | preregistered an eligible Work lifecycle and preserved the independent usage blocker | added experiments/late-stage-loop-viability/SNAPSHOTS.md; production Improve, Work, and the harness remain unchanged |
+| ▸ 244 | 2026-08-13 | replace-usage-blocker-with-host-fidelity-gate | The stale token-capture block is replaced by verified instrumentation evidence and the narrower production-host fidelity gate. | Experiment remains blocked, but for contract-preserving execution rather than missing token telemetry. |
+| ▸ 245 | 2026-08-13 | host-fidelity-gate-trigger-format-correction | Supplies canonical machine-readable trigger evaluation without rewriting the append-only source entry. | verify.py grandfathers the immutable malformed trigger block; this correction preserves its original meaning. |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -1117,4 +1119,8 @@ Do not edit by hand — re-run the command to refresh.
 - **decided:** Pre-register the three immutable Work snapshots and their selection evidence now, while marking execution blocked until an independent host records actual input and output tokens. This ranks above modifying the harness in this iteration because target selection is owned by the experiment and can be completed without prescribing cross-repository instrumentation; above running another local behavioral test because Orientation ranks late-stage evidence first; and above declaring another silence because a qualifying external lifecycle was found. Rejected alternative: cite Work as a completed protocol instance, because no token-bearing resource capture exists. Precedent check: `learning.md` requires resource claims to have independent evidence and records that lower artifact size can coincide with weaker reflection; the manifest preserves both constraints.
 - **REVERSAL:** The initial external-target report treated the harness's existence and Work's historical character counts as sufficient independent token evidence. Reversed after direct inspection found zero token-bearing ledger records and a ledger schema that does not write usage metadata.
 
-**243 runs total — 227 with changes, 16 silence**
+### Run 244 — 2026-08-13 — replace-usage-blocker-with-host-fidelity-gate
+
+- **decided:** Keep execution blocked and update the manifest to name host fidelity as the remaining gate. Reject running ai-steward because its prompt contract differs. Reject installing Copilot CLI during this run because a new host and configuration must be frozen before arm execution, not introduced implicitly after preregistration. Precedent check: recent learning rejects proxy metrics and requires actual independent usage; the new harness evidence satisfies that requirement without relaxing the same-host and production-contract controls.
+
+**245 runs total — 229 with changes, 16 silence**

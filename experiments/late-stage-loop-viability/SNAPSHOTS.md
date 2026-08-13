@@ -48,12 +48,16 @@ The current `work-skill` checkout has unrelated untracked `docs/` content. Exper
 
 ## Resource-capture gate
 
-Execution is blocked.
+Independent token capture is available but arm execution remains blocked on host fidelity.
 
-The local `llm-harness-proxy` has 41 captured JSONL session files, but inspection of every record found only these keys:
+The owning `llm-harness-proxy` repository added provider-reported usage capture in commit `36c6151` (`feat: capture provider token usage`). Commits `e17e2a8` and `cd33c15` prove buffered and SSE handler-to-ledger integration. The Rust suite passes 43 tests.
 
-`act`, `in`, `model`, `prev`, `reason`, `seq`, `sid`, `think`, `transparency`, `ts`, `v`
+A controlled live Anthropic call through the release proxy produced matching response and ledger counts: 13 input tokens and 5 output tokens. The sequence-zero ledger entry also preserved Anthropic's native cache, service-tier, and inference metadata under `usage.raw`. This discharges the prior instrumentation blocker for buffered Anthropic runs; historical sessions remain ineligible and are not retroactively estimated.
 
-There are zero records with structured `usage`, `input_tokens`, `output_tokens`, `prompt_tokens`, or `completion_tokens` fields. The ledger implementation in `proxy-rust/src/ledger.rs` does not accept or write usage metadata. Existing character counts and cost prose are not substitutes.
+No installed local host currently satisfies both remaining execution controls:
 
-Do not run the arms until an independent host records actual input and output token usage under the protocol's resource-evidence rule. Adding that instrumentation is a separate change in the owning `llm-harness-proxy` repository and is not authorized or specified by this manifest.
+- The VS Code host can execute the production Improve skill but its model traffic is not routed through the local proxy, so independent usage is unavailable.
+- `ai-steward` routes all Anthropic calls through the proxy and groups them in an independent session ledger, but it substitutes its own SCAN / IMPLEMENT / REFLECT prompts and scope policy for the snapshot's production Improve contract.
+- The GitHub Copilot CLI is not installed. Its VS Code bootstrap shim offered installation, which was declined because introducing a new host after preregistration requires an explicit host choice and a frozen configuration before any arm runs.
+
+Do not run an arm through `ai-steward`, a direct Anthropic completion, or another substitute prompt. Those routes would measure a different loop. Execution may begin only after one host is fixed for all arms that can load the snapshot's production Improve contract verbatim, operate on the detached worktree, and route every model call through the usage-capturing proxy. Record that host, model, prompt form, tool policy, and session-capture configuration before the first arm.

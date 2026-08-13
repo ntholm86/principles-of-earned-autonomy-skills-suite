@@ -5,11 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 210 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-01 — confirm-push-and-record-trail-completeness-check
-
-**[!REALIZATION]** Not every operator action needs its own trail entry the instant it happens, but a real, consequential action (publishing 13 commits to a public repo) sitting unrecorded across a conversational-compaction boundary is a genuine gap worth naming: the trail's completeness currently depends on someone (here, the operator) noticing the gap, since no mechanical check verifies that every git push event has a corresponding audit-trail.md entry.
+Showing the most recent 60 markers. 211 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-01 — deutero-learning-credited-and-closed-in-orient-step-4
 
@@ -246,6 +242,10 @@ Showing the most recent 60 markers. 210 older marker(s) are in `.acm/learning-ar
 ## 2026-08-13 — improve-preregister-work-lifecycle-snapshots
 
 **[!REVERSAL]** The initial external-target report treated the harness's existence and Work's historical character counts as sufficient independent token evidence. Reversed after direct inspection found zero token-bearing ledger records and a ledger schema that does not write usage metadata.
+
+## 2026-08-13 — replace-usage-blocker-with-host-fidelity-gate
+
+**[!REALIZATION]** Independent measurement and experimental fidelity are separate gates. Solving token capture does not authorize replacing the production Improve loop with the nearest proxy-capable agent pipeline.
 
 ---
 
