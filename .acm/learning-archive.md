@@ -873,6 +873,10 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** This is the third distinct hand-maintained "current state" artifact this repo's trail has found stale and fixed individually (CITATION.cff version/tags, verify.py's own file-scope lists, now ITERATION-COUNT.md/README's iteration claim) - each discovered independently, each fixed the same way, none converted into a standing mechanical guarantee. The recurrence across three unrelated sessions, not just within one, is stronger evidence than any single instance that the governing variable is "this repo has no mechanism that prevents a hand-counted claim from drifting," not "this one document happened to go stale."
 
+## 2026-08-02 — confirm-iteration-count-sync-scope-across-live-docs
+
+**[!REALIZATION]** Not every unsynced number is the same defect. This repo's evidence-currency problem now has two named subclasses - stale-precise (fixed by resyncing) and vague-floor (a style choice, not a defect) - and treating them identically would have produced either a false fix (rewriting archival metadata on an inference) or an omission (leaving `INSTALLING.md` inconsistent with README's newly precise figure for no reason).
+
 ---
 
-**217 markers — 205 realisations, 12 reversals**
+**218 markers — 206 realisations, 12 reversals**

@@ -13652,3 +13652,73 @@ The arc's well-aged claim is that efficiency cannot be inferred from smaller ins
 
 1. Run a fresh Improve iteration that compares the expected information gain of newly authorized silence evidence, unassisted adoption evidence, and overlapping-service evidence against their cost.
 2. Preserve the protocol repair as a prerequisite if any lifecycle experiment resumes, without treating that prerequisite as a mandate to resume it.
+
+## 2026-08-13 - improve-first-run-windows-install-probe
+
+- target: first-run adoption path for the skills suite
+- operator: Nils Holmager
+- agent: GitHub Copilot
+- skill: improve (Intent at ingress, Trail at egress)
+- outcome: the preregistered cold-start probe failed at an unstated PowerShell 7 dependency before agent invocation
+- delta: added experiments/first-run-adoption protocol and result; onboarding and production skill surfaces remain unchanged
+
+### Interpretation of the ask
+
+Intent interpreted "run improve skill" as the next self-targeting iteration under the refreshed Orientation, not as an instruction to repeat the incomplete lifecycle experiment. The prioritized question was which unresolved bar could produce the most new evidence without bypassing an authority gate. A fresh first-run adoption probe ranked above another silence arm, which needs new authorization, and above overlapping Destination-plus-Orient behavior, which requires a real operator confirmation dialogue.
+
+### Examination
+
+- Purpose: research and adoption are co-equal Destination priorities. Lifecycle viability now has two eligible measurements; unassisted first-run operation has no completed behavioral case.
+- First-contact surface: QUICKSTART.md claims a copy-pasteable ten-minute path and lists VS Code with Copilot Chat, not PowerShell 7, as the Windows prerequisite.
+- Fixed hypothesis: a fresh five-skill install on a no-ACM target would complete useful verified work, narrate Intent, write Trail, and avoid unsupported Destination setup.
+- Host preflight: Copilot CLI 1.0.79 and Python were available. The documented Windows command, pwsh install.ps1, could not start because pwsh was not installed.
+- Discriminating control: built-in Windows PowerShell ran the same install.ps1 successfully in a disposable location and installed exactly the five operational skills plus PRINCIPLES.md. The output was removed afterward.
+- Surface scan: the pwsh command appears in README.md, QUICKSTART.md, INSTALLING.md, and install.ps1's usage comment.
+- Challenge: switching to the working control and continuing the model run would hide a real first-contact failure after observing it. Fixing the docs in the same iteration would violate the protocol's publish-before-change boundary and make the tested artifact ambiguous.
+
+### Decision
+
+[!DECISION] Publish the preregistered probe as failed at the documented installation boundary and stop before target creation or agent invocation. Do not reinterpret it as an Improve reasoning failure, human-adoption result, or installer-body defect. Reject silently substituting built-in PowerShell because the test was of the documented path. Reject fixing the four command surfaces in this iteration because the protocol requires the result to be durable first. Precedent check: learning.md records that executable user journeys, not internal verifier success, are required for adoption readiness; preserving this failure applies that precedent directly.
+
+### Prediction
+
+The result will isolate the failure to the documented shell command or its unstated PowerShell 7 prerequisite, preserve all onboarding and production surfaces unchanged, and leave agent behavior untested. Repository verification and focused boundary assertions will pass.
+
+### Action
+
+Added experiments/first-run-adoption/PROTOCOL.md before execution. It fixed the question, hypothesis, falsifiers, host, one-invocation boundary, classification, and human-adoption limitation.
+
+After the documented command failed and the built-in PowerShell control succeeded, updated only the protocol status and added RESULTS.md. The result states that no fixture, ACM, or model invocation occurred and names every untested behavior. It preserves the four live command surfaces for a later Improve iteration.
+
+The prediction held. python verify.py and git diff --check passed. Focused assertions confirmed the bounded failure language, and Git confirmed README.md, QUICKSTART.md, INSTALLING.md, install.ps1, and improve/SKILL.md have no diff.
+
+Destination need: not triggered - the current Destination already makes adoption co-equal and defines successful first Improve use as the bar. The finding identifies a route-level blocker, not unresolved direction.
+
+Orientation freshness: current - Orientation already ranked an unassisted first run as an untested bar; this single local failure identifies its first blocker but does not yet form an arc requiring resynthesis.
+
+### Reflection
+
+[!REALIZATION] The first tested adoption failure occurs before any reasoning contract is loaded. A suite can simplify its operator workflow to one command and still fail first contact when the installation command assumes an unstated runtime. Adoption readiness therefore begins at the executable shell boundary, not at the first Improve narration.
+
+Falsifiable model claim: in Windows environments with built-in PowerShell but without PowerShell 7, the current documented path blocks installation even though the installer body is compatible with the available shell.
+
+Named blind spot: this is one Windows environment. It does not establish how common the missing-pwsh condition is or whether PowerShell 7 should become an explicit prerequisite instead of changing the command.
+
+Imagined-reader pushback: pwsh is the modern cross-platform shell and may be a reasonable dependency. If so, the defect is still real because the quickstart calls the command copy-pasteable without naming that prerequisite; the next Improve run must choose between declaring the dependency and using the built-in compatible shell.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED - prior adoption work already found that executable user journeys can remain broken while repository verification is green; this probe found the same class at the primary Windows command.
+- *About to declare silence:* not fired - the probe produced a concrete failed result and blocker.
+- *Contradicts prior [!REALIZATION]:* not fired - it supplies behavioral evidence for the existing adoption-readiness gap rather than overturning it.
+- *Operator explicitly asked:* FIRED - the operator explicitly invoked Improve.
+
+### Across-trail macro-Hansei
+
+The arc has spent substantial effort simplifying what users must understand after installation, while actual install execution received less behavioral pressure. The recurring governing variable is not the Destination; adoption is already co-equal. The operational correction is to test the journey in chronological order, because later reasoning quality cannot compensate for an earlier command that never starts.
+
+### Candidate Next Moves
+
+1. Run a fresh Improve iteration on the Windows command contract, choosing from evidence whether to use the compatible built-in shell or declare PowerShell 7 as a real prerequisite, then align all four live surfaces.
+2. After that artifact change is committed, preregister a new cold-start probe and continue through the no-ACM model invocation rather than reusing this failed run.
+3. Preserve the distinction between simulated first-run operability and real adoption by a developer who did not co-author the suite.

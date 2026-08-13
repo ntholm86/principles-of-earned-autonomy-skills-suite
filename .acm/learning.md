@@ -5,11 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 217 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-02 — confirm-iteration-count-sync-scope-across-live-docs
-
-**[!REALIZATION]** Not every unsynced number is the same defect. This repo's evidence-currency problem now has two named subclasses - stale-precise (fixed by resyncing) and vague-floor (a style choice, not a defect) - and treating them identically would have produced either a false fix (rewriting archival metadata on an inference) or an omission (leaving `INSTALLING.md` inconsistent with README's newly precise figure for no reason).
+Showing the most recent 60 markers. 218 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-02 — automatic-intent-trail-workflow
 
@@ -246,6 +242,10 @@ Showing the most recent 60 markers. 217 older marker(s) are in `.acm/learning-ar
 ## 2026-08-13 — orient-after-late-stage-viability-experiment
 
 **[!REALIZATION]** The late-stage frontier remains evidential, but it is no longer unmeasured. Two eligible positions show that calls, output, and time can fall as gains narrow while input rises; the missing silence endpoint prevents a lifecycle conclusion. The strongest completed advance is methodological: the suite detected and excluded invalid evidence instead of converting operational failure into support for its preferred hypothesis.
+
+## 2026-08-13 — improve-first-run-windows-install-probe
+
+**[!REALIZATION]** The first tested adoption failure occurs before any reasoning contract is loaded. A suite can simplify its operator workflow to one command and still fail first contact when the installation command assumes an unstated runtime. Adoption readiness therefore begins at the executable shell boundary, not at the first Improve narration.
 
 ---
 

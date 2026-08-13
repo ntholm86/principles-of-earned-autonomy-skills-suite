@@ -254,6 +254,7 @@ Do not edit by hand — re-run the command to refresh.
 | · 247 | 2026-08-13 | execute-late-stage-loop-viability-experiment | two eligible arms were classified, the silence position was excluded, and the registered experiment is inconclusive | added RESULTS.md, EVALUATION.md, and hashed raw evidence; production Improve remains unchanged |
 | ▸ 248 | 2026-08-13 | improve-arm-boundary-validity | bound arm eligibility to the actual invocation and made incomplete authorized attempts non-replaceable without a newly authorized protocol | protocol-only validity repair; production Improve and the inconclusive experiment result remain unchanged |
 | · 249 | 2026-08-13 | orient-after-late-stage-viability-experiment | refreshed Orientation from setup-only uncertainty to a mixed two-position measurement, excluded silence endpoint, and event-bound validity rule | .acm/orientation.md refreshed; no production skill, Destination, or experiment outcome changed |
+| ▸ 250 | 2026-08-13 | improve-first-run-windows-install-probe | the preregistered cold-start probe failed at an unstated PowerShell 7 dependency before agent invocation | added experiments/first-run-adoption protocol and result; onboarding and production skill surfaces remain unchanged |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -1141,4 +1142,8 @@ Do not edit by hand — re-run the command to refresh.
 
 - **decided:** Repair the experiment-validity contract at the invocation boundary. Require a captured clean-state assertion immediately before each arm, define the authorized invocation itself as the arm, exclude incomplete attempts, and require a revised protocol plus new operator authorization before any replacement output. This ranks above changing production Improve because the experiment is inconclusive; above rerunning silence because the old authorization is exhausted; and above doing nothing because the observed exclusion exposed an actual ambiguity in the reusable protocol. Precedent check: learning.md records that measurement, lifecycle eligibility, host fidelity, and run-boundary cleanliness are separate gates; this change makes the newest gate operative without weakening any earlier one.
 
-**249 runs total — 231 with changes, 18 silence**
+### Run 250 — 2026-08-13 — improve-first-run-windows-install-probe
+
+- **decided:** Publish the preregistered probe as failed at the documented installation boundary and stop before target creation or agent invocation. Do not reinterpret it as an Improve reasoning failure, human-adoption result, or installer-body defect. Reject silently substituting built-in PowerShell because the test was of the documented path. Reject fixing the four command surfaces in this iteration because the protocol requires the result to be durable first. Precedent check: learning.md records that executable user journeys, not internal verifier success, are required for adoption readiness; preserving this failure applies that precedent directly.
+
+**250 runs total — 232 with changes, 18 silence**
