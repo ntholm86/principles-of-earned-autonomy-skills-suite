@@ -106,7 +106,7 @@ Want a copy-pasteable, 10-minute path? See [QUICKSTART.md](./QUICKSTART.md).
 
 1. Install with one command:
    - macOS / Linux: `bash install.sh`
-   - Windows: `pwsh install.ps1`
+   - Windows: `powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1`
    - ARF researchers only: add `--research` on macOS/Linux or `-Research` on Windows to include Probe.
 2. In your target repo, run Improve on one concrete, verifiable task:
    - `/improve review the checkout module for waste and overburden`

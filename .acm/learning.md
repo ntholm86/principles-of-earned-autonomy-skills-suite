@@ -5,15 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 218 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-02 — automatic-intent-trail-workflow
-
-**[!REALIZATION]** Installer completion text is part of the product contract. The first full-doc pass still missed two lines that would have taught the old six-command model at the exact moment a user begins. The contradiction scan, rather than file taxonomy, exposed the real boundary.
-
-## 2026-08-02 — automatic-intent-trail-workflow
-
-**[!REALIZATION]** The suite's complexity problem was not six separate capabilities; it was exposing six capabilities as six operator responsibilities. Earlier iterations repeatedly simplified placement and wording while preserving evidence machinery underneath. This change applies the same pattern to runtime composition: keep distinct ownership boundaries, collapse the user's required control surface. The recurring drift risk now moves to any surface that enumerates skills without also naming their operating role.
+Showing the most recent 60 markers. 220 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-02 — destination-orientation-run-mindset
 
@@ -247,6 +239,14 @@ Showing the most recent 60 markers. 218 older marker(s) are in `.acm/learning-ar
 
 **[!REALIZATION]** The first tested adoption failure occurs before any reasoning contract is loaded. A suite can simplify its operator workflow to one command and still fail first contact when the installation command assumes an unstated runtime. Adoption readiness therefore begins at the executable shell boundary, not at the first Improve narration.
 
+## 2026-08-13 — improve-windows-install-command-contract
+
+**[!REALIZATION]** The Windows blocker was dependency waste rather than installer incompatibility: the live guidance selected a newer shell even though the shipped scripts use only behavior available in the built-in host. First-contact compatibility depends on the documented launcher as well as the script body.
+
+## 2026-08-13 — improve-windows-install-command-contract
+
+**[!REVERSAL]** Within this iteration, the first hook-guidance edit introduced one extra indentation level. Diff inspection exposed it; the line was realigned and diagnostics rerun before Trail.
+
 ---
 
-**60 markers — 46 realisations, 14 reversals**
+**60 markers — 45 realisations, 15 reversals**

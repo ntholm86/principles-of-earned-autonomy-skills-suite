@@ -13,11 +13,11 @@ A minimal, copy-pasteable path to one real run that produces real evidence. Aim 
 From a clone of this repo:
 
 ```
-bash install.sh                 # macOS / Linux
-pwsh install.ps1                # Windows
+bash install.sh                                                       # macOS / Linux
+powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1     # Windows
 ```
 
-The default installer includes the five operational skills and omits Probe, keeping the visible command surface focused on normal use. ARF researchers can add it with `bash install.sh --research` or `pwsh install.ps1 -Research`.
+The default installer includes the five operational skills and omits Probe, keeping the visible command surface focused on normal use. ARF researchers can add it with `bash install.sh --research` or `powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1 -Research`.
 
 Or copy the five operational skill folders into `<your-repo>/.copilot/skills/`: `intent/`, `destination/`, `improve/`, `trail/`, `orient/`. Add `probe/` only if you are conducting ARF research.
 
@@ -68,7 +68,7 @@ The one-line installer does not copy optional tooling. From your target repo, in
 
 ```
 bash /path/to/autonomous-agent-skills/harness/tools/install-hooks.sh
-pwsh C:\path\to\autonomous-agent-skills\harness\tools\install-hooks.ps1
+powershell -NoProfile -ExecutionPolicy Bypass -File C:\path\to\autonomous-agent-skills\harness\tools\install-hooks.ps1
 ```
 
 This rejects commits that touch substantive files without a corresponding `.acm/audit-trail.md` entry.

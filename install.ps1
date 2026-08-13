@@ -1,7 +1,7 @@
 # install.ps1 — copy PEA skills into a Copilot skills directory.
 #
 # Usage:
-#   pwsh install.ps1 [-Target <path>] [-Research]
+#   powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1 [-Target <path>] [-Research]
 #
 # Default target: $HOME\.copilot\skills (user-global).
 param(

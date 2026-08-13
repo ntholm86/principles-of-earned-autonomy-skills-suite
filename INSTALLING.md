@@ -5,8 +5,8 @@
 From a clone of this repo:
 
 ```
-bash install.sh                 # macOS / Linux  → installs to ~/.copilot/skills
-pwsh install.ps1                # Windows        → installs to $HOME\.copilot\skills
+bash install.sh                                                       # macOS / Linux  → installs to ~/.copilot/skills
+powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1     # Windows        → installs to $HOME\.copilot\skills
 ```
 
 The default install copies the five operational skills plus PRINCIPLES.md. Probe is omitted so normal users see only the operational command surface.
@@ -15,18 +15,18 @@ To install into a project instead of user-global:
 
 ```
 bash install.sh ./my-repo/.copilot/skills
-pwsh install.ps1 -Target .\my-repo\.copilot\skills
+powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1 -Target .\my-repo\.copilot\skills
 ```
 
 To include Probe for controlled ARF research:
 
 ```
 bash install.sh --research
-pwsh install.ps1 -Research
+powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1 -Research
 
 # Project-local research install
 bash install.sh ./my-repo/.copilot/skills --research
-pwsh install.ps1 -Target .\my-repo\.copilot\skills -Research
+powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1 -Target .\my-repo\.copilot\skills -Research
 ```
 
 Nothing else is installed and nothing is executed at runtime.
@@ -37,7 +37,7 @@ The one-line installer does not copy optional tooling. From the target repo wher
 
 ```
 bash /path/to/autonomous-agent-skills/harness/tools/install-hooks.sh
-pwsh C:\path\to\autonomous-agent-skills\harness\tools\install-hooks.ps1
+powershell -NoProfile -ExecutionPolicy Bypass -File C:\path\to\autonomous-agent-skills\harness\tools\install-hooks.ps1
 ```
 
 This installs a pre-commit hook that rejects commits which touch substantive files without a corresponding `.acm/audit-trail.md` entry. Override with `git commit --no-verify` — the override itself is auditable.

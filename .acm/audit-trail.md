@@ -13722,3 +13722,71 @@ The arc has spent substantial effort simplifying what users must understand afte
 1. Run a fresh Improve iteration on the Windows command contract, choosing from evidence whether to use the compatible built-in shell or declare PowerShell 7 as a real prerequisite, then align all four live surfaces.
 2. After that artifact change is committed, preregister a new cold-start probe and continue through the no-ACM model invocation rather than reusing this failed run.
 3. Preserve the distinction between simulated first-run operability and real adoption by a developer who did not co-author the suite.
+
+## 2026-08-13 - improve-windows-install-command-contract
+
+- target: live Windows installation and optional hook onboarding commands
+- operator: Nils Holmager
+- agent: GitHub Copilot
+- skill: improve (Intent at ingress, Trail at egress)
+- outcome: removed the unstated PowerShell 7 dependency from live Windows onboarding and verified both documented command paths
+- delta: README.md, QUICKSTART.md, INSTALLING.md, install.ps1, and hook guidance now use built-in Windows PowerShell
+
+### Interpretation of the ask
+
+Intent interpreted "run improve skill" as a fresh self-targeting iteration under the current Destination. The prior preregistered probe had already isolated the earliest adoption blocker, so this run prioritized repairing that executable first-contact boundary rather than repeating the experiment or changing production Improve. The rejected interpretation was to continue the failed probe under a substituted command; its authorization ended with the published failure and cannot be reused.
+
+### Examination
+
+- Purpose: adoption requires a new developer to reach a useful first Improve run without author assistance. The current Windows command fails before the reasoning layer loads.
+- Inconsistency: README.md, QUICKSTART.md, INSTALLING.md, install.ps1, and optional hook guidance invoked pwsh even though PowerShell 7 was not a stated prerequisite.
+- Overburden: no stronger local issue was found; install.ps1 already runs under Windows PowerShell 5.1 and did not need a compatibility branch.
+- Waste: requiring a second shell added installation burden without enabling behavior used by the installer.
+- Challenge: declaring PowerShell 7 as a prerequisite would preserve the shorter command but add a dependency that the recorded control proved unnecessary. Historical experiment and archive references remain unchanged because they are evidence, not live guidance.
+
+### Decision
+
+[!DECISION] Standardize every live Windows onboarding command on `powershell -NoProfile -ExecutionPolicy Bypass -File` rather than declaring PowerShell 7 as a prerequisite. This ranks above rerunning the cold-start probe because the known blocker must first be repaired and committed; it ranks above production Improve changes because no model was invoked and no reasoning defect was observed. Precedent check: learning.md supports reducing first-contact operator burden and preserving chronological journey evidence; it contains no precedent requiring PowerShell 7.
+
+### Prediction
+
+The exact documented default command will install the five operational skills plus PRINCIPLES.md on the tested Windows host, and the documented optional hook command will install the pre-commit hook. Live onboarding surfaces will contain no pwsh dependency. This change will not prove a successful Improve run, independent human adoption, or any change in reasoning capability.
+
+### Action
+
+Replaced the live Windows commands in README.md, QUICKSTART.md, INSTALLING.md, install.ps1 usage guidance, and the hook's embedded installation guidance. Preserved experiments/first-run-adoption and archived references unchanged.
+
+The prediction held. The exact default command installed intent, destination, improve, trail, orient, and PRINCIPLES.md into a disposable target, which was removed. The exact hook command installed `.git/hooks/pre-commit` in a disposable Git repository, which was removed. A focused scan found no pwsh references in the live changed surfaces, diagnostics found no errors, and git diff --check passed.
+
+[!REVERSAL] Within this iteration, the first hook-guidance edit introduced one extra indentation level. Diff inspection exposed it; the line was realigned and diagnostics rerun before Trail.
+
+Destination need: not triggered - the current Destination already establishes unassisted adoption and leaves route choice to Improve; this run resolved a route-level blocker.
+
+Orientation freshness: current - this repair advances the adoption path predicted by the latest Orientation and prior Trail entry without contradicting an arc claim or accumulating a new cluster.
+
+### Reflection
+
+[!REALIZATION] The Windows blocker was dependency waste rather than installer incompatibility: the live guidance selected a newer shell even though the shipped scripts use only behavior available in the built-in host. First-contact compatibility depends on the documented launcher as well as the script body.
+
+Falsifiable model claim: on a Windows host with Windows PowerShell 5.1 and no PowerShell 7, the revised live commands now complete installation while the previous commands could not start.
+
+Named blind spot: this run tested one Windows host and did not execute the subsequent no-ACM Improve invocation.
+
+Imagined-reader pushback: PowerShell 7 is the current cross-platform product and may be preferable generally. That preference does not justify an onboarding dependency when the Windows-specific installer has no demonstrated need for it.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED - the preceding adoption probe and earlier onboarding work both found that live executable journeys can fail despite internally coherent documentation and green repository checks.
+- *About to declare silence:* not fired - this run made and verified a material onboarding change.
+- *Contradicts prior [!REALIZATION]:* not fired - the result confirms the prior finding that adoption starts at the executable shell boundary.
+- *Operator explicitly asked:* FIRED - the operator explicitly invoked Improve.
+
+### Across-trail macro-Hansei
+
+The adoption arc increasingly shows that simplification claims must be tested in journey order. Conceptual and command-surface simplification earned value, but executable observation found a blocker before any of those later mechanisms could matter. The governing variable remains successful unassisted use; no Destination revision is indicated.
+
+### Candidate Next Moves
+
+1. Preregister a new cold-start probe against the repaired artifact and continue through the no-ACM model invocation, because installation is now verified but first Improve behavior remains untested.
+2. After simulated operability is established, observe an independent developer attempting the same path, because agent-run fixtures cannot establish human adoption.
+3. Test overlapping Destination-plus-Orient activation after the first-run path, because composition remains an independent untested behavior rather than an installation concern.

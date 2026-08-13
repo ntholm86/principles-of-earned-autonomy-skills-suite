@@ -877,6 +877,14 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** Not every unsynced number is the same defect. This repo's evidence-currency problem now has two named subclasses - stale-precise (fixed by resyncing) and vague-floor (a style choice, not a defect) - and treating them identically would have produced either a false fix (rewriting archival metadata on an inference) or an omission (leaving `INSTALLING.md` inconsistent with README's newly precise figure for no reason).
 
+## 2026-08-02 — automatic-intent-trail-workflow
+
+**[!REALIZATION]** Installer completion text is part of the product contract. The first full-doc pass still missed two lines that would have taught the old six-command model at the exact moment a user begins. The contradiction scan, rather than file taxonomy, exposed the real boundary.
+
+## 2026-08-02 — automatic-intent-trail-workflow
+
+**[!REALIZATION]** The suite's complexity problem was not six separate capabilities; it was exposing six capabilities as six operator responsibilities. Earlier iterations repeatedly simplified placement and wording while preserving evidence machinery underneath. This change applies the same pattern to runtime composition: keep distinct ownership boundaries, collapse the user's required control surface. The recurring drift risk now moves to any surface that enumerates skills without also naming their operating role.
+
 ---
 
-**218 markers — 206 realisations, 12 reversals**
+**220 markers — 208 realisations, 12 reversals**

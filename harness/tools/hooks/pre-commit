@@ -10,7 +10,7 @@ Override with `git commit --no-verify` â€” the override itself is auditable
 
 Install:
   bash tools/install-hooks.sh        # macOS / Linux
-  pwsh tools/install-hooks.ps1       # Windows
+    powershell -NoProfile -ExecutionPolicy Bypass -File tools/install-hooks.ps1  # Windows
 """
 from __future__ import annotations
 

@@ -255,6 +255,7 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 248 | 2026-08-13 | improve-arm-boundary-validity | bound arm eligibility to the actual invocation and made incomplete authorized attempts non-replaceable without a newly authorized protocol | protocol-only validity repair; production Improve and the inconclusive experiment result remain unchanged |
 | · 249 | 2026-08-13 | orient-after-late-stage-viability-experiment | refreshed Orientation from setup-only uncertainty to a mixed two-position measurement, excluded silence endpoint, and event-bound validity rule | .acm/orientation.md refreshed; no production skill, Destination, or experiment outcome changed |
 | ▸ 250 | 2026-08-13 | improve-first-run-windows-install-probe | the preregistered cold-start probe failed at an unstated PowerShell 7 dependency before agent invocation | added experiments/first-run-adoption protocol and result; onboarding and production skill surfaces remain unchanged |
+| ▸ 251 | 2026-08-13 | improve-windows-install-command-contract | removed the unstated PowerShell 7 dependency from live Windows onboarding and verified both documented command paths | README.md, QUICKSTART.md, INSTALLING.md, install.ps1, and hook guidance now use built-in Windows PowerShell |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -1146,4 +1147,9 @@ Do not edit by hand — re-run the command to refresh.
 
 - **decided:** Publish the preregistered probe as failed at the documented installation boundary and stop before target creation or agent invocation. Do not reinterpret it as an Improve reasoning failure, human-adoption result, or installer-body defect. Reject silently substituting built-in PowerShell because the test was of the documented path. Reject fixing the four command surfaces in this iteration because the protocol requires the result to be durable first. Precedent check: learning.md records that executable user journeys, not internal verifier success, are required for adoption readiness; preserving this failure applies that precedent directly.
 
-**250 runs total — 232 with changes, 18 silence**
+### Run 251 — 2026-08-13 — improve-windows-install-command-contract
+
+- **decided:** Standardize every live Windows onboarding command on `powershell -NoProfile -ExecutionPolicy Bypass -File` rather than declaring PowerShell 7 as a prerequisite. This ranks above rerunning the cold-start probe because the known blocker must first be repaired and committed; it ranks above production Improve changes because no model was invoked and no reasoning defect was observed. Precedent check: learning.md supports reducing first-contact operator burden and preserving chronological journey evidence; it contains no precedent requiring PowerShell 7.
+- **REVERSAL:** Within this iteration, the first hook-guidance edit introduced one extra indentation level. Diff inspection exposed it; the line was realigned and diagnostics rerun before Trail.
+
+**251 runs total — 233 with changes, 18 silence**
