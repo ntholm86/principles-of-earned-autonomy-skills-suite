@@ -1,0 +1,10 @@
+﻿{
+    "captured_at":  "2026-08-13T15:58:56.1899237Z",
+    "reason":  "final script aborted before invocation: baseline capture absent and CLI output included update hint",
+    "model_invocation_occurred":  false,
+    "baseline_commit":  "63f0498fb3c1f4a0f2ea2a5999a50ac13283b2df",
+    "harness_file_count":  0,
+    "target_clean":  true,
+    "acm_exists":  false,
+    "proxy_pid":  47092
+}

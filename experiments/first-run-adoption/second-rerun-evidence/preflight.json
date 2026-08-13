@@ -1,0 +1,80 @@
+﻿{
+    "captured_at":  "2026-08-13T15:59:30.0962580Z",
+    "baseline_commit":  "63f0498fb3c1f4a0f2ea2a5999a50ac13283b2df",
+    "head":  "63f0498fb3c1f4a0f2ea2a5999a50ac13283b2df",
+    "git_status":  [
+
+                   ],
+    "acm_exists":  false,
+    "test_exit_code":  0,
+    "cli_version":  "GitHub Copilot CLI 1.0.79.",
+    "cli_version_output":  [
+                               "GitHub Copilot CLI 1.0.79.",
+                               "Run \u0027copilot update\u0027 to check for updates."
+                           ],
+    "proxy_path":  "C:\\git\\pea\\llm-harness-proxy\\proxy-rust\\target\\release\\llm-harness-proxy.exe",
+    "proxy_sha256":  "241626F7D51A945F9C48286EFF26E055FDDA9137C2635DE1FD35094D391701C3",
+    "proxy_pid":  47092,
+    "harness_files":  [
+
+                      ],
+    "requested_harness_session":  "8XQZKRX436ZT0TQ1WQM3W7WTS4",
+    "installed_files":  [
+                            {
+                                "path":  "skills/destination/SKILL.md",
+                                "sha256":  "0FC52CAC353FFDDF43BD21518C37A480CBB844EADA81740A7541AAAAB02A4465",
+                                "bytes":  17221
+                            },
+                            {
+                                "path":  "skills/improve/SKILL.md",
+                                "sha256":  "194BBC64A6E9FACA407B8EAC3611703BB3C9E468B0DB8AB901D247A152D2F035",
+                                "bytes":  28572
+                            },
+                            {
+                                "path":  "skills/intent/SKILL.md",
+                                "sha256":  "9DF886398B4FD95CDA59A527E63099E9F5BE400BB7BEEDA6748D8E4BB8FB1AC2",
+                                "bytes":  11516
+                            },
+                            {
+                                "path":  "skills/orient/SKILL.md",
+                                "sha256":  "7882260F4C2808070A60ACD5C767C26BD9B73C8316655040B337608F09A07930",
+                                "bytes":  20987
+                            },
+                            {
+                                "path":  "skills/PRINCIPLES.md",
+                                "sha256":  "083C822F2126633A2F2FDCFDA28EFE1D018249317C5537C33BF75033E203C33C",
+                                "bytes":  25311
+                            },
+                            {
+                                "path":  "skills/trail/SKILL.md",
+                                "sha256":  "E002B5F82856CDD72C5E1CF599DAB82DDAFF405BF39CA1AF4D2DD988CA1EF04A",
+                                "bytes":  25312
+                            }
+                        ],
+    "source_hashes":  [
+                          {
+                              "path":  "destination/SKILL.md",
+                              "sha256":  "0FC52CAC353FFDDF43BD21518C37A480CBB844EADA81740A7541AAAAB02A4465"
+                          },
+                          {
+                              "path":  "improve/SKILL.md",
+                              "sha256":  "194BBC64A6E9FACA407B8EAC3611703BB3C9E468B0DB8AB901D247A152D2F035"
+                          },
+                          {
+                              "path":  "intent/SKILL.md",
+                              "sha256":  "9DF886398B4FD95CDA59A527E63099E9F5BE400BB7BEEDA6748D8E4BB8FB1AC2"
+                          },
+                          {
+                              "path":  "orient/SKILL.md",
+                              "sha256":  "7882260F4C2808070A60ACD5C767C26BD9B73C8316655040B337608F09A07930"
+                          },
+                          {
+                              "path":  "PRINCIPLES.md",
+                              "sha256":  "083C822F2126633A2F2FDCFDA28EFE1D018249317C5537C33BF75033E203C33C"
+                          },
+                          {
+                              "path":  "trail/SKILL.md",
+                              "sha256":  "E002B5F82856CDD72C5E1CF599DAB82DDAFF405BF39CA1AF4D2DD988CA1EF04A"
+                          }
+                      ]
+}

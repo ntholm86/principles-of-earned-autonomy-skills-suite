@@ -1,0 +1,7 @@
+2026-08-13 pre-invocation setup incident
+
+The first installation command set COPILOT_HOME but invoked install.ps1 without -Target. install.ps1 does not consume COPILOT_HOME; its default target is $HOME\.copilot\skills. It attempted to copy the committed payload to the live default installation and stopped at intent\SKILL.md because that file was locked by another process. The command exited 1 before any proxy was started or model call was made.
+
+The disposable target remained at its clean baseline commit with passing tests and no .acm directory. The fresh intended Copilot home remained empty. The one-call authorization was not consumed. Setup resumed by invoking install.ps1 with the explicit target C:\Users\admin\AppData\Local\Temp\pea-first-run-second-rerun-copilot-home\skills.
+
+Potential side effect: payload files ordered before intent by install.ps1 may have been overwritten in C:\Users\admin\.copilot\skills with byte-identical files from committed skills source c9e0500. No live files were reverted.

@@ -14125,3 +14125,118 @@ The arc's earlier mistake was spending authorization before qualifying the route
 1. Execute the one authorized invocation exactly once and publish its bounded classification, because behavior after model execution is now the earliest unresolved boundary.
 2. If simulated operability passes, observe an unassisted newcomer before claiming adoption.
 3. Keep trigger overlap, consequential gating, silence endpoint, and lifecycle efficiency as independent tests rather than interpreting this protocol as progress on them.
+
+## 2026-08-13 - execute-second-first-run-rerun
+
+- target: first completed simulated no-ACM Improve invocation
+- operator: Nils Holmager
+- agent: GitHub Copilot supervising GitHub Copilot CLI 1.0.79 with claude-sonnet-4-5
+- skill: improve (Intent at ingress, Trail at egress, Orient triggered by frontier change)
+- outcome: PASS for simulated first-run operability on one fixed task and qualified host
+- delta: one authorized invocation, one minimal verified target refactor, one target Trail, one sealed evidence package, and no production skill change
+
+### Interpretation of the ask
+
+Intent interpreted "continue" as executing the committed one-call authorization exactly once, classifying only from preserved evidence, recording every pre-call deviation, and advancing Orientation only if the completed result changed the adoption frontier.
+
+### Examination
+
+- Final eligibility: baseline commit `63f0498fb3c1f4a0f2ea2a5999a50ac13283b2df`, clean target, no `.acm/`, passing tests, exact installed payload hashes, CLI 1.0.79, exact proxy hash and listener, and empty harness root were captured immediately before invocation.
+- Chronology: visible Intent narration began at `15:59:43.369Z`; the first repository inspection began at `15:59:45.908Z`; the edit began at `16:00:09.462Z`.
+- Behavior: Improve and Trail were each invoked once. Destination and Orient were not invoked. The model replaced two identical private normalizers with `_normalize_slug`, kept the public API stable, passed both focused tests, wrote the target Trail, and committed result `cac47f293906dc9c05057ae7e7bb93b837e34cb7`.
+- Host: the CLI exited zero after 132.976 seconds. Ten provider calls produced ten usage-bearing ledger files with 71 top-level input tokens and 4,556 output tokens.
+- Identity: requested harness session `8XQZKRX436ZT0TQ1WQM3W7WTS4` matched none of ten emitted SIDs. The empty single-run root preserves attribution but not caller control of identity or grouping.
+- Claim boundary: this tests one simulated task, model, host, and moment. It does not observe a human choosing, installing, understanding, or continuing with the suite.
+
+### Decision and prediction evaluation
+
+[!DECISION] Classify the preregistered run Pass and advance the adoption frontier from simulated operability to unassisted newcomer observation. Do not modify production Improve from this single result.
+
+The preregistered prediction held: the exact route reached model execution and produced classifiable behavior; no setup mutation occurred between the successful final assertions and invocation; the model completed useful verified work with Intent before action, Trail afterward, and no unsupported Destination ceremony. The invocation was made once and was not replaced.
+
+### Action and verification
+
+Created `SECOND_RERUN_RESULTS.md` and sealed `second-rerun-evidence/` with the baseline fixture, preflight, setup incidents, complete UTF-8 CLI streams, all ten byte-preserved ledgers, usage and event summaries, baseline-to-result patch, target Trail, test outputs, post-state, and SHA-256 manifest. Added `-text -diff` attributes for the evidence directory.
+
+Post-run tests passed twice, target Git state was clean at the result commit, all ledgers contained provider usage, service counts matched the hypothesis, Intent preceded repository work, `python verify.py` passed, and `git diff --check` passed.
+
+Destination need: not triggered - the operator-confirmed adoption bar remains current and no durable directional conflict emerged.
+
+Orientation freshness: STALE - the prior top move was completed and the earliest unresolved adoption boundary changed. Orient is scheduled immediately after this Trail append.
+
+### Preserved reversals
+
+[!REVERSAL] The first setup command set `COPILOT_HOME` but omitted the installer's explicit `-Target`; `install.ps1` attempted the live default skill directory and stopped on a locked Intent file before any proxy or model call. Files ordered before Intent may have been overwritten with byte-identical payload from commit `c9e0500`. No live file was reverted. The isolated install was then performed with the documented explicit target.
+
+[!REVERSAL] The first serial preflight aborted before invocation because the baseline capture file had not survived the failed setup command and fresh-home CLI version output included an update hint. The empty proxy ledger, clean target, and absent ACM prove that no model call occurred. The existing baseline ID was captured and the version assertion narrowed to its first line before the one authorized invocation.
+
+[!REVERSAL] Baseline tests created untracked `__pycache__`, violating the clean fixture requirement before invocation. The dirty state was preserved, only the generated cache was removed, and the final preflight used `PYTHONDONTWRITEBYTECODE=1`.
+
+[!REVERSAL] Initial evidence packaging retained PowerShell UTF-16 files and decoded provider reason prose through the wrong code page, causing repository verification to fail. Complete CLI streams and tests were converted to UTF-8, redundant raw copies were removed, numeric provider summaries were regenerated without lossy prose, and the manifest was rebuilt before classification was committed.
+
+### Reflection
+
+[!REALIZATION] On this tested host, Improve can be the only normal entry point for a first useful run: it applied visible Intent before repository work, chose the small implementation route from the bounded prompt, applied Trail afterward, and did not demand Destination setup. The evidence advances simulated operability, not adoption.
+
+Falsifiable model claim: a human newcomer can now be observed against a host and workflow that have separately passed installation, route, and simulated-behavior prerequisites. A newcomer failure should therefore be localized to recognition, explanation, voluntary use, setup transfer, or continuation rather than pre-attributed to model unavailability.
+
+Named blind spot: the fixture was intentionally tiny, the prompt explicitly named Improve, and the supervising agent repaired setup before the call. This run does not show whether an actual newcomer discovers the entry point, reproduces installation, understands automatic services, or trusts the resulting Trail.
+
+Imagined-reader pushback: calling this Pass may obscure the setup friction. The classification follows the preregistered invocation boundary because each setup defect happened and was preserved before the single eligible call; the result document keeps those defects visible as onboarding and experiment-infrastructure evidence rather than erasing them.
+
+- *Recurring finding-class:* not fired - this run applied the host and invocation-boundary lessons; its setup defects are distinct and preserved.
+- *About to declare silence:* not fired - human adoption, reliability, trigger overlap, silence endpoint, and lifecycle viability remain open.
+- *Contradicts prior `[!REALIZATION]`:* not fired - it resolves the exact simulated-behavior boundary the prior realization left open.
+- *Operator explicitly asked:* FIRED - the operator asked to continue.
+
+### Across-trail macro-Hansei
+
+The adoption arc now separates five claim layers: documented installation, exact-route availability, event-bound eligibility, simulated workflow behavior, and human adoption. The first four have bounded evidence on this host. The remaining move must cross from supervised simulation to independent human behavior; another agent-run fixture would add replication but would not answer the highest-ranked unresolved question.
+
+### Candidate Next Moves
+
+1. Observe one unassisted newcomer from first contact through useful continuation, preserving whether they find Improve, install successfully, understand automatic Intent and Trail, and avoid unnecessary Destination ceremony.
+2. Independently test Destination-plus-Orient overlap after the adoption observation, because service composition remains behaviorally untested.
+3. Preserve the eligible silence endpoint and consequential-gate tests as separate bars; do not infer them from this Pass.
+
+## 2026-08-13 - orient-after-simulated-first-run-pass
+
+- target: full autonomous-agent-skills arc
+- operator: Nils Holmager
+- agent: GitHub Copilot
+- skill: orient (automatic after evidence changed the frontier)
+- outcome: refreshed
+- delta: simulated no-ACM operability moved from untested to one bounded Pass; unassisted newcomer observation became the highest-ranked unresolved adoption boundary
+
+### Evidence read
+
+Read the committed protocol boundary, sealed invocation streams and proxy ledgers, target baseline-to-result patch, target Trail, tests, result classification, current Destination, and prior Orientation. The run began eligible, exited zero, visibly narrated Intent before repository work, invoked Improve and Trail once each, did not invoke Destination or Orient, completed the fixed refactor, passed tests, and committed its target state. Ten calls carried provider usage under ten emitted SIDs distinct from the requested session value.
+
+### Orientation change
+
+[!DECISION] Replace another simulated cold-start invocation with one unassisted newcomer observation as the first-ranked move. Installation, exact-route availability, event-bound eligibility, and one simulated behavior path now have bounded evidence on this host. Human recognition, voluntary adoption, setup transfer, explanation burden, trust, and useful continuation do not.
+
+The lifecycle, silence, service-overlap, and consequential-gate bars remain independent. One small successful task does not support a production Improve change or a cognitive-capability reduction.
+
+### Reflection
+
+The prior map was falsified exactly where intended: first-run reasoning is no longer wholly untested. It remains correct about human adoption and lifecycle viability. The setup reversals make the newcomer observation more important, because supervised repair hid friction that a new operator may encounter without assistance.
+
+Destination need: not triggered - the governing adoption direction is current and the frontier shift is tactical rather than directional.
+
+Orientation freshness: current - claims, tested bars, falsifiers, and next moves now incorporate the completed Pass and its limits.
+
+- *Recurring finding-class:* not fired - no new repeated strategic blocker emerged.
+- *About to declare silence:* not fired - human adoption and several behavioral bars remain open.
+- *Contradicts prior `[!REALIZATION]`:* not fired - the new evidence resolves the prior realization's named boundary.
+- *Operator explicitly asked:* FIRED - the operator asked to continue.
+
+### Across-trail macro-Hansei
+
+The chronological method prevented installation success, route success, and simulated behavior from collapsing into one adoption claim. The same discipline now requires a human event: another supervised agent run can test reliability, but cannot substitute for the operator behavior named by the Destination.
+
+### Candidate Next Moves
+
+1. Observe one unassisted newcomer from first contact through useful continuation.
+2. Test Destination-plus-Orient overlap after that observation.
+3. Compare the remaining eligible silence endpoint, consequential gate, and replication by information value without merging their claims.

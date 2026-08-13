@@ -261,6 +261,8 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 254 | 2026-08-13 | improve-qualify-first-run-host-route | qualified Copilot CLI 1.0.79, claude-sonnet-4-5, and the frozen Anthropic proxy route as currently available | added a preregistered non-experimental qualification, bounded result, complete CLI and proxy evidence, and hash manifest; no production or adoption fixture change |
 | ▸ 255 | 2026-08-13 | orient-after-host-route-qualification | refreshed Orientation from exact-route availability to the completed no-ACM Improve boundary | rewrote `.acm/orientation.md`; no Destination or production target change |
 | ▸ 256 | 2026-08-13 | improve-preregister-second-first-run-rerun | preregistered exactly one event-eligible no-ACM invocation on the qualified proxy route | added `SECOND_RERUN_PROTOCOL.md`; no model invocation, fixture, evidence result, or production change |
+| ▸ 257 | 2026-08-13 | execute-second-first-run-rerun | PASS for simulated first-run operability on one fixed task and qualified host | one authorized invocation, one minimal verified target refactor, one target Trail, one sealed evidence package, and no production skill change |
+| ▸ 258 | 2026-08-13 | orient-after-simulated-first-run-pass | refreshed | simulated no-ACM operability moved from untested to one bounded Pass; unassisted newcomer observation became the highest-ranked unresolved adoption boundary |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -1170,4 +1172,16 @@ Do not edit by hand — re-run the command to refresh.
 
 - **decided:** Authorize exactly one second cold-start invocation only after committing a new protocol that restores the qualified provider route and couples immediate eligibility assertions to the call.
 
-**256 runs total — 238 with changes, 18 silence**
+### Run 257 — 2026-08-13 — execute-second-first-run-rerun
+
+- **decided:** Classify the preregistered run Pass and advance the adoption frontier from simulated operability to unassisted newcomer observation. Do not modify production Improve from this single result.
+- **REVERSAL:** The first setup command set `COPILOT_HOME` but omitted the installer's explicit `-Target`; `install.ps1` attempted the live default skill directory and stopped on a locked Intent file before any proxy or model call. Files ordered before Intent may have been overwritten with byte-identical payload from commit `c9e0500`. No live file was reverted. The isolated install was then performed with the documented explicit target.
+- **REVERSAL:** The first serial preflight aborted before invocation because the baseline capture file had not survived the failed setup command and fresh-home CLI version output included an update hint. The empty proxy ledger, clean target, and absent ACM prove that no model call occurred. The existing baseline ID was captured and the version assertion narrowed to its first line before the one authorized invocation.
+- **REVERSAL:** Baseline tests created untracked `__pycache__`, violating the clean fixture requirement before invocation. The dirty state was preserved, only the generated cache was removed, and the final preflight used `PYTHONDONTWRITEBYTECODE=1`.
+- **REVERSAL:** Initial evidence packaging retained PowerShell UTF-16 files and decoded provider reason prose through the wrong code page, causing repository verification to fail. Complete CLI streams and tests were converted to UTF-8, redundant raw copies were removed, numeric provider summaries were regenerated without lossy prose, and the manifest was rebuilt before classification was committed.
+
+### Run 258 — 2026-08-13 — orient-after-simulated-first-run-pass
+
+- **decided:** Replace another simulated cold-start invocation with one unassisted newcomer observation as the first-ranked move. Installation, exact-route availability, event-bound eligibility, and one simulated behavior path now have bounded evidence on this host. Human recognition, voluntary adoption, setup transfer, explanation burden, trust, and useful continuation do not.
+
+**258 runs total — 240 with changes, 18 silence**

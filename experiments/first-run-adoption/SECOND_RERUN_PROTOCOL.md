@@ -1,6 +1,6 @@
 # First-Run Adoption Second Rerun Protocol
 
-Status: preregistered 2026-08-13; not yet executed
+Status: executed once 2026-08-13; classified Pass in `SECOND_RERUN_RESULTS.md`
 
 ## Question
 

@@ -1,0 +1,105 @@
+{
+    "requested_harness_session":  "8XQZKRX436ZT0TQ1WQM3W7WTS4",
+    "emitted_sids":  [
+                         "01KZXXK9SSH0T54ASSC8JS808R",
+                         "01KZXXKCRDZD08YA8Q49GSDRPT",
+                         "01KZXXKP8EVFPBQ904WADBZ6NW",
+                         "01KZXXKSED5SEGETM4YMESCSNG",
+                         "01KZXXMD8W1WX48F7V6V9VB7ZX",
+                         "01KZXXMMREF6NME3T8YCX0BPVC",
+                         "01KZXXN51F5QZS18EQZCRWRFHP",
+                         "01KZXXNR80K3ZH2YXV87N7B6AC",
+                         "01KZXXPXBDZNEXS190GNQDSPC3",
+                         "01KZXXQ24KFCC7MRB4PQ9H4809"
+                     ],
+    "ledger_file_count":  10,
+    "ledger_entry_count":  10,
+    "missing_usage_count":  0,
+    "input_tokens":  71,
+    "output_tokens":  4556,
+    "models":  [
+                   "claude-sonnet-4-5"
+               ],
+    "entries":  [
+                    {
+                        "file":  "01KZXXK9SSH0T54ASSC8JS808R.jsonl",
+                        "sid":  "01KZXXK9SSH0T54ASSC8JS808R",
+                        "seq":  0,
+                        "model":  "claude-sonnet-4-5",
+                        "input_tokens":  10,
+                        "output_tokens":  110
+                    },
+                    {
+                        "file":  "01KZXXKCRDZD08YA8Q49GSDRPT.jsonl",
+                        "sid":  "01KZXXKCRDZD08YA8Q49GSDRPT",
+                        "seq":  0,
+                        "model":  "claude-sonnet-4-5",
+                        "input_tokens":  10,
+                        "output_tokens":  331
+                    },
+                    {
+                        "file":  "01KZXXKP8EVFPBQ904WADBZ6NW.jsonl",
+                        "sid":  "01KZXXKP8EVFPBQ904WADBZ6NW",
+                        "seq":  0,
+                        "model":  "claude-sonnet-4-5",
+                        "input_tokens":  6,
+                        "output_tokens":  207
+                    },
+                    {
+                        "file":  "01KZXXKSED5SEGETM4YMESCSNG.jsonl",
+                        "sid":  "01KZXXKSED5SEGETM4YMESCSNG",
+                        "seq":  0,
+                        "model":  "claude-sonnet-4-5",
+                        "input_tokens":  7,
+                        "output_tokens":  959
+                    },
+                    {
+                        "file":  "01KZXXMD8W1WX48F7V6V9VB7ZX.jsonl",
+                        "sid":  "01KZXXMD8W1WX48F7V6V9VB7ZX",
+                        "seq":  0,
+                        "model":  "claude-sonnet-4-5",
+                        "input_tokens":  5,
+                        "output_tokens":  159
+                    },
+                    {
+                        "file":  "01KZXXMMREF6NME3T8YCX0BPVC.jsonl",
+                        "sid":  "01KZXXMMREF6NME3T8YCX0BPVC",
+                        "seq":  0,
+                        "model":  "claude-sonnet-4-5",
+                        "input_tokens":  7,
+                        "output_tokens":  489
+                    },
+                    {
+                        "file":  "01KZXXN51F5QZS18EQZCRWRFHP.jsonl",
+                        "sid":  "01KZXXN51F5QZS18EQZCRWRFHP",
+                        "seq":  0,
+                        "model":  "claude-sonnet-4-5",
+                        "input_tokens":  10,
+                        "output_tokens":  621
+                    },
+                    {
+                        "file":  "01KZXXNR80K3ZH2YXV87N7B6AC.jsonl",
+                        "sid":  "01KZXXNR80K3ZH2YXV87N7B6AC",
+                        "seq":  0,
+                        "model":  "claude-sonnet-4-5",
+                        "input_tokens":  5,
+                        "output_tokens":  1354
+                    },
+                    {
+                        "file":  "01KZXXPXBDZNEXS190GNQDSPC3.jsonl",
+                        "sid":  "01KZXXPXBDZNEXS190GNQDSPC3",
+                        "seq":  0,
+                        "model":  "claude-sonnet-4-5",
+                        "input_tokens":  6,
+                        "output_tokens":  162
+                    },
+                    {
+                        "file":  "01KZXXQ24KFCC7MRB4PQ9H4809.jsonl",
+                        "sid":  "01KZXXQ24KFCC7MRB4PQ9H4809",
+                        "seq":  0,
+                        "model":  "claude-sonnet-4-5",
+                        "input_tokens":  5,
+                        "output_tokens":  164
+                    }
+                ]
+}

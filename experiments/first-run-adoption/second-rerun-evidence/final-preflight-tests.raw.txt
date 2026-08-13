@@ -1,0 +1,18 @@
+python.exe : test_article_path_normalizes_whitespace_and_case 
+(test_slug.SlugPathTests.test_article_path_normalizes_whitespace_and_case) ... 
+ok
+At line:1 char:2563
++ ... 6).Hash}}); & python -m unittest discover -s $target -v 1> $testRaw 2 ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (test_article_pa...nd_case) ... ok 
+   :String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+test_category_path_normalizes_whitespace_and_case 
+(test_slug.SlugPathTests.test_category_path_normalizes_whitespace_and_case) 
+... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.000s
+
+OK

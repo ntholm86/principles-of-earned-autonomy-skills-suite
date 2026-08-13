@@ -909,6 +909,26 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** The prior README architecture accurately described internal composition but exposed too many valid taxonomies at once. A first-contact model should classify each capability by one question only: how does it activate? Roles, artifacts, and research status belong inside the row, not in competing rosters.
 
+## 2026-08-02 — retire-memory-model-name-in-favor-of-acm
+
+**[!REALIZATION]** Standardization changes what simplicity requires. Before ACM existed, The Memory Model gave the architecture a coherent name. After ACM became the separate standard, the same phrase became translation debt. A useful local concept can become waste when its underlying idea acquires a canonical shared name.
+
+## 2026-08-02 — publish-activation-and-acm-simplification
+
+**[!REALIZATION]** The operator's recent changes form a coherent onboarding simplification: expose one skill roster classified by activation, require only two routine actions, and name the persistent architecture once as ACM. The implementation history remains visible in the trail, while the newcomer surface presents the converged model rather than the sequence that produced it.
+
+## 2026-08-02 — destination-coequal-research-and-unassisted-use
+
+**[!REALIZATION]** The operator is not simplifying the suite to turn research into marketing. Adoption and research remain equal, and explanation quality is diagnostic rather than evidentiary. The sharper adoption claim is behavioral: can someone use the system successfully without the author, even before they can articulate its full theory?
+
+## 2026-08-02 — orient-against-coequal-research-and-adoption
+
+**[!REALIZATION]** The current plateau is not "the suite is now simple enough." It is "the suite now has a testable adoption bar and a separately bounded research bar." The next meaningful evidence must come from behavior against those bars, not from further confidence in the explanatory model itself.
+
+## 2026-08-02 — orient-against-coequal-research-and-adoption
+
+**[!REVERSAL]** The initial Destination hunch treated newcomer understanding and successful use as one combined destination and risked elevating adoption above research. Operator responses separated the claims: research remains co-equal, successful use is enough for adoption, and easier explanation is useful signal rather than research evidence.
+
 ---
 
-**226 markers — 212 realisations, 14 reversals**
+**231 markers — 216 realisations, 15 reversals**

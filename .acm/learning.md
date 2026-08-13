@@ -5,27 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 226 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-02 — retire-memory-model-name-in-favor-of-acm
-
-**[!REALIZATION]** Standardization changes what simplicity requires. Before ACM existed, The Memory Model gave the architecture a coherent name. After ACM became the separate standard, the same phrase became translation debt. A useful local concept can become waste when its underlying idea acquires a canonical shared name.
-
-## 2026-08-02 — publish-activation-and-acm-simplification
-
-**[!REALIZATION]** The operator's recent changes form a coherent onboarding simplification: expose one skill roster classified by activation, require only two routine actions, and name the persistent architecture once as ACM. The implementation history remains visible in the trail, while the newcomer surface presents the converged model rather than the sequence that produced it.
-
-## 2026-08-02 — destination-coequal-research-and-unassisted-use
-
-**[!REALIZATION]** The operator is not simplifying the suite to turn research into marketing. Adoption and research remain equal, and explanation quality is diagnostic rather than evidentiary. The sharper adoption claim is behavioral: can someone use the system successfully without the author, even before they can articulate its full theory?
-
-## 2026-08-02 — orient-against-coequal-research-and-adoption
-
-**[!REALIZATION]** The current plateau is not "the suite is now simple enough." It is "the suite now has a testable adoption bar and a separately bounded research bar." The next meaningful evidence must come from behavior against those bars, not from further confidence in the explanatory model itself.
-
-## 2026-08-02 — orient-against-coequal-research-and-adoption
-
-**[!REVERSAL]** The initial Destination hunch treated newcomer understanding and successful use as one combined destination and risked elevating adoption above research. Operator responses separated the claims: research remains co-equal, successful use is enough for adoption, and easier explanation is useful signal rather than research evidence.
+Showing the most recent 60 markers. 231 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-02 — destination-restore-reasoning-growth-and-token-viability
 
@@ -247,6 +227,26 @@ Showing the most recent 60 markers. 226 older marker(s) are in `.acm/learning-ar
 
 **[!REALIZATION]** Chronological adoption testing now has a complete separation of concerns: installation evidence, route-availability evidence, and behavioral authorization are distinct checkpoints. That separation prevents a host smoke from becoming workflow evidence and prevents observed workflow output from rewriting its eligibility conditions.
 
+## 2026-08-13 — execute-second-first-run-rerun
+
+**[!REALIZATION]** On this tested host, Improve can be the only normal entry point for a first useful run: it applied visible Intent before repository work, chose the small implementation route from the bounded prompt, applied Trail afterward, and did not demand Destination setup. The evidence advances simulated operability, not adoption.
+
+## 2026-08-13 — execute-second-first-run-rerun
+
+**[!REVERSAL]** The first setup command set `COPILOT_HOME` but omitted the installer's explicit `-Target`; `install.ps1` attempted the live default skill directory and stopped on a locked Intent file before any proxy or model call. Files ordered before Intent may have been overwritten with byte-identical payload from commit `c9e0500`. No live file was reverted. The isolated install was then performed with the documented explicit target.
+
+## 2026-08-13 — execute-second-first-run-rerun
+
+**[!REVERSAL]** The first serial preflight aborted before invocation because the baseline capture file had not survived the failed setup command and fresh-home CLI version output included an update hint. The empty proxy ledger, clean target, and absent ACM prove that no model call occurred. The existing baseline ID was captured and the version assertion narrowed to its first line before the one authorized invocation.
+
+## 2026-08-13 — execute-second-first-run-rerun
+
+**[!REVERSAL]** Baseline tests created untracked `__pycache__`, violating the clean fixture requirement before invocation. The dirty state was preserved, only the generated cache was removed, and the final preflight used `PYTHONDONTWRITEBYTECODE=1`.
+
+## 2026-08-13 — execute-second-first-run-rerun
+
+**[!REVERSAL]** Initial evidence packaging retained PowerShell UTF-16 files and decoded provider reason prose through the wrong code page, causing repository verification to fail. Complete CLI streams and tests were converted to UTF-8, redundant raw copies were removed, numeric provider summaries were regenerated without lossy prose, and the manifest was rebuilt before classification was committed.
+
 ---
 
-**60 markers — 46 realisations, 14 reversals**
+**60 markers — 43 realisations, 17 reversals**
