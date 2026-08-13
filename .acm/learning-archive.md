@@ -929,6 +929,10 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REVERSAL]** The initial Destination hunch treated newcomer understanding and successful use as one combined destination and risked elevating adoption above research. Operator responses separated the claims: research remains co-equal, successful use is enough for adoption, and easier explanation is useful signal rather than research evidence.
 
+## 2026-08-02 — destination-restore-reasoning-growth-and-token-viability
+
+**[!REALIZATION]** Token efficiency and reasoning capability are not competing destination tracks. Efficiency is a viability constraint on every track: reduce resource use without reducing the capabilities that make delegation trustworthy. The target is better capability per unit of resource, not minimal tokens in isolation.
+
 ---
 
-**231 markers — 216 realisations, 15 reversals**
+**232 markers — 217 realisations, 15 reversals**

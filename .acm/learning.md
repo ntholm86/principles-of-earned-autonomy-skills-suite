@@ -5,11 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 231 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-02 — destination-restore-reasoning-growth-and-token-viability
-
-**[!REALIZATION]** Token efficiency and reasoning capability are not competing destination tracks. Efficiency is a viability constraint on every track: reduce resource use without reducing the capabilities that make delegation trustworthy. The target is better capability per unit of resource, not minimal tokens in isolation.
+Showing the most recent 60 markers. 232 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-02 — destination-restore-reasoning-growth-and-token-viability
 
@@ -246,6 +242,10 @@ Showing the most recent 60 markers. 231 older marker(s) are in `.acm/learning-ar
 ## 2026-08-13 — execute-second-first-run-rerun
 
 **[!REVERSAL]** Initial evidence packaging retained PowerShell UTF-16 files and decoded provider reason prose through the wrong code page, causing repository verification to fail. Complete CLI streams and tests were converted to UTF-8, redundant raw copies were removed, numeric provider summaries were regenerated without lossy prose, and the manifest was rebuilt before classification was committed.
+
+## 2026-08-13 — preregister-unassisted-newcomer-observation
+
+**[!REALIZATION]** The next adoption datum is an event owned by an independent consenting developer, not another artifact the autonomous loop can manufacture. Autonomy can remove ambiguity from the protocol and evidence boundary; it cannot replace the human independence that gives the observation meaning.
 
 ---
 

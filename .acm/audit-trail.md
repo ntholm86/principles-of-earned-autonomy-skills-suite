@@ -14240,3 +14240,70 @@ The chronological method prevented installation success, route success, and simu
 1. Observe one unassisted newcomer from first contact through useful continuation.
 2. Test Destination-plus-Orient overlap after that observation.
 3. Compare the remaining eligible silence endpoint, consequential gate, and replication by information value without merging their claims.
+
+## 2026-08-13 - preregister-unassisted-newcomer-observation
+
+- target: human first-run adoption boundary
+- operator: Nils Holmager
+- agent: GitHub Copilot
+- skill: improve (Intent at ingress, Trail at egress)
+- outcome: preregistered; awaiting an eligible consenting participant
+- delta: added one observation protocol; no participant contact, observation, production change, or adoption claim
+
+### Interpretation of the ask
+
+Intent interpreted "continue" as the current Orientation's top move: make one unassisted newcomer journey observable from first contact through useful continuation. Because this agent cannot supply an independent human or consent on another person's behalf, this iteration freezes the protocol and stops before recruitment or observation rather than substituting another simulated run.
+
+The rejected alternative was to run another fresh agent or treat the operator as the newcomer. Either would add workflow replication but could not answer the Destination's human recognition and voluntary-adoption question.
+
+### Examination
+
+- Purpose: the current Destination requires a new developer to install and complete useful work without author help; conceptual fluency is not the entry bar.
+- Current evidence: Windows installation, exact-route availability, event-bound eligibility, and one supervised simulated no-ACM behavior path have bounded Pass evidence.
+- Missing evidence: no independent developer has encountered the public materials, chosen the suite, installed it, or tried to continue from its Trail.
+- Main validity threat: observer assistance can silently convert a failed unassisted journey into an apparent Pass unless intervention changes classification at the event where it occurs.
+- Privacy and ownership: ecological use may involve participant-owned code and personal screen data, so raw capture cannot be assumed publishable or committed.
+- Challenge: a fixed toy task would improve comparability but weaken recognition and voluntary-use evidence by telling the participant what to do. A participant-chosen safe target better tests the actual adoption claim.
+
+### Decision and prediction
+
+[!DECISION] Preregister one consent-gated observation with a neutral repository-only first contact, no technical observer guidance, staged failure classification, source-labeled evidence, and a distinct fresh-session continuation stage.
+
+Prediction: the protocol will make the earliest failure boundary classifiable without retroactively redefining assistance, and it will prevent a useful first run from being mistaken for coherent continuation. It will not itself produce human-adoption evidence, recruit a participant, or establish an adoption rate.
+
+This ranks above service-overlap testing because human adoption is the earliest unresolved immediate quality bar. It ranks above another simulated run because simulation cannot supply recognition or voluntary choice. It ranks above production onboarding edits because no observed human failure yet identifies which surface to change.
+
+### Action and verification
+
+Added `experiments/first-run-adoption/NEWCOMER_OBSERVATION_PROTOCOL.md`. It freezes participant eligibility, consent and privacy limits, a neutral first-contact message, observer intervention rules, event chronology, useful-first-run and continuation definitions, a non-leading post-observation interview, staged classifications, evidence packaging, and claim boundaries.
+
+A targeted content check confirmed the consent, assistance, source-separation, staged-outcome, and bounded-claim clauses. Initial repository verification exposed stale derived ACM timestamps; `record.py history --write` and `record.py learning --write` restored freshness, after which `python verify.py` and `git diff --check` passed. An unrelated modified host-qualification evidence README remained untouched and excluded from this iteration.
+
+Destination need: not triggered - the operator-confirmed Destination explicitly names unassisted newcomer adoption and the protocol does not choose a new direction.
+
+Orientation freshness: current - the top-ranked observation remains pending; this iteration makes it executable but adds no participant behavior evidence.
+
+### Reflection
+
+[!REALIZATION] The next adoption datum is an event owned by an independent consenting developer, not another artifact the autonomous loop can manufacture. Autonomy can remove ambiguity from the protocol and evidence boundary; it cannot replace the human independence that gives the observation meaning.
+
+Falsifiable model claim: separating unassisted classification from assisted diagnosis will preserve the earliest real adoption failure while still allowing the session to reveal what help would have changed the outcome.
+
+Named blind spot: participant recruitment channel and public repository URL are not frozen because no eligible participant or observation appointment exists. Recruitment source may shape recognition and must be recorded before execution.
+
+Imagined-reader pushback: the neutral first-contact message still frames the repository as potentially useful and asks for evaluation, so it tests prompted encounter rather than organic discovery. The protocol claims recognition after exposure, not population-level discoverability.
+
+- *Recurring finding-class:* not fired - this iteration crosses from simulated workflow evidence to a human-subject observation boundary.
+- *About to declare silence:* not fired - a concrete protocol was added while execution remains externally blocked.
+- *Contradicts prior `[!REALIZATION]`:* not fired - it operationalizes the prior Orientation's named human boundary.
+- *Operator explicitly asked:* FIRED - the operator asked to continue.
+
+### Across-trail macro-Hansei
+
+The arc has progressively removed technical confounds before spending human attention: installer, route, invocation eligibility, and simulated workflow behavior are now separately evidenced. The remaining independence requirement is constitutive rather than procedural. Treating protocol preparation as equivalent to observation would repeat the exact claim-collapse the chronological method was designed to prevent.
+
+### Candidate Next Moves
+
+1. After the operator identifies an eligible consenting participant, execute this protocol once without pre-contact coaching and preserve the earliest unassisted stopping point.
+2. If participant access remains unavailable, test Destination-plus-Orient overlap as the highest-ranked fully automatable behavioral gap without calling it adoption progress.
+3. Keep the eligible silence endpoint and consequential-gate tests independent until their information value outranks the human observation or service-overlap boundary.
