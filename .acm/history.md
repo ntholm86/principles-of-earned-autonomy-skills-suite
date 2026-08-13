@@ -269,6 +269,7 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 262 | 2026-08-13 | freeze-service-overlap-interactive-host | interactive host frozen; no disposable setup or invocation started | added one host record with fixed session identities and exact command shape |
 | ▸ 263 | 2026-08-13 | centralize-service-scheduling | changed - one purpose-based scheduler replaced repeated trigger taxonomies | 3,273 bytes removed from Improve, Destination, and Orient; skill versions 3.17.1, 2.7.1, and 2.7.1 |
 | ▸ 264 | 2026-08-13 | orient-after-control-simplification | Orientation refreshed; experiment queue replaced by purpose-led simplification rules |  |
+| ▸ 265 | 2026-08-13 | consolidate-trail-independent-capture | changed - repeated capture and fidelity prose consolidated without changing evidence semantics | Trail 2.5.1 -> 2.5.2; 3,718 UTF-8 bytes and 22 lines removed |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -1214,4 +1215,8 @@ Do not edit by hand — re-run the command to refresh.
 
 - **REVERSAL:** The action section above says the prior and refreshed Orientation were 140 and 100 lines. A post-append executable count disproved that statement before derivation or commit. `git show HEAD:.acm/orientation.md` contains 142 lines; the refreshed file contains 86 lines, a reduction of 56 lines. The claim and priority change are unaffected. This correction is appended because the Trail is append-only.
 
-**264 runs total — 246 with changes, 18 silence**
+### Run 265 — 2026-08-13 — consolidate-trail-independent-capture
+
+- **decided:** Replace the repeated sections with one `Independent capture` contract. Preserve all observer resolutions, author separation, anti-rationalization duties, optional transcript fields, and fidelity values. Reject deleting fidelity or resolution semantics because that would reduce evidence capability and require operator approval. Reject moving the whole contract to PRINCIPLES because standalone Trail must remain executable.
+
+**265 runs total — 247 with changes, 18 silence**

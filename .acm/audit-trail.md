@@ -14622,3 +14622,65 @@ No target file or Destination changed. Destination need: not triggered - the ope
 ### Across-trail macro-Hansei
 
 The suite had already learned to reduce the operator's command surface, yet the research process recreated burden through internal orchestration prose and an expanding experiment queue. The deeper correction is to apply the same ownership rule inside the architecture and the work process: one purpose, one decision owner, and evidence proportional to the claim being distinguished.
+
+## 2026-08-13 - consolidate-trail-independent-capture
+
+- target: Trail independent-capture contract
+- operator: Nils Holmager
+- agent: GitHub Copilot
+- skill: improve (Intent at ingress, Trail at egress)
+- outcome: changed - repeated capture and fidelity prose consolidated without changing evidence semantics
+- delta: Trail 2.5.1 -> 2.5.2; 3,718 UTF-8 bytes and 22 lines removed
+
+### Interpretation of the ask
+
+"Continue" carries the refreshed Orientation's first move forward: simplify one remaining duplicated control surface while preserving reasoning, memory, learning, operator control, and evidence integrity. This run targets Trail's repeated independent-capture explanation. It does not resume an experiment or treat shorter text as proof of better behavior.
+
+### Examination
+
+Trail stated the same contract in four places: the ACM artifact explanation, Three resolutions, Structural Session Capture, and Fidelity. The operational core is smaller: three observer resolutions, independent authorship of full capture, structured reasoning in the Trail entry, optional transcript linking, honest fidelity labels, and four anti-rationalization duties.
+
+Precedent check: `learning-archive.md` preserves two relevant findings. Three-resolution semantics must remain, and independent host or harness capture superseded routine agent-authored session summaries. No precedent required retaining the migration narrative in the runtime skill.
+
+### Decision and prediction
+
+[!DECISION] Replace the repeated sections with one `Independent capture` contract. Preserve all observer resolutions, author separation, anti-rationalization duties, optional transcript fields, and fidelity values. Reject deleting fidelity or resolution semantics because that would reduce evidence capability and require operator approval. Reject moving the whole contract to PRINCIPLES because standalone Trail must remain executable.
+
+Prediction: Trail will lose roughly 2 KB and most of its 30 capture/fidelity mentions while all three resolutions, three fidelity values, pre-action prediction, reversal marking, rejected-alternative duty, literal-source preference, optional link fields, and independent authorship remain mechanically detectable.
+
+### Action and verification
+
+Replaced the historical and repeated capture prose with one table and one compact operational contract. Released the change as suite v4.29.2 and Trail v2.5.2.
+
+Focused assertions found every retained invariant and confirmed the three old duplicate headings were gone. `git diff --check` passed after each edit. Git blob size versus working UTF-8 content measured 25,312 -> 21,594 bytes, a 3,718-byte reduction; line count fell 349 -> 327 and capture/fidelity mentions fell 30 -> 18. The byte result exceeded the prediction without deleting an asserted capability. A filesystem-byte comparison was rejected because Git warned that the working file's LF endings will convert to CRLF; the recorded comparison uses Git blob bytes and explicit UTF-8 encoding instead.
+
+The first full `python verify.py` attempt stopped on stale generated ACM mtimes before this entry existed. Derived artifacts will be regenerated from this append-only record before final verification. The unrelated modified host-qualification evidence README remains untouched and unstaged.
+
+Destination need: not triggered - the operator already settled the capability-preserving simplification standard.
+
+Orientation freshness: current - this change executes the refreshed Orientation's first ranked move and does not alter its claims or priority logic.
+
+### Reflection
+
+[!REALIZATION] Evidence semantics survive compression when the skill states observable invariants and removes the history of why each invariant arrived. Runtime instructions need the current contract; provenance belongs in the append-only Trail and changelog.
+
+Falsifiable model claim: a future agent can still distinguish digest, indexed, and full evidence; identify which source is independent; and label linked transcript fidelity without reading release history.
+
+Named blind spot: this validates textual preservation, not cross-model interpretation. A future ordinary run may reveal that one compressed phrase is less legible than its longer predecessor.
+
+Imagined-reader pushback: the removed migration story explained why session summaries disappeared. The current contract states the ownership boundary directly, while the changelog and Trail retain that history for readers who need provenance.
+
+- *Recurring finding-class:* FIRED - duplicated governance and explanation prose recurred immediately after scheduler consolidation.
+- *About to declare silence:* not fired - Orientation names additional candidate simplifications and this run makes no convergence claim.
+- *Contradicts prior `[!REALIZATION]`:* not fired - the change preserves both earlier capture and resolution findings.
+- *Operator explicitly asked:* FIRED - "continue" follows the operator's explicit capability-per-token simplification mandate.
+
+### Across-trail macro-Hansei
+
+Recent runs reveal the same architecture at two levels: scheduling policy and evidence policy both accumulated correct local explanations in multiple owners. Consolidating each policy into one executable contract reduces translation cost while the append-only Trail and changelog retain provenance. This is the current practical meaning of DRY under Observable Autonomy.
+
+### Candidate Next Moves
+
+1. Examine whether Trail's entry-template explanation repeats the same four-trigger and reflection contract in full and condensed forms; preserve learning behavior before changing it.
+2. Challenge duplicated scoped-ACM read instructions across Intent, Destination, and Orient, but centralize only if standalone behavior remains explicit.
+3. Prefer a naturally occurring run over a new experiment to test whether compressed contracts remain legible.

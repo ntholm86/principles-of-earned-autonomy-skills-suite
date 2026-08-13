@@ -1,5 +1,9 @@
 # Changelog
 
+## v4.29.2 — 2026-08-13
+
+- **Trail now states independent capture once.** The three observer resolutions, capture-author separation, anti-rationalization duties, optional transcript fields, and fidelity labels now live in one `Independent capture` contract instead of being repeated across the ACM overview, resolution table, migration history, structural-capture section, and fidelity section. No evidence requirement or fidelity distinction changed. `trail/SKILL.md` 2.5.1 -> 2.5.2.
+
 ## v4.29.1 — 2026-08-13
 
 - **Improve now owns one purpose-based service scheduler.** It asks whether the next work depends on unsettled durable direction and whether current Orientation still explains the governing Destination and material trail. Destination and Orient accept those named questions instead of repeating their own trigger taxonomies. When both services are needed, Destination runs first and one post-Destination Orient reads the changed direction and full trail. Operator confirmation, evidence requirements, manual overrides, standalone fallbacks, and Trail recording are unchanged. `improve/SKILL.md` 3.17.0 -> 3.17.1; `destination/SKILL.md` 2.7.0 -> 2.7.1; `orient/SKILL.md` 2.7.0 -> 2.7.1.

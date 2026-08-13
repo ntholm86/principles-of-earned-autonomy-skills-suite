@@ -957,6 +957,10 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REVERSAL]** The historical "irreducible human gate" over every implementation choice is no longer active. The operator owns and confirms the Destination; within it, implementation choice may be delegated. Direction changes and declared consequential actions remain gated.
 
+## 2026-08-02 — orient-recursive-purpose-and-principles-boundary
+
+**[!REALIZATION]** The strongest current reasoning evidence is mixed in a specific way: the engine applied prior learning well enough to protect intent structurally, while still needing operator correction to avoid creating a new conceptual ceiling. Improving learning carry-forward alone does not establish equally strong intent generalization.
+
 ---
 
-**238 markers — 220 realisations, 18 reversals**
+**239 markers — 221 realisations, 18 reversals**
