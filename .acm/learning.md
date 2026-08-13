@@ -5,15 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 223 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-02 — orient-passive-control-surface-arc
-
-**[!REALIZATION]** Orientation's importance never implied operator agency. Treating every important capability as a command was the governing mistake behind the repeated taxonomy revisions. The architecture now separates authority from maintenance: the operator controls direction and action; the system maintains interpretation, evidence, and situational awareness.
-
-## 2026-08-02 — orient-passive-control-surface-arc
-
-**[!REVERSAL]** The run-204 model of "three concepts for the user" was a useful plateau but not the stable boundary. The arc shows that conceptual importance and operator responsibility were still conflated. Revised to two deliberate actions plus passive Orientation; retained the underlying capability rather than deleting or weakening it.
+Showing the most recent 60 markers. 225 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-02 — unify-readme-skill-roster-by-activation
 
@@ -247,6 +239,14 @@ Showing the most recent 60 markers. 223 older marker(s) are in `.acm/learning-ar
 
 **[!REALIZATION]** The first-run frontier has advanced from installation to exact-route model availability, but no reasoning contract has yet executed. The sequence demonstrates sound chronological boundary testing and honest exclusion while also exposing a learning failure: a previously recorded host-fidelity rule was understood in the arc and still not applied before authorization.
 
+## 2026-08-13 — improve-qualify-first-run-host-route
+
+**[!REALIZATION]** Host qualification can be separated cleanly from adoption authorization: one minimal no-tool call established exact-route availability and provider usage without touching the fixture or invoking the reasoning contract. The next frontier is now the first completed no-ACM Improve run, not model availability.
+
+## 2026-08-13 — orient-after-host-route-qualification
+
+**[!REALIZATION]** The first-run frontier has advanced beyond installation and exact-route availability to the boundary of the first completed no-ACM Improve invocation. The arc now contains one concrete case where stored host-fidelity learning changed the next action before scarce authorization, while all reasoning and human-adoption claims remain open.
+
 ---
 
-**60 markers — 45 realisations, 15 reversals**
+**60 markers — 46 realisations, 14 reversals**

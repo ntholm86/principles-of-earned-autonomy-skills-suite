@@ -897,6 +897,14 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REVERSAL]** Focused validation exposed that append-only ordering contradiction before documentation changed. Moved evaluation before Trail and kept only the actual Orient handoff after durability.
 
+## 2026-08-02 — orient-passive-control-surface-arc
+
+**[!REALIZATION]** Orientation's importance never implied operator agency. Treating every important capability as a command was the governing mistake behind the repeated taxonomy revisions. The architecture now separates authority from maintenance: the operator controls direction and action; the system maintains interpretation, evidence, and situational awareness.
+
+## 2026-08-02 — orient-passive-control-surface-arc
+
+**[!REVERSAL]** The run-204 model of "three concepts for the user" was a useful plateau but not the stable boundary. The arc shows that conceptual importance and operator responsibility were still conflated. Revised to two deliberate actions plus passive Orientation; retained the underlying capability rather than deleting or weakening it.
+
 ---
 
-**223 markers — 210 realisations, 13 reversals**
+**225 markers — 211 realisations, 14 reversals**

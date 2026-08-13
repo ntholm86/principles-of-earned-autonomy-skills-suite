@@ -13927,3 +13927,136 @@ The well-aged realization is that adoption begins at the executable boundary and
 1. Qualify an exact model and provider route with a non-experimental availability check before writing another cold-start authorization.
 2. Run a newly preregistered no-ACM cold start only after that host check passes.
 3. Preserve overlap, silence-endpoint, consequential-gate, and independent-newcomer tests as separate bars rather than treating any one as a substitute for first-run reasoning evidence.
+
+## 2026-08-13 - improve-qualify-first-run-host-route
+
+- target: exact model and provider route for the next simulated first-run probe
+- operator: Nils Holmager
+- agent: GitHub Copilot
+- skill: improve (Intent at ingress, Trail at egress)
+- outcome: qualified Copilot CLI 1.0.79, claude-sonnet-4-5, and the frozen Anthropic proxy route as currently available
+- delta: added a preregistered non-experimental qualification, bounded result, complete CLI and proxy evidence, and hash manifest; no production or adoption fixture change
+
+### Interpretation of the ask
+
+Intent interpreted "continue" as the next Improve iteration under the refreshed Orientation. The prioritized falsifiable question was whether an exact model and provider route could be qualified without consuming another adoption authorization. The alternative of immediately preregistering another cold-start run was rejected because the preceding invocation had already shown that model-name and credential continuity do not establish route availability.
+
+### Examination
+
+- Purpose: simulated first-run reasoning remained blocked before model execution. A route qualification was the prerequisite named first by current Orientation.
+- CLI discovery: Copilot CLI 1.0.79 exposes no model-list command. A minimal provider call was therefore required to establish current availability.
+- Qualified asset: the existing release binary from proxy commit `cd33c15` was present, built the same day, and had SHA-256 `241626F7D51A945F9C48286EFF26E055FDDA9137C2635DE1FD35094D391701C3`; rebuilding was unnecessary.
+- Host boundary: the call used a fresh Copilot home, the five operational skills plus PRINCIPLES.md, identity encoding, the local proxy at port 8475, model `claude-sonnet-4-5`, minimal effort, no available tools, and a disposable empty work directory.
+- Challenge: a qualification model call still spends provider resources and must not be smuggled into adoption evidence. The protocol therefore fixed a different prompt, prohibited Improve, and authorized one call before execution.
+- Overburden and waste: no production change was supported; qualifying an already built route was cheaper and more discriminating than another failed adoption protocol.
+
+### Decision
+
+[!DECISION] Run one non-experimental read-only availability call through the exact previously qualified proxy route before authorizing any new cold-start attempt. This ranked above trigger composition because it directly removed the current adoption blocker, and above selecting another model because the prior route already had frozen-host evidence. Precedent check: learning.md and Orientation both require the exact CLI, model, provider route, transport, and isolation to be qualified together; this action applies that rule before authorization rather than explaining failure afterward.
+
+### Prediction
+
+The exact route will either return a model response with a proxy ledger entry and provider usage or fail visibly before any adoption authorization. It will not invoke Improve, modify files, or establish first-run or human-adoption evidence.
+
+### Action
+
+Added `HOST_QUALIFICATION.md` before starting the proxy. Verified the CLI version, release proxy hash, exact installed skill set, and skill hashes. Started the proxy on `127.0.0.1:8475` with a disposable ledger root and made the one fixed `HOST_OK` call, then stopped the proxy immediately.
+
+The prediction held on the available branch. The CLI exited zero in 6.065 seconds, reported wire model `claude-sonnet-4-5`, returned exactly `HOST_OK`, requested no tools, and modified no files. The sole hash-chained ledger entry recorded the same model and response, no action, and provider-reported usage of 10 input and 55 output tokens. Complete streams, preflight, run metadata, ledger, empty work state, and seven-file manifest were preserved and mechanically verified.
+
+The requested `X-Harness-Session` value differed from the proxy-emitted ledger SID. The disposable ledger root contained exactly one session, so attribution is unambiguous, but caller control of session identity is not established by this qualification.
+
+Destination need: not triggered - the current Destination already prioritizes adoption and defines the authority and evidence boundaries; this run resolved a route prerequisite.
+
+Orientation freshness: STALE - the current map names exact-route model qualification as the earliest unresolved simulated-use boundary, and this run resolved it as available; automatic Orient scheduled.
+
+### Reflection
+
+[!REALIZATION] Host qualification can be separated cleanly from adoption authorization: one minimal no-tool call established exact-route availability and provider usage without touching the fixture or invoking the reasoning contract. The next frontier is now the first completed no-ACM Improve run, not model availability.
+
+Falsifiable model claim: the frozen proxy route is currently capable of serving `claude-sonnet-4-5` under Copilot CLI 1.0.79; a newly preregistered cold-start run using the same route should reach model execution unless another invocation-boundary condition changes.
+
+Named blind spot: the qualification did not establish that the requested harness session header controls the emitted ledger SID, and it did not exercise high effort or tools.
+
+Imagined-reader pushback: a minimal response does not prove a long tool-using Improve run will complete. Correct; it qualifies availability, not workflow capacity or reliability.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED - the recent adoption arc repeatedly stopped at prerequisites before reasoning; this run resolves the exact-route prerequisite without spending another adoption authorization.
+- *About to declare silence:* not fired - first-run reasoning and human adoption remain untested.
+- *Contradicts prior [!REALIZATION]:* not fired - it confirms that provider route matters by succeeding on the route that previously worked and differs from the failed direct route.
+- *Operator explicitly asked:* FIRED - the operator asked to continue.
+
+### Across-trail macro-Hansei
+
+The arc has corrected its learning timing: the fully frozen-host rule influenced action before the next scarce adoption authorization. Evidence discipline and learning carry-forward aligned in this iteration. The remaining session-ID mismatch is an instrumentation detail to preserve, not a reason to delay the independently classified availability result.
+
+### Candidate Next Moves
+
+1. Preregister a fresh no-ACM cold-start run using this exact qualified route and capture immediate target eligibility at its own invocation boundary.
+2. If that simulated run succeeds, observe an independent developer attempting the same journey before making a human-adoption claim.
+3. Keep overlap, silence-endpoint, and consequential-gate tests separate because route availability does not advance those bars.
+
+## 2026-08-13 - orient-after-host-route-qualification
+
+- target: autonomous-agent-skills arc after exact-route host qualification
+- operator: Nils Holmager
+- agent: GitHub Copilot
+- skill: orient (automatically scheduled by Improve; Intent at ingress, Trail at egress)
+- outcome: refreshed Orientation from exact-route availability to the completed no-ACM Improve boundary
+- delta: rewrote `.acm/orientation.md`; no Destination or production target change
+
+### Scope
+
+Read the full arc after the exact CLI, model, provider, proxy, and transport route passed a separate non-experimental availability call. Determine which adoption prerequisite is now resolved, what boundary is earliest, and whether the loop applied its stored host-fidelity learning before another scarce authorization.
+
+### Freshness check
+
+- `python harness/tools/record.py history --write` wrote 254 entries.
+- `python harness/tools/record.py learning --write` wrote 60 recent and 224 archived markers.
+- `python verify.py` returned `OK - trail integrity checks pass`.
+- Gate: PASS; arc-claims allowed.
+
+### Arc claims
+
+1. Exact-route availability is now established for Copilot CLI 1.0.79, `claude-sonnet-4-5`, and the frozen Anthropic proxy route by one preregistered no-tool call with provider usage. This does not establish workflow capacity, reliability, Improve behavior, ACM behavior, or adoption.
+2. The earliest unresolved adoption boundary is now a newly authorized, event-eligible, no-ACM Improve invocation on that exact route. The prior attempt never reached model execution, and the qualification deliberately did not use the fixture or prompt.
+3. The installation and qualification sequence demonstrates one successful instance of learning carry-forward: after the direct-route failure, the next Improve applied the fully-frozen-host rule before spending another adoption authorization. One correction does not establish reliable carry-forward across fresh sessions.
+4. Requested and emitted harness session identifiers are separate host facts. The qualification's attribution is unambiguous because the disposable root produced one ledger, but caller control of ledger identity remains unproven.
+5. Lifecycle resource evidence remains mixed and incomplete at silence. Route qualification removes no lifecycle quality bar and provides no reason to change production Improve.
+
+### Recurrence and learning-system check
+
+The recurring prerequisite failures are a learning-system signal, not a Destination defect. The governing adoption bar and fully-frozen-host rule were already correct. The earlier rerun failed to apply the rule before authorization; the qualification iteration then applied it and changed the action. Destination revision is not indicated. Reliability of that carry-forward remains a testable concern rather than a resolved architectural claim.
+
+### Loop effectiveness
+
+The loop preserved chronological boundaries, published an inconclusive result without laundering it into an Improve failure, and then qualified the missing route separately. This is sound evidence behavior and one successful learning correction. It has still not tested a completed first-run reasoning contract.
+
+Quality bar advanced: exact-route model availability on the frozen host.
+
+Bars not advanced: completed no-ACM Improve behavior; Intent narration; target improvement; Trail and derived ACM creation; Destination and Orient trigger precision or overlap; consequential-gate preservation under silent acceptance; unassisted newcomer adoption; public external-target operation; cross-vendor execution; eligible silence endpoint; replicated lifecycle resource shape; convergence before and after Destination consolidation.
+
+[!REALIZATION] The first-run frontier has advanced beyond installation and exact-route availability to the boundary of the first completed no-ACM Improve invocation. The arc now contains one concrete case where stored host-fidelity learning changed the next action before scarce authorization, while all reasoning and human-adoption claims remain open.
+
+### Candidate Next Moves
+
+1. Preregister a fresh no-ACM cold-start attempt on the exact qualified route, with immediate target eligibility captured at the invocation boundary and no replacement of an incomplete result.
+2. After simulated operability succeeds, observe an unassisted newcomer before claiming adoption.
+3. Keep trigger overlap, consequential gating, silence endpoint, and lifecycle efficiency as separate tests; route availability is not a proxy for any of them.
+
+### Across-trail trigger evaluation
+
+- Recurring finding-class: FIRED - prerequisite failures recurred across installation and route availability; the current run shows one corrective carry-forward rather than a Destination defect.
+- About to declare silence: not fired - completed first-run reasoning, human adoption, and multiple research bars remain open.
+- Contradicts prior realization: not fired - exact-route success confirms the fully-frozen-host realization and narrows its current implication.
+- Operator explicitly asked: FIRED - the operator asked to continue.
+
+- *Recurring finding-class:* FIRED - prerequisite failures recurred across installation and route availability; the current run shows one corrective carry-forward rather than a Destination defect.
+- *About to declare silence:* not fired - completed first-run reasoning, human adoption, and multiple research bars remain open.
+- *Contradicts prior realization:* not fired - exact-route success confirms the fully-frozen-host realization and narrows its current implication.
+- *Operator explicitly asked:* FIRED - the operator asked to continue.
+
+### Across-trail macro-Hansei
+
+The arc initially learned fully frozen host fidelity after transport failure, failed to apply it before the next scarce adoption authorization, and then applied it in the qualification iteration. The correction supports continuing chronologically from the newly resolved boundary. It does not support changing the Destination or inferring that learning carry-forward is now structurally reliable.
