@@ -1,6 +1,6 @@
 ---
 name: destination
-version: 2.7.0
+version: 2.7.1
 description: 'Triggered direction-consolidation service. Surface the agent''s sourced guesses about durable direction and turn them into questions the operator can confirm, correct, or reject. Improve schedules it when accumulated work makes cross-run direction useful; manual invocation remains available when the operator wants to explore or revise direction.'
 argument-hint: 'Optionally: the area you want hunches about (a specific concern, a recent decision, the project as a whole)'
 ---
@@ -35,16 +35,9 @@ The operator-held destination artifact is `.acm/destination.md`. If it does not 
 
 ## When to invoke
 
-Destination is a conversational service scheduled by Improve when direction becomes more valuable than another action. The operator may also invoke it directly when they want to explore or revise direction:
+Improve schedules Destination with evidence of a named durable choice the operator has not settled. Destination accepts that question; it does not maintain a second trigger taxonomy. The operator may also invoke it directly to explore or revise direction. Absence, age, or brevity of `.acm/destination.md` and raw iteration count are not reasons to run it.
 
-- **Accepted mandates reveal durable direction.** Several Intent narrations now expose a priority or constraint worth carrying across runs.
-- **The next work depends on an unstated priority.** Plausible routes would advance materially different outcomes.
-- **Mandates conflict or attract repeated correction.** The accumulated prompts no longer support one coherent cross-run direction.
-- **A governing variable is in question.** Repeated local corrections suggest that a goal, constraint, or quality bar needs operator examination.
-- **The operator is exploring, not executing.** Recent sessions show the operator turning ideas over rather than narrowing toward a decision.
-- **Autonomy is about to widen.** A long run would compound an unresolved directional assumption.
-
-Absence, age, or brevity of `.acm/destination.md` and raw iteration count are not triggers by themselves. Destination is fast, conversational, and stops as soon as the operator says "yes, that's right" or "no, I don't want to do this now."
+Destination stops as soon as the operator confirms, corrects, or declines the proposed direction.
 
 ## The work
 

@@ -1,6 +1,6 @@
 ---
 name: improve
-version: 3.17.0
+version: 3.17.1
 description: 'The improvement skill. Understand the ask, examine the target, challenge the first read, decide on one change (or argue for redesign, or declare silence), act, reflect on the target, and record. Combines incremental refinement, structural rethinking, and reflection on the target itself. USE WHEN: improve, audit, review, fix, refactor, redesign, evaluate, what would make this better, am I missing something.'
 argument-hint: 'The target to improve, and optionally the concern (correctness, simplicity, performance, etc.)'
 ---
@@ -162,26 +162,12 @@ For an arc-read that runs outside an improve iteration, use [Orient](../orient/S
 
 ### 7. Record
 
-Before applying Trail, evaluate both whether continued work now needs a durable Destination and whether this completed iteration has made `.acm/orientation.md` stale enough to require a new arc-read. These are automatic scheduling decisions; do not ask the operator to remember or invoke either skill.
+Before applying Trail, answer two questions from current evidence:
 
-Schedule [Destination](../destination/SKILL.md) when evidence from the conversation, accepted Intent narrations, trail, or candidate next moves shows that continued work depends on broader operator direction that the current prompt does not settle. Evidence-bearing triggers include:
+1. **Does the next work depend on durable direction the operator has not settled?** If yes, schedule [Destination](../destination/SKILL.md). Name the unresolved choice; missing files, age, and iteration count are never reasons by themselves.
+2. **Does the current Orientation still explain the governing Destination and the material trail?** If no, or if a multi-run convergence claim now depends on that arc-read, schedule [Orient](../orient/SKILL.md). Name the evidence the current map misses; cadence is never a reason by itself.
 
-- **A stable direction has emerged:** several accepted prompt-level mandates reveal a broader priority or constraint worth carrying across sessions.
-- **The next move depends on an unstated priority:** plausible candidates would advance materially different outcomes and the current mandate does not choose between them.
-- **Mandates conflict or require repeated correction:** recent prompts, accepted interpretations, or operator redirections no longer form one coherent direction.
-- **A governing variable is in question:** Improve or Orient finds that repeated local correction may be compensating for an uncertain goal, constraint, or quality bar.
-- **Autonomy is about to widen:** the next run or requested run length would amplify the cost of carrying an unconfirmed directional assumption.
-
-Do not schedule Destination merely because `.acm/destination.md` is absent, thin, or old, or because a fixed number of iterations elapsed. State the evidence that makes durable direction useful now. When scheduling it, tell the operator what the completed work established, what future choice remains unsettled, and that Destination will ask one sourced question at a time before writing durable direction.
-
-Schedule [Orient](../orient/SKILL.md) automatically when any of these evidence-bearing triggers fires:
-
-- **Destination changed:** a Destination run since the last Orient materially revised direction, constraints, priorities, or quality bars. (Destination normally handles this immediately; this trigger catches an interrupted or missed handoff.)
-- **Meaningful arc accumulated:** Improve entries since the last Orient now form a cluster whose sequence matters — repeated finding classes, reversals, failed predictions, diverging candidate moves, or sustained attention in one area. Raw count alone is insufficient.
-- **Orientation no longer explains the trail:** recent evidence contradicts an active orientation claim or operational rule, or substantial work now lies outside its stated scope.
-- **Convergence is approaching:** the loop is about to rely on silence, readiness, or convergence across more than one iteration. Orient must test the arc before that claim carries weight.
-
-Do not schedule Orient merely because one more iteration completed. There is no universal numeric interval. A long sequence can trigger the check because it provides enough evidence to form an arc, but "N iterations elapsed" is never sufficient rationale by itself; state what accumulated evidence now requires synthesis.
+These are purpose tests, not trigger checklists. Do not make the operator orchestrate the services.
 
 Include one line in the Trail entry: `Orientation freshness: current` or `Orientation freshness: STALE — <evidence>; automatic Orient scheduled.` This evaluation must be inside the entry before it becomes append-only history.
 
@@ -209,7 +195,7 @@ The format spec is in [trail/SKILL.md](../trail/SKILL.md). If you have the skill
 
 After the Trail entry is durable, apply Destination first if step 7 scheduled it. Destination synthesizes the accepted prompt-level mandates and accumulated evidence instead of asking the operator to describe the project from zero. It asks only the highest-priority unresolved sourced question, waits for confirmation or correction, and records the result. A confirmed Destination governs the next Improve iteration; it does not retroactively authorize or rewrite the completed one.
 
-Then apply Orient if step 7 marked orientation stale. A material Destination change also schedules Orient through Destination's own handoff. Orient writes its own Trail entry and refreshes `.acm/orientation.md`; it never changes the target. If neither service was scheduled, stop without ceremony.
+Then apply Orient if needed. When Improve already scheduled Orient and Destination materially changes direction, the post-Destination Orient satisfies both needs: run it once, against the changed Destination and full trail. Orient writes its own Trail entry and refreshes `.acm/orientation.md`; it never changes the target. If neither service was scheduled, stop without ceremony.
 
 ## Self-targeting
 

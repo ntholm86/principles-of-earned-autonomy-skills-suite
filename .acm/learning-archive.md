@@ -945,6 +945,10 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REVERSAL]** Run 213's claim that the next meaningful evidence must come from behavior was too exclusive. Behavioral evidence remains required for adoption and external validation, while internal reasoning-capability discovery and capability-preserving efficiency work are also immediate research paths.
 
+## 2026-08-02 — bounded-current-destination-with-full-read-fallback
+
+**[!REALIZATION]** The latest reasoning omission and the destination's token cost had a shared cause: active intent and historical provenance were stored together without an auditable completeness boundary. Separating their read paths can improve both carry-forward reliability and resource use, but only after reconciliation earns the boundary.
+
 ---
 
-**235 markers — 218 realisations, 17 reversals**
+**236 markers — 219 realisations, 17 reversals**

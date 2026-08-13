@@ -1,5 +1,9 @@
 # Changelog
 
+## v4.29.1 — 2026-08-13
+
+- **Improve now owns one purpose-based service scheduler.** It asks whether the next work depends on unsettled durable direction and whether current Orientation still explains the governing Destination and material trail. Destination and Orient accept those named questions instead of repeating their own trigger taxonomies. When both services are needed, Destination runs first and one post-Destination Orient reads the changed direction and full trail. Operator confirmation, evidence requirements, manual overrides, standalone fallbacks, and Trail recording are unchanged. `improve/SKILL.md` 3.17.0 -> 3.17.1; `destination/SKILL.md` 2.7.0 -> 2.7.1; `orient/SKILL.md` 2.7.0 -> 2.7.1.
+
 ## v4.29.0 — 2026-08-13
 
 - **Improve is now the suite's single normal entry point.** A user's prompt, visibly interpreted by automatic Intent, authorizes the current Improve run without requiring prior ACM or Destination setup. Improve explains each service handoff, records the run through Trail, and evaluates whether continued work now needs durable direction.

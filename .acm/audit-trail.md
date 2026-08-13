@@ -14500,3 +14500,73 @@ The arc's no-question automation flags were appropriate for simulated first-run 
 1. Commit this host, prepare disposable roots, and run all setup checks without starting the model.
 2. Start the exact proxy and one serial final-preflight-to-interactive-call process.
 3. Relay only the actual Destination question and operator answer, then classify from preserved chronology without replacement.
+
+## 2026-08-13 - centralize-service-scheduling
+
+- target: operational skill orchestration
+- operator: Nils Holmager
+- agent: GitHub Copilot
+- skill: improve (Intent at ingress, Trail at egress)
+- outcome: changed - one purpose-based scheduler replaced repeated trigger taxonomies
+- delta: 3,273 bytes removed from Improve, Destination, and Orient; skill versions 3.17.1, 2.7.1, and 2.7.1
+
+### Interpretation of the ask
+
+The operator stopped the service-overlap experiment after losing track of what was happening and why, then clarified the durable standard: continue seeking "trustworthy capability per token" while keeping the operational skills streamlined, consistent, clean, transparent, simple, DRY, KISS, and YAGNI. The objection is to control logic bloating the skills, not to research, reasoning, learning, operator authority, or evidence integrity.
+
+Rejected interpretations: stop research entirely; compress the suite by removing cognitive or evidentiary capability; continue the interrupted experiment under its old authorization.
+
+### Examination
+
+- A targeted search found 90 control-language matches across the five operational skills.
+- Improve already claimed sole normal-entry ownership but repeated two service-trigger taxonomies and left overlapping Destination-plus-Orient requests without an explicit deduplication rule.
+- Destination repeated six scheduling reasons and Orient repeated three even though neither service owns full-suite scheduling.
+- Intent and Trail composition contracts remain necessary at their own boundaries; this iteration did not change their domain behavior.
+
+Pre-edit hypothesis: duplicated scheduler policy, rather than domain reasoning, caused the immediate bloat and overlap ambiguity. Prediction: replacing trigger lists with purpose tests would materially reduce prompt weight while preserving evidence requirements, operator confirmation, service order, manual entry points, standalone behavior, and Trail recording.
+
+### Decision and action
+
+[!DECISION] Make Improve the single source of scheduling policy. It now asks two questions: whether next work depends on unsettled durable direction, and whether current Orientation still explains the governing Destination and material trail. Destination and Orient accept the named questions instead of maintaining parallel trigger taxonomies.
+
+Added one overlap rule: Destination runs first; if Destination changes direction, one post-Destination Orient reads the changed Destination and full trail and satisfies both Orient requests.
+
+Versioned the behavioral simplification as suite v4.29.1 and updated the three changed skill versions. No reasoning step, evidence field, authority boundary, manual override, standalone fallback, or installed capability was removed.
+
+### Verification
+
+- Focused routing assertions passed for both purpose tests, the negative cadence/file-age guards, service order, one-Orient overlap handling, operator response gates, and manual Orient invocation.
+- `git diff --check` passed after each edit slice.
+- Operational skill text changed by 29 deletions and 8 additions before release metadata. Improve fell from 28,572 to 26,239 bytes, Destination from 17,221 to 16,448, and Orient from 20,987 to 20,820: 3,273 bytes removed in total.
+- The prediction held: the controller became smaller and overlap behavior became explicit without removing an asserted capability.
+- The first full `python verify.py` attempt stopped on three stale derived ACM artifacts left from the prior trail state. It reported no controller-specific failure. History and learning will be regenerated from this append-only entry before final verification.
+- The unrelated modified `experiments/first-run-adoption/host-qualification-evidence/README.md` remained untouched and unstaged.
+
+Destination need: not triggered - the operator explicitly settled the governing standard and this change does not depend on another durable choice.
+
+Orientation freshness: STALE - current Orientation still ranks newcomer and service-overlap experiments, while the operator redirected attention to operational simplicity and stopped the overlap run; automatic Orient scheduled.
+
+### Reflection
+
+[!REALIZATION] A single entry point still carries distributed control cost when every service restates why it should run. Lightweight composition requires one scheduler and small acceptance contracts, not fewer capabilities.
+
+Falsifiable model claim: future service-trigger changes now require one policy edit in Improve unless a service's own authority boundary changes.
+
+Named blind spot: the remaining 100 KB operational payload still contains repeated ACM read and composition prose. This iteration proves one local simplification, not suite-wide prompt optimality.
+
+Imagined-reader pushback: replacing examples with two questions could reduce recognition of edge cases. The questions preserve the underlying decisions and negative guards; future evidence should add a discriminating rule only when the purpose test actually misroutes work.
+
+- *Recurring finding-class:* FIRED - duplicated orchestration conditions appeared across multiple operational skills.
+- *About to declare silence:* not fired - the user identified a concrete simplification mandate.
+- *Contradicts prior `[!REALIZATION]`:* FIRED - the prior arc treated overlap as requiring an experiment; the user interruption exposed orchestration complexity as the nearer product problem.
+- *Operator explicitly asked:* FIRED - the operator explicitly requested Intent plus Improve under the lightweight capability standard.
+
+### Across-trail macro-Hansei
+
+The recent arc optimized confidence in service composition by adding protocols, fixtures, manifests, and host controls. Those artifacts preserved evidence but shifted attention away from the installed skills and made the work difficult for the operator to follow. The correction is not weaker evidence. It is to make the product-owning abstraction simpler before spending more evidence on its edge cases.
+
+### Candidate Next Moves
+
+1. Run the scheduled Orient once against the changed mandate and full trail.
+2. Use later Improve runs to challenge one remaining duplication at a time; do not create an experiment unless ordinary verification cannot distinguish the claim.
+3. Treat the current size measurement as a disposable local diagnostic, not a standing optimization target.

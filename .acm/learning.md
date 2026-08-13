@@ -5,11 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 235 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-02 — bounded-current-destination-with-full-read-fallback
-
-**[!REALIZATION]** The latest reasoning omission and the destination's token cost had a shared cause: active intent and historical provenance were stored together without an auditable completeness boundary. Separating their read paths can improve both carry-forward reliability and resource use, but only after reconciliation earns the boundary.
+Showing the most recent 60 markers. 236 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-02 — reconcile-complete-current-destination
 
@@ -246,6 +242,10 @@ Showing the most recent 60 markers. 235 older marker(s) are in `.acm/learning-ar
 ## 2026-08-13 — freeze-service-overlap-interactive-host
 
 **[!REALIZATION]** A human-gated natural-language service cannot be tested faithfully through a fully non-interactive harness. The operator channel is part of the architecture under test, not incidental terminal plumbing.
+
+## 2026-08-13 — centralize-service-scheduling
+
+**[!REALIZATION]** A single entry point still carries distributed control cost when every service restates why it should run. Lightweight composition requires one scheduler and small acceptance contracts, not fewer capabilities.
 
 ---
 
