@@ -837,6 +837,14 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** Read as the whole arc from the very first v3-redesign entry through today: the loop has repeatedly demonstrated it can find, diagnose, and fix genuine defects (mojibake, BOM corruption, file-scope gaps, version drift) and can even extend its own reasoning framework (double-loop learning in two skills) and contribute upstream to a different repo's specification. What it has not yet done, across the entire trail, not just this window, is produce or seek evidence that anyone other than the operator has picked this up. This is the single most load-bearing gap this repo's own destination names, and today's session -- despite being unusually productive -- did not close any distance on it. Naming this as the arc's actual state, not just this window's, since the pattern is consistent across the whole history, not new to today.
 
+## 2026-08-01 — remove-vision-md-legacy-fallback
+
+**[!REALIZATION]** This is a clean example of a compatibility shim being retired on schedule rather than accumulating indefinitely as unexamined insurance -- the original design (destination/SKILL.md, 2026-05-28) explicitly named the condition for its own removal ("the transition period... may be removed in a future major version") rather than leaving it open-ended, and this entry is that condition being checked and found satisfied, not assumed. This is a small but genuine instance of the suite's own design discipline (name the retirement condition, don't just add compatibility forever) paying off.
+
+## 2026-08-01 — remove-vision-md-legacy-fallback
+
+**[!REALIZATION]** No new governing-variable diagnosis needed here; this entry does not extend or contradict the day's other recurring-pattern diagnoses. It is worth noting as a distinct, positive category from those: this is the first entry today that closes a piece of the suite's OWN evolution (retiring a self-scoped temporary feature) rather than fixing a defect (encoding, file-scope, version drift). The suite's design discipline of naming removal conditions in advance, rather than leaving compatibility shims open-ended, is what made this decision fast and low-risk to make today.
+
 ---
 
-**208 markers — 197 realisations, 11 reversals**
+**210 markers — 199 realisations, 11 reversals**

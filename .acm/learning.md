@@ -5,15 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 208 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-01 — remove-vision-md-legacy-fallback
-
-**[!REALIZATION]** This is a clean example of a compatibility shim being retired on schedule rather than accumulating indefinitely as unexamined insurance -- the original design (destination/SKILL.md, 2026-05-28) explicitly named the condition for its own removal ("the transition period... may be removed in a future major version") rather than leaving it open-ended, and this entry is that condition being checked and found satisfied, not assumed. This is a small but genuine instance of the suite's own design discipline (name the retirement condition, don't just add compatibility forever) paying off.
-
-## 2026-08-01 — remove-vision-md-legacy-fallback
-
-**[!REALIZATION]** No new governing-variable diagnosis needed here; this entry does not extend or contradict the day's other recurring-pattern diagnoses. It is worth noting as a distinct, positive category from those: this is the first entry today that closes a piece of the suite's OWN evolution (retiring a self-scoped temporary feature) rather than fixing a defect (encoding, file-scope, version drift). The suite's design discipline of naming removal conditions in advance, rather than leaving compatibility shims open-ended, is what made this decision fast and low-risk to make today.
+Showing the most recent 60 markers. 210 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-01 — confirm-push-and-record-trail-completeness-check
 
@@ -247,6 +239,14 @@ Showing the most recent 60 markers. 208 older marker(s) are in `.acm/learning-ar
 
 **[!REALIZATION]** The protocol exposed a second independent prerequisite beyond token capture: lifecycle evidence is usable only when the governing Destination existed at the snapshots being compared. Historical silence without a versioned reference signal can illustrate the concern, but it cannot answer the registered experiment without changing what "gain" means after the fact.
 
+## 2026-08-13 — improve-preregister-work-lifecycle-snapshots
+
+**[!REALIZATION]** Independent evidence infrastructure has capability dimensions of its own. The harness currently proves capture-author separation, response provenance, and hash-chain continuity, but not resource use. Calling it an independent observer without naming the observed fields would overextend one kind of trust into another.
+
+## 2026-08-13 — improve-preregister-work-lifecycle-snapshots
+
+**[!REVERSAL]** The initial external-target report treated the harness's existence and Work's historical character counts as sufficient independent token evidence. Reversed after direct inspection found zero token-bearing ledger records and a ledger schema that does not write usage metadata.
+
 ---
 
-**60 markers — 48 realisations, 12 reversals**
+**60 markers — 47 realisations, 13 reversals**

@@ -13243,3 +13243,70 @@ Orientation freshness: current - this run confirms Orientation claim 10's "defin
 1. Locate an external target whose versioned Destination predates a reconstructable bounded-silence arc and whose host can independently expose usage.
 2. Observe an unassisted newcomer first Improve run as a separate adoption and ceremony-cost case.
 3. Test overlapping Destination and Orient triggers under the single-entry architecture.
+
+## 2026-08-13 - improve-preregister-work-lifecycle-snapshots
+
+- target: late-stage loop viability experiment target selection
+- operator: Nils Wendelboe Holmager
+- agent: GitHub Copilot
+- skill: improve + intent + trail
+- outcome: preregistered an eligible Work lifecycle and preserved the independent usage blocker
+- delta: added experiments/late-stage-loop-viability/SNAPSHOTS.md; production Improve, Work, and the harness remain unchanged
+
+### Interpretation of the ask
+
+Intent treated "continue" as another Improve iteration using the prior run's ranked next moves rather than inventing a new direction. The first question was whether any workspace repository already satisfied the external-target prerequisites. If one did, this run would advance the experiment there; otherwise it would move to the next locally executable behavioral test.
+
+### Examination
+
+- **Purpose:** the experiment needs lifecycle positions governed by a contemporaneous operator-held Destination and actual independent resource evidence. Neither historical silence alone nor an installed recorder is sufficient.
+- **Workspace search:** twelve repositories contain both `.acm/destination.md` and `.acm/audit-trail.md`. `pea/work-skill` was the strongest candidate because its Destination predates a documented open-gap, narrowing, and bounded-silence arc.
+- **Lifecycle evidence:** Work commit `9f7e83219d563f40dcc170745f3a0a0451dd33aa` records the trusted-compression and reasoning-depth gap before the material v3.7.0 advance. Commit `d42cf6aed7dbc3576c9c4d200ff59213a692a507` is a later near-silence state with one independently observed assurance correction remaining. Commit `14fcf9f927539a7afb60ec95b611c47c39b3195d` is the exact v3.8.3 artifact evaluated as bounded silence by commit `54fe407cb20b8a92f555817bcd11e589b4763cbf`.
+- **Reconstruction evidence:** every selected commit contains its contemporaneous Destination, Trail, Work skill, and README. The bounded-silence commit changes only `.acm/audit-trail.md`. Detached worktrees can therefore avoid the current Work checkout's unrelated untracked `docs/` content.
+- **Resource evidence:** all 41 local `llm-harness-proxy` JSONL session files were inspected structurally. Their record keys are `act`, `in`, `model`, `prev`, `reason`, `seq`, `sid`, `think`, `transparency`, `ts`, and `v`. Zero records contain structured usage or token fields, and `proxy-rust/src/ledger.rs` has no usage parameter or field.
+- **Challenge:** a read-only evaluator initially reported Work as fully eligible and cited character counts, cost prose, and the presence of `llm-harness-proxy` as token evidence. Direct schema inspection falsified that conclusion. Those artifact properties do not satisfy the protocol's independent usage rule.
+
+### Decision
+
+[!DECISION] Pre-register the three immutable Work snapshots and their selection evidence now, while marking execution blocked until an independent host records actual input and output tokens. This ranks above modifying the harness in this iteration because target selection is owned by the experiment and can be completed without prescribing cross-repository instrumentation; above running another local behavioral test because Orientation ranks late-stage evidence first; and above declaring another silence because a qualifying external lifecycle was found. Rejected alternative: cite Work as a completed protocol instance, because no token-bearing resource capture exists. Precedent check: `learning.md` requires resource claims to have independent evidence and records that lower artifact size can coincide with weaker reflection; the manifest preserves both constraints.
+
+[!REVERSAL] The initial external-target report treated the harness's existence and Work's historical character counts as sufficient independent token evidence. Reversed after direct inspection found zero token-bearing ledger records and a ledger schema that does not write usage metadata.
+
+### Prediction
+
+Adding one snapshot manifest will close the experiment's target-selection prerequisite without changing production Improve, Work, the harness, or the protocol's evidence rules. Exact Git checks will confirm every commit, the silence-only Trail delta, and the blocked resource gate. It will not execute an arm or claim late-stage viability evidence.
+
+### Action
+
+Added `experiments/late-stage-loop-viability/SNAPSHOTS.md`. It preregisters the open-gap, near-silence, and silence commits; cites pre-existing Trail evidence; requires detached worktrees and snapshot-appropriate memory; hides lifecycle labels and resource evidence from the blinded evaluator; and records the verified absence of usage fields.
+
+Focused validation confirmed all selected commits exist, the silence commit changes no target artifact, required manifest boundaries are present, `python verify.py` passes, and `git diff --check` passes. The prediction held. No external repository was modified.
+
+Destination need: not triggered - the current Destination already establishes late-stage resource viability, evidence integrity, highest-leverage selection, and the authority boundary.
+
+Orientation freshness: current - claim 10 remains true that the failure condition is defined without an evidenced mechanism. This run closes target selection but produces no lifecycle resource result and does not change the active operational rules.
+
+### Reflection
+
+**Falsifiable model claim:** Work is a reconstructable lifecycle target for the late-stage experiment, and independent token capture is now the sole known execution blocker rather than target eligibility.
+
+**Named blind spot:** The selected commits have not been reconstructed in detached worktrees, and the same production Improve prompt has not been tested against Work's historical memory layout. A reconstruction failure could still exclude an arm.
+
+**Imagined-reader pushback:** Work's rapid v3.7.0-v3.8.3 sequence may represent architecture churn rather than a general lifecycle from open gap to silence. The blinded outcome evaluation and separate resource dimensions are intended to expose that; the manifest does not label the historical changes as beneficial experimental outcomes.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED - this is the third late-stage iteration separating valid resource evidence from convenient proxies and self-reported efficiency claims.
+- *About to declare silence:* not fired - a concrete experiment prerequisite was closed and execution remains open.
+- *Contradicts prior `[!REALIZATION]`:* not fired - the prior claim required both a versioned-Destination lifecycle and independent usage; this run found the former and confirmed the latter is still absent.
+- *Operator explicitly asked:* FIRED - the operator asked to continue from the committed late-stage work.
+
+### Across-trail macro-Hansei
+
+[!REALIZATION] Independent evidence infrastructure has capability dimensions of its own. The harness currently proves capture-author separation, response provenance, and hash-chain continuity, but not resource use. Calling it an independent observer without naming the observed fields would overextend one kind of trust into another.
+
+### Candidate Next Moves
+
+1. Obtain independent input/output token capture for matched fresh runs, either from an eligible host or through a separately governed change in the owning harness repository.
+2. Reconstruct the three detached Work snapshots and run the registered arms once resource capture exists.
+3. Observe an unassisted newcomer first Improve run as the separate adoption bar.
