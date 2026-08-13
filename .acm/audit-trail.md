@@ -14438,3 +14438,65 @@ The arc's strongest experiment repairs have come from separating prerequisite cl
 1. Commit this fixture, then prepare a disposable external baseline and interactive host without invoking the model.
 2. Qualify whether Copilot CLI can pause one run for an actual operator response while preserving complete streams and service chronology.
 3. Only after that host boundary is known, consume the one overlap invocation and classify without replacement.
+
+## 2026-08-13 - freeze-service-overlap-interactive-host
+
+- target: interactive CLI boundary for Destination confirmation
+- operator: Nils Holmager
+- agent: GitHub Copilot
+- skill: improve (Intent at ingress, Trail at egress)
+- outcome: interactive host frozen; no disposable setup or invocation started
+- delta: added one host record with fixed session identities and exact command shape
+
+### Interpretation of the ask
+
+Intent carried "continue" into the fixture checkpoint's next move: determine whether the installed CLI exposes a same-session operator channel, then freeze that host before setup. The goal is to preserve real Destination authority and one invocation, not to maximize unattended execution.
+
+### Examination
+
+- Local CLI help states that `-p` is non-interactive and exits after completion, while `-i` starts interactive mode with an initial prompt.
+- `--no-ask-user` would remove the exact tool the composition test requires.
+- The CLI supports fixed session UUIDs, names, external log directories, JSON output, and local-only isolation flags.
+- Interactive commands must remain directly attached to the terminal; piping through output filters can hide prompts and invalidate the operator gate.
+- Prior proxy evidence shows requested harness IDs do not control emitted ledger identity, so all emitted SIDs remain separate evidence.
+
+### Decision and prediction
+
+[!DECISION] Use one directly attached `copilot -i` process with a committed CLI session UUID and requested harness ID, external CLI logs plus persistent terminal capture, and exactly one operator answer relayed through the editor when Destination asks.
+
+Prediction: the host will expose either a usable same-session question channel or a visible interaction failure classifiable as Inconclusive. It will not require a second model session, scripted operator answer, remote control, or prompt-mode resume.
+
+### Action and verification
+
+Added `experiments/service-overlap/HOST.md` with exact provider and proxy identity, disposable roots, capture channels, interaction handling, invocation arguments, serial final preflight, authorization-consumption rule, and host classification boundary. Generated and froze CLI session `34c4fdd7-0b91-40c2-9aa5-421bddf2b089` and requested harness session `KYP13KYMCBJZ2MWJC3XNP97Z31`.
+
+Focused assertions confirmed interactive mode, fixed identities, unsuppressed `ask_user`, single-answer relay, no-mutation boundary, and consumption timing. `python verify.py` and `git diff --check` passed. The unrelated host-qualification evidence README remained untouched and unstaged.
+
+Destination need: not triggered - the host preserves, rather than settles, the future synthetic Destination question.
+
+Orientation freshness: current - no overlap behavior has occurred.
+
+### Reflection
+
+[!REALIZATION] A human-gated natural-language service cannot be tested faithfully through a fully non-interactive harness. The operator channel is part of the architecture under test, not incidental terminal plumbing.
+
+Falsifiable model claim: fixed session identity plus direct terminal attachment is sufficient to preserve one invocation across the Destination question without using resume.
+
+Named blind spot: CLI logs may not contain every terminal-rendering event or typed response, so terminal capture remains a second required evidence channel whose completeness is not yet qualified.
+
+Imagined-reader pushback: manual answer relay introduces a supervisor into the run. The supervisor transmits the verbatim operator answer only; it has no authority to interpret or supplement that answer, and every relay event is evidence.
+
+- *Recurring finding-class:* not fired - this is the first interactive operator-gate host boundary.
+- *About to declare silence:* not fired - the execution path became concrete.
+- *Contradicts prior `[!REALIZATION]`:* not fired - it implements the prior ownership finding.
+- *Operator explicitly asked:* FIRED - the operator asked to continue.
+
+### Across-trail macro-Hansei
+
+The arc's no-question automation flags were appropriate for simulated first-run behavior and are wrong for a Destination authority test. Host fidelity includes interaction mode, not only model and provider route. Reusing the earlier command shape without revisiting that assumption would have tested a different architecture.
+
+### Candidate Next Moves
+
+1. Commit this host, prepare disposable roots, and run all setup checks without starting the model.
+2. Start the exact proxy and one serial final-preflight-to-interactive-call process.
+3. Relay only the actual Destination question and operator answer, then classify from preserved chronology without replacement.

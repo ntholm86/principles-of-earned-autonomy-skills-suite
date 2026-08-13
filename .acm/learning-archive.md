@@ -941,6 +941,10 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** The suite's viability equation has three inseparable terms: capability, trust, and cost. Optimizing any one by silently degrading another does not advance the destination. The useful unit is demonstrated capability and trust per resource spent, not raw feature count, explanation simplicity, or token reduction alone.
 
+## 2026-08-02 — orient-restore-reasoning-growth-and-token-viability
+
+**[!REVERSAL]** Run 213's claim that the next meaningful evidence must come from behavior was too exclusive. Behavioral evidence remains required for adoption and external validation, while internal reasoning-capability discovery and capability-preserving efficiency work are also immediate research paths.
+
 ---
 
-**234 markers — 218 realisations, 16 reversals**
+**235 markers — 218 realisations, 17 reversals**

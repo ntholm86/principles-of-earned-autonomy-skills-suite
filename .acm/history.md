@@ -266,6 +266,7 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 259 | 2026-08-13 | preregister-unassisted-newcomer-observation | preregistered; awaiting an eligible consenting participant | added one observation protocol; no participant contact, observation, production change, or adoption claim |
 | ▸ 260 | 2026-08-13 | preregister-destination-orient-overlap | preregistered; fixture and interactive execution remain pending | added one overlap protocol; no fixture, model invocation, operator question, service run, or production change |
 | ▸ 261 | 2026-08-13 | freeze-destination-orient-overlap-fixture | complete fixture and trigger map frozen; no invocation executed | added seven fixture files, one trigger map, and one hash manifest |
+| ▸ 262 | 2026-08-13 | freeze-service-overlap-interactive-host | interactive host frozen; no disposable setup or invocation started | added one host record with fixed session identities and exact command shape |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -1199,4 +1200,8 @@ Do not edit by hand — re-run the command to refresh.
 
 - **decided:** Freeze a notification-policy fixture whose runtime behavior remains 09:00 for both channels, whose older Orientation describes only focus-first risk, and whose later Trail explicitly adds unresolved incident-response risk.
 
-**261 runs total — 243 with changes, 18 silence**
+### Run 262 — 2026-08-13 — freeze-service-overlap-interactive-host
+
+- **decided:** Use one directly attached `copilot -i` process with a committed CLI session UUID and requested harness ID, external CLI logs plus persistent terminal capture, and exactly one operator answer relayed through the editor when Destination asks.
+
+**262 runs total — 244 with changes, 18 silence**
