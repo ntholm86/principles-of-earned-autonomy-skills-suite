@@ -264,6 +264,7 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 257 | 2026-08-13 | execute-second-first-run-rerun | PASS for simulated first-run operability on one fixed task and qualified host | one authorized invocation, one minimal verified target refactor, one target Trail, one sealed evidence package, and no production skill change |
 | ▸ 258 | 2026-08-13 | orient-after-simulated-first-run-pass | refreshed | simulated no-ACM operability moved from untested to one bounded Pass; unassisted newcomer observation became the highest-ranked unresolved adoption boundary |
 | ▸ 259 | 2026-08-13 | preregister-unassisted-newcomer-observation | preregistered; awaiting an eligible consenting participant | added one observation protocol; no participant contact, observation, production change, or adoption claim |
+| ▸ 260 | 2026-08-13 | preregister-destination-orient-overlap | preregistered; fixture and interactive execution remain pending | added one overlap protocol; no fixture, model invocation, operator question, service run, or production change |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -1189,4 +1190,8 @@ Do not edit by hand — re-run the command to refresh.
 
 - **decided:** Preregister one consent-gated observation with a neutral repository-only first contact, no technical observer guidance, staged failure classification, source-labeled evidence, and a distinct fresh-session continuation stage.
 
-**259 runs total — 241 with changes, 18 silence**
+### Run 260 — 2026-08-13 — preregister-destination-orient-overlap
+
+- **decided:** Preregister a real interactive service sequence in which both triggers are independently present before service execution, Destination runs first and asks one sourced question, and exactly one Orient may refresh the arc after any material confirmed change.
+
+**260 runs total — 242 with changes, 18 silence**

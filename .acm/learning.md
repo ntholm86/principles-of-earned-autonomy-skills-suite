@@ -5,11 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 232 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-02 — destination-restore-reasoning-growth-and-token-viability
-
-**[!REVERSAL]** The preceding Destination/Orient pair over-corrected toward external behavioral evidence. External behavior remains necessary for adoption and research validation, but it is not the full immediate research program. The suite must also keep improving the reasoning system that generates that behavior, while making the system affordable enough to sustain.
+Showing the most recent 60 markers. 233 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-02 — orient-restore-reasoning-growth-and-token-viability
 
@@ -247,6 +243,10 @@ Showing the most recent 60 markers. 232 older marker(s) are in `.acm/learning-ar
 
 **[!REALIZATION]** The next adoption datum is an event owned by an independent consenting developer, not another artifact the autonomous loop can manufacture. Autonomy can remove ambiguity from the protocol and evidence boundary; it cannot replace the human independence that gives the observation meaning.
 
+## 2026-08-13 — preregister-destination-orient-overlap
+
+**[!REALIZATION]** The overlap is not merely two trigger predicates firing together. It is an ownership and time-order problem: Improve owns the initial scheduling evidence, Destination owns confirmation and durable direction, and Orient must observe the resulting state exactly once without either service stealing another's authority.
+
 ---
 
-**60 markers — 43 realisations, 17 reversals**
+**60 markers — 44 realisations, 16 reversals**

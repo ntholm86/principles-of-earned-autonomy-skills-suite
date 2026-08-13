@@ -933,6 +933,10 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** Token efficiency and reasoning capability are not competing destination tracks. Efficiency is a viability constraint on every track: reduce resource use without reducing the capabilities that make delegation trustworthy. The target is better capability per unit of resource, not minimal tokens in isolation.
 
+## 2026-08-02 — destination-restore-reasoning-growth-and-token-viability
+
+**[!REVERSAL]** The preceding Destination/Orient pair over-corrected toward external behavioral evidence. External behavior remains necessary for adoption and research validation, but it is not the full immediate research program. The suite must also keep improving the reasoning system that generates that behavior, while making the system affordable enough to sustain.
+
 ---
 
-**232 markers — 217 realisations, 15 reversals**
+**233 markers — 217 realisations, 16 reversals**

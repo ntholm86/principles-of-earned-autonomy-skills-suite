@@ -14307,3 +14307,70 @@ The arc has progressively removed technical confounds before spending human atte
 1. After the operator identifies an eligible consenting participant, execute this protocol once without pre-contact coaching and preserve the earliest unassisted stopping point.
 2. If participant access remains unavailable, test Destination-plus-Orient overlap as the highest-ranked fully automatable behavioral gap without calling it adoption progress.
 3. Keep the eligible silence endpoint and consequential-gate tests independent until their information value outranks the human observation or service-overlap boundary.
+
+## 2026-08-13 - preregister-destination-orient-overlap
+
+- target: automatic Destination and Orient service composition
+- operator: Nils Holmager
+- agent: GitHub Copilot
+- skill: improve (Intent at ingress, Trail at egress)
+- outcome: preregistered; fixture and interactive execution remain pending
+- delta: added one overlap protocol; no fixture, model invocation, operator question, service run, or production change
+
+### Interpretation of the ask
+
+After the unassisted newcomer observation became blocked on an independent consenting participant, Intent interpreted continued autonomous progress as the recorded fallback: preregister the highest-ranked fully automatable behavioral gap without treating it as adoption progress. The target is the unknown composition of Destination and Orient when one Improve iteration independently schedules both.
+
+The rejected alternative was to simulate a Destination answer inside an evaluator case. That could test textual routing but would erase the operator authority boundary that makes the real composition difficult.
+
+### Examination
+
+- Existing evidence: separated conditional routing passed 4/4 evaluations, but no case required overlapping service ownership or deduplication.
+- Improve contract: unresolved durable direction can schedule Destination while contradictory recent trail evidence independently marks Orientation stale.
+- Destination contract: a material confirmed direction change schedules Orient after Destination's Trail is durable.
+- Composition hazard: an Orient already scheduled by Improve can be scheduled again by Destination, producing a pre-change refresh, duplicate refreshes, or duplicate handoff explanations.
+- Authority hazard: a synthetic fixture or supervisor could pre-fill the expected operator answer and falsely convert inference into confirmation.
+- Existing Case 3 is unsuitable as the execution fixture: it tests isolated conditional protocol selection and explicitly lacks a consequential operator gate.
+
+### Decision and prediction
+
+[!DECISION] Preregister a real interactive service sequence in which both triggers are independently present before service execution, Destination runs first and asks one sourced question, and exactly one Orient may refresh the arc after any material confirmed change.
+
+Prediction: the protocol will distinguish routing, authority, ordering, and deduplication failures rather than collapsing them into one service failure. It will not itself establish composition behavior, and it cannot reach the material-change Pass branch without an actual operator response.
+
+This ranks below the blocked newcomer observation because it does not test adoption, but above the silence endpoint and consequential-gate probes because Orientation explicitly names service overlap as the next fully automatable behavioral uncertainty.
+
+### Action and verification
+
+Added `experiments/service-overlap/PROTOCOL.md`. It freezes the interactive authority boundary, fixture requirements, two independent trigger proofs, expected service order, singular invocation rule, event evidence, material-change and no-change branches, failure taxonomy, and bounded claims.
+
+The first focused validation found that the headline question said "one" rather than "exactly one" post-change refresh. The sentence was tightened and the same validation rerun. Required authority, trigger, ordering, deduplication, and claim-boundary clauses then passed; `python verify.py` and `git diff --check` passed. The unrelated host-qualification evidence README remained untouched and unstaged.
+
+Destination need: not triggered - current Destination already settles operator authority over durable direction and names triggered service behavior as an active quality bar.
+
+Orientation freshness: current - overlap remains untested; this protocol makes the existing next move executable but adds no service behavior evidence.
+
+### Reflection
+
+[!REALIZATION] The overlap is not merely two trigger predicates firing together. It is an ownership and time-order problem: Improve owns the initial scheduling evidence, Destination owns confirmation and durable direction, and Orient must observe the resulting state exactly once without either service stealing another's authority.
+
+Falsifiable model claim: forcing both triggers independently before execution will expose whether the current natural-language contracts deduplicate by shared understanding or only appear correct when service triggers are separated.
+
+Named blind spot: the complete synthetic target and interactive CLI mechanics are not yet frozen. Those surfaces may reveal that a single uninterrupted CLI invocation cannot pause for operator confirmation while preserving the desired evidence boundary.
+
+Imagined-reader pushback: calling this gap fully automatable is imprecise because the material-change branch requires a real operator answer. Fixture construction, host setup, and service execution are automatable; durable direction remains deliberately human-gated.
+
+- *Recurring finding-class:* not fired - this is the first protocol focused on cross-service composition.
+- *About to declare silence:* not fired - a concrete experimental boundary was added.
+- *Contradicts prior `[!REALIZATION]`:* not fired - it operationalizes the Orientation claim that separated routing leaves overlap unknown.
+- *Operator explicitly asked:* FIRED - the operator asked to continue.
+
+### Across-trail macro-Hansei
+
+Progressive disclosure reduced visible ceremony by making services conditional. The resulting research burden moves from testing each service alone to testing ownership at their boundaries. The arc now shows two irreducible human events for different reasons: newcomer independence establishes adoption validity, while Destination confirmation preserves operator authority. Neither can be manufactured by adding more autonomous execution.
+
+### Candidate Next Moves
+
+1. Build and commit the complete synthetic overlap fixture and trigger map without encoding an operator answer.
+2. After fixture validation, prepare the interactive host and stop at the one Destination question for operator response.
+3. If interactive CLI mechanics cannot preserve one invocation across the operator gate, classify that host/workflow boundary before redesigning the service contract.
