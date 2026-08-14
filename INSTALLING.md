@@ -147,7 +147,7 @@ Commit `.acm/audit-trail.md` after each session. That's the full workflow.
 
 *This section is for people running the improvement loop on the skills repo itself. If you're adopting the skills for your own project, you don't need any of this.*
 
-`harness/tools/record.py` and `verify.py` exist to support the experiment that produced this suite — running the loop 280+ times and proving the trail is intact. They remain in the cloned repository and are not copied by the one-line installer.
+`harness/tools/record.py` and `verify.py` exist to support the experiment that produced this suite — running the loop 350+ times and proving the trail is intact. They remain in the cloned repository and are not copied by the one-line installer.
 
 **`harness/tools/record.py`** — generates a human-readable `history.md` from the trail log. Run from the repo root:
 ```

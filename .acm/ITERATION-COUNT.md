@@ -1,6 +1,6 @@
 # Iteration count — verified evidence
 
-_Last updated: 2026-08-02_
+_Last updated: 2026-08-14_
 
 This document answers: **how many self-targeted iterations did this skills suite go through, and what proves it?**
 
@@ -14,8 +14,8 @@ This document answers: **how many self-targeted iterations did this skills suite
 | v1 (runs 26-30) | 2026-04-18 | 5 | Single commit; reconstruction acknowledged in commit message |
 | v1 (runs 31-50) | 2026-04-18 — 2026-04-19 | 18 | Individual commits with SHAs |
 | v2 (runs 51-97) | 2026-04-19 — 2026-04-22 | 41 | Individual commits with SHAs |
-| v3 (audit-trail) | 2026-04-23 — present | 197 | Individual commits with SHAs |
-| **Total** | | **286** | |
+| v3 (audit-trail) | 2026-04-23 — present | 265 | Committed Trail entries; some commits contain multiple iterations |
+| **Total** | | **354** | |
 
 Excluded from count: 8 external-target runs (62, 66, 67, 76, 77 + 2 vectorium v3 entries + 1 agent-context-memory v3 entry, 2026-08-01).
 
@@ -62,7 +62,7 @@ External targets excluded:
 
 ### Era 4: v3 audit-trail (individual commits)
 
-**Evidence:** 200 entries in `.acm/audit-trail.md` as of 2026-08-02 (up from 134 at the prior 2026-06-01 update of this document), each committed individually except the most recent entries pending commit at the time of this refresh. The audit trail format records interpretation, examination, decisions, actions, and reflection per session. Three entries name a different repo as their primary subject — two vectorium entries (external game engine) and one `agent-context-memory` entry (2026-08-01, contributing a memory-model fix upstream to the ACM specification this suite implements) — the remaining 197 are self-targeted.
+**Evidence:** 268 entries parsed from `.acm/audit-trail.md` as of 2026-08-14. The audit trail format records interpretation, examination, decisions, actions, and reflection per session. Three entries name a different repo as their primary subject — two vectorium entries (external game engine) and one `agent-context-memory` entry (2026-08-01, contributing a memory-model fix upstream to the ACM specification this suite implements) — the remaining 265 are self-targeted. The entries are preserved in git, but multiple iterations can land in one commit.
 
 The v3 era also introduced:
 - `verify.py` — a 14-check mechanical verifier that enforces trail integrity at every commit
@@ -76,7 +76,7 @@ The v3 era also introduced:
 Anyone with access to this repository can verify the following:
 
 ```bash
-# Total commits (430 as of 2026-08-02)
+# Total commits (469 as of 2026-08-14, after this refresh)
 git log --oneline | wc -l
 
 # v1/v2 era commits (first 5 days)
@@ -164,7 +164,7 @@ This provenance record was created on 2026-06-01 — after the fact. The v1 era 
 
 This is a **retroactive reconstruction** of the v1 trail from the git log. We are honest about that. The git history itself is not retroactive — it has been accumulating since 2026-04-18 and its integrity is cryptographically verifiable by anyone who clones the repository.
 
-The claim of 286 self-targeted iterations is conservative. It counts only iterations that produced a GENBA entry or audit-trail entry. Many commits represent significant work (design discussions, infrastructure changes, documentation passes) that did not receive a run number. The git log contains 430 total commits; the iteration count is 286.
+The claim of 354 self-targeted iterations is conservative. It counts only iterations that produced a GENBA entry or audit-trail entry. Many commits represent significant work (design discussions, infrastructure changes, documentation passes) that did not receive a run number. After this refresh is committed, the git log contains 469 total commits; the iteration count is 354. Commit count and iteration count measure different things because some commits preserve multiple iterations.
 
 ---
 
@@ -189,3 +189,17 @@ python harness/tools/record.py history --write      # 200 entries
 **Honesty note on reconciliation:** a simple date-based search for entries dated on/after 2026-06-01 returns 68, two more than the 66 implied by `200 (current total) - 134 (total documented at the 2026-06-01 update)`. The discrepancy is not chased further here — it is small, and resolving it would mean auditing the exact entry set the prior update counted by hand. This is the same class of drift this repository's own trail has repeatedly found in its hand-maintained "current state" artifacts (`CITATION.cff`, `verify.py`'s file-scope lists) — a periodic snapshot document, updated by hand, drifts from a mechanically-parsed source between refreshes. Recorded here rather than silently rounded away.
 
 **Classification judgment calls made in this refresh:** two entries (`rename-commanders-intent-to-operators-intent`, `rename-sweep-gap-fix-verify-recursive-search`, both 2026-07-02) named other repos (manifesto, agent-context-memory, ai-steward, pea-website) in their `target:` field alongside this repo, because the rename swept across the whole PEA ecosystem. Both are classified as self-targeted here, consistent with this document's existing methodology: the skills repo was a co-primary target and the bulk of the reasoning and verification happened against this repo's own files, not primarily against another codebase's independent concerns — contrast with `vectorium`, a separate game engine with no shared vocabulary to rename, or the `agent-context-memory` Scale-gap entry, which added a feature to that repo's own specification with no corresponding change needed in this repo.
+
+---
+
+## Refresh — 2026-08-14
+
+The canonical Trail parser reports 267 entries before this refresh. Recording the refresh itself creates entry 268. With the three existing external-primary-target entries excluded, the v3 self-targeted count is 265; adding the 89 self-targeted v1/v2 runs gives **354**.
+
+The README provenance wording was also corrected. Iterations 31 onward have per-iteration GENBA or Trail records preserved in git, but that does not imply one unique commit per iteration: some commits contain multiple entries. The earliest 30 iterations remain bulk or reconstructed evidence.
+
+**Verified arithmetic for this refresh:**
+```text
+89 pre-v3 self-targeted + (268 Trail entries - 3 external) = 354
+468 pre-refresh commits + 1 refresh commit = 469
+```

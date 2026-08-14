@@ -14816,3 +14816,67 @@ The recent arc repeatedly reduced control burden by separating capability from o
 1. Stop cleanup here unless a concrete storage, navigation, or interpretation cost remains.
 2. If physical deletion becomes necessary, first establish an independently inspectable replacement evidence location and update every live claim.
 3. Keep convergence evaluation separate from archive housekeeping.
+
+## 2026-08-14 - refresh-live-iteration-count
+
+- target: `.acm/ITERATION-COUNT.md`, `README.md`, and `INSTALLING.md`
+- operator: Nils Holmager
+- agent: GitHub Copilot
+- skill: improve (Intent at ingress, Trail at egress)
+- outcome: changed - live iteration claims refreshed from canonical evidence
+- delta: published self-targeted total 286 -> 354; v3 self-targeted 197 -> 265; rounded installer floor 280+ -> 350+; misleading one-commit-per-iteration implication removed
+
+### Interpretation of the ask
+
+The operator first asked whether the iteration count was current, then asked to update the number across `C:\git\pea`. The intended outcome was one accurate live claim everywhere it is presented as current, while preserving old numbers in append-only Trail, generated history, learning, and frozen experiment evidence as honest historical claims.
+
+### Examination
+
+The repository root is `C:\git\pea\skills`; `C:\git\pea` is only a parent workspace. A targeted search found exact live claims in `README.md` and `.acm/ITERATION-COUNT.md`, plus one rounded `280+` claim in `INSTALLING.md`. Other matches were dated Trail/history records, generated learning, experiment captures, hashes, or unrelated repositories and were excluded from editing.
+
+The canonical `record.py` parser reported 267 Trail entries before this run. The established pre-v3 self-targeted count is 89. Three v3 entries have external repositories as their primary target. Since this refresh is itself substantive self-targeted work and must be recorded, its final arithmetic is `89 + (268 - 3) = 354`.
+
+The prior README wording said every post-bulk iteration was individually backed by a git commit. Commit history no longer supports a one-to-one relationship: several commits contain multiple Trail entries. The defensible claim is that iterations 31 onward have per-iteration GENBA or Trail records preserved in git, while the earliest 30 rely on bulk or reconstructed provenance.
+
+### Decision and prediction
+
+[!DECISION] Publish 354 as the self-targeted total, 265 as the v3 subtotal, 268 as the final canonical Trail count, and 469 as the post-refresh commit count. Describe the evidence-record relationship without claiming one unique commit per iteration. Preserve all dated historical numbers unchanged.
+
+Rejected alternative: publish the pre-run total of 353. Appending the required Trail entry would invalidate it immediately. Rejected alternative: globally replace old totals. That would rewrite historical assertions and damage evidence integrity.
+
+Prediction: after this entry is appended, canonical history generation reports 268 runs; README and the snapshot agree on 354; the final commit count is 469; the verifier and git integrity checks pass; the unrelated modified experiment README remains untouched and unstaged.
+
+### Action and verification
+
+Updated the README headline and explanation to 354 documented iterations. Updated the current summary, Era 4 evidence, verification comment, and closing claim in `.acm/ITERATION-COUNT.md`, then appended a dated refresh section with the self-referential arithmetic. Updated the installer floor to 350+.
+
+The first focused assertion confirmed all three live surfaces and `git diff --check` found no whitespace errors; Git emitted only its line-ending warning for `INSTALLING.md`. Final parser, verifier, integrity, staging, and commit-count results follow from the post-append verification and commit.
+
+Destination need: not triggered - no durable direction is unsettled; this run reconciles a current evidence claim under existing evidence-integrity rules.
+
+Orientation freshness: current - the work applies the current lightweight-capability direction by correcting one concrete documentation defect without widening into historical rewrites or new automation.
+
+### Reflection
+
+[!REALIZATION] A self-referential counter must include the act of refreshing itself when that act qualifies under the same counting rule. Publishing the pre-refresh value creates known drift before the update is complete.
+
+Falsifiable model claim: canonical parsing after this append yields 268 entries, of which 265 are self-targeted under the existing three-entry exclusion set, producing a total of 354 with the 89 pre-v3 runs.
+
+Named blind spot: the count still depends on the existing manual classification of primary target. The parser establishes entry count, not self-target classification.
+
+Imagined-reader pushback: "documented" may sound weaker than "verified." That is deliberate precision: provenance strength varies across eras, and the linked snapshot explains exactly what can be verified.
+
+- *Recurring finding-class:* FIRED - hand-maintained current-state counters drifted again.
+- *About to declare silence:* not fired - the operator requested a concrete synchronization.
+- *Contradicts prior `[!REALIZATION]`:* FIRED - the prior refresh inferred individual commit backing by subtraction; current commit grouping disproves that one-to-one implication.
+- *Operator explicitly asked:* FIRED - the operator asked to update the number across the workspace.
+
+### Across-trail macro-Hansei
+
+The suite has now refreshed this counter twice. The current correction improves truthfulness by separating iteration records from commit containers. That distinction should remain stable even as both counts continue to grow.
+
+### Candidate Next Moves
+
+1. Leave historical evidence untouched.
+2. Consider a generated current-count check only when another real drift occurrence justifies its maintenance cost.
+3. Keep future claims explicit about whether they count iterations, Trail entries, or commits.

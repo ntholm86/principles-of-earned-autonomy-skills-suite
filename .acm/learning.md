@@ -5,11 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 241 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-02 — prototype-layered-improve
-
-**[!REALIZATION]** Conditional loading is architecturally feasible but composition is itself a load-bearing protocol: the kernel must expose trigger names, ownership, and mandatory routing even when protocol bodies move out. The experiment also reveals that governance accretion and evidence discipline are separable constraints; reducing the former does not automatically improve the latter.
+Showing the most recent 60 markers. 242 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-02 — prototype-layered-improve
 
@@ -246,6 +242,10 @@ Showing the most recent 60 markers. 241 older marker(s) are in `.acm/learning-ar
 ## 2026-08-13 — index-experiments-as-evidence-archive
 
 **[!REALIZATION]** The experiments folder's burden was primarily semantic, not storage or runtime cost. A missing status boundary made preserved evidence look like pending work. Deleting evidence would optimize the weaker dimension while damaging the stronger one.
+
+## 2026-08-14 — refresh-live-iteration-count
+
+**[!REALIZATION]** A self-referential counter must include the act of refreshing itself when that act qualifies under the same counting rule. Publishing the pre-refresh value creates known drift before the update is complete.
 
 ---
 

@@ -969,6 +969,10 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** The unseeded self-improvement test succeeded at discovery and exposed a new asymmetry: the suite has strong mechanisms for turning failures into permanent instructions, but weak mechanisms for turning accumulated instructions back into smaller abstractions without losing their protections.
 
+## 2026-08-02 — prototype-layered-improve
+
+**[!REALIZATION]** Conditional loading is architecturally feasible but composition is itself a load-bearing protocol: the kernel must expose trigger names, ownership, and mandatory routing even when protocol bodies move out. The experiment also reveals that governance accretion and evidence discipline are separable constraints; reducing the former does not automatically improve the latter.
+
 ---
 
-**241 markers — 223 realisations, 18 reversals**
+**242 markers — 224 realisations, 18 reversals**
