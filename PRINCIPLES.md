@@ -141,13 +141,17 @@ The two together close the two ways post-hoc rationalization enters a trail: fab
 
 *A system has converged when diverse evaluators independently find nothing left to change — not when the score stops moving.*
 
-**Origin:** Cross-validation (statistics), ensemble agreement (machine learning), the Delphi method (forecasting), and Kaizen's own exit condition — taken to its logical conclusion.
+**Origin:** Cybernetics and feedback control (Wiener, 1948), cross-validation (statistics), ensemble agreement (machine learning), the Delphi method (forecasting), and Kaizen's own exit condition — taken to its logical conclusion.
 
 **The problem it solves:** Iterative improvement loops declare convergence too early. The typical criterion — "the score stabilized across N consecutive runs" — measures the wrong signal. A score can stabilize while the system is still changing underneath: each run removes something and adds something, the score stays flat, but the artifact never stops churning. Worse, a single evaluator (or a single model family) can converge on its own blind spots, producing a stable score that reflects the evaluator's limitations, not the artifact's quality.
 
 Score stability is necessary but not sufficient. Change-rate stability is necessary but not sufficient. Only the combination — across diverse, independent evaluators — constitutes convergence.
 
-**The principle:** Convergence requires diverse independent evaluators to arrive at the same assessment *and* find nothing material to change.
+**The principle:** Convergence requires diverse independent evaluators to arrive at the same assessment *and* find nothing material to change. Silence is the strongest available stopping signal for the loop, not a guarantee that the artifact is correct.
+
+**The cybernetic grounding:** Wiener established cybernetics as the study of control and communication in animals and machines. Read as a feedback system, PEA's three principles form one steering architecture: Operator's Intent supplies the reference state — the destination; Observable Autonomy makes the system's state, actions, and history available for comparison; and independent evaluation feeds detected deviation back into the next action. Convergence Is Silence names the stopping condition: the feedback channel produces no material corrective signal across diverse observers. This is stability relative to the current destination and the system's observational capacity, not proof of correctness or permanent equilibrium. A changed destination, changed artifact, or new material finding reopens the loop.
+
+Cybernetics grounds the mechanism of steering by feedback. PEA adds a governance constraint the control model alone does not provide: the acting agent cannot be its own only sensor, judge, or historian. Feedback must come through independent evaluation and an auditable trail.
 
 ### The test
 
@@ -161,7 +165,7 @@ Three simultaneous conditions:
 
 **The minimum bar:** 3 consecutive runs, 3 distinct evaluator families, same score, zero artifact changes, at least one re-derivation of the measurement scheme that converged with the inherited scheme. Below this, you have improvement trajectory. Above this, you have convergence. There is no middle ground.
 
-**Why this matters for earned autonomy:** Without this principle, an autonomous improvement loop has no honest stopping condition. It runs indefinitely — each cycle finding something to change because finding something to change is what the loop is designed to do. The agent's incentive is to justify its own execution by producing changes. Convergence Is Silence inverts that incentive: the agent proves its value by finding *nothing*, and the system proves its quality by surviving diverse scrutiny unchanged.
+**Why this matters for earned autonomy:** Without this principle, an autonomous improvement loop has no honest stopping condition. It runs indefinitely — each cycle finding something to change because finding something to change is what the loop is designed to do. The agent's incentive is to justify its own execution by producing changes. Convergence Is Silence inverts that incentive: the agent proves its value by finding *nothing*, and the system earns its strongest available case for stopping by surviving diverse scrutiny unchanged.
 
 **The corollary:** *If the loop is still producing changes, the system is still improving. If the system is still improving, it hasn't converged. Convergence is not a score — it is the absence of actionable findings across independent observers.*
 
@@ -206,6 +210,7 @@ ARF is not a fourth principle. It is the measurable external signal that exists 
 - **Auftragstaktik** (Prussian mission-type command) — telling subordinates *what* and *why*, then trusting them to determine *how*. Origin of Principle 1 and the "freedom of thought" half of ARF.
 - **Meaningful Human Control** (autonomy ethics) — autonomous systems must operate within boundaries that allow humans to maintain appropriate oversight without real-time intervention. Shapes the "trail integrity" half.
 - **Trust Calibration** (Lee & See, 2004) — trust in autonomous systems should be calibrated to actual capabilities, and calibration requires observability. Over-trust and under-trust are both failures. Principle 2 is the calibration mechanism.
+- **Cybernetics** ([Wiener, 1948](https://mitpress.mit.edu/9780262730099/cybernetics/)) — control is achieved through communication and feedback between observed state and intended state. Grounds the steering mechanism across all three principles: destination as reference, observability as state information, and convergence as the absence of material corrective feedback. PEA adds independent evaluation and capture-author separation as governance constraints on who may supply and preserve that feedback.
 
 **Preconditions** (principle compliance — verify the environment, not the agent):
 

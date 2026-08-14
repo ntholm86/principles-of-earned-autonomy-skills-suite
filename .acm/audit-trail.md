@@ -14880,3 +14880,68 @@ The suite has now refreshed this counter twice. The current correction improves 
 1. Leave historical evidence untouched.
 2. Consider a generated current-count check only when another real drift occurrence justifies its maintenance cost.
 3. Keep future claims explicit about whether they count iterations, Trail entries, or commits.
+
+## 2026-08-14 - ground-embedded-principles-in-cybernetics
+
+- target: `PRINCIPLES.md` and live iteration-count surfaces
+- operator: Nils Wendelboe Holmager
+- agent: GitHub Copilot
+- skill: improve (Intent at ingress, Trail at egress)
+- outcome: changed - cybernetic feedback grounding synchronized into the skills doctrine
+- delta: embedded Principle 3 gained Wiener grounding; current self-targeted count 354 -> 355
+
+### Interpretation of the ask
+
+The operator ordered a theory-first propagation from manifesto to website to skills, governed by the workspace ACM. For the skills repository, Intent interpreted success as doctrinal synchronization without adding duplicate runtime control prose: the embedded principles should carry the grounding, while the operational skills continue to enact those principles without a new trigger or procedure.
+
+### Examination
+
+The embedded `PRINCIPLES.md` retained an older Principle 3 origin and stronger wording than the manifesto: it omitted cybernetics and said the system "proves its quality" through scrutiny. `improve/SKILL.md` already contains PDCA and OODA lineage, but adding the full PEA doctrine there would duplicate the owning principles surface and conflict with the current Orientation's capability-per-token rule.
+
+The manifesto now establishes the authoritative mapping: destination as reference state, observability as state and history, independent evaluation as corrective feedback, and silence as bounded stability. The skills repository had one unrelated modified experiment evidence README, which remained outside this work.
+
+### Decision
+
+[!DECISION] Synchronize only `PRINCIPLES.md`: add cybernetics to Principle 3's origin, carry the full feedback mapping and governance distinction, soften "proves its quality" to the strongest available case for stopping, and add a linked theoretical anchor. Do not add runtime steps or bump skill versions because behavior is unchanged.
+
+Rejected alternative: add Wiener to `improve/SKILL.md` as another lineage paragraph. That would duplicate doctrine in an operational contract and spend tokens without changing execution. Rejected alternative: copy the manifesto's full References section into the suite. A direct MIT Press link in the compact theoretical-anchor list provides the source without importing publication apparatus. Precedent check: current Orientation explicitly requires one owner per control distinction and preserving capability while removing duplicated orchestration.
+
+### Prediction
+
+The embedded principles will match the manifesto's mechanism and epistemic boundary; `python verify.py` will pass after Trail derivation; no installed skill behavior or version will change; the unrelated experiment README will remain untouched and unstaged.
+
+### Action
+
+Updated `PRINCIPLES.md` with the cybernetic origin, cross-principle feedback mapping, bounded-stability language, PEA governance distinction, and MIT Press source. The focused content assertions passed. The first repository verifier run stopped because derived ACM files were older than the Trail source; this was an expected derivation-state repair, not a doctrine failure.
+
+[!REVERSAL] The initial plan changed only doctrine plus Trail outputs. Before appending this entry, the self-referential count rule showed that entry 269 raises the exact published total from 354 to 355. Updated the README and current snapshot fields in `.acm/ITERATION-COUNT.md` within this same iteration so the act of recording the change does not knowingly stale the public claim.
+
+Final generation and verification report follows from `record.py history --write`, `record.py learning --write`, `python verify.py`, and the exact staging check.
+
+Destination need: not triggered - the operator explicitly settled cybernetics as important PEA grounding and ordered the propagation sequence.
+
+Orientation freshness: current - the change follows its rules to preserve reasoning, avoid duplicated control prose, use the cheapest adequate check, and leave unrelated work untouched.
+
+### Reflection
+
+[!REALIZATION] The suite needs the conceptual mechanism in its principles surface, not repeated in every skill that participates in the loop. Doctrine synchronization preserves capability; runtime repetition would convert grounding into prompt burden.
+
+Falsifiable model claim: agents reading the embedded principles can explain PEA as feedback steering without inferring any new Improve step, trigger, or authority.
+
+Named blind spot: textual synchronization does not prove that future agents will connect the principle to their runtime behavior; it establishes the governing explanation, not behavioral compliance.
+
+Imagined-reader pushback: OODA and PDCA already describe feedback loops, making Wiener redundant. Those traditions describe operational cycles; Wiener supplies the general control-and-communication architecture that explains how all three PEA principles participate in steering.
+
+- *Recurring finding-class:* not fired - this is a new ancestry gap, not another orchestration ambiguity.
+- *About to declare silence:* not fired - this run changed doctrine and evidence surfaces.
+- *Contradicts prior `[!REALIZATION]`:* not fired - the owner-only synchronization applies the recent simplification arc.
+- *Operator explicitly asked:* FIRED - the operator explicitly ordered skills as the third propagation target.
+
+### Across-trail macro-Hansei
+
+The recent suite arc distinguishes capability from orchestration. Cybernetics sharpens that distinction: feedback architecture is a reason the capabilities compose, not another procedure agents must execute. The principles own the explanation; Improve continues to own scheduling.
+
+### Candidate Next Moves
+
+1. Verify cross-repository wording and links as one coherence check, then stop unless a contradiction remains.
+2. Do not add cybernetics prose to individual skills without behavioral evidence that the shared principle is insufficient.

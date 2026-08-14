@@ -973,6 +973,14 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** Conditional loading is architecturally feasible but composition is itself a load-bearing protocol: the kernel must expose trigger names, ownership, and mandatory routing even when protocol bodies move out. The experiment also reveals that governance accretion and evidence discipline are separable constraints; reducing the former does not automatically improve the latter.
 
+## 2026-08-02 — prototype-layered-improve
+
+**[!REVERSAL]** The initial kernel assumed "Apply Intent/Trail" and a link to conditional protocols were sufficient composition instructions. The first isolated evaluator treated siblings as manual and skipped conditional loading. Repaired the kernel by making automatic composition explicit and exposing the trigger index.
+
+## 2026-08-02 — prototype-layered-improve
+
+**[!REVERSAL]** The second evaluator identified Standalone Fallback but still declined to read it, invented mechanisms, and inferred Orientation staleness from absent context. Repaired the kernel by requiring matching-section loading, separating facts/inferences/proposals, and stating that missing Orientation evidence does not prove staleness.
+
 ---
 
-**242 markers — 224 realisations, 18 reversals**
+**244 markers — 224 realisations, 20 reversals**

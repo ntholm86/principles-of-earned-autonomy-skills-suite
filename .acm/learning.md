@@ -5,15 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 242 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-02 — prototype-layered-improve
-
-**[!REVERSAL]** The initial kernel assumed "Apply Intent/Trail" and a link to conditional protocols were sufficient composition instructions. The first isolated evaluator treated siblings as manual and skipped conditional loading. Repaired the kernel by making automatic composition explicit and exposing the trigger index.
-
-## 2026-08-02 — prototype-layered-improve
-
-**[!REVERSAL]** The second evaluator identified Standalone Fallback but still declined to read it, invented mechanisms, and inferred Orientation staleness from absent context. Repaired the kernel by requiring matching-section loading, separating facts/inferences/proposals, and stating that missing Orientation evidence does not prove staleness.
+Showing the most recent 60 markers. 244 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-02 — replicate-layered-improve-grounding-test
 
@@ -247,6 +239,14 @@ Showing the most recent 60 markers. 242 older marker(s) are in `.acm/learning-ar
 
 **[!REALIZATION]** A self-referential counter must include the act of refreshing itself when that act qualifies under the same counting rule. Publishing the pre-refresh value creates known drift before the update is complete.
 
+## 2026-08-14 — ground-embedded-principles-in-cybernetics
+
+**[!REALIZATION]** The suite needs the conceptual mechanism in its principles surface, not repeated in every skill that participates in the loop. Doctrine synchronization preserves capability; runtime repetition would convert grounding into prompt burden.
+
+## 2026-08-14 — ground-embedded-principles-in-cybernetics
+
+**[!REVERSAL]** The initial plan changed only doctrine plus Trail outputs. Before appending this entry, the self-referential count rule showed that entry 269 raises the exact published total from 354 to 355. Updated the README and current snapshot fields in `.acm/ITERATION-COUNT.md` within this same iteration so the act of recording the change does not knowingly stale the public claim.
+
 ---
 
-**60 markers — 45 realisations, 15 reversals**
+**60 markers — 46 realisations, 14 reversals**

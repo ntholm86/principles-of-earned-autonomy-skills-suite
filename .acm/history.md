@@ -273,6 +273,7 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 266 | 2026-08-13 | make-writer-splitting-deterministic | changed - activation and handoff now produce one cross-agent interpretation | Improve 3.17.1 -> 3.17.2; suite v4.29.3 |
 | ▸ 267 | 2026-08-13 | index-experiments-as-evidence-archive | changed - experiment packages classified as evidence rather than active backlog | added one root index; no experiment evidence deleted or moved |
 | ▸ 268 | 2026-08-14 | refresh-live-iteration-count | changed - live iteration claims refreshed from canonical evidence | published self-targeted total 286 -> 354; v3 self-targeted 197 -> 265; rounded installer floor 280+ -> 350+; misleading one-commit-per-iteration implication removed |
+| ▸ 269 | 2026-08-14 | ground-embedded-principles-in-cybernetics | changed - cybernetic feedback grounding synchronized into the skills doctrine | embedded Principle 3 gained Wiener grounding; current self-targeted count 354 -> 355 |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -1234,4 +1235,9 @@ Do not edit by hand — re-run the command to refresh.
 
 - **decided:** Publish 354 as the self-targeted total, 265 as the v3 subtotal, 268 as the final canonical Trail count, and 469 as the post-refresh commit count. Describe the evidence-record relationship without claiming one unique commit per iteration. Preserve all dated historical numbers unchanged.
 
-**268 runs total — 250 with changes, 18 silence**
+### Run 269 — 2026-08-14 — ground-embedded-principles-in-cybernetics
+
+- **decided:** Synchronize only `PRINCIPLES.md`: add cybernetics to Principle 3's origin, carry the full feedback mapping and governance distinction, soften "proves its quality" to the strongest available case for stopping, and add a linked theoretical anchor. Do not add runtime steps or bump skill versions because behavior is unchanged.
+- **REVERSAL:** The initial plan changed only doctrine plus Trail outputs. Before appending this entry, the self-referential count rule showed that entry 269 raises the exact published total from 354 to 355. Updated the README and current snapshot fields in `.acm/ITERATION-COUNT.md` within this same iteration so the act of recording the change does not knowingly stale the public claim.
+
+**269 runs total — 251 with changes, 18 silence**
