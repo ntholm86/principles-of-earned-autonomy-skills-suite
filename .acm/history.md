@@ -281,6 +281,12 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 274 | 2026-08-16 | add-bounded-supervision-and-delegation-gates | changed - added supervised-by-default routine gates, explicit bounded delegation, and one-line Improve result summaries | suite 4.30.2 -> 4.31.0; Intent 1.7.0 -> 1.8.0; Improve 3.18.2 -> 3.19.0; documented self-targeted iterations 359 -> 360 |
 | ▸ 275 | 2026-08-16 | orient-after-bounded-supervision-and-delegation | refreshed Orientation around explicit routine delegation, preserved hard gates, and the behavioral tests now required | `.acm/orientation.md` replaced; documented self-targeted iterations 360 -> 361 |
 | · 276 | 2026-08-16 | self-target-supervised-authority-bounded-silence | bounded silence - no further skill change earned under textual authority coherence and live Intent-gate behavior | no target artifact change; documented self-targeted iterations 361 -> 362 |
+| ▸ 277 | 2026-08-16 | reconcile-universal-improvement-trustworthy-delegation-and-leanness | active Destination reconciled around one integrated universal-improvement and trustworthy-delegation purpose, with leanness restored as anti-accretion and newcomer-understanding quality | bounded current mandate reconciled through 2026-08-16; historical layers preserved |
+| ▸ 278 | 2026-08-16 | orient-after-destination-center-and-leanness-reconciliation | refreshed Orientation around the integrated universal-improvement/trustworthy-delegation center, anti-accretion leanness, and first-use operational understanding | `.acm/orientation.md` replaced; no skill contract changed |
+| ▸ 279 | 2026-08-16 | destination-synthesis-confirmation-before-write | changed - Destination now requires operator confirmation of complete synthesized meaning before writing | suite 4.31.0 -> 4.32.0; Destination 2.7.1 -> 2.8.0; documented self-targeted iterations 364 -> 365 |
+| ▸ 280 | 2026-08-16 | orient-after-destination-synthesis-authority-correction | refreshed Orientation around confirmed Destination meaning and the new pre-write synthesis gate | `.acm/orientation.md` replaced; documented self-targeted iterations 365 -> 366 |
+| ▸ 281 | 2026-08-16 | sharpen-destination-for-moving-frontier-viability | confirmed governance accretion, growing ACM context, newcomer usability, and changing model capability as integrated viability concerns | `.acm/destination.md` active mandate sharpened; Orientation marked stale |
+| ▸ 282 | 2026-08-16 | orient-after-moving-frontier-viability-clarification | refreshed Orientation around measured governance accretion and the moving-frontier viability bar | `.acm/orientation.md` replaced; documented self-targeted iterations 367 -> 368 |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -1276,4 +1282,17 @@ Do not edit by hand — re-run the command to refresh.
 
 - **decided:** Declare bounded silence. Make no skill, Destination, Orientation, changelog, or onboarding change.
 
-**276 runs total — 256 with changes, 20 silence**
+### Run 277 — 2026-08-16 — reconcile-universal-improvement-trustworthy-delegation-and-leanness
+
+- **decided:** Reconcile the bounded active Destination without replacing its history. State one integrated center: an architecture that can understand and improve anything it targets while upholding the Principles of Earned Autonomy, where that capability and trustworthy delegation are inseparable. Define leanness by the model-execution, maintainer-cognition, and newcomer-translation costs it resists. Require first-use operational understanding without requiring prior fluency in internal vocabulary.
+
+### Run 279 — 2026-08-16 — destination-synthesis-confirmation-before-write
+
+- **decided:** Add one pre-write authority rule to Destination step 5: show the complete durable meaning, distinguish confirmed statements from derived implications, ask the operator to confirm or correct it, and do not write without confirmation. Replace the active Destination's unconfirmed three-cost taxonomy with only the operator-confirmed meaning: resist bloat, excessive length, unnecessary expensive logic, and difficulty of use or understanding.
+- **REVERSAL:** Within this iteration, directly edited `.acm/orientation.md` to retract the taxonomy. Reversed that edit after recognizing Orientation is Orient-owned. The corrected Destination and this durable Trail entry instead mark Orientation stale and schedule the owning service.
+
+### Run 281 — 2026-08-16 — sharpen-destination-for-moving-frontier-viability
+
+- **decided:** The architecture's existing viability constraint covers the cost and comprehensibility of live skill contracts, orchestration, reasoning, and routinely processed ACM context. These costs must remain proportionate to the work and be reconsidered as model capability, context capacity, and token economics change. Trustworthy capability is the objective; token reduction alone is not.
+
+**282 runs total — 262 with changes, 20 silence**

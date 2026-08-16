@@ -1033,6 +1033,54 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** The current frontier is no longer whether compression is possible. It is whether the measured reflection deficit can be repaired without surrendering grounding and resource advantages, while fresh model families independently verify that the Destination elicits the intended recursive cognition and convergence boundaries.
 
+## 2026-08-09 — destination-gate-cognitive-capability-reductions
+
+**[!REALIZATION]** The two external boundaries around recursive cognitive improvement now have an internal authority corollary. The operator owns not only changes to the Destination, but also each deliberate decision to sacrifice part of the cognitive machinery used to pursue it. The engine may discover, measure, and recommend the tradeoff; it cannot authorize its own cognitive loss.
+
+## 2026-08-09 — orient-after-cognitive-capability-gate
+
+**[!REALIZATION]** Recursive cognitive improvement cannot safely authorize its own cognitive sacrifice. The same engine may identify both the efficiency gain and the capability loss, but treating its aggregate judgment as sufficient would collapse proposer, affected system, and authorizer into one role. The operator-every-time gate preserves the recursion while preventing that collapse.
+
+## 2026-08-13 — improve-single-entry-progressive-destination
+
+**[!REALIZATION]** Progressive disclosure is now an authority architecture rather than only an onboarding technique: current-run authority comes directly from the operator's prompt and visible interpretation, while durable cross-run authority is captured only when evidence makes the distinction consequential enough to ask.
+
+## 2026-08-13 — improve-single-entry-progressive-destination
+
+**[!REVERSAL]** The two-action Destination-plus-Run model was a productive simplification but still conflated durable memory with permission to begin. Prompt-level Intent already carries operator authority for bounded current work. Destination earns its place later, when accepted mandates need consolidation across an arc.
+
+## 2026-08-13 — orient-after-single-entry-progressive-destination
+
+**[!REALIZATION]** The activation frontier is now trigger quality rather than command count. The suite has one normal entry point on paper; its authority architecture succeeds only if unfamiliar agents trigger Destination neither too early nor too late, preserve consequential gates under prompt-level mandate, and explain the transition without recreating setup ceremony.
+
+## 2026-08-13 — orient-after-single-entry-progressive-destination
+
+**[!REVERSAL]** The two-action Destination-plus-Run model no longer describes the current authority boundary. It remains historical evidence of progressive simplification, but Improve is now the only normal control input and Destination activates from directional evidence.
+
+## 2026-08-13 — destination-late-stage-loop-cost-viability
+
+**[!REALIZATION]** The operator correction exposes a failure mode in the loop's own learning: a concrete example of a possible route can be promoted into governance before the purpose behind it has been examined. The durable lesson is to retain the failure condition and authority boundary, then let Improve derive the mechanism from target evidence.
+
+## 2026-08-13 — orient-after-late-stage-loop-cost-destination
+
+**[!REALIZATION]** Existing evidence supports instrumenting the late-stage cost problem before changing Improve. This is not postponement by default: the prior compression experiments already demonstrate that an intuitively cheaper contract can improve one reasoning property while degrading another, so identifying the actual limiting cost is part of preserving trustworthy capability.
+
+## 2026-08-13 — improve-preregister-late-stage-viability-experiment
+
+**[!REALIZATION]** Observable Autonomy must cover resource claims as well as decision claims. The Trail can prove what the agent says it changed, but it cannot prove what the reasoning cost or how much trustworthy capability the change added. Treating the existing ledger as if it contained those measurements would turn transparency into a new source of false confidence.
+
+## 2026-08-13 — improve-preregister-late-stage-viability-experiment
+
+**[!REVERSAL]** The initial examination accepted a proposed `record.py cost-benefit` command as the cheapest evidence surface. Reversed before editing after the challenge step showed that its primary measures - audit-entry lines and outcome categories parsed from agent prose - would not measure token cost or independent trustworthy gain.
+
+## 2026-08-13 — improve-late-stage-local-actionability-silence
+
+**[!REALIZATION]** The protocol exposed a second independent prerequisite beyond token capture: lifecycle evidence is usable only when the governing Destination existed at the snapshots being compared. Historical silence without a versioned reference signal can illustrate the concern, but it cannot answer the registered experiment without changing what "gain" means after the fact.
+
+## 2026-08-13 — improve-preregister-work-lifecycle-snapshots
+
+**[!REALIZATION]** Independent evidence infrastructure has capability dimensions of its own. The harness currently proves capture-author separation, response provenance, and hash-chain continuity, but not resource use. Calling it an independent observer without naming the observed fields would overextend one kind of trust into another.
+
 ---
 
-**257 markers — 237 realisations, 20 reversals**
+**269 markers — 246 realisations, 23 reversals**

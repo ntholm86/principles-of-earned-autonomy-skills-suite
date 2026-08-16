@@ -5,55 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 257 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-09 — destination-gate-cognitive-capability-reductions
-
-**[!REALIZATION]** The two external boundaries around recursive cognitive improvement now have an internal authority corollary. The operator owns not only changes to the Destination, but also each deliberate decision to sacrifice part of the cognitive machinery used to pursue it. The engine may discover, measure, and recommend the tradeoff; it cannot authorize its own cognitive loss.
-
-## 2026-08-09 — orient-after-cognitive-capability-gate
-
-**[!REALIZATION]** Recursive cognitive improvement cannot safely authorize its own cognitive sacrifice. The same engine may identify both the efficiency gain and the capability loss, but treating its aggregate judgment as sufficient would collapse proposer, affected system, and authorizer into one role. The operator-every-time gate preserves the recursion while preventing that collapse.
-
-## 2026-08-13 — improve-single-entry-progressive-destination
-
-**[!REALIZATION]** Progressive disclosure is now an authority architecture rather than only an onboarding technique: current-run authority comes directly from the operator's prompt and visible interpretation, while durable cross-run authority is captured only when evidence makes the distinction consequential enough to ask.
-
-## 2026-08-13 — improve-single-entry-progressive-destination
-
-**[!REVERSAL]** The two-action Destination-plus-Run model was a productive simplification but still conflated durable memory with permission to begin. Prompt-level Intent already carries operator authority for bounded current work. Destination earns its place later, when accepted mandates need consolidation across an arc.
-
-## 2026-08-13 — orient-after-single-entry-progressive-destination
-
-**[!REALIZATION]** The activation frontier is now trigger quality rather than command count. The suite has one normal entry point on paper; its authority architecture succeeds only if unfamiliar agents trigger Destination neither too early nor too late, preserve consequential gates under prompt-level mandate, and explain the transition without recreating setup ceremony.
-
-## 2026-08-13 — orient-after-single-entry-progressive-destination
-
-**[!REVERSAL]** The two-action Destination-plus-Run model no longer describes the current authority boundary. It remains historical evidence of progressive simplification, but Improve is now the only normal control input and Destination activates from directional evidence.
-
-## 2026-08-13 — destination-late-stage-loop-cost-viability
-
-**[!REALIZATION]** The operator correction exposes a failure mode in the loop's own learning: a concrete example of a possible route can be promoted into governance before the purpose behind it has been examined. The durable lesson is to retain the failure condition and authority boundary, then let Improve derive the mechanism from target evidence.
-
-## 2026-08-13 — orient-after-late-stage-loop-cost-destination
-
-**[!REALIZATION]** Existing evidence supports instrumenting the late-stage cost problem before changing Improve. This is not postponement by default: the prior compression experiments already demonstrate that an intuitively cheaper contract can improve one reasoning property while degrading another, so identifying the actual limiting cost is part of preserving trustworthy capability.
-
-## 2026-08-13 — improve-preregister-late-stage-viability-experiment
-
-**[!REALIZATION]** Observable Autonomy must cover resource claims as well as decision claims. The Trail can prove what the agent says it changed, but it cannot prove what the reasoning cost or how much trustworthy capability the change added. Treating the existing ledger as if it contained those measurements would turn transparency into a new source of false confidence.
-
-## 2026-08-13 — improve-preregister-late-stage-viability-experiment
-
-**[!REVERSAL]** The initial examination accepted a proposed `record.py cost-benefit` command as the cheapest evidence surface. Reversed before editing after the challenge step showed that its primary measures - audit-entry lines and outcome categories parsed from agent prose - would not measure token cost or independent trustworthy gain.
-
-## 2026-08-13 — improve-late-stage-local-actionability-silence
-
-**[!REALIZATION]** The protocol exposed a second independent prerequisite beyond token capture: lifecycle evidence is usable only when the governing Destination existed at the snapshots being compared. Historical silence without a versioned reference signal can illustrate the concern, but it cannot answer the registered experiment without changing what "gain" means after the fact.
-
-## 2026-08-13 — improve-preregister-work-lifecycle-snapshots
-
-**[!REALIZATION]** Independent evidence infrastructure has capability dimensions of its own. The harness currently proves capture-author separation, response provenance, and hash-chain continuity, but not resource use. Calling it an independent observer without naming the observed fields would overextend one kind of trust into another.
+Showing the most recent 60 markers. 269 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-13 — improve-preregister-work-lifecycle-snapshots
 
@@ -247,6 +199,54 @@ Showing the most recent 60 markers. 257 older marker(s) are in `.acm/learning-ar
 
 **[!REALIZATION]** A supervised gate can be useful without being evidence that every gate is useful. This run separated the two claims: Intent confirmation added real authority before the target was examined, while the value and cost of the later implementation gate remain unobserved. The suite should accumulate situated evidence one boundary at a time instead of treating either textual coherence or one successful interaction as validation of the complete authority model.
 
+## 2026-08-16 — reconcile-universal-improvement-trustworthy-delegation-and-leanness
+
+**[!REALIZATION]** Destination can retain every prior commitment and still drift by changing emphasis. The bounded section had preserved universal improvement, trustworthy delegation, recursive reasoning improvement, adoption, and efficiency, but separated them enough that recent authority detail could appear to be the product rather than a constraint on it. Reconciliation must preserve semantic hierarchy as well as sentence presence.
+
+## 2026-08-16 — reconcile-universal-improvement-trustworthy-delegation-and-leanness
+
+**[!REALIZATION]** The target's central claim is not a choice between general improvement and trustworthy delegation. It is that a purpose-driven architecture can improve anything it targets under authority and evidence constraints that make delegation trustworthy. Simplicity and efficiency protect that capability from collapsing under its own governance and protect new users from having to understand the research vocabulary before they can steer the work.
+
+## 2026-08-16 — orient-after-destination-center-and-leanness-reconciliation
+
+**[!REALIZATION]** Universal improvement and trustworthy delegation are one architectural claim. The target must improve anything it understands while the Principles of Earned Autonomy make that capability safe to delegate. Future work falsifies this claim if it strengthens one half by weakening the other.
+
+## 2026-08-16 — orient-after-destination-center-and-leanness-reconciliation
+
+**[!REALIZATION]** The architecture's next risk is accretion that remains locally reasonable while becoming collectively expensive and hard to understand. Leanness protects the integrated purpose from that failure by forcing every element to earn its total burden. It does not authorize removing load-bearing cognition, evidence, learning, or control, and it cannot be validated by line count alone.
+
+## 2026-08-16 — destination-synthesis-confirmation-before-write
+
+**[!REALIZATION]** The recurring defect is not only route prescription inside generic skills. It begins one step earlier when an agent turns a confirmed purpose into a more specific durable abstraction without exposing the derivation. Operator's Intent requires authority over the meaning that becomes Destination, while the agent remains free to derive the route used to pursue that meaning.
+
+## 2026-08-16 — destination-synthesis-confirmation-before-write
+
+**[!REVERSAL]** Within this iteration, directly edited `.acm/orientation.md` to retract the taxonomy. Reversed that edit after recognizing Orientation is Orient-owned. The corrected Destination and this durable Trail entry instead mark Orientation stale and schedule the owning service.
+
+## 2026-08-16 — orient-after-destination-synthesis-authority-correction
+
+**[!REALIZATION]** Destination authority requires confirmation of the completed synthesis, not only answers to the questions that produced it. Broad purposes can support several reasonable abstractions; only the operator can decide which meaning becomes the durable reference signal.
+
+## 2026-08-16 — orient-after-destination-synthesis-authority-correction
+
+**[!REALIZATION]** The suite's route-prescription problem has an authority precursor: an unexposed synthesis can become governance before anyone debates whether it prescribes a route. Confirming completed Destination meaning closes that precursor while leaving the agent free to reason about implementation.
+
+## 2026-08-16 — sharpen-destination-for-moving-frontier-viability
+
+**[!REALIZATION]** Governance accretion is a moving-frontier risk: a mechanism that once earned its context cost can become unnecessary as models improve, while a locally justified flow addition can still make the whole contract harder and more expensive to reconcile.
+
+## 2026-08-16 — sharpen-destination-for-moving-frontier-viability
+
+**[!REALIZATION]** The arc's recurring governance corrections are not only individual control improvements. Their cumulative instruction and context cost is now itself a governing concern. The double-loop response is the confirmed Destination clarification: every mechanism remains revisable, and its current contribution to trustworthy capability must continue to earn its processing cost as models and economics change.
+
+## 2026-08-16 — orient-after-moving-frontier-viability-clarification
+
+**[!REALIZATION]** Governance accretion is observed rather than hypothetical. From the 2026-05-30 baseline to committed HEAD, the live skills grew from 1,010 to 1,134 lines and from 76,769 to 105,278 characters; Improve and Intent each grew by about 52% in characters. Some additions closed evidenced gaps, but the current contracts also contain at least one authority ambiguity. Growth alone cannot establish either bloat or earned capability.
+
+## 2026-08-16 — orient-after-moving-frontier-viability-clarification
+
+**[!REALIZATION]** The suite's strongest learning machinery currently favors addition and enforcement over retirement. A moving-frontier architecture must be able to discover that yesterday's necessary governance no longer earns today's processing cost without treating reduction itself as improvement.
+
 ---
 
-**60 markers — 41 realisations, 19 reversals**
+**60 markers — 43 realisations, 17 reversals**
