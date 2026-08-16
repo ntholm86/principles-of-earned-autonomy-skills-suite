@@ -8,11 +8,11 @@ _Renamed from `vision.md` on 2026-05-28 alongside the Vision→Destination skill
 
 <!-- current-destination: complete -->
 
-## Current destination (reconciled 2026-08-02)
+## Current destination (reconciled 2026-08-16)
 
 ### Purpose
 
-This repository develops and tests a reasoning layer for trustworthy delegation: what architecture lets a human safely delegate real work to an AI more capable than themselves while remaining responsible for the outcome?
+This repository develops and tests an architecture that can understand and improve anything it targets while upholding the Principles of Earned Autonomy. That capability and trustworthy delegation are inseparable: the architecture must let a human safely delegate real work to an AI more capable than themselves while remaining responsible for the outcome, and delegation earns trust only when the architecture can improve the work that was delegated.
 
 The engine's generic theory of improvement is to reason about the purpose of whatever it targets, determine what most limits that purpose, and improve it. Understanding purpose includes understanding the operator's intent, the target's own claims and grounding, its operating context, and any other factor that reasoning reveals as material. These are examples, not an exhaustive model of reasoning.
 
@@ -33,9 +33,11 @@ Everything else is revisable when reasoning and evidence support a better route.
 Two priorities are co-equal:
 
 1. **Research:** continue producing bounded evidence about what trustworthy delegation requires, including negative results and improvements to the engine's own reasoning capability.
-2. **Adoption:** enable a new developer to install the suite and complete a useful first Improve run without author assistance or destination setup. Improve is the single normal entry point; it applies prompt-level Intent immediately and triggers durable Destination and Orientation only when accumulated evidence makes them useful. Successful use is the bar; conceptual fluency may develop through use.
+2. **Adoption:** enable a new developer to install the suite and complete a useful first Improve run without author assistance or destination setup. Improve is the single normal entry point; it applies prompt-level Intent immediately and triggers durable Destination and Orientation only when accumulated evidence makes them useful. On first use, the developer should understand in plain operational terms what the agent will do, why it matters, and where they retain control. Deeper conceptual fluency may develop through use.
 
-Token and resource efficiency is a cross-cutting viability constraint. Optimize trustworthy capability per unit of resource. This must hold across the full improvement lifecycle, including when progress slows and the remaining distance to the Destination narrows. A protocol that remains trustworthy but spends nearly fixed reasoning, verification, reflection, and evidence cost on progressively smaller gains may become operationally ineffective before it reaches honest silence. The engine must preserve its pressure toward the highest-leverage remaining work while discovering for itself how to keep that work worth its resource cost; the Destination does not prescribe iteration size, batching, thresholds, or another mechanism.
+Leanness and resource efficiency are cross-cutting viability constraints, not standing size targets. The skills should resist becoming bloated, too long, or burdened with unnecessary expensive logic, and remain easy to use and understand. Optimize trustworthy capability per unit of resource without treating shorter as automatically better. This must hold across the full improvement lifecycle, including when progress slows and the remaining distance to the Destination narrows. A protocol that remains trustworthy but spends nearly fixed reasoning, verification, reflection, and evidence cost on progressively smaller gains may become operationally ineffective before it reaches honest silence. The engine must preserve its pressure toward the highest-leverage remaining work while discovering for itself how to keep that work worth its resource cost; the Destination does not prescribe iteration size, batching, thresholds, or another mechanism.
+
+The same viability constraint applies to the architecture's own accumulated context. Live skill and orchestration contracts must not keep growing simply because each local flow improvement is defensible, and durable ACM evidence must not require every routine iteration to reprocess the full history. Reasoning and context should remain proportionate to the work while preserving the capabilities and evidence the principles require. Because model ability, context capacity, and token economics are changing, the architecture must repeatedly reconsider what machinery and context are still necessary instead of preserving assumptions optimized for today's frontier. Adaptive reasoning depth and derived memory surfaces are possible routes to investigate, not mandated mechanisms.
 
 The engine may autonomously pursue reductions that preserve reasoning, memory, learning, and evidence capability. Any deliberate reduction in one of those capabilities is a consequential tradeoff that requires explicit operator approval every time, even when evidence predicts a better overall capability-per-resource result; one approval creates no standing authority for another tradeoff. No approval can waive the three principles or reduce operator control or evidence integrity below what they require. A capability improvement is not operationally viable if its cost prevents sustained use. Easier explanation is evidence of lower translation friction, not proof of research validity, adoption, or token efficiency.
 
@@ -67,11 +69,11 @@ Integration with a particular autonomous harness remains a horizon rather than t
 ### Immediate quality bars
 
 1. Self-targeting runs discover and improve previously unnamed limitations in reasoning or operation rather than only repairing skill-file consistency or following named examples.
-2. A new developer completes a useful first Improve run without author help or prior Destination setup, and receives concise explanations when automatic services activate.
+2. A new developer completes a useful first Improve run without author help or prior Destination setup, and understands what the agent will do, why it matters, and where they retain control without first learning the framework's internal vocabulary.
 3. Automatic services leave durable evidence sufficient for a later session or different model to continue coherently.
 4. Research claims stay within what public trails, reproducible probes, external targets, and independent evaluators support.
 5. Improvement remains resource-effective as the target approaches silence: fixed loop cost does not overwhelm the trustworthy capability gained, highest-leverage selection remains intact, and reasoning, learning, operator control, and evidence integrity are not degraded.
-6. Current mechanisms remain generic and understandable while the engine stays free to replace them with better mechanisms that preserve the principles.
+6. Current mechanisms remain generic, lean, and understandable; skill, orchestration, and routine ACM read cost stay proportionate to the work while the engine remains free to adapt them to changing model capability and economics without weakening the principles.
 
 ### Open questions
 
@@ -80,12 +82,13 @@ Integration with a particular autonomous harness remains a horizon rather than t
 - Which public external target can test adoption and trustworthy delegation without relying on private enterprise evidence?
 - Does the Active/Passive/Triggered model survive real use, or does it hide an operational distinction users need?
 - Where are resources spent without improving decisions, learning, evidence, or operator control?
+- Which skill instructions, orchestration paths, and routinely loaded ACM context still earn their processing cost under current model capabilities?
 - How can the engine sustain trustworthy capability per resource when the remaining gains become small, without lowering its standard for what work matters or manufacturing work instead of reaching silence?
 - Which actions should remain explicitly human-gated regardless of demonstrated capability or trust?
 
 ### Historical reconciliation
 
-The sections below preserve how the Destination evolved; they are provenance, not additional active instructions. Still-active commitments have been carried into this candidate. Superseded items include the May 2026 priority sequence, mandatory approval of every implementation choice, fixed use of Retrospect and the old Memory Model vocabulary, and any implication that the current skills or architecture are immutable. Older references to Commander's Intent mean Operator's Intent in the current principles.
+The sections below preserve how the Destination evolved; they are provenance, not additional active instructions. Still-active commitments have been carried into the current mandate. Superseded items include the May 2026 priority sequence, mandatory approval of every implementation choice, fixed use of Retrospect and the old Memory Model vocabulary, and any implication that the current skills or architecture are immutable. Older references to Commander's Intent mean Operator's Intent in the current principles.
 
 <!-- destination-history -->
 

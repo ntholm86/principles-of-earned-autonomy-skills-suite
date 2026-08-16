@@ -14,9 +14,9 @@ Compatible with Claude (skills / Agent SDK), GitHub Copilot (custom skills), and
 
 ![The full architecture illustrated as a Storm P-style Rube Goldberg machine: Operator's Intent feeds the Improve loop, the audit trail runs as a conveyor belt through the whole machine, Orient reads the arc and feeds learning back in, and the machine converges to silence.](./stormpInspired.png)
 
-## The Suite Improved Itself — [362 documented iterations](./.acm/ITERATION-COUNT.md)
+## The Suite Improved Itself — [368 documented iterations](./.acm/ITERATION-COUNT.md)
 
-The suite ran on itself **362 times** across four eras and two complete rewrites. The earliest 30 rely on bulk or reconstructed provenance; iterations 31 onward have per-iteration GENBA or Trail records preserved in git, though one commit can contain multiple iterations. The full provenance breakdown — including git SHAs, verification commands, and an honest account of what is independently verifiable — is in [ITERATION-COUNT.md](./.acm/ITERATION-COUNT.md).
+The suite ran on itself **368 times** across four eras and two complete rewrites. The earliest 30 rely on bulk or reconstructed provenance; iterations 31 onward have per-iteration GENBA or Trail records preserved in git, though one commit can contain multiple iterations. The full provenance breakdown — including git SHAs, verification commands, and an honest account of what is independently verifiable — is in [ITERATION-COUNT.md](./.acm/ITERATION-COUNT.md).
 
 Convergence was declared only when **three independent evaluators from distinct model families** (Claude, Gpt, Gemini) each ran the loop and found nothing left to change.
 

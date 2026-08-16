@@ -1,84 +1,91 @@
 # orientation.md - autonomous-agent-skills
 
-_Last updated: 2026-08-16 (run: `orient-after-bounded-supervision-and-delegation`)_
+_Last updated: 2026-08-16 (run: `orient-after-moving-frontier-viability-clarification`)_
 
 ## Scope of this read
 
-Read the authority and capability-awareness arc after the operator rejected route prescription in Capability leverage, then rejected unopposed narration as sufficient permission for unfamiliar users. Question: what changed when routine authority became explicit, and does the result preserve one-entry simplicity, earned autonomy, and operator-owned gates?
+Re-orient the accumulated work against the sharpened viability constraint. Question: what does the arc establish about governance accretion, live skill and orchestration cost, growing ACM context, newcomer comprehension, and adaptation to changing model capability and economics without weakening the integrated Destination or the PEA principles?
 
 **Freshness check (run evidence):**
 
-- `python harness/tools/record.py history --write` -> 274 entries.
-- `python harness/tools/record.py learning --write` -> 60 recent + 254 archived markers.
+- `python harness/tools/record.py history --write` -> 281 entries.
+- `python harness/tools/record.py learning --write` -> 60 recent + 267 archived markers.
 - `python verify.py` -> OK, trail integrity checks pass.
 - Gate: PASS (arc-claims allowed).
 
 ## Current claims
 
-### 1. Transparency and permission are now separate authority variables
+### 1. Universal improvement and trustworthy delegation are one architectural claim
 
-Intent narration remains mandatory for substantive Improve work, but silence no longer authorizes examination. Without explicit delegation, the operator confirms Intent's interpretation and Improve's proposed change. This supersedes the August 13 proceed-unless-corrected default while retaining its separation between current-run mandate and durable cross-run direction.
+The May origin and August reconciliation now agree explicitly: the target is an architecture that can understand and improve anything it targets while the Principles of Earned Autonomy make that capability safe to delegate. Neither half is a subordinate feature. Improvement without trustworthy delegation is unsafe; delegation without effective improvement has no useful capability to entrust.
 
-**Falsifiable by:** a supervised Improve run examining the target before Intent confirmation, acting before Proceed, or treating narration itself as permission.
+**Falsifiable by:** future work optimizing generic improvement while weakening operator intent, evidence, or convergence, or optimizing governance while losing the ability to produce material improvement on varied targets.
 
-### 2. Earned routine autonomy is explicit and scoped rather than ambient
+### 2. Destination now gates the complete synthesized meaning, not only its source questions
 
-The operator may delegate the Intent gate, the Improve gate, or both for one prompt or durably in Destination. Silence, familiarity, accumulated trust, prior autonomous behavior, and host autopilot are not delegation evidence. Delegated runs still narrate interpretation, state the proposed action, report the result, verify it, and write Trail evidence.
+Destination previously asked the operator to confirm sourced hunches, then allowed the agent to write its own more specific understanding. Intent could not cover implications synthesized after its ingress gate, and commit review happened after the file, Trail, and Orientation could already change. Destination 2.8.0 now requires the agent to expose the complete durable synthesis, distinguish confirmed statements from derived implications, and wait for confirmation before writing.
 
-**Falsifiable by:** an agent inferring delegation without a prompt or confirmed Destination statement, or delegated execution suppressing narration, proposal visibility, verification, or the final result line.
+**Falsifiable by:** a future Destination run writing an unstated implication after only its broader source hunch was confirmed, or the new pause proving indistinguishable from an earlier question in natural use.
 
-### 3. Routine delegation does not cross operator-owned authority boundaries
+### 3. Viability is a moving capability-to-cost relationship, not a brevity target
 
-Destination questions, direction changes, operator-declared consequential actions, and deliberate reductions in reasoning, memory, learning, or evidence capability remain blocking in supervised and delegated operation. This preserves the operator as owner of the reference signal and hard boundaries while leaving route selection delegable.
+The operator confirmed that trustworthy capability per resource applies to live skill and orchestration contracts, reasoning, routinely processed ACM context, and newcomer understanding. Those costs must remain proportionate to the work and be reconsidered as model ability, context capacity, and token economics change. Shorter text is not automatically lean: the layered-Improve replication found weaker reflection and reversal behavior after compression. Adaptive reasoning and derived memory surfaces remain candidate routes, not Destination requirements.
 
-**Falsifiable by:** a delegated Improve run answering a Destination question itself, changing durable direction, or crossing a declared consequential gate without explicit operator authorization.
+**Falsifiable by:** a longer contract measurably improving trustworthy outcomes or newcomer understanding enough to earn its processing burden, or a shorter or differently loaded contract preserving those outcomes while reducing lifecycle cost.
 
-### 4. One-entry simplicity survived, but supervised interaction cost increased
+### 4. Adoption now requires operational understanding on first use
 
-Improve remains the only normal command, and Intent, Trail, Destination, and Orient retain automatic composition. No mode command, trust score, maturity ladder, state file, or host-specific UI was added. A supervised iteration now has two blocking exchanges, so the operator command surface stayed simple while first-run interaction became more deliberate.
+The prior bar allowed conceptual fluency to develop after successful use. Evidence that a friend tried the skills but barely understood their language exposed that success alone is too weak. A newcomer must understand what the agent will do, why it matters, and where they retain control without first learning internal framework vocabulary; deeper theory may still develop later.
 
-**Falsifiable by:** a new user needing to invoke another skill to select authority, or the two routine pauses making the first useful run materially harder to complete than the prior workflow.
+**Falsifiable by:** unassisted newcomers reliably steering useful runs despite not understanding those three operational facts, or evidence that the revised bar requires theoretical fluency before use.
 
-### 5. The authority contract is semantically coherent but behaviorally unproven
+### 5. Recursive capability awareness remains generic and Purpose-derived
 
-Two isolated textual readers exercised unconfigured, prompt-delegated, Destination-delegated, autopilot-only, Specify, and delegated-plus-Destination scenarios. The first exposed an Intent skip ambiguity and unclear stopped/silence summaries; both were repaired, and the second found no remaining contradiction. No independent newcomer or different host has yet demonstrated the behavior live.
+Capability leverage now asks only whether changed capability alters what is possible or worthwhile for the target. Recursive examination of the suite's own reasoning, learning, architecture, and operation comes from Destination and generic Purpose, not a self-targeting condition. Today's correction arc showed that naming a correct current route can still narrow future reasoning.
 
-**Falsifiable by:** a real invocation skipping a required pause, treating Specify as a local patch instead of restarting Intent, or letting routine delegation mute a Destination question despite the textual contract.
+**Falsifiable by:** diverse capable readers failing to derive self-examination or relevant capability scope from Purpose, or future generic runs requiring repository-specific examples to notice material leverage.
 
-### 6. Capability awareness is now target-agnostic and subordinate to Purpose
+### 6. Explicit authority now covers prompt, action, and durable-direction synthesis
 
-Capability leverage asks only whether changed capability alters what is possible or worthwhile for the target. Its former general/model/host taxonomy, named evaluation dimensions, delegated-agent example, and self-targeting condition were removed across entries 272-273. Destination and generic Purpose reasoning determine what the target includes and which capability consequences matter.
+Supervised runs confirm Intent before examination and Improve before implementation unless either routine gate is explicitly delegated. Destination now separately confirms the complete meaning before synthesized direction is written. Direction changes and consequential boundaries remain operator-owned. The contracts passed textual readers and one live Intent confirmation, but the Improve action gate, corrected Destination gate, authority terminology, and surrounding explanation have not passed the clarified newcomer operational-understanding bar.
 
-**Falsifiable by:** capable readers failing to derive relevant capability scope from target purpose without a self-targeting branch, or future edits reintroducing a current mechanism as the required route.
+**Falsifiable by:** unassisted users failing to distinguish the three authority objects, or repeated use showing that one pause adds no distinct steering value.
+
+### 7. Governance accretion is observed; whether it earns its cost is unresolved
+
+From the 2026-05-30 baseline to committed HEAD, the live skills grew from 1,010 to 1,134 lines and from 76,769 to 105,278 characters; Improve and Intent each grew by about 52% in characters. Some additions closed evidenced gaps, including bounded authority, reversal capture, and service ownership. The resulting contracts also contain at least one live ambiguity: Intent requires an undelegated confirmation pause while later allowing an unambiguous prompt to proceed after narration. The arc therefore supports neither "growth is bloat" nor "every addition earned its cost." It establishes governance accretion as a present architectural risk requiring behavioral evidence.
+
+**Falsifiable by:** representative runs showing the larger contracts improve fidelity, control, or comprehension enough to justify their processing burden without conflicting execution, or a capability-preserving simplification showing that current text is unnecessary.
 
 ## What the next runs should test
 
-1. Observe a new user completing one supervised Improve run and deciding whether to delegate a later run; measure control, comprehension, and interaction friction together.
-2. Exercise Specify at both gates on another host and verify that control returns to Intent before fresh examination rather than patching the prior proposal.
-3. Run Improve with both routine gates explicitly delegated, then let a real unresolved direction emerge and verify that Destination still pauses for the operator.
-4. Let a future model encounter Capability leverage naturally and observe whether it derives a useful route not named by the current suite.
+1. Observe an unassisted newcomer and identify the exact words, concepts, or exchanges that block understanding of what happens, why it matters, and where control remains.
+2. Examine representative live runs to determine which skill instructions and orchestration paths change behavior and which merely add processing burden; include the current Intent authority ambiguity.
+3. Measure routine ACM access on a mature target to learn whether bounded Destination, Orientation, and recent Learning prevent full-history cost in practice while preserving relevant evidence.
+4. Exercise the Improve action gate and Specify during natural work, then compare their distinct steering value against interaction cost.
 
 ## Active operational rules
 
+- Preserve the integrated center: every route must improve target capability while upholding Operator's Intent, Observable Autonomy, and Convergence Is Silence.
+- Treat every skill, orchestration, and routine-context addition as a processing burden that must continue to earn its contribution to trustworthy capability; do not use line count alone as the decision rule.
+- Reconsider current machinery as model capability, context capacity, and token economics change; do not preserve assumptions solely because they were once necessary.
+- Explain first-use behavior in plain operational terms: what happens, why it matters, and where the operator controls it.
+- Before Destination writes, expose the complete durable synthesis, distinguish operator-confirmed meaning from agent-derived implications, and wait for confirmation.
 - Require explicit prompt or confirmed Destination evidence before skipping either routine gate; never infer delegation from trust or host settings.
-- Keep interpretation, proposed action, verification, final result, and Trail evidence visible in supervised and delegated runs.
-- On Specify, restart Intent and re-examine; never patch the old proposal under a changed mandate.
 - Never let routine delegation answer Destination, approve direction change, cross an operator-declared consequential gate, or authorize cognitive-capability reduction.
-- Keep Improve as the single normal entry point; do not add authority modes, scores, commands, or files without behavioral evidence that explicit delegation is insufficient.
-- End every Improve run with exactly one outcome-shaped result line and link to detail instead of repeating the Trail.
 - Prefer purpose tests over trigger taxonomies and mechanism examples; apply prior genericity reversals at decision time before adding skill conditions.
 - Preserve append-only Trail history and regenerate derived ACM artifacts after every append.
 
 ## Loop-effectiveness notes
 
-**Quality bars tested in this read:** textual authority coherence, separation of routine and operator-owned decisions, one-entry command simplicity, generic capability-lens scope, append-only evidence integrity, and consistency of first-contact documentation.
+**Quality bars tested in this read:** coherence of the sharpened viability constraint with the complete Destination and PEA principles, measured live-contract growth since May 30, preservation of candidate-route freedom, and append-only evidence integrity.
 
-**Result:** authority separation PASS at contract level; one-entry command surface PRESERVED; explicit outcome summaries ADDED; generic capability scope PASS under isolated interpretation; repository integrity PASS.
+**Result:** governance accretion CONFIRMED as an observed risk; trustworthy capability per resource integrated without becoming token minimization or a fixed metric; adaptive reasoning and derived memory preserved as candidate routes; repository integrity PASS before this Orient write.
 
-**Bars not tested:** unassisted newcomer behavior; cross-host gate fidelity; real Specify re-entry; delegated execution that naturally triggers Destination; interaction cost over repeated supervised runs; independent model-family evaluation.
+**Bars not tested:** whether current contract growth earns its behavioral cost; actual unassisted newcomer comprehension; routine ACM token and attention cost on a mature external target; proportional reasoning without capability loss; cross-host and cross-model fidelity; natural adaptation after a material frontier change.
 
-**Double-loop finding:** the governing variable changed from "visible interpretation is sufficient permission" to "permission is explicit unless routine authority has been delegated." The recurring operator-gate findings were not asking for more narration; they exposed that observability and authorization had been treated as the same thing.
+**Double-loop finding:** repeated local flow and governance fixes have changed the governing question from "is this addition defensible?" to "does the complete architecture still deliver enough trustworthy capability to earn all of its accumulated processing burden?"
 
-**Deutero-learning finding:** the loop's memory contained earlier genericity and authority warnings, but recent agents still embedded a self-targeting condition and initially left a mechanical-skip ambiguity. Operator correction plus cold semantic readers repaired both. The learning mechanism is useful but not self-enforcing; decision-time precedent checks and behavior tests remain necessary.
+**Deutero-learning finding:** the suite is better at recording and mechanically enforcing new lessons than at removing machinery whose original need has weakened. The moving-frontier viability bar makes continued necessity, not historical justification, the test.
 
-[!REALIZATION] The suite now expresses earned autonomy as a scoped authority statement rather than an inferred level of trust. This preserves full routine autonomy while making the absence of delegation safe and legible. The next uncertainty is behavioral: whether two default pauses create confidence without recreating the ceremony the one-entry redesign removed.
+[!REALIZATION] Governance accretion is already present in the live contracts, but growth alone cannot distinguish necessary capability from accumulated burden. The next evidence must connect particular instructions and context reads to behavior, comprehension, and cost under current models.

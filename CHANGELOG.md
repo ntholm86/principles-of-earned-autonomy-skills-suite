@@ -1,5 +1,13 @@
 # Changelog
 
+## v4.33.0 — 2026-08-16
+
+- **Destination now names governance accretion and growing context as moving-frontier viability risks.** Trustworthy capability per resource now explicitly covers live skill and orchestration size, routine ACM read cost, proportional reasoning and context, newcomer understanding, and repeated reconsideration as model capability, context capacity, and token economics change. Adaptive reasoning and derived memory remain possible routes rather than prescribed mechanisms; the Principles of Earned Autonomy remain the fixed boundary.
+
+## v4.32.0 — 2026-08-16
+
+- **Destination now confirms synthesized meaning before making it durable.** After sourced questions are answered, Destination must show the operator the complete meaning it intends to carry forward, distinguish confirmed statements from agent-derived implications, and wait for confirmation before writing. This closes the gap that allowed broad approval of leanness to become an unconfirmed three-cost taxonomy. `destination/SKILL.md` 2.7.1 -> 2.8.0.
+
 ## v4.31.0 — 2026-08-16
 
 - **Routine autonomy is now explicitly bounded instead of inherited from host autopilot.** With no explicit delegation, Intent pauses for **Confirm / Stop / Specify** and Improve pauses for **Proceed / Stop / Specify** before implementation. An operator may delegate either routine gate for one prompt or durably in Destination; delegation never answers Destination questions, approves direction changes, bypasses consequential-action gates, or authorizes cognitive-capability reductions. **Specify** restarts Intent and re-runs examination rather than patching an old proposal. Every Improve run ends with one crisp change-and-verification summary. `intent/SKILL.md` 1.7.0 -> 1.8.0; `improve/SKILL.md` 3.18.2 -> 3.19.0.
