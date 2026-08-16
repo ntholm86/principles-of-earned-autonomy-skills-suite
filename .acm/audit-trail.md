@@ -14945,3 +14945,537 @@ The recent suite arc distinguishes capability from orchestration. Cybernetics sh
 
 1. Verify cross-repository wording and links as one coherence check, then stop unless a contradiction remains.
 2. Do not add cybernetics prose to individual skills without behavioral evidence that the shared principle is insufficient.
+## 2026-08-16 - improve-capability-leverage-lens
+
+- target: `improve/SKILL.md`
+- operator: Nils Wendelboe Holmager
+- agent: GitHub Copilot
+- skill: improve (Intent at ingress, Trail at egress)
+- outcome: changed - normal Improve examination can now discover and bound leverage from evolving AI execution capabilities
+- delta: suite 4.29.3 -> 4.30.0; Improve 3.17.2 -> 3.18.0; documented self-targeted iterations 355 -> 356
+
+### Interpretation of the ask
+
+The operator asked Improve to prevent the Skills Suite from missing efficiency and reasoning opportunities as AI systems evolve. Subagents were an example, not the requested mechanism. Intent interpreted the durable goal as making normal self-targeting ask whether changed model, host, tool, or orchestration capabilities can improve trustworthy capability per resource, while distinguishing capabilities general to LLMs from model-specific behavior and host-specific affordances.
+
+### Examination
+
+The Purpose lens found that the Destination already requires recursive improvement of the engine's reasoning and operation, cross-host and cross-model evidence, and trustworthy capability per resource. The current Orientation rejects trigger taxonomies, duplicated control prose, and experiments created for every uncertainty.
+
+The Capability gap was local to Improve's normal examination. Purpose, Inconsistency, Overburden, and Waste can diagnose the target, but none explicitly asks whether the present execution environment changes the best route. The Self-targeting section only states that Improve must work on itself; it does not create the missing question.
+
+A repository search found prior capability evidence, including model-context effects on factual grounding and reflection, and prior isolated subagent use in experiments. Those records support distinguishing model capability from host affordance, but they do not justify making subagents or capability surveys mandatory.
+
+An independent Explore subagent reviewed the first edit. It found no material defect and confirmed the general/model/host distinction, trust boundaries, and anti-ritual guard. It also identified that the opening question was reactive: it could evaluate a noticed compensation cost without actively surfacing unnamed leverage.
+
+### Decision
+
+[!DECISION] Add one generic Capability leverage lens to Improve's existing Examine step. It asks what the current execution environment can newly contribute to the target's purpose, then distinguishes broadly available LLM capability, model-specific behavior, and host-specific affordance before weighing lifecycle cost, trust boundaries, portability, and fallback behavior.
+
+Rejected alternative: create a separate capability-watch skill, registry, or recurring industry survey. That would make the operator or a schedule orchestrate a concern normal purpose-driven reasoning should discover, and would spend resources regardless of relevance. Rejected alternative: prescribe subagents during self-targeting. Availability is host-specific and delegation can add context, coordination, and trust cost.
+
+Precedent check: `learning.md` and the current Orientation show that execution context can materially change grounding and reflection, compression can trade one cognitive property for another, and uncertainty should use the cheapest discriminating check rather than automatically creating an experiment. The decision applies those findings rather than adding another control process.
+
+### Prediction
+
+Future self-targeting Improve runs should explicitly notice materially relevant new execution capabilities and classify their portability before adoption. Ordinary runs with no relevant capability change should gain only an optional lens, not a mandatory survey, registry, experiment, service, or subagent call. The change does not predict that subagents are always efficient or trustworthy, and contract-level success does not prove future behavioral use.
+
+### Action
+
+Added the Capability leverage lens and bumped `improve/SKILL.md` from 3.17.2 to 3.18.0. Added suite changelog entry v4.30.0. The first verifier command targeted `C:\git\verify.py` from the workspace root and did not exercise the repository; rerunning `python .\pea\skills\verify.py` passed.
+
+[!REVERSAL] The first lens wording opened with existing compensation cost. After the independent challenge showed that this could remain reactive to already-known opportunities, revised it to ask first what the current environment can newly contribute to the target's purpose. The same focused verifier passed again.
+
+The canonical Trail parser confirmed 269 pre-append entries. This entry creates 270; excluding three external-primary entries gives 267 v3 self-targeted runs, and 89 pre-v3 runs produce 356 total. README and the live fields in `.acm/ITERATION-COUNT.md` were synchronized. Historical refresh sections were left unchanged.
+
+Outcome versus prediction: held at contract level. The change creates an active discovery question and explicit classification and adoption boundaries without adding a process. Behavioral use remains future evidence.
+
+Destination need: not triggered - the current Destination already mandates recursive capability improvement and trustworthy capability per resource.
+
+Orientation freshness: current - the change follows the active rules to preserve cognition and evidence, avoid trigger taxonomies, and prefer the cheapest adequate check.
+
+### Reflection
+
+Falsifiable model claim: Improve can now recognize an execution-capability opportunity during ordinary target examination even when the operator names only an efficiency or purpose problem, then reject it when portability, lifecycle cost, fallback behavior, or trust boundaries make it worse.
+
+Named blind spot: this run tested textual ownership and independent interpretation, not fresh-session behavior across model families. It also did not inventory current industry capabilities, because doing so would enact the rejected standing-survey design.
+
+Imagined-reader pushback: adding another named lens creates checklist gravity. The surrounding contract says lenses are optional thinking tools, and this lens explicitly rejects a standing survey; future behavior could still falsify that protection if agents mechanically report on it every run.
+
+- *Recurring finding-class:* FIRED - the trail repeatedly found that model and host context change grounding, reflection, and experimental validity, but normal examination lacked a route to treat that variation as target leverage.
+- *About to declare silence:* not fired - this run made and validated a contract change.
+- *Contradicts prior `[!REALIZATION]`:* not fired - the change applies prior findings that capability dimensions are dissociable and host context matters.
+- *Operator explicitly asked:* FIRED - the operator explicitly invoked Improve on the suite for this capability-evolution concern.
+
+### Across-trail macro-Hansei
+
+[!REALIZATION] The arc already knew that execution context can alter grounding, reflection, and validity, but it usually reached that question through operator prompts or controlled experiments. Improve's ordinary examination therefore had a structural blind spot: it could improve the target under current assumptions without asking whether the current model, host, tool, or orchestration environment had changed those assumptions. The Capability leverage lens moves that question into normal purpose-driven reasoning without promoting capability monitoring into a standing target. This claim is falsified if future agents use the lens only when a capability is named for them, or turn it into routine surveys when no material leverage is present.
+
+### Candidate Next Moves
+
+1. Let the next naturally occurring self-targeting run test whether the lens surfaces an unnamed capability opportunity; do not manufacture a dedicated experiment yet.
+2. When a capability opportunity does surface, compare its end-to-end resource and trust cost against the current route before changing architecture.
+
+## 2026-08-16 - self-target-capability-leverage-behavior
+
+- target: Skills Suite self-targeting behavior under the Capability leverage lens
+- operator: Nils Wendelboe Holmager
+- agent: GitHub Copilot
+- skill: improve (Intent at ingress, Trail at egress)
+- outcome: silence - the lens changed the execution route, but no further skill architecture earned its cost
+- delta: no skill contract or version change; documented self-targeted iterations 356 -> 357
+
+### Interpretation of the ask
+
+The operator asked for a normal self-targeting Improve run immediately after adding the Capability leverage lens. Intent treated this as the first natural behavioral test: do not preselect subagents or another solution, let the current Destination and target evidence determine the route, and observe whether capability awareness improves the decision without creating new ceremony.
+
+### Examination
+
+Purpose: the Destination requires self-targeting to discover previously unnamed limitations while optimizing trustworthy capability per resource. Current Orientation requires the cheapest adequate check and warns against turning each uncertainty into an experiment.
+
+Capability leverage: this GitHub Copilot host exposed an isolated Explore subagent. The main agent used two bounded read-only explorers instead of loading the broad repository and full trail into its own decision context. One applied ordinary Purpose, Inconsistency, Overburden, and Waste lenses; one applied Capability leverage. The main agent retained interpretation, decision, validation, and Trail ownership.
+
+The ordinary explorer identified missing unassisted newcomer evidence as the highest gap. Direct checks showed this is already preregistered, consent-gated, and explicitly blocked until an eligible participant exists. Current Orientation says not to manufacture urgency around it.
+
+The capability explorer proposed enumerating and caching available capabilities at every session start. Its report included unsourced model and tool claims, assumed enumeration would be cheap, and recreated the standing capability-survey cost the new lens explicitly rejects. The current host already supplies tool availability to the executing agent, while tool discovery conventions vary by host. No evidence showed that another Intent step or session cache would improve a real decision.
+
+Challenge: an across-trail explorer then generalized from this single run, miscounted the 270-entry trail, and treated same-host subagents as if they supplied model-family independence. Those errors reinforced the trust boundary: isolated subagents can gather and challenge evidence, but their reports remain claims the deciding agent must verify. They do not count as independent convergence evaluators merely because their contexts are isolated.
+
+The baseline `python .\pea\skills\verify.py` passed before the decision.
+
+### Decision
+
+[!DECISION] Declare bounded silence on further skill architecture. Keep the Capability leverage lens unchanged; do not add a capability inventory, session cache, mandatory subagent route, or newcomer experiment.
+
+The inventory ranks below silence because it adds routine cost before relevance, depends on host-specific discovery, and was proposed from unsourced claims rather than a demonstrated failure. Mandatory subagent use ranks below silence because two calls produced no novel actionable finding and required main-agent verification. Newcomer work ranks below silence because its next valid evidence depends on an independent consenting participant, not another self-simulation.
+
+Precedent check: current `learning.md` and Orientation already establish that execution context changes behavior, independent measurement and host fidelity are separate gates, uncertainty should use the cheapest adequate check, and blocked newcomer evidence must not be manufactured. This decision applies those precedents.
+
+### Prediction
+
+Leaving the contracts unchanged will preserve the lens's ability to discover host affordances without imposing routine inventory or delegation cost. A future naturally occurring run can still use subagents when the task has genuinely separable evidence work. This silence will be falsified if a fresh run cannot identify an available capability without a cached inventory, or if bounded subagent delegation repeatedly produces novel decisions at lower total lifecycle cost.
+
+### Action
+
+No skill, changelog, or version was changed. The live self-target count was advanced mechanically: this entry creates Trail entry 271; excluding three external-primary entries leaves 268 v3 self-targeted runs, and 89 pre-v3 runs produce 357 total. README and `.acm/ITERATION-COUNT.md` were synchronized, with historical refresh sections left untouched.
+
+[!REVERSAL] The initial local hypothesis expected isolated Explore agents might improve trustworthy capability per resource by separating evidence gathering from the main decision context. The comparison produced one already-bounded finding and one unsourced, overbuilt proposal. Reversed the implied route from possible reusable subagent pattern to opportunistic use only when the task itself supplies separable work.
+
+Outcome versus prediction: the lens passed its first behavioral check in a bounded sense. It changed examination behavior, exposed an available host affordance, and supported rejection of a poor architecture. It did not establish a resource advantage for routine subagent use.
+
+Destination need: not triggered - trustworthy capability per resource and recursive self-improvement are already settled direction.
+
+Orientation freshness: current - this run confirms its claims that capability count and operator burden are separate, uncertainty does not automatically justify an experiment, and the cheapest adequate check should govern.
+
+### Reflection
+
+Falsifiable model claim: the suite now has enough capability awareness to use host affordances opportunistically while keeping adoption policy out of the contract; its next risk is overvaluing isolated agent output as independent or automatically resource-efficient.
+
+Named blind spot: this run did not measure provider token usage, compare completion time against a single-agent control, or vary model family. It therefore cannot quantify the subagent route's cost or generalize beyond this host and task.
+
+Imagined-reader pushback: two subagents were too few and poorly assigned, so their failure says nothing about delegation. Correct; the result rejects a routine rule and inventory from current evidence, not subagents as a capability.
+
+- *Recurring finding-class:* FIRED - the trail repeatedly shows that execution context changes grounding and validity while extra orchestration can weaken resource efficiency and operator steering.
+- *About to declare silence:* FIRED - no skill architecture passed the capability-per-resource bar in this run.
+- *Contradicts prior `[!REALIZATION]`:* not fired - the result applies the prior separation between capability count, host fidelity, and lifecycle cost.
+- *Operator explicitly asked:* FIRED - the operator directly requested this self-targeting Improve run.
+
+### Across-trail macro-Hansei
+
+[!REALIZATION] Capability availability, capability use, and capability value are three separate claims. The new lens successfully exposed a host affordance and changed the route, but isolated execution did not make the outputs independent evidence or make the route resource-efficient by default. The suite should keep capability discovery inside normal reasoning and require task-level evidence before promoting any affordance into standing architecture. This is falsified if future natural runs repeatedly need capabilities the agent cannot discover, or repeatedly show bounded delegation improving decisions at lower verified lifecycle cost.
+
+A prior belief that extra instrumentation closes uncertainty aged poorly during the experiment-heavy arc and remained wrong here: a per-session capability inventory would add another evidence surface before a concrete discovery failure exists. The prior realization that execution context matters aged well, but this run sharpens it: context must be observed without granting every contextual affordance architectural status.
+
+### Candidate Next Moves
+
+1. Use subagents only when a future task presents genuinely separable evidence work, and verify their claims before decision or Trail use.
+2. Let a naturally occurring fresh-session or different-model run challenge capability discovery; do not create a dedicated experiment from this one result.
+
+## 2026-08-16 - remove-capability-route-prescription
+
+- target: `improve/SKILL.md` Capability leverage lens
+- operator: Nils Wendelboe Holmager
+- agent: GitHub Copilot
+- skill: improve (Intent at ingress, Trail at egress)
+- outcome: changed - capability awareness preserved while the prescribed evaluation route was removed
+- delta: suite 4.30.0 -> 4.30.1; Improve 3.18.0 -> 3.18.1; documented self-targeted iterations 357 -> 358
+
+### Interpretation of the ask
+
+The operator agreed with the capability dilemma and the proposed model-agnostic explanation, then identified the governing defect: the explanation prescribed the route. Intent interpreted the self-targeting mandate as preserving the unresolved problem - evolving capabilities may change what is possible or worthwhile - while removing the agent-authored taxonomy, evaluation dimensions, and mechanism examples that constrained how future agents must reason about it.
+
+### Examination
+
+Purpose: the Destination states that only the three PEA principles are architectural constraints, every mechanism is revisable, and the engine must discover for itself how to improve trustworthy capability per resource. It explicitly rejects prescribing iteration size, batching, thresholds, or another mechanism.
+
+Inconsistency: the new lens began with two open questions, then required agents to distinguish general LLM capability, model-specific behavior, and host-specific affordance; inspect availability; compare lifecycle cost, trust boundaries, portability, and fallback behavior; and consider independent or delegated agents. Those specifics encoded the prior agent's answer to the dilemma inside the question future agents receive.
+
+Principle 1 removal test: after removing the classifications, dimensions, and example, an intelligent agent can still understand the objective: determine whether changed capability alters what is possible or worthwhile for the target. The target's purpose and current evidence already govern how it reasons and what constraints matter.
+
+An isolated semantic reader received only the revised lens, Principle 1, and current Destination. It independently inferred valid routes for agents with subagents, sequential reasoning, and unknown future capabilities. It found no mechanism inside the lens itself, though it wandered into unrelated formatting contracts elsewhere in Improve. It could not reconstruct the removed taxonomy without history, confirming that the route no longer remains implicit in the revised wording.
+
+### Decision
+
+[!DECISION] Reduce Capability leverage to one purpose question, one self-targeting scope statement, and one evidentiary boundary. Remove the required capability classification, named comparison dimensions, delegated-agent example, and standing-survey warning.
+
+Rejected alternative: retain the detailed wording as helpful safeguards. Those safeguards may be good reasoning in one situation, but putting them in the lens converts an answer into the ceiling future models optimize toward. Rejected alternative: remove the lens entirely. The capability-evolution problem remains material and was not previously available to normal Examine reasoning.
+
+Precedent check: current Destination says the engine must discover its own route; Principle 1 says vocabulary may guide thinking but answers and checklists must not; recent learning shows that concrete examples can be promoted into governance before their purpose is examined. The operator's correction is direct evidence that the prior lens crossed that boundary.
+
+### Prediction
+
+The revised lens will still cause agents to consider whether changed capability matters, including during self-targeting, while allowing different models and hosts to derive different routes. Removing every named mechanism and evaluation dimension will not leave an intelligent reader uncertain about the objective. It will no longer prime subagents, capability taxonomies, portability checks, or any other current answer as required behavior.
+
+### Action
+
+Rewrote the Capability leverage lens from five route-bearing sentences to three purpose-bearing sentences. Bumped `improve/SKILL.md` 3.18.0 to 3.18.1 and added suite changelog entry 4.30.1. The repository verifier passed immediately after the edit and again after synchronizing the live count.
+
+[!REVERSAL] The preceding self-target run explicitly decided to keep the lens unchanged, and the subsequent explanation defended a model-agnostic contract plus capability-adaptive route. The operator correctly identified that the lens itself already prescribed that route. Reversed the prior decision and removed the proposed architecture from the governing question.
+
+This entry creates Trail entry 272. Excluding three external-primary entries leaves 269 v3 self-targeted runs; adding 89 pre-v3 runs produces 358 total. README and the current fields in `.acm/ITERATION-COUNT.md` were synchronized without changing historical refresh sections.
+
+Outcome versus prediction: held at contract and independent-interpretation level. The reader derived multiple valid execution routes from the revised purpose without access to the removed taxonomy. Behavioral variation across real models and hosts remains future evidence.
+
+Destination need: not triggered - the Destination already resolves the authority boundary by giving the route to the agent and retaining only the three principles as constraints.
+
+Orientation freshness: current - the correction applies its active rules to prefer purpose tests over taxonomies and preserve capability without duplicated control policy.
+
+### Reflection
+
+Falsifiable model claim: the revised lens can make capability evolution salient without making today's understanding of capability adaptation the route future agents must follow.
+
+Named blind spot: this run tested one independent textual interpretation on the current host. It did not observe a weaker model, a non-tool-using model, or a future capability deriving a materially different route.
+
+Imagined-reader pushback: "availability alone is not evidence of improvement" is still a prescribed epistemic boundary. That boundary does not prescribe how to reason or what to adopt; it prevents existence from being treated as outcome evidence and follows Observable Autonomy rather than a host-specific route.
+
+- *Recurring finding-class:* FIRED - the recent Destination arc already found that examples of possible routes were being promoted into governance before purpose was examined.
+- *About to declare silence:* not fired - this run corrected the lens and release metadata.
+- *Contradicts prior `[!REALIZATION]`:* FIRED - the prior run claimed the unchanged lens kept capability discovery inside normal reasoning without standing architecture; the operator showed that its taxonomy was already standing architecture.
+- *Operator explicitly asked:* FIRED - the operator directly requested Improve self-targeting to solve the route-prescription defect.
+
+### Across-trail macro-Hansei
+
+[!REALIZATION] The suite can prescribe autonomy while believing it is merely enabling intelligence. A taxonomy, risk list, fallback rule, or mechanism example may be a sound current answer and still violate Operator's Intent when embedded in the question every future agent must answer. Capability awareness belongs in Improve as a change in what the target may now make possible; the content of that awareness must remain discoverable by the executing agent. This claim is falsified if agents consistently fail to derive safe, useful routes without the removed specifics.
+
+The prior realization that concrete routes can become governance aged well and directly predicted this correction. The immediately prior belief that an explicit general/model/host distinction was only a neutral safeguard aged poorly: it narrowed the reasoning space before evidence from other models or hosts existed.
+
+### Candidate Next Moves
+
+1. Let different models and hosts encounter the revised lens naturally; compare the routes they derive without adding a prescribed test protocol.
+2. Treat future explanations of capability adaptation as candidate reasoning, not automatic skill text, unless repeated evidence reveals a missing invariant.
+
+## 2026-08-16 - remove-self-targeting-condition-from-capability-lens
+
+- target: `improve/SKILL.md` Capability leverage lens
+- operator: Nils Wendelboe Holmager
+- agent: GitHub Copilot
+- skill: improve (Intent at ingress, Trail at egress)
+- outcome: changed - removed the remaining self-targeting condition; recursive scope now derives from Destination and generic Purpose reasoning
+- delta: suite 4.30.1 -> 4.30.2; Improve 3.18.1 -> 3.18.2; documented self-targeted iterations 358 -> 359
+
+### Interpretation of the ask
+
+Intent interpreted the operator's correction as a boundary diagnosis, not a request to delete one sentence reflexively: determine why self-targeting had to be hard-coded, then move the durable purpose to the operator-held Destination or strengthen general reasoning only if the Destination did not already entail it. The rejected literal interpretation was to preserve the clause because it accurately describes this repository; accuracy for one target does not make a target-specific condition valid in a generic skill.
+
+### Examination
+
+Purpose: the bounded current Destination already states that the engine's generic theory is to understand the purpose of whatever it targets, determine what most limits that purpose, and improve it. It then states explicitly that when the engine targets itself, the same theory applies recursively to its reasoning, learning, architecture, and operation. Immediate quality bar 1 requires self-targeting runs to discover unnamed reasoning or operational limitations. The durable direction is therefore complete on this issue.
+
+Inconsistency: Capability leverage still said, "During self-targeting, the suite's own reasoning and operation are part of the target." That sentence duplicated a target-specific consequence inside the generic lens. The same capability question works without it: what counts as the target and what matters derive from the target's purpose and Destination.
+
+Precedent: the 2026-05-01 reflection rewrite explicitly rejected a self-targeting branch so the case would fall out without special-casing. The 2026-08-01 `reversal-self-targeting-branch-violates-genericity` entry reverted another self-targeting condition after the operator made the same correction. The operator-authored Destination note later that day says self-referential completeness must fall out of deepened Purpose, not a self-targeting-shaped lens. The current clause repeated the exact rejected finding-class.
+
+Overburden and Waste: the clause asked Improve to carry direction already owned by Destination and applied by Purpose. Removing it reduces duplicated policy without removing capability awareness.
+
+Challenge: perhaps the clause exposed a genuinely missing reasoning capability. The current run tested that alternative rather than assuming deletion was enough. An isolated reader received only Improve's governing principles and Purpose/Capability text, the bounded current Destination, and Principle 1. It derived the exact chain: Destination supplies recursive scope, generic Purpose carries it, and Capability leverage contributes only the capability question. It found no assumption necessary.
+
+### Decision
+
+[!DECISION] Remove the self-targeting sentence from Capability leverage and leave the generic capability question plus evidentiary boundary unchanged. Do not alter Destination and do not add another reasoning instruction.
+
+Rationale: the operator-held Destination already contains the durable direction, and a cold reader derived the intended scope through generic Purpose reasoning. Adding a replacement mechanism would repeat the same mistake one layer away.
+
+Rejected alternative: expand Destination. Rejected because the current Purpose, immediate quality bar, and fixed boundary already state the requirement directly. Rejected alternative: add a generic-sounding self-reference rule elsewhere in Improve. Rejected because prior history identifies that move as disguised special-casing and the semantic test showed no missing instruction.
+
+Precedent check: `learning.md`, the relevant full Trail entries, and the historical Destination notes were checked at decision time. They contain two direct rejections of self-targeting branches and the exact operator mandate that recursive behavior derive from Purpose. This precedent should have prevented entry 272 from retaining the clause.
+
+### Prediction
+
+Removing the sentence will leave Capability leverage fully target-agnostic. A reader given the revised lens and current Destination will still derive that the suite's reasoning and operation are examinable when the suite is the target. The change will not prescribe a replacement route or require a Destination revision.
+
+### Action
+
+Removed the sentence, bumped Improve from 3.18.1 to 3.18.2, and added suite changelog entry 4.30.2. The focused repository verifier passed immediately after the edit and after synchronizing live iteration metadata.
+
+The isolated semantic test matched the prediction. It attributed self-targeting scope primarily to Destination, generic application to Purpose, and no self-targeting authority to Capability leverage. It found no condition or repository-specific route in the revised lens.
+
+[!REVERSAL] Entry 272 decided that the lens should contain "one self-targeting scope statement." This run reverses that part of the decision. The statement was still a prescribed condition even after the route taxonomy had been removed.
+
+This entry creates Trail entry 273. Excluding three external-primary entries leaves 270 v3 self-targeted runs; adding 89 pre-v3 runs produces 359 total. README and current fields in `.acm/ITERATION-COUNT.md` were synchronized without altering historical refresh snapshots.
+
+Destination need: not triggered - the bounded current Destination already states recursive self-improvement as purpose while leaving its route open.
+
+Orientation freshness: current - its active rule to prefer purpose tests over trigger taxonomies directly governs this correction.
+
+### Reflection
+
+Falsifiable model claim: the suite has sufficient destination and generic reasoning structure to derive recursive self-examination without any self-targeting condition in Capability leverage; future failures of that derivation are execution-fidelity evidence, not automatically evidence that another instruction is missing.
+
+Named blind spot: the cold test used one isolated reader on the current host and had direct access to the unusually explicit recursive sentence in Destination. A target with no durable Destination must derive scope from its prompt and artifact purpose, which this run did not behaviorally test.
+
+Imagined-reader pushback: the `## Self-targeting` section later in Improve remains explicitly self-referential. That section states that the skill is runnable on itself and gives illustrative files; it does not change how a lens reasons for one class of target. This run was scoped to the operator-selected conditional inside Capability leverage and does not establish that every other self-reference in the suite is necessary.
+
+- *Recurring finding-class:* FIRED - the May 1 and August 1 entries already rejected self-targeting branches, and the current clause recreated the same condition.
+- *About to declare silence:* not fired - this run removed the condition and corrected release metadata.
+- *Contradicts prior `[!REALIZATION]`:* FIRED - entry 272 claimed its revised lens no longer embedded a route, but its retained self-targeting scope still embedded a target-specific derivation.
+- *Operator explicitly asked:* FIRED - the operator identified the condition, recalled rejecting it earlier, and asked whether Destination or reasoning was incomplete.
+
+### Across-trail macro-Hansei
+
+[!REALIZATION] The Destination was not incomplete; learning carry-forward failed at the point of decision. The suite had already recorded the same operator rejection twice and had absorbed the positive requirement into Destination, yet a later correction preserved the special case as though naming scope were different from prescribing derivation. The recurring defect is promoting a correct consequence for this repository into generic skill text when Purpose was already capable of deriving it. This claim is falsified if diverse cold readers cannot derive recursive scope from the current Destination and generic Purpose lens.
+
+The earlier realization that self-targeting must fall out without special-casing aged well. Entry 272's belief that a self-targeting scope statement could coexist with an unprescribed route aged poorly. The target needs faithful application of existing purpose and learning before it needs more reasoning machinery.
+
+### Candidate Next Moves
+
+1. Let a future natural run test whether the revised generic lens derives an unexpected capability route without being primed by this correction.
+2. Treat any future self-targeting-specific skill sentence as requiring an explicit precedent check against the May 1 and August 1 genericity reversals before adoption.
+
+## 2026-08-16 - add-bounded-supervision-and-delegation-gates
+
+- target: Skills Suite authority boundary, first-run workflow, and Improve result reporting
+- operator: Nils Wendelboe Holmager
+- agent: GitHub Copilot
+- skill: improve (Intent at ingress, Destination question during decision, Trail at egress)
+- outcome: changed - added supervised-by-default routine gates, explicit bounded delegation, and one-line Improve result summaries
+- delta: suite 4.30.2 -> 4.31.0; Intent 1.7.0 -> 1.8.0; Improve 3.18.2 -> 3.19.0; documented self-targeted iterations 359 -> 360
+
+### Interpretation of the ask
+
+Intent read the request as an authority-design problem, not simply "add confirmation prompts": new users need explicit gates at interpreted intent and proposed action, trusted operation needs those gates delegable without silencing genuinely operator-owned Destination questions, and each run needs a crisp visible change summary. The rejected route was a global autopilot switch because it conflates routine delegated decisions with questions only the operator can answer.
+
+### Examination
+
+Purpose: the current Destination already separates implementation authority from operator-owned direction. Within a confirmed Destination the engine may select and implement a route when explicitly delegated; Destination changes and operator-declared consequential actions remain human-gated. What was missing was a visible way to express routine execution authority at run time.
+
+Inconsistency: Intent narrated its interpretation and continued unless corrected, while Improve called step 4 an operator gate but did not ask before Act. New users therefore received transparency without an actual steering point. Host autopilot could supply execution freedom but could not distinguish routine implementation from Destination or consequential questions.
+
+Overburden: a global beginner/expert/autopilot mode would ask one setting to govern several different authority classes. One explicit delegation concept can instead apply separately to Intent confirmation and Improve implementation while leaving operator-owned questions untouched.
+
+Waste: no trust score, maturity ladder, new file, or delegation schema was needed. Current prompt authority and confirmed Destination already provide the two evidence scopes required for one-run and durable delegation.
+
+Capability leverage: the host can render structured questions, but the contract remains natural-language and host-agnostic. The skill defines the authority exchange rather than requiring a particular UI control.
+
+Challenge: the August 13 single-entry design deliberately made silence after visible Intent narration sufficient for a first run to reduce setup friction. Its own named blind spot was that silence may be too weak for consequential or unfamiliar operation. The operator's present concern supplied the missing adoption evidence: a newcomer may experience proceed-unless-corrected behavior as uncontrollable.
+
+The unresolved durable choice was surfaced through Destination rather than silently selected: should an unconfigured repo default to supervised gates while explicit prompt or Destination delegation may skip routine gates but never operator-owned questions? The operator selected: "Yes, use this boundary."
+
+### Decision
+
+[!DECISION] Use one bounded authority model: supervised unless explicitly delegated. Intent owns Confirm / Stop / Specify after interpretation; Improve owns Proceed / Stop / Specify after stating one proposed change and verification. Specify restarts Intent and re-runs examination. The operator may delegate either routine gate for one prompt or durably in Destination. Delegation never answers Destination, direction-change, operator-declared consequential-action, or cognitive-capability-reduction questions. Host autopilot is not delegation evidence.
+
+Rationale: this preserves a controlled first experience and permits earned full routine autonomy without constructing parallel workflows or weakening operator-owned authority.
+
+Rejected alternative: retain proceed-unless-corrected and improve only summaries. Rejected because it leaves the newcomer's control concern unresolved. Rejected alternative: global autopilot mode. Rejected because it cannot distinguish authority classes. Rejected alternative: trust levels or scores. Rejected because no evidence supports thresholds, and the operator can state delegation directly.
+
+Precedent check: `learning.md` and the August 13 single-entry Trail entry were checked at decision time. They establish prompt-level current-run authority, operator-confirmed durable direction, and a known blind spot around silence as permission. The May operator-gate entries also show the desired pattern: make steering visible without forcing engagement after authority has been delegated.
+
+### Prediction
+
+A new repo without explicit delegation will pause once after Intent narration and once before Improve acts. Explicit one-run or Destination delegation will skip only the named routine pauses while preserving narration, the final summary, Destination questions, and consequential gates. Host autopilot alone will skip nothing. Every Improve outcome will have one exact concise result shape. This will not require a trust score, new command, new state file, or host-specific UI.
+
+### Action
+
+Added the confirmed authority boundary to the bounded current Destination and preserved its evolution in a new historical note. Intent 1.8.0 now determines routine authority only from the current prompt or confirmed Destination; supervised runs ask Confirm / Stop / Specify, delegated runs narrate source and scope and continue, and Specify restarts Extract.
+
+Improve 3.19.0 now asks Proceed / Stop / Specify after stating its proposed change and verification. It explicitly rejects host autopilot as authority evidence and protects Destination, direction-change, consequential-action, and cognitive-capability-reduction gates. Step 9 now requires one exact result line for Changed, Silence, Redesign, Stopped, or Failed outcomes.
+
+Updated README Workflow and QUICKSTART so newcomers see both gates before their first run and understand how explicit delegation later removes routine pauses. Added suite changelog 4.31.0.
+
+The first strict semantic reader found an ambiguity between Intent's old mechanical-request skip and mandatory narration, plus an unclear result shape for stopped and silence outcomes. Repaired both: Intent may skip only direct operations requiring neither interpretation nor action authority and never skips when composed with Improve; Step 9 now defines all five exact shapes. A second cold reader then passed all tested scenarios with no contradiction: unconfigured, one-run delegation, durable delegation, autopilot-only, Specify, and delegated execution that triggers Destination.
+
+Focused `python .\pea\skills\verify.py` passed after the core edit, after the semantic repair, after documentation, and after count synchronization. `git diff --check` passed with only the existing Windows line-ending warning for the Trail.
+
+Outcome versus prediction: held at contract and isolated semantic-test level. No trust score, command, file, or host UI dependency was introduced. Real newcomer and cross-host behavior remain untested.
+
+[!REVERSAL] The August 13 `improve-single-entry-progressive-destination` decision treated silence after visible Intent narration as sufficient authority for bounded current work. This run supersedes that default: visible narration remains necessary, but without explicit delegation the operator now confirms it and the proposed implementation.
+
+This entry creates Trail entry 274. Excluding three external-primary entries leaves 271 v3 self-targeted runs; adding 89 pre-v3 runs produces 360 total.
+
+Destination need: TRIGGERED - default supervision versus proceed-unless-corrected was an unsettled durable authority choice. Resolved when the operator selected the supervised-by-default, explicitly delegated boundary; the bounded Destination was materially updated.
+
+Orientation freshness: STALE - the current Orientation describes unopposed Intent narration as current-run authority and therefore no longer explains the confirmed default; automatic Orient scheduled after this entry becomes durable.
+
+### Reflection
+
+Falsifiable model claim: the suite now separates routine execution authority from operator-owned authority with one concept - explicit delegation - allowing a controlled first run and fully autonomous routine execution without either becoming a separate workflow.
+
+Named blind spot: both semantic tests were textual and used the same host's isolated reader. No new user has yet experienced two pauses, and no other host has demonstrated that Specify reliably returns to Intent rather than being handled as a local edit request.
+
+Imagined-reader pushback: two confirmations per iteration may make normal supervised work feel like a ticketing system and conflict with the adoption goal. That cost is real. The design bounds it to repositories without explicit delegation; a trusted operator can delegate either gate independently, and future behavior should test whether that transition is discoverable early enough.
+
+- *Recurring finding-class:* FIRED - the trail repeatedly separates capability count from operator burden and routine authority from durable direction; this run resolves another place where those concerns were conflated.
+- *About to declare silence:* not fired - this run made a material Destination and skill change.
+- *Contradicts prior `[!REALIZATION]`:* FIRED - the August 13 progressive-disclosure realization treated visible unopposed Intent as current-run authority; the operator now judged that default insufficiently controllable for newcomers.
+- *Operator explicitly asked:* FIRED - the operator requested self-targeted Improve and described both desired gates and the autonomy dilemma.
+
+### Across-trail macro-Hansei
+
+[!REALIZATION] Transparency and permission are separate variables. Narrating Intent and proposed action makes autonomous work steerable, but it does not tell a new operator whether silence means consent. Explicit delegation closes that ambiguity without reducing autonomy: supervision is the absence-of-agreement default, while earned autonomy is a positive authority statement scoped to routine decisions. Operator-owned questions remain blocking because they concern the reference signal or declared boundaries, not the route.
+
+The prior claim that progressive disclosure is an authority architecture aged well in its separation of current-run and durable authority, but its use of unopposed narration as permission aged poorly. The earlier operator-gate pattern - visible steering with optional engagement - now has a clearer authority condition: engagement becomes optional only after explicit delegation, not merely because the agent spoke first.
+
+### Candidate Next Moves
+
+1. Observe a new user completing one supervised run and deciding whether and how to delegate a later run; this tests control and transition friction together.
+2. Test Specify on another host to verify that both gates restart Intent rather than patching the current proposal locally.
+3. Test a delegated run that naturally triggers Destination to verify the operator-owned question still blocks in live behavior.
+
+## 2026-08-16 - orient-after-bounded-supervision-and-delegation
+
+- target: Skills Suite authority and capability-awareness arc
+- operator: Nils Wendelboe Holmager
+- agent: GitHub Copilot
+- skill: orient (automatically scheduled after material Destination change)
+- outcome: refreshed Orientation around explicit routine delegation, preserved hard gates, and the behavioral tests now required
+- delta: `.acm/orientation.md` replaced; documented self-targeted iterations 360 -> 361
+
+### Scope
+
+Read the authority and capability-awareness arc after the operator rejected route prescription in Capability leverage, then rejected unopposed narration as sufficient permission for unfamiliar users. Arc-question: what changed when routine authority became explicit, and does the result preserve one-entry simplicity, earned autonomy, and operator-owned gates?
+
+### Freshness check
+
+- `python harness/tools/record.py history --write` -> 274 entries before this Orient entry.
+- `python harness/tools/record.py learning --write` -> 60 recent + 254 archived markers.
+- `python verify.py` -> OK, trail integrity checks pass.
+- Gate: PASS; arc-claims allowed.
+
+### Arc-claims
+
+[!REALIZATION] Transparency and permission are separate authority variables. Intent narration remains mandatory, but in the absence of explicit delegation it no longer authorizes examination. Improve proposal visibility likewise does not authorize implementation until Proceed.
+
+Explicit delegation now carries earned routine autonomy. It may cover Intent, Improve, or both for one prompt or durably in Destination. It is not inferred from silence, familiarity, accumulated trust, prior autonomous behavior, or host autopilot.
+
+Routine delegation remains subordinate to operator-owned authority. Destination questions, direction changes, operator-declared consequential actions, and deliberate cognitive-capability reductions remain blocking under both supervised and delegated execution.
+
+The one-entry command surface survived: Improve remains the sole normal command and no mode command, score, maturity ladder, state file, or host-specific UI was added. Interaction cost did increase for supervised runs because two routine exchanges now block by default.
+
+The authority design has passed repository checks and two isolated semantic interpretations, not behavior. No unassisted newcomer, other host, or naturally occurring delegated-plus-Destination run has yet exercised it.
+
+Capability leverage is now target-agnostic and subordinate to Purpose. The recent three-entry correction arc removed its prescribed capability taxonomy and self-targeting condition; current target scope must derive from Purpose and Destination.
+
+### Loop effectiveness
+
+Quality bars tested: textual authority coherence, separation of routine and operator-owned decisions, one-entry command simplicity, generic capability-lens scope, first-contact documentation consistency, and append-only evidence integrity.
+
+Result: authority separation PASS at contract level; one-entry command surface PRESERVED; explicit outcome summaries ADDED; generic capability scope PASS under isolated interpretation; repository integrity PASS.
+
+Bars not tested: unassisted newcomer behavior, cross-host gate fidelity, real Specify re-entry, delegated execution that naturally triggers Destination, repeated supervised interaction cost, and independent model-family evaluation.
+
+Double-loop finding: the governing variable changed from "visible interpretation is sufficient permission" to "permission is explicit unless routine authority has been delegated." The recurring operator-gate findings were not asking for more narration; they exposed that observability and authorization had been treated as the same thing.
+
+Deutero-learning finding: existing memory contained earlier genericity and authority warnings, yet recent agents still embedded a self-targeting condition and initially left a mechanical-skip ambiguity. Operator correction plus cold semantic readers repaired both. The memory layer is useful but not self-enforcing; decision-time precedent checks and behavior tests remain necessary.
+
+Destination need: not triggered - the authority choice was confirmed and incorporated during the preceding Improve run; this Orient only recomputed current position.
+
+Orientation freshness: current - `.acm/orientation.md` now explains the changed Destination and material entries through 274.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED - operator-gate and route-prescription corrections recur across the arc and now resolve into one explicit authority distinction.
+- *About to declare silence:* not fired - the map names several untested behavioral boundaries.
+- *Contradicts prior `[!REALIZATION]`:* FIRED - the August 13 claim that unopposed visible Intent carries current-run authority is now superseded.
+- *Operator explicitly asked:* FIRED - the operator requested self-targeted Improve on this authority dilemma; Orient was automatically required by the resulting Destination change.
+
+### Candidate Next Moves
+
+1. Observe a new user completing one supervised Improve run and deciding whether to delegate a later run; test control, comprehension, and interaction friction together.
+2. Exercise Specify at both gates on another host and verify that control returns to Intent before fresh examination.
+3. Run both routine gates delegated, then let a real unresolved direction emerge and verify that Destination still blocks for the operator.
+
+### Across-trail macro-Hansei
+
+[!REALIZATION] The authority arc did not need another autonomy mode; it needed to stop treating observability as authorization. The stable architecture now has one normal command and one explicit delegation concept, while authority remains distributed by purpose: Intent confirms interpretation, Improve confirms routine action, Destination confirms durable direction, and operator-declared consequential boundaries remain human-owned. The unresolved question is whether this cleaner separation produces confidence at lower lifecycle cost or merely moves ceremony into two pauses; only situated behavior can answer that.
+
+## 2026-08-16 - self-target-supervised-authority-bounded-silence
+
+- target: Skills Suite after bounded supervision and delegation redesign
+- operator: Nils Wendelboe Holmager
+- agent: GitHub Copilot
+- skill: improve (Intent at ingress, Trail at egress)
+- outcome: bounded silence - no further skill change earned under textual authority coherence and live Intent-gate behavior
+- delta: no target artifact change; documented self-targeted iterations 361 -> 362
+
+### Interpretation of the ask
+
+Intent read "run the improve skill again on its own repo" as a request for a genuine fresh self-targeted iteration under the newly supervised authority contract: examine the suite, make one evidence-backed change or declare bounded silence, and do not treat the request as blanket delegation of either routine gate.
+
+The supervised Intent gate ran live. It narrated the mandate and offered Confirm, Stop, or Specify. The operator selected Confirm, after which examination began. This is the first situated evidence in this session that the new Intent pause is understandable and returns control cleanly on the current host.
+
+### Examination
+
+Purpose: the current Destination asks the suite to improve trustworthy delegation while preserving research, adoption, resource efficiency, and operator control. Current Orientation identifies the next uncertainty as behavioral: whether two default pauses create confidence without recreating ceremony.
+
+Inconsistency: no contradiction was found between the confirmed Destination, Orientation, Intent, Improve, or first-contact documentation for the authority path exercised in this run. The operator's request did not delegate routine gates; Intent paused as specified.
+
+Overburden: this one observed pause was short and distinct from the later Improve gate. It confirmed the mandate to examine; it could not approve an implementation because no finding or proposal existed yet. The run therefore did not support collapsing the two gates as duplicates.
+
+Waste: no new mode, score, state file, explanation block, or authority mechanism earned its existence. The current prompt and Destination remain sufficient authority evidence surfaces.
+
+Capability leverage: a read-only isolated reviewer examined all live skill contracts and first-contact surfaces. It proposed one defect: Improve's Specify branch might not clearly restart Intent. The owning contracts disconfirmed the finding. Improve says Specify returns to Intent with the added information and requires re-examination; Intent says Specify incorporates the information, restarts from Extract, and does not patch the old interpretation in place. Adding the reviewer's proposed sentence would duplicate existing control policy.
+
+Challenge: the first read could have promoted this recent redesign into another immediate wording change simply because the user requested Improve. Direct comparison against the owning contracts showed no defect. Repository verification and whitespace checks passed before recording.
+
+### Decision
+
+[!DECISION] Declare bounded silence. Make no skill, Destination, Orientation, changelog, or onboarding change.
+
+Quality bar tested: textual coherence of the supervised/delegated authority contract across current Destination, Orientation, all live skills, README, QUICKSTART, and INSTALLING; plus live behavior of the supervised Intent confirmation on this host.
+
+Surfaces not tested: Improve's Proceed / Stop / Specify gate in live behavior; Specify re-entry at either gate; prompt-level or Destination-level delegation; host autopilot rejection in a real invocation; a delegated run that triggers Destination; another host, model family, or unassisted newcomer; repeated-run interaction cost.
+
+Rationale: the only proposed textual defect was already resolved by the composed Intent and Improve contracts, and this run produced no contrary behavior. A change would duplicate policy or manufacture work.
+
+Rejected alternative: add an explicit "return to Improve step 1" sentence to Improve's Specify branch. Rejected because Intent owns its re-entry behavior and already says to restart from Extract and re-narrate; duplicating that detail in Improve would distribute control policy again.
+
+Precedent check: current learning and Orientation require purpose tests over taxonomies, decision-time checks against prior genericity reversals, and no new authority machinery without behavioral evidence. Silence follows those rules.
+
+### Prediction
+
+No target artifact change is predicted. Recording this run will add bounded evidence that the supervised Intent gate works on the current host without converting one success into a general behavioral claim. The repository verifier and derived ACM integrity should remain clean after entry 276 is appended.
+
+### Action
+
+No target artifact was changed. Updated only the live iteration evidence needed to make this run auditable, then appended this entry. Before append, `python .\pea\skills\verify.py` passed and `git diff --check` reported only the existing Windows line-ending warning for the Trail.
+
+Outcome versus prediction: held before derivation. Final derived-artifact and verifier results follow after this append.
+
+Destination need: not triggered - the confirmed authority boundary remains adequate, and this run surfaced no unsettled durable direction.
+
+Orientation freshness: current - the map already names this exact behavioral frontier and remains accurate after one bounded Intent-gate pass.
+
+### Reflection
+
+Falsifiable model claim: the two supervised gates are semantically distinct because Intent authorizes examination under an accepted mandate while Improve authorizes a concrete implementation that does not yet exist at ingress. This claim is falsified if repeated live runs show operators experience the second pause as redundant or routinely confirm it without gaining new decision information.
+
+Named blind spot: this run exercised only Confirm at the Intent gate. It provides no evidence about Stop, Specify, the Improve gate, delegation, or cross-host fidelity.
+
+Imagined-reader pushback: a single confirmation by the suite's own maintainer says little about newcomer control or usability. Correct; the claim is limited to control-flow viability on this host and operator, not adoption.
+
+- *Recurring finding-class:* not fired - no new recurrence was found beyond the authority and genericity patterns already represented in current Orientation.
+- *About to declare silence:* FIRED - this run found no actionable defect under the named textual and live-Intent boundary.
+- *Contradicts prior `[!REALIZATION]`:* not fired - the result supports Orientation's claim that the contract is coherent but behaviorally under-tested.
+- *Operator explicitly asked:* FIRED - the operator directly requested another self-targeted Improve run.
+
+### Across-trail macro-Hansei
+
+[!REALIZATION] A supervised gate can be useful without being evidence that every gate is useful. This run separated the two claims: Intent confirmation added real authority before the target was examined, while the value and cost of the later implementation gate remain unobserved. The suite should accumulate situated evidence one boundary at a time instead of treating either textual coherence or one successful interaction as validation of the complete authority model.
+
+The recent realization that transparency and permission are distinct aged well in this run: narration was visible, but examination waited for explicit confirmation. The unresolved ceremony risk also remains live rather than being argued away.
+
+### Candidate Next Moves
+
+1. Let a future natural run exercise the Improve action gate with a real proposal and observe whether it adds distinct steering value.
+2. Use Specify at either gate when a genuine correction arises; do not manufacture one solely for protocol coverage.
+3. Observe an unassisted newcomer before making a broader usability claim about supervised defaults.

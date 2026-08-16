@@ -36,7 +36,11 @@ Examples:
 - `/improve remove unused imports across src/ and verify nothing breaks`
 - `/improve tighten the README quickstart so a new user can run the first example in under five minutes`
 
-The agent automatically applies Intent, explains the mandate it inferred from your prompt, predicts an outcome before acting, makes one change, verifies it, and applies Trail. If continuing safely now requires broader direction, it explains why and invokes Destination after the completed run to ask one sourced question at a time.
+The agent applies Intent and asks you to **Confirm**, **Stop**, or **Specify** its reading. After examination, Improve states one proposed change and asks you to **Proceed**, **Stop**, or **Specify** before implementation. Specify restarts the reasoning with your added information. A completed run makes one change, verifies it, applies Trail, and ends with one short change-and-verification summary.
+
+Once the suite has earned your trust, explicitly delegate either routine gate in the prompt or in Destination. Delegation does not silence the narration, the final summary, unresolved Destination questions, or operator-declared consequential gates. Host autopilot alone grants no such authority.
+
+If continuing safely requires broader direction, Improve explains why and invokes Destination after the completed run to ask one sourced question at a time.
 
 Done when: `.acm/audit-trail.md` has a new entry with `outcome:` and `delta:`.
 

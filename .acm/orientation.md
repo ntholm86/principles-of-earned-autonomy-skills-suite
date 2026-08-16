@@ -1,86 +1,84 @@
 # orientation.md - autonomous-agent-skills
 
-_Last updated: 2026-08-13 (run: `orient-after-control-simplification`)_
+_Last updated: 2026-08-16 (run: `orient-after-bounded-supervision-and-delegation`)_
 
 ## Scope of this read
 
-Read the arc after the operator stopped the service-overlap experiment because its purpose and direction had become hard to follow. Question: what changed when rigorous adoption research began obscuring the product goal, and what operating rule preserves trustworthy capability per token without rebuilding ceremony?
+Read the authority and capability-awareness arc after the operator rejected route prescription in Capability leverage, then rejected unopposed narration as sufficient permission for unfamiliar users. Question: what changed when routine authority became explicit, and does the result preserve one-entry simplicity, earned autonomy, and operator-owned gates?
 
 **Freshness check (run evidence):**
 
-- `python harness/tools/record.py history --write` -> 263 entries.
-- `python harness/tools/record.py learning --write` -> 60 recent + 236 archived markers.
+- `python harness/tools/record.py history --write` -> 274 entries.
+- `python harness/tools/record.py learning --write` -> 60 recent + 254 archived markers.
 - `python verify.py` -> OK, trail integrity checks pass.
 - Gate: PASS (arc-claims allowed).
 
 ## Current claims
 
-### 1. The immediate limiter was distributed orchestration policy, not missing capability
+### 1. Transparency and permission are now separate authority variables
 
-Improve already owned the single normal entry point, but Improve, Destination, and Orient repeated overlapping reasons for scheduling services. Suite v4.29.1 replaced those lists with two purpose tests in Improve and small acceptance contracts in the triggered services. It also resolved overlap once: Destination runs first, then one Orient reads the changed Destination and full trail.
+Intent narration remains mandatory for substantive Improve work, but silence no longer authorizes examination. Without explicit delegation, the operator confirms Intent's interpretation and Improve's proposed change. This supersedes the August 13 proceed-unless-corrected default while retaining its separation between current-run mandate and durable cross-run direction.
 
-**Falsifiable by:** a future service-scheduling change requiring policy edits outside Improve when no service authority boundary changed, or a run still duplicating Orient after a Destination change under the new contract.
+**Falsifiable by:** a supervised Improve run examining the target before Intent confirmation, acting before Proceed, or treating narration itself as permission.
 
-### 2. Research rigor became locally purpose-defeating when uncertainty automatically produced experiments
+### 2. Earned routine autonomy is explicit and scoped rather than ambient
 
-The recent arc moved from first-run simulation to newcomer protocol, then to overlap protocol, fixture, manifest, host qualification, and an interactive invocation. Each step had an evidentiary rationale, yet the sequence made the operator lose track of what was happening and why. The interrupted overlap run produced no behavioral result. Its protocols remain historical evidence, not an obligation to resume.
+The operator may delegate the Intent gate, the Improve gate, or both for one prompt or durably in Destination. Silence, familiarity, accumulated trust, prior autonomous behavior, and host autopilot are not delegation evidence. Delegated runs still narrate interpretation, state the proposed action, report the result, verify it, and write Trail evidence.
 
-**Falsifiable by:** ordinary verification repeatedly failing to distinguish a material product claim that a bounded experiment then resolves at lower total cost, or the operator finding similarly instrumented sequences easier to steer than direct Improve work.
+**Falsifiable by:** an agent inferring delegation without a prompt or confirmed Destination statement, or delegated execution suppressing narration, proposal visibility, verification, or the final result line.
 
-### 3. Trustworthy capability per token is a governing viability criterion, not a size target
+### 3. Routine delegation does not cross operator-owned authority boundaries
 
-The operator continues to seek trustworthy capability per token and explicitly rejects control prose that bloats the skills. The v4.29.1 change removed 3,273 bytes while retaining asserted reasoning, evidence, operator gates, service order, manual overrides, and standalone behavior. This supports removing duplicated governance, not equating shorter text with better reasoning.
+Destination questions, direction changes, operator-declared consequential actions, and deliberate reductions in reasoning, memory, learning, or evidence capability remain blocking in supervised and delegated operation. This preserves the operator as owner of the reference signal and hard boundaries while leaving route selection delegable.
 
-**Falsifiable by:** behavioral evidence showing that the compressed scheduler misses a case the prior purpose tests would have caught, or a future simplification reducing cost while degrading reasoning, memory, learning, operator control, or evidence integrity.
+**Falsifiable by:** a delegated Improve run answering a Destination question itself, changing durable direction, or crossing a declared consequential gate without explicit operator authorization.
 
-### 4. Capability count and operator burden remain separate variables
+### 4. One-entry simplicity survived, but supervised interaction cost increased
 
-The arc has repeatedly improved first contact by moving Intent, Trail, Destination, and Orient out of the operator's routine orchestration burden while preserving their distinct jobs. The same distinction now applies internally: separate capabilities can remain valuable while their control policy is centralized and expressed once.
+Improve remains the only normal command, and Intent, Trail, Destination, and Orient retain automatic composition. No mode command, trust score, maturity ladder, state file, or host-specific UI was added. A supervised iteration now has two blocking exchanges, so the operator command surface stayed simple while first-run interaction became more deliberate.
 
-**Falsifiable by:** a preserved internal capability imposing unavoidable routine translation or invocation cost, or central ownership making a service's authority boundary less visible in real use.
+**Falsifiable by:** a new user needing to invoke another skill to select authority, or the two routine pauses making the first useful run materially harder to complete than the prior workflow.
 
-### 5. Adoption and overlap evidence remain bounded rather than promoted into a queue
+### 5. The authority contract is semantically coherent but behaviorally unproven
 
-One supervised no-ACM invocation passed on a fixed task and host. No independent newcomer has completed an unassisted first run, and the consent-gated observation remains blocked until an eligible participant exists. Separated service routing passed prior tests; Destination-plus-Orient behavior remains untested because the authorized overlap invocation was interrupted. Neither gap automatically outranks a directly evidenced product limitation.
+Two isolated textual readers exercised unconfigured, prompt-delegated, Destination-delegated, autopilot-only, Specify, and delegated-plus-Destination scenarios. The first exposed an Intent skip ambiguity and unclear stopped/silence summaries; both were repaired, and the second found no remaining contradiction. No independent newcomer or different host has yet demonstrated the behavior live.
 
-**Falsifiable by:** an eligible newcomer observation or a future naturally occurring overlap run providing new evidence, or either unresolved boundary blocking an actual user workflow.
+**Falsifiable by:** a real invocation skipping a required pause, treating Specify as a local patch instead of restarting Intent, or letting routine delegation mute a Destination question despite the textual contract.
 
-### 6. The operator interruption was valid loop evidence
+### 6. Capability awareness is now target-agnostic and subordinate to Purpose
 
-The loop's own records describe every experimental step, but local auditability did not preserve operator-level situational awareness across the sequence. Observable Autonomy requires evidence that helps the operator steer while work is happening, not only reconstruction afterward. Stopping and cleaning the experiment was therefore a correction to the learning process, not a loss of rigor.
+Capability leverage asks only whether changed capability alters what is possible or worthwhile for the target. Its former general/model/host taxonomy, named evaluation dimensions, delegated-agent example, and self-targeting condition were removed across entries 272-273. Destination and generic Purpose reasoning determine what the target includes and which capability consequences matter.
 
-**Falsifiable by:** the operator being able to reconstruct and steer a comparable sequence from the normal updates without extra explanation, or a lighter process hiding a consequential decision that the prior ceremony would have exposed.
+**Falsifiable by:** capable readers failing to derive relevant capability scope from target purpose without a self-targeting branch, or future edits reintroducing a current mechanism as the required route.
 
 ## What the next runs should test
 
-1. Challenge one remaining duplicated control or ACM-reading rule at a time, starting from measured prompt burden and preserving the behavior it exists to protect.
-2. Examine whether Trail's operational contract can be separated from historical rationale and examples without reducing append-only evidence quality.
-3. Use ordinary repository checks or a focused behavior test first. Create an experiment only when a named material claim cannot be distinguished that way.
-4. Observe an unassisted newcomer when an eligible consenting participant exists; do not manufacture urgency around a blocked boundary.
-5. Revisit service overlap only if a real run exposes ambiguity that the centralized controller does not resolve.
+1. Observe a new user completing one supervised Improve run and deciding whether to delegate a later run; measure control, comprehension, and interaction friction together.
+2. Exercise Specify at both gates on another host and verify that control returns to Intent before fresh examination rather than patching the prior proposal.
+3. Run Improve with both routine gates explicitly delegated, then let a real unresolved direction emerge and verify that Destination still pauses for the operator.
+4. Let a future model encounter Capability leverage naturally and observe whether it derives a useful route not named by the current suite.
 
 ## Active operational rules
 
-- Optimize trustworthy capability per resource; treat size and control-term counts as disposable local diagnostics, never standing targets.
-- Preserve reasoning, memory, learning, operator control, and evidence integrity. Ask the operator before deliberately reducing any of them.
-- Keep Improve as the sole full-suite scheduler. Triggered services accept named questions and own only their domain behavior.
-- Prefer purpose tests over trigger taxonomies. Add a discriminating rule only after evidence shows the purpose test misroutes work.
-- Do not turn every uncertainty into an experiment. State the claim and use the cheapest check that can falsify it.
-- Keep incomplete and interrupted invocations visible; never promote them into behavioral evidence or silently replace them.
-- Explain active work in terms of the product question it resolves so the operator can steer before the Trail is written.
+- Require explicit prompt or confirmed Destination evidence before skipping either routine gate; never infer delegation from trust or host settings.
+- Keep interpretation, proposed action, verification, final result, and Trail evidence visible in supervised and delegated runs.
+- On Specify, restart Intent and re-examine; never patch the old proposal under a changed mandate.
+- Never let routine delegation answer Destination, approve direction change, cross an operator-declared consequential gate, or authorize cognitive-capability reduction.
+- Keep Improve as the single normal entry point; do not add authority modes, scores, commands, or files without behavioral evidence that explicit delegation is insufficient.
+- End every Improve run with exactly one outcome-shaped result line and link to detail instead of repeating the Trail.
+- Prefer purpose tests over trigger taxonomies and mechanism examples; apply prior genericity reversals at decision time before adding skill conditions.
 - Preserve append-only Trail history and regenerate derived ACM artifacts after every append.
-- Leave unrelated worktree changes untouched and unstaged.
 
 ## Loop-effectiveness notes
 
-**Quality bars tested in this read:** scheduler ownership, prompt-weight reduction, retained textual contracts, append-only evidence integrity, and operator steerability across the recent research sequence.
+**Quality bars tested in this read:** textual authority coherence, separation of routine and operator-owned decisions, one-entry command simplicity, generic capability-lens scope, append-only evidence integrity, and consistency of first-contact documentation.
 
-**Result:** scheduler ownership CENTRALIZED; 3,273-byte operational reduction VERIFIED; asserted capability preservation PASS at contract level; full repository integrity PASS; operator steerability FAILED during the overlap sequence and triggered this correction.
+**Result:** authority separation PASS at contract level; one-entry command surface PRESERVED; explicit outcome summaries ADDED; generic capability scope PASS under isolated interpretation; repository integrity PASS.
 
-**Bars not tested:** behavioral scheduler precision across repeated real runs; cross-model interpretation of the compressed controller; unassisted newcomer adoption; completed Destination-plus-Orient overlap; lifecycle capability-per-token trend near silence.
+**Bars not tested:** unassisted newcomer behavior; cross-host gate fidelity; real Specify re-entry; delegated execution that naturally triggers Destination; interaction cost over repeated supervised runs; independent model-family evaluation.
 
-**Double-loop finding:** the governing variable was never "maximize resolved uncertainties" or "minimize skill size." It is trustworthy capability per token under operator control. The experiment-heavy arc optimized evidentiary closure locally while imposing enough translation cost to weaken steering.
+**Double-loop finding:** the governing variable changed from "visible interpretation is sufficient permission" to "permission is explicit unless routine authority has been delegated." The recurring operator-gate findings were not asking for more narration; they exposed that observability and authorization had been treated as the same thing.
 
-**Deutero-learning finding:** the loop did eventually respond correctly to direct operator interruption, clean up disposable state, preserve the incomplete result, identify duplicated policy, and simplify the owning abstraction. It did not detect the growing legibility problem before the operator stopped it. Future runs must treat operator comprehension during execution as evidence, not defer observability to the final ledger.
+**Deutero-learning finding:** the loop's memory contained earlier genericity and authority warnings, but recent agents still embedded a self-targeting condition and initially left a mechanical-skip ambiguity. Operator correction plus cold semantic readers repaired both. The learning mechanism is useful but not self-enforcing; decision-time precedent checks and behavior tests remain necessary.
 
-[!REALIZATION] Lightweight trustworthy delegation is not achieved by deleting capabilities or by proving every edge case. It comes from preserving load-bearing cognition and evidence while giving each control decision one owner, one purpose, and the cheapest adequate check.
+[!REALIZATION] The suite now expresses earned autonomy as a scoped authority statement rather than an inferred level of trust. This preserves full routine autonomy while making the absence of delegation safe and legible. The next uncertainty is behavioral: whether two default pauses create confidence without recreating the ceremony the one-entry redesign removed.

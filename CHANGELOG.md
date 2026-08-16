@@ -1,5 +1,21 @@
 # Changelog
 
+## v4.31.0 — 2026-08-16
+
+- **Routine autonomy is now explicitly bounded instead of inherited from host autopilot.** With no explicit delegation, Intent pauses for **Confirm / Stop / Specify** and Improve pauses for **Proceed / Stop / Specify** before implementation. An operator may delegate either routine gate for one prompt or durably in Destination; delegation never answers Destination questions, approves direction changes, bypasses consequential-action gates, or authorizes cognitive-capability reductions. **Specify** restarts Intent and re-runs examination rather than patching an old proposal. Every Improve run ends with one crisp change-and-verification summary. `intent/SKILL.md` 1.7.0 -> 1.8.0; `improve/SKILL.md` 3.18.2 -> 3.19.0.
+
+## v4.30.2 — 2026-08-16
+
+- **Capability leverage is fully target-agnostic.** Removed its self-targeting condition. When the suite is the target, the relevance of its reasoning and operation now derives from the target's purpose and the operator-held Destination rather than a special case in Improve. `improve/SKILL.md` 3.18.1 -> 3.18.2.
+
+## v4.30.1 — 2026-08-16
+
+- **Capability leverage now defines the question without prescribing its answer.** Removed the required general/model/host classification, named comparison dimensions, delegated-agent example, and survey warning from the new lens. Improve now asks only whether changed capability alters what is possible or worthwhile, includes its own reasoning and operation during self-targeting, and leaves the route to purpose and evidence. `improve/SKILL.md` 3.18.0 -> 3.18.1.
+
+## v4.30.0 — 2026-08-16
+
+- **Improve can now discover leverage from an evolving AI execution environment during normal examination.** The new Capability leverage lens asks whether a target is still paying to compensate for a limitation the current model, host, tool, or orchestration environment no longer has. It separates broadly available LLM capabilities from model-specific behavior and host-specific affordances, then weighs lifecycle cost, trust boundaries, portability, and fallback behavior before adoption. The lens applies recursively during self-targeting without creating a mandatory technology-watch process or assuming newer capabilities are better. `improve/SKILL.md` 3.17.2 -> 3.18.0.
+
 ## v4.29.3 — 2026-08-13
 
 - **High-Fidelity writer splitting is now deterministic across agents.** Standard Trail composition is the explicit default. Independent writing activates only from an operator request or a pre-existing execution contract, never from task consequence alone. Before Act, the host must support a separate-writer round trip; Improve supplies the exact record and scheduling decisions, the writer records without recomputing them, and Improve resumes service execution afterward. `improve/SKILL.md` 3.17.1 -> 3.17.2.

@@ -14,9 +14,9 @@ Compatible with Claude (skills / Agent SDK), GitHub Copilot (custom skills), and
 
 ![The full architecture illustrated as a Storm P-style Rube Goldberg machine: Operator's Intent feeds the Improve loop, the audit trail runs as a conveyor belt through the whole machine, Orient reads the arc and feeds learning back in, and the machine converges to silence.](./stormpInspired.png)
 
-## The Suite Improved Itself — [355 documented iterations](./.acm/ITERATION-COUNT.md)
+## The Suite Improved Itself — [362 documented iterations](./.acm/ITERATION-COUNT.md)
 
-The suite ran on itself **355 times** across four eras and two complete rewrites. The earliest 30 rely on bulk or reconstructed provenance; iterations 31 onward have per-iteration GENBA or Trail records preserved in git, though one commit can contain multiple iterations. The full provenance breakdown — including git SHAs, verification commands, and an honest account of what is independently verifiable — is in [ITERATION-COUNT.md](./.acm/ITERATION-COUNT.md).
+The suite ran on itself **362 times** across four eras and two complete rewrites. The earliest 30 rely on bulk or reconstructed provenance; iterations 31 onward have per-iteration GENBA or Trail records preserved in git, though one commit can contain multiple iterations. The full provenance breakdown — including git SHAs, verification commands, and an honest account of what is independently verifiable — is in [ITERATION-COUNT.md](./.acm/ITERATION-COUNT.md).
 
 Convergence was declared only when **three independent evaluators from distinct model families** (Claude, Gpt, Gemini) each ran the loop and found nothing left to change.
 
@@ -95,10 +95,12 @@ Intent and Trail operate automatically around the work. Destination and Orient a
 
 ## Workflow
 
-1. **Run:** Invoke `improve` with a concrete prompt. Intent narrates the mandate, Improve acts and verifies, and Trail records the result.
+1. **Run:** Invoke `improve` with a concrete prompt. Without explicit delegation, Intent asks you to confirm its interpretation and Improve asks you to approve its proposed change. Each accepts Stop or Specify instead.
 2. **Keep going:** Invoke `improve` again when there is more work. Improve automatically schedules Destination when broader direction needs confirmation and Orient when accumulated evidence makes the current orientation stale.
 
 The user remembers one command: `/improve`. `/destination` and `/orient` remain manual overrides, not routine responsibilities.
+
+After trust is earned, explicitly delegate either routine gate for one prompt or in Destination. Delegation preserves visible narration and the final change summary; it never answers Destination questions or bypasses operator-declared consequential gates. A host-wide autopilot setting does not replace this boundary.
 
 ## Quickstart (First Successful Run)
 

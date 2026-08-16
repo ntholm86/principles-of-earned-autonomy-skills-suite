@@ -43,6 +43,8 @@ The engine may autonomously pursue reductions that preserve reasoning, memory, l
 
 The operator owns the Destination and any change to it. Within a confirmed Destination, the engine may autonomously select and implement the highest-leverage route while leaving observable evidence. The historical claim that a human must approve every implementation choice is superseded; explicit delegation can include choosing what to implement.
 
+Without explicit delegation, routine Improve work is supervised: the operator confirms Intent's interpretation before examination and confirms Improve's proposed change before implementation. The operator may delegate either routine gate for one prompt or durably in Destination after trust is earned. Delegation must be explicit; silence, accumulated trust, and a host-wide autonomy setting do not grant it. Routine delegation never answers a Destination question, authorizes a direction change, or bypasses an operator-declared consequential-action gate. The operator may narrow or revoke delegation at any time.
+
 Direction changes and operator-declared consequential actions remain human-gated. The framework should support explicit boundaries that reasoning quality or accumulated trust cannot override. Private enterprise evidence remains private when confidentiality or ownership obligations apply.
 
 Convergence is a renewable lease tied to the current Destination, artifact, and available model frontier. The operational minimum is three independent fresh-session evaluations by current frontier-capable models from three distinct model families. When a newly available model plausibly extends that frontier, it must independently challenge the converged artifact. Silence renews the lease without forcing the existing evaluators to rerun; a material change resets the chain and requires three fresh family-diverse evaluations of the changed artifact. Any Destination change invalidates all prior convergence evidence for the old Destination and starts a new three-family evaluation chain. Model selection remains an operator judgment based on capability evidence and practical access, rather than a permanent vendor or model list.
@@ -86,6 +88,16 @@ Integration with a particular autonomous harness remains a horizon rather than t
 The sections below preserve how the Destination evolved; they are provenance, not additional active instructions. Still-active commitments have been carried into this candidate. Superseded items include the May 2026 priority sequence, mandatory approval of every implementation choice, fixed use of Retrospect and the old Memory Model vocabulary, and any implication that the current skills or architecture are immutable. Older references to Commander's Intent mean Operator's Intent in the current principles.
 
 <!-- destination-history -->
+
+---
+
+## Destination note - 2026-08-16 (routine autonomy is explicitly delegated, never inherited from autopilot)
+
+Sourced from an operator-confirmed Improve run about the tension between newcomer control and earned full autonomy. The operator accepted this boundary: with no explicit authority agreement, Intent and Improve pause for confirmation before examination and implementation. After trust is earned, the operator may delegate either routine pause for one prompt or durably in Destination. The delegation does not extend to Destination questions, direction changes, operator-declared consequential actions, or deliberate cognitive-capability reductions.
+
+The distinction preserves simplicity by keeping Improve as the single entry point and using one authority concept rather than separate beginner, expert, or autopilot workflows. It preserves transparency because interpretation, proposed action, final outcome, and evidence remain visible in both supervised and delegated operation. A host-wide autonomy setting is insufficient because it cannot distinguish routine execution from questions only the operator can answer.
+
+The route remains open: this note does not prescribe UI controls, trust scores, maturity levels, or a storage schema for delegation. It defines who may authorize which class of decision and requires delegation evidence to be explicit.
 
 ---
 

@@ -1,6 +1,6 @@
 # Iteration count — verified evidence
 
-_Last updated: 2026-08-14_
+_Last updated: 2026-08-16_
 
 This document answers: **how many self-targeted iterations did this skills suite go through, and what proves it?**
 
@@ -14,8 +14,8 @@ This document answers: **how many self-targeted iterations did this skills suite
 | v1 (runs 26-30) | 2026-04-18 | 5 | Single commit; reconstruction acknowledged in commit message |
 | v1 (runs 31-50) | 2026-04-18 — 2026-04-19 | 18 | Individual commits with SHAs |
 | v2 (runs 51-97) | 2026-04-19 — 2026-04-22 | 41 | Individual commits with SHAs |
-| v3 (audit-trail) | 2026-04-23 — present | 266 | Committed Trail entries; some commits contain multiple iterations |
-| **Total** | | **355** | |
+| v3 (audit-trail) | 2026-04-23 — present | 273 | Committed Trail entries; some commits contain multiple iterations |
+| **Total** | | **362** | |
 
 Excluded from count: 8 external-target runs (62, 66, 67, 76, 77 + 2 vectorium v3 entries + 1 agent-context-memory v3 entry, 2026-08-01).
 
@@ -62,7 +62,7 @@ External targets excluded:
 
 ### Era 4: v3 audit-trail (individual commits)
 
-**Evidence:** 269 entries parsed from `.acm/audit-trail.md` as of 2026-08-14. The audit trail format records interpretation, examination, decisions, actions, and reflection per session. Three entries name a different repo as their primary subject — two vectorium entries (external game engine) and one `agent-context-memory` entry (2026-08-01, contributing a memory-model fix upstream to the ACM specification this suite implements) — the remaining 266 are self-targeted. The entries are preserved in git, but multiple iterations can land in one commit.
+**Evidence:** 276 entries parsed from `.acm/audit-trail.md` as of 2026-08-16. The audit trail format records interpretation, examination, decisions, actions, and reflection per session. Three entries name a different repo as their primary subject — two vectorium entries (external game engine) and one `agent-context-memory` entry (2026-08-01, contributing a memory-model fix upstream to the ACM specification this suite implements) — the remaining 273 are self-targeted. The entries are preserved in git, but multiple iterations can land in one commit.
 
 The v3 era also introduced:
 - `verify.py` — a 14-check mechanical verifier that enforces trail integrity at every commit
@@ -164,7 +164,7 @@ This provenance record was created on 2026-06-01 — after the fact. The v1 era 
 
 This is a **retroactive reconstruction** of the v1 trail from the git log. We are honest about that. The git history itself is not retroactive — it has been accumulating since 2026-04-18 and its integrity is cryptographically verifiable by anyone who clones the repository.
 
-The claim of 355 self-targeted iterations is conservative. It counts only iterations that produced a GENBA entry or audit-trail entry. Many commits represent significant work (design discussions, infrastructure changes, documentation passes) that did not receive a run number. After the cybernetics grounding is committed, the git log contains 470 total commits; the iteration count is 355. Commit count and iteration count measure different things because some commits preserve multiple iterations.
+The claim of 362 self-targeted iterations is conservative. It counts only iterations that produced a GENBA entry or audit-trail entry. Many commits represent significant work (design discussions, infrastructure changes, documentation passes) that did not receive a run number. Before this iteration is committed, the git log contains 471 total commits; the iteration count is 362. Commit count and iteration count measure different things because some commits preserve multiple iterations.
 
 ---
 
