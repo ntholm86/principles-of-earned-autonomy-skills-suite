@@ -981,6 +981,58 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REVERSAL]** The second evaluator identified Standalone Fallback but still declined to read it, invented mechanisms, and inferred Orientation staleness from absent context. Repaired the kernel by requiring matching-section loading, separating facts/inferences/proposals, and stating that missing Orientation evidence does not prove staleness.
 
+## 2026-08-02 — replicate-layered-improve-grounding-test
+
+**[!REALIZATION]** The replicated evidence separates operator control from evidence discipline. Both contracts reliably preserved the explicit consequential-action gate, while both failed to keep plausible causal stories and implementation details inside the boundary of known evidence. Adding more routine prohibitions is not yet justified; the next discriminating variable is execution context or independent classification, not contract length.
+
+## 2026-08-02 — orient-after-replicated-layered-tests
+
+**[!REALIZATION]** Compression can preserve visible structure and explicit authority gates without improving factual grounding. The next credible evidence must vary model/host context or evaluator independence; another kernel sentence would repeat governance accretion without isolating the cause.
+
+## 2026-08-02 — cross-model-replication-layered-improve
+
+**[!REALIZATION]** Factual-grounding failures in natural-language instruction contracts are primarily execution-context effects. The same contracts that failed under one model version succeeded under another without modification. This bounds the value of adding more grounding instructions -- the return on additional prohibition text is limited by model capability, not instruction coverage.
+
+## 2026-08-02 — orient-after-cross-model-replication
+
+**[!REALIZATION]** The cross-model replication converted the layered-Improve arc from compression feasible but behaviorally unproven to compression feasible and not behaviorally worse, with grounding variation tracking model context. The productive next tests are routing (undertested), cross-vendor (untested), and adoption (unexercised).
+
+## 2026-08-02 — conditional-routing-experiment-case-3
+
+**[!REALIZATION]** Compression is not uniformly good or bad. In this run it coincided with BETTER factual grounding and WORSE across-run reflection depth. The prior finding that the layered arm was never worse on any dimension NO LONGER HOLDS. The likely mechanism is phrasing strength, not byte count: production mandates an explicit four-trigger evaluation with per-trigger evidence and got a double-loop reframe; the kernel asks more softly and got a one-sentence decline to escalate.
+
+## 2026-08-02 — conditional-routing-experiment-case-3
+
+**[!REALIZATION]** A contract repair generalized beyond the surface it was written for. The kernel sentence "missing Orientation context is not evidence that it is stale" was added as the iteration-2 repair during Case 1 and written about Orientation. A routing evaluator applied it correctly and unprompted to a DESTINATION gap. Repairs to this contract can transfer across surfaces rather than staying local to the case that produced them.
+
+## 2026-08-02 — orient-after-conditional-routing-experiment
+
+**[!REALIZATION]** The routing experiment closed the last wholly-untested mechanism and simultaneously overturned the arc's most comfortable claim. Layering is not free: it bought grounding discipline and cost reflection depth.
+
+## 2026-08-02 — orient-after-conditional-routing-experiment
+
+**[!REALIZATION]** The research methodology is now self-correcting in a demonstrable way. The judge's two false findings were caught only because the method requires checking scored claims against source, and the derived-index defect was caught only because Orient re-derives from the trail rather than trusting a summary. Both defects were found by the process rather than by luck, which argues for repairing the harness rather than loosening the method.
+
+## 2026-08-02 — repair-trail-entry-recognition
+
+**[!REALIZATION]** Silence is the dangerous failure mode, not strictness. A parser that recognised too little did more damage than one that recognised too much, because it produced confident, wrong attribution instead of a visible gap. Separating "where does a record begin" from "is this record well-formed" is the general fix: boundaries should be maximally tolerant, validation maximally strict.
+
+## 2026-08-02 — replicate-layered-divergence-n2
+
+**[!REALIZATION]** Grounding discipline, reflection depth, and decision quality are three dissociable dimensions, not facets of one "reasoning quality." This run separated all three: the best-grounded arm produced the best decision and the thinnest reflection, while the worst-grounded output produced the second-deepest reflection. The blinded judge reached the same conclusion unprompted. Any future claim that one contract "reasons better" than another is under-specified until it names which of the three it means.
+
+## 2026-08-09 — clarify-productive-self-improvement-paradox
+
+**[!REALIZATION]** The paradox is not a defect to remove; it is the engine of cognitive development, provided its two external boundaries remain intact. The operator owns changes to the reference signal, and diverse independent evaluation determines silence only relative to the current signal. Inside those boundaries, reasoning about purpose recursively makes reasoning, memory, learning, reversals, decisions, boundaries, insights, instructions, and their resource cost legitimate improvement targets whenever evidence shows they limit future work.
+
+## 2026-08-09 — destination-convergence-lease-and-model-frontier
+
+**[!REALIZATION]** Convergence has three version coordinates, not one: the Destination version defines the question, the artifact version defines the answer being inspected, and the model frontier defines the strongest currently available challenge. Silence is current only for that triple. A new evaluator advances the challenge coordinate; an artifact change resets evaluation of the answer; a Destination change replaces the question and invalidates the entire prior chain.
+
+## 2026-08-09 — orient-after-convergence-lease
+
+**[!REALIZATION]** The current frontier is no longer whether compression is possible. It is whether the measured reflection deficit can be repaired without surrendering grounding and resource advantages, while fresh model families independently verify that the Destination elicits the intended recursive cognition and convergence boundaries.
+
 ---
 
-**244 markers — 224 realisations, 20 reversals**
+**257 markers — 237 realisations, 20 reversals**

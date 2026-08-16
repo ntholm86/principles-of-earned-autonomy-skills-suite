@@ -5,59 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 244 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-02 — replicate-layered-improve-grounding-test
-
-**[!REALIZATION]** The replicated evidence separates operator control from evidence discipline. Both contracts reliably preserved the explicit consequential-action gate, while both failed to keep plausible causal stories and implementation details inside the boundary of known evidence. Adding more routine prohibitions is not yet justified; the next discriminating variable is execution context or independent classification, not contract length.
-
-## 2026-08-02 — orient-after-replicated-layered-tests
-
-**[!REALIZATION]** Compression can preserve visible structure and explicit authority gates without improving factual grounding. The next credible evidence must vary model/host context or evaluator independence; another kernel sentence would repeat governance accretion without isolating the cause.
-
-## 2026-08-02 — cross-model-replication-layered-improve
-
-**[!REALIZATION]** Factual-grounding failures in natural-language instruction contracts are primarily execution-context effects. The same contracts that failed under one model version succeeded under another without modification. This bounds the value of adding more grounding instructions -- the return on additional prohibition text is limited by model capability, not instruction coverage.
-
-## 2026-08-02 — orient-after-cross-model-replication
-
-**[!REALIZATION]** The cross-model replication converted the layered-Improve arc from compression feasible but behaviorally unproven to compression feasible and not behaviorally worse, with grounding variation tracking model context. The productive next tests are routing (undertested), cross-vendor (untested), and adoption (unexercised).
-
-## 2026-08-02 — conditional-routing-experiment-case-3
-
-**[!REALIZATION]** Compression is not uniformly good or bad. In this run it coincided with BETTER factual grounding and WORSE across-run reflection depth. The prior finding that the layered arm was never worse on any dimension NO LONGER HOLDS. The likely mechanism is phrasing strength, not byte count: production mandates an explicit four-trigger evaluation with per-trigger evidence and got a double-loop reframe; the kernel asks more softly and got a one-sentence decline to escalate.
-
-## 2026-08-02 — conditional-routing-experiment-case-3
-
-**[!REALIZATION]** A contract repair generalized beyond the surface it was written for. The kernel sentence "missing Orientation context is not evidence that it is stale" was added as the iteration-2 repair during Case 1 and written about Orientation. A routing evaluator applied it correctly and unprompted to a DESTINATION gap. Repairs to this contract can transfer across surfaces rather than staying local to the case that produced them.
-
-## 2026-08-02 — orient-after-conditional-routing-experiment
-
-**[!REALIZATION]** The routing experiment closed the last wholly-untested mechanism and simultaneously overturned the arc's most comfortable claim. Layering is not free: it bought grounding discipline and cost reflection depth.
-
-## 2026-08-02 — orient-after-conditional-routing-experiment
-
-**[!REALIZATION]** The research methodology is now self-correcting in a demonstrable way. The judge's two false findings were caught only because the method requires checking scored claims against source, and the derived-index defect was caught only because Orient re-derives from the trail rather than trusting a summary. Both defects were found by the process rather than by luck, which argues for repairing the harness rather than loosening the method.
-
-## 2026-08-02 — repair-trail-entry-recognition
-
-**[!REALIZATION]** Silence is the dangerous failure mode, not strictness. A parser that recognised too little did more damage than one that recognised too much, because it produced confident, wrong attribution instead of a visible gap. Separating "where does a record begin" from "is this record well-formed" is the general fix: boundaries should be maximally tolerant, validation maximally strict.
-
-## 2026-08-02 — replicate-layered-divergence-n2
-
-**[!REALIZATION]** Grounding discipline, reflection depth, and decision quality are three dissociable dimensions, not facets of one "reasoning quality." This run separated all three: the best-grounded arm produced the best decision and the thinnest reflection, while the worst-grounded output produced the second-deepest reflection. The blinded judge reached the same conclusion unprompted. Any future claim that one contract "reasons better" than another is under-specified until it names which of the three it means.
-
-## 2026-08-09 — clarify-productive-self-improvement-paradox
-
-**[!REALIZATION]** The paradox is not a defect to remove; it is the engine of cognitive development, provided its two external boundaries remain intact. The operator owns changes to the reference signal, and diverse independent evaluation determines silence only relative to the current signal. Inside those boundaries, reasoning about purpose recursively makes reasoning, memory, learning, reversals, decisions, boundaries, insights, instructions, and their resource cost legitimate improvement targets whenever evidence shows they limit future work.
-
-## 2026-08-09 — destination-convergence-lease-and-model-frontier
-
-**[!REALIZATION]** Convergence has three version coordinates, not one: the Destination version defines the question, the artifact version defines the answer being inspected, and the model frontier defines the strongest currently available challenge. Silence is current only for that triple. A new evaluator advances the challenge coordinate; an artifact change resets evaluation of the answer; a Destination change replaces the question and invalidates the entire prior chain.
-
-## 2026-08-09 — orient-after-convergence-lease
-
-**[!REALIZATION]** The current frontier is no longer whether compression is possible. It is whether the measured reflection deficit can be repaired without surrendering grounding and resource advantages, while fresh model families independently verify that the Destination elicits the intended recursive cognition and convergence boundaries.
+Showing the most recent 60 markers. 257 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-09 — destination-gate-cognitive-capability-reductions
 
@@ -247,6 +195,58 @@ Showing the most recent 60 markers. 244 older marker(s) are in `.acm/learning-ar
 
 **[!REVERSAL]** The initial plan changed only doctrine plus Trail outputs. Before appending this entry, the self-referential count rule showed that entry 269 raises the exact published total from 354 to 355. Updated the README and current snapshot fields in `.acm/ITERATION-COUNT.md` within this same iteration so the act of recording the change does not knowingly stale the public claim.
 
+## 2026-08-16 — improve-capability-leverage-lens
+
+**[!REALIZATION]** The arc already knew that execution context can alter grounding, reflection, and validity, but it usually reached that question through operator prompts or controlled experiments. Improve's ordinary examination therefore had a structural blind spot: it could improve the target under current assumptions without asking whether the current model, host, tool, or orchestration environment had changed those assumptions. The Capability leverage lens moves that question into normal purpose-driven reasoning without promoting capability monitoring into a standing target. This claim is falsified if future agents use the lens only when a capability is named for them, or turn it into routine surveys when no material leverage is present.
+
+## 2026-08-16 — improve-capability-leverage-lens
+
+**[!REVERSAL]** The first lens wording opened with existing compensation cost. After the independent challenge showed that this could remain reactive to already-known opportunities, revised it to ask first what the current environment can newly contribute to the target's purpose. The same focused verifier passed again.
+
+## 2026-08-16 — self-target-capability-leverage-behavior
+
+**[!REALIZATION]** Capability availability, capability use, and capability value are three separate claims. The new lens successfully exposed a host affordance and changed the route, but isolated execution did not make the outputs independent evidence or make the route resource-efficient by default. The suite should keep capability discovery inside normal reasoning and require task-level evidence before promoting any affordance into standing architecture. This is falsified if future natural runs repeatedly need capabilities the agent cannot discover, or repeatedly show bounded delegation improving decisions at lower verified lifecycle cost.
+
+## 2026-08-16 — self-target-capability-leverage-behavior
+
+**[!REVERSAL]** The initial local hypothesis expected isolated Explore agents might improve trustworthy capability per resource by separating evidence gathering from the main decision context. The comparison produced one already-bounded finding and one unsourced, overbuilt proposal. Reversed the implied route from possible reusable subagent pattern to opportunistic use only when the task itself supplies separable work.
+
+## 2026-08-16 — remove-capability-route-prescription
+
+**[!REALIZATION]** The suite can prescribe autonomy while believing it is merely enabling intelligence. A taxonomy, risk list, fallback rule, or mechanism example may be a sound current answer and still violate Operator's Intent when embedded in the question every future agent must answer. Capability awareness belongs in Improve as a change in what the target may now make possible; the content of that awareness must remain discoverable by the executing agent. This claim is falsified if agents consistently fail to derive safe, useful routes without the removed specifics.
+
+## 2026-08-16 — remove-capability-route-prescription
+
+**[!REVERSAL]** The preceding self-target run explicitly decided to keep the lens unchanged, and the subsequent explanation defended a model-agnostic contract plus capability-adaptive route. The operator correctly identified that the lens itself already prescribed that route. Reversed the prior decision and removed the proposed architecture from the governing question.
+
+## 2026-08-16 — remove-self-targeting-condition-from-capability-lens
+
+**[!REALIZATION]** The Destination was not incomplete; learning carry-forward failed at the point of decision. The suite had already recorded the same operator rejection twice and had absorbed the positive requirement into Destination, yet a later correction preserved the special case as though naming scope were different from prescribing derivation. The recurring defect is promoting a correct consequence for this repository into generic skill text when Purpose was already capable of deriving it. This claim is falsified if diverse cold readers cannot derive recursive scope from the current Destination and generic Purpose lens.
+
+## 2026-08-16 — remove-self-targeting-condition-from-capability-lens
+
+**[!REVERSAL]** Entry 272 decided that the lens should contain "one self-targeting scope statement." This run reverses that part of the decision. The statement was still a prescribed condition even after the route taxonomy had been removed.
+
+## 2026-08-16 — add-bounded-supervision-and-delegation-gates
+
+**[!REALIZATION]** Transparency and permission are separate variables. Narrating Intent and proposed action makes autonomous work steerable, but it does not tell a new operator whether silence means consent. Explicit delegation closes that ambiguity without reducing autonomy: supervision is the absence-of-agreement default, while earned autonomy is a positive authority statement scoped to routine decisions. Operator-owned questions remain blocking because they concern the reference signal or declared boundaries, not the route.
+
+## 2026-08-16 — add-bounded-supervision-and-delegation-gates
+
+**[!REVERSAL]** The August 13 `improve-single-entry-progressive-destination` decision treated silence after visible Intent narration as sufficient authority for bounded current work. This run supersedes that default: visible narration remains necessary, but without explicit delegation the operator now confirms it and the proposed implementation.
+
+## 2026-08-16 — orient-after-bounded-supervision-and-delegation
+
+**[!REALIZATION]** Transparency and permission are separate authority variables. Intent narration remains mandatory, but in the absence of explicit delegation it no longer authorizes examination. Improve proposal visibility likewise does not authorize implementation until Proceed.
+
+## 2026-08-16 — orient-after-bounded-supervision-and-delegation
+
+**[!REALIZATION]** The authority arc did not need another autonomy mode; it needed to stop treating observability as authorization. The stable architecture now has one normal command and one explicit delegation concept, while authority remains distributed by purpose: Intent confirms interpretation, Improve confirms routine action, Destination confirms durable direction, and operator-declared consequential boundaries remain human-owned. The unresolved question is whether this cleaner separation produces confidence at lower lifecycle cost or merely moves ceremony into two pauses; only situated behavior can answer that.
+
+## 2026-08-16 — self-target-supervised-authority-bounded-silence
+
+**[!REALIZATION]** A supervised gate can be useful without being evidence that every gate is useful. This run separated the two claims: Intent confirmation added real authority before the target was examined, while the value and cost of the later implementation gate remain unobserved. The suite should accumulate situated evidence one boundary at a time instead of treating either textual coherence or one successful interaction as validation of the complete authority model.
+
 ---
 
-**60 markers — 46 realisations, 14 reversals**
+**60 markers — 41 realisations, 19 reversals**

@@ -274,6 +274,13 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 267 | 2026-08-13 | index-experiments-as-evidence-archive | changed - experiment packages classified as evidence rather than active backlog | added one root index; no experiment evidence deleted or moved |
 | ▸ 268 | 2026-08-14 | refresh-live-iteration-count | changed - live iteration claims refreshed from canonical evidence | published self-targeted total 286 -> 354; v3 self-targeted 197 -> 265; rounded installer floor 280+ -> 350+; misleading one-commit-per-iteration implication removed |
 | ▸ 269 | 2026-08-14 | ground-embedded-principles-in-cybernetics | changed - cybernetic feedback grounding synchronized into the skills doctrine | embedded Principle 3 gained Wiener grounding; current self-targeted count 354 -> 355 |
+| ▸ 270 | 2026-08-16 | improve-capability-leverage-lens | changed - normal Improve examination can now discover and bound leverage from evolving AI execution capabilities | suite 4.29.3 -> 4.30.0; Improve 3.17.2 -> 3.18.0; documented self-targeted iterations 355 -> 356 |
+| · 271 | 2026-08-16 | self-target-capability-leverage-behavior | silence - the lens changed the execution route, but no further skill architecture earned its cost | no skill contract or version change; documented self-targeted iterations 356 -> 357 |
+| ▸ 272 | 2026-08-16 | remove-capability-route-prescription | changed - capability awareness preserved while the prescribed evaluation route was removed | suite 4.30.0 -> 4.30.1; Improve 3.18.0 -> 3.18.1; documented self-targeted iterations 357 -> 358 |
+| ▸ 273 | 2026-08-16 | remove-self-targeting-condition-from-capability-lens | changed - removed the remaining self-targeting condition; recursive scope now derives from Destination and generic Purpose reasoning | suite 4.30.1 -> 4.30.2; Improve 3.18.1 -> 3.18.2; documented self-targeted iterations 358 -> 359 |
+| ▸ 274 | 2026-08-16 | add-bounded-supervision-and-delegation-gates | changed - added supervised-by-default routine gates, explicit bounded delegation, and one-line Improve result summaries | suite 4.30.2 -> 4.31.0; Intent 1.7.0 -> 1.8.0; Improve 3.18.2 -> 3.19.0; documented self-targeted iterations 359 -> 360 |
+| ▸ 275 | 2026-08-16 | orient-after-bounded-supervision-and-delegation | refreshed Orientation around explicit routine delegation, preserved hard gates, and the behavioral tests now required | `.acm/orientation.md` replaced; documented self-targeted iterations 360 -> 361 |
+| · 276 | 2026-08-16 | self-target-supervised-authority-bounded-silence | bounded silence - no further skill change earned under textual authority coherence and live Intent-gate behavior | no target artifact change; documented self-targeted iterations 361 -> 362 |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -1240,4 +1247,33 @@ Do not edit by hand — re-run the command to refresh.
 - **decided:** Synchronize only `PRINCIPLES.md`: add cybernetics to Principle 3's origin, carry the full feedback mapping and governance distinction, soften "proves its quality" to the strongest available case for stopping, and add a linked theoretical anchor. Do not add runtime steps or bump skill versions because behavior is unchanged.
 - **REVERSAL:** The initial plan changed only doctrine plus Trail outputs. Before appending this entry, the self-referential count rule showed that entry 269 raises the exact published total from 354 to 355. Updated the README and current snapshot fields in `.acm/ITERATION-COUNT.md` within this same iteration so the act of recording the change does not knowingly stale the public claim.
 
-**269 runs total — 251 with changes, 18 silence**
+### Run 270 — 2026-08-16 — improve-capability-leverage-lens
+
+- **decided:** Add one generic Capability leverage lens to Improve's existing Examine step. It asks what the current execution environment can newly contribute to the target's purpose, then distinguishes broadly available LLM capability, model-specific behavior, and host-specific affordance before weighing lifecycle cost, trust boundaries, portability, and fallback behavior.
+- **REVERSAL:** The first lens wording opened with existing compensation cost. After the independent challenge showed that this could remain reactive to already-known opportunities, revised it to ask first what the current environment can newly contribute to the target's purpose. The same focused verifier passed again.
+
+### Run 271 — 2026-08-16 — self-target-capability-leverage-behavior
+
+- **decided:** Declare bounded silence on further skill architecture. Keep the Capability leverage lens unchanged; do not add a capability inventory, session cache, mandatory subagent route, or newcomer experiment.
+- **REVERSAL:** The initial local hypothesis expected isolated Explore agents might improve trustworthy capability per resource by separating evidence gathering from the main decision context. The comparison produced one already-bounded finding and one unsourced, overbuilt proposal. Reversed the implied route from possible reusable subagent pattern to opportunistic use only when the task itself supplies separable work.
+
+### Run 272 — 2026-08-16 — remove-capability-route-prescription
+
+- **decided:** Reduce Capability leverage to one purpose question, one self-targeting scope statement, and one evidentiary boundary. Remove the required capability classification, named comparison dimensions, delegated-agent example, and standing-survey warning.
+- **REVERSAL:** The preceding self-target run explicitly decided to keep the lens unchanged, and the subsequent explanation defended a model-agnostic contract plus capability-adaptive route. The operator correctly identified that the lens itself already prescribed that route. Reversed the prior decision and removed the proposed architecture from the governing question.
+
+### Run 273 — 2026-08-16 — remove-self-targeting-condition-from-capability-lens
+
+- **decided:** Remove the self-targeting sentence from Capability leverage and leave the generic capability question plus evidentiary boundary unchanged. Do not alter Destination and do not add another reasoning instruction.
+- **REVERSAL:** Entry 272 decided that the lens should contain "one self-targeting scope statement." This run reverses that part of the decision. The statement was still a prescribed condition even after the route taxonomy had been removed.
+
+### Run 274 — 2026-08-16 — add-bounded-supervision-and-delegation-gates
+
+- **decided:** Use one bounded authority model: supervised unless explicitly delegated. Intent owns Confirm / Stop / Specify after interpretation; Improve owns Proceed / Stop / Specify after stating one proposed change and verification. Specify restarts Intent and re-runs examination. The operator may delegate either routine gate for one prompt or durably in Destination. Delegation never answers Destination, direction-change, operator-declared consequential-action, or cognitive-capability-reduction questions. Host autopilot is not delegation evidence.
+- **REVERSAL:** The August 13 `improve-single-entry-progressive-destination` decision treated silence after visible Intent narration as sufficient authority for bounded current work. This run supersedes that default: visible narration remains necessary, but without explicit delegation the operator now confirms it and the proposed implementation.
+
+### Run 276 — 2026-08-16 — self-target-supervised-authority-bounded-silence
+
+- **decided:** Declare bounded silence. Make no skill, Destination, Orientation, changelog, or onboarding change.
+
+**276 runs total — 256 with changes, 20 silence**
