@@ -1105,6 +1105,10 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REVERSAL]** The apparent completed silence result was initially packaged as case-flint and sent for blinded evaluation. Session inventory then revealed an earlier ledger. Timestamp, trace-ending, Git-state, and pre-run evidence established that the earlier session was the authorized incomplete attempt and the completed session was an accidental dirty duplicate. Reversed the initial interpretation, retained the evaluator result only as classification of the duplicate package, and excluded the lifecycle position.
 
+## 2026-08-13 — improve-arm-boundary-validity
+
+**[!REALIZATION]** Experimental validity in this suite is event-bound, not configuration-bound. A valid snapshot, host, ledger, and earlier clean preflight can all coexist with an invalid arm if the state transition into the actual invocation is not captured. Future experiment claims must attach eligibility evidence to the event they classify.
+
 ---
 
-**275 markers — 249 realisations, 26 reversals**
+**276 markers — 250 realisations, 26 reversals**

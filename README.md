@@ -1,6 +1,6 @@
 # Principles of Earned Autonomy - Skills Suite
 
-## AI loses the plot
+## Give AI Intent, Reasoning, Memory, and Evidence
 
 AI can write code quickly. It can also quietly lose your intent, forget decisions between and in sessions, drift toward an easier problem, and sound certain while building the wrong thing.
 

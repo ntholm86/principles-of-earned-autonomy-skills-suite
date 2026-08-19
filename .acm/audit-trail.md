@@ -16095,3 +16095,42 @@ Destination need: not triggered - the existing Destination already requires dura
 2. Add a CP850 mojibake detector to verify.py only if another recurrence appears - do not add a new verifier rule from one recovery without evidence it is a recurring ingress path.
 
 Cost: moderate - forensic byte inspection, exact mapping derivation, byte-level restoration, derived-surface regeneration, and verifier validation; no model calls.
+
+## 2026-08-19 - readme-four-part-offer-heading
+
+- target: skills-suite README opening
+- agent: GitHub Copilot
+- skill: improve
+- outcome: first README signal changed from a failure-mode heading to the four-part suite offer
+
+Ask: operator proposed "Give the AI: Intent, Reasoning, Memory, Evidence" and then explicitly requested the Improve skill. Interpreted as asking whether the line should become the first-message architecture, rather than merely preserving it as a draft phrase.
+
+[!DECISION] Replace only the opening heading with "Give AI Intent, Reasoning, Memory, and Evidence." The preceding version named the problem first ("AI loses the plot"), but the offer appeared only after five failure-mode bullets. The new heading states the suite's compact value immediately; the unchanged next sentence and bullets still provide recognition of intent loss, session amnesia, confident confabulation, self-evaluation blind spots, and reasoning drift.
+
+Prediction: a reader sees the four capabilities before framework vocabulary, then immediately sees the concrete AI failures they address; no technical or authority claim changes. Held: one-line README diff, opening reread intact, git diff --check clean.
+
+**Reflection:**
+- Current model: the opening needs both a clear offer and recognizable pain. Lead with the offer, then earn it with the failure modes; either alone is weaker.
+- Blind spot: no fresh reader tested whether "Reasoning" is clear enough without the next paragraph. The adjacent copy operationalizes it as examination, improvement, verification, and learning.
+- Imagined-reader pushback: the phrase can sound like a generic AI slogan. The following concrete failure list and the retained operator-boundary sentence keep it tied to a specific operating model.
+
+### Across-trail trigger evaluation
+
+- *Recurring finding-class:* FIRED - second consecutive README-opening iteration, refining the adoption signal after the prior problem-first rewrite.
+- *About to declare silence:* not fired - change made.
+- *Contradicts prior [!REALIZATION]:* not fired - the prior entry's claim that operational recognition matters remains; this adjusts the order of offer and recognition.
+- *Operator explicitly asked:* FIRED - direct phrase proposal and explicit Improve request.
+
+### Across-trail macro-Hansei
+
+[!REALIZATION] Adoption language needs a compressed theory of the product, not only a diagnosis of the user's pain. The four-part offer provides that theory; the problem list supplies the evidence that it is needed.
+
+Orientation freshness: STALE - the README adoption surface changed again; refresh only if a later arc-read needs to judge the effect against newcomer evidence.
+Destination need: not triggered - the operator's existing adoption priority governs this refinement.
+
+### Candidate Next Moves
+
+1. Ask a fresh reader to state what the suite gives an AI and why from the opening alone - directly test this new compression.
+2. Do not revise the heading further without reader evidence - avoid rhetorical churn.
+
+Cost: light - one README line changed, one focused diff check, no code or tests changed.

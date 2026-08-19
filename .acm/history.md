@@ -291,6 +291,7 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 284 | 2026-08-16 | orient-after-intent-implicit-permission-repair | marked the live Intent ambiguity resolved while preserving the broader governance-accretion question | `.acm/orientation.md` replaced; documented self-targeted iterations 369 -> 370 |
 | ▸ 285 | 2026-08-19 | readme-problem-first-opening | problem-first opening written; uncommitted pending integrity verification |  |
 | ▸ 286 | 2026-08-19 | repair-cp850-mojibake-in-audit-trail | restored 387 CP850-misdecoded UTF-8 punctuation tokens; ledger and derived ACM views verify cleanly |  |
+| ▸ 287 | 2026-08-19 | readme-four-part-offer-heading | first README signal changed from a failure-mode heading to the four-part suite offer |  |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -1311,4 +1312,8 @@ Do not edit by hand — re-run the command to refresh.
 
 - **decided:** Repair the corrupted audit-trail.md at byte level, rather than editing prose or accepting garbled historical records. Diagnosis: the affected tokens were UTF-8 punctuation decoded as CP850, not the earlier CP1252-style corruption. Exact token mapping was verified from the file: 12 distinct sequences represented arrows, en/em dashes, quotes, apostrophe, ellipsis, dagger, euro, not-equal, and triangular marker. Replaced only those exact raw byte sequences with their intended UTF-8 bytes.
 
-**286 runs total — 265 with changes, 21 silence**
+### Run 287 — 2026-08-19 — readme-four-part-offer-heading
+
+- **decided:** Replace only the opening heading with "Give AI Intent, Reasoning, Memory, and Evidence." The preceding version named the problem first ("AI loses the plot"), but the offer appeared only after five failure-mode bullets. The new heading states the suite's compact value immediately; the unchanged next sentence and bullets still provide recognition of intent loss, session amnesia, confident confabulation, self-evaluation blind spots, and reasoning drift.
+
+**287 runs total — 266 with changes, 21 silence**
