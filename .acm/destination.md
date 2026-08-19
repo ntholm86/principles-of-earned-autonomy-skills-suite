@@ -53,9 +53,8 @@ Convergence is a renewable lease tied to the current Destination, artifact, and 
 
 ### Current operating model
 
-- **Active:** Improve as the single entry point for normal work; Probe only for controlled ARF research.
-- **Passive:** Intent and Trail surround substantive work automatically.
-- **Triggered:** Destination consolidates accepted prompt mandates when continued work needs durable direction; Orient refreshes Orientation when Destination changes or accumulated evidence makes the current map stale.
+- **Normal entry point:** Improve is the single entry point for normal work. Probe is a separate entry point only for controlled ARF research.
+- **Automatic:** Improve invokes Intent and Trail around substantive work, and owns the orchestration chain that schedules Destination when durable direction is needed and Orient when the current map is stale. Destination may in turn schedule Orient after a material direction change; this is one automatic chain, not a second operator workflow.
 - **Memory architecture:** Agent Context Memory (ACM) currently provides persistent destination, evidence, learning, and orientation across sessions and models. "The Memory Model" and Retrospect are historical names, not parallel current concepts.
 
 This operating model is a current implementation, not part of the fixed boundary. It should remain target-agnostic, human-readable, and specifiable enough for another capable agent or execution harness to implement without becoming a checklist. The protocol must preserve memory of what happened, learning that changes later behavior, and meta-cognition about what the target is becoming; the present files and skills are revisable means of providing those capabilities.
@@ -70,7 +69,7 @@ Integration with a particular autonomous harness remains a horizon rather than t
 
 1. Self-targeting runs discover and improve previously unnamed limitations in reasoning or operation rather than only repairing skill-file consistency or following named examples.
 2. A new developer completes a useful first Improve run without author help or prior Destination setup, and understands what the agent will do, why it matters, and where they retain control without first learning the framework's internal vocabulary.
-3. Automatic services leave durable evidence sufficient for a later session or different model to continue coherently.
+3. Automatic work leaves durable evidence sufficient for a later session or different model to continue coherently.
 4. Research claims stay within what public trails, reproducible probes, external targets, and independent evaluators support.
 5. Improvement remains resource-effective as the target approaches silence: fixed loop cost does not overwhelm the trustworthy capability gained, highest-leverage selection remains intact, and reasoning, learning, operator control, and evidence integrity are not degraded.
 6. Current mechanisms remain generic, lean, and understandable; skill, orchestration, and routine ACM read cost stay proportionate to the work while the engine remains free to adapt them to changing model capability and economics without weakening the principles.
@@ -80,7 +79,7 @@ Integration with a particular autonomous harness remains a horizon rather than t
 - Which limitation currently places the strongest ceiling on the engine's ability to reason about any target, without restricting discovery to examples already named?
 - Where does an unassisted new user first fail: discovery, installation, first Improve, understanding an automatic handoff, or recognizing useful evidence?
 - Which public external target can test adoption and trustworthy delegation without relying on private enterprise evidence?
-- Does the Active/Passive/Triggered model survive real use, or does it hide an operational distinction users need?
+- Does the one-normal-entry model remain understandable when Improve schedules several automatic steps across a long or complex run?
 - Where are resources spent without improving decisions, learning, evidence, or operator control?
 - Which skill instructions, orchestration paths, and routinely loaded ACM context still earn their processing cost under current model capabilities?
 - How can the engine sustain trustworthy capability per resource when the remaining gains become small, without lowering its standard for what work matters or manufacturing work instead of reaching silence?

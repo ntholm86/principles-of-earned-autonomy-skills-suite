@@ -293,6 +293,9 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 286 | 2026-08-19 | repair-cp850-mojibake-in-audit-trail | restored 387 CP850-misdecoded UTF-8 punctuation tokens; ledger and derived ACM views verify cleanly |  |
 | ▸ 287 | 2026-08-19 | readme-four-part-offer-heading | first README signal changed from a failure-mode heading to the four-part suite offer |  |
 | ▸ 288 | 2026-08-19 | readme-one-normal-command-operating-model | README now presents Improve as the sole normal command; corrects activation and harness-reference drift |  |
+| ▸ 289 | 2026-08-19 | collapse-service-activation-taxonomy | collapsed Passive and Triggered into one automatic-service category under Improve; refreshed Destination and Orientation |  |
+| ▸ 290 | 2026-08-19 | correction-automatic-category-label | corrected the public and durable category label from "Automatic service" to "Automatic" |  |
+| ▸ 291 | 2026-08-19 | correction-improve-first-start-here | moved Improve to the first table row and shortened its role label to "Start here" |  |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -1321,4 +1324,8 @@ Do not edit by hand — re-run the command to refresh.
 
 - **decided:** Replace the generic "The Skills" roster introduction with "One Normal Command." It now states the actual operating model before the table: run Improve; it applies Intent and Trail automatically, and triggers Destination or Orient when evidence makes them useful. It explicitly distinguishes the roles: Intent and Trail are passive, Destination and Orient are triggered, Probe is optional research instrumentation. Changed Improve's table activation from generic "Active" to "Normal entry point," corrected the false statement that Orient "passively" reads, and replaced the retired `harness-protocol` reference with the live `llm-harness-proxy` repository.
 
-**288 runs total — 267 with changes, 21 silence**
+### Run 289 — 2026-08-19 — collapse-service-activation-taxonomy
+
+- **decided:** Replace the multi-category activation taxonomy with one normal entry point and one automatic service chain. Improve is the sole normal entry point; Intent, Trail, Destination, and Orient are automatic services under its orchestration. Destination may schedule Orient after a material direction change as part of that same chain. Probe is a separate research entry point. Updated README table roles and first-use explanation, the current Destination operating model and open question, Destination/Orient service descriptions, and the final live "passively recomputes" phrase. Added a mini-orient addendum and active operational rule rather than rewriting unrelated arc claims.
+
+**291 runs total — 270 with changes, 21 silence**

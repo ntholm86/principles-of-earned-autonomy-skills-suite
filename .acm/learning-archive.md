@@ -1113,6 +1113,18 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** The late-stage frontier remains evidential, but it is no longer unmeasured. Two eligible positions show that calls, output, and time can fall as gains narrow while input rises; the missing silence endpoint prevents a lifecycle conclusion. The strongest completed advance is methodological: the suite detected and excluded invalid evidence instead of converting operational failure into support for its preferred hypothesis.
 
+## 2026-08-13 — improve-first-run-windows-install-probe
+
+**[!REALIZATION]** The first tested adoption failure occurs before any reasoning contract is loaded. A suite can simplify its operator workflow to one command and still fail first contact when the installation command assumes an unstated runtime. Adoption readiness therefore begins at the executable shell boundary, not at the first Improve narration.
+
+## 2026-08-13 — improve-windows-install-command-contract
+
+**[!REALIZATION]** The Windows blocker was dependency waste rather than installer incompatibility: the live guidance selected a newer shell even though the shipped scripts use only behavior available in the built-in host. First-contact compatibility depends on the documented launcher as well as the script body.
+
+## 2026-08-13 — improve-windows-install-command-contract
+
+**[!REVERSAL]** Within this iteration, the first hook-guidance edit introduced one extra indentation level. Diff inspection exposed it; the line was realigned and diagnostics rerun before Trail.
+
 ---
 
-**277 markers — 251 realisations, 26 reversals**
+**280 markers — 253 realisations, 27 reversals**

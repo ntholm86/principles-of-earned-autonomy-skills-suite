@@ -16173,3 +16173,104 @@ Destination need: not triggered - the existing Destination already establishes I
 2. Review the table's manual-override labels only if reader evidence shows they still create orchestration confusion.
 
 Cost: light - README-only correction, one stale reference updated, diff and grep validation, no code changed.
+
+## 2026-08-19 - collapse-service-activation-taxonomy
+
+- target: skills-suite operating model, README, and service contracts
+- agent: GitHub Copilot
+- skill: improve
+- outcome: collapsed Passive and Triggered into one automatic-service category under Improve; refreshed Destination and Orientation
+
+Ask: operator stated that a passive skill and a triggered skill are the same category and that Improve triggers the others. This resolved the Destination's open question about whether the Active/Passive/Triggered model hid an operational distinction.
+
+[!DECISION] Replace the multi-category activation taxonomy with one normal entry point and one automatic service chain. Improve is the sole normal entry point; Intent, Trail, Destination, and Orient are automatic services under its orchestration. Destination may schedule Orient after a material direction change as part of that same chain. Probe is a separate research entry point. Updated README table roles and first-use explanation, the current Destination operating model and open question, Destination/Orient service descriptions, and the final live "passively recomputes" phrase. Added a mini-orient addendum and active operational rule rather than rewriting unrelated arc claims.
+
+Prediction: the public explanation no longer makes normal users reconcile Passive versus Triggered or treat Destination/Orient as routine commands; all automatic services retain their existing authority boundaries and manual diagnostic overrides. Held: taxonomy scan across README, Destination, Destination SKILL, and Orient SKILL returned no retired category labels; verify.py and git diff --check pass.
+
+**Reflection:**
+- Current model: normal-use orchestration is a property of Improve, not a collection of activation categories. The categories described scheduling mechanics, not separate operator workflows; exposing them first imposed an unnecessary translation task on newcomers.
+- Blind spot: a long run can still surface several automatic services, and the one-entry model is not yet tested with a newcomer who must understand those handoffs in context.
+- Imagined-reader pushback: Destination may schedule Orient, so "Improve triggers the others" is imprecise literally. The public model says Improve owns the automatic chain; Destination's post-change Orient scheduling is a delegated step inside it, not a second entry point.
+
+### Across-trail trigger evaluation
+
+- *Recurring finding-class:* FIRED - this is the third consecutive first-use/operating-model clarity correction after the problem-first opening and four-part offer.
+- *About to declare silence:* not fired - change made.
+- *Contradicts prior [!REALIZATION]:* FIRED - the prior README entry retained Passive and Triggered as meaningful public categories; this operator clarification shows they were an internal mechanics distinction, not a user-facing model.
+- *Operator explicitly asked:* FIRED - direct architectural clarification from the operator.
+
+### Across-trail macro-Hansei
+
+[!REALIZATION] The suite's simplest truthful explanation is not its inventory of skills but its control topology: one normal entry point invokes one automatic chain while preserving distinct authorities inside that chain. Internal distinctions belong in contracts and evidence, not as an onboarding taxonomy unless they create a different user decision.
+
+Orientation freshness: current - the mini-orient addendum and active rule record the operator-confirmed model without disturbing unrelated arc claims.
+Destination need: not triggered - the operator directly resolved the existing Destination open question.
+
+### Candidate Next Moves
+
+1. Test the one-normal-entry explanation with a fresh reader through a real Improve run, especially at the first automatic Destination or Orient handoff.
+2. Do not introduce another public activation taxonomy unless a concrete operator decision requires it.
+
+Cost: light-moderate - 5 live surfaces updated, focused taxonomy scan, verifier and diff validation, no code changed.
+
+## 2026-08-19 - correction-automatic-category-label
+
+- target: skills-suite operating-model terminology
+- agent: GitHub Copilot
+- skill: improve
+- outcome: corrected the public and durable category label from "Automatic service" to "Automatic"
+
+Correction to `collapse-service-activation-taxonomy`: the operator clarified that the one category should be just **Automatic**, not "Automatic service." Updated README role labels, Destination's operating model and quality bar, and the mini-orient addendum and operational rule. The orchestration model is unchanged: Improve remains the normal entry point; Intent, Trail, Destination, and Orient are automatic; Probe is the research entry point.
+
+Validation: no remaining "Automatic service(s)" matches across the live README, Destination, or Orientation; verify.py and git diff --check pass.
+
+### Across-trail trigger evaluation
+
+- *Recurring finding-class:* FIRED - immediate correction of onboarding terminology after the prior taxonomy change.
+- *About to declare silence:* not fired - change made.
+- *Contradicts prior [!REALIZATION]:* not fired - narrows the label without changing the one-entry automatic-chain model.
+- *Operator explicitly asked:* FIRED - direct clarification: "Just automatic."
+
+### Across-trail macro-Hansei
+
+[!REALIZATION] A category label should name the distinction the operator needs to make, not the implementation noun behind it. "Automatic" is sufficient; adding "service" recreated vocabulary without adding a decision.
+
+Orientation freshness: current - mini-orient terminology corrected.
+Destination need: not triggered - operator directly clarified the current operating model.
+
+### Candidate Next Moves
+
+1. Test the one-normal-entry and Automatic labels with a fresh reader before further wording changes.
+
+Cost: light - terminology-only correction, focused scan and verifier validation.
+
+## 2026-08-19 - correction-improve-first-start-here
+
+- target: skills-suite README skills table
+- agent: GitHub Copilot
+- skill: improve
+- outcome: moved Improve to the first table row and shortened its role label to "Start here"
+
+Correction to `collapse-service-activation-taxonomy`: the operator requested that Improve appear first and asked for a shorter, clearer role than "Normal entry point." Updated the table order and role label to **Start here**. Automatic skills remain grouped after Improve; Probe remains last as the research entry point.
+
+Validation: README reread shows Improve first; verify.py and git diff --check pass.
+
+### Across-trail trigger evaluation
+
+- *Recurring finding-class:* FIRED - immediate onboarding-presentation refinement after the automatic-category clarification.
+- *About to declare silence:* not fired - change made.
+- *Contradicts prior [!REALIZATION]:* not fired - sharpens the one-normal-entry model without changing it.
+- *Operator explicitly asked:* FIRED - direct request to put Improve first and shorten its role label.
+
+### Across-trail macro-Hansei
+
+[!REALIZATION] A table's order is part of its instruction. Putting Improve first and labeling it "Start here" expresses the one normal action before any internal capability detail.
+
+Orientation freshness: current - presentation correction only.
+Destination need: not triggered - the operating model is unchanged.
+
+### Candidate Next Moves
+
+1. Test the first-use table with a fresh reader before further wording changes.
+
+Cost: light - one table-row reorder and role-label reduction, verifier validation.

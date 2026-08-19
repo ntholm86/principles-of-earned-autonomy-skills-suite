@@ -42,20 +42,20 @@ The full trail exists, but it cannot be published in this repository because it 
 
 ## One Normal Command
 
-Run **Improve**. It controls routine work: it applies Intent before acting, Trail after substantive work, and triggers Destination or Orient only when the accumulated evidence makes either service useful.
+Run **Improve**. It controls routine work: it invokes Intent before acting, Trail after substantive work, and schedules Destination or Orient when the accumulated evidence makes either service useful.
 
-You do not orchestrate the other operational skills. Intent and Trail are passive; Destination and Orient are triggered. **Probe** is separate, optional research instrumentation.
+You do not orchestrate the other operational skills. Intent, Trail, Destination, and Orient are automatic under Improve's control. **Probe** is separate, optional research instrumentation.
 
-| Skill | Activation | What it does | Command or trigger |
+| Skill | Role | What it does | Invocation |
 | :--- | :--- | :--- | :--- |
-| ![Destination icon](./assets/skills/destination.svg) **[Destination](./destination/SKILL.md)** | **Triggered** | Consolidates accepted prompt mandates into durable cross-run direction through operator-confirmed questions. | Improve finds that continued work needs broader direction; `/destination` is an override |
-| ![Improve icon](./assets/skills/improve.svg) **[Improve](./improve/SKILL.md)** | **Normal entry point** | Interprets the prompt, examines, changes, verifies, learns, and coordinates the suite. | `/improve` to begin and continue work |
-| ![Intent icon](./assets/skills/intent.svg) **[Intent](./intent/SKILL.md)** | **Passive** | States what the agent believes the operator means before acting. | Always applies before substantive work |
-| ![Trail icon](./assets/skills/trail.svg) **[Trail](./trail/SKILL.md)** | **Passive** | Preserves decisions, findings, actions, and reflections across sessions. | Always applies after substantive work |
-| ![Orient icon](./assets/skills/orient.svg) **[Orient](./orient/SKILL.md)** | **Triggered** | Refreshes where the work is now by reading the accumulated arc. | Destination changes or Improve finds Orientation stale; `/orient` is an override |
-| ![Probe icon](./assets/skills/probe.svg) **[Probe](./probe/SKILL.md)** | **Active** *(research only)* | Tests reasoning with controlled cases and measures [Autonomous Reasoning Fidelity](https://github.com/ntholm86/principles-of-earned-autonomy/blob/main/PRINCIPLES.md#autonomous-reasoning-fidelity-operational-definition). | `/probe` during controlled ARF research |
+| ![Improve icon](./assets/skills/improve.svg) **[Improve](./improve/SKILL.md)** | **Start here** | Interprets the prompt, examines, changes, verifies, learns, and coordinates the suite. | `/improve` to begin and continue work |
+| ![Intent icon](./assets/skills/intent.svg) **[Intent](./intent/SKILL.md)** | **Automatic** | States what the agent believes the operator means before acting. | Improve invokes it before substantive work |
+| ![Trail icon](./assets/skills/trail.svg) **[Trail](./trail/SKILL.md)** | **Automatic** | Preserves decisions, findings, actions, and reflections across sessions. | Improve invokes it after substantive work |
+| ![Destination icon](./assets/skills/destination.svg) **[Destination](./destination/SKILL.md)** | **Automatic** | Consolidates accepted prompt mandates into durable cross-run direction through operator-confirmed questions. | Improve schedules it when continued work needs broader direction; `/destination` is an override |
+| ![Orient icon](./assets/skills/orient.svg) **[Orient](./orient/SKILL.md)** | **Automatic** | Refreshes where the work is now by reading the accumulated arc. | Improve or Destination schedules it when the orientation is stale; `/orient` is an override |
+| ![Probe icon](./assets/skills/probe.svg) **[Probe](./probe/SKILL.md)** | **Research entry point** | Tests reasoning with controlled cases and measures [Autonomous Reasoning Fidelity](https://github.com/ntholm86/principles-of-earned-autonomy/blob/main/PRINCIPLES.md#autonomous-reasoning-fidelity-operational-definition). | `/probe` during controlled ARF research |
 
-In normal development, the operator runs Improve. Intent and Trail are always present; Destination and Orient wait for evidence that durable direction or a refreshed map is needed. Probe sits outside normal operation as optional research instrumentation.
+In normal development, the operator runs Improve. It invokes Intent and Trail on every substantive run, and schedules Destination or Orient only when evidence warrants them. Probe sits outside normal operation as optional research instrumentation.
 
 ## Agent Context Memory (ACM)
 

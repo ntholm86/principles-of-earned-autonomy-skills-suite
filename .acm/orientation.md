@@ -1,6 +1,18 @@
 # orientation.md - autonomous-agent-skills
 
-_Last updated: 2026-08-16 (run: `orient-after-intent-implicit-permission-repair`)_
+_Last updated: 2026-08-19 (mini-orient: one-normal-entry operating-model clarification)_
+
+## Mini-orient addendum - 2026-08-19 (one normal entry, one automatic chain)
+
+The operator resolved the Destination's open question about the Active/Passive/Triggered taxonomy: it hides a false distinction for normal use. **Improve is the sole normal entry point.** Intent, Trail, Destination, and Orient are one automatic chain under Improve's orchestration; Destination may schedule Orient after a material direction change. Probe remains a separately invoked entry point only for controlled ARF research.
+
+**Falsifiable by:** a normal workflow requiring the operator to invoke Intent, Trail, Destination, or Orient for the work to proceed, or an automatic step gaining authority to change the target or destination without Improve's governing run and the existing operator boundaries.
+
+**What this changes:** the operational explanation must lead with Improve rather than an internal activation taxonomy. It does not reduce the authority of Destination, Orient, Intent, or Trail; it clarifies who invokes them and removes a newcomer-facing orchestration burden that never reflected the intended workflow.
+
+**What it does not establish:** whether readers now understand the one-normal-entry model. That remains a first-use comprehension test, not an inference from clearer wording.
+
+---
 
 ## Scope of this read
 
@@ -66,6 +78,7 @@ From the 2026-05-30 baseline to committed HEAD before the latest repair, the liv
 
 ## Active operational rules
 
+- Treat Improve as the sole normal entry point. Intent, Trail, Destination, and Orient are automatic in its orchestration chain; Probe is a separate research entry point.
 - Preserve the integrated center: every route must improve target capability while upholding Operator's Intent, Observable Autonomy, and Convergence Is Silence.
 - Treat every skill, orchestration, and routine-context addition as a processing burden that must continue to earn its contribution to trustworthy capability; do not use line count alone as the decision rule.
 - Reconsider current machinery as model capability, context capacity, and token economics change; do not preserve assumptions solely because they were once necessary.

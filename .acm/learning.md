@@ -5,19 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 277 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-13 — improve-first-run-windows-install-probe
-
-**[!REALIZATION]** The first tested adoption failure occurs before any reasoning contract is loaded. A suite can simplify its operator workflow to one command and still fail first contact when the installation command assumes an unstated runtime. Adoption readiness therefore begins at the executable shell boundary, not at the first Improve narration.
-
-## 2026-08-13 — improve-windows-install-command-contract
-
-**[!REALIZATION]** The Windows blocker was dependency waste rather than installer incompatibility: the live guidance selected a newer shell even though the shipped scripts use only behavior available in the built-in host. First-contact compatibility depends on the documented launcher as well as the script body.
-
-## 2026-08-13 — improve-windows-install-command-contract
-
-**[!REVERSAL]** Within this iteration, the first hook-guidance edit introduced one extra indentation level. Diff inspection exposed it; the line was realigned and diagnostics rerun before Trail.
+Showing the most recent 60 markers. 280 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-13 — improve-first-run-cold-start-rerun
 
@@ -247,6 +235,18 @@ Showing the most recent 60 markers. 277 older marker(s) are in `.acm/learning-ar
 
 **[!REALIZATION]** Internal taxonomy and first-use workflow are different representations of the same system. A README that leads with taxonomy makes the operator learn architecture before acting; a README that leads with Improve lets the architecture remain automatic until evidence requires its services.
 
+## 2026-08-19 — collapse-service-activation-taxonomy
+
+**[!REALIZATION]** The suite's simplest truthful explanation is not its inventory of skills but its control topology: one normal entry point invokes one automatic chain while preserving distinct authorities inside that chain. Internal distinctions belong in contracts and evidence, not as an onboarding taxonomy unless they create a different user decision.
+
+## 2026-08-19 — correction-automatic-category-label
+
+**[!REALIZATION]** A category label should name the distinction the operator needs to make, not the implementation noun behind it. "Automatic" is sufficient; adding "service" recreated vocabulary without adding a decision.
+
+## 2026-08-19 — correction-improve-first-start-here
+
+**[!REALIZATION]** A table's order is part of its instruction. Putting Improve first and labeling it "Start here" expresses the one normal action before any internal capability detail.
+
 ---
 
-**60 markers — 46 realisations, 14 reversals**
+**60 markers — 47 realisations, 13 reversals**
