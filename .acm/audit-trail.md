@@ -15884,3 +15884,42 @@ Orientation freshness: current - `.acm/orientation.md` now explains the confirme
 1. Observe an unassisted newcomer and identify the exact language or interaction that blocks operational understanding.
 2. Test representative live clauses and orchestration paths against behavior to distinguish earned capability from accumulated burden, including the current Intent authority ambiguity.
 3. Measure routine ACM access on a mature target to learn whether derived surfaces preserve relevant evidence while avoiding full-history processing.
+
+## 2026-08-19 - readme-problem-first-opening
+
+- target: skills-suite README opening
+- agent: GitHub Copilot
+- skill: improve
+- outcome: problem-first opening written; uncommitted pending integrity verification
+
+Ask: operator wanted the skills-suite README to start with the immediate problems people experience with AI - intent loss, memory loss, session amnesia, confident confabulation, self-evaluation blind spots, reasoning drift, and wasted effort - so a reader immediately understands what the suite solves and wants to try it. The operator explicitly said the wording is not fixed and asked for an Improve treatment focused on maximum clarity and impact.
+
+[!DECISION] Replaced the README opening before the architecture image with a compact problem-first frame. The new opening names five recognizable failure modes (Intent decay, Session amnesia, Confident confabulation, Self-evaluation blind spots, Reasoning drift and wasted effort), gives the suite's response in one paragraph (destination, durable memory, disciplined improvement/verification/learning), and ends with one first action: run Improve on a real bounded task. It preserves the authority boundary in plain language: the agent chooses the route; the operator keeps the destination and consequential decisions. Existing evidence, architecture, workflow, limitations, and technical sections remain unchanged.
+
+Prediction: a new reader can identify the problem, understand the suite's purpose, and see the first action without learning internal vocabulary first; no technical claims about structural enforcement are introduced. Validation: README diff checked with git diff --check; opening read back intact. The repository contains unrelated pre-existing ACM/history edits, left untouched.
+
+**Reflection:**
+- Current model: the README's first job is operational recognition, not framework exposition. A reader should recognize their own AI failure before being asked to understand Destination, Orientation, or ACM.
+- Blind spot: no newcomer or external evaluator tested the revised opening in this iteration; impact is reasoned from the destination's adoption bar, not measured.
+- Imagined-reader pushback: "AI loses the plot" is vivid but informal. It earns its place as the bridge into specific, concrete failure modes; the bullets carry the precision.
+
+### Across-trail trigger evaluation
+
+- *Recurring finding-class:* FIRED - this is the README staleness/adoption class already named in the ai-steward trail, now addressed at the skills-suite source rather than the runtime surface.
+- *About to declare silence:* not fired - change made.
+- *Contradicts prior `[!REALIZATION]`:* not fired - makes the existing adoption priority visible earlier without changing the destination or claims.
+- *Operator explicitly asked:* FIRED - direct request for a problem-first README opening.
+
+### Across-trail macro-Hansei
+
+[!REALIZATION] Adoption friction begins before installation or workflow: a reader who cannot recognize the failure the suite addresses has no reason to learn its vocabulary or try Improve. The README opening is therefore part of the operational adoption path, not a cosmetic layer over it.
+
+Orientation freshness: STALE -- the README opening changed, but the destination and current orientation remain materially explanatory; no orientation refresh was needed for this documentation-only change.
+Destination need: not triggered -- the operator's destination already establishes adoption and first-use understanding as a quality bar.
+
+### Candidate Next Moves
+1. Ask a fresh evaluator to read only the revised opening and state what the suite does, why it matters, and what to do next - this directly tests the adoption bar.
+2. Review the Quickstart against the new opening - the first action should lead to a comparably low-friction first successful run.
+3. Leave the opening alone until external reading produces evidence - avoid polishing rhetoric without a comprehension signal.
+
+Cost: light - one README region changed, one diff check, no code or tests changed.
