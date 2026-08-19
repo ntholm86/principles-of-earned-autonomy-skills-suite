@@ -5,11 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 276 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-13 — orient-after-late-stage-viability-experiment
-
-**[!REALIZATION]** The late-stage frontier remains evidential, but it is no longer unmeasured. Two eligible positions show that calls, output, and time can fall as gains narrow while input rises; the missing silence endpoint prevents a lifecycle conclusion. The strongest completed advance is methodological: the suite detected and excluded invalid evidence instead of converting operational failure into support for its preferred hypothesis.
+Showing the most recent 60 markers. 277 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-13 — improve-first-run-windows-install-probe
 
@@ -246,6 +242,10 @@ Showing the most recent 60 markers. 276 older marker(s) are in `.acm/learning-ar
 ## 2026-08-19 — readme-four-part-offer-heading
 
 **[!REALIZATION]** Adoption language needs a compressed theory of the product, not only a diagnosis of the user's pain. The four-part offer provides that theory; the problem list supplies the evidence that it is needed.
+
+## 2026-08-19 — readme-one-normal-command-operating-model
+
+**[!REALIZATION]** Internal taxonomy and first-use workflow are different representations of the same system. A README that leads with taxonomy makes the operator learn architecture before acting; a README that leads with Improve lets the architecture remain automatic until evidence requires its services.
 
 ---
 

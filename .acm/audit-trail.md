@@ -16134,3 +16134,42 @@ Destination need: not triggered - the operator's existing adoption priority gove
 2. Do not revise the heading further without reader evidence - avoid rhetorical churn.
 
 Cost: light - one README line changed, one focused diff check, no code or tests changed.
+
+## 2026-08-19 - readme-one-normal-command-operating-model
+
+- target: skills-suite README operating-model explanation
+- agent: GitHub Copilot
+- skill: improve
+- outcome: README now presents Improve as the sole normal command; corrects activation and harness-reference drift
+
+Ask: operator asked for a pass through the rest of the README to find improvements or stale material, with the concrete clarification that Improve controls normal work and the others should not appear as commands a normal user must orchestrate; Probe is the exception for research.
+
+[!DECISION] Replace the generic "The Skills" roster introduction with "One Normal Command." It now states the actual operating model before the table: run Improve; it applies Intent and Trail automatically, and triggers Destination or Orient when evidence makes them useful. It explicitly distinguishes the roles: Intent and Trail are passive, Destination and Orient are triggered, Probe is optional research instrumentation. Changed Improve's table activation from generic "Active" to "Normal entry point," corrected the false statement that Orient "passively" reads, and replaced the retired `harness-protocol` reference with the live `llm-harness-proxy` repository.
+
+Prediction: a newcomer sees one normal command rather than a menu of operational skills; the table preserves the precise activation distinctions; no workflow or authority behavior changes. Held: README diff is limited to the operating-model, Orient wording, and harness link; git diff --check clean; grep confirms the only remaining "Active" label is Probe marked research-only.
+
+**Reflection:**
+- Current model: the README should not mirror the internal taxonomy before explaining what the operator actually does. Improve is the control surface; passive and triggered services are implementation detail until a reader needs the table.
+- Blind spot: the manual overrides `/destination` and `/orient` remain visible in the table. They are legitimate diagnostics/overrides, but a newcomer may still infer they are routine commands despite the surrounding copy saying otherwise.
+- Imagined-reader pushback: calling Improve the sole normal command obscures Probe. Probe is intentionally outside normal development and remains visible as a distinct research path; hiding it would be less accurate.
+
+### Across-trail trigger evaluation
+
+- *Recurring finding-class:* FIRED - second README operating-model/adoption correction after the four-part offer and problem-first opening refinements.
+- *About to declare silence:* not fired - change made.
+- *Contradicts prior [!REALIZATION]:* not fired - sharpens the prior adoption insight by reducing internal taxonomy at first contact.
+- *Operator explicitly asked:* FIRED - direct request to check the rest of the README, with a concrete operating-model correction.
+
+### Across-trail macro-Hansei
+
+[!REALIZATION] Internal taxonomy and first-use workflow are different representations of the same system. A README that leads with taxonomy makes the operator learn architecture before acting; a README that leads with Improve lets the architecture remain automatic until evidence requires its services.
+
+Orientation freshness: STALE - the README now states the current operating model more directly; refresh only when a later arc-read evaluates newcomer comprehension against this surface.
+Destination need: not triggered - the existing Destination already establishes Improve as the normal entry point and adoption as co-equal priority.
+
+### Candidate Next Moves
+
+1. Have a fresh reader follow the README from the heading through Quickstart and name the only routine action - test whether the one-command model is actually understood.
+2. Review the table's manual-override labels only if reader evidence shows they still create orchestration confusion.
+
+Cost: light - README-only correction, one stale reference updated, diff and grep validation, no code changed.

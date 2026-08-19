@@ -1109,6 +1109,10 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** Experimental validity in this suite is event-bound, not configuration-bound. A valid snapshot, host, ledger, and earlier clean preflight can all coexist with an invalid arm if the state transition into the actual invocation is not captured. Future experiment claims must attach eligibility evidence to the event they classify.
 
+## 2026-08-13 — orient-after-late-stage-viability-experiment
+
+**[!REALIZATION]** The late-stage frontier remains evidential, but it is no longer unmeasured. Two eligible positions show that calls, output, and time can fall as gains narrow while input rises; the missing silence endpoint prevents a lifecycle conclusion. The strongest completed advance is methodological: the suite detected and excluded invalid evidence instead of converting operational failure into support for its preferred hypothesis.
+
 ---
 
-**276 markers — 250 realisations, 26 reversals**
+**277 markers — 251 realisations, 26 reversals**

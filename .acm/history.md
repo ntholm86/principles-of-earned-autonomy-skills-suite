@@ -292,6 +292,7 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 285 | 2026-08-19 | readme-problem-first-opening | problem-first opening written; uncommitted pending integrity verification |  |
 | ▸ 286 | 2026-08-19 | repair-cp850-mojibake-in-audit-trail | restored 387 CP850-misdecoded UTF-8 punctuation tokens; ledger and derived ACM views verify cleanly |  |
 | ▸ 287 | 2026-08-19 | readme-four-part-offer-heading | first README signal changed from a failure-mode heading to the four-part suite offer |  |
+| ▸ 288 | 2026-08-19 | readme-one-normal-command-operating-model | README now presents Improve as the sole normal command; corrects activation and harness-reference drift |  |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -1316,4 +1317,8 @@ Do not edit by hand — re-run the command to refresh.
 
 - **decided:** Replace only the opening heading with "Give AI Intent, Reasoning, Memory, and Evidence." The preceding version named the problem first ("AI loses the plot"), but the offer appeared only after five failure-mode bullets. The new heading states the suite's compact value immediately; the unchanged next sentence and bullets still provide recognition of intent loss, session amnesia, confident confabulation, self-evaluation blind spots, and reasoning drift.
 
-**287 runs total — 266 with changes, 21 silence**
+### Run 288 — 2026-08-19 — readme-one-normal-command-operating-model
+
+- **decided:** Replace the generic "The Skills" roster introduction with "One Normal Command." It now states the actual operating model before the table: run Improve; it applies Intent and Trail automatically, and triggers Destination or Orient when evidence makes them useful. It explicitly distinguishes the roles: Intent and Trail are passive, Destination and Orient are triggered, Probe is optional research instrumentation. Changed Improve's table activation from generic "Active" to "Normal entry point," corrected the false statement that Orient "passively" reads, and replaced the retired `harness-protocol` reference with the live `llm-harness-proxy` repository.
+
+**288 runs total — 267 with changes, 21 silence**

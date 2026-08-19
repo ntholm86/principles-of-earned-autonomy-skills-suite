@@ -40,24 +40,22 @@ In that deployment, a scope estimated internally as a large T-shirt-size effort 
 
 The full trail exists, but it cannot be published in this repository because it is employer-owned professional work product and covered by intellectual property and confidentiality obligations. Treat this as high-signal private field evidence: a strong indication of practical leverage, but not public, independently reproducible proof.
 
-## The Skills
+## One Normal Command
 
-Every skill belongs to one roster. What differs is how it activates:
+Run **Improve**. It controls routine work: it applies Intent before acting, Trail after substantive work, and triggers Destination or Orient only when the accumulated evidence makes either service useful.
 
-- **Active** skills are deliberately invoked by the operator.
-- **Passive** skills apply automatically around every substantive action.
-- **Triggered** skills activate automatically when their conditions are met.
+You do not orchestrate the other operational skills. Intent and Trail are passive; Destination and Orient are triggered. **Probe** is separate, optional research instrumentation.
 
 | Skill | Activation | What it does | Command or trigger |
 | :--- | :--- | :--- | :--- |
 | ![Destination icon](./assets/skills/destination.svg) **[Destination](./destination/SKILL.md)** | **Triggered** | Consolidates accepted prompt mandates into durable cross-run direction through operator-confirmed questions. | Improve finds that continued work needs broader direction; `/destination` is an override |
-| ![Improve icon](./assets/skills/improve.svg) **[Improve](./improve/SKILL.md)** | **Active** | Interprets the prompt, examines, changes, verifies, learns, and coordinates the suite. | `/improve` to begin and continue work |
+| ![Improve icon](./assets/skills/improve.svg) **[Improve](./improve/SKILL.md)** | **Normal entry point** | Interprets the prompt, examines, changes, verifies, learns, and coordinates the suite. | `/improve` to begin and continue work |
 | ![Intent icon](./assets/skills/intent.svg) **[Intent](./intent/SKILL.md)** | **Passive** | States what the agent believes the operator means before acting. | Always applies before substantive work |
 | ![Trail icon](./assets/skills/trail.svg) **[Trail](./trail/SKILL.md)** | **Passive** | Preserves decisions, findings, actions, and reflections across sessions. | Always applies after substantive work |
 | ![Orient icon](./assets/skills/orient.svg) **[Orient](./orient/SKILL.md)** | **Triggered** | Refreshes where the work is now by reading the accumulated arc. | Destination changes or Improve finds Orientation stale; `/orient` is an override |
 | ![Probe icon](./assets/skills/probe.svg) **[Probe](./probe/SKILL.md)** | **Active** *(research only)* | Tests reasoning with controlled cases and measures [Autonomous Reasoning Fidelity](https://github.com/ntholm86/principles-of-earned-autonomy/blob/main/PRINCIPLES.md#autonomous-reasoning-fidelity-operational-definition). | `/probe` during controlled ARF research |
 
-In normal development, the operator activates Improve. Intent and Trail are always present; Destination and Orient wait for evidence that durable direction or a refreshed map is needed. Probe sits outside normal operation as optional research instrumentation.
+In normal development, the operator runs Improve. Intent and Trail are always present; Destination and Orient wait for evidence that durable direction or a refreshed map is needed. Probe sits outside normal operation as optional research instrumentation.
 
 ## Agent Context Memory (ACM)
 
@@ -83,7 +81,7 @@ Each narrated Intent gives Improve a mandate for the current prompt. When accept
 
 ### Orientation — The architecture keeps its map current
 
-After many locally sensible runs, the overall arc can still drift. Orient passively reads the accumulated history as one document and refreshes the current orientation: what the target is becoming, where attention has gone, and whether that is where the real weight lies. Destination schedules it after material direction changes; Improve schedules it when the evidence forms a meaningful arc, contradicts the current map, or approaches convergence. A raw iteration count alone does not trigger it.
+After many locally sensible runs, the overall arc can still drift. When triggered, Orient reads the accumulated history as one document and refreshes the current orientation: what the target is becoming, where attention has gone, and whether that is where the real weight lies. Destination schedules it after material direction changes; Improve schedules it when the evidence forms a meaningful arc, contradicts the current map, or approaches convergence. A raw iteration count alone does not trigger it.
 
 > "Life can only be understood backwards; but it must be lived forwards."
 >
@@ -143,7 +141,7 @@ Trail logs what the agent *says* it decided. Research shows this is not always t
 
 Together, these force the agent to lock its reasoning *before* acquiring evidence, and introduce explicit adversarial structures to break the post-hoc rationalization loop.
 
-**The deeper limitation — protocol, not structure:** The five mitigations above assume the agent follows the protocol. Skills are markdown instructions interpreted by an LLM. There is no structural guarantee that the agent writes the trail at the right moment, issues the pre-commit prediction before acting, or runs any step at all. The suite is only as reliable as the model reading it. Structural enforcement — intercepting every LLM call at the API layer, writing the ledger before the response is released to the agent, fail-closed — is the responsibility of [`harness-protocol`](https://github.com/ntholm86/harness-protocol) and [`ai-steward`](https://github.com/ntholm86/ai-steward). This skills suite is the behavioural scaffolding and the experiment that generated the requirement for that structural layer.
+**The deeper limitation — protocol, not structure:** The five mitigations above assume the agent follows the protocol. Skills are markdown instructions interpreted by an LLM. There is no structural guarantee that the agent writes the trail at the right moment, issues the pre-commit prediction before acting, or runs any step at all. The suite is only as reliable as the model reading it. Structural enforcement — intercepting every LLM call at the API layer, writing the ledger before the response is released to the agent, fail-closed — is the responsibility of [`llm-harness-proxy`](https://github.com/ntholm86/llm-harness-proxy) and [`ai-steward`](https://github.com/ntholm86/ai-steward). This skills suite is the behavioural scaffolding and the experiment that generated the requirement for that structural layer.
 
 ## Reference
 
