@@ -1,5 +1,9 @@
 # Changelog
 
+## v4.33.1 — 2026-08-16
+
+- **Intent no longer lets silence or unambiguity bypass supervision.** Removed two legacy implicit-permission paths: a fresh repository without ACM now flows into the same authority rule as every other substantive request, and an unambiguous prompt no longer means the agent may proceed without confirmation. Explicit delegation and direct operations requiring no interpretation or action authority remain unchanged. `intent/SKILL.md` 1.8.0 -> 1.8.1.
+
 ## v4.33.0 — 2026-08-16
 
 - **Destination now names governance accretion and growing context as moving-frontier viability risks.** Trustworthy capability per resource now explicitly covers live skill and orchestration size, routine ACM read cost, proportional reasoning and context, newcomer understanding, and repeated reconsideration as model capability, context capacity, and token economics change. Adaptive reasoning and derived memory remain possible routes rather than prescribed mechanisms; the Principles of Earned Autonomy remain the fixed boundary.

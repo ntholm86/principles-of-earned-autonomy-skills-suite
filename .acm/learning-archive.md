@@ -1081,6 +1081,30 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** Independent evidence infrastructure has capability dimensions of its own. The harness currently proves capture-author separation, response provenance, and hash-chain continuity, but not resource use. Calling it an independent observer without naming the observed fields would overextend one kind of trust into another.
 
+## 2026-08-13 — improve-preregister-work-lifecycle-snapshots
+
+**[!REVERSAL]** The initial external-target report treated the harness's existence and Work's historical character counts as sufficient independent token evidence. Reversed after direct inspection found zero token-bearing ledger records and a ledger schema that does not write usage metadata.
+
+## 2026-08-13 — replace-usage-blocker-with-host-fidelity-gate
+
+**[!REALIZATION]** Independent measurement and experimental fidelity are separate gates. Solving token capture does not authorize replacing the production Improve loop with the nearest proxy-capable agent pipeline.
+
+## 2026-08-13 — preregister-copilot-cli-experiment-host
+
+**[!REALIZATION]** The host is experimentally viable only as a fully frozen stack: CLI version, suite composition, provider compression, model, prompt, permissions, and state isolation all affect measured loop behavior. "Same model and prompt" alone is not a sufficient same-host control.
+
+## 2026-08-13 — preregister-copilot-cli-experiment-host
+
+**[!REVERSAL]** The first smoke omitted Accept-Encoding: identity and failed after six model retries; the second added the already known ai-steward transport control and succeeded. During HOST.md drafting, four SHA-256 suffixes and three skill versions were initially entered from incomplete display or memory. Immediate direct hash and frontmatter checks caught them before commit, and all seven values were replaced with sourced values.
+
+## 2026-08-13 — execute-late-stage-loop-viability-experiment
+
+**[!REALIZATION]** Cleanliness is a run-boundary property, not a setup property. A clean initial preflight did not protect the silence position after an incomplete invocation left untracked state, and exit code 0 did not make the subsequent duplicate eligible. Each arm needs an immediate pre-call cleanliness assertion tied to the captured run record, and an incomplete authorized attempt must remain incomplete rather than being repaired by repetition.
+
+## 2026-08-13 — execute-late-stage-loop-viability-experiment
+
+**[!REVERSAL]** The apparent completed silence result was initially packaged as case-flint and sent for blinded evaluation. Session inventory then revealed an earlier ledger. Timestamp, trace-ending, Git-state, and pre-run evidence established that the earlier session was the authorized incomplete attempt and the completed session was an accidental dirty duplicate. Reversed the initial interpretation, retained the evaluator result only as classification of the duplicate package, and excluded the lifecycle position.
+
 ---
 
-**269 markers — 246 realisations, 23 reversals**
+**275 markers — 249 realisations, 26 reversals**

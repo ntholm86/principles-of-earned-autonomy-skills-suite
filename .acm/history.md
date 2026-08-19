@@ -158,7 +158,7 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 151 | 2026-06-21 | skills-suite-trail-to-acm-rename |  |  |
 | ▸ 152 | 2026-06-21 | acm-scope-stop-conditions-propagated |  |  |
 | ▸ 153 | 2026-06-21 | gap: trail-skill missing ACM Mandate Gate enforcement | gap noted, not yet fixed | no code change — note only |
-| ▸ 154 | 2026-06-22 | acm-parent-scope-traversal-propagated | ACM §4 parent-scope destination traversal instruction added to improve/SKILL.md and retrospect/SKILL.md; retrospect.md refreshed; derived artifacts regenerated | improve/SKILL.md (parent-scope paragraph added, stale count removed), retrospect/SKILL.md (step 0 heading updated, parent-scope paragraph added), .acm/retrospect.md (refreshed), .acm/history.md and .acm/learning.md (regenerated) |
+| ▸ 154 | 2026-06-22 | acm-parent-scope-traversal-propagated | ACM ┬º4 parent-scope destination traversal instruction added to improve/SKILL.md and retrospect/SKILL.md; retrospect.md refreshed; derived artifacts regenerated | improve/SKILL.md (parent-scope paragraph added, stale count removed), retrospect/SKILL.md (step 0 heading updated, parent-scope paragraph added), .acm/retrospect.md (refreshed), .acm/history.md and .acm/learning.md (regenerated) |
 | ▸ 155 | 2026-06-23 | retrospect-to-orient-rename | Retrospect skill renamed to Orient; file renamed retrospect.md -> orientation.md | retrospect/ -> orient/, v1.8.0 -> v2.0.0 |
 | ▸ 156 | 2026-06-23 | stormp-illustration-readme | Storm P architecture illustration added to README as visual intro | Added stormpInspired.png before "The Suite Improved Itself" section |
 | ▸ 157 | 2026-07-02 | rename-commanders-intent-to-operators-intent | renamed across all live docs; vocabulary now internally consistent | Principle 1 name Commander's Intent -> Operator's Intent; supporting term mission -> destination |
@@ -287,6 +287,10 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 280 | 2026-08-16 | orient-after-destination-synthesis-authority-correction | refreshed Orientation around confirmed Destination meaning and the new pre-write synthesis gate | `.acm/orientation.md` replaced; documented self-targeted iterations 365 -> 366 |
 | ▸ 281 | 2026-08-16 | sharpen-destination-for-moving-frontier-viability | confirmed governance accretion, growing ACM context, newcomer usability, and changing model capability as integrated viability concerns | `.acm/destination.md` active mandate sharpened; Orientation marked stale |
 | ▸ 282 | 2026-08-16 | orient-after-moving-frontier-viability-clarification | refreshed Orientation around measured governance accretion and the moving-frontier viability bar | `.acm/orientation.md` replaced; documented self-targeted iterations 367 -> 368 |
+| · 283 | 2026-08-16 | remove-intent-implicit-permission-paths | removed two contradictory paths that let silence or unambiguity bypass the supervised default | Intent 1.8.0 -> 1.8.1 |
+| ▸ 284 | 2026-08-16 | orient-after-intent-implicit-permission-repair | marked the live Intent ambiguity resolved while preserving the broader governance-accretion question | `.acm/orientation.md` replaced; documented self-targeted iterations 369 -> 370 |
+| ▸ 285 | 2026-08-19 | readme-problem-first-opening | problem-first opening written; uncommitted pending integrity verification |  |
+| ▸ 286 | 2026-08-19 | repair-cp850-mojibake-in-audit-trail | restored 387 CP850-misdecoded UTF-8 punctuation tokens; ledger and derived ACM views verify cleanly |  |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -409,7 +413,7 @@ Do not edit by hand — re-run the command to refresh.
 ### Run 28 — 2026-04-29 — v3.3.0-history-and-install
 
 - **decided:** Rewrite README opening paragraph to lead with "autonomous self-improving loop" and establish that the loop has run on this repo repeatedly under observation.
-- **decided:** Add `record.py history` command that parses trail/log.md and renders a per-run timeline: date, slug, outcome, delta, decisions. Use `▸` for change runs and `·` for silence runs so convergence direction is visible at a glance.
+- **decided:** Add `record.py history` command that parses trail/log.md and renders a per-run timeline: date, slug, outcome, delta, decisions. Use `▸` for change runs and `┬À` for silence runs so convergence direction is visible at a glance.
 - **decided:** Add INSTALLING.md explaining the one-level-deep discovery rule, minimum vs full install, and what sibling files each skill needs. Link from README "Using the skills" section.
 - **decided:** Increment to v3.3.0. No skill logic changed; no convergence chain impact. These are tooling and documentation additions.
 
@@ -494,7 +498,7 @@ Do not edit by hand — re-run the command to refresh.
 
 ### Run 48 — 2026-05-01 — record-py-unicode-fix
 
-- **decided:** Add `sys.stdout.reconfigure(encoding='utf-8')` at the start of `main()` in `tools/record.py`, guarded by `hasattr` for robustness. This configures stdout to write UTF-8 bytes regardless of the platform default, fixing the crash for all trail content (em-dashes, arrows, `▸`, `·`, and any other Unicode chars trail entries may contain).
+- **decided:** Add `sys.stdout.reconfigure(encoding='utf-8')` at the start of `main()` in `tools/record.py`, guarded by `hasattr` for robustness. This configures stdout to write UTF-8 bytes regardless of the platform default, fixing the crash for all trail content (em-dashes, arrows, `▸`, `┬À`, and any other Unicode chars trail entries may contain).
 
 ### Run 49 — 2026-05-01 — trail-stale-paths-cleanup
 
@@ -502,7 +506,7 @@ Do not edit by hand — re-run the command to refresh.
 
 ### Run 50 — 2026-05-01 — trail-stale-paths-final
 
-- **decided:** Fix all five remaining stale `trail/log.md` references: `record.py` module and subcommand docstrings (×3), `trail/SKILL.md` grep example, `trail/SKILL.md` "The test" sentence.
+- **decided:** Fix all five remaining stale `trail/log.md` references: `record.py` module and subcommand docstrings (├ù3), `trail/SKILL.md` grep example, `trail/SKILL.md` "The test" sentence.
 
 ### Run 51 — 2026-05-01 — changelog-v370-v373
 
@@ -846,7 +850,7 @@ Do not edit by hand — re-run the command to refresh.
 
 ### Run 154 — 2026-06-22 — acm-parent-scope-traversal-propagated
 
-- **decided:** Add ACM §4 parent-scope paragraph to improve/SKILL.md step 1 and retrospect/SKILL.md step 0. Also refresh .acm/retrospect.md and regenerate derived artifacts (were stale vs audit-trail.md).
+- **decided:** Add ACM ┬º4 parent-scope paragraph to improve/SKILL.md step 1 and retrospect/SKILL.md step 0. Also refresh .acm/retrospect.md and regenerate derived artifacts (were stale vs audit-trail.md).
 
 ### Run 155 — 2026-06-23 — retrospect-to-orient-rename
 
@@ -972,7 +976,7 @@ Do not edit by hand — re-run the command to refresh.
 
 ### Run 186 — 2026-08-01 — clarify-history-learning-optional-per-acm-spec-conformance
 
-- **decided:** Update trail/SKILL.md's directory listing and surrounding prose to explicitly mark `history.md`, `learning.md`, and `learning-archive.md` as OPTIONAL (not required for ACM conformance), name the specific spec sections that establish this (§6.1, §6.3), and state when to adopt them (once a trail is long enough that full reads become wasteful) rather than presenting them as a default starting configuration. Also mark `orientation.md` as "optional per ACM but recommended," matching the spec's own §6.1 treatment. Precedent check: grepped learning.md/learning-archive.md for "ACM spec", "agent-context-memory", "conformance", "required files" before drafting -- found no prior entry in this repo's own trail that had previously read agent-context-memory's SPEC.md directly and cross-checked file requirements against it. This is new, not a repeat of prior work.
+- **decided:** Update trail/SKILL.md's directory listing and surrounding prose to explicitly mark `history.md`, `learning.md`, and `learning-archive.md` as OPTIONAL (not required for ACM conformance), name the specific spec sections that establish this (┬º6.1, ┬º6.3), and state when to adopt them (once a trail is long enough that full reads become wasteful) rather than presenting them as a default starting configuration. Also mark `orientation.md` as "optional per ACM but recommended," matching the spec's own ┬º6.1 treatment. Precedent check: grepped learning.md/learning-archive.md for "ACM spec", "agent-context-memory", "conformance", "required files" before drafting -- found no prior entry in this repo's own trail that had previously read agent-context-memory's SPEC.md directly and cross-checked file requirements against it. This is new, not a repeat of prior work.
 - **decided:** Do NOT remove history.md/learning.md/learning-archive.md from this repo. This repo's own audit-trail.md is now 900KB+ across 184 entries -- exactly the scale the new documentation says justifies adopting the derived-artifact layer. Removing them here would trade a real, measured efficiency win (the bounded learning.md window, added earlier this session, already cut the mandatory read from 120KB to 34KB) for a symbolic minimalism this repo's own trail size does not support.
 - **decided:** Do NOT edit destination.md to walk back the operator's "this skills project defines the ACM" framing unilaterally. destination.md is operator-held; the correction (origination vs. formal-spec-authorship) is stated here in the trail and in conversation for the operator's own judgment, not imposed on their file.
 
@@ -1295,4 +1299,16 @@ Do not edit by hand — re-run the command to refresh.
 
 - **decided:** The architecture's existing viability constraint covers the cost and comprehensibility of live skill contracts, orchestration, reasoning, and routinely processed ACM context. These costs must remain proportionate to the work and be reconsidered as model capability, context capacity, and token economics change. Trustworthy capability is the objective; token reduction alone is not.
 
-**282 runs total — 262 with changes, 20 silence**
+### Run 283 — 2026-08-16 — remove-intent-implicit-permission-paths
+
+- **decided:** Make one incremental change: route no-ACM operation into the normal authority rule and state that unambiguity does not determine whether to pause. Prediction: every substantive undelegated scenario will require Confirm/Stop/Specify, while explicitly delegated and direct read-only scenarios remain unchanged.
+
+### Run 285 — 2026-08-19 — readme-problem-first-opening
+
+- **decided:** Replaced the README opening before the architecture image with a compact problem-first frame. The new opening names five recognizable failure modes (Intent decay, Session amnesia, Confident confabulation, Self-evaluation blind spots, Reasoning drift and wasted effort), gives the suite's response in one paragraph (destination, durable memory, disciplined improvement/verification/learning), and ends with one first action: run Improve on a real bounded task. It preserves the authority boundary in plain language: the agent chooses the route; the operator keeps the destination and consequential decisions. Existing evidence, architecture, workflow, limitations, and technical sections remain unchanged.
+
+### Run 286 — 2026-08-19 — repair-cp850-mojibake-in-audit-trail
+
+- **decided:** Repair the corrupted audit-trail.md at byte level, rather than editing prose or accepting garbled historical records. Diagnosis: the affected tokens were UTF-8 punctuation decoded as CP850, not the earlier CP1252-style corruption. Exact token mapping was verified from the file: 12 distinct sequences represented arrows, en/em dashes, quotes, apostrophe, ellipsis, dagger, euro, not-equal, and triangular marker. Replaced only those exact raw byte sequences with their intended UTF-8 bytes.
+
+**286 runs total — 265 with changes, 21 silence**

@@ -5,31 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 269 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-13 — improve-preregister-work-lifecycle-snapshots
-
-**[!REVERSAL]** The initial external-target report treated the harness's existence and Work's historical character counts as sufficient independent token evidence. Reversed after direct inspection found zero token-bearing ledger records and a ledger schema that does not write usage metadata.
-
-## 2026-08-13 — replace-usage-blocker-with-host-fidelity-gate
-
-**[!REALIZATION]** Independent measurement and experimental fidelity are separate gates. Solving token capture does not authorize replacing the production Improve loop with the nearest proxy-capable agent pipeline.
-
-## 2026-08-13 — preregister-copilot-cli-experiment-host
-
-**[!REALIZATION]** The host is experimentally viable only as a fully frozen stack: CLI version, suite composition, provider compression, model, prompt, permissions, and state isolation all affect measured loop behavior. "Same model and prompt" alone is not a sufficient same-host control.
-
-## 2026-08-13 — preregister-copilot-cli-experiment-host
-
-**[!REVERSAL]** The first smoke omitted Accept-Encoding: identity and failed after six model retries; the second added the already known ai-steward transport control and succeeded. During HOST.md drafting, four SHA-256 suffixes and three skill versions were initially entered from incomplete display or memory. Immediate direct hash and frontmatter checks caught them before commit, and all seven values were replaced with sourced values.
-
-## 2026-08-13 — execute-late-stage-loop-viability-experiment
-
-**[!REALIZATION]** Cleanliness is a run-boundary property, not a setup property. A clean initial preflight did not protect the silence position after an incomplete invocation left untracked state, and exit code 0 did not make the subsequent duplicate eligible. Each arm needs an immediate pre-call cleanliness assertion tied to the captured run record, and an incomplete authorized attempt must remain incomplete rather than being repaired by repetition.
-
-## 2026-08-13 — execute-late-stage-loop-viability-experiment
-
-**[!REVERSAL]** The apparent completed silence result was initially packaged as case-flint and sent for blinded evaluation. Session inventory then revealed an earlier ledger. Timestamp, trace-ending, Git-state, and pre-run evidence established that the earlier session was the authorized incomplete attempt and the completed session was an accidental dirty duplicate. Reversed the initial interpretation, retained the evaluator result only as classification of the duplicate package, and excluded the lifecycle position.
+Showing the most recent 60 markers. 275 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-13 — improve-arm-boundary-validity
 
@@ -247,6 +223,30 @@ Showing the most recent 60 markers. 269 older marker(s) are in `.acm/learning-ar
 
 **[!REALIZATION]** The suite's strongest learning machinery currently favors addition and enforcement over retirement. A moving-frontier architecture must be able to discover that yesterday's necessary governance no longer earns today's processing cost without treating reduction itself as improvement.
 
+## 2026-08-16 — remove-intent-implicit-permission-paths
+
+**[!REALIZATION]** Capability-preserving simplification can come from deleting superseded permission semantics rather than compressing reasoning operations. This reduced reconciliation burden while making authority more deterministic.
+
+## 2026-08-16 — remove-intent-implicit-permission-paths
+
+**[!REALIZATION]** The recurring authority defects are temporal accretion: each rule was locally coherent when introduced, but later architecture changed its meaning. The suite needs evidence that mechanisms still agree with current governing rules, not only evidence that each addition was justified when written.
+
+## 2026-08-16 — orient-after-intent-implicit-permission-repair
+
+**[!REALIZATION]** The Intent repair demonstrates one capability-preserving simplification class: remove older local exceptions after a newer general rule supersedes their authority semantics. Cold scenarios preserved explicitly delegated and direct-operation behavior while making undelegated substantive behavior deterministic.
+
+## 2026-08-16 — orient-after-intent-implicit-permission-repair
+
+**[!REALIZATION]** Retirement can be a learning outcome when evidence shows that a newer rule subsumes an older exception. The relevant proof is preserved behavior under discriminating scenarios, not reduced character count by itself.
+
+## 2026-08-19 — readme-problem-first-opening
+
+**[!REALIZATION]** Adoption friction begins before installation or workflow: a reader who cannot recognize the failure the suite addresses has no reason to learn its vocabulary or try Improve. The README opening is therefore part of the operational adoption path, not a cosmetic layer over it.
+
+## 2026-08-19 — repair-cp850-mojibake-in-audit-trail
+
+**[!REALIZATION]** Evidence integrity cannot be inferred from append-only discipline alone. The transport and encoding path that carries evidence is part of the evidence boundary; a correct recovery procedure must preserve raw bytes or verify the encoding before reusing reconstructed text.
+
 ---
 
-**60 markers — 43 realisations, 17 reversals**
+**60 markers — 46 realisations, 14 reversals**

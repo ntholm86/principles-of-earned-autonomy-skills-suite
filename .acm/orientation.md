@@ -1,15 +1,15 @@
 # orientation.md - autonomous-agent-skills
 
-_Last updated: 2026-08-16 (run: `orient-after-moving-frontier-viability-clarification`)_
+_Last updated: 2026-08-16 (run: `orient-after-intent-implicit-permission-repair`)_
 
 ## Scope of this read
 
-Re-orient the accumulated work against the sharpened viability constraint. Question: what does the arc establish about governance accretion, live skill and orchestration cost, growing ACM context, newcomer comprehension, and adaptation to changing model capability and economics without weakening the integrated Destination or the PEA principles?
+Refresh the viability map after Intent removed two legacy implicit-permission paths. Question: does this repair change the broader governance-accretion claim, and what does it establish about capability-preserving simplification?
 
 **Freshness check (run evidence):**
 
-- `python harness/tools/record.py history --write` -> 281 entries.
-- `python harness/tools/record.py learning --write` -> 60 recent + 267 archived markers.
+- `python harness/tools/record.py history --write` -> 283 entries.
+- `python harness/tools/record.py learning --write` -> 60 recent + 271 archived markers.
 - `python verify.py` -> OK, trail integrity checks pass.
 - Gate: PASS (arc-claims allowed).
 
@@ -53,14 +53,14 @@ Supervised runs confirm Intent before examination and Improve before implementat
 
 ### 7. Governance accretion is observed; whether it earns its cost is unresolved
 
-From the 2026-05-30 baseline to committed HEAD, the live skills grew from 1,010 to 1,134 lines and from 76,769 to 105,278 characters; Improve and Intent each grew by about 52% in characters. Some additions closed evidenced gaps, including bounded authority, reversal capture, and service ownership. The resulting contracts also contain at least one live ambiguity: Intent requires an undelegated confirmation pause while later allowing an unambiguous prompt to proceed after narration. The arc therefore supports neither "growth is bloat" nor "every addition earned its cost." It establishes governance accretion as a present architectural risk requiring behavioral evidence.
+From the 2026-05-30 baseline to committed HEAD before the latest repair, the live skills grew from 1,010 to 1,134 lines and from 76,769 to 105,278 characters; Improve and Intent each grew by about 52% in characters. Some additions closed evidenced gaps, including bounded authority, reversal capture, and service ownership. The latest run removed two older Intent permission paths that contradicted the newer supervised default, and cold semantic scenarios preserved delegated and direct-operation behavior. This is one demonstrated capability-preserving simplification, not evidence that broad compression is safe. The arc supports neither "growth is bloat" nor "every addition earned its cost."
 
 **Falsifiable by:** representative runs showing the larger contracts improve fidelity, control, or comprehension enough to justify their processing burden without conflicting execution, or a capability-preserving simplification showing that current text is unnecessary.
 
 ## What the next runs should test
 
 1. Observe an unassisted newcomer and identify the exact words, concepts, or exchanges that block understanding of what happens, why it matters, and where control remains.
-2. Examine representative live runs to determine which skill instructions and orchestration paths change behavior and which merely add processing burden; include the current Intent authority ambiguity.
+2. Examine representative live runs to determine which skill instructions and orchestration paths change behavior and which merely repeat or contradict a current governing rule.
 3. Measure routine ACM access on a mature target to learn whether bounded Destination, Orientation, and recent Learning prevent full-history cost in practice while preserving relevant evidence.
 4. Exercise the Improve action gate and Specify during natural work, then compare their distinct steering value against interaction cost.
 
@@ -78,14 +78,14 @@ From the 2026-05-30 baseline to committed HEAD, the live skills grew from 1,010 
 
 ## Loop-effectiveness notes
 
-**Quality bars tested in this read:** coherence of the sharpened viability constraint with the complete Destination and PEA principles, measured live-contract growth since May 30, preservation of candidate-route freedom, and append-only evidence integrity.
+**Quality bars tested in this read:** semantic consistency of Intent's supervised default across fresh, mature, delegated, and direct-operation scenarios; capability preservation under a narrow simplification; and append-only evidence integrity.
 
-**Result:** governance accretion CONFIRMED as an observed risk; trustworthy capability per resource integrated without becoming token minimization or a fixed metric; adaptive reasoning and derived memory preserved as candidate routes; repository integrity PASS before this Orient write.
+**Result:** the live Intent authority ambiguity is RESOLVED; one capability-preserving simplification class is demonstrated; the broader question of which accumulated contracts earn their cost remains OPEN; repository integrity PASS before this Orient write.
 
 **Bars not tested:** whether current contract growth earns its behavioral cost; actual unassisted newcomer comprehension; routine ACM token and attention cost on a mature external target; proportional reasoning without capability loss; cross-host and cross-model fidelity; natural adaptation after a material frontier change.
 
-**Double-loop finding:** repeated local flow and governance fixes have changed the governing question from "is this addition defensible?" to "does the complete architecture still deliver enough trustworthy capability to earn all of its accumulated processing burden?"
+**Double-loop finding:** the repaired clauses were not independently poor rules; they became defects when a newer governing authority model superseded their assumptions. Continued coherence with current governing rules is part of whether old machinery still earns its cost.
 
 **Deutero-learning finding:** the suite is better at recording and mechanically enforcing new lessons than at removing machinery whose original need has weakened. The moving-frontier viability bar makes continued necessity, not historical justification, the test.
 
-[!REALIZATION] Governance accretion is already present in the live contracts, but growth alone cannot distinguish necessary capability from accumulated burden. The next evidence must connect particular instructions and context reads to behavior, comprehension, and cost under current models.
+[!REALIZATION] Removing superseded permission semantics reduced reconciliation burden while preserving tested behavior. This demonstrates one route to leanness, but each further reduction still needs its own behavioral evidence.
