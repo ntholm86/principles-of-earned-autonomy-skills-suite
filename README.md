@@ -41,6 +41,8 @@ Run **Improve** on a real, bounded task. It invokes Intent before acting and Tra
 
 The operator remembers one command: `/improve`. The rest is automatic under Improve's control.
 
+Two properties span the whole suite: **convergence to silence** — the loop stops when independent evaluators find nothing left to change (borrowed from cybernetics: a negative-feedback system goes quiet once it reaches its goal state; Ashby, Wiener) — and **file-based memory** — `.acm/` is the agent's hippocampus: plain markdown any model can read, append to, and inherit across sessions and model swaps.
+
 ## How The Model Works
 
 Point Improve at a task. Each run reads your destination, the current map, and the trail; examines the target; makes one highest-leverage change; verifies it against a prediction recorded in advance; and writes the whole thing to an append-only ledger before finishing. When accumulated runs expose an unclear direction, Improve pauses to ask you; when the trail contradicts the map, it re-reads the whole arc and refreshes the map; and every lesson feeds the next run, so the suite gets smarter across sessions and model swaps. It stops when independent evaluators from different model families find nothing left to change.
