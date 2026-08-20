@@ -30,15 +30,15 @@ Run **Improve** on a real, bounded task. It invokes Intent before acting and Tra
 /improve create a professional knitting webshop in vanilla HTML, CSS, and JavaScript
 ```
 
-| Component | Role | What it does | Borrowed principle | PEA principle | ACM artifact |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **[Improve](./improve/SKILL.md)** | **Start here** | Makes one highest-leverage change per run. | Kaizen (Toyota TPS) | The Improve loop | reads all three; writes via Trail |
-| **[Intent](./intent/SKILL.md)** | **Automatic** | States what the agent believes you mean before acting. | Auftragstaktik, Commander's Intent | Operator's Intent | feeds destination.md |
-| **[Trail](./trail/SKILL.md)** | **Automatic** | Writes every run to an append-only audit trail. | Aviation black box | Observable Autonomy, audit trail | audit-trail.md |
-| **[Destination](./destination/SKILL.md)** | **Automatic** | Consolidates accepted mandates into durable direction. | Commander's Intent, Auftragstaktik | Destination | destination.md |
-| **[Orient](./orient/SKILL.md)** | **Automatic** | Reflects on past runs to spot recurring mistakes and dead ends. | Hansei, deutero-learning | Orientation | orientation.md |
-| **[Probe](./probe/SKILL.md)** | **Research** | Measures Autonomous Reasoning Fidelity. | Controlled experiment | Autonomous Reasoning Fidelity | audit-trail.md (research entries) |
-| **Convergence to silence** | **Automatic** | Stops when independent evaluators find nothing left to change. | Negative feedback (cybernetics: Ashby, Wiener) | The honest stop | — (a property of the loop, no file) |
+| Component | Role | What it does | PEA principle | ACM artifact |
+| :--- | :--- | :--- | :--- | :--- |
+| **[Improve](./improve/SKILL.md)** | **Start here** | Makes one highest-leverage change per run. | The Improve loop | reads all three; writes via Trail |
+| **[Intent](./intent/SKILL.md)** | **Automatic** | States what the agent believes you mean before acting. | Operator's Intent | feeds destination.md |
+| **[Trail](./trail/SKILL.md)** | **Automatic** | Writes every run to an append-only audit trail. | Observable Autonomy, audit trail | audit-trail.md |
+| **[Destination](./destination/SKILL.md)** | **Automatic** | Consolidates accepted mandates into durable direction. | Destination | destination.md |
+| **[Orient](./orient/SKILL.md)** | **Automatic** | Reflects on past runs to spot recurring mistakes and dead ends. | Orientation | orientation.md |
+| **[Probe](./probe/SKILL.md)** | **Research** | Measures Autonomous Reasoning Fidelity. | Autonomous Reasoning Fidelity | audit-trail.md (research entries) |
+| **Convergence to silence** | **Automatic** | Stops when independent evaluators find nothing left to change. | The honest stop | — (a property of the loop, no file) |
 
 The operator remembers one command: `/improve`. The rest is automatic under Improve's control.
 
