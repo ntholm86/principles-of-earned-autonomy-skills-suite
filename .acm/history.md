@@ -297,6 +297,7 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 290 | 2026-08-19 | correction-automatic-category-label | corrected the public and durable category label from "Automatic service" to "Automatic" |  |
 | ▸ 291 | 2026-08-19 | correction-improve-first-start-here | moved Improve to the first table row and shortened its role label to "Start here" |  |
 | ▸ 292 | 2026-08-20 | readme-how-model-works-before-iteration-proof | moved "How The Model Works" to directly after the architecture image, before the iteration-proof section |  |
+| ▸ 293 | 2026-08-20 | readme-one-skill-table-and-count-sync | skills table moved to directly after the image under the website framing; counts synchronized to 377 dated across both public surfaces |  |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -1333,4 +1334,8 @@ Do not edit by hand — re-run the command to refresh.
 
 - **decided:** One incremental change: move the section, no content edits, no count changes. Chosen over bumping the count because the count policy is operator-owned; another hand-bump would be the fifth patch of the same symptom. Prediction: after the move, the image-caption terms and the proof section's "the loop" are defined before use; no anchor or link references break; no other section changes.
 
-**292 runs total — 271 with changes, 21 silence**
+### Run 293 — 2026-08-20 — readme-one-skill-table-and-count-sync
+
+- **decided:** One iteration, two repos: restructure the section (retitle, move after image, example prompt, refreshed one-liners, redundant closing prose removed), then dated counts in README, website (both data-tips), and an appended ITERATION-COUNT.md refresh note. Prediction: the reader meets one action and a concrete prompt before any machinery; both surfaces carry the same dated number; no other section moves; verify.py passes; the pea-website gets its own trail entry and commit.
+
+**293 runs total — 272 with changes, 21 silence**

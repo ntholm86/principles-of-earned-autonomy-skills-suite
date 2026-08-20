@@ -1,6 +1,6 @@
 # Iteration count — verified evidence
 
-_Last updated: 2026-08-16_
+_Last updated: 2026-08-20_
 
 This document answers: **how many self-targeted iterations did this skills suite go through, and what proves it?**
 
@@ -14,8 +14,8 @@ This document answers: **how many self-targeted iterations did this skills suite
 | v1 (runs 26-30) | 2026-04-18 | 5 | Single commit; reconstruction acknowledged in commit message |
 | v1 (runs 31-50) | 2026-04-18 — 2026-04-19 | 18 | Individual commits with SHAs |
 | v2 (runs 51-97) | 2026-04-19 — 2026-04-22 | 41 | Individual commits with SHAs |
-| v3 (audit-trail) | 2026-04-23 — present | 281 | Committed Trail entries; some commits contain multiple iterations |
-| **Total** | | **370** | |
+| v3 (audit-trail) | 2026-04-23 — present | 288 | Committed Trail entries; some commits contain multiple iterations |
+| **Total** | | **377** | |
 
 Excluded from count: 8 external-target runs (62, 66, 67, 76, 77 + 2 vectorium v3 entries + 1 agent-context-memory v3 entry, 2026-08-01).
 
@@ -203,3 +203,24 @@ The README provenance wording was also corrected. Iterations 31 onward have per-
 89 pre-v3 self-targeted + (268 Trail entries - 3 external) = 354
 468 pre-refresh commits + 1 refresh commit = 469
 ```
+
+---
+
+## Refresh — 2026-08-20
+
+The canonical Trail parser reports 291 entries before this refresh, latest dated 2026-08-19. With the three external-primary-target entries excluded, the v3 self-targeted count is 288; adding the 89 self-targeted v1/v2 runs gives **377**. This refresh also commits one new self-targeted entry (`readme-one-skill-table-and-count-sync`, 2026-08-20), so the parser count will read 292 after commit; the published headline remains the pre-refresh 377 until the next refresh.
+
+The seven v3 entries added since 2026-08-16 are all self-targeted (runs 285-291), several of them README edits that iterated the document around its own stale count without updating it.
+
+**What changed:**
+- v3 (audit-trail) self-targeted count: 281 → 288.
+- Total self-targeted iterations: 370 → 377.
+- `README.md`'s headline updated from 370 to 377; the pea-website's count updated from 355 to 377 in the same pass, so both public surfaces now carry the same number.
+
+**Verified arithmetic for this refresh:**
+```text
+89 pre-v3 self-targeted + (291 Trail entries - 3 external) = 377
+git rev-list --count HEAD = 480 (pre-refresh)
+```
+
+**Honesty note:** the 354 → 370 jump between the 2026-08-14 narrative and the 2026-08-16 header was never given its own refresh section; the count was advanced through one-line deltas inside Orient-run entries (history.md runs 279-284). That bypassed this document's own refresh practice and is recorded here rather than rewritten into the historical sections. Two older internal discrepancies also stand: the v2 range 51-97 minus 5 external is arithmetically 42 self-targeted, but the table has claimed 41 since the first version (run 57 appears in no commit table, exclusion list, or embedded-commit list); and run 39 is documented as an invalidated hallucinated run yet remains inside the 18 counted for runs 31-50. Neither is resolved here; both are flagged for a future reconciliation rather than silently patched. Three commit totals in this document (469, 470, 475) refer to different snapshot dates and remain as-written history.

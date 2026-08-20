@@ -20,6 +20,25 @@ The suite is the reference implementation of [Agent Context Memory (ACM)](https:
 
 ![The full architecture illustrated as a Storm P-style Rube Goldberg machine: Operator's Intent feeds the Improve loop, the audit trail runs as a conveyor belt through the whole machine, Orient reads the arc and feeds learning back in, and the machine converges to silence.](./stormpInspired.png)
 
+## One skill to rule them all: IMPROVE
+
+Run **Improve** on a real, bounded task. It invokes Intent before acting and Trail after substantive work, and schedules Destination or Orient when the accumulated evidence makes either service useful. You do not orchestrate the other operational skills; **Probe** is separate, optional research instrumentation.
+
+```text
+/improve create a professional knitting webshop in vanilla HTML, CSS, and JavaScript
+```
+
+| Skill | Role | What it does | Invocation |
+| :--- | :--- | :--- | :--- |
+| ![Improve icon](./assets/skills/improve.svg) **[Improve](./improve/SKILL.md)** | **Start here** | Reads the context, purpose, and intent; makes one highest-leverage change per run and logs the reasoning. | `/improve` to begin and continue work |
+| ![Intent icon](./assets/skills/intent.svg) **[Intent](./intent/SKILL.md)** | **Automatic** | States what the agent believes you mean — not what you typed — before acting. | Improve invokes it before substantive work |
+| ![Trail icon](./assets/skills/trail.svg) **[Trail](./trail/SKILL.md)** | **Automatic** | Writes every run to an append-only audit trail, so the next session knows what was done and why. | Improve invokes it after substantive work |
+| ![Destination icon](./assets/skills/destination.svg) **[Destination](./destination/SKILL.md)** | **Automatic** | States what it thinks you are building and why, as questions you confirm or correct. | Improve schedules it when continued work needs broader direction; `/destination` is an override |
+| ![Orient icon](./assets/skills/orient.svg) **[Orient](./orient/SKILL.md)** | **Automatic** | Reads the entire trail and finds patterns no single session can see, refreshing where the work is now. | Improve or Destination schedules it when the orientation is stale; `/orient` is an override |
+| ![Probe icon](./assets/skills/probe.svg) **[Probe](./probe/SKILL.md)** | **Research entry point** | Tests reasoning with paired cases that differ in one material way; the divergence measures [Autonomous Reasoning Fidelity](https://github.com/ntholm86/principles-of-earned-autonomy/blob/main/PRINCIPLES.md#autonomous-reasoning-fidelity-operational-definition). | `/probe` during controlled ARF research |
+
+The operator remembers one command: `/improve`. The rest is automatic under Improve's control.
+
 ## How The Model Works
 
 ### Destination — Where are we going?
@@ -30,6 +49,14 @@ Each narrated Intent gives Improve a mandate for the current prompt. When accept
 >
 > — David Thomas & Andrew Hunt, [The Pragmatic Programmer](https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/)
 
+### Improve — Move toward the destination
+
+Improve is the workhorse and the single normal entry point. Point it at a target and run it. Each run applies Intent, explains its interpretation, examines what is there, challenges the first read, chooses the highest-leverage move, acts, verifies, records through Trail, and explains any automatic Destination or Orient handoff when the evidence triggers one.
+
+> "Invest in the design of the system every day."
+>
+> — Kent Beck, [Extreme Programming Explained](https://www.amazon.com/Extreme-Programming-Explained-Embrace-Change/dp/0321278658)
+
 ### Orientation — The architecture keeps its map current
 
 After many locally sensible runs, the overall arc can still drift. When triggered, Orient reads the accumulated history as one document and refreshes the current orientation: what the target is becoming, where attention has gone, and whether that is where the real weight lies. Destination schedules it after material direction changes; Improve schedules it when the evidence forms a meaningful arc, contradicts the current map, or approaches convergence. A raw iteration count alone does not trigger it.
@@ -38,19 +65,11 @@ After many locally sensible runs, the overall arc can still drift. When triggere
 >
 > — Søren Kierkegaard, Journals (1843)
 
-### Run — Move toward the destination
-
-Improve is the workhorse and the single normal entry point. Point it at a target and run it. Each run applies Intent, explains its interpretation, examines what is there, challenges the first read, chooses the highest-leverage move, acts, verifies, records through Trail, and explains any automatic Destination or Orient handoff when the evidence triggers one.
-
-> "Invest in the design of the system every day."
->
-> — Kent Beck, [Extreme Programming Explained](https://www.amazon.com/Extreme-Programming-Explained-Embrace-Change/dp/0321278658)
-
 Intent and Trail operate automatically around the work. Destination and Orient activate automatically when their evidence-based triggers fire. Probe sits outside normal operation as optional ARF research instrumentation.
 
-## The Suite Improved Itself — [370 documented iterations](./.acm/ITERATION-COUNT.md)
+## The Suite Improved Itself — [377 documented iterations](./.acm/ITERATION-COUNT.md)
 
-The suite ran on itself **370 times** across four eras and two complete rewrites. The earliest 30 rely on bulk or reconstructed provenance; iterations 31 onward have per-iteration GENBA or Trail records preserved in git, though one commit can contain multiple iterations. The full provenance breakdown — including git SHAs, verification commands, and an honest account of what is independently verifiable — is in [ITERATION-COUNT.md](./.acm/ITERATION-COUNT.md).
+The suite ran on itself **377 times** across four eras and two complete rewrites. The earliest 30 rely on bulk or reconstructed provenance; iterations 31 onward have per-iteration GENBA or Trail records preserved in git, though one commit can contain multiple iterations. The full provenance breakdown — including git SHAs, verification commands, and an honest account of what is independently verifiable — is in [ITERATION-COUNT.md](./.acm/ITERATION-COUNT.md).
 
 Convergence was declared only when **three independent evaluators from distinct model families** (Claude, Gpt, Gemini) each ran the loop and found nothing left to change.
 
@@ -67,23 +86,6 @@ This skillset has also been used successfully in professional enterprise deliver
 In that deployment, a scope estimated internally as a large T-shirt-size effort was completed in 3 days.
 
 The full trail exists, but it cannot be published in this repository because it is employer-owned professional work product and covered by intellectual property and confidentiality obligations. Treat this as high-signal private field evidence: a strong indication of practical leverage, but not public, independently reproducible proof.
-
-## One Normal Command
-
-Run **Improve**. It controls routine work: it invokes Intent before acting, Trail after substantive work, and schedules Destination or Orient when the accumulated evidence makes either service useful.
-
-You do not orchestrate the other operational skills. Intent, Trail, Destination, and Orient are automatic under Improve's control. **Probe** is separate, optional research instrumentation.
-
-| Skill | Role | What it does | Invocation |
-| :--- | :--- | :--- | :--- |
-| ![Improve icon](./assets/skills/improve.svg) **[Improve](./improve/SKILL.md)** | **Start here** | Interprets the prompt, examines, changes, verifies, learns, and coordinates the suite. | `/improve` to begin and continue work |
-| ![Intent icon](./assets/skills/intent.svg) **[Intent](./intent/SKILL.md)** | **Automatic** | States what the agent believes the operator means before acting. | Improve invokes it before substantive work |
-| ![Trail icon](./assets/skills/trail.svg) **[Trail](./trail/SKILL.md)** | **Automatic** | Preserves decisions, findings, actions, and reflections across sessions. | Improve invokes it after substantive work |
-| ![Destination icon](./assets/skills/destination.svg) **[Destination](./destination/SKILL.md)** | **Automatic** | Consolidates accepted prompt mandates into durable cross-run direction through operator-confirmed questions. | Improve schedules it when continued work needs broader direction; `/destination` is an override |
-| ![Orient icon](./assets/skills/orient.svg) **[Orient](./orient/SKILL.md)** | **Automatic** | Refreshes where the work is now by reading the accumulated arc. | Improve or Destination schedules it when the orientation is stale; `/orient` is an override |
-| ![Probe icon](./assets/skills/probe.svg) **[Probe](./probe/SKILL.md)** | **Research entry point** | Tests reasoning with controlled cases and measures [Autonomous Reasoning Fidelity](https://github.com/ntholm86/principles-of-earned-autonomy/blob/main/PRINCIPLES.md#autonomous-reasoning-fidelity-operational-definition). | `/probe` during controlled ARF research |
-
-In normal development, the operator runs Improve. It invokes Intent and Trail on every substantive run, and schedules Destination or Orient only when evidence warrants them. Probe sits outside normal operation as optional research instrumentation.
 
 ## Agent Context Memory (ACM)
 

@@ -16327,3 +16327,54 @@ Destination need: not triggered - the count policy question was surfaced directl
 3. Align citation currency: CITATION.cff version and date versus CHANGELOG v4.33.1, and qualify which release the Zenodo DOI archives.
 
 Cost: moderate - deep evidence verification (parser count, git history, link and asset checks, external anchor fetch), one section reorder, no code changed.
+
+## 2026-08-20 - readme-one-skill-table-and-count-sync
+
+- target: skills-suite README, ITERATION-COUNT.md, and pea-website count
+- agent: GitHub Copilot (Kimi K3)
+- skill: improve
+- outcome: skills table moved to directly after the image under the website framing; counts synchronized to 377 dated across both public surfaces
+
+### Interpretation of the ask
+
+Operator asked to move the skills-table section to directly after the image, retitle "One Normal Command" in the pea-website style ("One skill to rule them all: IMPROVE"), and harvest the website's articulation for the skill definitions and architecture story so both surfaces land the same way for first readers. On scope they answered: cherry-pick useful articulations that land, not wholesale harmonization. On the count: update both surfaces to 377 dated. Operator authorized "proceed" after the proposal.
+
+### Examination (lenses)
+
+- Purpose: the website leads with action - headline, install steps, a concrete example prompt - and shows skill cards after; the README led with machinery and had no example prompt until QUICKSTART. Against the claim-4 first-use adoption bar, the website's opening pattern is the stronger articulation.
+- Inconsistency: three surfaces, three counts (website 355, README 370, canonical 377). The website trail showed its LotR headline was a deliberate operator-chosen voice move (2026-08-14, give-improve-a-memorable-headline), so matching it aligns with confirmed direction rather than inventing tone.
+- Articulations adopted: the headline, the concrete example prompt (/improve create a professional knitting webshop in vanilla HTML, CSS, and JavaScript), and sharper one-liners - "States what it thinks you are building and why, as questions you confirm or correct" (Destination), "Finds patterns no single session can see" (Orient), "What you mean, not what you said" (Intent). Not adopted: the machine-metaphor walkthrough (the image and How The Model Works already cover it), the Derives-from lineage footers (website-specific), and any rewrite of the quote-anchored How The Model Works prose.
+
+### Decision and prediction
+
+[!DECISION] One iteration, two repos: restructure the section (retitle, move after image, example prompt, refreshed one-liners, redundant closing prose removed), then dated counts in README, website (both data-tips), and an appended ITERATION-COUNT.md refresh note. Prediction: the reader meets one action and a concrete prompt before any machinery; both surfaces carry the same dated number; no other section moves; verify.py passes; the pea-website gets its own trail entry and commit.
+
+### Action and verification
+
+README section order now: offer, One skill to rule them all (with table), How The Model Works, proof, field evidence, ACM, Workflow, Quickstart. All eleven level-2 headings present once. Website grep confirms zero remaining 355 instances; both 377 instances verified. ITERATION-COUNT.md refresh records the 291-minus-3-plus-89 arithmetic, the unrecorded 354-to-370 jump, and flags (without resolving) the run-57 gap, the counted-but-invalidated run 39, and the three historical commit totals. Trail entries appended in both repos. Prediction held; verify.py result reported below.
+
+### Reflection
+
+Model-claim: the README's first screen now follows the operator-confirmed website pattern - action before machinery, example before abstraction - and the two public surfaces agree on the evidence number for the first time. Blind spot: no fresh-reader test was run; whether the LotR register lands next to Kierkegaard and Sagan is a comprehension question, not an inference from the website precedent. Imagined-reader pushback: the example prompt (knitting webshop) is website-copy playfulness in a repo README; the counter is that the operator chose the same example when building the website and asked for that voice here.
+
+### Across-trail trigger evaluation
+
+- *Recurring finding-class:* FIRED - fifth consecutive README first-use structure change; also the third recurrence of the hand-maintained-count drift class, now patched one more time by hand.
+- *About to declare silence:* not fired - change made.
+- *Contradicts prior [!REALIZATION]:* not fired - extends the order-is-instruction and one-action-first realisations.
+- *Operator explicitly asked:* FIRED - operator proposed the move, the headline style, and the count decision directly.
+
+### Across-trail macro-Hansei
+
+[!REALIZATION] The count is now synchronized across three surfaces by hand for the fifth time, and this entry plus the website entry make the true parser count 293 (380 self-targeted) the moment they are committed - the published 377 is stale by construction at commit time. This is the strongest evidence yet for the deferred destination-level policy: any hand-maintained published number is a snapshot that begins drifting immediately, and the honest fixes are mechanical generation, an explicit as-of convention, or accepted documented staleness. The question stays with the operator.
+
+Orientation freshness: current - follows the 2026-08-19 one-normal-entry addendum and the claim-4 adoption bar; the heading change is presentation, not a model change.
+Destination need: not triggered - the operator answered both open questions (scope, count handling) directly in this conversation; the standing count-policy question remains recorded as candidate move 1.
+
+### Candidate Next Moves
+
+1. Decide the iteration-count policy (operator-owned): mechanical generation, explicit as-of dating convention, or accepted documented staleness - this iteration is the fifth hand-patch and the number is already stale at commit time.
+2. Reconcile ITERATION-COUNT.md v1/v2 arithmetic: the run-57 gap, invalidated run 39 inside the count, and the 469/470/475 commit totals, now flagged in the refresh note.
+3. Align citation currency: CITATION.cff version and date versus CHANGELOG v4.33.1, and qualify which release the Zenodo DOI archives.
+
+Cost: moderate - two repos edited, two trail entries, refresh-note reconciliation, grep and heading verification, verifier runs.

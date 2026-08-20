@@ -1129,6 +1129,10 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** The adoption path is now blocked by experiment-host qualification before it is blocked by Improve behavior. Repairing the user journey advanced the probe one boundary, but changing from the qualified proxy route to direct BYOK changed the frozen host and invalidated the assumption that the named model remained available. Host availability must be established for the exact provider route before spending a one-invocation authorization.
 
+## 2026-08-13 — improve-first-run-cold-start-rerun
+
+**[!REVERSAL]** Removed it before invocation, removed the fixture test cache, reinstalled with `$copilotHome` into the intended isolated temp directory, and re-established a clean fixture with exactly five skills plus PRINCIPLES.md.
+
 ---
 
-**281 markers — 254 realisations, 27 reversals**
+**282 markers — 254 realisations, 28 reversals**

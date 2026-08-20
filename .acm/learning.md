@@ -5,11 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 281 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-13 — improve-first-run-cold-start-rerun
-
-**[!REVERSAL]** Removed it before invocation, removed the fixture test cache, reinstalled with `$copilotHome` into the intended isolated temp directory, and re-established a clean fixture with exactly five skills plus PRINCIPLES.md.
+Showing the most recent 60 markers. 282 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-13 — orient-after-first-run-adoption-sequence
 
@@ -247,6 +243,10 @@ Showing the most recent 60 markers. 281 older marker(s) are in `.acm/learning-ar
 
 **[!REALIZATION]** The README arc has shifted from what the suite claims to how a first reader meets it; order, not wording, is now the unit of change. The iteration-count drift is the hand-maintained-snapshot defect class named on 2026-08-01 and 2026-08-02 recurring for at least the third time. Single-loop correction would bump 370 to 377 by hand; the governing variable is that published surfaces carry hand-maintained counts at all. That is a candidate destination-level policy (mechanically generated count, dated snapshot, or accepted documented staleness), not another artifact patch - surfaced to the operator as the top candidate next move rather than fixed in place.
 
+## 2026-08-20 — readme-one-skill-table-and-count-sync
+
+**[!REALIZATION]** The count is now synchronized across three surfaces by hand for the fifth time, and this entry plus the website entry make the true parser count 293 (380 self-targeted) the moment they are committed - the published 377 is stale by construction at commit time. This is the strongest evidence yet for the deferred destination-level policy: any hand-maintained published number is a snapshot that begins drifting immediately, and the honest fixes are mechanical generation, an explicit as-of convention, or accepted documented staleness. The question stays with the operator.
+
 ---
 
-**60 markers — 47 realisations, 13 reversals**
+**60 markers — 48 realisations, 12 reversals**
