@@ -38,10 +38,10 @@ Run **Improve** on a real, bounded task. It invokes Intent before acting and Tra
 | **[Destination](./destination/SKILL.md)** | **Automatic** | Consolidates accepted mandates into durable direction. | Commander's Intent, Auftragstaktik | Destination |
 | **[Orient](./orient/SKILL.md)** | **Automatic** | Reflects on past runs to spot recurring mistakes and dead ends. | Hansei, deutero-learning | Orientation |
 | **[Probe](./probe/SKILL.md)** | **Research** | Measures Autonomous Reasoning Fidelity. | Controlled experiment | Autonomous Reasoning Fidelity |
+| **Convergence to silence** *(suite property)* | **Automatic** | Stops when independent evaluators find nothing left to change. | Negative feedback (cybernetics: Ashby, Wiener) | The honest stop |
+| **`.acm/` file-based memory** *(suite property)* | **Automatic** | Persists destination, trail, and orientation as plain markdown. | Externalized memory (exocortex) | Contextual awareness |
 
 The operator remembers one command: `/improve`. The rest is automatic under Improve's control.
-
-Two properties span the whole suite: **convergence to silence** — the loop stops when independent evaluators find nothing left to change (borrowed from cybernetics: a negative-feedback system goes quiet once it reaches its goal state; Ashby, Wiener) — and **file-based memory** — `.acm/` is the agent's hippocampus: plain markdown any model can read, append to, and inherit across sessions and model swaps.
 
 ## How The Model Works
 
