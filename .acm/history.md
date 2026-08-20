@@ -296,6 +296,7 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 289 | 2026-08-19 | collapse-service-activation-taxonomy | collapsed Passive and Triggered into one automatic-service category under Improve; refreshed Destination and Orientation |  |
 | ▸ 290 | 2026-08-19 | correction-automatic-category-label | corrected the public and durable category label from "Automatic service" to "Automatic" |  |
 | ▸ 291 | 2026-08-19 | correction-improve-first-start-here | moved Improve to the first table row and shortened its role label to "Start here" |  |
+| ▸ 292 | 2026-08-20 | readme-how-model-works-before-iteration-proof | moved "How The Model Works" to directly after the architecture image, before the iteration-proof section |  |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -1328,4 +1329,8 @@ Do not edit by hand — re-run the command to refresh.
 
 - **decided:** Replace the multi-category activation taxonomy with one normal entry point and one automatic service chain. Improve is the sole normal entry point; Intent, Trail, Destination, and Orient are automatic services under its orchestration. Destination may schedule Orient after a material direction change as part of that same chain. Probe is a separate research entry point. Updated README table roles and first-use explanation, the current Destination operating model and open question, Destination/Orient service descriptions, and the final live "passively recomputes" phrase. Added a mini-orient addendum and active operational rule rather than rewriting unrelated arc claims.
 
-**291 runs total — 270 with changes, 21 silence**
+### Run 292 — 2026-08-20 — readme-how-model-works-before-iteration-proof
+
+- **decided:** One incremental change: move the section, no content edits, no count changes. Chosen over bumping the count because the count policy is operator-owned; another hand-bump would be the fifth patch of the same symptom. Prediction: after the move, the image-caption terms and the proof section's "the loop" are defined before use; no anchor or link references break; no other section changes.
+
+**292 runs total — 271 with changes, 21 silence**

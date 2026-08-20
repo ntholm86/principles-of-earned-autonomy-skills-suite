@@ -1125,6 +1125,10 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REVERSAL]** Within this iteration, the first hook-guidance edit introduced one extra indentation level. Diff inspection exposed it; the line was realigned and diagnostics rerun before Trail.
 
+## 2026-08-13 — improve-first-run-cold-start-rerun
+
+**[!REALIZATION]** The adoption path is now blocked by experiment-host qualification before it is blocked by Improve behavior. Repairing the user journey advanced the probe one boundary, but changing from the qualified proxy route to direct BYOK changed the frozen host and invalidated the assumption that the named model remained available. Host availability must be established for the exact provider route before spending a one-invocation authorization.
+
 ---
 
-**280 markers — 253 realisations, 27 reversals**
+**281 markers — 254 realisations, 27 reversals**

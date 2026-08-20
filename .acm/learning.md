@@ -5,11 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 280 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-13 — improve-first-run-cold-start-rerun
-
-**[!REALIZATION]** The adoption path is now blocked by experiment-host qualification before it is blocked by Improve behavior. Repairing the user journey advanced the probe one boundary, but changing from the qualified proxy route to direct BYOK changed the frozen host and invalidated the assumption that the named model remained available. Host availability must be established for the exact provider route before spending a one-invocation authorization.
+Showing the most recent 60 markers. 281 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-13 — improve-first-run-cold-start-rerun
 
@@ -246,6 +242,10 @@ Showing the most recent 60 markers. 280 older marker(s) are in `.acm/learning-ar
 ## 2026-08-19 — correction-improve-first-start-here
 
 **[!REALIZATION]** A table's order is part of its instruction. Putting Improve first and labeling it "Start here" expresses the one normal action before any internal capability detail.
+
+## 2026-08-20 — readme-how-model-works-before-iteration-proof
+
+**[!REALIZATION]** The README arc has shifted from what the suite claims to how a first reader meets it; order, not wording, is now the unit of change. The iteration-count drift is the hand-maintained-snapshot defect class named on 2026-08-01 and 2026-08-02 recurring for at least the third time. Single-loop correction would bump 370 to 377 by hand; the governing variable is that published surfaces carry hand-maintained counts at all. That is a candidate destination-level policy (mechanically generated count, dated snapshot, or accepted documented staleness), not another artifact patch - surfaced to the operator as the top candidate next move rather than fixed in place.
 
 ---
 

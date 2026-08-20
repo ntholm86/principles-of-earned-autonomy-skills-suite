@@ -16274,3 +16274,56 @@ Destination need: not triggered - the operating model is unchanged.
 1. Test the first-use table with a fresh reader before further wording changes.
 
 Cost: light - one table-row reorder and role-label reduction, verifier validation.
+
+## 2026-08-20 - readme-how-model-works-before-iteration-proof
+
+- target: skills-suite README section order
+- agent: GitHub Copilot (Kimi K3)
+- skill: improve
+- outcome: moved "How The Model Works" to directly after the architecture image, before the iteration-proof section
+
+### Interpretation of the ask
+
+Operator asked for three things in one prompt: judge whether "How The Model Works" should move to after the image and before the 370-iteration section; verify whether the iteration count is correct; and sweep the README through the Improve lenses for mistakes and inconsistencies. Read as an evidence-first audit ending in a gated proposal, not silent edits. Rejected alternative: apply the reorder immediately; "Perhaps" and the count question asked for judgment first. Operator authorized "proceed" after the findings report.
+
+### Examination (lenses)
+
+- Purpose: the image caption and the proof section referenced "the loop", the Improve loop, and Orient before any of them were defined; How The Model Works sat four sections later. The structure contradicted the first-use adoption bar recorded in Orientation claim 4.
+- Inconsistency: iteration count is stale. The canonical parser reports 291 v3 entries (latest 2026-08-19); 288 self-targeted v3 plus 89 pre-v3 gives 377, not 370. ITERATION-COUNT.md also contradicts itself: header says "Last updated: 2026-08-16" with a 370 summary while its newest refresh narrative is dated 2026-08-14 and computes 354; three different commit totals appear (469, 470, 475; actual today: 480); the v2 range arithmetic is 42 self-targeted but the table claims 41; run 57 is undocumented and run 39 is invalidated yet apparently still counted. Not changed this iteration; deferred to the operator as a policy question (see macro-Hansei).
+- Inconsistency (minor, not acted): "Gpt" capitalization twice; the How The Model Works subsection names mix skill names and concepts (Destination / Orientation / Run versus skills Destination / Orient / Improve); CITATION.cff version 4.17.0 versus CHANGELOG v4.33.1, and the README cites a Zenodo DOI that CITATION.cff describes as "archive of v3.2.0".
+- Waste: the operating model is covered three times (One Normal Command, the Run subsection, Workflow); judged deliberate layering for first-use, left alone.
+- Verified clean: image and all six skill SVGs exist; QUICKSTART, BENCHMARKS, hook installer, and install script references all resolve; the ARF deep link anchor exists in the principles repo; the provenance wording matches ITERATION-COUNT.md; the one-normal-command model matches the 2026-08-19 orientation addendum; no file links to the how-the-model-works anchor.
+
+### Decision and prediction
+
+[!DECISION] One incremental change: move the section, no content edits, no count changes. Chosen over bumping the count because the count policy is operator-owned; another hand-bump would be the fifth patch of the same symptom. Prediction: after the move, the image-caption terms and the proof section's "the loop" are defined before use; no anchor or link references break; no other section changes.
+
+### Action and verification
+
+Two replacements moved the block. Re-read of the reordered flow confirms: image, How The Model Works, proof section; all eleven level-2 headings present exactly once in the new order. Prediction held in full.
+
+### Reflection
+
+Model-claim: the README is converging on an operator-steered narrative order in which mechanism precedes proof; runs 285 through 291 plus this one are all first-use presentation work, and the largest remaining live inconsistencies are stale hand-maintained numbers rather than prose. Blind spot: the v1/v2 git SHAs in ITERATION-COUNT.md were not spot-checked, the Zenodo DOI was not resolved, and the confidential field evidence is unverifiable by design. Imagined-reader pushback: moving mechanism before proof weakens the hook for skimmers who want credibility first; the counter is that the proof section's own dangling "the loop" reference only reads cleanly once the mechanism exists.
+
+### Across-trail trigger evaluation
+
+- *Recurring finding-class:* FIRED - fourth consecutive README first-use structure change after readme-problem-first-opening, readme-four-part-offer-heading, readme-one-normal-command-operating-model, and correction-improve-first-start-here.
+- *About to declare silence:* not fired - change made.
+- *Contradicts prior [!REALIZATION]:* not fired - extends the recent one-normal-entry and table-order-is-instruction realisations; checked the recent window, none contradicted.
+- *Operator explicitly asked:* FIRED - the operator proposed the reorder and requested the audit directly.
+
+### Across-trail macro-Hansei
+
+[!REALIZATION] The README arc has shifted from what the suite claims to how a first reader meets it; order, not wording, is now the unit of change. The iteration-count drift is the hand-maintained-snapshot defect class named on 2026-08-01 and 2026-08-02 recurring for at least the third time. Single-loop correction would bump 370 to 377 by hand; the governing variable is that published surfaces carry hand-maintained counts at all. That is a candidate destination-level policy (mechanically generated count, dated snapshot, or accepted documented staleness), not another artifact patch - surfaced to the operator as the top candidate next move rather than fixed in place.
+
+Orientation freshness: current - the change follows the 2026-08-19 mini-orient addendum and the claim-4 adoption bar; nothing in the arc map is contradicted.
+Destination need: not triggered - the count policy question was surfaced directly to the operator in this conversation and awaits their steer; no full Destination run scheduled.
+
+### Candidate Next Moves
+
+1. Decide the iteration-count policy (operator-owned): mechanically verify or generate the count, publish as-of dates, or accept documented staleness; another hand-bump is the fifth fix of the same symptom.
+2. Reconcile ITERATION-COUNT.md: add the missing 2026-08-16 refresh narrative, fix the 469/470/475 commit-total disagreement, and state explicitly whether run 57 exists and whether invalidated run 39 counts.
+3. Align citation currency: CITATION.cff version and date versus CHANGELOG v4.33.1, and qualify which release the Zenodo DOI archives.
+
+Cost: moderate - deep evidence verification (parser count, git history, link and asset checks, external anchor fetch), one section reorder, no code changed.

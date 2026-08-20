@@ -20,6 +20,34 @@ The suite is the reference implementation of [Agent Context Memory (ACM)](https:
 
 ![The full architecture illustrated as a Storm P-style Rube Goldberg machine: Operator's Intent feeds the Improve loop, the audit trail runs as a conveyor belt through the whole machine, Orient reads the arc and feeds learning back in, and the machine converges to silence.](./stormpInspired.png)
 
+## How The Model Works
+
+### Destination — Where are we going?
+
+Each narrated Intent gives Improve a mandate for the current prompt. When accepted mandates accumulate, conflict, or expose an unresolved priority, Improve triggers Destination to consolidate them into durable cross-run direction. Destination asks one sourced question at a time and never turns an unconfirmed agent inference into operator-held direction.
+
+> "No-one knows exactly what they want."
+>
+> — David Thomas & Andrew Hunt, [The Pragmatic Programmer](https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/)
+
+### Orientation — The architecture keeps its map current
+
+After many locally sensible runs, the overall arc can still drift. When triggered, Orient reads the accumulated history as one document and refreshes the current orientation: what the target is becoming, where attention has gone, and whether that is where the real weight lies. Destination schedules it after material direction changes; Improve schedules it when the evidence forms a meaningful arc, contradicts the current map, or approaches convergence. A raw iteration count alone does not trigger it.
+
+> "Life can only be understood backwards; but it must be lived forwards."
+>
+> — Søren Kierkegaard, Journals (1843)
+
+### Run — Move toward the destination
+
+Improve is the workhorse and the single normal entry point. Point it at a target and run it. Each run applies Intent, explains its interpretation, examines what is there, challenges the first read, chooses the highest-leverage move, acts, verifies, records through Trail, and explains any automatic Destination or Orient handoff when the evidence triggers one.
+
+> "Invest in the design of the system every day."
+>
+> — Kent Beck, [Extreme Programming Explained](https://www.amazon.com/Extreme-Programming-Explained-Embrace-Change/dp/0321278658)
+
+Intent and Trail operate automatically around the work. Destination and Orient activate automatically when their evidence-based triggers fire. Probe sits outside normal operation as optional ARF research instrumentation.
+
 ## The Suite Improved Itself — [370 documented iterations](./.acm/ITERATION-COUNT.md)
 
 The suite ran on itself **370 times** across four eras and two complete rewrites. The earliest 30 rely on bulk or reconstructed provenance; iterations 31 onward have per-iteration GENBA or Trail records preserved in git, though one commit can contain multiple iterations. The full provenance breakdown — including git SHAs, verification commands, and an honest account of what is independently verifiable — is in [ITERATION-COUNT.md](./.acm/ITERATION-COUNT.md).
@@ -68,34 +96,6 @@ The files (`.acm/audit-trail.md`, `.acm/destination.md`, `.acm/orientation.md`) 
 Memory alone is just retrieval; awareness is orientation. Because `Orient` reads the arc, `Destination` uncovers where you're heading, and `Intent` aligns the goal, the suite uses that memory to understand where it is and where it is going.
 
 When you swap from Claude to Gpt to Gemini, the next model picks up this exact orientation. That accumulation is what makes the suite get smarter over time.
-
-## How The Model Works
-
-### Destination — Where are we going?
-
-Each narrated Intent gives Improve a mandate for the current prompt. When accepted mandates accumulate, conflict, or expose an unresolved priority, Improve triggers Destination to consolidate them into durable cross-run direction. Destination asks one sourced question at a time and never turns an unconfirmed agent inference into operator-held direction.
-
-> "No-one knows exactly what they want."
->
-> — David Thomas & Andrew Hunt, [The Pragmatic Programmer](https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/)
-
-### Orientation — The architecture keeps its map current
-
-After many locally sensible runs, the overall arc can still drift. When triggered, Orient reads the accumulated history as one document and refreshes the current orientation: what the target is becoming, where attention has gone, and whether that is where the real weight lies. Destination schedules it after material direction changes; Improve schedules it when the evidence forms a meaningful arc, contradicts the current map, or approaches convergence. A raw iteration count alone does not trigger it.
-
-> "Life can only be understood backwards; but it must be lived forwards."
->
-> — Søren Kierkegaard, Journals (1843)
-
-### Run — Move toward the destination
-
-Improve is the workhorse and the single normal entry point. Point it at a target and run it. Each run applies Intent, explains its interpretation, examines what is there, challenges the first read, chooses the highest-leverage move, acts, verifies, records through Trail, and explains any automatic Destination or Orient handoff when the evidence triggers one.
-
-> "Invest in the design of the system every day."
->
-> — Kent Beck, [Extreme Programming Explained](https://www.amazon.com/Extreme-Programming-Explained-Embrace-Change/dp/0321278658)
-
-Intent and Trail operate automatically around the work. Destination and Orient activate automatically when their evidence-based triggers fire. Probe sits outside normal operation as optional ARF research instrumentation.
 
 ## Workflow
 
