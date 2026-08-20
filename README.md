@@ -32,7 +32,7 @@ Run **Improve** on a real, bounded task. It invokes Intent before acting and Tra
 
 | Component | Role | What it does | PEA principle | ACM artifact |
 | :--- | :--- | :--- | :--- | :--- |
-| **[Improve](./improve/SKILL.md)** | **Start here** | Makes one highest-leverage change per run. | The Improve loop | reads all three |
+| **[Improve](./improve/SKILL.md)** | **Start here** | Makes one highest-leverage change per run. |  | reads all three |
 | **[Intent](./intent/SKILL.md)** | **Automatic** | States what the agent believes you mean before acting. | Operator's Intent |  |
 | **[Trail](./trail/SKILL.md)** | **Automatic** | Writes every run to an append-only audit trail. | Observable Autonomy | .acm/audit-trail.md |
 | **[Destination](./destination/SKILL.md)** | **Automatic** | Consolidates accepted mandates into durable direction. |  | .acm/destination.md |
