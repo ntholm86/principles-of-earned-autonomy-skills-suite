@@ -16661,3 +16661,56 @@ Destination need: not triggered.
 3. When the presentation plateau ends, return to capability work - the 314 metric only moves then.
 
 Cost: light - one correction append, verifier re-run.
+
+
+## 2026-08-20 - readme-failure-list-scannable-eight
+
+- target: skills-suite README opening failure list
+- agent: GitHub Copilot (Kimi K3)
+- skill: improve
+- outcome: tightened all entries to scannable length and expanded the list from five to eight
+
+### Interpretation of the ask
+
+Operator wanted the intro list optimized for maximum scimmability: every entry short, dead-on, covering all the problems worth mentioning. First pass tightened the five existing entries and was approved in shape; the follow-up asked what else belongs. Read as: the list is the hook, each bold term names the failure, the tail lands it in under ten words.
+
+### Examination (lenses)
+
+- Purpose: the list is the first thing a skimmer reads; its job is recognition, not explanation. Fifteen-to-twenty-word entries buried the lead term.
+- Coverage: scanned the suite's actual failure taxonomy for gaps. Added three: directionless autonomy (compliance without interpretation - the checklist ceiling, distinct from intent decay), lost reasoning (the why gone within the work, distinct from amnesia between sessions), and no honest stop (loops inventing work - Convergence Is Silence's problem).
+- Waste: cut justifications from every tail; the bold term plus a sub-ten-word tail carries each entry.
+
+### Decision and prediction
+
+[!DECISION] Eight entries, em-dash separator, tails under ten words. Prediction: the list reads at a glance; each term maps to a mechanism later in the README; no claim exceeds what the suite does.
+
+### Action and verification
+
+One replacement. All eight tails counted under ten words; each failure maps to a named mechanism (Intent, Trail, convergence protocol, independent evaluation). Prediction held.
+
+### Reflection
+
+Model-claim: the opening now works at two speeds - the bold column alone tells the story, the tails reward a second look. Blind spot: eight items may be over the skimmability sweet spot; only a fresh reader settles whether the list is scanned or skipped at this length. Imagined-reader pushback: 'directionless autonomy' and 'no honest stop' are less familiar phrasings than the others; the counter is that they name failures the reader has felt but not named, which is the point of the list.
+
+### Across-trail trigger evaluation
+
+- *Recurring finding-class:* FIRED - eleventh consecutive README-surface entry.
+- *About to declare silence:* not fired - change made.
+- *Contradicts prior [!REALIZATION]:* not fired - consistent with the correction entry's framing of this as one sustained onboarding arc.
+- *Operator explicitly asked:* FIRED - the style, the expansion request, and the approval all came from the operator.
+
+### Across-trail macro-Hansei
+
+[!REALIZATION] The failure list is the suite's claim in miniature: each bold term is a mechanism's reason to exist. Keeping the list honest - every entry maps to a mechanism, no mechanism invents a list entry - is the same discipline the 314 classification applied to the count. The list is now the cheapest audit surface in the README: a skeptic can check eight claims instead of reading eight sections.
+
+Orientation freshness: current - onboarding arc, no arc claim disturbed.
+Destination need: not triggered.
+
+### Candidate Next Moves
+
+1. Fresh-reader test of the opening screen (failure list plus one-skill section) against the claim-4 adoption bar.
+2. Verify the live GitHub render of the README after push.
+3. Return to capability work when the presentation plateau ends - the 314 metric only moves then.
+
+Cost: light - one list rewrite, verifier run.
+

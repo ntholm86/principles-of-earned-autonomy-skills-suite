@@ -6,11 +6,14 @@ AI can write code quickly. It can also quietly lose your intent, forget decision
 
 The most expensive failures are familiar:
 
-- **Intent decay:** the agent starts with your goal and gradually solves a different one.
-- **Session amnesia:** decisions, failed attempts, and reasons disappear when the chat ends or the model changes.
-- **Confident confabulation:** plausible explanations hide uncertainty and make bad work look finished.
-- **Self-evaluation blind spots:** the same agent that made the mistake declares its own work correct.
-- **Reasoning drift and wasted effort:** locally sensible edits accumulate without improving what matters most.
+- **Intent decay** — starts on your goal, drifts to a different one.
+- **Directionless autonomy** — complies with instructions, misses the point.
+- **Session amnesia** — every chat starts from zero.
+- **Lost reasoning** — decisions survive, the why doesn't.
+- **Confident confabulation** — plausible stories hide unfinished work.
+- **Self-grading blind spots** — the agent that erred declares itself correct.
+- **Quietly wasted effort** — sensible edits that move nothing that matters.
+- **No honest stop** — the loop invents work to keep running.
 
 This suite gives an agent a durable destination, memory of what happened, and a disciplined way to examine, improve, verify, and learn from its work. It interprets what you mean before acting, keeps the work anchored to the purpose, preserves decisions across sessions and model swaps, and stops when independent attempts find nothing material left to change.
 

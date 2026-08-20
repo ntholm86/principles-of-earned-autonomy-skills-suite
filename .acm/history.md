@@ -304,6 +304,7 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 297 | 2026-08-20 | remove-lifecycle-diagram-not-good-enough | removed the full-lifecycle Mermaid diagram and its intro sentence; section restored to pre-diagram state |  |
 | ▸ 298 | 2026-08-20 | readme-how-it-works-short-description | added a three-sentence plain-language description of the full lifecycle at the top of the section |  |
 | ▸ 299 | 2026-08-20 | readme-how-it-works-short-description [correction] | supplied the macro-Hansei subsection the prior entry's fired triggers required |  |
+| ▸ 300 | 2026-08-20 | readme-failure-list-scannable-eight | tightened all entries to scannable length and expanded the list from five to eight |  |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -1365,4 +1366,8 @@ Do not edit by hand — re-run the command to refresh.
 
 - **decided:** Insert the approved passage between the section heading and the Destination subsection; nothing else changes. Prediction: a newcomer gets the whole lifecycle in plain terms before meeting any skill name; the three subsections then deepen one element each; no other section affected.
 
-**299 runs total — 278 with changes, 21 silence**
+### Run 300 — 2026-08-20 — readme-failure-list-scannable-eight
+
+- **decided:** Eight entries, em-dash separator, tails under ten words. Prediction: the list reads at a glance; each term maps to a mechanism later in the README; no claim exceeds what the suite does.
+
+**300 runs total — 279 with changes, 21 silence**

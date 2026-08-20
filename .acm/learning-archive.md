@@ -1157,6 +1157,10 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REVERSAL]** The first setup command set `COPILOT_HOME` but omitted the installer's explicit `-Target`; `install.ps1` attempted the live default skill directory and stopped on a locked Intent file before any proxy or model call. Files ordered before Intent may have been overwritten with byte-identical payload from commit `c9e0500`. No live file was reverted. The isolated install was then performed with the documented explicit target.
 
+## 2026-08-13 — execute-second-first-run-rerun
+
+**[!REVERSAL]** The first serial preflight aborted before invocation because the baseline capture file had not survived the failed setup command and fresh-home CLI version output included an update hint. The empty proxy ledger, clean target, and absent ACM prove that no model call occurred. The existing baseline ID was captured and the version assertion narrowed to its first line before the one authorized invocation.
+
 ---
 
-**288 markers — 259 realisations, 29 reversals**
+**289 markers — 259 realisations, 30 reversals**
