@@ -7,8 +7,9 @@ AI can write code quickly. It can also quietly lose your intent, forget decision
 The most expensive failures are familiar:
 
 - **Intent decay** — starts on your goal, drifts to a different one.
-- **Directionless autonomy** — complies with instructions, misses the point.
+- **Directionless autonomy** — Implements exactly what you wrote, misses the obvious point.
 - **Session amnesia** — every chat starts from zero.
+- **Groundhog Day** — twenty messages in, and it's still making the mistake you corrected in message two.
 - **Lost reasoning** — decisions survive, the why doesn't.
 - **Confident confabulation** — plausible stories hide unfinished work.
 - **Self-grading blind spots** — the agent that erred declares itself correct.
