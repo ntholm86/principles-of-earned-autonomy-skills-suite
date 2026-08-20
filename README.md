@@ -37,7 +37,7 @@ Run **Improve** on a real, bounded task. It invokes Intent before acting and Tra
 | **[Trail](./trail/SKILL.md)** | **Automatic** | Writes every run to an append-only audit trail. | Observable Autonomy, audit trail | .acm/audit-trail.md |
 | **[Destination](./destination/SKILL.md)** | **Automatic** | Consolidates accepted mandates into durable direction. | Destination | .acm/destination.md |
 | **[Orient](./orient/SKILL.md)** | **Automatic** | Reflects on past runs to spot recurring mistakes and dead ends. | Orientation | .acm/orientation.md |
-| **[Probe](./probe/SKILL.md)** | **Research** | Measures Autonomous Reasoning Fidelity. | Autonomous Reasoning Fidelity | .acm/audit-trail.md (research entries) |
+| **[Probe](./probe/SKILL.md)** | **Research** | Measures Autonomous Reasoning Fidelity. | Autonomous Reasoning Fidelity |  |
 | **Convergence to silence** | **Automatic** | Stops when independent evaluators find nothing left to change. | The honest stop |  |
 
 The operator remembers one command: `/improve`. The rest is automatic under Improve's control.
