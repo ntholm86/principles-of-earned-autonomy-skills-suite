@@ -16378,3 +16378,54 @@ Destination need: not triggered - the operator answered both open questions (sco
 3. Align citation currency: CITATION.cff version and date versus CHANGELOG v4.33.1, and qualify which release the Zenodo DOI archives.
 
 Cost: moderate - two repos edited, two trail entries, refresh-note reconciliation, grep and heading verification, verifier runs.
+
+## 2026-08-20 - conservative-count-framing-no-overclaim
+
+- target: skills-suite README, ITERATION-COUNT.md, and pea-website count framing
+- agent: GitHub Copilot (Kimi K3)
+- skill: improve
+- outcome: public surfaces now claim 377 documented runs, not 377 self-improvement iterations
+
+### Interpretation of the ask
+
+Operator ruled that runs spent editing README selling text are not true self-targeting improvements: a self-targeted improvement moves the suite toward the destination or improves its capability, and the recent arc was onboarding work. They asked for a much more conservative count presentation, explicitly not a full re-count. Interpreted as: reframe what the number claims on all public surfaces and record the definitional ruling, deferring classification of the capability subset. Operator authorized with "yes" after the proposal.
+
+### Examination (lenses)
+
+- Purpose: destination quality bar 1 already excluded exactly this class - self-targeting runs should discover and improve unnamed limitations rather than only repair consistency. The published count never enforced the bar.
+- Inconsistency: 18 entries are targeted at README by the trail target field; 23 or more v3-era entries are slug-identifiable presentation work (readme, title, hook, stormp, copy, zenodo, citation); runs 285-293 were nine consecutive presentation entries. The capability count is materially lower than 377 and unknown without audit.
+- Overclaim shape: the README headline "377 documented iterations" under "The Suite Improved Itself" implied every run improved the suite. The defensible claim is the practice: continuous self-application, publicly auditable.
+
+### Decision and prediction
+
+[!DECISION] Reframe, do not recount: README heading becomes "public trail of 377 runs" with the body naming the mixed content (capability changes, consistency repairs, evidence work, onboarding); website says documented runs in both mentions; ITERATION-COUNT.md gets an appended conservative-reading note recording the operator definition and the deferred re-audit. Prediction: no public surface claims a capability-iteration count; "If the loop cannot improve itself" line survives because it cites no number; verifier passes.
+
+### Action and verification
+
+Three surface edits plus the appended note; trail entries in both repos. Grep confirms no remaining "documented iterations" on the website and the README heading now claims runs. verify.py result below. Prediction held.
+
+### Reflection
+
+Model-claim: the evidence headline now claims the auditable practice rather than an unclassified capability count, and the deferred re-audit - not the headline - is where the real capability number will come from. Blind spot: the boundary classes (Orient silence-runs, integrity repairs, provenance bookkeeping) were surfaced but not ruled; the eventual re-audit still needs those rulings. Imagined-reader pushback: a skeptic could say 377 runs is still vanity if most are presentation; the counter is that the body now names the mix openly and links the provenance document that records the limitation.
+
+### Across-trail trigger evaluation
+
+- *Recurring finding-class:* FIRED - sixth consecutive README-surface change, though this one is claim hygiene rather than presentation polish.
+- *About to declare silence:* not fired - change made.
+- *Contradicts prior [!REALIZATION]:* FIRED - the morning entry framed the count problem as staleness and hand-maintenance; the operator ruling shows the deeper defect was definitional - the number measured recorded runs, not improvements.
+- *Operator explicitly asked:* FIRED - the definitional ruling and the conservative-not-recount scope came directly from the operator.
+
+### Across-trail macro-Hansei
+
+[!REALIZATION] The count defect was never only drift: the metric never measured the claim. A number that counts trail entries cannot headline a claim about capability improvement, no matter how fresh it is. This resolves the standing count-policy question from the last two entries in an unexpected direction - the policy question was downstream of the definition question, and the definition now says: runs are claimed, improvements must be earned by classification. The deferred re-audit inherits the boundary rulings as its first task.
+
+Orientation freshness: current - no arc claim references the count; this is a claim-hygiene correction consistent with quality bar 1.
+Destination need: not triggered - the ruling enforces the existing destination quality bar 1; no direction change.
+
+### Candidate Next Moves
+
+1. When the operator wants the real number: full re-audit of all entries against the written capability standard, starting with rulings on Orient silence-runs, integrity repairs, and provenance bookkeeping.
+2. Reconcile ITERATION-COUNT.md v1/v2 arithmetic: the run-57 gap, invalidated run 39 inside the count, and the 469/470/475 commit totals.
+3. Align citation currency: CITATION.cff version and date versus CHANGELOG v4.33.1, and qualify which release the Zenodo DOI archives.
+
+Cost: light-moderate - three wording surfaces, one appended provenance note, two trail entries, grep and verifier validation, no code changed.

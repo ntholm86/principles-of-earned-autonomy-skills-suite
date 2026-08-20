@@ -224,3 +224,11 @@ git rev-list --count HEAD = 480 (pre-refresh)
 ```
 
 **Honesty note:** the 354 → 370 jump between the 2026-08-14 narrative and the 2026-08-16 header was never given its own refresh section; the count was advanced through one-line deltas inside Orient-run entries (history.md runs 279-284). That bypassed this document's own refresh practice and is recorded here rather than rewritten into the historical sections. Two older internal discrepancies also stand: the v2 range 51-97 minus 5 external is arithmetically 42 self-targeted, but the table has claimed 41 since the first version (run 57 appears in no commit table, exclusion list, or embedded-commit list); and run 39 is documented as an invalidated hallucinated run yet remains inside the 18 counted for runs 31-50. Neither is resolved here; both are flagged for a future reconciliation rather than silently patched. Three commit totals in this document (469, 470, 475) refer to different snapshot dates and remain as-written history.
+
+---
+
+## Conservative reading — 2026-08-20
+
+The operator ruled that presentation and onboarding edits (README copy, headings, illustrations) do not count as self-improvement iterations: a true self-targeted improvement moves the suite toward its destination or improves its reasoning, learning, or operational capability. By that standard, 377 read as capability improvements would be an overstatement — it is the count of all self-targeted runs, including presentation work.
+
+Both public surfaces (skills README, pea-website) now present 377 as documented runs, not capability iterations. The capability subset has not been classified; a full re-audit against a written standard is deferred by the operator and recorded as a candidate next move in the trail. Known presentation-class entries include at least the 18 entries targeted at README plus further slug-identified copy, title, and illustration work (23 or more in the v3 era, including runs 285-293).

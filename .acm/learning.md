@@ -5,11 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 282 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-13 — orient-after-first-run-adoption-sequence
-
-**[!REALIZATION]** The first-run frontier has advanced from installation to exact-route model availability, but no reasoning contract has yet executed. The sequence demonstrates sound chronological boundary testing and honest exclusion while also exposing a learning failure: a previously recorded host-fidelity rule was understood in the arc and still not applied before authorization.
+Showing the most recent 60 markers. 283 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-13 — improve-qualify-first-run-host-route
 
@@ -246,6 +242,10 @@ Showing the most recent 60 markers. 282 older marker(s) are in `.acm/learning-ar
 ## 2026-08-20 — readme-one-skill-table-and-count-sync
 
 **[!REALIZATION]** The count is now synchronized across three surfaces by hand for the fifth time, and this entry plus the website entry make the true parser count 293 (380 self-targeted) the moment they are committed - the published 377 is stale by construction at commit time. This is the strongest evidence yet for the deferred destination-level policy: any hand-maintained published number is a snapshot that begins drifting immediately, and the honest fixes are mechanical generation, an explicit as-of convention, or accepted documented staleness. The question stays with the operator.
+
+## 2026-08-20 — conservative-count-framing-no-overclaim
+
+**[!REALIZATION]** The count defect was never only drift: the metric never measured the claim. A number that counts trail entries cannot headline a claim about capability improvement, no matter how fresh it is. This resolves the standing count-policy question from the last two entries in an unexpected direction - the policy question was downstream of the definition question, and the definition now says: runs are claimed, improvements must be earned by classification. The deferred re-audit inherits the boundary rulings as its first task.
 
 ---
 

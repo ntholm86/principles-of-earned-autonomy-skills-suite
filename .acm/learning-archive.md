@@ -1133,6 +1133,10 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REVERSAL]** Removed it before invocation, removed the fixture test cache, reinstalled with `$copilotHome` into the intended isolated temp directory, and re-established a clean fixture with exactly five skills plus PRINCIPLES.md.
 
+## 2026-08-13 — orient-after-first-run-adoption-sequence
+
+**[!REALIZATION]** The first-run frontier has advanced from installation to exact-route model availability, but no reasoning contract has yet executed. The sequence demonstrates sound chronological boundary testing and honest exclusion while also exposing a learning failure: a previously recorded host-fidelity rule was understood in the arc and still not applied before authorization.
+
 ---
 
-**282 markers — 254 realisations, 28 reversals**
+**283 markers — 255 realisations, 28 reversals**
