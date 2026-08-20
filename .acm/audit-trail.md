@@ -16532,3 +16532,55 @@ Destination need: not triggered - no unresolved durable direction; style choices
 3. Reconcile the remaining v1/v2 arithmetic questions in ITERATION-COUNT.md (run 57 gap, 469/470/475 commit totals).
 
 Cost: moderate - two external doc verifications (GitHub diagram support, Mermaid syntax hazards), two rejected drafts, one embedded diagram, verifier run.
+
+## 2026-08-20 - remove-lifecycle-diagram-not-good-enough
+
+- target: skills-suite README How The Model Works
+- agent: GitHub Copilot (Kimi K3)
+- skill: improve
+- outcome: removed the full-lifecycle Mermaid diagram and its intro sentence; section restored to pre-diagram state
+
+### Interpretation of the ask
+
+Operator reviewed the rendered v4 diagram and ruled: "no, just delete the diagram - we will go without it for now." Earlier in the arc they had said "this is not good enough at all" and asked for a doc-grounded quality pass; v4 fixed the technical contrast and label defects but did not reach the bar. Read as: the diagram work is shelved entirely, not iterated further; restore the section and record the decision honestly.
+
+### Examination (lenses)
+
+- Waste: the README carried a 60-line diagram block whose rendered quality the operator judged insufficient; removing it returns the section to prose plus the Storm P image, which already carries the architecture feel.
+- What the iteration actually produced: a working local Mermaid render pipeline (npx mermaid-cli 11.16.0, light and dark mode checks), and a documented set of GitHub-Mermaid constraints (no hex colors in sequence rect, middle-dot breaks diamond labels, light fills with dark ink survive both GitHub themes). The artifact is gone; the capability evidence remains in the trail.
+
+### Decision and prediction
+
+[!DECISION] Full removal, no replacement diagram. Chosen over another iteration because the operator's judgment was final ("go without it for now"), and because the README already has the Storm P image carrying the visual load. Prediction: README returns to its pre-diagram state; no dangling references; verifier passes.
+
+### Action and verification
+
+Removed the intro sentence and the full mermaid block in one replacement; deleted the six working files under .acm/sessions (v2/v3/v4 .mmd and .png, the check screenshot). Confirmed the section now reads heading then Destination subsection directly. verify.py result below. Prediction held.
+
+### Reflection
+
+Model-claim: the README's visual explanation is the Storm P image alone; the text-rendered machine map did not earn its place against it. Blind spot: I did not show the operator intermediate v2/v3 renders before v4, so the first three rounds of feedback cost more than they needed to; earlier visual checkpoints would have found the bar faster. Imagined-reader pushback: none expected - removal is the conservative state.
+
+### Across-trail trigger evaluation
+
+- *Recurring finding-class:* FIRED - ninth consecutive README-surface entry, now including a full addition and its reversal.
+- *About to declare silence:* not fired - change made.
+- *Contradicts prior [!REALIZATION]:* FIRED - the diagram entry's model-claim (two complementary pictures) is withdrawn; the realized state is one image, not two.
+- *Operator explicitly asked:* FIRED - removal was a direct operator instruction.
+
+### Across-trail macro-Hansei
+
+[!REVERSAL] The lifecycle diagram was added and removed within the same session. The reversible-cost discipline held (one clean insertion, one clean removal), but the arc shows a draft-approve-render loop that could have checkpointed visually earlier. Reusable lesson: for visual artifacts, render and show before proposing, not after - the local mermaid-cli pipeline now makes that cheap.
+
+[!REALIZATION] "Not good enough" from the operator is a stopping signal, not an iteration prompt. The correct response to a final quality ruling on a presentation artifact is clean removal, not another draft. The capability gained (render pipeline, constraint list) is real and recorded even though the artifact is gone.
+
+Orientation freshness: current - no arc claim references the diagram; removal is consistent with the adoption bar (do not ship what does not land).
+Destination need: not triggered - no direction question; the operator's instruction was unambiguous.
+
+### Candidate Next Moves
+
+1. If a diagram is wanted later, restart from the v4 source in this entry's git parent (ae4207b) with the render-then-show discipline; do not resurrect the removed block blindly.
+2. Verify the live GitHub render of the current README (the one-skill table and image) now that the diagram is gone.
+3. Reconcile the remaining ITERATION-COUNT.md v1/v2 arithmetic questions (run 57, commit totals).
+
+Cost: light - one removal replacement, six file deletions, verifier run; the expensive part (the render pipeline) is retained knowledge.

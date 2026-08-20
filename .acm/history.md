@@ -301,6 +301,7 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 294 | 2026-08-20 | conservative-count-framing-no-overclaim | public surfaces now claim 377 documented runs, not 377 self-improvement iterations |  |
 | ▸ 295 | 2026-08-20 | publish-314-self-improvement-iterations | both public surfaces now headline 314 self-improvement iterations out of 377 self-targeted runs |  |
 | ▸ 296 | 2026-08-20 | readme-lifecycle-machine-diagram | dense full-lifecycle Mermaid flowchart added after the section intro, rendered natively on GitHub |  |
+| ▸ 297 | 2026-08-20 | remove-lifecycle-diagram-not-good-enough | removed the full-lifecycle Mermaid diagram and its intro sentence; section restored to pre-diagram state |  |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -1353,4 +1354,9 @@ Do not edit by hand — re-run the command to refresh.
 
 - **decided:** Embed the approved flowchart after the How The Model Works intro paragraph, before the Destination subsection; add one intro sentence framing the diagram against the three subsections that follow. Prediction: renders natively on github.com and in VS Code preview; the Storm P image stays as the artistic anchor at the top; no other sections change.
 
-**296 runs total — 275 with changes, 21 silence**
+### Run 297 — 2026-08-20 — remove-lifecycle-diagram-not-good-enough
+
+- **decided:** Full removal, no replacement diagram. Chosen over another iteration because the operator's judgment was final ("go without it for now"), and because the README already has the Storm P image carrying the visual load. Prediction: README returns to its pre-diagram state; no dangling references; verifier passes.
+- **REVERSAL:** The lifecycle diagram was added and removed within the same session. The reversible-cost discipline held (one clean insertion, one clean removal), but the arc shows a draft-approve-render loop that could have checkpointed visually earlier. Reusable lesson: for visual artifacts, render and show before proposing, not after - the local mermaid-cli pipeline now makes that cheap.
+
+**297 runs total — 276 with changes, 21 silence**

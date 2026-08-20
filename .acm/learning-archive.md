@@ -1145,6 +1145,14 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** The first-run frontier has advanced beyond installation and exact-route availability to the boundary of the first completed no-ACM Improve invocation. The arc now contains one concrete case where stored host-fidelity learning changed the next action before scarce authorization, while all reasoning and human-adoption claims remain open.
 
+## 2026-08-13 — improve-preregister-second-first-run-rerun
+
+**[!REALIZATION]** Chronological adoption testing now has a complete separation of concerns: installation evidence, route-availability evidence, and behavioral authorization are distinct checkpoints. That separation prevents a host smoke from becoming workflow evidence and prevents observed workflow output from rewriting its eligibility conditions.
+
+## 2026-08-13 — execute-second-first-run-rerun
+
+**[!REALIZATION]** On this tested host, Improve can be the only normal entry point for a first useful run: it applied visible Intent before repository work, chose the small implementation route from the bounded prompt, applied Trail afterward, and did not demand Destination setup. The evidence advances simulated operability, not adoption.
+
 ---
 
-**285 markers — 257 realisations, 28 reversals**
+**287 markers — 259 realisations, 28 reversals**

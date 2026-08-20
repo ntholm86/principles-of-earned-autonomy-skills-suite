@@ -5,15 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 285 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-13 — improve-preregister-second-first-run-rerun
-
-**[!REALIZATION]** Chronological adoption testing now has a complete separation of concerns: installation evidence, route-availability evidence, and behavioral authorization are distinct checkpoints. That separation prevents a host smoke from becoming workflow evidence and prevents observed workflow output from rewriting its eligibility conditions.
-
-## 2026-08-13 — execute-second-first-run-rerun
-
-**[!REALIZATION]** On this tested host, Improve can be the only normal entry point for a first useful run: it applied visible Intent before repository work, chose the small implementation route from the bounded prompt, applied Trail afterward, and did not demand Destination setup. The evidence advances simulated operability, not adoption.
+Showing the most recent 60 markers. 287 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-13 — execute-second-first-run-rerun
 
@@ -247,6 +239,14 @@ Showing the most recent 60 markers. 285 older marker(s) are in `.acm/learning-ar
 
 **[!REALIZATION]** Presentation runs cluster: when the operator's attention is on how the suite presents, that is where the iterations go - eight of the last ten entries. Under the 2026-08-20 classification rule none of them move the self-improvement number, which is the metric working as intended: the count no longer rewards polishing the shop window. The open question for the next arc is whether the suite's capability work resumes after the presentation plateau, or whether presentation is what the target currently needs most. Evidence for the latter: the adoption quality bar is unmet until a newcomer passes it.
 
+## 2026-08-20 — remove-lifecycle-diagram-not-good-enough
+
+**[!REALIZATION]** "Not good enough" from the operator is a stopping signal, not an iteration prompt. The correct response to a final quality ruling on a presentation artifact is clean removal, not another draft. The capability gained (render pipeline, constraint list) is real and recorded even though the artifact is gone.
+
+## 2026-08-20 — remove-lifecycle-diagram-not-good-enough
+
+**[!REVERSAL]** The lifecycle diagram was added and removed within the same session. The reversible-cost discipline held (one clean insertion, one clean removal), but the arc shows a draft-approve-render loop that could have checkpointed visually earlier. Reusable lesson: for visual artifacts, render and show before proposing, not after - the local mermaid-cli pipeline now makes that cheap.
+
 ---
 
-**60 markers — 48 realisations, 12 reversals**
+**60 markers — 47 realisations, 13 reversals**

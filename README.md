@@ -41,69 +41,6 @@ The operator remembers one command: `/improve`. The rest is automatic under Impr
 
 ## How The Model Works
 
-The whole lifecycle in one machine: the operator pulls the lever, the Kaizen wheel turns once per run, the recording desk writes every card to the append-only ledger, and the memory dome feeds each run's lessons into the next. Destination and Orient fire only when the evidence warrants them; the bell rings when independent evaluators find nothing left to change.
-
-```mermaid
-flowchart LR
-    subgraph ING["&nbsp;"]
-        direction TB
-        OP(["🎛️<br/>OPERATOR<br/><i>the lever</i>"]):::operator
-        PROMPT["📜 /improve<br/><i>destination scroll</i>"]:::scroll
-        OP --> PROMPT
-    end
-
-    subgraph WHEEL["🎡 KAIZEN WHEEL — one Improve run"]
-        direction TB
-        READ["📖 READ<br/>destination · orientation<br/>learning · trail"]:::work
-        EXAM["🔍 EXAMINE<br/>purpose · inconsistency<br/>overburden · waste"]:::work
-        DECIDE["🎯 DECIDE<br/>one highest-leverage move<br/>+ falsifiable prediction"]:::work
-        ACT["🔨 ACT → VERIFY<br/>outcome vs prediction"]:::work
-        READ --> EXAM --> DECIDE --> ACT
-    end
-
-    subgraph DESK["🗄️ RECORDING DESK"]
-        TRAIL["✍️ TRAIL<br/>append-only audit ledger<br/><i>every run, never rewritten</i>"]:::evidence
-        LEARN["🪙 [!REALIZATION]<br/>learning.md · history.md<br/><i>derived views</i>"]:::evidence
-        TRAIL --> LEARN
-    end
-
-    subgraph CATWALK["🐈 OBSERVATION CATWALK — when the map is stale"]
-        ORIENT["🔭 ORIENT<br/>reads the whole arc<br/>mints realizations"]:::scheduled
-    end
-
-    subgraph ENGINE["⚙️ DIFFERENCE ENGINE"]
-        CONV["🔔 CONVERGENCE<br/>3 independent model families<br/>find nothing → silence"]:::silent
-    end
-
-    DOME(["🧠 ACM<br/>persistent memory dome"]):::memory
-    DEST(["🧭 DESTINATION<br/>where we're going<br/><i>operator-held</i>"]):::direction
-    GATE{"🚪 GATES<br/>Confirm · Specify<br/>Stop · Delegate"}:::gate
-
-    PROMPT --> GATE
-    GATE -->|confirmed| READ
-    GATE -.->|stop / specify| OP
-    ACT --> TRAIL
-    TRAIL ==>|every entry feeds<br/>the next run| DOME
-    DOME ==> READ
-    ACT -.->|mandates conflict| DEST
-    DEST -.->|one sourced question| OP
-    DEST ==>|confirmed direction| DOME
-    TRAIL -.->|arc contradicts map| ORIENT
-    ORIENT ==>|🪙 realizations| DOME
-    TRAIL --> CONV
-    CONV -.->|new evidence or destination| OP
-
-    classDef operator fill:#2a2f42,stroke:#e7c97a,color:#e7c97a,stroke-width:2px
-    classDef scroll fill:#2a2f42,stroke:#e7c97a,color:#e4e7ec
-    classDef work fill:#1f3134,stroke:#7fd1c5,color:#e4e7ec,stroke-width:2px
-    classDef evidence fill:#22301f,stroke:#a3d6a7,color:#e4e7ec,stroke-width:2px
-    classDef scheduled fill:#2c2438,stroke:#c4a7e7,color:#e4e7ec,stroke-width:2px
-    classDef memory fill:#33272a,stroke:#f48fb1,color:#f48fb1,stroke-width:3px
-    classDef direction fill:#33272a,stroke:#f48fb1,color:#f48fb1,stroke-width:3px
-    classDef gate fill:#2a2f42,stroke:#a8b1c2,color:#a8b1c2
-    classDef silent fill:#3a2e1e,stroke:#e7c97a,color:#e7c97a,stroke-width:2px
-```
-
 ### Destination — Where are we going?
 
 Each narrated Intent gives Improve a mandate for the current prompt. When accepted mandates accumulate, conflict, or expose an unresolved priority, Improve triggers Destination to consolidate them into durable cross-run direction. Destination asks one sourced question at a time and never turns an unconfirmed agent inference into operator-held direction.
