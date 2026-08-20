@@ -1,10 +1,8 @@
 # Principles of Earned Autonomy - Skills Suite
 
-## Give AI Intent, Reasoning, Memory, and Evidence
+## Give your AI Intent, Reasoning & Memory.
 
-AI can write code quickly. It can also quietly lose your intent, forget decisions between and in sessions, drift toward an easier problem, and sound certain while building the wrong thing.
-
-The most expensive failures are familiar:
+These skill will immediately solve:
 
 - **Intent decay** — starts on your goal, drifts to a different one.
 - **Directionless autonomy** — Implements exactly what you wrote, misses the obvious point.
