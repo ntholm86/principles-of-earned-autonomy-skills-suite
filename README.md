@@ -30,14 +30,14 @@ Run **Improve** on a real, bounded task. It invokes Intent before acting and Tra
 /improve create a professional knitting webshop in vanilla HTML, CSS, and JavaScript
 ```
 
-| Skill | Role | What it does | Principles adapted for AI |
-| :--- | :--- | :--- | :--- |
-| **[Improve](./improve/SKILL.md)** | **Start here** | Makes one highest-leverage change per run. | Kaizen (Toyota TPS) |
-| **[Intent](./intent/SKILL.md)** | **Automatic** | States what the agent believes you mean before acting. | Auftragstaktik |
-| **[Trail](./trail/SKILL.md)** | **Automatic** | Writes every run to an append-only audit trail. | Aviation black box |
-| **[Destination](./destination/SKILL.md)** | **Automatic** | Consolidates accepted mandates into durable direction. | Commander's Intent |
-| **[Orient](./orient/SKILL.md)** | **Automatic** | Reflects on past runs to spot recurring mistakes and dead ends. | Reflection, retrospect, deutero-learning |
-| **[Probe](./probe/SKILL.md)** | **Research** | Measures Autonomous Reasoning Fidelity. | Controlled experiment |
+| Skill | Role | What it does | Borrowed principle | PEA principle |
+| :--- | :--- | :--- | :--- | :--- |
+| **[Improve](./improve/SKILL.md)** | **Start here** | Makes one highest-leverage change per run. | Kaizen (Toyota TPS) | The Improve loop |
+| **[Intent](./intent/SKILL.md)** | **Automatic** | States what the agent believes you mean before acting. | Auftragstaktik, Commander's Intent | Operator's Intent |
+| **[Trail](./trail/SKILL.md)** | **Automatic** | Writes every run to an append-only audit trail. | Aviation black box | Observable Autonomy |
+| **[Destination](./destination/SKILL.md)** | **Automatic** | Consolidates accepted mandates into durable direction. | Commander's Intent, Auftragstaktik | Destination |
+| **[Orient](./orient/SKILL.md)** | **Automatic** | Reflects on past runs to spot recurring mistakes and dead ends. | Hansei, deutero-learning | Orientation |
+| **[Probe](./probe/SKILL.md)** | **Research** | Measures Autonomous Reasoning Fidelity. | Controlled experiment | Autonomous Reasoning Fidelity |
 
 The operator remembers one command: `/improve`. The rest is automatic under Improve's control.
 
