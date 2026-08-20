@@ -30,9 +30,9 @@ Run **Improve** on a real, bounded task. It invokes Intent before acting and Tra
 /improve create a professional knitting webshop in vanilla HTML, CSS, and JavaScript
 ```
 
-| Skill | Role | What it does | Principle |
+| Skill | Role | What it does | Principles adapted for AI |
 | :--- | :--- | :--- | :--- |
-| **[Improve](./improve/SKILL.md)** | **Start here** | Makes one highest-leverage change per run. | Kaizen (Toyota TPS), adapted for AI |
+| **[Improve](./improve/SKILL.md)** | **Start here** | Makes one highest-leverage change per run. | Kaizen (Toyota TPS) |
 | **[Intent](./intent/SKILL.md)** | **Automatic** | States what the agent believes you mean before acting. | Auftragstaktik |
 | **[Trail](./trail/SKILL.md)** | **Automatic** | Writes every run to an append-only audit trail. | Aviation black box |
 | **[Destination](./destination/SKILL.md)** | **Automatic** | Consolidates accepted mandates into durable direction. | Commander's Intent |
