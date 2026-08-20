@@ -38,7 +38,7 @@ Run **Improve** on a real, bounded task. It invokes Intent before acting and Tra
 | **[Destination](./destination/SKILL.md)** | **Automatic** | Consolidates accepted mandates into durable direction. |  | .acm/destination.md |
 | **[Orient](./orient/SKILL.md)** | **Automatic** | Reflects on past runs to spot recurring mistakes and dead ends. |  | .acm/orientation.md |
 | **[Probe](./probe/SKILL.md)** | **Research** | Measures Autonomous Reasoning Fidelity. | Autonomous Reasoning Fidelity |  |
-| **Convergence to silence** | **Automatic** | Stops when independent evaluators find nothing left to change. | The honest stop |  |
+| **Convergence to silence** | **Automatic** | Stops when independent evaluators find nothing left to change. | Convergence Is Silence |  |
 
 The operator remembers one command: `/improve`. The rest is automatic under Improve's control.
 
