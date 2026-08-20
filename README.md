@@ -39,7 +39,6 @@ Run **Improve** on a real, bounded task. It invokes Intent before acting and Tra
 | **[Orient](./orient/SKILL.md)** | **Automatic** | Reflects on past runs to spot recurring mistakes and dead ends. | Hansei, deutero-learning | Orientation | orientation.md |
 | **[Probe](./probe/SKILL.md)** | **Research** | Measures Autonomous Reasoning Fidelity. | Controlled experiment | Autonomous Reasoning Fidelity | audit-trail.md (research entries) |
 | **Convergence to silence** | **Automatic** | Stops when independent evaluators find nothing left to change. | Negative feedback (cybernetics: Ashby, Wiener) | The honest stop | — (a property of the loop, no file) |
-| **`.acm/` file-based memory** | **Automatic** | Persists destination, trail, and orientation as plain markdown. | Externalized memory (exocortex) | Contextual awareness | the whole `.acm/` directory |
 
 The operator remembers one command: `/improve`. The rest is automatic under Improve's control.
 
