@@ -30,14 +30,14 @@ Run **Improve** on a real, bounded task. It invokes Intent before acting and Tra
 /improve create a professional knitting webshop in vanilla HTML, CSS, and JavaScript
 ```
 
-| Skill | Role | What it does |
-| :--- | :--- | :--- |
-| **[Improve](./improve/SKILL.md)** | **Start here** | Makes one highest-leverage change per run. |
-| **[Intent](./intent/SKILL.md)** | **Automatic** | States what the agent believes you mean before acting. |
-| **[Trail](./trail/SKILL.md)** | **Automatic** | Writes every run to an append-only audit trail. |
-| **[Destination](./destination/SKILL.md)** | **Automatic** | Consolidates accepted mandates into durable direction. |
-| **[Orient](./orient/SKILL.md)** | **Automatic** | Reflects on past runs to spot recurring mistakes and dead ends. |
-| **[Probe](./probe/SKILL.md)** | **Research** | Measures Autonomous Reasoning Fidelity. |
+| Skill | Role | What it does | Principle |
+| :--- | :--- | :--- | :--- |
+| **[Improve](./improve/SKILL.md)** | **Start here** | Makes one highest-leverage change per run. | Kaizen (Toyota TPS) |
+| **[Intent](./intent/SKILL.md)** | **Automatic** | States what the agent believes you mean before acting. | Auftragstaktik |
+| **[Trail](./trail/SKILL.md)** | **Automatic** | Writes every run to an append-only audit trail. | Aviation black box |
+| **[Destination](./destination/SKILL.md)** | **Automatic** | Consolidates accepted mandates into durable direction. | Commander's Intent |
+| **[Orient](./orient/SKILL.md)** | **Automatic** | Reflects on past runs to spot recurring mistakes and dead ends. | Hansei |
+| **[Probe](./probe/SKILL.md)** | **Research** | Measures Autonomous Reasoning Fidelity. | Controlled experiment |
 
 The operator remembers one command: `/improve`. The rest is automatic under Improve's control.
 
