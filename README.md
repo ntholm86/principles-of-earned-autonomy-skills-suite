@@ -2,7 +2,7 @@
 
 ## Give your AI Intent, Reasoning & Memory.
 
-These skill will immediately solve:
+These skills will immediately solve:
 
 - **Intent decay** — starts on your goal, drifts to a different one.
 - **Directionless autonomy** — Implements exactly what you wrote, misses the obvious point.
@@ -32,12 +32,12 @@ Run **Improve** on a real, bounded task. It invokes Intent before acting and Tra
 
 | Skill | Role | What it does | Invocation |
 | :--- | :--- | :--- | :--- |
-| ![Improve icon](./assets/skills/improve.svg) **[Improve](./improve/SKILL.md)** | **Start here** | Reads the context, purpose, and intent; makes one highest-leverage change per run and logs the reasoning. | `/improve` to begin and continue work |
-| ![Intent icon](./assets/skills/intent.svg) **[Intent](./intent/SKILL.md)** | **Automatic** | States what the agent believes you mean — not what you typed — before acting. | Improve invokes it before substantive work |
-| ![Trail icon](./assets/skills/trail.svg) **[Trail](./trail/SKILL.md)** | **Automatic** | Writes every run to an append-only audit trail, so the next session knows what was done and why. | Improve invokes it after substantive work |
-| ![Destination icon](./assets/skills/destination.svg) **[Destination](./destination/SKILL.md)** | **Automatic** | States what it thinks you are building and why, as questions you confirm or correct. | Improve schedules it when continued work needs broader direction; `/destination` is an override |
-| ![Orient icon](./assets/skills/orient.svg) **[Orient](./orient/SKILL.md)** | **Automatic** | Reads the entire trail and finds patterns no single session can see, refreshing where the work is now. | Improve or Destination schedules it when the orientation is stale; `/orient` is an override |
-| ![Probe icon](./assets/skills/probe.svg) **[Probe](./probe/SKILL.md)** | **Research entry point** | Tests reasoning with paired cases that differ in one material way; the divergence measures [Autonomous Reasoning Fidelity](https://github.com/ntholm86/principles-of-earned-autonomy/blob/main/PRINCIPLES.md#autonomous-reasoning-fidelity-operational-definition). | `/probe` during controlled ARF research |
+| **[Improve](./improve/SKILL.md)** | **Start here** | Reads the context, purpose, and intent; makes one highest-leverage change per run and logs the reasoning. | `/improve` to begin and continue work |
+| **[Intent](./intent/SKILL.md)** | **Automatic** | States what the agent believes you mean — not what you typed — before acting. | Improve invokes it before substantive work |
+| **[Trail](./trail/SKILL.md)** | **Automatic** | Writes every run to an append-only audit trail, so the next session knows what was done and why. | Improve invokes it after substantive work |
+| **[Destination](./destination/SKILL.md)** | **Automatic** | States what it thinks you are building and why, as questions you confirm or correct. | Improve schedules it when continued work needs broader direction; `/destination` is an override |
+| **[Orient](./orient/SKILL.md)** | **Automatic** | Reads the entire trail and finds patterns no single session can see, refreshing where the work is now. | Improve or Destination schedules it when the orientation is stale; `/orient` is an override |
+| **[Probe](./probe/SKILL.md)** | **Research entry point** | Tests reasoning with paired cases that differ in one material way; the divergence measures [Autonomous Reasoning Fidelity](https://github.com/ntholm86/principles-of-earned-autonomy/blob/main/PRINCIPLES.md#autonomous-reasoning-fidelity-operational-definition). | `/probe` during controlled ARF research |
 
 The operator remembers one command: `/improve`. The rest is automatic under Improve's control.
 
