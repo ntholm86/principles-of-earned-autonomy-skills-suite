@@ -1141,6 +1141,10 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** Host qualification can be separated cleanly from adoption authorization: one minimal no-tool call established exact-route availability and provider usage without touching the fixture or invoking the reasoning contract. The next frontier is now the first completed no-ACM Improve run, not model availability.
 
+## 2026-08-13 — orient-after-host-route-qualification
+
+**[!REALIZATION]** The first-run frontier has advanced beyond installation and exact-route availability to the boundary of the first completed no-ACM Improve invocation. The arc now contains one concrete case where stored host-fidelity learning changed the next action before scarce authorization, while all reasoning and human-adoption claims remain open.
+
 ---
 
-**284 markers — 256 realisations, 28 reversals**
+**285 markers — 257 realisations, 28 reversals**

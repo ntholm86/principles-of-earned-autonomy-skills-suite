@@ -5,11 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 284 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-13 — orient-after-host-route-qualification
-
-**[!REALIZATION]** The first-run frontier has advanced beyond installation and exact-route availability to the boundary of the first completed no-ACM Improve invocation. The arc now contains one concrete case where stored host-fidelity learning changed the next action before scarce authorization, while all reasoning and human-adoption claims remain open.
+Showing the most recent 60 markers. 285 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-13 — improve-preregister-second-first-run-rerun
 
@@ -246,6 +242,10 @@ Showing the most recent 60 markers. 284 older marker(s) are in `.acm/learning-ar
 ## 2026-08-20 — publish-314-self-improvement-iterations
 
 **[!REALIZATION]** The count question resolved in three passes within one day - freshness, framing, definition - because each fix treated the previous symptom. The durable output is not 314 but the classification rule: future count updates reuse it instead of re-deriving judgment, which converts a recurring hand-maintained-number defect into a documented procedure. Also reversed within the day: the claim that the number was "stale by construction" at commit time - under the classified metric, presentation entries no longer move the headline number at all, which removes most of the drift pressure the earlier entries documented.
+
+## 2026-08-20 — readme-lifecycle-machine-diagram
+
+**[!REALIZATION]** Presentation runs cluster: when the operator's attention is on how the suite presents, that is where the iterations go - eight of the last ten entries. Under the 2026-08-20 classification rule none of them move the self-improvement number, which is the metric working as intended: the count no longer rewards polishing the shop window. The open question for the next arc is whether the suite's capability work resumes after the presentation plateau, or whether presentation is what the target currently needs most. Evidence for the latter: the adoption quality bar is unmet until a newcomer passes it.
 
 ---
 

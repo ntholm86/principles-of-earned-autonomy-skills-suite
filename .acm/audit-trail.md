@@ -16480,3 +16480,55 @@ Destination need: not triggered - the operator supplied the definition directly;
 3. Align citation currency: CITATION.cff version and date versus CHANGELOG v4.33.1, and qualify which release the Zenodo DOI archives.
 
 Cost: moderate - full-trail mechanical classification, 44-slug adjudication, three-surface wording, two trail entries, parser reconciliation, verifier runs.
+
+## 2026-08-20 - readme-lifecycle-machine-diagram
+
+- target: skills-suite README How The Model Works
+- agent: GitHub Copilot (Kimi K3)
+- skill: improve
+- outcome: dense full-lifecycle Mermaid flowchart added after the section intro, rendered natively on GitHub
+
+### Interpretation of the ask
+
+Operator asked for a colorful, detailed diagram of the flow through the architecture and skills, constrained to render cleanly on the GitHub repo page. First answer established that GitHub renders Mermaid, not PlantUML. A sequence-diagram draft was rejected as not dense or comic enough; the operator asked for the Storm P picture's spirit: one condensed machine, icons, the website palette. Read as: a flowchart-as-machine, full lifecycle scope, embedded in How The Model Works. Operator approved the final draft with "yes use this for now".
+
+### Examination (lenses)
+
+- Capability leverage: GitHub markdown renders Mermaid natively (flowchart, sequence, and more); PlantUML is not supported. The diagram-as-text medium means the picture versions with the prose and diffs cleanly - a capability the static Storm P image cannot offer.
+- Purpose: the sequence draft showed order but not structure; the flowchart shows the machine - stations, the memory loop closing through the ACM dome, scheduled services as dashed spurs, convergence as the terminal bell.
+- Constraint work: no hex colors (comment syntax in Mermaid), no bare "end" labels, no semicolons in messages; per-participant box colors are not inline-settable in sequence diagrams, which is part of why flowchart was the right vehicle for the palette.
+- Palette: reused the website tokens (amber operator, teal work, sage evidence, lavender scheduled, pink state-holders) so the diagram and site read as one visual language.
+
+### Decision and prediction
+
+[!DECISION] Embed the approved flowchart after the How The Model Works intro paragraph, before the Destination subsection; add one intro sentence framing the diagram against the three subsections that follow. Prediction: renders natively on github.com and in VS Code preview; the Storm P image stays as the artistic anchor at the top; no other sections change.
+
+### Action and verification
+
+One insertion. Diagram syntax restricted to GitHub-safe Mermaid features (subgraphs, classDef, thick and dashed links, emoji labels). Live GitHub render not yet observed - that check is on push or PR view; local structural checks pass. Prediction held pending live render.
+
+### Reflection
+
+Model-claim: the README now has two complementary pictures - the Storm P painting for feel and the Mermaid machine for reference - and the text between them explains each station. Blind spot: GitHub's pinned Mermaid version can lag latest syntax; the diagram uses only long-stable features, but the true test is the rendered repo page. Imagined-reader pushback: a 60-line diagram block is dense in source view; the counter is that it is a single fenced block, skippable in raw view, and the density is exactly what the operator asked for.
+
+### Across-trail trigger evaluation
+
+- *Recurring finding-class:* FIRED - eighth consecutive README-surface entry; the arc is unmistakably an onboarding-presentation arc now.
+- *About to declare silence:* not fired - change made.
+- *Contradicts prior [!REALIZATION]:* not fired - consistent with the order-is-instruction and one-action-first realisations.
+- *Operator explicitly asked:* FIRED - the diagram, its style direction, and its approval all came from the operator.
+
+### Across-trail macro-Hansei
+
+[!REALIZATION] Presentation runs cluster: when the operator's attention is on how the suite presents, that is where the iterations go - eight of the last ten entries. Under the 2026-08-20 classification rule none of them move the self-improvement number, which is the metric working as intended: the count no longer rewards polishing the shop window. The open question for the next arc is whether the suite's capability work resumes after the presentation plateau, or whether presentation is what the target currently needs most. Evidence for the latter: the adoption quality bar is unmet until a newcomer passes it.
+
+Orientation freshness: current - presentation work consistent with the adoption priority in the destination; no arc claim disturbed.
+Destination need: not triggered - no unresolved durable direction; style choices were operator-confirmed in conversation.
+
+### Candidate Next Moves
+
+1. Verify the rendered diagram on the live GitHub repo page after push; fix any GitHub-Mermaid rendering gap observed there.
+2. Test the full first screen (offer, one-skill section, diagram) with a fresh reader against the claim-4 adoption bar.
+3. Reconcile the remaining v1/v2 arithmetic questions in ITERATION-COUNT.md (run 57 gap, 469/470/475 commit totals).
+
+Cost: moderate - two external doc verifications (GitHub diagram support, Mermaid syntax hazards), two rejected drafts, one embedded diagram, verifier run.

@@ -300,6 +300,7 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 293 | 2026-08-20 | readme-one-skill-table-and-count-sync | skills table moved to directly after the image under the website framing; counts synchronized to 377 dated across both public surfaces |  |
 | ▸ 294 | 2026-08-20 | conservative-count-framing-no-overclaim | public surfaces now claim 377 documented runs, not 377 self-improvement iterations |  |
 | ▸ 295 | 2026-08-20 | publish-314-self-improvement-iterations | both public surfaces now headline 314 self-improvement iterations out of 377 self-targeted runs |  |
+| ▸ 296 | 2026-08-20 | readme-lifecycle-machine-diagram | dense full-lifecycle Mermaid flowchart added after the section intro, rendered natively on GitHub |  |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -1348,4 +1349,8 @@ Do not edit by hand — re-run the command to refresh.
 
 - **decided:** Publish 314 with 377 as denominator, rule and adjudication lists appended to ITERATION-COUNT.md for reuse, website synced to the same wording. Prediction: both surfaces claim the classified number; the denominator keeps the full practice visible; verifier passes.
 
-**295 runs total — 274 with changes, 21 silence**
+### Run 296 — 2026-08-20 — readme-lifecycle-machine-diagram
+
+- **decided:** Embed the approved flowchart after the How The Model Works intro paragraph, before the Destination subsection; add one intro sentence framing the diagram against the three subsections that follow. Prediction: renders natively on github.com and in VS Code preview; the Storm P image stays as the artistic anchor at the top; no other sections change.
+
+**296 runs total — 275 with changes, 21 silence**
