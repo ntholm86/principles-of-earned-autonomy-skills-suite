@@ -5,7 +5,7 @@
 These skills will immediately solve:
 
 - **Intent decay** — starts on your goal, drifts to a different one.
-- **Directionless autonomy** — Implements exactly what you wrote, misses the obvious point.
+- **Directionless autonomy** — implements exactly what you wrote, misses the obvious point.
 - **Session amnesia** — every chat starts from zero.
 - **Groundhog Day** — twenty messages in, and it's still making the mistake you corrected in message two.
 - **Lost reasoning** — decisions survive, the why doesn't.
@@ -76,7 +76,7 @@ Intent and Trail operate automatically around the work. Destination and Orient a
 
 **314 runs improved the suite itself** — its skills, reasoning, memory, or architecture — out of **377 self-targeted runs** in the public trail; the rest were consistency, evidence, and onboarding work, recorded the same way. The earliest 30 rely on bulk or reconstructed provenance; runs 31 onward have per-run GENBA or Trail records preserved in git, though one commit can contain multiple runs. The full provenance breakdown — including git SHAs, verification commands, the classification rule behind the 314, and an honest account of what is independently verifiable — is in [ITERATION-COUNT.md](./.acm/ITERATION-COUNT.md).
 
-Convergence was declared only when **three independent evaluators from distinct model families** (Claude, Gpt, Gemini) each ran the loop and found nothing left to change.
+Convergence was declared only when **three independent evaluators from distinct model families** (Claude, GPT, Gemini) each ran the loop and found nothing left to change.
 
 > "LLMs struggle to self-correct their responses without external feedback, and at times, their performance even degrades after self-correction."
 >
@@ -102,14 +102,14 @@ The files (`.acm/audit-trail.md`, `.acm/destination.md`, `.acm/orientation.md`) 
 
 Memory alone is just retrieval; awareness is orientation. Because `Orient` reads the arc, `Destination` uncovers where you're heading, and `Intent` aligns the goal, the suite uses that memory to understand where it is and where it is going.
 
-When you swap from Claude to Gpt to Gemini, the next model picks up this exact orientation. That accumulation is what makes the suite get smarter over time.
+When you swap from Claude to GPT to Gemini, the next model picks up this exact orientation. That accumulation is what makes the suite get smarter over time.
 
 ## Workflow
 
 1. **Run:** Invoke `improve` with a concrete prompt. Without explicit delegation, Intent asks you to confirm its interpretation and Improve asks you to approve its proposed change. Each accepts Stop or Specify instead.
 2. **Keep going:** Invoke `improve` again when there is more work. Improve automatically schedules Destination when broader direction needs confirmation and Orient when accumulated evidence makes the current orientation stale.
 
-The user remembers one command: `/improve`. `/destination` and `/orient` remain manual overrides, not routine responsibilities.
+The operator remembers one command: `/improve`. `/destination` and `/orient` remain manual overrides, not routine responsibilities.
 
 After trust is earned, explicitly delegate either routine gate for one prompt or in Destination. Delegation preserves visible narration and the final change summary; it never answers Destination questions or bypasses operator-declared consequential gates. A host-wide autopilot setting does not replace this boundary.
 
