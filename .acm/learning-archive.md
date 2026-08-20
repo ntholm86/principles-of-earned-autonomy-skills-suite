@@ -1153,6 +1153,10 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** On this tested host, Improve can be the only normal entry point for a first useful run: it applied visible Intent before repository work, chose the small implementation route from the bounded prompt, applied Trail afterward, and did not demand Destination setup. The evidence advances simulated operability, not adoption.
 
+## 2026-08-13 — execute-second-first-run-rerun
+
+**[!REVERSAL]** The first setup command set `COPILOT_HOME` but omitted the installer's explicit `-Target`; `install.ps1` attempted the live default skill directory and stopped on a locked Intent file before any proxy or model call. Files ordered before Intent may have been overwritten with byte-identical payload from commit `c9e0500`. No live file was reverted. The isolated install was then performed with the documented explicit target.
+
 ---
 
-**287 markers — 259 realisations, 28 reversals**
+**288 markers — 259 realisations, 29 reversals**

@@ -41,6 +41,8 @@ The operator remembers one command: `/improve`. The rest is automatic under Impr
 
 ## How The Model Works
 
+Point Improve at a task. Each run reads your destination, the current map, and the trail; examines the target; makes one highest-leverage change; verifies it against a prediction recorded in advance; and writes the whole thing to an append-only ledger before finishing. When accumulated runs expose an unclear direction, Improve pauses to ask you; when the trail contradicts the map, it re-reads the whole arc and refreshes the map; and every lesson feeds the next run, so the suite gets smarter across sessions and model swaps. It stops when independent evaluators from different model families find nothing left to change.
+
 ### Destination — Where are we going?
 
 Each narrated Intent gives Improve a mandate for the current prompt. When accepted mandates accumulate, conflict, or expose an unresolved priority, Improve triggers Destination to consolidate them into durable cross-run direction. Destination asks one sourced question at a time and never turns an unconfirmed agent inference into operator-held direction.

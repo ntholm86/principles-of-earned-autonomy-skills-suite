@@ -5,11 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 287 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-13 — execute-second-first-run-rerun
-
-**[!REVERSAL]** The first setup command set `COPILOT_HOME` but omitted the installer's explicit `-Target`; `install.ps1` attempted the live default skill directory and stopped on a locked Intent file before any proxy or model call. Files ordered before Intent may have been overwritten with byte-identical payload from commit `c9e0500`. No live file was reverted. The isolated install was then performed with the documented explicit target.
+Showing the most recent 60 markers. 288 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-13 — execute-second-first-run-rerun
 
@@ -247,6 +243,10 @@ Showing the most recent 60 markers. 287 older marker(s) are in `.acm/learning-ar
 
 **[!REVERSAL]** The lifecycle diagram was added and removed within the same session. The reversible-cost discipline held (one clean insertion, one clean removal), but the arc shows a draft-approve-render loop that could have checkpointed visually earlier. Reusable lesson: for visual artifacts, render and show before proposing, not after - the local mermaid-cli pipeline now makes that cheap.
 
+## 2026-08-20 — readme-how-it-works-short-description [correction]
+
+**[!REALIZATION]** Ten consecutive README entries is not ten improvements; it is one sustained onboarding session, and the trail should be honest about that shape. The presentation plateau named in the diagram-removal entry is now the dominant arc: the suite has run no capability iteration on itself this session. That is legitimate - the adoption quality bar is unmet until a newcomer passes it - but it means the 314 number will not move until attention returns to capability, and an outside reader of this arc would correctly conclude the suite is being marketed, not deepened, right now.
+
 ---
 
-**60 markers — 47 realisations, 13 reversals**
+**60 markers — 48 realisations, 12 reversals**

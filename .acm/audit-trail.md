@@ -16584,3 +16584,80 @@ Destination need: not triggered - no direction question; the operator's instruct
 3. Reconcile the remaining ITERATION-COUNT.md v1/v2 arithmetic questions (run 57, commit totals).
 
 Cost: light - one removal replacement, six file deletions, verifier run; the expensive part (the render pipeline) is retained knowledge.
+
+## 2026-08-20 - readme-how-it-works-short-description
+
+- target: skills-suite README How The Model Works
+- agent: GitHub Copilot (Kimi K3)
+- skill: improve
+- outcome: added a three-sentence plain-language description of the full lifecycle at the top of the section
+
+### Interpretation of the ask
+
+After the diagram was removed, the operator asked for a short description instead of a picture: how the whole thing works, condensed. The proposed three-sentence passage (one per phase: the run loop, the scheduled services plus memory feedback, convergence) was approved verbatim with "yes".
+
+### Decision and prediction
+
+[!DECISION] Insert the approved passage between the section heading and the Destination subsection; nothing else changes. Prediction: a newcomer gets the whole lifecycle in plain terms before meeting any skill name; the three subsections then deepen one element each; no other section affected.
+
+### Action and verification
+
+One insertion. The passage covers ingress, work, evidence, scheduling, memory feedback, and convergence without internal vocabulary. Section structure verified: heading, description, three subsections. Prediction held.
+
+### Reflection
+
+Model-claim: the section now opens with the story and follows with the parts; the Storm P image supplies the visual, the prose supplies the precision the diagram failed to reach. Blind spot: the description asserts the suite gets smarter across sessions - true of the mechanism, unproven as reader comprehension until a fresh-reader test runs. Imagined-reader pushback: three long sentences in one paragraph is dense; the counter is that each sentence is one phase, and the operator approved the wording verbatim.
+
+### Across-trail trigger evaluation
+
+- *Recurring finding-class:* FIRED - tenth consecutive README-surface entry.
+- *About to declare silence:* not fired - change made.
+- *Contradicts prior [!REALIZATION]:* not fired - consistent with the removal entry: prose, not a second picture, carries the explanation.
+- *Operator explicitly asked:* FIRED - direct request and verbatim approval.
+
+### Across-trail macro-Hansei
+
+The reflection for this entry's fired triggers is recorded in the immediately following correction entry (readme-how-it-works-short-description [correction]): this session is one sustained onboarding arc with no capability iteration, and the macro-Hansei contract is exactly what fast presentation work skips. The verifier catching the omission is the discipline working as designed.
+
+Orientation freshness: current - presentation work consistent with the adoption priority.
+Destination need: not triggered.
+
+### Candidate Next Moves
+
+1. Test the current README first screen through How The Model Works with a fresh reader against the claim-4 adoption bar.
+2. Verify the live GitHub render of the README after push.
+
+Cost: light - one approved insertion, verifier run.
+
+## 2026-08-20 - readme-how-it-works-short-description [correction]
+
+- target: skills-suite audit-trail entry contract
+- agent: GitHub Copilot (Kimi K3)
+- skill: improve
+- outcome: supplied the macro-Hansei subsection the prior entry's fired triggers required
+
+Correction to readme-how-it-works-short-description: the entry fired two triggers but omitted the Across-trail macro-Hansei subsection the v3.8.0 reflection contract requires; verify.py caught it at record time. The macro reflection below belongs to that prior entry; this correction entry carries its own trigger evaluation as the contract requires.
+
+### Across-trail trigger evaluation
+
+- *Recurring finding-class:* not fired - this is a contract correction, not another presentation change.
+- *About to declare silence:* not fired - correction recorded.
+- *Contradicts prior [!REALIZATION]:* FIRED - the prior entry asserted a clean prediction-held close while missing the macro-Hansei its own fired triggers required.
+- *Operator explicitly asked:* not fired - self-initiated correction after verifier failure.
+
+### Across-trail macro-Hansei
+
+[!REALIZATION] Ten consecutive README entries is not ten improvements; it is one sustained onboarding session, and the trail should be honest about that shape. The presentation plateau named in the diagram-removal entry is now the dominant arc: the suite has run no capability iteration on itself this session. That is legitimate - the adoption quality bar is unmet until a newcomer passes it - but it means the 314 number will not move until attention returns to capability, and an outside reader of this arc would correctly conclude the suite is being marketed, not deepened, right now.
+
+Also recorded honestly: the omission itself. The contract fired, the check ran, and the entry was still written without the required subsection; the verifier catching it at regeneration time is the system working, but the lapse is the third contract-structural miss in this session (after the two count-framing corrections). Fast iterative presentation work is exactly where the reflection contract gets skipped; the fix is not more care but pausing the entry until the macro reflection is actually written when any trigger fires.
+
+Orientation freshness: current - the correction adds reflection, not a new arc claim.
+Destination need: not triggered.
+
+### Candidate Next Moves
+
+1. Test the current README first screen through How The Model Works with a fresh reader against the claim-4 adoption bar.
+2. Verify the live GitHub render of the README after push.
+3. When the presentation plateau ends, return to capability work - the 314 metric only moves then.
+
+Cost: light - one correction append, verifier re-run.

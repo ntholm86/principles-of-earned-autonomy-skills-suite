@@ -302,6 +302,8 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 295 | 2026-08-20 | publish-314-self-improvement-iterations | both public surfaces now headline 314 self-improvement iterations out of 377 self-targeted runs |  |
 | ▸ 296 | 2026-08-20 | readme-lifecycle-machine-diagram | dense full-lifecycle Mermaid flowchart added after the section intro, rendered natively on GitHub |  |
 | ▸ 297 | 2026-08-20 | remove-lifecycle-diagram-not-good-enough | removed the full-lifecycle Mermaid diagram and its intro sentence; section restored to pre-diagram state |  |
+| ▸ 298 | 2026-08-20 | readme-how-it-works-short-description | added a three-sentence plain-language description of the full lifecycle at the top of the section |  |
+| ▸ 299 | 2026-08-20 | readme-how-it-works-short-description [correction] | supplied the macro-Hansei subsection the prior entry's fired triggers required |  |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -1359,4 +1361,8 @@ Do not edit by hand — re-run the command to refresh.
 - **decided:** Full removal, no replacement diagram. Chosen over another iteration because the operator's judgment was final ("go without it for now"), and because the README already has the Storm P image carrying the visual load. Prediction: README returns to its pre-diagram state; no dangling references; verifier passes.
 - **REVERSAL:** The lifecycle diagram was added and removed within the same session. The reversible-cost discipline held (one clean insertion, one clean removal), but the arc shows a draft-approve-render loop that could have checkpointed visually earlier. Reusable lesson: for visual artifacts, render and show before proposing, not after - the local mermaid-cli pipeline now makes that cheap.
 
-**297 runs total — 276 with changes, 21 silence**
+### Run 298 — 2026-08-20 — readme-how-it-works-short-description
+
+- **decided:** Insert the approved passage between the section heading and the Destination subsection; nothing else changes. Prediction: a newcomer gets the whole lifecycle in plain terms before meeting any skill name; the three subsections then deepen one element each; no other section affected.
+
+**299 runs total — 278 with changes, 21 silence**
