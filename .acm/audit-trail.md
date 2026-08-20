@@ -16429,3 +16429,54 @@ Destination need: not triggered - the ruling enforces the existing destination q
 3. Align citation currency: CITATION.cff version and date versus CHANGELOG v4.33.1, and qualify which release the Zenodo DOI archives.
 
 Cost: light-moderate - three wording surfaces, one appended provenance note, two trail entries, grep and verifier validation, no code changed.
+
+## 2026-08-20 - publish-314-self-improvement-iterations
+
+- target: skills-suite README, ITERATION-COUNT.md, pea-website count framing
+- agent: GitHub Copilot (Kimi K3)
+- skill: improve
+- outcome: both public surfaces now headline 314 self-improvement iterations out of 377 self-targeted runs
+
+### Interpretation of the ask
+
+Operator rejected the runs framing from the previous entry: the needed number is self-improvement iterations - runs where the suite moved toward its destination or improved its capability - and it is lower than the run count. Asked to derive it now, not defer. Read as: classify mechanically from committed data, keep judgment at the ambiguous tail, record the rule for reuse. Operator authorized with "proceed" after the classification findings.
+
+### Examination (lenses)
+
+- Purpose: destination quality bar 1 defines the qualifying class; the classification rule was written from it and from the operator's ruling.
+- Method honesty: first regex pass found 290 entries versus the parser's 294; reconciled before classifying - 4 non-canonical headings (one double-hyphen, three Entry: labels) that record.py salvages. Publishing a count from the 290 subset would have silently dropped 4 entries, the same misattribution class fixed on 2026-08-02.
+- Classification: 294 entries, minus 3 external-primary, minus 32 slug-clear presentation/hygiene, minus 27 adjudicated ambiguous exclusions equals 232 v3 iterations. Pre-v3: 89 minus 6 documented docs runs (5, 19, 45, 46, 50, 81) minus invalidated run 39 equals 82. Total: 314 of 377. Adjudication erred toward exclusion throughout; the 16 remaining debatable inclusions bound the number at roughly 298 under hostile re-audit.
+
+### Decision and prediction
+
+[!DECISION] Publish 314 with 377 as denominator, rule and adjudication lists appended to ITERATION-COUNT.md for reuse, website synced to the same wording. Prediction: both surfaces claim the classified number; the denominator keeps the full practice visible; verifier passes.
+
+### Action and verification
+
+Five edits across two repos; classification section records rule, method, both exclusion lists, arithmetic, and uncertainty bound. Website grep: no 377 remains. Trail entries appended in both repos. verify.py result below. Prediction held.
+
+### Reflection
+
+Model-claim: the headline number now answers the question it is next to - did the loop improve itself - instead of the easier question - how often did it run. Blind spot: slug-level classification cannot see a capability change hidden inside a presentation-slugged entry, or vice versa; the uncertainty bound covers count error, not mislabeled content. Imagined-reader pushback: 314 is still self-classified; the counter is that the rule, the lists, and the exclusion bias are all public in ITERATION-COUNT.md, so the judgment is re-auditable by anyone.
+
+### Across-trail trigger evaluation
+
+- *Recurring finding-class:* FIRED - seventh consecutive README-surface entry, but the classification work itself was capability-adjacent: it produced the reusable rule.
+- *About to declare silence:* not fired - change made.
+- *Contradicts prior [!REALIZATION]:* FIRED - the previous entry claimed the re-audit was deferrable; the operator overrode within one turn, and the re-audit happened now.
+- *Operator explicitly asked:* FIRED - the metric, the direction, and the timing all came directly from the operator.
+
+### Across-trail macro-Hansei
+
+[!REALIZATION] The count question resolved in three passes within one day - freshness, framing, definition - because each fix treated the previous symptom. The durable output is not 314 but the classification rule: future count updates reuse it instead of re-deriving judgment, which converts a recurring hand-maintained-number defect into a documented procedure. Also reversed within the day: the claim that the number was "stale by construction" at commit time - under the classified metric, presentation entries no longer move the headline number at all, which removes most of the drift pressure the earlier entries documented.
+
+Orientation freshness: current - consistent with quality bar 1; no arc claim disturbed.
+Destination need: not triggered - the operator supplied the definition directly; nothing unresolved remains for a Destination run.
+
+### Candidate Next Moves
+
+1. Reuse the ITERATION-COUNT.md classification rule for future count updates; never re-adjudicate from scratch.
+2. Reconcile the remaining v1/v2 arithmetic questions (run 57 gap, 469/470/475 commit totals) flagged in the 2026-08-20 refresh note.
+3. Align citation currency: CITATION.cff version and date versus CHANGELOG v4.33.1, and qualify which release the Zenodo DOI archives.
+
+Cost: moderate - full-trail mechanical classification, 44-slug adjudication, three-surface wording, two trail entries, parser reconciliation, verifier runs.

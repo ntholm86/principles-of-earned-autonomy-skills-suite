@@ -1137,6 +1137,10 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** The first-run frontier has advanced from installation to exact-route model availability, but no reasoning contract has yet executed. The sequence demonstrates sound chronological boundary testing and honest exclusion while also exposing a learning failure: a previously recorded host-fidelity rule was understood in the arc and still not applied before authorization.
 
+## 2026-08-13 — improve-qualify-first-run-host-route
+
+**[!REALIZATION]** Host qualification can be separated cleanly from adoption authorization: one minimal no-tool call established exact-route availability and provider usage without touching the fixture or invoking the reasoning contract. The next frontier is now the first completed no-ACM Improve run, not model availability.
+
 ---
 
-**283 markers — 255 realisations, 28 reversals**
+**284 markers — 256 realisations, 28 reversals**

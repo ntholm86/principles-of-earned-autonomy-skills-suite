@@ -5,11 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 283 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-13 — improve-qualify-first-run-host-route
-
-**[!REALIZATION]** Host qualification can be separated cleanly from adoption authorization: one minimal no-tool call established exact-route availability and provider usage without touching the fixture or invoking the reasoning contract. The next frontier is now the first completed no-ACM Improve run, not model availability.
+Showing the most recent 60 markers. 284 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-13 — orient-after-host-route-qualification
 
@@ -246,6 +242,10 @@ Showing the most recent 60 markers. 283 older marker(s) are in `.acm/learning-ar
 ## 2026-08-20 — conservative-count-framing-no-overclaim
 
 **[!REALIZATION]** The count defect was never only drift: the metric never measured the claim. A number that counts trail entries cannot headline a claim about capability improvement, no matter how fresh it is. This resolves the standing count-policy question from the last two entries in an unexpected direction - the policy question was downstream of the definition question, and the definition now says: runs are claimed, improvements must be earned by classification. The deferred re-audit inherits the boundary rulings as its first task.
+
+## 2026-08-20 — publish-314-self-improvement-iterations
+
+**[!REALIZATION]** The count question resolved in three passes within one day - freshness, framing, definition - because each fix treated the previous symptom. The durable output is not 314 but the classification rule: future count updates reuse it instead of re-deriving judgment, which converts a recurring hand-maintained-number defect into a documented procedure. Also reversed within the day: the claim that the number was "stale by construction" at commit time - under the classified metric, presentation entries no longer move the headline number at all, which removes most of the drift pressure the earlier entries documented.
 
 ---
 

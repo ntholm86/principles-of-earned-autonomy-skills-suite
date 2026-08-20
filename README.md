@@ -67,9 +67,9 @@ After many locally sensible runs, the overall arc can still drift. When triggere
 
 Intent and Trail operate automatically around the work. Destination and Orient activate automatically when their evidence-based triggers fire. Probe sits outside normal operation as optional ARF research instrumentation.
 
-## The Suite Improved Itself — [public trail of 377 runs](./.acm/ITERATION-COUNT.md)
+## The Suite Improved Itself — [314 self-improvement iterations](./.acm/ITERATION-COUNT.md)
 
-The suite ran on itself **377 times** across four eras and two complete rewrites — capability changes, consistency repairs, evidence work, and onboarding, all recorded. The earliest 30 rely on bulk or reconstructed provenance; runs 31 onward have per-run GENBA or Trail records preserved in git, though one commit can contain multiple runs. The full provenance breakdown — including git SHAs, verification commands, and an honest account of what is independently verifiable — is in [ITERATION-COUNT.md](./.acm/ITERATION-COUNT.md).
+**314 runs improved the suite itself** — its skills, reasoning, memory, or architecture — out of **377 self-targeted runs** in the public trail; the rest were consistency, evidence, and onboarding work, recorded the same way. The earliest 30 rely on bulk or reconstructed provenance; runs 31 onward have per-run GENBA or Trail records preserved in git, though one commit can contain multiple runs. The full provenance breakdown — including git SHAs, verification commands, the classification rule behind the 314, and an honest account of what is independently verifiable — is in [ITERATION-COUNT.md](./.acm/ITERATION-COUNT.md).
 
 Convergence was declared only when **three independent evaluators from distinct model families** (Claude, Gpt, Gemini) each ran the loop and found nothing left to change.
 

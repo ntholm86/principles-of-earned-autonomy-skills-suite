@@ -232,3 +232,28 @@ git rev-list --count HEAD = 480 (pre-refresh)
 The operator ruled that presentation and onboarding edits (README copy, headings, illustrations) do not count as self-improvement iterations: a true self-targeted improvement moves the suite toward its destination or improves its reasoning, learning, or operational capability. By that standard, 377 read as capability improvements would be an overstatement — it is the count of all self-targeted runs, including presentation work.
 
 Both public surfaces (skills README, pea-website) now present 377 as documented runs, not capability iterations. The capability subset has not been classified; a full re-audit against a written standard is deferred by the operator and recorded as a candidate next move in the trail. Known presentation-class entries include at least the 18 entries targeted at README plus further slug-identified copy, title, and illustration work (23 or more in the v3 era, including runs 285-293).
+
+---
+
+## Self-improvement classification - 2026-08-20
+
+Following the conservative reading above, the operator asked for the real number: self-improvement iterations, not recorded runs. Classification was mechanical where possible, judgment-bounded where not.
+
+**Rule:** a self-improvement iteration moves the suite toward its destination or improves its reasoning, learning, memory, evidence, or operational capability. Presentation, onboarding copy, release bookkeeping, encoding hygiene, and count maintenance do not qualify, however useful they are.
+
+**Method:** all 294 canonical Trail entries (record.py, including 4 salvage-parsed non-canonical headings) were classified from their slugs by keyword rule; the 44 slugs matching both exclusion and capability signals were adjudicated individually. The ambiguous adjudications are listed here so the judgment is auditable:
+
+- Ambiguous excluded (27): v3-citation-update, v3-principles-copy-repair, v3-changelog-splice-repair, trail-README-splice-repair, v3-peg2-openai-metadata-fix, v3.3.0-history-and-install, trail-readme-skill-count, trail-readme-v2-vocabulary, trail-readme-shiken-jargon, trail-dir-rename-to-dottrail, trail-stale-paths-cleanup, trail-stale-paths-final, readme-reflection-echo, docs-readme-retrospect.md-orientation, relocate-v2-trail-to-dottrail, rename-sweep-gap-fix-verify-recursive-search, audit-learning-precedent-surfaces-position-quickstart-h1-gap-and-systemic-bom, confirm-bom-root-cause-and-fix-verifypy, fix-recordpy-bom, route-batching-tension-to-operator-then-fix-three-skillmd-boms, resolve-sessions-fingerprint-blind-spot-and-fix-six-boms, fix-orientation-and-audit-trail-boms-closes-cleanup-arc, systematic-verifypy-audit-closes-stale-path-docs-gap, align-installed-skill-docs-with-harness-tool-layout, probe-opt-in-research-install, unify-readme-skill-roster-by-activation, readme-one-skill-table-and-count-sync.
+- Slug-clear excluded (32): run numbers 19, 30, 33, 34, 35, 36, 37, 41, 51, 52, 58, 59, 60, 61, 71, 90, 117, 135, 142, 155, 174, 182, 184, 201, 202, 264, 281, 282, 283, 284, 286, 288 (trail ordering).
+
+**Arithmetic:**
+
+```text
+v3: 294 entries - 3 external-primary - 32 slug-clear - 27 ambiguous-excluded = 232
+pre-v3: 89 - 6 docs/presentation (runs 5, 19, 45, 46, 50, 81) - 1 invalidated (run 39) = 82
+TOTAL self-improvement iterations: 314 (of 377 self-targeted runs)
+```
+
+**Uncertainty:** roughly 16 remaining included slugs are debatable (for example the protocol-limitation naming run and the lineage-citation restoration). A hostile auditor moving all of them to excluded gets about 298; moving none changes nothing. The published number is the conservative middle: classification erred toward exclusion at every judgment call.
+
+**Consequence:** README and pea-website now headline 314 self-improvement iterations, with 377 retained as the trail-run denominator. Future counts of this kind should reuse this section's rule and lists rather than re-deriving them.

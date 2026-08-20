@@ -299,6 +299,7 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 292 | 2026-08-20 | readme-how-model-works-before-iteration-proof | moved "How The Model Works" to directly after the architecture image, before the iteration-proof section |  |
 | ▸ 293 | 2026-08-20 | readme-one-skill-table-and-count-sync | skills table moved to directly after the image under the website framing; counts synchronized to 377 dated across both public surfaces |  |
 | ▸ 294 | 2026-08-20 | conservative-count-framing-no-overclaim | public surfaces now claim 377 documented runs, not 377 self-improvement iterations |  |
+| ▸ 295 | 2026-08-20 | publish-314-self-improvement-iterations | both public surfaces now headline 314 self-improvement iterations out of 377 self-targeted runs |  |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -1343,4 +1344,8 @@ Do not edit by hand — re-run the command to refresh.
 
 - **decided:** Reframe, do not recount: README heading becomes "public trail of 377 runs" with the body naming the mixed content (capability changes, consistency repairs, evidence work, onboarding); website says documented runs in both mentions; ITERATION-COUNT.md gets an appended conservative-reading note recording the operator definition and the deferred re-audit. Prediction: no public surface claims a capability-iteration count; "If the loop cannot improve itself" line survives because it cites no number; verifier passes.
 
-**294 runs total — 273 with changes, 21 silence**
+### Run 295 — 2026-08-20 — publish-314-self-improvement-iterations
+
+- **decided:** Publish 314 with 377 as denominator, rule and adjudication lists appended to ITERATION-COUNT.md for reuse, website synced to the same wording. Prediction: both surfaces claim the classified number; the denominator keeps the full practice visible; verifier passes.
+
+**295 runs total — 274 with changes, 21 silence**
