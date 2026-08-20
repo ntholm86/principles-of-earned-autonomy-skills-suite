@@ -36,7 +36,7 @@ Run **Improve** on a real, bounded task. It invokes Intent before acting and Tra
 | **[Intent](./intent/SKILL.md)** | **Automatic** | States what the agent believes you mean before acting. |
 | **[Trail](./trail/SKILL.md)** | **Automatic** | Writes every run to an append-only audit trail. |
 | **[Destination](./destination/SKILL.md)** | **Automatic** | Consolidates accepted mandates into durable direction. |
-| **[Orient](./orient/SKILL.md)** | **Automatic** | Finds cross-session patterns and refreshes the map. |
+| **[Orient](./orient/SKILL.md)** | **Automatic** | Reflects on past runs to spot recurring mistakes and dead ends. |
 | **[Probe](./probe/SKILL.md)** | **Research** | Measures Autonomous Reasoning Fidelity. |
 
 The operator remembers one command: `/improve`. The rest is automatic under Improve's control.
