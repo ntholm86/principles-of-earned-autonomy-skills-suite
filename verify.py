@@ -613,18 +613,18 @@ def check_derived_artifact_freshness() -> list[str]:
         if not artifact.exists():
             failures.append(
                 f"missing derived artifact .acm/{artifact_name} — "
-                f"run: python tools/record.py {subcommand} --write"
+                f"run: python harness/tools/record.py {subcommand} --write"
             )
         elif artifact.stat().st_mtime < log_mtime:
             failures.append(
                 f"stale derived artifact .acm/{artifact_name} is older than .acm/audit-trail.md — "
-                f"run: python tools/record.py {subcommand} --write"
+                f"run: python harness/tools/record.py {subcommand} --write"
             )
     archive = ROOT / ".acm" / "learning-archive.md"
     if archive.exists() and archive.stat().st_mtime < log_mtime:
         failures.append(
             "stale derived artifact .acm/learning-archive.md is older than .acm/audit-trail.md — "
-            "run: python tools/record.py learning --write"
+            "run: python harness/tools/record.py learning --write"
         )
     return failures
 

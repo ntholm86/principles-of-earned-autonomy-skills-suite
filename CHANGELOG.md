@@ -1,5 +1,9 @@
 # Changelog
 
+## v4.33.2 — 2026-09-04
+
+- **verify.py remediation hints now name the tool's real path.** The missing/stale derived-artifact failure messages suggested `python tools/record.py ...`, which fails with file-not-found in this repository — the helper lives at `harness/tools/record.py`. All three hints corrected. Found by a cold convergence evaluation when the staleness check fired on an mtime-only difference and its own suggested fix would not have run.
+
 ## v4.33.1 — 2026-08-16
 
 - **Intent no longer lets silence or unambiguity bypass supervision.** Removed two legacy implicit-permission paths: a fresh repository without ACM now flows into the same authority rule as every other substantive request, and an unambiguous prompt no longer means the agent may proceed without confirmation. Explicit delegation and direct operations requiring no interpretation or action authority remain unchanged. `intent/SKILL.md` 1.8.0 -> 1.8.1.

@@ -305,6 +305,7 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 298 | 2026-08-20 | readme-how-it-works-short-description | added a three-sentence plain-language description of the full lifecycle at the top of the section |  |
 | ▸ 299 | 2026-08-20 | readme-how-it-works-short-description [correction] | supplied the macro-Hansei subsection the prior entry's fired triggers required |  |
 | ▸ 300 | 2026-08-20 | readme-failure-list-scannable-eight | tightened all entries to scannable length and expanded the list from five to eight |  |
+| ▸ 301 | 2026-09-04 | cold-convergence-eval-verifypy-hint-path-fix | cold convergence evaluation by a fresh Kimi K3 session found one actionable defect; fixed verify.py stale/missing-artifact hints that named a nonexistent path; convergence lease NOT renewed (change produced, chain resets per protocol) | verify.py three remediation-hint strings corrected (tools/record.py -> harness/tools/record.py); CHANGELOG.md v4.33.2 added |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -1370,4 +1371,8 @@ Do not edit by hand — re-run the command to refresh.
 
 - **decided:** Eight entries, em-dash separator, tails under ten words. Prediction: the list reads at a glance; each term maps to a mechanism later in the README; no claim exceeds what the suite does.
 
-**300 runs total — 279 with changes, 21 silence**
+### Run 301 — 2026-09-04 — cold-convergence-eval-verifypy-hint-path-fix
+
+- **decided:** One incremental change: correct the three remediation-hint strings in verify.py to harness/tools/record.py, plus a CHANGELOG entry per repo convention. Ranked above the trail/SKILL.md git-add snippet because the verify.py hint is shown at failure time to any operator of this repo - including a first-run newcomer under adoption quality bar 2 - and a fix instruction that itself fails is worse than a commit snippet omitting an optional file. Rationale: a cold evaluator that finds real, checkable defects and suppresses them to declare silence manufactures silence, the failure Principle 3 exists to prevent; the honest path to the operator's cold silence runs through fixing what is found and letting the NEXT cold evaluation test for silence. Alternatives rejected: (a) declare bounded silence with the defects listed as sub-material observations - rejected, they are actionable and checkable, and fixing-then-declaring in the same run would be self-grading; (b) batch both findings into one run - rejected, Improve's contract is one highest-leverage change per run and the snippet fix is independently decidable later. Precedent check: learning.md and learning-archive.md checked for verify.py hint/path precedent - the 2026-08-01 systematic audit (systematic-verifypy-audit-closes-stale-path-docs-gap) compared all 12 check functions against their docstring claims but did not compare emitted message strings against the live tree; that is the coverage boundary this finding slipped through. No precedent contradicts this fix.
+
+**301 runs total — 280 with changes, 21 silence**

@@ -5,11 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 289 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-13 — execute-second-first-run-rerun
-
-**[!REVERSAL]** Baseline tests created untracked `__pycache__`, violating the clean fixture requirement before invocation. The dirty state was preserved, only the generated cache was removed, and the final preflight used `PYTHONDONTWRITEBYTECODE=1`.
+Showing the most recent 60 markers. 290 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-13 — execute-second-first-run-rerun
 
@@ -247,6 +243,10 @@ Showing the most recent 60 markers. 289 older marker(s) are in `.acm/learning-ar
 
 **[!REALIZATION]** The failure list is the suite's claim in miniature: each bold term is a mechanism's reason to exist. Keeping the list honest - every entry maps to a mechanism, no mechanism invents a list entry - is the same discipline the 314 classification applied to the count. The list is now the cheapest audit surface in the README: a skeptic can check eight claims instead of reading eight sections.
 
+## 2026-09-04 — cold-convergence-eval-verifypy-hint-path-fix
+
+**[!REALIZATION]** The recurring path-drift class has a stable shape: every fix adds coverage for the surface where the drift was last found, and the next instance appears in the nearest uncovered surface. The systematic-audit instinct (2026-08-01) worked for verify.py check logic; the same pass over emitted strings and remediation hints has never been run. Candidate single-loop fix: extend path-token coverage to verify.py's own output strings. Whether this rises to a governing-variable question (how the suite decides which surfaces deserve drift checks at all) is named but deliberately not escalated: the operator stated this session that the destination should stop moving, and this class is addressable within the current destination's leanness constraint.
+
 ---
 
-**60 markers — 49 realisations, 11 reversals**
+**60 markers — 50 realisations, 10 reversals**

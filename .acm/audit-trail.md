@@ -16714,3 +16714,67 @@ Destination need: not triggered.
 
 Cost: light - one list rewrite, verifier run.
 
+
+## 2026-09-04 - cold-convergence-eval-verifypy-hint-path-fix
+
+- target: skills repo (this repo) - verify.py remediation hints
+- operator: maintainer (Nils Holmager)
+- agent: GitHub Copilot (Kimi K3)
+- skill: improve
+- outcome: cold convergence evaluation by a fresh Kimi K3 session found one actionable defect; fixed verify.py stale/missing-artifact hints that named a nonexistent path; convergence lease NOT renewed (change produced, chain resets per protocol)
+- delta: verify.py three remediation-hint strings corrected (tools/record.py -> harness/tools/record.py); CHANGELOG.md v4.33.2 added
+
+### Interpretation of the ask
+
+Operator: "lets wok on the C:\git\pea\skills / i dont want to go down the road of the ARM experiments - speeding up things to do when velocity goes down. / I think the skillset already achieved silence in hte past. / Now i want to achieve cold silence again - new and more capable models are released and the skills needs to reach silence with these to keep up which means the destination should stop moving. i pretty much believe in the one we have now - after all the stuff we have done and how i have made it more accurate. / understand my intent - use improve skill"
+
+Intent narration (confirmed by operator via the Confirm gate): this is a convergence-lease renewal run, not an improvement hunt. Per this repo destination's own convergence protocol, a newly available frontier model must independently challenge the converged artifact; silence renews the lease, a material change resets the chain. This run is a cold fresh-session evaluation by a new model family of the unchanged suite. No Destination run, no direction revision, no ARF/probe experiments, no late-stage viability work. Rejected alternatives: preemptively adapting skill text for newer models (rejected - any material change resets the chain and the operator believes in the current state); ARF probe experiments (explicitly ruled out by the operator); a Destination run to freeze the destination (rejected - destination.md already encodes the renewable-lease protocol).
+
+### Examination
+
+Lenses applied to the full live tree: all six SKILL.md files (intent 1.8.1, improve 3.19.0, trail 2.5.2, destination 2.8.0, orient 2.7.1, probe 3.4.2), PRINCIPLES.md, README.md, .acm/destination.md (bounded current section), .acm/orientation.md, .acm/learning.md, audit-trail tail, history.md tail. Also verified installed copies under the user skills folder are hash-identical to the repo copies, and executed the ingress chain live (bounded destination read, Intent narration, Confirm gate) - all worked as specified on this host.
+
+- Purpose: the six skills still enact the destination; the three principle separations (interpretation, narration, judgment) are structurally intact; one-normal-entry model is coherent end to end. Nothing actionable.
+- Inconsistency: three findings. (1) verify.py's missing/stale derived-artifact remediation hints say "python tools/record.py ..." but the tool lives at harness/tools/record.py in this repo; the hint fired live during this run's freshness check (mtime-only staleness, identical content) and its own suggested command would have failed with file-not-found if copy-pasted. (2) trail/SKILL.md's sample commit block (git add .acm/audit-trail.md .acm/history.md .acm/learning.md) omits .acm/learning-archive.md although the same file states the archive is regenerated alongside learning.md and derived artifacts must not lag the source. (3) orient/SKILL.md step 1b's "if the target repo has tools/record.py" does not match this suite's own harness/tools/ layout; the fallback clause covers it - below materiality.
+- Overburden: improve/SKILL.md (29KB) remains the heaviest contract; orientation claim 7 already records governance accretion as an open named question. No new finding; compression work is the road the operator ruled out.
+- Waste: Probe is optional and clearly marked; no dead machinery found. Nothing actionable.
+- Capability leverage: bounded-read and derived-window machinery still earns its cost under current models; reconsidering it is the viability-experiments road the operator rejected. Considered and deliberately not pursued.
+
+Live evidence gathered: verify.py initially FAILED with 3 stale-artifact issues (mtime-based; git confirmed identical content afterward, so a freshness false-positive rather than committed drift); after regeneration verify.py passes.
+
+### Decision
+
+[!DECISION] One incremental change: correct the three remediation-hint strings in verify.py to harness/tools/record.py, plus a CHANGELOG entry per repo convention. Ranked above the trail/SKILL.md git-add snippet because the verify.py hint is shown at failure time to any operator of this repo - including a first-run newcomer under adoption quality bar 2 - and a fix instruction that itself fails is worse than a commit snippet omitting an optional file. Rationale: a cold evaluator that finds real, checkable defects and suppresses them to declare silence manufactures silence, the failure Principle 3 exists to prevent; the honest path to the operator's cold silence runs through fixing what is found and letting the NEXT cold evaluation test for silence. Alternatives rejected: (a) declare bounded silence with the defects listed as sub-material observations - rejected, they are actionable and checkable, and fixing-then-declaring in the same run would be self-grading; (b) batch both findings into one run - rejected, Improve's contract is one highest-leverage change per run and the snippet fix is independently decidable later. Precedent check: learning.md and learning-archive.md checked for verify.py hint/path precedent - the 2026-08-01 systematic audit (systematic-verifypy-audit-closes-stale-path-docs-gap) compared all 12 check functions against their docstring claims but did not compare emitted message strings against the live tree; that is the coverage boundary this finding slipped through. No precedent contradicts this fix.
+
+### Prediction
+
+Stated before acting: the three hint strings change from tools/record.py to harness/tools/record.py; verify.py still passes on the clean state; artificially staling an artifact (mtime touch on audit-trail.md, no content change) produces a FAIL whose hint names a path that exists; no other verify.py behavior changes; no skill text or trail content is touched.
+
+### Action
+
+Edited the three strings in verify.py (missing-artifact hint, stale-artifact hint, learning-archive stale hint) and added CHANGELOG.md v4.33.2. Ran verify.py on the clean state: OK. Touched .acm/audit-trail.md mtime (content untouched, append-only preserved) and re-ran: FAIL fired on all three derived artifacts with the corrected hint naming harness/tools/record.py; Test-Path confirmed that file exists. Regenerated history.md, learning.md, learning-archive.md via harness/tools/record.py; verify.py OK again. Outcome vs prediction: held on every point, including the exercised FAIL path.
+
+### Reflection
+
+Model-claim: this suite's text layer is close to cold-evaluator silence - a fresh frontier-family read of all six skills, the principles, and the operating docs produced exactly one actionable defect, and it lived in tooling output, not in the skill contracts themselves. A future run can disagree by finding a material contract-level defect this read missed. Blind spot: this run tested internal coherence and live ingress execution only; it did not test behavioral fidelity across a full multi-iteration run, newcomer comprehension with a real human, or cross-host behavior - the bars this silence-relevant read did NOT touch. Imagined-reader pushback: "you fixed a three-word path string and called the run a convergence evaluation - was the evaluation real or was the fix the point?" The evaluation was real: the defect was discovered by the evaluation's own freshness step failing in front of the evaluator, not sought out to justify a change; and the run explicitly declines to declare silence, which is the opposite of manufacturing the desired outcome.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED - path-reference drift in a surface outside STALE_PATH_DOCS coverage. The trail shows this class repeatedly: the v3.5.0 tools/record.py path fixes in README/INSTALLING, the STALE_PATH_DOCS check itself (which scans markdown docs, not verify.py message strings), the 2026-08-01 STALE_PATH_DOCS scope gap. Each prior fix covered one specific surface; this instance is the same class in verifier output text.
+- *About to declare silence:* not fired - this run made a change and explicitly does not renew the convergence lease.
+- *Contradicts prior [!REALIZATION]:* not fired - the 2026-08-01 audit's closing realization (check suite in good shape after one deliberate pass) concerned check logic versus docstrings; it did not claim message-string path coverage, so this finding extends rather than contradicts it.
+- *Operator explicitly asked:* FIRED - "understand my intent - use improve skill," with the intent confirmed at the gate.
+
+**Across-trail macro-Hansei**
+
+[!REALIZATION] The recurring path-drift class has a stable shape: every fix adds coverage for the surface where the drift was last found, and the next instance appears in the nearest uncovered surface. The systematic-audit instinct (2026-08-01) worked for verify.py check logic; the same pass over emitted strings and remediation hints has never been run. Candidate single-loop fix: extend path-token coverage to verify.py's own output strings. Whether this rises to a governing-variable question (how the suite decides which surfaces deserve drift checks at all) is named but deliberately not escalated: the operator stated this session that the destination should stop moving, and this class is addressable within the current destination's leanness constraint.
+
+### Candidate Next Moves
+
+1. **Fresh cold convergence evaluation of the unchanged-after-this-fix suite by a different model family** (Claude, GPT, or Gemini, fresh session) - this is the actual lease-renewal test the operator asked for; this run's change resets the chain, so silence can only be claimed by the next evaluator finding nothing.
+2. **Fix the trail/SKILL.md sample commit block to include .acm/learning-archive.md** (conditional on the archive being in use) - the second-ranked finding from this run's examination, independently decidable.
+3. **Extend stale-path-token coverage to verify.py's own emitted strings** (or reconcile the staleness docstring's checkout-timestamp claim against today's observed mtime false-positive) - the coverage boundary the macro-Hansei names.
+4. Exercise Orient step 3b in a live run - still carried from prior entries, unchanged in priority.
+
+Orientation freshness: current - orientation.md's claims (including claim 7's open accretion question) still explain this run; no arc read disturbed.
+Destination need: not triggered - the operator explicitly directed that the destination stop moving; this run operated entirely within the current bounded destination.

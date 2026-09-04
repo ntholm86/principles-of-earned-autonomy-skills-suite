@@ -1161,6 +1161,10 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REVERSAL]** The first serial preflight aborted before invocation because the baseline capture file had not survived the failed setup command and fresh-home CLI version output included an update hint. The empty proxy ledger, clean target, and absent ACM prove that no model call occurred. The existing baseline ID was captured and the version assertion narrowed to its first line before the one authorized invocation.
 
+## 2026-08-13 — execute-second-first-run-rerun
+
+**[!REVERSAL]** Baseline tests created untracked `__pycache__`, violating the clean fixture requirement before invocation. The dirty state was preserved, only the generated cache was removed, and the final preflight used `PYTHONDONTWRITEBYTECODE=1`.
+
 ---
 
-**289 markers — 259 realisations, 30 reversals**
+**290 markers — 259 realisations, 31 reversals**
