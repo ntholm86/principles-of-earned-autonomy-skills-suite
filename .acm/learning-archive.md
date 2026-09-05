@@ -1201,6 +1201,10 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** Evidence semantics survive compression when the skill states observable invariants and removes the history of why each invariant arrived. Runtime instructions need the current contract; provenance belongs in the append-only Trail and changelog.
 
+## 2026-08-13 — make-writer-splitting-deterministic
+
+**[!REALIZATION]** Removing duplicated policy is safe only after the remaining owner states branch conditions, authority, timing, and return path explicitly. Concision without those four elements moves orchestration cost into each reader's inference and produces divergent agents.
+
 ---
 
-**299 markers — 266 realisations, 33 reversals**
+**300 markers — 267 realisations, 33 reversals**

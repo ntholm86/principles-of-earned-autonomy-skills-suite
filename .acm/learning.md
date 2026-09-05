@@ -5,11 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 299 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-13 — make-writer-splitting-deterministic
-
-**[!REALIZATION]** Removing duplicated policy is safe only after the remaining owner states branch conditions, authority, timing, and return path explicitly. Concision without those four elements moves orchestration cost into each reader's inference and produces divergent agents.
+Showing the most recent 60 markers. 300 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-13 — index-experiments-as-evidence-archive
 
@@ -246,6 +242,10 @@ Showing the most recent 60 markers. 299 older marker(s) are in `.acm/learning-ar
 ## 2026-09-05 — improve-destination-authorship-clause
 
 **[!REALIZATION]** "Operator-held" has been carried by the suite with three different meanings at once: never written by a skill (Improve, since v3.10.0), written by Destination after confirmation and committed by the operator (Trail and Destination), and revised only by the operator (the repo's own destination header). The contracts now share one meaning; the operator's own header still carries the oldest. A concept whose authority semantics change needs every sentence that defines it re-read, not only the surfaces on the migration's list - and the suite has no mechanism for that other than fresh cold reads, which is what the operator's family rotation is providing.
+
+## 2026-09-05 — correction-destination-authorship-is-approval-not-authorship
+
+**[!REALIZATION]** The preceding entry named three meanings of "operator-held" and picked the one closest to the written procedure. The operator supplied a fourth that is the actual governing one: authorship is irrelevant, approval is the mandate. A cold read reconciles contracts to each other; only the operator can reconcile them to the intended meaning - which is what the supervised gate and the result line exist to surface.
 
 ---
 

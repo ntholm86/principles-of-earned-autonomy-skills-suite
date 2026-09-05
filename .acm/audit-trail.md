@@ -17237,3 +17237,30 @@ Read as one document, the September arc is the convergence protocol working and 
 
 Orientation freshness: current - orientation claim 6 (explicit authority now covers prompt, action, and durable-direction synthesis) and the temporal-accretion double-loop finding explain this repair; the realization above sharpens the map without contradicting it. No arc read scheduled.
 Destination need: not triggered - the operator reaffirmed the leased, family-diverse convergence goal and kept the Destination fixed; the governing-variable question named above is answered within the current Destination.
+
+## 2026-09-05 - correction-destination-authorship-is-approval-not-authorship
+
+- target: skills repo (this repo) - improve/SKILL.md step 1 item 1 (same clause as the preceding entry)
+- operator: maintainer (Nils Holmager)
+- agent: GitHub Copilot (Claude Fable 5.1)
+- skill: improve (same-session operator correction)
+- outcome: clause reworded so that operator approval, not who authors the text, is stated as the source of the mandate
+- delta: improve/SKILL.md 3.19.1 -> 3.19.2; CHANGELOG v4.33.7 amended with a same-day correction note
+
+Operator, verbatim, after the preceding entry's result line: "I mean, the destination skill writes the destination based on what it can see like sessions and memory. But the human is revise it - approves it - which is a mandate". The committed wording ("revised only by the operator, or by Destination after the operator has confirmed the synthesized meaning; no other skill writes it") was compatible with Destination step 5 but placed the emphasis on the confirm-before-write step. The operator's meaning is that authority comes from approval: Destination drafts from the evidence it can see; the human's review and approval is what turns that text into a mandate. New clause: "Stable: Destination may draft or revise it from the evidence it can see, but it becomes a mandate only through the operator's review and approval; no other skill writes it." This also reconciles the repo's own destination header ("only the operator revises it") without changing it: only the operator's revision/approval makes the content binding. Proposed at the execution gate; operator selected Proceed. Verified: python verify.py OK; git diff --stat limited to improve/SKILL.md and CHANGELOG.md; re-read against destination/SKILL.md step 5 (show synthesis, wait for confirmation, write, operator commits) - consistent. Convergence chain remains reset from the preceding entry; this correction is a further material change to the same clause.
+
+[!REALIZATION] The preceding entry named three meanings of "operator-held" and picked the one closest to the written procedure. The operator supplied a fourth that is the actual governing one: authorship is irrelevant, approval is the mandate. A cold read reconciles contracts to each other; only the operator can reconcile them to the intended meaning - which is what the supervised gate and the result line exist to surface.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired - this is a wording correction to the preceding entry's change, not a new instance of the residue class.
+- *About to declare silence:* not fired - a change was made.
+- *Contradicts prior [!REALIZATION]:* not fired - extends the preceding entry's realization rather than contradicting it.
+- *Operator explicitly asked:* FIRED - the operator's message is the sole cause of this entry.
+
+Orientation freshness: current - no arc claim disturbed.
+Destination need: not triggered - the operator clarified meaning within the existing Destination; no direction question.
+
+### Across-trail macro-Hansei
+
+Trigger fired: operator explicitly asked. Read against the arc, this correction belongs to the same authority thread as the August 16 supervision gates and Destination's synthesis-confirmation rule: the suite kept refining WHEN the operator confirms, while the operator's actual model is WHAT confirmation does - it converts drafted text into a mandate regardless of who drafted it. The preceding entry's realization (three concurrent meanings of "operator-held") aged for about one hour before the operator supplied the governing meaning. No governing-variable revision is implied: the Destination already says the operator owns the Destination and any change to it; this entry aligns one contract sentence with that, nothing more.
