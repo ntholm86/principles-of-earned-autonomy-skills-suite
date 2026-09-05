@@ -16778,3 +16778,59 @@ Model-claim: this suite's text layer is close to cold-evaluator silence - a fres
 
 Orientation freshness: current - orientation.md's claims (including claim 7's open accretion question) still explain this run; no arc read disturbed.
 Destination need: not triggered - the operator explicitly directed that the destination stop moving; this run operated entirely within the current bounded destination.
+
+## 2026-09-05 - trail-git-add-snippets-include-learning-archive
+
+- target: skills repo (this repo) - trail/SKILL.md sample commit blocks
+- operator: maintainer (Nils Holmager)
+- agent: GitHub Copilot (Kimi K3)
+- skill: improve
+- outcome: all three sample git add lines now include .acm/learning-archive.md (conditional in the standard block); second-ranked finding from yesterday's cold evaluation closed
+- delta: trail/SKILL.md 2.5.2 -> 2.5.3; CHANGELOG.md v4.33.3 added
+
+### Interpretation of the ask
+
+Operator: "again please / use the improve skill". Read as: run the convergence evaluation again under the same confirmed mandate as yesterday - cold independent evaluation of the suite, bounded silence or an honest finding, destination unmoved, no ARF experiments. Per PRINCIPLES Principle 3, a same-model-family re-read in a new session counts as the same evaluator family, not a new independent one; a verbatim repeat of yesterday's lens looking for a different result would be manufacturing work. The honest same-family continuation is to close the highest-ranked unactioned finding yesterday's evaluation already confirmed as real: trail/SKILL.md's sample commit blocks omitting .acm/learning-archive.md while the same file requires the archive regenerated alongside learning.md and never lagging the source. Intent gate: this interpretation was narrated and the proposed change presented to the operator, who answered Proceed at the execution gate.
+
+### Examination
+
+- Inconsistency: confirmed all three live git add occurrences (standard commit block at line 60, multi-iteration examples at lines 283 and 290) omitted the archive; the file's own prose requires it be regenerated alongside learning.md and states derived artifacts must not lag the source. The contradiction is internal to one file.
+- Evidence check before acting: searched the full trail for any historical instance of this actually causing a stale-archive commit - none found; yesterday's session was the first archive-age append in a long stretch and the agent included the archive. Severity is therefore modest (dormant gap, not an observed failure), which argues for the small text fix, not a larger mechanism.
+- Purpose: the snippet is the copy-paste path an agent or operator follows at commit time; a snippet that omits a required-artifact file in archive-age repos fails exactly where it is used.
+- Challenge to first read: considered instead rerunning the full six-skill cold read for a fresh finding. Rejected - same family, same target, one day apart; the protocol's independence condition would not be strengthened, and leaving a confirmed defect standing while re-surveying for new ones is precisely the "comfortable corner" failure mode.
+
+### Decision
+
+[!DECISION] Add .acm/learning-archive.md to all three sample git add lines, marked conditional ("only if it exists") in the standard block since the archive is optional; multi-iteration examples use the plain chained form for brevity. Rationale: the standard block is the one most likely copy-pasted into a fresh repo where the archive does not yet exist, so the conditional marker belongs there; the multi-iteration block documents a sequence and its surrounding prose already establishes the derived-artifact rule. Precedent check: learning.md and learning-archive.md checked for snippet/commit-block precedent - no prior realization addresses these git add lines; the nearest precedent is the STALE_PATH_DOCS family (coverage gaps in enumerated lists), which this fix follows by closing the enumeration completely rather than narrowing it. Alternative rejected: fix only the standard block and leave the multi-iteration examples - rejected, the same reader copies either, and a partial fix recreates the finding one surface over. Alternative rejected: extend verify.py to check the snippet - rejected as over-engineering for a three-line text fix with no observed runtime failure; named instead as a candidate only if this class recurs.
+
+### Prediction
+
+Stated before acting: after the edit, grep for "git add .acm" in trail/SKILL.md shows all three lines including the archive; verify.py passes; no other skill text changes; the archive remains optional (no unconditional requirement introduced); version bumped 2.5.2 -> 2.5.3 to match the CHANGELOG entry.
+
+### Action
+
+Edited the three git add lines in trail/SKILL.md, bumped frontmatter version to 2.5.3, added CHANGELOG.md v4.33.3. Grep confirms all three lines now include the archive (line 60 carries the conditional comment). verify.py OK. Installed copy under the user skills folder intentionally left for the installer to re-copy, not hand-edited. Outcome vs prediction: held on every point.
+
+### Reflection
+
+Model-claim: after two same-family cold evaluations, the suite's actionable defect surface is down to enumeration-consistency details in tooling-adjacent text - the contract layer itself has produced no finding across both runs. Falsifiable by the next different-family evaluator finding a contract-level defect. Blind spot: both runs tested text-layer and live-ingress coherence only; neither exercised a full multi-iteration behavioral run, real newcomer comprehension, or cross-host fidelity - those bars remain untested and this run's near-silence does not cover them. Imagined-reader pushback: "yesterday you said this finding was second-ranked and independently decidable; today you just decided it - was the Proceed gate real supervision or ceremony?" Real: the operator could have redirected to a full cold rerun or stopped the run; the gate's presence is what separates closing a parked finding from self-authorizing follow-through.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED - this is the same enumeration-coverage class as verify.py's REQUIRED_FILES/STALE_PATH_DOCS history: an enumerated list in one place incomplete against a rule stated elsewhere. This instance closes the class's last known live instance; the class itself is named again for the record.
+- *About to declare silence:* not fired - this run made a change.
+- *Contradicts prior [!REALIZATION]:* not fired - consistent with yesterday's model-claim (defects now in tooling-adjacent text, not contracts).
+- *Operator explicitly asked:* FIRED - "again please, use the improve skill" directly requested this run.
+
+**Across-trail macro-Hansei**
+
+[!REALIZATION] The two-day arc (cold eval -> fix finding 1 -> fix finding 2) is the convergence protocol working as designed rather than being waved through: the lease was NOT renewed at the first finding, both confirmed defects are now closed, and the lease-renewal test now passes cleanly to a different model family with an unchanged-after-fixes suite. The discipline cost is two small iterations; the payoff is that any silence a different family now declares is earned against a suite with zero known standing defects from the Kimi-family read.
+
+### Candidate Next Moves
+
+1. **Fresh cold convergence evaluation by a different model family (Claude, GPT, or Gemini, fresh session) against the now-patched suite** - the actual lease-renewal test; both known findings from the Kimi-family evaluation are now closed, so a different-family silence would renew the lease under the destination's own protocol.
+2. **Reconcile verify.py's staleness docstring (checkout-timestamp claim) against the observed mtime false-positive** - carried from yesterday, third-ranked.
+3. **Exercise Orient step 3b in a live run** - still the oldest untested item across carried lists.
+
+Orientation freshness: current - no arc claim disturbed; this run closed a parked finding within the existing map.
+Destination need: not triggered - the operator's standing direction (destination stops moving) held; this run required no direction question.

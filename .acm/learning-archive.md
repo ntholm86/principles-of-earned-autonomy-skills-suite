@@ -1165,6 +1165,10 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REVERSAL]** Baseline tests created untracked `__pycache__`, violating the clean fixture requirement before invocation. The dirty state was preserved, only the generated cache was removed, and the final preflight used `PYTHONDONTWRITEBYTECODE=1`.
 
+## 2026-08-13 — execute-second-first-run-rerun
+
+**[!REVERSAL]** Initial evidence packaging retained PowerShell UTF-16 files and decoded provider reason prose through the wrong code page, causing repository verification to fail. Complete CLI streams and tests were converted to UTF-8, redundant raw copies were removed, numeric provider summaries were regenerated without lossy prose, and the manifest was rebuilt before classification was committed.
+
 ---
 
-**290 markers — 259 realisations, 31 reversals**
+**291 markers — 259 realisations, 32 reversals**

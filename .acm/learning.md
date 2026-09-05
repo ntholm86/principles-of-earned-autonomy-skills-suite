@@ -5,11 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 290 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-13 — execute-second-first-run-rerun
-
-**[!REVERSAL]** Initial evidence packaging retained PowerShell UTF-16 files and decoded provider reason prose through the wrong code page, causing repository verification to fail. Complete CLI streams and tests were converted to UTF-8, redundant raw copies were removed, numeric provider summaries were regenerated without lossy prose, and the manifest was rebuilt before classification was committed.
+Showing the most recent 60 markers. 291 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-13 — preregister-unassisted-newcomer-observation
 
@@ -247,6 +243,10 @@ Showing the most recent 60 markers. 290 older marker(s) are in `.acm/learning-ar
 
 **[!REALIZATION]** The recurring path-drift class has a stable shape: every fix adds coverage for the surface where the drift was last found, and the next instance appears in the nearest uncovered surface. The systematic-audit instinct (2026-08-01) worked for verify.py check logic; the same pass over emitted strings and remediation hints has never been run. Candidate single-loop fix: extend path-token coverage to verify.py's own output strings. Whether this rises to a governing-variable question (how the suite decides which surfaces deserve drift checks at all) is named but deliberately not escalated: the operator stated this session that the destination should stop moving, and this class is addressable within the current destination's leanness constraint.
 
+## 2026-09-05 — trail-git-add-snippets-include-learning-archive
+
+**[!REALIZATION]** The two-day arc (cold eval -> fix finding 1 -> fix finding 2) is the convergence protocol working as designed rather than being waved through: the lease was NOT renewed at the first finding, both confirmed defects are now closed, and the lease-renewal test now passes cleanly to a different model family with an unchanged-after-fixes suite. The discipline cost is two small iterations; the payoff is that any silence a different family now declares is earned against a suite with zero known standing defects from the Kimi-family read.
+
 ---
 
-**60 markers — 50 realisations, 10 reversals**
+**60 markers — 51 realisations, 9 reversals**

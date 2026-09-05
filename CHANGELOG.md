@@ -1,5 +1,9 @@
 # Changelog
 
+## v4.33.3 — 2026-09-05
+
+- **Trail's sample commit blocks now include `.acm/learning-archive.md`.** The archive is regenerated alongside `learning.md` in any repo past the recent-window threshold, and the skill already requires derived artifacts never lag the source — but all three sample `git add` lines (the standard commit block and both multi-iteration examples) omitted it, inviting a stale-archive commit in exactly the repos that have one. Marked conditional (`# ... only if it exists`) in the standard block since the archive is optional. Found by the 2026-09-04 cold convergence evaluation. `trail/SKILL.md` 2.5.2 -> 2.5.3.
+
 ## v4.33.2 — 2026-09-04
 
 - **verify.py remediation hints now name the tool's real path.** The missing/stale derived-artifact failure messages suggested `python tools/record.py ...`, which fails with file-not-found in this repository — the helper lives at `harness/tools/record.py`. All three hints corrected. Found by a cold convergence evaluation when the staleness check fired on an mtime-only difference and its own suggested fix would not have run.
