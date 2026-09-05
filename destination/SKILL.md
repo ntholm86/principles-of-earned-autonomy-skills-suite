@@ -1,6 +1,6 @@
 ---
 name: destination
-version: 2.8.0
+version: 2.8.2
 description: 'Automatic direction-consolidation service. Improve schedules it when accumulated work makes cross-run direction useful; it surfaces sourced guesses about durable direction as questions the operator can confirm, correct, or reject. Manual invocation remains available when the operator wants to explore or revise direction.'
 argument-hint: 'Optionally: the area you want hunches about (a specific concern, a recent decision, the project as a whole)'
 ---
@@ -52,12 +52,12 @@ Before forming any hunches, look at what is available in the **target repo's `.a
 - `.acm/destination.md` — what the operator has explicitly said (if it exists).
 - `.acm/orientation.md` — what the agent's last arc-read concluded about the target.
 - `.acm/audit-trail.md` — recent decisions, reversals, realisations.
-- `.acm/sessions/` — recent conversation transcripts, if present.
+- Relevant prior conversation records, if available: `.acm/transcripts/`, linked host or harness capture, and `.acm/sessions/` (including legacy summaries). Distinguish independent capture from agent-authored summaries by provenance and fidelity markings, not directory name.
 - The current conversation — what the operator has been emphasising, dismissing, returning to.
 
 The point is not to summarise these. The point is to notice what the operator has *not* said directly but that the signal points to.
 
-When Improve scheduled this run, begin from its stated trigger evidence. Treat prior unopposed Intent narrations as accepted mandates for their completed runs and synthesize what they already establish. Do not ask the operator to restate the project from zero; ask only about direction that remains unresolved across those mandates.
+When Improve scheduled this run, begin from its stated trigger evidence. Synthesize prior run mandates whose acceptance is supported by recorded operator confirmation or explicit delegation; retain other Intent narrations as evidence for hunches, without treating lack of objection as acceptance. Do not ask the operator to restate the project from zero; ask only about direction that remains unresolved across those mandates.
 
 ### 2. Form sourced inferences
 

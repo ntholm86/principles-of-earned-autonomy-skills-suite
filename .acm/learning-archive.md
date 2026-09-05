@@ -1177,6 +1177,26 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** The overlap is not merely two trigger predicates firing together. It is an ownership and time-order problem: Improve owns the initial scheduling evidence, Destination owns confirmation and durable direction, and Orient must observe the resulting state exactly once without either service stealing another's authority.
 
+## 2026-08-13 — freeze-destination-orient-overlap-fixture
+
+**[!REALIZATION]** A valid overlap fixture must separate three layers that are easy to conflate: a local action that current Intent can authorize, a future priority only Destination can confirm, and an arc-state mismatch only Orient can refresh. The fixture is useful precisely because no one service owns all three.
+
+## 2026-08-13 — freeze-service-overlap-interactive-host
+
+**[!REALIZATION]** A human-gated natural-language service cannot be tested faithfully through a fully non-interactive harness. The operator channel is part of the architecture under test, not incidental terminal plumbing.
+
+## 2026-08-13 — centralize-service-scheduling
+
+**[!REALIZATION]** A single entry point still carries distributed control cost when every service restates why it should run. Lightweight composition requires one scheduler and small acceptance contracts, not fewer capabilities.
+
+## 2026-08-13 — orient-after-control-simplification
+
+**[!REALIZATION]** Lightweight trustworthy delegation is not achieved by deleting capabilities or by proving every edge case. It comes from preserving load-bearing cognition and evidence while giving each control decision one owner, one purpose, and the cheapest adequate check.
+
+## 2026-08-13 — orient-after-control-simplification
+
+**[!REVERSAL]** The action section above says the prior and refreshed Orientation were 140 and 100 lines. A post-append executable count disproved that statement before derivation or commit. `git show HEAD:.acm/orientation.md` contains 142 lines; the refreshed file contains 86 lines, a reduction of 56 lines. The claim and priority change are unaffected. This correction is appended because the Trail is append-only.
+
 ---
 
-**293 markers — 261 realisations, 32 reversals**
+**298 markers — 265 realisations, 33 reversals**

@@ -5,27 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 293 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-13 — freeze-destination-orient-overlap-fixture
-
-**[!REALIZATION]** A valid overlap fixture must separate three layers that are easy to conflate: a local action that current Intent can authorize, a future priority only Destination can confirm, and an arc-state mismatch only Orient can refresh. The fixture is useful precisely because no one service owns all three.
-
-## 2026-08-13 — freeze-service-overlap-interactive-host
-
-**[!REALIZATION]** A human-gated natural-language service cannot be tested faithfully through a fully non-interactive harness. The operator channel is part of the architecture under test, not incidental terminal plumbing.
-
-## 2026-08-13 — centralize-service-scheduling
-
-**[!REALIZATION]** A single entry point still carries distributed control cost when every service restates why it should run. Lightweight composition requires one scheduler and small acceptance contracts, not fewer capabilities.
-
-## 2026-08-13 — orient-after-control-simplification
-
-**[!REALIZATION]** Lightweight trustworthy delegation is not achieved by deleting capabilities or by proving every edge case. It comes from preserving load-bearing cognition and evidence while giving each control decision one owner, one purpose, and the cheapest adequate check.
-
-## 2026-08-13 — orient-after-control-simplification
-
-**[!REVERSAL]** The action section above says the prior and refreshed Orientation were 140 and 100 lines. A post-append executable count disproved that statement before derivation or commit. `git show HEAD:.acm/orientation.md` contains 142 lines; the refreshed file contains 86 lines, a reduction of 56 lines. The claim and priority change are unaffected. This correction is appended because the Trail is append-only.
+Showing the most recent 60 markers. 298 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-13 — consolidate-trail-independent-capture
 
@@ -247,6 +227,26 @@ Showing the most recent 60 markers. 293 older marker(s) are in `.acm/learning-ar
 
 **[!REALIZATION]** Self-targeting evaluations systematically under-detect target-agnosticity defects in the automatic services, because the evaluator's own repo is the one environment where repo-specific instructions succeed. Orient 1b was executable here for four months and would have failed on the first external target that reached an automatic Orient. Cold reads of the contracts should ask, for every command or file the contract names, "does this exist on a target that is not this repository?" - a question the Purpose lens already contains once the target's purpose is understood as generic, and one the previous evaluators did not ask of Orient.
 
+## 2026-09-05 — discover-current-conversation-evidence
+
+**[!REALIZATION]** Retiring an evidence-writing mechanism does not retire its readers. The 2026-08-01 decision correctly stopped mandatory agent summaries, but Intent and Destination still asked future runs to recover intent from that old location. The remaining risk lies in reader assumptions about availability and provenance, not only stale paths. A future run can falsify this model by showing readers consistently discover current evidence without explicit source coverage, or by finding the new wording confuses independent capture with reconstructed testimony.
+
+## 2026-09-05 — discover-current-conversation-evidence
+
+**[!REVERSAL]** Replaced the initial legacy-qualified directory phrase with ".acm/sessions/ (including legacy summaries)" in both bullets after that reader result. The second check reported four clear passes and one pass with a caveat about Trail's export destination. Its conclusion explicitly found the READ behavior unambiguous and no new setup requirement; the caveat concerns Trail's separate WRITE convention and does not prohibit reading an existing independent record elsewhere. This is semantic scenario evidence, not an observed host integration or a family-diverse evaluation. The checks cover transcript-only, legacy-only, reconstructed-versus-linked-independent, no-capture, and independently captured sessions records.
+
+## 2026-09-05 — destination-acceptance-requires-authority-evidence
+
+**[!REALIZATION]** A downstream synthesizer can reintroduce authority that ingress correctly withheld. Destination's final write gate remained intact, yet its input rule could label silence as past agreement. Acceptance status must survive handoffs alongside the evidence itself; a future run can falsify the usefulness of this correction if readers still promote unconfirmed narration or reject legitimate scoped delegation under the new wording.
+
+## 2026-09-05 — astra-bounded-contract-silence
+
+**[!REALIZATION]** A model-diverse improvement method needs both stages: models may contribute material changes during development, but independent silence must concern the resulting common artifact. A same-session stopping result can signal that this evaluator has no further material contribution within its bar without pretending to be the fresh independent vote that validates its own changes. Candidate lists must remain optional for that stopping condition to be usable.
+
+## 2026-09-05 — astra-bounded-contract-silence
+
+**[!REVERSAL]** Corrected the preceding runs' forward-looking emphasis on live-test candidates as the natural next work. The operator's active objective is frontier-family convergence, and a list of possible tests must not silently turn that into an open-ended testing program. The prior authorized fixes and the evidential limits of their checks remain valid; the priority inference changes.
+
 ---
 
-**60 markers — 51 realisations, 9 reversals**
+**60 markers — 50 realisations, 10 reversals**

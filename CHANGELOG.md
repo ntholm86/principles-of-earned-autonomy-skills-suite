@@ -1,5 +1,13 @@
 # Changelog
 
+## v4.33.6 - 2026-09-05
+
+- **Destination no longer treats unopposed Intent narration as an accepted mandate.** The gathering step now grounds acceptance in recorded operator confirmation or explicit delegation and retains other narrations as evidence for hunches. This aligns the handoff with Intent's supervised default without discarding historical context or changing Destination's final synthesis-confirmation gate. `destination/SKILL.md` 2.8.1 -> 2.8.2.
+
+## v4.33.5 - 2026-09-05
+
+- **Intent and Destination now discover current conversation evidence alongside legacy session records.** Their accumulated-context clauses named only `.acm/sessions/`, while Trail directs optional transcript exports to `.acm/transcripts/` and recognizes host or harness capture. Both readers now name the available sources and distinguish independent capture from agent-authored summaries by provenance and fidelity markings, never by directory name. Reads remain conditional; no capture or migration is required. `intent/SKILL.md` 1.8.1 -> 1.8.2; `destination/SKILL.md` 2.8.0 -> 2.8.1.
+
 ## v4.33.4 — 2026-09-05
 
 - **Orient's freshness guard is now target-agnostic and names the real tool location.** Step 1b said "if the target repo has `tools/record.py`", checklisted `python verify.py`, and forbade arc-claims unless `history.md`/`learning.md` freshness passed — contradicting Trail on both counts: `record.py` lives only in the skills clone at `harness/tools/record.py` (never in the target), and the derived artifacts are optional. On an external target the instructions could not be followed at the first automatic Orient handoff. Rewritten as the invariant it was protecting: regenerate derived surfaces from the trail if the target uses them, read `audit-trail.md` directly if it does not, never form arc-claims from stale derived files. The 2026-08-02 harness-layout fix covered README, INSTALLING, QUICKSTART, Improve, and Trail but missed this surface. Found by a cold Claude-family convergence evaluation. `orient/SKILL.md` 2.7.1 -> 2.7.2.
