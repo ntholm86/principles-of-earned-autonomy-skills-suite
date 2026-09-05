@@ -1197,6 +1197,10 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REVERSAL]** The action section above says the prior and refreshed Orientation were 140 and 100 lines. A post-append executable count disproved that statement before derivation or commit. `git show HEAD:.acm/orientation.md` contains 142 lines; the refreshed file contains 86 lines, a reduction of 56 lines. The claim and priority change are unaffected. This correction is appended because the Trail is append-only.
 
+## 2026-08-13 — consolidate-trail-independent-capture
+
+**[!REALIZATION]** Evidence semantics survive compression when the skill states observable invariants and removes the history of why each invariant arrived. Runtime instructions need the current contract; provenance belongs in the append-only Trail and changelog.
+
 ---
 
-**298 markers — 265 realisations, 33 reversals**
+**299 markers — 266 realisations, 33 reversals**

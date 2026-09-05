@@ -1,5 +1,9 @@
 # Changelog
 
+## v4.33.7 - 2026-09-05
+
+- **Improve no longer claims that no skill writes `.acm/destination.md`.** Step 1 described the destination as "not written by any skill, only by the operator/team" — a sentence from v3.10.0 (2026-05-01), when `vision.md` was created as operator-only. Three days later the Vision skill (now Destination) began writing that file after operator confirmation, and Trail's directory listing was updated ("written by Destination ... never written by any other skill"), but Improve's read-order text never was. The clause now states the actual authority model: revised only by the operator, or by Destination after the operator confirms the synthesized meaning; no other skill writes it. Improve's behavior is unchanged (it never wrote the file). Found by a cold Claude-family convergence evaluation of the post-v4.33.6 suite. `improve/SKILL.md` 3.19.0 -> 3.19.1.
+
 ## v4.33.6 - 2026-09-05
 
 - **Destination no longer treats unopposed Intent narration as an accepted mandate.** The gathering step now grounds acceptance in recorded operator confirmation or explicit delegation and retains other narrations as evidence for hunches. This aligns the handoff with Intent's supervised default without discarding historical context or changing Destination's final synthesis-confirmation gate. `destination/SKILL.md` 2.8.1 -> 2.8.2.
