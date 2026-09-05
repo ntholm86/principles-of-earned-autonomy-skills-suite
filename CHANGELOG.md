@@ -1,5 +1,9 @@
 # Changelog
 
+## v4.33.9 - 2026-09-05
+
+- **Lexical reversal cues now produce visible review warnings instead of blocking commits.** The word-based check could reject truthful denials while missing actual changes of decision phrased without its cue words. Cue detection remains intact, and genuine reversals still require recording; only the automatic blocking behavior changes, with explicit operator approval for this tradeoff. All other verifier checks remain blocking. Added focused regression coverage for warnings, exit status, and each remaining blocking check.
+
 ## v4.33.8 - 2026-09-05
 
 - **Destination now distinguishes mandate approval from Git persistence.** Its write step defined operator ownership through the operator's commit, despite requiring approval of the complete synthesis before writing. The definition now agrees with Improve: operator review and approval establish the mandate regardless of authorship or commit status. The synthesis-confirmation gate and operator-controlled destination commit remain unchanged. `destination/SKILL.md` 2.8.2 -> 2.8.3.

@@ -1213,6 +1213,14 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** A self-referential counter must include the act of refreshing itself when that act qualifies under the same counting rule. Publishing the pre-refresh value creates known drift before the update is complete.
 
+## 2026-08-14 — ground-embedded-principles-in-cybernetics
+
+**[!REALIZATION]** The suite needs the conceptual mechanism in its principles surface, not repeated in every skill that participates in the loop. Doctrine synchronization preserves capability; runtime repetition would convert grounding into prompt burden.
+
+## 2026-08-14 — ground-embedded-principles-in-cybernetics
+
+**[!REVERSAL]** The initial plan changed only doctrine plus Trail outputs. Before appending this entry, the self-referential count rule showed that entry 269 raises the exact published total from 354 to 355. Updated the README and current snapshot fields in `.acm/ITERATION-COUNT.md` within this same iteration so the act of recording the change does not knowingly stale the public claim.
+
 ---
 
-**302 markers — 269 realisations, 33 reversals**
+**304 markers — 270 realisations, 34 reversals**

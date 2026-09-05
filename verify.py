@@ -30,14 +30,15 @@ Checks:
     correct session artifacts (`.acm/sessions/` summaries,
     `.acm/transcripts/` verbatim exports) with explicit fidelity metadata.
 13. Transcript-file references point to existing files.
-14. Entries under the reversal honesty contract do not narrate reversal cues
-    without a `[!REVERSAL]` marker.
+14. Entries under the reversal honesty contract produce review warnings for
+    lexical reversal cues without a `[!REVERSAL]` marker. Matches are advisory:
+    they do not establish that a decision changed.
 15. `improve/SKILL.md`, `orient/SKILL.md`, `intent/SKILL.md`, and
     `destination/SKILL.md` each carry the ACM §4 Scoped Memory paragraph with
     an identical stop-condition clause (filesystem root, `.acm-root` marker,
     4-level ceiling) — catches silent wording drift across the four copies.
 
-Exit code: 0 if all checks pass, 1 otherwise.
+Exit code: 0 if all blocking checks pass (review warnings may remain), 1 otherwise.
 """
 from __future__ import annotations
 
@@ -630,7 +631,7 @@ def check_derived_artifact_freshness() -> list[str]:
 
 
 def check_reversal_honesty_gate() -> list[str]:
-    """Fail when entries under contract narrate reversal cues without [!REVERSAL]."""
+    """Return review warnings for unmarked lexical cues, not proven reversals."""
     failures: list[str] = []
     if not LOG.exists():
         return failures
@@ -692,15 +693,24 @@ def main() -> int:
     all_failures.extend(check_transcript_references())
     all_failures.extend(check_session_fidelity_structure())
     all_failures.extend(check_trigger_evaluation())
-    all_failures.extend(check_reversal_honesty_gate())
+    reversal_warnings = check_reversal_honesty_gate()
     all_failures.extend(check_derived_artifact_freshness())
+
+    if reversal_warnings:
+        print(f"WARNING - {len(reversal_warnings)} possible unrecorded reversal(s); review context:")
+        for warning in reversal_warnings:
+            print(f"  - {warning}")
+        print("Record genuine reversals with [!REVERSAL]; word matches alone do not establish one.")
 
     if all_failures:
         print(f"FAIL — {len(all_failures)} issue(s):")
         for f in all_failures:
             print(f"  - {f}")
         return 1
-    print("OK — trail integrity checks pass")
+    if reversal_warnings:
+        print("OK - blocking checks pass; reversal review warnings remain")
+    else:
+        print("OK — trail integrity checks pass")
     return 0
 
 

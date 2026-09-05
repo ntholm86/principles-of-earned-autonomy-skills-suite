@@ -17343,3 +17343,81 @@ The across-trail reflection above is the macro reflection for this entry. Its or
 Verification checkpoint: the first explicit post-generation verifier result reported only the missing exact macro heading and unmarked reversal cue. Both are addressed by this append; no verifier code, historical entry, or authority contract was changed to satisfy those checks. History generation included the new run, and the scoped diff contains only six intended files: Destination, changelog, audit trail, and three generated ACM surfaces.
 
 Final outcome: completed the Destination authority clarification. Regeneration reported 310 trail entries, 60 recent learning markers, and 302 archived markers. `python verify.py` returned "OK - trail integrity checks pass" after the recording corrections. The five semantic authority classifications support the prediction with the reader limitations recorded above; editor diagnostics were clear. No Destination change, commit, or convergence vote was made. This final result is appended after the successful check, and the derived surfaces are regenerated again to include it.
+
+## 2026-09-05 - astra-reversal-cues-advisory
+
+- target: skills repo - verify.py reversal review and CLI exit behavior
+- operator: maintainer
+- agent: GitHub Copilot (Astra; model identified by the operator)
+- skill: improve with Intent and Trail
+- outcome: lexical reversal matches now produce visible review warnings instead of blocking commits, with explicit operator approval; all eleven other checks remain blocking
+- delta: CHANGELOG.md v4.33.9; verify.py reporting change; eight regression tests in harness/tests/test_verify.py
+
+### Interpretation of the ask
+
+Operator: "Use the improve skill again. THe model is astra and i want that in the audit trail". Attribution correction: the operator identifies this session's model as Astra, including the preceding destination-approval-independent-of-git iteration. This appended statement supplies that attribution without rewriting the earlier entry. It does not make a same-session follow-up an independent convergence evaluation.
+
+Intent narration: "I read your intent as another bounded Improve pass on the current suite, with Astra named in the audit trail and silence accepted if nothing material remains. This is a same-session follow-up, so it cannot count as a fresh independent convergence vote; the previous iteration also still needs the commit checkpoint required by the skill."
+
+The operator selected "Confirm and delegate routine gates" for this run and "Yes, commit both checkpoints" for the previous and current iterations. Before this examination, regenerated timestamp-stale derived files, passed verification, and committed the previous iteration as 202b273. This supersedes its final uncommitted status without altering that historical statement.
+
+The separate consequential-action question asked permission to make the lexical check advisory while retaining structural enforcement. The operator first replied "i don tunderstand what you are saying.. please explain". No implementation occurred on that response. Explained that both a real reversal and its explicit denial currently block, that a warning would retain visibility, and that a genuine missing marker would no longer stop a commit. The operator then approved: "yes go with your proposal". This authorizes this specific reduction in automatic blocking, not future evidence or capability tradeoffs.
+
+### Examination
+
+Reused the current workspace and bounded repo mandates, orientation, Intent, Trail, and the previous run's evidence; reread Improve and the newest learning, then inspected Orient, Probe, and the approval/delegation/helper clauses in Destination, Intent, and Trail. Purpose and Inconsistency found no further material handoff or external-target requirement defect within those examined clauses. The concrete failure from the prior iteration redirected attention to the evidence checker rather than manufacturing another skill-text edit.
+
+Evidence integrity: verify.py check_reversal_honesty_gate searches entry bodies for a lexical cue and, unless the marker is present, main formerly added that result to blocking failures. A Pylance runtime snippet imported the actual verifier, supplied in-memory log doubles, and reproduced four cases without changing any repository file:
+
+- "No file or commit was reverted." -> failure despite denying the action.
+- "The file was reverted after the test failed." -> failure for the unmarked action.
+- "[!REVERSAL] The file was reverted after the test failed." -> pass.
+- "Initially chose X; later chose Y instead after the check failed." -> pass despite describing a changed decision.
+
+The snippet used the editor-selected rev virtual environment; regression tests and repository verification used the explicit skills virtual environment. The pre-commit hook invokes verify.py and blocks on its nonzero exit status, so changing the aggregation in main controls the actual blocking behavior. Its other checks do not depend on the lexical detector.
+
+Challenge: a small negation exception could fix the observed sentence cheaply, but it would preserve the unsupported inference that word matching establishes a change of decision and still miss paraphrases. Prior learning about marker-parser false positives records why phrase exclusions can keep generating new exceptions. A complete semantic judge would be a larger, unvalidated mechanism. The bounded redesign is to distinguish structural failure from an advisory lexical candidate, retaining visibility and the recording duty. Its cost is one reporting-path change and regression coverage; its real tradeoff is reduced automatic blocking, exposed to and approved by the operator.
+
+### Decision
+
+[!DECISION] Route lexical reversal candidates to a visible warning channel while leaving the detector and all eleven structural checks intact. Ranked above another handoff wording change because this defect already disrupted honest recording in the preceding run and is reproducible in the owning code. Rejected: adding a special-case negation list, inventing a reversal marker to satisfy a word match, silently deleting cue detection, or building an untested semantic classifier. Precedent check at decision time: the prior iteration documents the denial false positive; archived marker-parser learning favors meaningful boundaries over growing phrase exceptions. The older named-exception practice is not a sufficient reason to preserve this semantic hard gate.
+
+[!REVERSAL] With specific operator approval, replaced the existing policy that an unmarked lexical cue automatically blocks a commit. The requirement to mark genuine changes of decision is unchanged. This reverses an enforcement policy, not any historical record or requirement for honest evidence.
+
+### Prediction
+
+Before editing: "The hook blocks commits based on the verifier's exit code. I'll leave cue detection intact but print its matches as warnings. The tests will check that warning-only runs return success and that every other check still causes failure when it finds an issue."
+
+Expected: unmarked cue matches remain visible, including ambiguous or negative statements; warnings alone return 0; any structural failure returns 1 even alongside warnings; a clean run retains its previous success output. Not expected: semantic proof of a reversal, complete detection of paraphrased reversals, permission to omit genuine reversal markers, or any change to Destination, the skills' authority gates, or the hook's enforcement of structural failures.
+
+### Action
+
+Changed main to collect lexical candidates separately, print a warning with the entry/cue and an instruction to review context, and exclude those candidates from blocking failures. Success with warnings explicitly reports that review warnings remain. Updated the checker docstring and verifier header; retained the existing function name and returned candidate list for compatibility. Added the changelog entry and eight standard-library unittest tests, without new dependencies or changes to live skill contracts.
+
+Focused verification immediately after the edit: `python -m unittest discover -s harness/tests -p test_verify.py -v` -> eight tests passed, including subtests for denials, admissions, quoted examples, marked/cueless/pre-contract/missing-log cases, and each of the eleven blocking checks. Main-path tests use the real cue detector and log parser with an in-memory log, stub unrelated checks, assert their invocation, and verify output and exit codes. The full verifier then ran against the real repository -> integrity checks passed. Editor diagnostics on verify.py, the tests, and changelog were clear; `git diff --check` passed. The stated prediction held within these cases. This entry and its derived surfaces are included in the final pre-commit verification below the current work sequence.
+
+### Reflection
+
+Model-claim: the suite's evidence checker is useful when it separates mechanically decidable failures from semantic review candidates; using a lexical cue as proof can pressure an author to alter truthful testimony. A future run can challenge the advisory choice by showing important missing markers are ignored at an unacceptable rate, or by demonstrating a reliable discriminator that earns stronger enforcement without the observed false positives.
+
+Blind spot: the tests establish detection visibility and process exit behavior, not whether future agents or humans will act on warnings. No new empirical claim about research validity, adoption, or cross-model fidelity follows. An informed reader could object that advisory output is easy to ignore; that is the concrete loss in automatic enforcement the operator approved, not a limitation hidden by the passing tests.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED - the prior run's lexical false positive and earlier marker-parser false-positive arc both concern mechanically interpreting semantic testimony.
+- *About to declare silence:* not fired - this run made a material verifier change.
+- *Contradicts prior [!REALIZATION]:* not fired - the recent warning to separate a correct classification from unsupported actions is preserved; this run applies that distinction to a mechanical classifier.
+- *Operator explicitly asked:* not fired for macro reflection - the operator asked for another Improve pass, model attribution, and later approved this specific tradeoff, not a separate arc read.
+
+### Across-trail macro-Hansei
+
+Read as an evidence-integrity thread, the earlier marker-parser work moved from excluding individual phrases to identifying the kind of assertion being recorded. That lesson aged well: another phrase blacklist would only narrow the current example. The older claim that documented exceptions form a stable general solution is too broad for open-ended semantic narration; the later parser arc already challenged it. Recent authority repairs have aligned permissions, but the preceding iteration showed that the evidence checker can still influence the record it is intended to inspect. The governing assumption at issue is that a word match can justify demanding a semantic marker. The current Destination already requires honest evidence and explicit approval of capability tradeoffs, and the operator has settled this implementation tradeoff directly. No new Destination or general review architecture is needed in this iteration. This is a bounded reading of the relevant evidence thread, not a claim to have audited all historical testimony.
+
+[!REALIZATION] A passing integrity check and a truthful account are different claims. Keeping semantic candidates visible while reserving automatic rejection for structural failures makes this distinction explicit, but moves responsibility for unresolved cue matches to review. The testable engineering result is preserved warning visibility and structural blocking; reliable follow-through on warnings remains unproven.
+
+### Candidate Next Moves
+
+1. A fresh-session evaluator can challenge the changed artifact toward bounded silence; this same-session Astra implementation contributes a change, not an independent silence vote, and further experiments are not obligations.
+
+Orientation freshness: current - its explicit-authority and governance-cost claims explain the approved tradeoff; no broader convergence or changed destination is asserted.
+Destination need: not triggered - the existing mandate required approval for this tradeoff, which the operator supplied; no unresolved durable-direction choice was introduced.

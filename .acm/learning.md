@@ -5,15 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 302 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-14 — ground-embedded-principles-in-cybernetics
-
-**[!REALIZATION]** The suite needs the conceptual mechanism in its principles surface, not repeated in every skill that participates in the loop. Doctrine synchronization preserves capability; runtime repetition would convert grounding into prompt burden.
-
-## 2026-08-14 — ground-embedded-principles-in-cybernetics
-
-**[!REVERSAL]** The initial plan changed only doctrine plus Trail outputs. Before appending this entry, the self-referential count rule showed that entry 269 raises the exact published total from 354 to 355. Updated the README and current snapshot fields in `.acm/ITERATION-COUNT.md` within this same iteration so the act of recording the change does not knowingly stale the public claim.
+Showing the most recent 60 markers. 304 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-16 — improve-capability-leverage-lens
 
@@ -246,6 +238,14 @@ Showing the most recent 60 markers. 302 older marker(s) are in `.acm/learning-ar
 ## 2026-09-05 — destination-approval-independent-of-git
 
 **[!REVERSAL]** The validation plan initially relied on the separate semantic reader to establish contract consistency. After the reader added unsupported recovery advice and misstated the write/approval sequence, rejected its unqualified assurance and narrowed the accepted result to the five authority classifications, checked against the actual write gate. This is a reversal of reliance on the reader's broad assessment, not an artifact rollback. The verifier also matched the word "reverted" inside the earlier explicit statement that no revert occurred; that lexical match is not evidence of another reversal.
+
+## 2026-09-05 — astra-reversal-cues-advisory
+
+**[!REALIZATION]** A passing integrity check and a truthful account are different claims. Keeping semantic candidates visible while reserving automatic rejection for structural failures makes this distinction explicit, but moves responsibility for unresolved cue matches to review. The testable engineering result is preserved warning visibility and structural blocking; reliable follow-through on warnings remains unproven.
+
+## 2026-09-05 — astra-reversal-cues-advisory
+
+**[!REVERSAL]** With specific operator approval, replaced the existing policy that an unmarked lexical cue automatically blocks a commit. The requirement to mark genuine changes of decision is unchanged. This reverses an enforcement policy, not any historical record or requirement for honest evidence.
 
 ---
 
