@@ -316,6 +316,7 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 309 | 2026-09-05 | correction-destination-authorship-is-approval-not-authorship | clause reworded so that operator approval, not who authors the text, is stated as the source of the mandate | improve/SKILL.md 3.19.1 -> 3.19.2; CHANGELOG v4.33.7 amended with a same-day correction note |
 | ▸ 310 | 2026-09-05 | destination-approval-independent-of-git | in progress at prediction checkpoint; completion appended below | destination/SKILL.md 2.8.2 -> 2.8.3; CHANGELOG.md v4.33.8 |
 | ▸ 311 | 2026-09-05 | astra-reversal-cues-advisory | lexical reversal matches now produce visible review warnings instead of blocking commits, with explicit operator approval; all eleven other checks remain blocking | CHANGELOG.md v4.33.9; verify.py reporting change; eight regression tests in harness/tests/test_verify.py |
+| · 312 | 2026-09-05 | astra-post-advisory-bounded-silence | bounded same-session silence; no further material change found within the examined bar; not an independent convergence vote | evidence only; product files and versions unchanged |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -1425,4 +1426,9 @@ Do not edit by hand — re-run the command to refresh.
 - **decided:** Route lexical reversal candidates to a visible warning channel while leaving the detector and all eleven structural checks intact. Ranked above another handoff wording change because this defect already disrupted honest recording in the preceding run and is reproducible in the owning code. Rejected: adding a special-case negation list, inventing a reversal marker to satisfy a word match, silently deleting cue detection, or building an untested semantic classifier. Precedent check at decision time: the prior iteration documents the denial false positive; archived marker-parser learning favors meaningful boundaries over growing phrase exceptions. The older named-exception practice is not a sufficient reason to preserve this semantic hard gate.
 - **REVERSAL:** With specific operator approval, replaced the existing policy that an unmarked lexical cue automatically blocks a commit. The requirement to mark genuine changes of decision is unchanged. This reverses an enforcement policy, not any historical record or requirement for honest evidence.
 
-**311 runs total — 288 with changes, 23 silence**
+### Run 312 — 2026-09-05 — astra-post-advisory-bounded-silence
+
+- **decided:** Declare bounded silence for this evaluator on the reviewed skill contracts and verifier behavior at 12b09fd. Rejected: another wording cleanup without a material behavioral finding; treating the current tests as proof of adoption or research validity; claiming a fresh independent vote after implementing changes in this conversation. Precedent checked at decision time: recent learning distinguishes passing integrity checks from truthful accounts and preserves the earlier rule that optional future experiments must not become an endless obligation before a model may stop.
+- **REVERSAL:** Withdrew the combined authorization prompt as a prerequisite to completing this evaluation. The evaluator owns the finding and silence verdict; the operator's correction explicitly assigns that judgment here. This does not grant permission for unrelated changes, consequential tradeoffs, or a new commit. No product change is proposed by this run.
+
+**312 runs total — 288 with changes, 24 silence**

@@ -5,15 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 304 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-16 — improve-capability-leverage-lens
-
-**[!REALIZATION]** The arc already knew that execution context can alter grounding, reflection, and validity, but it usually reached that question through operator prompts or controlled experiments. Improve's ordinary examination therefore had a structural blind spot: it could improve the target under current assumptions without asking whether the current model, host, tool, or orchestration environment had changed those assumptions. The Capability leverage lens moves that question into normal purpose-driven reasoning without promoting capability monitoring into a standing target. This claim is falsified if future agents use the lens only when a capability is named for them, or turn it into routine surveys when no material leverage is present.
-
-## 2026-08-16 — improve-capability-leverage-lens
-
-**[!REVERSAL]** The first lens wording opened with existing compensation cost. After the independent challenge showed that this could remain reactive to already-known opportunities, revised it to ask first what the current environment can newly contribute to the target's purpose. The same focused verifier passed again.
+Showing the most recent 60 markers. 306 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-16 — self-target-capability-leverage-behavior
 
@@ -246,6 +238,14 @@ Showing the most recent 60 markers. 304 older marker(s) are in `.acm/learning-ar
 ## 2026-09-05 — astra-reversal-cues-advisory
 
 **[!REVERSAL]** With specific operator approval, replaced the existing policy that an unmarked lexical cue automatically blocks a commit. The requirement to mark genuine changes of decision is unchanged. This reverses an enforcement policy, not any historical record or requirement for honest evidence.
+
+## 2026-09-05 — astra-post-advisory-bounded-silence
+
+**[!REALIZATION]** The authority to change an artifact and the responsibility to judge it are separate. A silence finding belongs to the evaluator and must be bounded by evidence; asking the operator to choose that finding would weaken the independent judgment the suite is seeking. This same-session finding ends the current evaluator's work within its bar without serving as an independent vote on its own changes.
+
+## 2026-09-05 — astra-post-advisory-bounded-silence
+
+**[!REVERSAL]** Withdrew the combined authorization prompt as a prerequisite to completing this evaluation. The evaluator owns the finding and silence verdict; the operator's correction explicitly assigns that judgment here. This does not grant permission for unrelated changes, consequential tradeoffs, or a new commit. No product change is proposed by this run.
 
 ---
 

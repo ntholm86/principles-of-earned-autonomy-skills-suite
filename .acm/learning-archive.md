@@ -1221,6 +1221,14 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REVERSAL]** The initial plan changed only doctrine plus Trail outputs. Before appending this entry, the self-referential count rule showed that entry 269 raises the exact published total from 354 to 355. Updated the README and current snapshot fields in `.acm/ITERATION-COUNT.md` within this same iteration so the act of recording the change does not knowingly stale the public claim.
 
+## 2026-08-16 — improve-capability-leverage-lens
+
+**[!REALIZATION]** The arc already knew that execution context can alter grounding, reflection, and validity, but it usually reached that question through operator prompts or controlled experiments. Improve's ordinary examination therefore had a structural blind spot: it could improve the target under current assumptions without asking whether the current model, host, tool, or orchestration environment had changed those assumptions. The Capability leverage lens moves that question into normal purpose-driven reasoning without promoting capability monitoring into a standing target. This claim is falsified if future agents use the lens only when a capability is named for them, or turn it into routine surveys when no material leverage is present.
+
+## 2026-08-16 — improve-capability-leverage-lens
+
+**[!REVERSAL]** The first lens wording opened with existing compensation cost. After the independent challenge showed that this could remain reactive to already-known opportunities, revised it to ask first what the current environment can newly contribute to the target's purpose. The same focused verifier passed again.
+
 ---
 
-**304 markers — 270 realisations, 34 reversals**
+**306 markers — 271 realisations, 35 reversals**
