@@ -1173,6 +1173,10 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** The next adoption datum is an event owned by an independent consenting developer, not another artifact the autonomous loop can manufacture. Autonomy can remove ambiguity from the protocol and evidence boundary; it cannot replace the human independence that gives the observation meaning.
 
+## 2026-08-13 — preregister-destination-orient-overlap
+
+**[!REALIZATION]** The overlap is not merely two trigger predicates firing together. It is an ownership and time-order problem: Improve owns the initial scheduling evidence, Destination owns confirmation and durable direction, and Orient must observe the resulting state exactly once without either service stealing another's authority.
+
 ---
 
-**292 markers — 260 realisations, 32 reversals**
+**293 markers — 261 realisations, 32 reversals**

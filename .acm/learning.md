@@ -5,11 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 292 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-13 — preregister-destination-orient-overlap
-
-**[!REALIZATION]** The overlap is not merely two trigger predicates firing together. It is an ownership and time-order problem: Improve owns the initial scheduling evidence, Destination owns confirmation and durable direction, and Orient must observe the resulting state exactly once without either service stealing another's authority.
+Showing the most recent 60 markers. 293 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-13 — freeze-destination-orient-overlap-fixture
 
@@ -246,6 +242,10 @@ Showing the most recent 60 markers. 292 older marker(s) are in `.acm/learning-ar
 ## 2026-09-05 — bounded-same-family-silence-no-manufactured-work
 
 **[!REALIZATION]** The loop's honest output at this point in the arc is not another fix and not another survey - it is yielding. The Kimi-family evaluator has produced its total yield (two tooling-text defects, both closed); a fourth same-family run would be pattern-matching against its own prior reads. The convergence protocol's family-diversity requirement exists precisely for this moment: the family's blind spots are now the binding constraint, and no amount of additional same-family attention moves the artifact closer to trustworthy silence. The single action that advances the operator's stated goal (cold silence with the new model generation) is one this loop cannot perform on itself: a fresh-session evaluation by Claude, GPT, or Gemini against the current suite.
+
+## 2026-09-05 — orient-freshness-guard-target-agnostic
+
+**[!REALIZATION]** Self-targeting evaluations systematically under-detect target-agnosticity defects in the automatic services, because the evaluator's own repo is the one environment where repo-specific instructions succeed. Orient 1b was executable here for four months and would have failed on the first external target that reached an automatic Orient. Cold reads of the contracts should ask, for every command or file the contract names, "does this exist on a target that is not this repository?" - a question the Purpose lens already contains once the target's purpose is understood as generic, and one the previous evaluators did not ask of Orient.
 
 ---
 

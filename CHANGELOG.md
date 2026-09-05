@@ -1,5 +1,9 @@
 # Changelog
 
+## v4.33.4 — 2026-09-05
+
+- **Orient's freshness guard is now target-agnostic and names the real tool location.** Step 1b said "if the target repo has `tools/record.py`", checklisted `python verify.py`, and forbade arc-claims unless `history.md`/`learning.md` freshness passed — contradicting Trail on both counts: `record.py` lives only in the skills clone at `harness/tools/record.py` (never in the target), and the derived artifacts are optional. On an external target the instructions could not be followed at the first automatic Orient handoff. Rewritten as the invariant it was protecting: regenerate derived surfaces from the trail if the target uses them, read `audit-trail.md` directly if it does not, never form arc-claims from stale derived files. The 2026-08-02 harness-layout fix covered README, INSTALLING, QUICKSTART, Improve, and Trail but missed this surface. Found by a cold Claude-family convergence evaluation. `orient/SKILL.md` 2.7.1 -> 2.7.2.
+
 ## v4.33.3 — 2026-09-05
 
 - **Trail's sample commit blocks now include `.acm/learning-archive.md`.** The archive is regenerated alongside `learning.md` in any repo past the recent-window threshold, and the skill already requires derived artifacts never lag the source — but all three sample `git add` lines (the standard commit block and both multi-iteration examples) omitted it, inviting a stale-archive commit in exactly the repos that have one. Marked conditional (`# ... only if it exists`) in the standard block since the archive is optional. Found by the 2026-09-04 cold convergence evaluation. `trail/SKILL.md` 2.5.2 -> 2.5.3.
