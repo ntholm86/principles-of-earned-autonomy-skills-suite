@@ -17264,3 +17264,82 @@ Destination need: not triggered - the operator clarified meaning within the exis
 ### Across-trail macro-Hansei
 
 Trigger fired: operator explicitly asked. Read against the arc, this correction belongs to the same authority thread as the August 16 supervision gates and Destination's synthesis-confirmation rule: the suite kept refining WHEN the operator confirms, while the operator's actual model is WHAT confirmation does - it converts drafted text into a mandate regardless of who drafted it. The preceding entry's realization (three concurrent meanings of "operator-held") aged for about one hour before the operator supplied the governing meaning. No governing-variable revision is implied: the Destination already says the operator owns the Destination and any change to it; this entry aligns one contract sentence with that, nothing more.
+
+## 2026-09-05 - destination-approval-independent-of-git
+
+- target: skills repo - destination/SKILL.md step 5
+- operator: maintainer
+- agent: GitHub Copilot (underlying model identity not independently verified)
+- skill: improve with Intent and Trail
+- outcome: in progress at prediction checkpoint; completion appended below
+- delta: destination/SKILL.md 2.8.2 -> 2.8.3; CHANGELOG.md v4.33.8
+
+### Interpretation of the ask
+
+Operator request: "Hi you are GPT 6 Astra / Use the improve skill C:\git\pea\skills\improve\SKILL.md on C:\git\pea\skills". The supplied model label is not independently established by this host and is not used as convergence-family evidence.
+
+Intent narration: "I read this as one fresh Improve evaluation of the suite against its current destination, with a meaningful change only if the evidence supports it. Recent learning makes bounded silence a valid outcome; I won't treat this as a request to expand the testing program or revise the destination."
+
+Operator selected "Confirm and delegate routine gates", explicitly authorizing examination and a justified implementation for this run while preserving direction and consequential-action gates. No Destination change, publication, or Git commit was requested. Standard Trail mode applies; the semantic reader is a validator, not an independent Trail writer.
+
+### Examination
+
+Read the requested Improve contract, Intent, workspace and repo mandates, orientation, recent learning, Destination, Trail, README, embedded Principles, and the two immediately preceding authority entries. Initial worktree was clean. Parent scope has an .acm-root ceiling. The initial parallel context batch read the repo mandate before the discovered parent; the parent was subsequently read before target examination. No cross-repo change is proposed.
+
+Purpose: reliable delegation needs the agent to distinguish approval of meaning from persistence of a file. Inconsistency: Destination step 5 still defined "operator-held" through the operator committing to Git, while Improve 3.19.2 and the immediately preceding operator correction explicitly make approval the source of the mandate. Waste: replace the obsolete definition rather than append another exception or workflow.
+
+Challenge: the pre-write approval gate already protects against unapproved synthesis, so this is not evidence that an unauthorized write occurred. The remaining defect is the explicit competing definition of authority: an approved uncommitted synthesis and an unapproved committed draft must not be classified by commit status. The structure and governing Destination need no redesign.
+
+### Decision
+
+[!DECISION] Replace Destination's commit-based definition with the operator-confirmed approval-based definition; retain both complete-synthesis confirmation before writing and operator control over committing destination.md. This ranks above the previously noted presentation and illustrative-list issues because it defines authority in the service that writes durable direction. Rejected: remove the commit restriction, which would change a separate permission boundary; revise the repo Destination, which is unnecessary; declare silence despite the competing definition. Precedent checked at decision time: the two final learning markers and full entries improve-destination-authorship-clause and correction-destination-authorship-is-approval-not-authorship establish the intended distinction directly.
+
+### Prediction
+
+Stated before editing: "I'll replace Destination's commit-based definition of authority with the approval-based one. Prediction: an approved but uncommitted synthesis is a mandate; an unapproved committed draft is not; routine delegation still cannot bypass synthesis approval. I'll check those cases with a separate read-only evaluator, then run the repository verifier. The next convergence step remains a fresh evaluation of the changed artifact."
+
+This checkpoint accompanies the contract edit and precedes validation. Expected unchanged: source gathering, pre-write gate, historical preservation, service scheduling, and the prohibition on committing destination.md as a side effect of an agent run. This material edit cannot count as a silence vote.
+
+### Action
+
+Replaced the competing authority definition in Destination step 5, bumped its version, and added a changelog entry. No governing destination was edited. The immediately following validation was a separate read-only Explore reader of Destination, Improve, and Trail, without this entry or the changelog. It recognized approved-but-uncommitted direction as a mandate, an unapproved committed draft as not a mandate, routine delegation as insufficient for synthesis approval, a new implication as requiring confirmation, and routine delegation as insufficient permission to commit destination.md.
+
+The reader's answer was not wholly reliable: it volunteered an automatic revert in the unapproved-commit case, compressed write/approval order incorrectly in its summary, and mislocated one citation. Those statements are not adopted. Direct disambiguation against Destination step 5 confirmed "Without confirmation, do not write" and found no recovery/revert authorization. No file or commit was reverted. The tested approval-versus-persistence distinction held; this is bounded semantic evidence, not a clean end-to-end behavioral validation or independent convergence vote.
+
+Editor diagnostics found no errors in the changed skill or changelog. The first repository verifier run failed on seven recording issues: the deliberately incomplete checkpoint lacked four reflection-trigger lines, and all three derived ACM surfaces were stale after the append. No contract or link defect was reported. This completion supplies the reflection; derived surfaces will be regenerated before rerunning the verifier. No target changes beyond the authority sentence, version, changelog, and required evidence are intended.
+
+### Reflection
+
+Model-claim: the suite separates approval from authorship more reliably than it separates approval from repository persistence; the writing service retained an older definition after the reading service was corrected. A later evaluator can falsify that claim by finding that the remaining live contracts consistently preserve the distinction in cases where approval and commit status differ.
+
+Blind spot: this run did not observe a live Destination conversation on an external target, newcomer comprehension, or enforcement in a harness. The reader's unsupported recovery advice shows why correct classifications cannot certify all actions it might take. Imagined-reader pushback: the pre-write gate was already explicit, so the old sentence might cause no actual failure for a capable reader; the evidence here establishes a conflicting authority definition, not an observed unauthorized act.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED - the September trail records acceptance residue in Destination, authorship residue in Improve, and the immediately preceding approval clarification; this is the same migration-residue class in the owning write step.
+- *About to declare silence:* not fired - this iteration changed the contract and makes no silence claim.
+- *Contradicts prior [!REALIZATION]:* FIRED - improve-destination-authorship-clause asserted that the contracts shared one meaning; the following operator correction and this remaining commit-based definition show that statement was too broad.
+- *Operator explicitly asked:* not fired for across-trail reflection - the current prompt requested Improve, without a separate request for an arc read.
+
+**Across-trail reflection:** Reading the authority thread as one argument, the August supervision and synthesis-confirmation decisions correctly distinguished visible narration from authorization. That realization aged well: the current run itself needed explicit delegation. The September claim that the contracts now shared one meaning aged poorly because it equated agreement about the write procedure with agreement about the source of authority. The operator's correction supplies the governing distinction, and this run applies it to the writing service. Attention has concentrated on small authority repairs, but the evidence does not yet show that another mechanism or changed Destination would earn its cost. The candidate governing assumption is that reconciling procedural sentences automatically reconciles their underlying authority model. The existing approval-based Destination already rejects that assumption; this is a correction within it, not an unresolved destination-revision request. No broader convergence, full-history audit, or new testing program is claimed from the bounded authority arc read.
+
+[!REALIZATION] Authority and persistence can agree in the ordinary workflow while disagreeing in edge cases. The approved-uncommitted and unapproved-committed cases expose a distinction that ordinary "show, confirm, write, commit" summaries can hide. Validation must also separate a correct authority classification from unrelated actions a reader invents; the unsupported revert recommendation in this run is evidence of that limit.
+
+### Candidate Next Moves
+
+1. A fresh-session evaluation of the changed artifact is the next convergence move; this material edit is not a silence vote, and the user's supplied model label does not independently establish this session's model family.
+
+Orientation freshness: current - its explicit-authority claim and temporal-accretion finding explain the remaining definition; the material trail sharpens that model without requiring a new map.
+Destination need: not triggered - operator approval as the mandate source is already settled by the recorded correction; no new durable choice is necessary.
+
+Recording status: skill change and reflection complete; final repository verification follows derived-artifact regeneration. Changes remain uncommitted because this host requires an explicit commit request; routine implementation delegation has not been promoted to that permission.
+
+### Across-trail macro-Hansei
+
+The across-trail reflection above is the macro reflection for this entry. Its original heading was not recognized by verify.py; this append supplies the required exact heading without rewriting the checkpoint. Its conclusion remains bounded: prior procedural consistency claims were too broad, the approval-based mandate is already settled, and the observed residue does not justify a new governing mechanism or Destination revision.
+
+[!REVERSAL] The validation plan initially relied on the separate semantic reader to establish contract consistency. After the reader added unsupported recovery advice and misstated the write/approval sequence, rejected its unqualified assurance and narrowed the accepted result to the five authority classifications, checked against the actual write gate. This is a reversal of reliance on the reader's broad assessment, not an artifact rollback. The verifier also matched the word "reverted" inside the earlier explicit statement that no revert occurred; that lexical match is not evidence of another reversal.
+
+Verification checkpoint: the first explicit post-generation verifier result reported only the missing exact macro heading and unmarked reversal cue. Both are addressed by this append; no verifier code, historical entry, or authority contract was changed to satisfy those checks. History generation included the new run, and the scoped diff contains only six intended files: Destination, changelog, audit trail, and three generated ACM surfaces.
+
+Final outcome: completed the Destination authority clarification. Regeneration reported 310 trail entries, 60 recent learning markers, and 302 archived markers. `python verify.py` returned "OK - trail integrity checks pass" after the recording corrections. The five semantic authority classifications support the prediction with the reader limitations recorded above; editor diagnostics were clear. No Destination change, commit, or convergence vote was made. This final result is appended after the successful check, and the derived surfaces are regenerated again to include it.

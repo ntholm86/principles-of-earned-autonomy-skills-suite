@@ -1205,6 +1205,14 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** Removing duplicated policy is safe only after the remaining owner states branch conditions, authority, timing, and return path explicitly. Concision without those four elements moves orchestration cost into each reader's inference and produces divergent agents.
 
+## 2026-08-13 — index-experiments-as-evidence-archive
+
+**[!REALIZATION]** The experiments folder's burden was primarily semantic, not storage or runtime cost. A missing status boundary made preserved evidence look like pending work. Deleting evidence would optimize the weaker dimension while damaging the stronger one.
+
+## 2026-08-14 — refresh-live-iteration-count
+
+**[!REALIZATION]** A self-referential counter must include the act of refreshing itself when that act qualifies under the same counting rule. Publishing the pre-refresh value creates known drift before the update is complete.
+
 ---
 
-**300 markers — 267 realisations, 33 reversals**
+**302 markers — 269 realisations, 33 reversals**

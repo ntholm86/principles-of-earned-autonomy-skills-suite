@@ -5,15 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 300 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-13 — index-experiments-as-evidence-archive
-
-**[!REALIZATION]** The experiments folder's burden was primarily semantic, not storage or runtime cost. A missing status boundary made preserved evidence look like pending work. Deleting evidence would optimize the weaker dimension while damaging the stronger one.
-
-## 2026-08-14 — refresh-live-iteration-count
-
-**[!REALIZATION]** A self-referential counter must include the act of refreshing itself when that act qualifies under the same counting rule. Publishing the pre-refresh value creates known drift before the update is complete.
+Showing the most recent 60 markers. 302 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-14 — ground-embedded-principles-in-cybernetics
 
@@ -247,6 +239,14 @@ Showing the most recent 60 markers. 300 older marker(s) are in `.acm/learning-ar
 
 **[!REALIZATION]** The preceding entry named three meanings of "operator-held" and picked the one closest to the written procedure. The operator supplied a fourth that is the actual governing one: authorship is irrelevant, approval is the mandate. A cold read reconciles contracts to each other; only the operator can reconcile them to the intended meaning - which is what the supervised gate and the result line exist to surface.
 
+## 2026-09-05 — destination-approval-independent-of-git
+
+**[!REALIZATION]** Authority and persistence can agree in the ordinary workflow while disagreeing in edge cases. The approved-uncommitted and unapproved-committed cases expose a distinction that ordinary "show, confirm, write, commit" summaries can hide. Validation must also separate a correct authority classification from unrelated actions a reader invents; the unsupported revert recommendation in this run is evidence of that limit.
+
+## 2026-09-05 — destination-approval-independent-of-git
+
+**[!REVERSAL]** The validation plan initially relied on the separate semantic reader to establish contract consistency. After the reader added unsupported recovery advice and misstated the write/approval sequence, rejected its unqualified assurance and narrowed the accepted result to the five authority classifications, checked against the actual write gate. This is a reversal of reliance on the reader's broad assessment, not an artifact rollback. The verifier also matched the word "reverted" inside the earlier explicit statement that no revert occurred; that lexical match is not evidence of another reversal.
+
 ---
 
-**60 markers — 50 realisations, 10 reversals**
+**60 markers — 49 realisations, 11 reversals**

@@ -1,5 +1,9 @@
 # Changelog
 
+## v4.33.8 - 2026-09-05
+
+- **Destination now distinguishes mandate approval from Git persistence.** Its write step defined operator ownership through the operator's commit, despite requiring approval of the complete synthesis before writing. The definition now agrees with Improve: operator review and approval establish the mandate regardless of authorship or commit status. The synthesis-confirmation gate and operator-controlled destination commit remain unchanged. `destination/SKILL.md` 2.8.2 -> 2.8.3.
+
 ## v4.33.7 - 2026-09-05
 
 - **Improve no longer claims that no skill writes `.acm/destination.md`.** Step 1 described the destination as "not written by any skill, only by the operator/team" — a sentence from v3.10.0 (2026-05-01), when `vision.md` was created as operator-only. Three days later the Vision skill (now Destination) began writing that file after operator confirmation, and Trail's directory listing was updated ("written by Destination ... never written by any other skill"), but Improve's read-order text never was. The clause now states the actual authority model: revised only by the operator, or by Destination after the operator confirms the synthesized meaning; no other skill writes it. Improve's behavior is unchanged (it never wrote the file). Found by a cold Claude-family convergence evaluation of the post-v4.33.6 suite. `improve/SKILL.md` 3.19.0 -> 3.19.1. Same-day operator correction: the clause now states approval, not authorship, as the source of the mandate ("Destination may draft or revise it from the evidence it can see, but it becomes a mandate only through the operator's review and approval"). 3.19.1 -> 3.19.2.
