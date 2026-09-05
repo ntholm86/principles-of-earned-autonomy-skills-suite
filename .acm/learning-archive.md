@@ -1169,6 +1169,10 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REVERSAL]** Initial evidence packaging retained PowerShell UTF-16 files and decoded provider reason prose through the wrong code page, causing repository verification to fail. Complete CLI streams and tests were converted to UTF-8, redundant raw copies were removed, numeric provider summaries were regenerated without lossy prose, and the manifest was rebuilt before classification was committed.
 
+## 2026-08-13 — preregister-unassisted-newcomer-observation
+
+**[!REALIZATION]** The next adoption datum is an event owned by an independent consenting developer, not another artifact the autonomous loop can manufacture. Autonomy can remove ambiguity from the protocol and evidence boundary; it cannot replace the human independence that gives the observation meaning.
+
 ---
 
-**291 markers — 259 realisations, 32 reversals**
+**292 markers — 260 realisations, 32 reversals**

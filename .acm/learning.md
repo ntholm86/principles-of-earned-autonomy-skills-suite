@@ -5,11 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 291 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-13 — preregister-unassisted-newcomer-observation
-
-**[!REALIZATION]** The next adoption datum is an event owned by an independent consenting developer, not another artifact the autonomous loop can manufacture. Autonomy can remove ambiguity from the protocol and evidence boundary; it cannot replace the human independence that gives the observation meaning.
+Showing the most recent 60 markers. 292 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-13 — preregister-destination-orient-overlap
 
@@ -246,6 +242,10 @@ Showing the most recent 60 markers. 291 older marker(s) are in `.acm/learning-ar
 ## 2026-09-05 — trail-git-add-snippets-include-learning-archive
 
 **[!REALIZATION]** The two-day arc (cold eval -> fix finding 1 -> fix finding 2) is the convergence protocol working as designed rather than being waved through: the lease was NOT renewed at the first finding, both confirmed defects are now closed, and the lease-renewal test now passes cleanly to a different model family with an unchanged-after-fixes suite. The discipline cost is two small iterations; the payoff is that any silence a different family now declares is earned against a suite with zero known standing defects from the Kimi-family read.
+
+## 2026-09-05 — bounded-same-family-silence-no-manufactured-work
+
+**[!REALIZATION]** The loop's honest output at this point in the arc is not another fix and not another survey - it is yielding. The Kimi-family evaluator has produced its total yield (two tooling-text defects, both closed); a fourth same-family run would be pattern-matching against its own prior reads. The convergence protocol's family-diversity requirement exists precisely for this moment: the family's blind spots are now the binding constraint, and no amount of additional same-family attention moves the artifact closer to trustworthy silence. The single action that advances the operator's stated goal (cold silence with the new model generation) is one this loop cannot perform on itself: a fresh-session evaluation by Claude, GPT, or Gemini against the current suite.
 
 ---
 
