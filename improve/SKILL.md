@@ -1,6 +1,6 @@
 ---
 name: improve
-version: 3.19.2
+version: 3.19.3
 description: 'The improvement skill. Understand the ask, examine the target, challenge the first read, decide on one change (or argue for redesign, or declare silence), honor the operator''s supervision or delegation boundary, act, reflect, record, and report the result clearly. USE WHEN: improve, audit, review, fix, refactor, redesign, evaluate, what would make this better, am I missing something.'
 argument-hint: 'The target to improve, and optionally the concern (correctness, simplicity, performance, etc.)'
 ---
@@ -153,12 +153,14 @@ When something material surfaces — an updated model, a contradiction with a pr
 
 Most iterations do not perform the macro reflection. But every iteration must *evaluate* whether to perform it, and record that evaluation in the trail entry. The check is cheap; the cost discipline lives in what the check decides, not in skipping the check.
 
+The four triggers: the last few iterations found the same *class* of finding (the same kind of thing, not the same text); this run is about to declare silence; this run contradicts a prior `[!REALIZATION]`; or the operator explicitly asked for an arc-level reflection ("how are we doing?", "read the whole trail"). A request to run Improve is not the fourth trigger — every run is asked for, and reading it that way makes the macro reflection mandatory in practice.
+
 **Evaluate each of the four triggers explicitly, with brief evidence drawn from the trail.** Bare "N/A" is not allowed. The format for the entry is one short line per trigger, e.g.:
 
 - *Recurring finding-class:* FIRED — last 4 entries were paragraph-add, encoding-fix, label-add, section-removal (all mechanical inconsistency cleanups).
 - *About to declare silence:* not fired — this run made a change.
 - *Contradicts prior `[!REALIZATION]`:* not fired — checked last 10 realisations, none contradicted.
-- *Operator explicitly asked:* not fired.
+- *Operator explicitly asked:* not fired — the prompt requested an Improve run, not an arc-level reflection.
 
 If any trigger fired, perform the macro reflection. If none fired, the entry still records the evaluation — that is the audit trail showing the check was made, not skipped.
 

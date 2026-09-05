@@ -1,5 +1,9 @@
 # Changelog
 
+## v4.33.10 - 2026-09-05
+
+- **Improve's fourth across-trail trigger names what the operator must have asked for.** Since v3.8.0 (2026-05-11) step 6b listed the four macro-reflection triggers only as example labels; the fourth read `*Operator explicitly asked:*` with no object. The pre-v3.8.0 sentence "Run it only when ... the operator explicitly asked" had supplied that object implicitly, and the restructure dropped it. Across 208 entries under the contract, the trigger fired in 80% (167) and was the only fired trigger in 28% (58), with evidence such as "the operator asked to continue" or "direct request to run Improve" — so a step the contract says most iterations should not perform became structurally required (verify.py demands a macro-Hansei whenever any trigger fires) in 91% of entries, and recent entries record performing it only partially. Step 6b now defines the four triggers in one sentence, states that a request to run Improve is not the fourth, and the example line shows the not-fired case; Trail's template sentence mirrors it. Trigger labels are unchanged, so verify.py and every historical entry are unaffected. The other three triggers and the macro reflection itself are untouched. Found by a cold Claude-family convergence evaluation of the suite at 12b09fd. `improve/SKILL.md` 3.19.2 -> 3.19.3; `trail/SKILL.md` 2.5.3 -> 2.5.4.
+
 ## v4.33.9 - 2026-09-05
 
 - **Lexical reversal cues now produce visible review warnings instead of blocking commits.** The word-based check could reject truthful denials while missing actual changes of decision phrased without its cue words. Cue detection remains intact, and genuine reversals still require recording; only the automatic blocking behavior changes, with explicit operator approval for this tradeoff. All other verifier checks remain blocking. Added focused regression coverage for warnings, exit status, and each remaining blocking check.

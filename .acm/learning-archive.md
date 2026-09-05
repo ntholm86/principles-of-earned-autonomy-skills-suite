@@ -1229,6 +1229,10 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REVERSAL]** The first lens wording opened with existing compensation cost. After the independent challenge showed that this could remain reactive to already-known opportunities, revised it to ask first what the current environment can newly contribute to the target's purpose. The same focused verifier passed again.
 
+## 2026-08-16 — self-target-capability-leverage-behavior
+
+**[!REALIZATION]** Capability availability, capability use, and capability value are three separate claims. The new lens successfully exposed a host affordance and changed the route, but isolated execution did not make the outputs independent evidence or make the route resource-efficient by default. The suite should keep capability discovery inside normal reasoning and require task-level evidence before promoting any affordance into standing architecture. This is falsified if future natural runs repeatedly need capabilities the agent cannot discover, or repeatedly show bounded delegation improving decisions at lower verified lifecycle cost.
+
 ---
 
-**306 markers — 271 realisations, 35 reversals**
+**307 markers — 272 realisations, 35 reversals**

@@ -5,11 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 306 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-16 — self-target-capability-leverage-behavior
-
-**[!REALIZATION]** Capability availability, capability use, and capability value are three separate claims. The new lens successfully exposed a host affordance and changed the route, but isolated execution did not make the outputs independent evidence or make the route resource-efficient by default. The suite should keep capability discovery inside normal reasoning and require task-level evidence before promoting any affordance into standing architecture. This is falsified if future natural runs repeatedly need capabilities the agent cannot discover, or repeatedly show bounded delegation improving decisions at lower verified lifecycle cost.
+Showing the most recent 60 markers. 307 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-16 — self-target-capability-leverage-behavior
 
@@ -246,6 +242,10 @@ Showing the most recent 60 markers. 306 older marker(s) are in `.acm/learning-ar
 ## 2026-09-05 — astra-post-advisory-bounded-silence
 
 **[!REVERSAL]** Withdrew the combined authorization prompt as a prerequisite to completing this evaluation. The evaluator owns the finding and silence verdict; the operator's correction explicitly assigns that judgment here. This does not grant permission for unrelated changes, consequential tradeoffs, or a new commit. No product change is proposed by this run.
+
+## 2026-09-05 — improve-fourth-trigger-lost-its-object
+
+**[!REALIZATION]** The suite has been reading its own execution record only for gating (verify.py) and never as evidence about whether its instructions produce the behavior they describe. Two model families executed opposite readings of one trigger for a month within the same trail, and the disagreement was visible in the trigger lines the whole time; nobody counted. A contract's meaning is not established by the contracts agreeing with each other but by the execution record agreeing with the contract - and the trail, parsed rather than read, is where that check is cheap.
 
 ---
 

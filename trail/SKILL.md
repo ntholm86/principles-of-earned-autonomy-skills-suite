@@ -1,6 +1,6 @@
 ---
 name: trail
-version: 2.5.3
+version: 2.5.4
 description: 'Automatic egress service for substantive work. Append a structured entry to .acm/audit-trail.md IN THE TARGET REPO ROOT — recording the interpretation, examination, decisions, actions, and reflection. Destination, Improve, Orient, and Probe apply Trail automatically; the operator should never need to invoke it separately. Direct use remains available for consequential work outside those workflows and independent-writer mode.'
 argument-hint: 'The target being worked on (repo, file, system) — used to populate the log entry header'
 ---
@@ -141,7 +141,8 @@ Then, **every entry must record an across-trail trigger evaluation** — one
 short evidence-bearing line per trigger, drawn from the trail. Bare "N/A" is
 not allowed; the audit value is showing the check was made, not skipped. The
 four triggers are: recurring finding-class, about to declare silence, prior
-[!REALIZATION] contradicted, operator explicitly asked.
+[!REALIZATION] contradicted, operator explicitly asked for an arc-level
+reflection (a request to run the work is not this trigger).
 
 If any trigger fired, also include an across-trail macro-Hansei: an arc-claim
 about the target read from the trail as a whole. Mark material insights with
