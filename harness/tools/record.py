@@ -44,7 +44,17 @@ def _resolve_root() -> Path:
 
 
 ROOT = _resolve_root()
-LOG = ROOT / ".acm" / "audit-trail.md"
+
+
+def _resolve_log(scope: str | None) -> Path:
+    """Locate audit-trail.md for the repo scope or a named task scope (.acm/<scope>/)."""
+    acm_dir = ROOT / ".acm"
+    if scope:
+        acm_dir = acm_dir / scope
+    return acm_dir / "audit-trail.md"
+
+
+LOG = _resolve_log(os.environ.get("ACM_SCOPE"))
 
 ENTRY_HEADING = re.compile(r"^##\s+(\d{4}-\d{2}-\d{2})\s+[\u2014-]\s+(.+?)\s*$")
 # Any level-2 heading is an entry boundary, canonical or not. Recognising only
@@ -467,6 +477,7 @@ def cmd_summary(_args: argparse.Namespace) -> int:
 
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(prog="record.py", description="Append to and read from .acm/audit-trail.md.")
+    p.add_argument("--scope", default=None, help="Named task scope inside .acm/ (operates on .acm/<scope>/). Overrides $ACM_SCOPE.")
     sub = p.add_subparsers(dest="cmd", required=True)
 
     p_new = sub.add_parser("new", help="Append a stub entry to .acm/audit-trail.md.")
@@ -498,6 +509,9 @@ def main(argv: list[str] | None = None) -> int:
         sys.stdout.reconfigure(encoding="utf-8")
     parser = build_parser()
     args = parser.parse_args(argv)
+    if args.scope:
+        global LOG
+        LOG = _resolve_log(args.scope)
     return args.func(args)
 
 

@@ -1249,6 +1249,10 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** The Destination was not incomplete; learning carry-forward failed at the point of decision. The suite had already recorded the same operator rejection twice and had absorbed the positive requirement into Destination, yet a later correction preserved the special case as though naming scope were different from prescribing derivation. The recurring defect is promoting a correct consequence for this repository into generic skill text when Purpose was already capable of deriving it. This claim is falsified if diverse cold readers cannot derive recursive scope from the current Destination and generic Purpose lens.
 
+## 2026-08-16 — remove-self-targeting-condition-from-capability-lens
+
+**[!REVERSAL]** Entry 272 decided that the lens should contain "one self-targeting scope statement." This run reverses that part of the decision. The statement was still a prescribed condition even after the route taxonomy had been removed.
+
 ---
 
-**311 markers — 274 realisations, 37 reversals**
+**312 markers — 274 realisations, 38 reversals**

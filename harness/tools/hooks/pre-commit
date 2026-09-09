@@ -20,7 +20,8 @@ import sys
 from pathlib import Path
 
 SUBSTANTIVE = re.compile(r"^(.*/SKILL\.md|PRINCIPLES\.md|README\.md|verify\.py|tools/.*\.py)$")
-TRAIL_LOG = ".acm/audit-trail.md"
+# Repo scope or a named task scope (.acm/<task>/audit-trail.md); see trail/SKILL.md.
+TRAIL_LOG = re.compile(r"^\.acm/(?:[^/]+/)?audit-trail\.md$")
 
 
 def staged_files() -> list[str]:
@@ -34,7 +35,7 @@ def staged_files() -> list[str]:
 def main() -> int:
     files = staged_files()
     substantive = [f for f in files if SUBSTANTIVE.match(f)]
-    trail_staged = TRAIL_LOG in files
+    trail_staged = any(TRAIL_LOG.match(f) for f in files)
 
     if substantive and not trail_staged:
         print("pre-commit: substantive changes staged without a .acm/audit-trail.md update.")

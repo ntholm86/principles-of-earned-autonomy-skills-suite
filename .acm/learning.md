@@ -5,11 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 311 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-16 — remove-self-targeting-condition-from-capability-lens
-
-**[!REVERSAL]** Entry 272 decided that the lens should contain "one self-targeting scope statement." This run reverses that part of the decision. The statement was still a prescribed condition even after the route taxonomy had been removed.
+Showing the most recent 60 markers. 312 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-16 — add-bounded-supervision-and-delegation-gates
 
@@ -247,6 +243,10 @@ Showing the most recent 60 markers. 311 older marker(s) are in `.acm/learning-ar
 
 **[!REVERSAL]** Reverses the wording decision of the preceding entry (readme-convergence-is-operator-arranged): the label "You arrange it", the operator-addressed closing sentence, and Workflow step 3 are withdrawn. The finding that "Automatic" was wrong stands.
 
+## 2026-09-09 — named-task-scopes-inside-repo-acm
+
+**[!REALIZATION]** The ACM scope axis was specified as a filesystem property, but the unit of memory that actually needs separating is the mandate, not the directory. Tasks in one bounded context share files and diverge in purpose; a scope keyed to the confirmed mandate follows purpose, and the existing Intent gate is already where purpose is confirmed. This is the same move as the 2026-08-16 authority arc (authority from explicit mandate, not from context or silence) applied to memory placement.
+
 ---
 
-**60 markers — 50 realisations, 10 reversals**
+**60 markers — 51 realisations, 9 reversals**

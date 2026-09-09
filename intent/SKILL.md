@@ -1,6 +1,6 @@
 ---
 name: intent
-version: 1.8.2
+version: 1.9.0
 description: 'Automatic ingress service for substantive work. Apply Operator''s Intent to the user''s own prompt before acting: interpret what the user is trying to achieve, narrate it, and honor the operator''s explicit supervision or delegation boundary. The operator should never need to invoke this skill separately. SKIP only for direct operations that require neither interpretation nor action authority (for example, reading a named file or answering yes/no); never skip when composed with Improve.'
 argument-hint: 'Triggered automatically by any substantive user prompt; can also be invoked explicitly: "apply intent to this request"'
 ---
@@ -39,6 +39,8 @@ These are probes, not a checklist. Use different probes if the situation calls f
 A single prompt is a thin signal. Before extracting intent, read what already exists in the **target repo's `.acm/` folder** (in the root of the repo being worked on — never in the skills install directory) — in this order:
 
 **ACM §4 Scoped Memory — read parent scopes first.** Before reading the repo's own `.acm/destination.md`, traverse parent directories upward and read any `.acm/destination.md` found there. Higher-scope mandates govern lower-scope ones — if a workspace or org destination conflicts with the repo destination, the higher scope wins. Label each scope when reading (e.g., "workspace mandate", "repo mandate"). Stop traversal when any of: filesystem root reached; a `.acm-root` marker file is found in a directory (operator-declared ceiling — read that directory's `.acm/` then stop); or 4 levels traversed (implementation ceiling). A prompt interpreted without the workspace mandate may miss cross-repo coordination constraints that reshape what the prompt actually means.
+
+**Task scopes inside the repo — select the active scope.** A repo's `.acm/` may contain named task scopes (`.acm/<task>/audit-trail.md`; structure and hierarchy in [trail/SKILL.md](../trail/SKILL.md)). Deciding which scope this prompt belongs to is part of interpreting it: an existing task scope when the prompt names or clearly continues that task; the repo scope when the work is repo-wide or names no task; a new task scope only when the prompt names a task no existing scope covers. Name the chosen scope in the narration ("scope: live-assist", "scope: repo") so the operator can correct it at the same gate as the rest of the interpretation; creating a scope is never a silent side effect. Read the repo scope's destination, orientation, and learning before the task scope's own files, and let the higher scope win on any conflict.
 
 - **Destination** (`.acm/destination.md`) — the operator-held destination. If present, this is the most important context. The prompt is a single instruction; the destination is the overarching goal it serves. Read it first. Interpret the prompt in light of where the operator has said they are trying to go.
 - **orientation.md** (`.acm/orientation.md`) — the Orient-derived current orientation. Where the work actually is right now, what the loop has been attending to, what findings have accumulated. The prompt means something different depending on whether the target is early-stage, mid-refactor, or nearly converged.

@@ -1,6 +1,6 @@
 ---
 name: destination
-version: 2.8.3
+version: 2.9.0
 description: 'Automatic direction-consolidation service. Improve schedules it when accumulated work makes cross-run direction useful; it surfaces sourced guesses about durable direction as questions the operator can confirm, correct, or reject. Manual invocation remains available when the operator wants to explore or revise direction.'
 argument-hint: 'Optionally: the area you want hunches about (a specific concern, a recent decision, the project as a whole)'
 ---
@@ -52,6 +52,7 @@ Before forming any hunches, look at what is available in the **target repo's `.a
 - `.acm/destination.md` — what the operator has explicitly said (if it exists).
 - `.acm/orientation.md` — what the agent's last arc-read concluded about the target.
 - `.acm/audit-trail.md` — recent decisions, reversals, realisations.
+- When the run's active scope is a task scope (`.acm/<task>/`, defined in [trail/SKILL.md](../trail/SKILL.md)), these paths mean that scope, and the file Destination writes is the task's `destination.md`. A task destination is layered under the repo destination: it may narrow it and never contradict it, because the higher-level `.acm/` always wins. Read the repo destination first.
 - Relevant prior conversation records, if available: `.acm/transcripts/`, linked host or harness capture, and `.acm/sessions/` (including legacy summaries). Distinguish independent capture from agent-authored summaries by provenance and fidelity markings, not directory name.
 - The current conversation — what the operator has been emphasising, dismissing, returning to.
 

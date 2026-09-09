@@ -1,6 +1,6 @@
 ---
 name: improve
-version: 3.19.4
+version: 3.20.0
 description: 'The improvement skill. Understand the ask, examine the target, challenge the first read, decide on one change (or argue for redesign, or declare silence), honor the operator''s supervision or delegation boundary, act, reflect, record, and report the result clearly. USE WHEN: improve, audit, review, fix, refactor, redesign, evaluate, what would make this better, am I missing something.'
 argument-hint: 'The target to improve, and optionally the concern (correctness, simplicity, performance, etc.)'
 ---
@@ -37,7 +37,7 @@ If this is a standalone Improve installation and Intent is unavailable: before e
 
 If the ask is about convergence or publication readiness, read the repo's convergence-scope protocol before proceeding if it has one, then declare which layer (problem, principles, skills, cross-layer coherence) this run is evaluating.
 
-Before examining the target, check the **target repo's** `.acm/` folder for orientation files and read whichever exist, in this order. The `.acm/` folder is always in the root of the repo being worked on — never in the skills install directory.
+Before examining the target, check the **target repo's** `.acm/` folder for orientation files and read whichever exist, in this order. The `.acm/` folder is always in the root of the repo being worked on — never in the skills install directory. When Intent selected a task scope (`.acm/<task>/`, defined in [trail/SKILL.md](../trail/SKILL.md)), read the repo scope's destination, orientation, and learning first, then the task scope's own files in the same order below; the higher scope wins on conflict, and every write this run makes goes to the task scope only.
 
 **ACM §4 Scoped Memory — read parent scopes first.** Before reading the repo's own `.acm/`, traverse parent directories upward and read any `.acm/destination.md` found there. Higher-scope mandates govern lower-scope ones — if a workspace or org destination conflicts with the repo destination, the higher scope wins. Label each scope when reading (e.g., "workspace mandate", "repo mandate"). Stop traversal when any of: filesystem root reached; a `.acm-root` marker file is found in a directory (operator-declared ceiling — read that directory's `.acm/` then stop); or 4 levels traversed (implementation ceiling).
 

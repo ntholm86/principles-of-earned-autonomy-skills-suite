@@ -17763,3 +17763,70 @@ The three operator corrections of agent-supplied authority readings share a shap
 
 Orientation freshness: current - orientation claims 4 and 7 still describe the arc; this entry adds a within-day reversal, not a new map.
 Destination need: not triggered - the operator has frozen the Destination; no Destination run will be scheduled while that instruction stands.
+
+## 2026-09-09 - named-task-scopes-inside-repo-acm
+
+- target: skills repo (this repo) - trail/SKILL.md structure section, intent/SKILL.md scope selection, improve/orient/destination one-sentence scope honoring, harness/tools/record.py --scope, harness/tools/hooks/pre-commit; same-session follow-up at 924a393
+- operator: maintainer (Nils Holmager)
+- agent: GitHub Copilot (Claude Fable 5.1; model identified by the host session)
+- skill: improve
+- outcome: capability added from an operator field report - named task scopes `.acm/<task>/` inside a repo's `.acm/`, strict higher-scope-wins hierarchy, scope selected by Intent as part of interpretation, tooling follows; flagged as a candidate addition to ACM spec section 4 upstream; convergence lease NOT renewed (material change; same-session, not an independent read)
+- delta: trail 2.5.5 -> 2.6.0; intent 1.8.2 -> 1.9.0; improve 3.19.4 -> 3.20.0; orient 2.7.2 -> 2.8.0; destination 2.8.3 -> 2.9.0; record.py --scope / $ACM_SCOPE; pre-commit accepts .acm/<task>/audit-trail.md; CHANGELOG v4.34.0
+
+### Interpretation of the ask
+
+Operator verbatim (abridged, full text in the session): "I have been working with the skills professionally for a while now. In professional medical hearing aid software - and i think that the skills has proven themselves again and again. But the .acm/ directory starts to get big - on longer running tasks - the audit-trail becomes more than 20k lines - and becaues you are working on differnt tasks that are unrelated - but in the same directory scope / same BC then they might get mixed together. ... what i have started doing by myself is that i add the feature name to the directory of the scope. Fx. ... .acm/live-assist ... I am prescibing the route here but you are really the one who should solve my problem. ... Understand my intent. use the improve skill". At the action gate: "Process- and there needs to be a clear hierachy - higher level acm wins".
+
+Intent narration (confirmed): extend the suite with named task scopes inside a repo's `.acm/`, selected as part of Intent's interpretation, read and written by every skill in the chain, with the repo scope governing the task scope; record.py and the hook follow; Destination frozen; ACM-spec candidate flagged upstream. The two problems in the report are distinct: size (read cost, already partly handled by the bounded learning surface) and mixing (Orient reads one arc that is several; lessons from task A land in task B). Scoping addresses both; rotation would address only the first. Rejected reading: that the operator wanted exactly their workaround wired in - they said explicitly the route was theirs to offer and mine to decide.
+
+### Examination
+
+Read: all five chain contracts' `.acm/` location language (19 occurrences of "repo root" phrasing), harness/tools/record.py root resolution and path constants, harness/tools/hooks/pre-commit trail check, and ACM SPEC.md section 4 in the upstream repo (C:\git\pea\agent-context-memory). Findings:
+
+- Purpose: the spec already anticipates a scope below repo - its depth-ceiling sentence lists "session -> repo -> workspace -> org" - and says scope names are a pattern, not a vocabulary. But its discovery mechanism (parent-directory traversal reading `.acm/` directories) requires a directory per scope. The operator's tasks share a directory (one bounded context), so the spec's own form does not fit the case. The operator's `.acm/<task>/` is a named scope nested inside a scope: the same hierarchy pattern, a second discovery form. That makes it a spec-level addition, and the Destination says findings about ACM are candidates for the canonical upstream repository, not silent local changes.
+- Inconsistency: every contract hardcodes "in the root of the target repo"; record.py builds `ROOT/.acm/audit-trail.md` with no scope; the hook string-matches `.acm/audit-trail.md` exactly. All would silently misplace or miss a task scope.
+- Overburden / Waste: this adds about forty lines across five contracts against orientation claim 7 (accretion observed). Kept the definition in one place (Trail owns structure), the selection rule in one place (Intent owns interpretation), and a single sentence each in Improve, Orient, Destination that points back rather than restating.
+- Capability leverage: none new; the operator's field practice is the evidence that the capability is worth its text.
+
+Design alternatives weighed: (a) directory-per-task `.acm/` only, spec-native - fails the stated case; (b) a persisted "current scope" pointer file - stale state, and authority inferred from a file rather than the confirmed mandate, which the 2026-08-16 authority arc ruled out; (c) trail rotation by date or size - fixes size, not mixing; (d) rely on learning.md's bounded window - fixes read cost, not Orient's mixed arc. Scope selection by Intent was chosen because which task a prompt belongs to is interpretation, and the existing Intent gate is where the operator already corrects interpretation - no new gate, no new command.
+
+Challenge to the first read: is this the operator prescribing a route? They named the shape; the decision that scope selection is interpretation, that creation requires a confirmed mandate, that nothing folds back, and that tooling defaults are unchanged came from the examination. Kaikaku question: no - the memory architecture is right; it lacked one level. Was silence honest? No: a professional user hit a real limit and worked around it by hand.
+
+### Decision
+
+[!DECISION] Add named task scopes as one coherent change: Trail defines `.acm/<task>/` (required audit-trail.md; optional orientation.md, destination.md, derived files), states the strict hierarchy (workspace governs repo, repo governs task, higher-level `.acm/` always wins, ACM 4.3 one level down), the active-scope rule (repo unless the confirmed mandate names a task), no merging or folding back, and creation only on a confirmed mandate; Intent selects the scope and names it in the narration (existing task / repo / new task) and reads the repo scope's destination, orientation, learning first; Improve, Orient, Destination each carry one sentence that `.acm/` paths mean the active scope and parents win; record.py gains `--scope` and `$ACM_SCOPE` with unchanged default; the hook accepts a nested trail. README left untouched this run (two README corrections already today; the structure is documented where it is defined). Alternatives rejected: (a)-(d) above; also (e) a scope-sensitive verify.py for target repos - verify.py checks this repo only and the hook is the target-side check. Precedent check at decision time: learning.md - 2026-08-16 "governance accretion is a moving-frontier risk" and orientation claim 7 weighed (this is the first capability addition of the September arc; kept minimal); 2026-08-16 add-bounded-supervision realization ("silence means consent" ambiguity) is why scope creation is tied to the confirmed mandate rather than inference; 2026-09-05 orient-freshness-guard-target-agnostic (does this exist on a target that is not this repo?) shaped the tooling default and the hook regex.
+
+### Prediction
+
+Stated before acting: the five contracts share one scope definition and one selection rule; record.py without `--scope` produces byte-identical history output to HEAD; `record.py --scope live-assist history` and `$ACM_SCOPE=nope summary` fail cleanly naming the missing `.acm/<scope>/audit-trail.md`; the hook compiles; python verify.py stays OK (the scope-traversal invariant text is untouched); a cold reader given only Trail's section and Intent's paragraph places five scenarios correctly (continue named task, repo-wide prompt, new task named, task-vs-repo destination conflict, unilateral creation). Not expected: any change to the parent-traversal rule, verify.py, or any historical entry.
+
+### Action
+
+Applied the edits in one batch plus one follow-up sentence ("One file per scope"). python verify.py -> OK. History parity: record.py history output hashed before (git stash) and after -> identical. `--scope live-assist history` -> "ERROR: ...\.acm\live-assist\audit-trail.md does not exist", exit 1; `$ACM_SCOPE=nope summary` -> same shape, exit 1. py_compile of the hook -> OK. git diff --stat -> CHANGELOG, destination, hook, record.py, improve, intent, orient, trail; 58 insertions, 10 deletions. Cold reader (stateless Explore subagent restricted to the two regions): A -> `.acm/live-assist/`, no creation; B -> repo scope; C -> `.acm/tinnitus-relief/` created only after narration and operator confirmation; D -> repo destination wins, quoting "never contradict it"; E -> no unilateral creation, quoting the confirmed-mandate sentence; no ambiguity or contradiction found between the regions. Outcome vs prediction: held on every point. Not exercised: a live run in a task scope on a real target; that is the falsifier.
+
+### Reflection
+
+Model-claim: the suite's memory architecture now has three scope levels discovered two ways (directory traversal above the repo, named directories inside `.acm/` below it), and the next defect in this area will be a reader or tool that assumes one discovery form - most likely record.py's `new` stub or a future verify check that only knows `.acm/audit-trail.md`. A future run can disagree by running a task scope on a real target and finding the friction somewhere else (scope selection ambiguity at the Intent gate, or repo-scope learning being ignored in task runs).
+
+Blind spot: I did not test scope selection under delegation, where no Intent gate pauses - the narration still names the scope, but nothing stops a wrong guess before writes; I did not check whether the workspace-level `.acm/` mandate-gate sentence ("destination.md must exist at each scope") now reads as requiring a task destination, which the Trail text marks optional; the upstream spec candidate is flagged, not written.
+
+Imagined-reader pushback: "You added a level to the memory model on one operator's report, against your own accretion warning." The report is from sustained professional use, the two problems it names are structural (size and mixing), and the spec already anticipated the level; the text cost was held to one definition, one rule, and three pointers. A second pushback: "Why is the scope decided by Intent and not by the directory the operator is in?" Because the operator's tasks share a directory; cwd cannot distinguish them, the mandate can.
+
+[!REALIZATION] The ACM scope axis was specified as a filesystem property, but the unit of memory that actually needs separating is the mandate, not the directory. Tasks in one bounded context share files and diverge in purpose; a scope keyed to the confirmed mandate follows purpose, and the existing Intent gate is already where purpose is confirmed. This is the same move as the 2026-08-16 authority arc (authority from explicit mandate, not from context or silence) applied to memory placement.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired - the September arc's class was surfaces left behind by rule changes, then two authority corrections; this is a capability addition from operator field evidence, the first of its kind in the arc.
+- *About to declare silence:* not fired - this run made a material change.
+- *Contradicts prior [!REALIZATION]:* not fired - the 2026-08-16 accretion realizations are weighed, not contradicted: they require each addition to earn its processing cost, and the earning evidence here is a professional user's standing workaround.
+- *Operator explicitly asked:* not fired - the operator asked for an Improve run on a stated problem, not an arc-level reflection.
+
+### Candidate Next Moves
+
+1. **Run one real task-scoped iteration on the operator's professional repo** (or a public stand-in) and record where the friction appears - scope selection at the gate, parent-scope reads, or tooling; this is the falsifier for today's change.
+2. **Propose the named-scope discovery form to agent-context-memory SPEC.md section 4** as a candidate addition (nested named scope inside a scope's `.acm/`, mandate-keyed, higher scope wins) - upstream authority, not this repo's.
+3. **Fresh-session cold evaluation of HEAD by a family that has not read it** - lease-renewal path; today's three changes make a fresh read of the new snapshot the only route to a countable silence.
+4. Optional: one README sentence in the ACM section pointing at task scopes, and record.py `new` stub awareness of scope paths.
+
+Orientation freshness: current - orientation claim 3 (viability is a capability-to-cost relationship) and the Destination's "durable ACM evidence must not require every routine iteration to reprocess the full history" describe exactly this change; the map does not need rewriting for one addition, but the next Orient should add a claim about the new scope level.
+Destination need: not triggered - the operator has frozen the Destination; this change is implementation under its existing memory-architecture and leanness clauses.
