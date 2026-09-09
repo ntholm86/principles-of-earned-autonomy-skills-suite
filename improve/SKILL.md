@@ -1,6 +1,6 @@
 ---
 name: improve
-version: 3.19.3
+version: 3.19.4
 description: 'The improvement skill. Understand the ask, examine the target, challenge the first read, decide on one change (or argue for redesign, or declare silence), honor the operator''s supervision or delegation boundary, act, reflect, record, and report the result clearly. USE WHEN: improve, audit, review, fix, refactor, redesign, evaluate, what would make this better, am I missing something.'
 argument-hint: 'The target to improve, and optionally the concern (correctness, simplicity, performance, etc.)'
 ---
@@ -97,7 +97,7 @@ Pick one of:
 
 - **One incremental change.** The single highest-leverage finding. State why it ranks above the alternatives in one sentence each. **Crucially, make a pre-commit prediction:** formulate a falsifiable prediction of what this change will achieve and what will *not* happen, before taking action ("I will change X. I expect Y. I expect Z not to happen."). This is a pre-mortem (Klein, *Harvard Business Review*, 2007) — stating the failure mode before it can happen, not diagnosing it after.
 - **Argument for redesign.** A statement of why incremental work won't pay off here, and a sketch of what redesign would look like. Stop and surface the argument; do not redesign without confirmation.
-- **Silence.** Nothing actionable was found. State what was examined and why nothing warranted change. **Silence claims must be bounded.** Name the quality bar this iteration was testing against (e.g. internal text-layer consistency, comparative defensibility under hostile external review, comparator coverage, empirical replication, operational deployability), the surfaces in scope, and the bars *not* tested by this iteration. Unbounded silence ("nothing actionable found" without naming the bar) is the form most likely to be overturned by the next operator-initiated probe testing a different bar. This advances the convergence chain (Principle 3) and is a legitimate outcome. *Origin:* this requirement mirrors the named-boundary rule in `orient/SKILL.md` step 5a; both originate in the manifesto target's retro-v201 → retro-v202 transition (2026-06-04). Full provenance in this repo's `.acm/audit-trail.md` under entry slug `retro-named-boundary-rule-from-manifesto-arc` and follow-up slug `improve-destination-named-boundary-symmetric`.
+- **Silence.** Nothing actionable was found. State what was examined and why nothing warranted change. **Silence claims must be bounded.** Name the quality bar this iteration was testing against (e.g. internal text-layer consistency, comparative defensibility under hostile external review, comparator coverage, empirical replication, operational deployability), the surfaces in scope, and the bars *not* tested by this iteration. Also name the artifact identity evaluated (commit or content hash), the evaluator's model family and version, and whether this was a fresh session or a same-session follow-up — Principle 3's rule (distinct families, fresh sessions, unchanged artifact) cannot be counted from the trail without them. Unbounded silence ("nothing actionable found" without naming the bar) is the form most likely to be overturned by the next operator-initiated probe testing a different bar. This advances the convergence chain (Principle 3) and is a legitimate outcome. *Origin:* this requirement mirrors the named-boundary rule in `orient/SKILL.md` step 5a; both originate in the manifesto target's retro-v201 → retro-v202 transition (2026-06-04). Full provenance in this repo's `.acm/audit-trail.md` under entry slug `retro-named-boundary-rule-from-manifesto-arc` and follow-up slug `improve-destination-named-boundary-symmetric`.
 
 #### 4b. Honor Execution Authority
 
@@ -200,7 +200,7 @@ When active, the Improve agent pauses at this step without writing the entry and
 
 If this is a standalone Improve installation and Trail is unavailable: create the `.acm/` directory in the target repo root if it does not already exist, then append a single entry to `.acm/audit-trail.md` **in the target repo root** (not the skills install directory). The entry must include:
 
-- Date, target, operator (if known), model identity (provider + tool-call ID prefix if observable).
+- Date, target, operator (if known), model family and version (operator-stated if the host does not expose it; plus tool-call ID prefix if observable).
 - Your interpretation of the ask.
 - Lenses applied and what each revealed.
 - The decision (incremental, redesign argument, or silence) and the pre-commit prediction.

@@ -5,11 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 307 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-16 — self-target-capability-leverage-behavior
-
-**[!REVERSAL]** The initial local hypothesis expected isolated Explore agents might improve trustworthy capability per resource by separating evidence gathering from the main decision context. The comparison produced one already-bounded finding and one unsourced, overbuilt proposal. Reversed the implied route from possible reusable subagent pattern to opportunistic use only when the task itself supplies separable work.
+Showing the most recent 60 markers. 308 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-16 — remove-capability-route-prescription
 
@@ -247,6 +243,10 @@ Showing the most recent 60 markers. 307 older marker(s) are in `.acm/learning-ar
 
 **[!REALIZATION]** The suite has been reading its own execution record only for gating (verify.py) and never as evidence about whether its instructions produce the behavior they describe. Two model families executed opposite readings of one trigger for a month within the same trail, and the disagreement was visible in the trigger lines the whole time; nobody counted. A contract's meaning is not established by the contracts agreeing with each other but by the execution record agreeing with the contract - and the trail, parsed rather than read, is where that check is cheap.
 
+## 2026-09-09 — silence-records-carry-family-artifact-independence
+
+**[!REALIZATION]** The convergence lease was added to the Destination on 2026-08-09 while the trail was in its least attributable stretch: 80 of the 98 host-only entries fall in August. A governing rule can be introduced on top of evidence that cannot satisfy it, and nothing in the suite noticed, because the rule consumed a field no contract had ever defined. The general shape: when a new rule starts consuming an existing evidence field, the field's definition has to be re-read against the rule's needs - the same operation as re-reading a term whose meaning changed (2026-09-05 realization), applied to evidence instead of authority.
+
 ---
 
-**60 markers — 49 realisations, 11 reversals**
+**60 markers — 50 realisations, 10 reversals**

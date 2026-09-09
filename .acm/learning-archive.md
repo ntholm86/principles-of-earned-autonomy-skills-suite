@@ -1233,6 +1233,10 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** Capability availability, capability use, and capability value are three separate claims. The new lens successfully exposed a host affordance and changed the route, but isolated execution did not make the outputs independent evidence or make the route resource-efficient by default. The suite should keep capability discovery inside normal reasoning and require task-level evidence before promoting any affordance into standing architecture. This is falsified if future natural runs repeatedly need capabilities the agent cannot discover, or repeatedly show bounded delegation improving decisions at lower verified lifecycle cost.
 
+## 2026-08-16 — self-target-capability-leverage-behavior
+
+**[!REVERSAL]** The initial local hypothesis expected isolated Explore agents might improve trustworthy capability per resource by separating evidence gathering from the main decision context. The comparison produced one already-bounded finding and one unsourced, overbuilt proposal. Reversed the implied route from possible reusable subagent pattern to opportunistic use only when the task itself supplies separable work.
+
 ---
 
-**307 markers — 272 realisations, 35 reversals**
+**308 markers — 272 realisations, 36 reversals**

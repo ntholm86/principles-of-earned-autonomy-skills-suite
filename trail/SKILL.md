@@ -1,6 +1,6 @@
 ---
 name: trail
-version: 2.5.4
+version: 2.5.5
 description: 'Automatic egress service for substantive work. Append a structured entry to .acm/audit-trail.md IN THE TARGET REPO ROOT — recording the interpretation, examination, decisions, actions, and reflection. Destination, Improve, Orient, and Probe apply Trail automatically; the operator should never need to invoke it separately. Direct use remains available for consequential work outside those workflows and independent-writer mode.'
 argument-hint: 'The target being worked on (repo, file, system) — used to populate the log entry header'
 ---
@@ -61,6 +61,8 @@ git add .acm/audit-trail.md .acm/history.md .acm/learning.md .acm/learning-archi
 git commit -m "trail: <slug>"
 ```
 
+When the entry records a silence verdict, put the verdict and the evaluator in the commit subject — `git commit -m "trail: <slug> - bounded silence, <model family and version>"` — so the lease state is readable from `git log` without opening the trail.
+
 If `history.md`/`learning.md` are not in use for this target (see below — they are optional), the commit needs only `.acm/audit-trail.md`.
 
 If Orient ran this session and updated `.acm/orientation.md`, include it in the same commit. `.acm/destination.md` is operator-managed and is committed only when the operator changes it — never as a side effect of an agent run.
@@ -96,6 +98,8 @@ Trail does not routinely create agent-authored session summaries. See "Independe
 Destination and orientation.md are distinct: the destination is the goal the operator holds and rarely changes; orientation.md is the agent's current synthesis of where the target is, rewritten each Orient run. The destination is input to the loop; orientation.md is output.
 
 Both files are committed. `record.py` is **not** committed to the target repo — it stays in the skills install.
+
+The `agent:` field names the model family and version as precisely as the host exposes or the operator states (mark operator-stated identity as such, e.g. `Claude Fable 5.1; model identified by the operator`). The host product alone — `GitHub Copilot`, `Cursor` — is not a model family. Principle 3 counts same-family evaluators as one and needs fresh sessions on an unchanged artifact, so a silence entry whose `agent:` names only the host cannot be counted toward convergence.
 
 Each entry in `audit-trail.md` follows this shape:
 
