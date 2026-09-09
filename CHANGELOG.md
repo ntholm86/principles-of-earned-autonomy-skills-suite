@@ -1,5 +1,9 @@
 # Changelog
 
+## v4.34.3 - 2026-09-09
+
+- **Hook installers now use Git's effective hook path.** Both installers resolve the destination through `git rev-parse --path-format=absolute --git-path hooks/pre-commit`, honoring `core.hooksPath` and creating missing parent directories. A different existing hook is preserved with an error; identical reinstallation succeeds. Added integration tests for both shells covering default, relative and absolute configured paths, conflict preservation, and reinstallation, with actual unlogged-commit rejection and logged-commit acceptance. PowerShell execution passed locally; Bash execution remains platform-limited. Documentation explains shared hook locations and explicit handling of existing hooks. Same-session follow-up on cb9c461; Destination unchanged.
+
 ## v4.34.2 - 2026-09-09
 
 - **The optional trail hook now covers arbitrary target projects.** Replaced the suite-specific filename allowlist with a requirement for an added or modified repo- or task-scoped trail whenever staged paths outside `.acm/` change, including deletions. NUL-delimited paths and disabled rename detection preserve coverage for unusual filenames and moves across the `.acm/` boundary. Deleted or unstaged trails cannot satisfy the gate; `.acm/`-only commits remain allowed. Added real-Git-index regression tests and clarified the hook's staged-path guarantee and unrecorded bypass limitation in the installation docs. Found by the fresh-session evaluation of f12b0f9; no skill contract or Destination changed.

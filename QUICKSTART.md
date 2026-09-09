@@ -75,6 +75,8 @@ bash /path/to/autonomous-agent-skills/harness/tools/install-hooks.sh
 powershell -NoProfile -ExecutionPolicy Bypass -File C:\path\to\autonomous-agent-skills\harness\tools\install-hooks.ps1
 ```
 
+The installer respects `core.hooksPath` and stops without overwriting a different existing hook. Review the reported path before installing into a shared hook directory; see [INSTALLING.md](./INSTALLING.md) for existing-hook handling.
+
 This rejects staged changes outside `.acm/`, including deletions, unless the commit also adds or modifies `.acm/audit-trail.md` or `.acm/<task>/audit-trail.md`. Commits confined to `.acm/` are allowed. The hook checks staged paths; it does not validate entry truthfulness or append-only integrity.
 
 ## If something went wrong

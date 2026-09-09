@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Install PEA git hooks into the current repo's .git/hooks/.
+# Install the PEA hook at Git's effective hook location.
 # Run from the target repo root.
 set -e
 
@@ -9,9 +9,17 @@ REPO_ROOT=$(git rev-parse --show-toplevel 2>/dev/null) || {
 }
 
 HOOKS_SRC=$(cd "$(dirname "$0")/hooks" && pwd)
-HOOKS_DST="$REPO_ROOT/.git/hooks"
+HOOK_TARGET=$(git rev-parse --path-format=absolute --git-path hooks/pre-commit)
 
-cp "$HOOKS_SRC/pre-commit" "$HOOKS_DST/pre-commit"
-chmod +x "$HOOKS_DST/pre-commit"
+if [ -e "$HOOK_TARGET" ] || [ -L "$HOOK_TARGET" ]; then
+  if ! cmp -s "$HOOKS_SRC/pre-commit" "$HOOK_TARGET"; then
+    echo "ERROR: existing hook differs: $HOOK_TARGET. Review and integrate it manually; nothing was overwritten." >&2
+    exit 1
+  fi
+else
+  mkdir -p "$(dirname "$HOOK_TARGET")"
+  cp "$HOOKS_SRC/pre-commit" "$HOOK_TARGET"
+fi
+chmod +x "$HOOK_TARGET"
 
-echo "Installed pre-commit hook to $HOOKS_DST/pre-commit"
+echo "Installed pre-commit hook to $HOOK_TARGET"

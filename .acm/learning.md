@@ -5,15 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 316 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-16 — self-target-supervised-authority-bounded-silence
-
-**[!REALIZATION]** A supervised gate can be useful without being evidence that every gate is useful. This run separated the two claims: Intent confirmation added real authority before the target was examined, while the value and cost of the later implementation gate remain unobserved. The suite should accumulate situated evidence one boundary at a time instead of treating either textual coherence or one successful interaction as validation of the complete authority model.
-
-## 2026-08-16 — reconcile-universal-improvement-trustworthy-delegation-and-leanness
-
-**[!REALIZATION]** Destination can retain every prior commitment and still drift by changing emphasis. The bounded section had preserved universal improvement, trustworthy delegation, recursive reasoning improvement, adoption, and efficiency, but separated them enough that recent authority detail could appear to be the product rather than a constraint on it. Reconciliation must preserve semantic hierarchy as well as sentence presence.
+Showing the most recent 60 markers. 318 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-16 — reconcile-universal-improvement-trustworthy-delegation-and-leanness
 
@@ -247,6 +239,14 @@ Showing the most recent 60 markers. 316 older marker(s) are in `.acm/learning-ar
 
 **[!REVERSAL]** Rejected the first historical reader's broad conclusions and coverage estimates after it admitted stopping at line 2500. It was commissioned to read the full trail but had not done so. Assigned the remaining four ranges to read-only readers and retained only supported synthesis, with selected load-bearing entries reread directly. This reverses reliance on the first report's claimed breadth, not any product edit.
 
+## 2026-09-09 — hook-installers-respect-effective-git-path
+
+**[!REALIZATION]** A successful copy and a correct hook body do not together prove active protection. Git's configured invocation path is part of the behavior being promised. The assumption to remove was the installer's fixed .git/hooks location, not the operator's configuration or the Destination's genericity requirement.
+
+## 2026-09-09 — hook-installers-respect-effective-git-path
+
+**[!REVERSAL]** Replaced the test harness's Windows PATH fallback with discovery relative to Git's exec path, and no Windows fallback to the WSL launcher. The next run passed all five PowerShell cases and explicitly skipped the five Bash cases rather than treating an unavailable shell as installer evidence. MinGit's sh.exe was subsequently identified as GNU Bash 5.3.15 and used for syntax validation; it ships without the chmod executable needed for full installer execution here. No claim of Bash runtime success is made.
+
 ---
 
-**60 markers — 50 realisations, 10 reversals**
+**60 markers — 49 realisations, 11 reversals**

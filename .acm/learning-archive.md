@@ -1269,6 +1269,14 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** The authority arc did not need another autonomy mode; it needed to stop treating observability as authorization. The stable architecture now has one normal command and one explicit delegation concept, while authority remains distributed by purpose: Intent confirms interpretation, Improve confirms routine action, Destination confirms durable direction, and operator-declared consequential boundaries remain human-owned. The unresolved question is whether this cleaner separation produces confidence at lower lifecycle cost or merely moves ceremony into two pauses; only situated behavior can answer that.
 
+## 2026-08-16 — self-target-supervised-authority-bounded-silence
+
+**[!REALIZATION]** A supervised gate can be useful without being evidence that every gate is useful. This run separated the two claims: Intent confirmation added real authority before the target was examined, while the value and cost of the later implementation gate remain unobserved. The suite should accumulate situated evidence one boundary at a time instead of treating either textual coherence or one successful interaction as validation of the complete authority model.
+
+## 2026-08-16 — reconcile-universal-improvement-trustworthy-delegation-and-leanness
+
+**[!REALIZATION]** Destination can retain every prior commitment and still drift by changing emphasis. The bounded section had preserved universal improvement, trustworthy delegation, recursive reasoning improvement, adoption, and efficiency, but separated them enough that recent authority detail could appear to be the product rather than a constraint on it. Reconciliation must preserve semantic hierarchy as well as sentence presence.
+
 ---
 
-**316 markers — 277 realisations, 39 reversals**
+**318 markers — 279 realisations, 39 reversals**

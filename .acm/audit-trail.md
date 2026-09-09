@@ -17999,3 +17999,94 @@ Single-loop versus double-loop: the repair changes the hook's classification ass
 
 Orientation freshness: current - claims 3, 4, and 7 already distinguish resource viability, unproven adoption, and machinery that must earn its cost; the behavioral-coverage finding sharpens those claims without contradicting the map. No multi-run convergence claim is being made and no automatic Orient is scheduled.
 Destination need: not triggered - the approved repair follows existing genericity and evidence-integrity requirements; the Destination remains frozen and unchanged.
+
+## 2026-09-09 - hook-installers-respect-effective-git-path
+
+- target: skills repo - harness/tools/install-hooks.ps1, install-hooks.sh, installer tests, installation guidance
+- operator: Nils Holmager (git config sourced in the preceding iteration)
+- agent: GPT Astra 6; operator-stated identity "GPT-6 ASTRA" from this session; host GitHub Copilot; underlying identity not independently exposed
+- skill: improve (Intent and Trail composed)
+- outcome: installation activation defect reproduced and repaired; no silence; material change resets the convergence chain
+- delta: v4.34.2 -> v4.34.3; both installers use Git's resolved hook path and preserve differing existing hooks; integration coverage and guidance added
+- artifact-evaluated: cb9c4610b133308a79e230d3146a8dee79009e08; clean tree verified before examination
+- session-independence: same-session follow-up to hook-target-agnostic-staged-coverage; not a fresh independent evaluation and not countable convergence evidence
+- capture-provenance: agent-authored trace; approvals and execution are in host session 38863831-ff62-4cec-9fe6-99d38820195e; no transcript export created
+
+### Interpretation of the ask
+
+After the previous iteration committed, the operator said "proceed". Intent narration:
+
+"I read 'proceed' as requesting another Improve iteration on `cb9c461`, with Destination frozen and both routine gates supervised.
+
+This would be a **same-session follow-up**, not the fresh-session evaluation named as the next move. It can find further defects or reach bounded silence, but cannot count toward the independent convergence chain."
+
+The operator answered "confirmed". Scope remains repo; layer remains the skills implementation; the usable, evidence-preserving delegation bar is intentionally retained from this session, not re-presented as independently derived. The governing workspace/repo mandates, orientation, and historical review remain available from the preceding iteration; recent learning was reread at the decision. Destination remains frozen.
+
+At the action gate the operator answered "proceed - i trust the autonomy in the skills by now". The response made the interpretation visible: "I read your trust statement as delegating the routine gates for the remainder of this run; Destination changes and consequential tradeoffs remain gated." No durable delegation was written into Destination, and no additional iteration was silently started under that statement.
+
+### Examination
+
+Purpose: a documented installation must place the hook where Git actually invokes it. Both installers compute the repository top-level and hard-code .git/hooks, ignoring core.hooksPath. The previous run exercised the hook's decisions and default installation, not configured-path activation.
+
+Falsifiable hypothesis: with core.hooksPath=custom-hooks, the PowerShell installer reports success but leaves the active directory empty. Reproduced in a temporary repository: installation output named .git/hooks/pre-commit, the configured hook was absent, the default hook existed, and an actual commit containing src/checkout.ts without a trail succeeded with exit 0. The temporary repo was removed; the suite remained clean. Bash source has the same path assumption, but its runtime failure was not reproduced locally.
+
+Inconsistency: the announced installation destination and Git's effective hook destination can differ. Existing 18 tests all passed despite that failure, which bounds their coverage rather than invalidating the previous repair. Waste: delegating path resolution to Git removes the installer-specific assumption without a new configuration mechanism. Capability leverage: actual Git commits distinguish activation from source-copy success. No new model capability was assumed.
+
+Challenge: could this be merely a nonstandard unsupported configuration? core.hooksPath is Git's own configuration, and the installation guidance does not exclude it. Is the hook body still the controlling defect? No: it is never invoked in the failing setup. Is redesign needed? No: Git provides the effective path. A different existing hook creates a preservation risk when the effective directory is honored, so fail-without-overwrite is part of the approved repair.
+
+### Decision
+
+[!DECISION] Resolve hooks/pre-commit through git rev-parse --path-format=absolute --git-path, create missing parents, allow identical reinstallation, and stop before replacing a different existing hook. Update both scripts and their public guidance, with real-commit installer tests. This ranks above patching the hook body again because the observed failure occurs before that body runs, and above broader installer work because configured-path activation is already a material, bounded defect.
+
+Rejected alternatives: silently reset core.hooksPath, overwrite or automatically chain another hook, or leave misleading success output in place. These respectively change operator configuration, risk removing existing protection, or retain the reproduced failure. The docs explicitly warn that a configured hooks directory may be shared across repos; this run installed only into disposable targets during validation.
+
+Precedent check: the most recent learning realization distinguishes file-read coverage from behavioral coverage. It predicts this gap: both installer files had been read in the preceding iteration, but custom-path activation had not been exercised. No new architectural rule or Destination revision is required.
+
+### Prediction
+
+Before implementation: custom-path installation activates the protection, default installation still works, and existing unrelated hooks remain untouched. Verify with actual rejected unlogged commits and accepted logged commits in disposable repositories, plus identical reinstallation and conflict preservation. This does not predict full cross-platform qualification, hook-content truthfulness, or tamper-proof enforcement.
+
+### Action
+
+Both installers now ask Git for the absolute effective hook path. PowerShell compares SHA-256 hashes; Bash compares file contents with cmp. Different content stops installation without overwriting it; identical content permits reinstallation. Both create missing parent directories, and Bash retains its executable-bit step. Installation docs describe configured paths, shared-directory effects, and explicit handling of older or different hooks.
+
+Added harness/tests/test_hook_installers.py: five scenarios for each shell (default, missing relative directory with spaces, absolute directory with spaces, preservation of a different existing hook, identical reinstallation). The first three perform actual Git commits: source without a trail is rejected by the installed hook, then source with a staged trail is accepted. Tests isolate global Git configuration and use disposable repositories.
+
+Immediate validation: all five PowerShell scenarios passed; all five Bash scenarios initially failed before reaching the installer because discovery selected the Windows WSL launcher, whose /bin/bash was unavailable.
+
+[!REVERSAL] Replaced the test harness's Windows PATH fallback with discovery relative to Git's exec path, and no Windows fallback to the WSL launcher. The next run passed all five PowerShell cases and explicitly skipped the five Bash cases rather than treating an unavailable shell as installer evidence. MinGit's sh.exe was subsequently identified as GNU Bash 5.3.15 and used for syntax validation; it ships without the chmod executable needed for full installer execution here. No claim of Bash runtime success is made.
+
+Final local test suite: 28 discovered, 23 passed, five Bash cases skipped. Shell syntax check passed. Editor diagnostics found no errors in either installer or the new test; existing Markdown fence/table-style diagnostics in unchanged doc regions were left alone. verify.py initially reported only three stale derived-artifact timestamps. Regenerating history and learning from the unchanged trail resolved that known mtime-based failure; verify.py then passed. The record helper parsed 319 entries before this append.
+
+Outcome versus prediction: all PowerShell activation, preservation, and reinstallation predictions held, including real commit rejection/acceptance. Bash received the parallel code repair and syntax validation, but its runtime prediction remains untested locally. No destination, skill contract, hook body, Git configuration in the suite, or existing local hook was changed. Trail regeneration and commit validation follow this append.
+
+### Reflection
+
+Model-claim: installation correctness and hook decision correctness are separate obligations. The repaired body can be correct while a documented installation silently leaves it inactive; a real invocation through Git is the relevant check for the latter. A future run can challenge whether these two obligations sufficiently describe the activation risk by finding another supported Git layout that resolves differently.
+
+Blind spots: Bash runtime, Linux/macOS launch, older Git versions lacking --path-format, linked worktrees, shared-directory operational impact, and real unassisted adoption were not exercised. A knowledgeable reader could object that refusing an older suite hook complicates upgrades; the preservation policy was explicitly approved, and documentation now explains the manual review needed instead of quietly replacing unknown protection.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED - the preceding hook coverage repair and this activation repair both expose a generic-use promise tested only under favorable local conditions; the earlier Orient genericity repair is a third instance in another component.
+- *About to declare silence:* not fired - this iteration made a material installer change.
+- *Contradicts prior [!REALIZATION]:* not fired - the immediately preceding realization about behavioral versus file-read coverage is supported: installer source was read previously, configured-path behavior was not tested.
+- *Operator explicitly asked:* not fired - the operator confirmed a follow-up Improve iteration, not a separate arc-level reflection.
+
+**Across-trail macro-Hansei:**
+
+Reused this same session's distributed historical review, with its limitations recorded in hook-target-agnostic-staged-coverage, and incorporated that completed entry plus this iteration's evidence. No fresh full-history or independent replication is claimed. Read as one arc, migration cleanup and increasingly broad path coverage have repeatedly strengthened internal consistency while external operating assumptions stayed under-tested. Today's two fixes distinguish the promised decision from whether that decision is ever invoked.
+
+What aged well: the previous entry's behavioral-coverage realization predicted a gap even in already-read files. What aged poorly: the earlier claim in harness-tools-tier-aligned-to-current-contracts that the next defect must be in an unlisted surface was already falsified by the previous iteration and is weakened again here. More named surfaces would not have exposed core.hooksPath without a different execution context.
+
+[!REALIZATION] A successful copy and a correct hook body do not together prove active protection. Git's configured invocation path is part of the behavior being promised. The assumption to remove was the installer's fixed .git/hooks location, not the operator's configuration or the Destination's genericity requirement.
+
+This is an implementation-assumption correction under the frozen purpose, not a reason to reopen direction. The remaining Bash verification limit is a bounded platform gap, not evidence that the whole suite needs redesign or another mandatory check taxonomy. Reusing the already-read historical arc avoids paying its full cost again without discarding the recorded learning.
+
+### Candidate Next Moves
+
+1. Fresh-session evaluation of the changed snapshot under the frozen Destination remains the convergence-relevant next move; these two same-session repairs provide no independent silence.
+2. Run the existing installer integration tests on a host with Bash and its required utilities to resolve the explicit platform verification gap without adding another mechanism.
+
+Orientation freshness: current - the map's unproven-adoption and machinery-cost claims still explain these operational tests; the installer finding adds evidence without overturning them. No multi-run convergence claim or automatic Orient is scheduled.
+Destination need: not triggered - the existing genericity, preservation of operator control, and bounded-evidence requirements govern the repair; Destination remains frozen and unchanged.
