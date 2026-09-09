@@ -40,7 +40,9 @@ bash /path/to/autonomous-agent-skills/harness/tools/install-hooks.sh
 powershell -NoProfile -ExecutionPolicy Bypass -File C:\path\to\autonomous-agent-skills\harness\tools\install-hooks.ps1
 ```
 
-This installs a pre-commit hook that rejects commits which touch substantive files without a corresponding `.acm/audit-trail.md` entry. Override with `git commit --no-verify` — the override itself is auditable.
+This installs a pre-commit hook that rejects staged changes outside `.acm/`, including deletions, unless the commit also adds or modifies `.acm/audit-trail.md` or `.acm/<task>/audit-trail.md`. Commits confined to `.acm/` are allowed. Deleted or unstaged trails do not satisfy the gate. The hook checks staged paths; it does not validate entry truthfulness or append-only integrity.
+
+Override with `git commit --no-verify`. The hook does not record the bypass, and `verify.py` does not detect commits with no trail entry. Neither should be treated as tamper-proof enforcement.
 
 ---
 

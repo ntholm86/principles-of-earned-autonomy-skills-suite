@@ -5,15 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 314 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-16 — orient-after-bounded-supervision-and-delegation
-
-**[!REALIZATION]** Transparency and permission are separate authority variables. Intent narration remains mandatory, but in the absence of explicit delegation it no longer authorizes examination. Improve proposal visibility likewise does not authorize implementation until Proceed.
-
-## 2026-08-16 — orient-after-bounded-supervision-and-delegation
-
-**[!REALIZATION]** The authority arc did not need another autonomy mode; it needed to stop treating observability as authorization. The stable architecture now has one normal command and one explicit delegation concept, while authority remains distributed by purpose: Intent confirms interpretation, Improve confirms routine action, Destination confirms durable direction, and operator-declared consequential boundaries remain human-owned. The unresolved question is whether this cleaner separation produces confidence at lower lifecycle cost or merely moves ceremony into two pauses; only situated behavior can answer that.
+Showing the most recent 60 markers. 316 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-16 — self-target-supervised-authority-bounded-silence
 
@@ -247,6 +239,14 @@ Showing the most recent 60 markers. 314 older marker(s) are in `.acm/learning-ar
 
 **[!REVERSAL]** Within this iteration: wrote the Windows install path in the hook docstring with backslashes; reversed to forward slashes after py_compile -W error flagged the escape sequence. PowerShell accepts either separator, so nothing is lost.
 
+## 2026-09-09 — hook-target-agnostic-staged-coverage
+
+**[!REALIZATION]** File-read coverage and behavioral coverage are separate. The prior run correctly repaired the hook's harness/tools regex within the suite's layout, while the generic target promise remained untested. Purpose-derived external-shaped cases exposed that gap in the same file. The local assumption that suite filenames define substantive project work was wrong; the frozen Destination's genericity requirement was already sufficient to reject it.
+
+## 2026-09-09 — hook-target-agnostic-staged-coverage
+
+**[!REVERSAL]** Rejected the first historical reader's broad conclusions and coverage estimates after it admitted stopping at line 2500. It was commissioned to read the full trail but had not done so. Assigned the remaining four ranges to read-only readers and retained only supported synthesis, with selected load-bearing entries reread directly. This reverses reliance on the first report's claimed breadth, not any product edit.
+
 ---
 
-**60 markers — 51 realisations, 9 reversals**
+**60 markers — 50 realisations, 10 reversals**

@@ -1261,6 +1261,14 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REVERSAL]** The August 13 `improve-single-entry-progressive-destination` decision treated silence after visible Intent narration as sufficient authority for bounded current work. This run supersedes that default: visible narration remains necessary, but without explicit delegation the operator now confirms it and the proposed implementation.
 
+## 2026-08-16 — orient-after-bounded-supervision-and-delegation
+
+**[!REALIZATION]** Transparency and permission are separate authority variables. Intent narration remains mandatory, but in the absence of explicit delegation it no longer authorizes examination. Improve proposal visibility likewise does not authorize implementation until Proceed.
+
+## 2026-08-16 — orient-after-bounded-supervision-and-delegation
+
+**[!REALIZATION]** The authority arc did not need another autonomy mode; it needed to stop treating observability as authorization. The stable architecture now has one normal command and one explicit delegation concept, while authority remains distributed by purpose: Intent confirms interpretation, Improve confirms routine action, Destination confirms durable direction, and operator-declared consequential boundaries remain human-owned. The unresolved question is whether this cleaner separation produces confidence at lower lifecycle cost or merely moves ceremony into two pauses; only situated behavior can answer that.
+
 ---
 
-**314 markers — 275 realisations, 39 reversals**
+**316 markers — 277 realisations, 39 reversals**

@@ -17903,3 +17903,99 @@ Read as one document, the September arc is nine reads and nine one-surface repai
 
 Orientation freshness: current - orientation claim 7 (accretion observed, cost unresolved) and "What the next runs should test" item 2 describe this run; the realization adds a tier the map does not name (tooling as the least-read surface), which the next scheduled Orient should add, but the map is not contradicted. No arc read scheduled.
 Destination need: not triggered - the operator has frozen the Destination; this change is implementation under its existing evidence-integrity and leanness clauses.
+
+## 2026-09-09 - hook-target-agnostic-staged-coverage
+
+- target: skills repo - optional pre-commit hook, hook regression tests, installation docs
+- operator: Nils Holmager (git config user.name); both routine gates explicitly approved in this conversation
+- agent: GPT Astra 6; model identified by the operator as "GPT-6 ASTRA"; host GitHub Copilot; underlying model identity not independently exposed to the evaluator
+- skill: improve (Intent and Trail composed; read-only Explore delegates assisted historical reflection, not the product judgment or Trail authorship)
+- outcome: material hook coverage defect reproduced and fixed; no bounded silence; convergence chain resets
+- delta: v4.34.1 -> v4.34.2; suite-specific hook allowlist replaced by staged changes outside .acm/ requiring an added or modified repo/task trail; 10 new regression tests; guarantee clarified in docs
+- artifact-evaluated: f12b0f9dd2c04dc58c345bc9003b3b565374b38d; clean working tree verified before examination
+- session-independence: fresh session, as requested by the operator; same-session checks after the repair are regression evidence, not a new independent convergence evaluation
+- capture-provenance: agent-authored trace; tool calls and approvals are in host session 38863831-ff62-4cec-9fe6-99d38820195e; no transcript export or independent evidence artifact created
+
+### Interpretation of the ask
+
+Operator requested a fresh-session cold convergence evaluation of f12b0f9 under Principle 3 and the frozen Destination, required the Improve skill, prohibited manufactured findings, and retained supervision at Intent and the action gate. The five previously unread surfaces were evidence, not an assigned checklist.
+
+Intent narration, before the operator answered "confirmed":
+
+"I read your intent as: run one fresh-session, independent convergence evaluation of [pea/skills](pea/skills) at `f12b0f9dd2c04dc58c345bc9003b3b565374b38d`, under the frozen Destination. Scope: **repo**, evaluating the **skills implementation layer** against its governing principles.
+
+Before reading prior evaluators' bars, I derived **usable, evidence-preserving delegation**: whether the suite can carry a bounded task through interpretation, authorized work, verification, and durable handoff, with claims proportionate to actual enforcement. The five previously unread surfaces are evidence for choosing where to examine, not a mandatory checklist. I reject treating this as either a required-finding exercise or permission to reopen Destination.
+
+After confirmation, Improve will examine and challenge the artifact, then pause at the action gate. Any silence will identify the examined surfaces, untested bars, exact artifact, fresh-session status, and evaluator provenance. No files have changed and no tests have run; the clean snapshot is verified."
+
+The quality bar was stated from the Destination and README before orientation, learning, and prior evaluator bars were read. The scope ceiling is C:\git\pea\.acm-root. Both workspace and repo mandates were read before implementation examination; the repo mandate was initially read before discovering the parent mandate, an ingress ordering deviation. The Destination was not edited. The model version was not guessed: after two prose requests and a dedicated question, the operator supplied "GPT-6 ASTRA"; this entry uses the requested family/version order and preserves that provenance.
+
+### Examination
+
+- Purpose: followed the install-to-first-run path through install.ps1, install.sh, QUICKSTART.md, INSTALLING.md, Improve, Intent, and Trail. The installers copy skill documents; helper tooling remains optional. The optional hook is publicly advertised for arbitrary target repos, so its behavior is part of usable delegation even though it is not a required first-run dependency.
+- Inconsistency: traced both hook installers to harness/tools/hooks/pre-commit. SUBSTANTIVE recognized SKILL.md, PRINCIPLES.md, README.md, verify.py, and tools Python paths, not normal application files. In a disposable Git repo with no verifier, the shipped hook returned 0 for staged src/checkout.ts without a trail, but 1 for README.md and harness/tools/example.py without a trail. Repo/task trail cases returned 0. These were actual hook subprocesses over Git indexes, not mocked regex assertions.
+- Enforcement scope: the original staged-files filter omitted deletions. The repair must count project deletions without letting a deleted trail satisfy the gate. The docs and hook also claimed bypasses would be auditable through verify.py; that verifier examines current files and trace structure, not correspondence between commits and missing entries. Narrowing that claim changes no enforcement capability.
+- Overburden and waste: the filename allowlist required additions as project layout changed. Replacing it with the approved boundary removes that maintenance burden. The repair adds no skill instruction, cognitive restriction, or new required tool. Full historical reflection did impose substantial review overhead; no token-efficiency result is claimed.
+- Capability leverage: real disposable Git indexes provide a cheap discriminating check for the documented guarantee. No claim of a newly available model capability or architectural redesign is needed.
+
+Also read .github/workflows/verify.yml and harness/tests/test_verify.py. The workflow runs verify.py; the eight existing tests cover verifier warnings and blocking checks, not generic hook rejection. All eight and verify.py passed on the original snapshot. Read-only access to the five previously named surfaces did not by itself establish their runtime correctness.
+
+Challenge to the first read: Could this merely be an intentionally suite-local helper? INSTALLING and QUICKSTART explicitly direct installation into the user's target repo, and the Destination requires generic operation. Could adding src/ to the allowlist suffice? That repeats the same defect for other languages and layouts. Could this require redesign? No: the advertised staged-trail gate is locally repairable. Unassisted newcomer understanding, real host discovery, Bash installation, Linux hook launch, full installed-skill orchestration, ARF, tamper resistance, and cross-family replication were not tested.
+
+### Decision
+
+[!DECISION] Replace the hook's suite-specific allowlist with the conservative rule that any staged path outside .acm/ requires an added or modified repo- or task-scoped audit-trail.md; include deletions, preserve .acm/-only commits, and document the actual guarantee. The operator answered "proceed" at the action gate. This ranks above adding more recognized filenames because it fulfills the generic target promise without another coverage list, and above expanding unrelated installer or CI behavior because the observed failure already falsifies this run's bar.
+
+Rejected alternatives: declare silence despite the reproduced bypass; narrow the published promise to suite-only protection; or implement full content-integrity and tamper-proof logging inside this optional hook. The first ignores operational evidence, the second abandons the intended target-generic use, and the third exceeds the approved repair and the hook's architectural role.
+
+Precedent check: reread the recent learning entries before proposing the change, including orient-freshness-guard-target-agnostic and harness-tools-tier-aligned-to-current-contracts. The former supports testing outside this repo's favorable layout. The latter's uncovered-surfaces-only explanation is too narrow: this hook was explicitly read and repaired in that preceding run.
+
+### Prediction
+
+Stated at the action gate before editing: unlogged application changes become blocked; repo- and task-scoped trail updates remain accepted; evidence-only commits remain possible; deletions are covered without deletion of the trail satisfying the requirement. This does not establish that a staged trail is truthful or append-only. Verification will use real disposable Git indexes, followed by existing regressions and the repository integrity verifier.
+
+### Action
+
+Changed the hook to inspect NUL-delimited staged paths without rename detection, so Git quoting and moves across the .acm/ boundary cannot hide paths. All changed paths are considered for project coverage; only added or modified trail paths satisfy the gate. The existing optional target verifier invocation is unchanged.
+
+Added harness/tests/test_pre_commit.py with 10 unittest cases using real temporary repositories and indexes: ordinary additions across file types, a Unicode filename, modification, deletion, added repo/task trails, modified trail with project deletion, deleted trail, unstaged trail, non-trail evidence, empty/evidence-only indexes, and a rename out of .acm/. Synthetic Git objects/commits exist only in disposable test repositories.
+
+Immediate first validation: all 10 hook tests passed. After updating INSTALLING.md, QUICKSTART.md, and CHANGELOG.md, all 18 tests passed and verify.py passed. Python editor diagnostics were clean. Markdown diagnostics in the historical CHANGELOG report existing repeated headings and spacing; no unrelated historical formatting was changed. The ordinary-source case that returned 0 before the fix now returns 1 under the new tests. The prediction held; no rollback of the hook change was needed.
+
+Reinstalled the local hook with harness/tools/install-hooks.ps1 and verified source/installed SHA-256 equality. An initial terminal invocation failed because the working directory was not the repo; after explicit Set-Location, installation succeeded. The tests execute the hook through the editor-selected Python interpreter (C:\git\rev\.venv\Scripts\python.exe); they do not establish Unix shebang launch or real-user comprehension. Recording and commit checks follow this append; no final commit hash is claimed in advance.
+
+### Reflection
+
+Model-claim: the suite's remaining generality risk includes behavior sampled only under its own favorable layout, even in files already read. An ordinary external-target-shaped example can reveal a missed assumption without needing another surface list. Future runs can challenge this by showing representative external shapes were already tested when the next defect arose.
+
+Blind spot: these are constructed target-shaped tests, not an unassisted developer completing Improve. The .acm/ exclusion and acceptance of any matching changed trail are deliberately weak guarantees: the hook cannot establish correct task attribution, entry quality, append-only content, approval, or independent capture. A knowledgeable reader could reasonably question whether all non-.acm/ changes should require a trail; this run made that conservative boundary explicit and obtained operator approval rather than pretending Git can infer semantic importance.
+
+[!REVERSAL] Rejected the first historical reader's broad conclusions and coverage estimates after it admitted stopping at line 2500. It was commissioned to read the full trail but had not done so. Assigned the remaining four ranges to read-only readers and retained only supported synthesis, with selected load-bearing entries reread directly. This reverses reliance on the first report's claimed breadth, not any product edit.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED - the 2026-04-24 v3-verifier-scope-repair, 2026-09-05 Orient genericity repair, and preceding hook/tooling repair all concern implementation coverage narrower than its stated purpose; the current hook failure repeats that broad class.
+- *About to declare silence:* not fired - a material behavior defect was reproduced and repaired.
+- *Contradicts prior [!REALIZATION]:* FIRED - the previous entry says inclusion lists guarantee the next drift occurs in a surface no list names; this finding is in the hook and selection logic that entry explicitly examined and changed.
+- *Operator explicitly asked:* not fired - the prompt requested a cold Improve evaluation, not a separate arc-level reflection.
+
+**Across-trail macro-Hansei:**
+
+Historical reading was distributed over the pre-append audit-trail.md: the first reader reported lines 1-2500; subsequent readers reported 2501-6500, 6501-10500, 10501-14500, and 14501-17905. These are delegated coverage reports, not independent replication of this product finding. Their summaries contained imprecise counts and unsupported generalizations, so those were not accepted as facts. Selected source entries were reread directly; tool output truncated some long historical lines. Full session transcripts and archived v2 evidence were not audited. The reflection therefore uses the main trace as its arc evidence, with these fidelity limits visible.
+
+What aged well: v3-verifier-scope-repair (2026-04-24) treats an integrity gap as a legitimate convergence reset, not a reason to protect the chain. That remains the right interpretation of this run. The 2026-09-05 Orient realization that self-targeting can hide target-generality defects also survives: this repository's README/tools paths pass the old hook's gate, while normal application paths do not.
+
+What aged poorly: the preceding run's claim that coverage by inclusion lists guarantees the next defect is in an unread surface. Its own hook repair is the counterexample. The useful observation is that enumerated samples can miss the operating domain; the location of the next defect does not follow from which files were opened.
+
+Across the trace, migration cleanup, guard additions, and public explanation recur alongside attempts to test external operation and instruction cost. This run adds a distinction that a file-coverage inventory cannot supply: the same source line can be read twice against different behavioral domains. The question of whether current checks exercise the promised domain matters alongside whether they scan every file. This calls for evidence appropriate to each claimed guarantee, not a new permanent checklist of languages or filenames.
+
+[!REALIZATION] File-read coverage and behavioral coverage are separate. The prior run correctly repaired the hook's harness/tools regex within the suite's layout, while the generic target promise remained untested. Purpose-derived external-shaped cases exposed that gap in the same file. The local assumption that suite filenames define substantive project work was wrong; the frozen Destination's genericity requirement was already sufficient to reject it.
+
+Single-loop versus double-loop: the repair changes the hook's classification assumption rather than adding the next filename. No Destination variable needs revision: useful generic delegation and bounded evidence claims already govern the work. The historical review's failed first attempt and substantial reading cost are also evidence against treating protocol completion as cost-free; this run does not authorize reducing reflection or evidence capability to remedy that cost.
+
+### Candidate Next Moves
+
+1. Fresh-session cold evaluation of the changed snapshot under the frozen Destination, deriving its own bar; this material change supplies no countable silence and resets the chain.
+
+Orientation freshness: current - claims 3, 4, and 7 already distinguish resource viability, unproven adoption, and machinery that must earn its cost; the behavioral-coverage finding sharpens those claims without contradicting the map. No multi-run convergence claim is being made and no automatic Orient is scheduled.
+Destination need: not triggered - the approved repair follows existing genericity and evidence-integrity requirements; the Destination remains frozen and unchanged.

@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
-"""pre-commit hook - enforces Observable Autonomy.
+"""pre-commit hook - requires staged trail updates for project changes.
 
-If this commit touches substantive files (skills, tools, principles, README)
-but does not stage a corresponding update to .acm/audit-trail.md, the commit is
-rejected. The agent (or operator) must record what changed and why.
+Any staged change outside .acm/, including deletion, requires an added or
+modified repo- or task-scoped audit-trail.md. Evidence-only commits are allowed.
+This checks staged paths, not entry truthfulness or append-only integrity.
 
-Override with `git commit --no-verify` - the override itself is auditable
-(the absent trail entry will show up at the next verify.py run).
+Override with `git commit --no-verify`. This hook does not record overrides.
 
 Install (run from the target repo root; the scripts live in the skills clone):
   bash <skills-repo>/harness/tools/install-hooks.sh        # macOS / Linux
@@ -19,24 +18,23 @@ import subprocess
 import sys
 from pathlib import Path
 
-# tools/ moved under harness/ in v3.x; both forms count so target repos keep matching their own tools/.
-SUBSTANTIVE = re.compile(r"^(.*/SKILL\.md|PRINCIPLES\.md|README\.md|verify\.py|(?:harness/)?tools/.*\.py)$")
 # Repo scope or a named task scope (.acm/<task>/audit-trail.md); see trail/SKILL.md.
 TRAIL_LOG = re.compile(r"^\.acm/(?:[^/]+/)?audit-trail\.md$")
 
 
-def staged_files() -> list[str]:
+def staged_files(diff_filter: str = "") -> list[str]:
     out = subprocess.run(
-        ["git", "diff", "--cached", "--name-only", "--diff-filter=ACMR"],
+        ["git", "diff", "--cached", "--name-only", "-z", "--no-renames",
+         f"--diff-filter={diff_filter}"],
         capture_output=True, text=True, check=True,
     )
-    return [line for line in out.stdout.splitlines() if line]
+    return [path for path in out.stdout.split("\0") if path]
 
 
 def main() -> int:
     files = staged_files()
-    substantive = [f for f in files if SUBSTANTIVE.match(f)]
-    trail_staged = any(TRAIL_LOG.match(f) for f in files)
+    substantive = [path for path in files if not path.startswith(".acm/")]
+    trail_staged = any(TRAIL_LOG.fullmatch(path) for path in staged_files("AM"))
 
     if substantive and not trail_staged:
         print("pre-commit: substantive changes staged without a .acm/audit-trail.md update.")
@@ -48,7 +46,7 @@ def main() -> int:
         print("Observable Autonomy requires a trail entry for substantive changes.")
         print("Either:")
         print("  1. Append a structured entry to .acm/audit-trail.md (see trail/SKILL.md), or")
-        print("  2. Override with: git commit --no-verify  (auditable; verify.py will catch it)")
+        print("  2. Override with: git commit --no-verify  (not recorded by this hook)")
         return 1
 
     repo_root = Path(subprocess.run(
