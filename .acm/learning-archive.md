@@ -1237,6 +1237,10 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REVERSAL]** The initial local hypothesis expected isolated Explore agents might improve trustworthy capability per resource by separating evidence gathering from the main decision context. The comparison produced one already-bounded finding and one unsourced, overbuilt proposal. Reversed the implied route from possible reusable subagent pattern to opportunistic use only when the task itself supplies separable work.
 
+## 2026-08-16 — remove-capability-route-prescription
+
+**[!REALIZATION]** The suite can prescribe autonomy while believing it is merely enabling intelligence. A taxonomy, risk list, fallback rule, or mechanism example may be a sound current answer and still violate Operator's Intent when embedded in the question every future agent must answer. Capability awareness belongs in Improve as a change in what the target may now make possible; the content of that awareness must remain discoverable by the executing agent. This claim is falsified if agents consistently fail to derive safe, useful routes without the removed specifics.
+
 ---
 
-**308 markers — 272 realisations, 36 reversals**
+**309 markers — 273 realisations, 36 reversals**

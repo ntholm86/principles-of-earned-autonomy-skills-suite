@@ -5,11 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 308 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-16 — remove-capability-route-prescription
-
-**[!REALIZATION]** The suite can prescribe autonomy while believing it is merely enabling intelligence. A taxonomy, risk list, fallback rule, or mechanism example may be a sound current answer and still violate Operator's Intent when embedded in the question every future agent must answer. Capability awareness belongs in Improve as a change in what the target may now make possible; the content of that awareness must remain discoverable by the executing agent. This claim is falsified if agents consistently fail to derive safe, useful routes without the removed specifics.
+Showing the most recent 60 markers. 309 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-16 — remove-capability-route-prescription
 
@@ -246,6 +242,10 @@ Showing the most recent 60 markers. 308 older marker(s) are in `.acm/learning-ar
 ## 2026-09-09 — silence-records-carry-family-artifact-independence
 
 **[!REALIZATION]** The convergence lease was added to the Destination on 2026-08-09 while the trail was in its least attributable stretch: 80 of the 98 host-only entries fall in August. A governing rule can be introduced on top of evidence that cannot satisfy it, and nothing in the suite noticed, because the rule consumed a field no contract had ever defined. The general shape: when a new rule starts consuming an existing evidence field, the field's definition has to be re-read against the rule's needs - the same operation as re-reading a term whose meaning changed (2026-09-05 realization), applied to evidence instead of authority.
+
+## 2026-09-09 — readme-convergence-is-operator-arranged
+
+**[!REALIZATION]** The README's "Automatic" column could not carry convergence because the column encodes Improve's authority to invoke, and convergence is the one step in the suite where authority sits outside the agent by design. The trail had already established this (2026-09-05) as an operational fact; the public surface still described the pre-lease picture in which the loop simply stops. Labels that encode authority need the same re-read as sentences that define it when the authority model changes - the 2026-09-05 realization about terms, applied to a table column.
 
 ---
 
