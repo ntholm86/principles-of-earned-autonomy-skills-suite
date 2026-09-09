@@ -1,5 +1,9 @@
 # Changelog
 
+## v4.34.4 - 2026-09-09
+
+- **Skill installers reject incomplete source bundles before writing.** Both installers preflight the five operational `SKILL.md` files, plus Probe when research mode is requested, instead of skipping missing skills and reporting success. Optional `PRINCIPLES.md` remains optional. Ten disposable-installation tests pass across PowerShell and Bash, covering complete bundles, each missing operational skill, missing research input, destination preservation, and directories masquerading as skill files. Same-session follow-up on e35f077; no Destination or skill contract changes.
+
 ## v4.34.3 - 2026-09-09
 
 - **Hook installers now use Git's effective hook path.** Both installers resolve the destination through `git rev-parse --path-format=absolute --git-path hooks/pre-commit`, honoring `core.hooksPath` and creating missing parent directories. A different existing hook is preserved with an error; identical reinstallation succeeds. Added integration tests for both shells covering default, relative and absolute configured paths, conflict preservation, and reinstallation, with actual unlogged-commit rejection and logged-commit acceptance. PowerShell execution passed locally; Bash execution remains platform-limited. Documentation explains shared hook locations and explicit handling of existing hooks. Same-session follow-up on cb9c461; Destination unchanged.

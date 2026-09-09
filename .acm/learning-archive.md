@@ -1277,6 +1277,14 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** Destination can retain every prior commitment and still drift by changing emphasis. The bounded section had preserved universal improvement, trustworthy delegation, recursive reasoning improvement, adoption, and efficiency, but separated them enough that recent authority detail could appear to be the product rather than a constraint on it. Reconciliation must preserve semantic hierarchy as well as sentence presence.
 
+## 2026-08-16 — reconcile-universal-improvement-trustworthy-delegation-and-leanness
+
+**[!REALIZATION]** The target's central claim is not a choice between general improvement and trustworthy delegation. It is that a purpose-driven architecture can improve anything it targets under authority and evidence constraints that make delegation trustworthy. Simplicity and efficiency protect that capability from collapsing under its own governance and protect new users from having to understand the research vocabulary before they can steer the work.
+
+## 2026-08-16 — orient-after-destination-center-and-leanness-reconciliation
+
+**[!REALIZATION]** Universal improvement and trustworthy delegation are one architectural claim. The target must improve anything it understands while the Principles of Earned Autonomy make that capability safe to delegate. Future work falsifies this claim if it strengthens one half by weakening the other.
+
 ---
 
-**318 markers — 279 realisations, 39 reversals**
+**320 markers — 281 realisations, 39 reversals**

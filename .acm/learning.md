@@ -5,15 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 318 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-16 — reconcile-universal-improvement-trustworthy-delegation-and-leanness
-
-**[!REALIZATION]** The target's central claim is not a choice between general improvement and trustworthy delegation. It is that a purpose-driven architecture can improve anything it targets under authority and evidence constraints that make delegation trustworthy. Simplicity and efficiency protect that capability from collapsing under its own governance and protect new users from having to understand the research vocabulary before they can steer the work.
-
-## 2026-08-16 — orient-after-destination-center-and-leanness-reconciliation
-
-**[!REALIZATION]** Universal improvement and trustworthy delegation are one architectural claim. The target must improve anything it understands while the Principles of Earned Autonomy make that capability safe to delegate. Future work falsifies this claim if it strengthens one half by weakening the other.
+Showing the most recent 60 markers. 320 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-16 — orient-after-destination-center-and-leanness-reconciliation
 
@@ -247,6 +239,14 @@ Showing the most recent 60 markers. 318 older marker(s) are in `.acm/learning-ar
 
 **[!REVERSAL]** Replaced the test harness's Windows PATH fallback with discovery relative to Git's exec path, and no Windows fallback to the WSL launcher. The next run passed all five PowerShell cases and explicitly skipped the five Bash cases rather than treating an unavailable shell as installer evidence. MinGit's sh.exe was subsequently identified as GNU Bash 5.3.15 and used for syntax validation; it ships without the chmod executable needed for full installer execution here. No claim of Bash runtime success is made.
 
+## 2026-09-09 — skill-installers-preflight-selected-files
+
+**[!REALIZATION]** Bundle selection determines which input files are required. Optional research content stays optional until selected; once selected, silently skipping it while declaring success breaks the same delivery contract as skipping the operational entry point. Preflight makes that boundary explicit without changing standalone skill support or introducing a new installation mode.
+
+## 2026-09-09 — skill-installers-preflight-selected-files
+
+**[!REVERSAL]** Corrected the test harness's assumption that launching MinGit's sh.exe alone provides its utility PATH. Added its containing directory to the child environment on Windows and reran the same checks. All 10 cases then passed, including actual Bash installation; no product edit was backed out.
+
 ---
 
-**60 markers — 49 realisations, 11 reversals**
+**60 markers — 48 realisations, 12 reversals**

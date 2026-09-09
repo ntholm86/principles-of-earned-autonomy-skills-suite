@@ -36,16 +36,19 @@ if [ "$RESEARCH" -eq 1 ]; then
   SKILLS+=(probe)
 fi
 
+for skill in "${SKILLS[@]}"; do
+  if [ ! -f "$SRC/$skill/SKILL.md" ]; then
+    echo "ERROR: missing required skill file: $SRC/$skill/SKILL.md. Installation not started." >&2
+    exit 1
+  fi
+done
+
 mkdir -p "$DST"
 
 for skill in "${SKILLS[@]}"; do
-  if [ -f "$SRC/$skill/SKILL.md" ]; then
-    mkdir -p "$DST/$skill"
-    cp "$SRC/$skill/SKILL.md" "$DST/$skill/SKILL.md"
-    echo "  installed: $skill"
-  else
-    echo "  skipped:   $skill (no SKILL.md found)"
-  fi
+  mkdir -p "$DST/$skill"
+  cp "$SRC/$skill/SKILL.md" "$DST/$skill/SKILL.md"
+  echo "  installed: $skill"
 done
 
 # Optional: PRINCIPLES.md alongside the skills folders

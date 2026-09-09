@@ -18090,3 +18090,87 @@ This is an implementation-assumption correction under the frozen purpose, not a 
 
 Orientation freshness: current - the map's unproven-adoption and machinery-cost claims still explain these operational tests; the installer finding adds evidence without overturning them. No multi-run convergence claim or automatic Orient is scheduled.
 Destination need: not triggered - the existing genericity, preservation of operator control, and bounded-evidence requirements govern the repair; Destination remains frozen and unchanged.
+
+## 2026-09-09 - skill-installers-preflight-selected-files
+
+- target: skills repo - install.ps1, install.sh, disposable installation tests, INSTALLING.md
+- operator: Nils Holmager (git config sourced earlier this session)
+- agent: GPT Astra 6; operator-stated identity "GPT-6 ASTRA"; host GitHub Copilot; underlying model identity not independently exposed
+- skill: improve (Intent and Trail composed)
+- outcome: incomplete-bundle success-reporting defect reproduced and repaired; no silence; material change resets the convergence chain
+- delta: v4.34.3 -> v4.34.4; selected skill files checked before destination writes; 10 new tests pass across PowerShell and Bash
+- artifact-evaluated: e35f0776a93ccb075d0f5ac49458c868b6b8a83c; clean working tree verified before examination
+- session-independence: same-session follow-up, not a fresh independent evaluation or a countable convergence vote
+- capture-provenance: agent-authored trace; tool results and approvals in host session 38863831-ff62-4cec-9fe6-99d38820195e; no transcript export created
+
+### Interpretation of the ask
+
+Operator said "proceed" after the previous iteration. Intent narration:
+
+"I read 'proceed' as another same-session Improve iteration on `e35f077`, under the frozen Destination. It may find a material defect or declare bounded silence, but cannot count as a fresh independent evaluation.
+
+Your previous delegation was recorded for that completed run. **Confirm** to continue with supervised gates, **Delegate** to authorize both routine gates for this iteration, or **Specify** a different scope."
+
+The operator answered "confirmed". After examination and the proposed preflight repair, the operator answered "GO AHEAD" at the action gate. Scope: repo; layer: skills implementation; quality bar: the same session's usable, evidence-preserving delegation bar, intentionally retained rather than claimed as independently re-derived. Destination is frozen. Governing mandates, orientation, and historical context were reused from this session; the recent learning surface was reread before the decision.
+
+### Examination
+
+Purpose: installation success should mean the selected operational skills were delivered, including Improve, the documented normal entry point. Both installers skipped missing SKILL.md files and then printed success and "Action: Run (/improve)".
+
+Discriminating check: copied the PowerShell installer and five operational skill folders into a disposable source bundle. Complete-source control exited 0 and installed Improve. Removed only that copy's improve/SKILL.md and installed to a second disposable destination: exit 0, "skipped: improve", "Installed PEA skills", and "Action: Run (/improve)", while Improve was absent. No suite file or user-installed skill was changed. INSTALLING.md promises the five operational skills and describes no partial-bundle installer mode. Bash contains the same skip-and-success branch, identified by source inspection.
+
+Inconsistency: skipping a required selected component conflicts with the success message and documented bundle. This is a missing-input robustness defect, not evidence that normal installation from a complete checkout fails. Waste: collecting required-file checks before the existing copy loop is sufficient; transactional directory replacement or a new configuration mode would exceed the finding. Capability leverage: complete and incomplete disposable bundles distinguish actual delivery from optimistic output without launching an agent or changing host installation.
+
+Challenge: could standalone skill support justify the skip? Individual skills can work alone, but the bundle installer advertises a selected set and an entry point; it does not offer a partial-install mode. Could an ordinary intact clone fail this way? The control succeeded, so that broader claim is rejected. Is redesign required? No: preflight the selected files, preserve optional PRINCIPLES.md, and leave later I/O failure semantics unchanged.
+
+### Decision
+
+[!DECISION] Check that each selected skill path is a file before creating or writing the destination; fail with a nonzero exit and a named missing-file error otherwise. Probe is selected only in research mode; PRINCIPLES.md remains optional. Apply this in both installers, add focused tests, and document the guarantee. Operator approved with "GO AHEAD".
+
+Rejected alternatives: continue skipping but soften the success message, or require all research and principles files unconditionally. The former still leaves a silently partial advertised operational chain; the latter removes supported optionality. Atomic rollback for later disk/copy failures was rejected as unrelated complexity. Precedent check: recent learning about behavioral coverage and installation activation supports observing the promised outcome, but does not establish this missing-input failure without its own test. The reproduced false success supplies that evidence.
+
+### Prediction
+
+Stated before editing: missing operational skills, or missing Probe when research mode is requested, produce a nonzero exit without changing the destination. Complete installs still succeed; optional PRINCIPLES.md remains optional. Verify both absent and existing destinations using disposable installation tests. No claim of rollback after a later copy error, source-change race prevention, or full host skill discovery is made.
+
+### Action
+
+Added preflight loops before destination creation and replaced the skip branches with ordinary copies after successful validation. PowerShell uses Test-Path -LiteralPath -PathType Leaf; Bash uses -f. Added harness/tests/test_skill_installers.py with five cases per shell: complete operational bundle with optional files absent; research bundle with optional principles present; each of five missing operational skills leaving no destination; missing research input preserving an already installed destination byte-for-byte; and a directory substituted for a skill file rejected before writing.
+
+Immediate validation: PowerShell passed, while Bash failed before preflight because the subprocess PATH lacked dirname and other MinGit utilities. The failure was in test setup, not evidence against the preflight implementation.
+
+[!REVERSAL] Corrected the test harness's assumption that launching MinGit's sh.exe alone provides its utility PATH. Added its containing directory to the child environment on Windows and reran the same checks. All 10 cases then passed, including actual Bash installation; no product edit was backed out.
+
+Updated INSTALLING.md with the selected-file guarantee and explicit lack of rollback for later disk/copy errors; CHANGELOG records v4.34.4. Full local suite: 38 discovered, 33 passed, five pre-existing Bash hook-installer tests skipped. The skill installer uses utilities present in MinGit, unlike the hook installer whose chmod dependency remains unavailable here; today's Bash success does not close that separate verification gap. Editor diagnostics for both installers and the new test were clean.
+
+Outcome against prediction: held for both tested shells. Missing selected input produced failure before any destination modification, while operational/research installations succeeded with expected optionality. Tests use temporary fixtures and do not modify live installed skills. Post-append derived-artifact and commit validation follow this record; no final commit success is asserted in advance.
+
+### Reflection
+
+Model-claim: the installation path's success status must be grounded in its declared deliverables, not merely the absence of copy exceptions. A deliberately skipped entry point is still an installation failure for the selected bundle. A future run can challenge this boundary if an explicit partial-install workflow is introduced.
+
+Blind spots: malformed skill contents, permission/disk failures after preflight, time-of-check/time-of-use source changes, Linux/macOS execution, and actual host discovery were not tested. A knowledgeable reader could question materiality because an intact clone works; the result is bounded to incomplete bundles and justified by false success that instructs the user to invoke an absent entry point. It does not imply broader installation unreliability.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED - the preceding hook activation repair and this bundle repair both separate a success announcement from the actual delivered behavior, following the earlier hook coverage gap.
+- *About to declare silence:* not fired - a material failure-reporting defect was reproduced and repaired.
+- *Contradicts prior [!REALIZATION]:* not fired - recent realizations about behavioral coverage and copy-versus-activation remain valid; this run adds selected-input failure behavior rather than overturning them.
+- *Operator explicitly asked:* not fired - the operator requested another Improve iteration, not an independent arc-level reflection.
+
+**Across-trail macro-Hansei:**
+
+Reused the distributed main-trace review from this same session, with its declared coverage and fidelity limitations preserved in hook-target-agnostic-staged-coverage, plus the subsequent installer entry and this iteration. No new full-history read or independent replication is claimed. The arc shows repeated internal consistency repairs followed by operational checks that expose assumptions the earlier readings did not exercise. The current run is narrower than the previous two: a controlled missing-input scenario, not evidence from a real adopter.
+
+What aged well: the distinction between file-read and behavioral coverage; both installation scripts were already read, but a complete versus incomplete source comparison had not been made. What aged poorly: the older assertion that the next defect must occur in an unread file, already corrected earlier in this session. These findings do not justify an endless sequence of fault injection: each additional scenario must still expose a material gap against the purpose, and none turns same-session success into independent convergence.
+
+[!REALIZATION] Bundle selection determines which input files are required. Optional research content stays optional until selected; once selected, silently skipping it while declaring success breaks the same delivery contract as skipping the operational entry point. Preflight makes that boundary explicit without changing standalone skill support or introducing a new installation mode.
+
+The implementation assumption being corrected is that a missing selected file can be a successful skip. The frozen Destination already supplies the governing requirement for useful first use and truthful evidence. No direction change or deliberate capability reduction is implicated. Reflection reuse preserves the session's known evidence limits and avoids reprocessing the entire historical trace for another local installer correction.
+
+### Candidate Next Moves
+
+1. A fresh-session evaluation of the changed artifact under the frozen Destination remains the convergence-relevant next step; this same-session repair provides no independent silence.
+
+Orientation freshness: current - the map already distinguishes adoption evidence from clearer wording and requires machinery to earn its cost; this bounded preflight repair is consistent with those claims. No automatic Orient is scheduled.
+Destination need: not triggered - the approved change implements existing useful-first-run and evidence requirements; Destination remains frozen and unchanged.

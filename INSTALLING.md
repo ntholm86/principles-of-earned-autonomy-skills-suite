@@ -11,6 +11,8 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1     # Windows 
 
 The default install copies the five operational skills plus PRINCIPLES.md. Probe is omitted so normal users see only the operational command surface.
 
+Before writing to the destination, both installers check that every selected skill has a `SKILL.md` file. A missing file stops installation with an error and leaves the destination unchanged. Probe is required only when research mode is selected; `PRINCIPLES.md` remains optional. This preflight does not provide rollback for later copy or disk errors.
+
 To install into a project instead of user-global:
 
 ```

@@ -17,20 +17,23 @@ if ($Research) {
 }
 $src = $PSScriptRoot
 
+foreach ($skill in $skills) {
+    $skillSrc = Join-Path $src "$skill\SKILL.md"
+    if (-not (Test-Path -LiteralPath $skillSrc -PathType Leaf)) {
+        throw "Missing required skill file: $skillSrc. Installation not started."
+    }
+}
+
 if (-not (Test-Path $Target)) {
     New-Item -ItemType Directory -Path $Target -Force | Out-Null
 }
 
 foreach ($skill in $skills) {
     $skillSrc = Join-Path $src "$skill\SKILL.md"
-    if (Test-Path $skillSrc) {
-        $skillDst = Join-Path $Target $skill
-        New-Item -ItemType Directory -Path $skillDst -Force | Out-Null
-        Copy-Item $skillSrc (Join-Path $skillDst 'SKILL.md') -Force
-        Write-Host "  installed: $skill"
-    } else {
-        Write-Host "  skipped:   $skill (no SKILL.md found)"
-    }
+    $skillDst = Join-Path $Target $skill
+    New-Item -ItemType Directory -Path $skillDst -Force | Out-Null
+    Copy-Item $skillSrc (Join-Path $skillDst 'SKILL.md') -Force
+    Write-Host "  installed: $skill"
 }
 
 $principles = Join-Path $src 'PRINCIPLES.md'
