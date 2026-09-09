@@ -1253,6 +1253,14 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REVERSAL]** Entry 272 decided that the lens should contain "one self-targeting scope statement." This run reverses that part of the decision. The statement was still a prescribed condition even after the route taxonomy had been removed.
 
+## 2026-08-16 — add-bounded-supervision-and-delegation-gates
+
+**[!REALIZATION]** Transparency and permission are separate variables. Narrating Intent and proposed action makes autonomous work steerable, but it does not tell a new operator whether silence means consent. Explicit delegation closes that ambiguity without reducing autonomy: supervision is the absence-of-agreement default, while earned autonomy is a positive authority statement scoped to routine decisions. Operator-owned questions remain blocking because they concern the reference signal or declared boundaries, not the route.
+
+## 2026-08-16 — add-bounded-supervision-and-delegation-gates
+
+**[!REVERSAL]** The August 13 `improve-single-entry-progressive-destination` decision treated silence after visible Intent narration as sufficient authority for bounded current work. This run supersedes that default: visible narration remains necessary, but without explicit delegation the operator now confirms it and the proposed implementation.
+
 ---
 
-**312 markers — 274 realisations, 38 reversals**
+**314 markers — 275 realisations, 39 reversals**

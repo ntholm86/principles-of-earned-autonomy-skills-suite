@@ -89,9 +89,8 @@ STUB_TEMPLATE = """\
 
 - target: {target}
 - operator: TODO
-- agent: TODO (provider, tool-call ID prefix)
+- agent: TODO (model family and version, e.g. Claude Fable 5.1; mark operator-stated identity as such - the host product alone is not a family)
 - skill: {skill}
-- session-file: .acm/sessions/{date}-{slug}.md
 - outcome: TODO
 - delta: TODO
 
@@ -111,7 +110,7 @@ TODO
 
 TODO — state a falsifiable prediction of what this change will achieve and what will not happen, before taking action.
 
-### Action and Outcome
+### Action
 
 TODO — detail what was done, and explicitly compare the actual outcome to the prediction above.
 
@@ -140,7 +139,7 @@ TODO — the strongest objection from someone who knows the target better.
 
 TODO
 
-### Candidate next moves
+### Candidate Next Moves
 
 *(One ranked list of candidate moves visible from this iteration. Operator may pick, redirect, or ignore. Omit if convergence was declared.)*
 
@@ -176,7 +175,7 @@ def cmd_new(args: argparse.Namespace) -> int:
     # Compute and print the line range of the new entry.
     start_line = existing.count("\n") + 1
     end_line = new_text.count("\n")
-    print(f"appended stub: .acm/audit-trail.md lines {start_line}-{end_line}")
+    print(f"appended stub: {LOG.relative_to(ROOT).as_posix()} lines {start_line}-{end_line}")
     print(f"  date: {date}")
     print(f"  slug: {args.slug}")
     return 0

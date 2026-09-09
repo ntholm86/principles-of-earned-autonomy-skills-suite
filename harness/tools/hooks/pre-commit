@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
-"""pre-commit hook â€” enforces Observable Autonomy.
+"""pre-commit hook - enforces Observable Autonomy.
 
 If this commit touches substantive files (skills, tools, principles, README)
 but does not stage a corresponding update to .acm/audit-trail.md, the commit is
 rejected. The agent (or operator) must record what changed and why.
 
-Override with `git commit --no-verify` â€” the override itself is auditable
+Override with `git commit --no-verify` - the override itself is auditable
 (the absent trail entry will show up at the next verify.py run).
 
-Install:
-  bash tools/install-hooks.sh        # macOS / Linux
-    powershell -NoProfile -ExecutionPolicy Bypass -File tools/install-hooks.ps1  # Windows
+Install (run from the target repo root; the scripts live in the skills clone):
+  bash <skills-repo>/harness/tools/install-hooks.sh        # macOS / Linux
+  powershell -NoProfile -ExecutionPolicy Bypass -File <skills-repo>/harness/tools/install-hooks.ps1  # Windows
 """
 from __future__ import annotations
 
@@ -19,7 +19,8 @@ import subprocess
 import sys
 from pathlib import Path
 
-SUBSTANTIVE = re.compile(r"^(.*/SKILL\.md|PRINCIPLES\.md|README\.md|verify\.py|tools/.*\.py)$")
+# tools/ moved under harness/ in v3.x; both forms count so target repos keep matching their own tools/.
+SUBSTANTIVE = re.compile(r"^(.*/SKILL\.md|PRINCIPLES\.md|README\.md|verify\.py|(?:harness/)?tools/.*\.py)$")
 # Repo scope or a named task scope (.acm/<task>/audit-trail.md); see trail/SKILL.md.
 TRAIL_LOG = re.compile(r"^\.acm/(?:[^/]+/)?audit-trail\.md$")
 

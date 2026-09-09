@@ -5,15 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 312 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-16 — add-bounded-supervision-and-delegation-gates
-
-**[!REALIZATION]** Transparency and permission are separate variables. Narrating Intent and proposed action makes autonomous work steerable, but it does not tell a new operator whether silence means consent. Explicit delegation closes that ambiguity without reducing autonomy: supervision is the absence-of-agreement default, while earned autonomy is a positive authority statement scoped to routine decisions. Operator-owned questions remain blocking because they concern the reference signal or declared boundaries, not the route.
-
-## 2026-08-16 — add-bounded-supervision-and-delegation-gates
-
-**[!REVERSAL]** The August 13 `improve-single-entry-progressive-destination` decision treated silence after visible Intent narration as sufficient authority for bounded current work. This run supersedes that default: visible narration remains necessary, but without explicit delegation the operator now confirms it and the proposed implementation.
+Showing the most recent 60 markers. 314 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-16 — orient-after-bounded-supervision-and-delegation
 
@@ -246,6 +238,14 @@ Showing the most recent 60 markers. 312 older marker(s) are in `.acm/learning-ar
 ## 2026-09-09 — named-task-scopes-inside-repo-acm
 
 **[!REALIZATION]** The ACM scope axis was specified as a filesystem property, but the unit of memory that actually needs separating is the mandate, not the directory. Tasks in one bounded context share files and diverge in purpose; a scope keyed to the confirmed mandate follows purpose, and the existing Intent gate is already where purpose is confirmed. This is the same move as the 2026-08-16 authority arc (authority from explicit mandate, not from context or silence) applied to memory placement.
+
+## 2026-09-09 — harness-tools-tier-aligned-to-current-contracts
+
+**[!REALIZATION]** The prior entry predicted the next defect would be in record.py's new stub and would be a tool assuming one scope-discovery form. The location was right and the mechanism was wrong: the scope handling held, and the stub's defects were three older migrations that never reached the tooling tier. A migration's scope has been defined by the surfaces its author read, and the tooling tier is the one surface that contracts describe, docs link to, and no evaluator opens - so it accumulated three migrations' worth of drift while the contracts and README were each reconciled twice. Coverage defined by inclusion lists guarantees that the next drift is in the surface no list names.
+
+## 2026-09-09 — harness-tools-tier-aligned-to-current-contracts
+
+**[!REVERSAL]** Within this iteration: wrote the Windows install path in the hook docstring with backslashes; reversed to forward slashes after py_compile -W error flagged the escape sequence. PowerShell accepts either separator, so nothing is lost.
 
 ---
 

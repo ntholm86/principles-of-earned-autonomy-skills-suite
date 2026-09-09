@@ -236,7 +236,9 @@ def check_no_mojibake() -> list[str]:
             continue
         if any(rel_parts[: len(sp)] == sp for sp in skip_paths):
             continue
-        if path.suffix.lower() not in {".md", ".txt", ".py", ".yml", ".yaml", ".cff", ".json"}:
+        # Suffixless files (git hooks, LICENSE, dotfiles) are text too; the hook
+        # carried mojibake for 80 days because this filter skipped it.
+        if path.suffix and path.suffix.lower() not in {".md", ".txt", ".py", ".yml", ".yaml", ".cff", ".json"}:
             continue
         try:
             text = path.read_text(encoding="utf-8")
