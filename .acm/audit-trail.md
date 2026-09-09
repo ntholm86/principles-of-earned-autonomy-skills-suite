@@ -17701,3 +17701,65 @@ Read as one document, the September arc is now eight reads and eight one-surface
 
 Orientation freshness: current - orientation claim 4 (adoption now requires operational understanding on first use) and claim 7 (accretion observed) describe this run; the realization adds a measured instance on the public surface without contradicting the map. No arc read scheduled.
 Destination need: not triggered - the operator's standing direction (Destination fixed, frontier-family convergence) held; quality bar 2 already governs this finding.
+
+## 2026-09-09 - correction-readme-convergence-defers-to-principle-3
+
+- target: skills repo (this repo) - README.md convergence row, How The Model Works closing sentence, Workflow; same-session operator correction of b6e9f13
+- operator: maintainer (Nils Holmager)
+- agent: GitHub Copilot (Claude Fable 5.1; model identified by the host session)
+- skill: improve
+- outcome: operator rejected the previous entry's framing ("You arrange it", a Workflow step telling the operator to run other model families); README now defers convergence to Principle 3 by link and assigns it to no one; convergence lease NOT renewed (change produced; same-session follow-up, not an independent read)
+- delta: README.md (row label, closing sentence, Workflow step 3 removed); CHANGELOG v4.33.13
+
+### Interpretation of the ask
+
+Operator verbatim: "I dont want operator arranged convergence - i want true and honest conergence. / The destination is frozen now. / Use the improve skill again". At the first action gate the operator added: "it is NOT the operator that declares convergence - operator only gives mandate to the destination - or interpretation of prompt. from then on - the AI takes over and declares silence on its own". At the second: "i dont understand why we have to go over this again. This is already defined by the principles which lives outside the skillset".
+
+Intent narration (confirmed): a Specify correction of the previous run's wording, not of its finding. "Automatic" was wrong; "You arrange it" was also wrong because it made convergence an operator-produced outcome. Destination frozen: recorded here as an operator instruction; no Destination scheduling this run or in following runs while it stands. Rejected reading: that the operator wanted the row removed or the family-diversity rule changed.
+
+### Examination
+
+Scope: the three README sentences b6e9f13 introduced. Purpose lens: the operator's two gate answers define the authority split the README must respect - operator gives mandate and confirms interpretation; the agent declares silence; convergence is defined by PRINCIPLES.md, which is a copy of an external canonical document. Any README sentence that restates the convergence criterion in its own words creates a second definition the suite must keep aligned, and the previous entry's own realization (labels that encode authority need re-reading when authority changes) applies to the sentence it wrote. Inconsistency lens: the Reference section already points at the Principles source; the row and the model paragraph were the only places the README defined convergence itself. Waste lens: Workflow step 3 was procedure the Principles already state. Nothing else examined; this is a same-session correction, not a fresh read.
+
+### Decision
+
+[!DECISION] Defer rather than redefine: row label "Principle 3", cell text "The agent declares silence when it finds nothing material; convergence is defined by Convergence Is Silence, not by this suite" with a local link to PRINCIPLES.md; model paragraph ends "A run that finds nothing material declares silence; convergence is Principle 3"; Workflow step 3 removed. Alternatives rejected at the gates: (a) "Earned" label with the criterion restated in README words - operator rejected, it still put the operator in the loop; (b) "Agent verdict" label with a Workflow step "You give the mandate ... the verdict is the agent's" - operator rejected, the Principles already define this outside the skillset. Precedent check at decision time: learning.md - 2026-08-16 remove-capability-route-prescription (the suite prescribing what the Principles or Destination already govern) is the class; 2026-09-05 correction-destination-authorship-is-approval-not-authorship is the same shape of same-day operator correction of an agent-supplied authority reading.
+
+[!REVERSAL] Reverses the wording decision of the preceding entry (readme-convergence-is-operator-arranged): the label "You arrange it", the operator-addressed closing sentence, and Workflow step 3 are withdrawn. The finding that "Automatic" was wrong stands.
+
+### Prediction
+
+Stated before acting: README contains no sentence assigning convergence to the operator or to Improve; the row links to PRINCIPLES.md and verify.py's local-link check passes; Workflow has two steps; git diff --stat shows README.md and CHANGELOG.md only. Not expected: any contract change; lease renewal.
+
+### Action
+
+Applied the three README edits and the CHANGELOG entry in one batch. python verify.py -> OK. git diff --stat -> CHANGELOG.md +4, README.md +3/-2 (net -1 line). Select-String for arrange / you have run / Reach silence / cannot do this step -> no matches; "Principle 3" at lines 41 and 47. Outcome vs prediction: held on every point. No cold reader this time: the change removes a definition instead of adding one, and the operator's own reading at the gate is the acceptance evidence.
+
+### Reflection
+
+Model-claim: the README's remaining risk is restating, in its own words, rules that the Principles or the Destination already own - each restatement is a second definition that drifts and that the operator then has to correct. A future run can disagree by finding a README sentence that restates a Principle and has stayed aligned for months without correction.
+
+Blind spot: I did not re-read the rest of the README for other restated Principle-level rules (the Reference line "Convergence criterion: three independent model families report no further actionable change" is one; left in place as the operator did not object and it cites the source beside it). QUICKSTART and the website were not checked for the same pattern.
+
+Imagined-reader pushback: "Two corrections in one day on the same three sentences is the loop spending a session on the shop window." Yes; the cost is real. The cause was the agent supplying an owner for convergence twice when the correct answer was to name none - the same defect as the route-prescription arc, on the public surface.
+
+[!REALIZATION] When a surface needs to say who holds an authority, and the honest answer is "the Principles define it and no one declares it", the agent's instinct to pick an owner (the loop, then the operator) is itself the defect. Deferring by link is the lean fix; both restatements were longer and both were wrong.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED - same-day operator correction of an agent-supplied authority reading, third instance (2026-08-16 remove-capability-route-prescription, 2026-09-05 correction-destination-authorship-is-approval-not-authorship, now this).
+- *About to declare silence:* not fired - this run made a change.
+- *Contradicts prior [!REALIZATION]:* not fired - the preceding entry's realization (authority labels need re-reading) is applied to its own sentence; its decision is reversed, its realization is not.
+- *Operator explicitly asked:* not fired - the operator asked for an Improve run with a correction, not an arc-level reflection.
+
+**Across-trail macro-Hansei**
+
+The three operator corrections of agent-supplied authority readings share a shape: the agent found a real defect, then filled the gap with a specific owner or route, and the operator had to remove the specificity. The Principles and the frozen Destination already hold those answers; the loop's job on such surfaces is to point, not to paraphrase. Single-loop or double-loop: the governing variable is Operator's Intent itself, already in the fixed boundary; no Destination change is implicated and the operator has frozen it. Named, not escalated.
+
+### Candidate Next Moves
+
+1. **Fresh-session cold evaluation of HEAD by a family that has not read it** - the only move on the lease-renewal path; this same-session correction is not an independent read.
+2. Optional: read the README, QUICKSTART, and INSTALLING once for other sentences that restate a Principle or Destination rule in local words, and replace each with a link.
+
+Orientation freshness: current - orientation claims 4 and 7 still describe the arc; this entry adds a within-day reversal, not a new map.
+Destination need: not triggered - the operator has frozen the Destination; no Destination run will be scheduled while that instruction stands.

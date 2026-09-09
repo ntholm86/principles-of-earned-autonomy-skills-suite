@@ -1241,6 +1241,14 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** The suite can prescribe autonomy while believing it is merely enabling intelligence. A taxonomy, risk list, fallback rule, or mechanism example may be a sound current answer and still violate Operator's Intent when embedded in the question every future agent must answer. Capability awareness belongs in Improve as a change in what the target may now make possible; the content of that awareness must remain discoverable by the executing agent. This claim is falsified if agents consistently fail to derive safe, useful routes without the removed specifics.
 
+## 2026-08-16 — remove-capability-route-prescription
+
+**[!REVERSAL]** The preceding self-target run explicitly decided to keep the lens unchanged, and the subsequent explanation defended a model-agnostic contract plus capability-adaptive route. The operator correctly identified that the lens itself already prescribed that route. Reversed the prior decision and removed the proposed architecture from the governing question.
+
+## 2026-08-16 — remove-self-targeting-condition-from-capability-lens
+
+**[!REALIZATION]** The Destination was not incomplete; learning carry-forward failed at the point of decision. The suite had already recorded the same operator rejection twice and had absorbed the positive requirement into Destination, yet a later correction preserved the special case as though naming scope were different from prescribing derivation. The recurring defect is promoting a correct consequence for this repository into generic skill text when Purpose was already capable of deriving it. This claim is falsified if diverse cold readers cannot derive recursive scope from the current Destination and generic Purpose lens.
+
 ---
 
-**309 markers — 273 realisations, 36 reversals**
+**311 markers — 274 realisations, 37 reversals**

@@ -1,5 +1,9 @@
 # Changelog
 
+## v4.33.13 - 2026-09-09
+
+- **README defers convergence to Principle 3 instead of assigning it to anyone.** v4.33.12 replaced the wrong label "Automatic" with "You arrange it" and a Workflow step telling the operator to run fresh sessions in other model families. The operator rejected that framing: the operator gives the mandate and confirms the interpretation; the agent declares silence on its own; convergence is defined by the Principles, which live outside this suite. The row now reads **Principle 3** and links to Convergence Is Silence; the model paragraph ends "convergence is Principle 3"; Workflow step 3 is removed. Same session as v4.33.12, Claude Fable 5.1, operator correction.
+
 ## v4.33.12 - 2026-09-09
 
 - **README no longer presents convergence as something the agent does for you.** The component table labeled "Convergence to silence" as **Automatic** in the column where every other Automatic means "Improve invokes it," and the Workflow never said the operator must run fresh sessions in different model families. The trail's own evidence (`2026-09-05 bounded-same-family-silence-no-manufactured-work`) shows the agent cannot arrange that step, and an automatic convergence would be the self-assessment Principle 3 forbids. The row now reads **You arrange it** and names the trail as its artifact; the model description distinguishes a run's bounded silence from convergence; the Workflow gains step 3 (fresh session, different family, unchanged artifact, verdict recorded with model family; three in a row; any change resets). No contract or verifier change. Found by a fresh-session Claude Fable 5.1 convergence evaluation of the suite at cb47b71.

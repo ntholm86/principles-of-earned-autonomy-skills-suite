@@ -38,13 +38,13 @@ Run **Improve** on a real, bounded task. It invokes Intent before acting and Tra
 | **[Destination](./destination/SKILL.md)** | **Automatic** | Consolidates accepted mandates into durable direction. |  | .acm/destination.md |
 | **[Orient](./orient/SKILL.md)** | **Automatic** | Reflects on past runs to spot recurring mistakes and dead ends. |  | .acm/orientation.md |
 | **[Probe](./probe/SKILL.md)** | **Research** | Measures Autonomous Reasoning Fidelity. | Autonomous Reasoning Fidelity |  |
-| **Convergence to silence** | **You arrange it** | Each run ends in a bounded silence when it finds nothing material; convergence is three such verdicts from different model families in fresh sessions, which the agent cannot run for itself. | Convergence Is Silence | .acm/audit-trail.md (silence entries) |
+| **Convergence to silence** | **Principle 3** | The agent declares silence when it finds nothing material; convergence is defined by [Convergence Is Silence](./PRINCIPLES.md#principle-3-convergence-is-silence), not by this suite. | Convergence Is Silence | .acm/audit-trail.md (silence entries) |
 
 The operator remembers one command: `/improve`. The rest is automatic under Improve's control.
 
 ## How The Model Works
 
-Point Improve at a task. Each run reads your destination, the current map, and the trail; examines the target; makes one highest-leverage change; verifies it against a prediction recorded in advance; and writes the whole thing to an append-only ledger before finishing. When accumulated runs expose an unclear direction, Improve pauses to ask you; when the trail contradicts the map, it re-reads the whole arc and refreshes the map; and every lesson feeds the next run, so the suite gets smarter across sessions and model swaps. A run stops when it finds nothing material; the work has converged when you have run it in fresh sessions with three different model families and each ended in that silence on the unchanged artifact.
+Point Improve at a task. Each run reads your destination, the current map, and the trail; examines the target; makes one highest-leverage change; verifies it against a prediction recorded in advance; and writes the whole thing to an append-only ledger before finishing. When accumulated runs expose an unclear direction, Improve pauses to ask you; when the trail contradicts the map, it re-reads the whole arc and refreshes the map; and every lesson feeds the next run, so the suite gets smarter across sessions and model swaps. A run that finds nothing material declares silence; convergence is Principle 3.
 
 ### Destination — Where are we going?
 
@@ -108,7 +108,6 @@ When you swap from Claude to GPT to Gemini, the next model picks up this exact o
 
 1. **Run:** Invoke `improve` with a concrete prompt. Without explicit delegation, Intent asks you to confirm its interpretation and Improve asks you to approve its proposed change. Each accepts Stop or Specify instead.
 2. **Keep going:** Invoke `improve` again when there is more work. Improve automatically schedules Destination when broader direction needs confirmation and Orient when accumulated evidence makes the current orientation stale.
-3. **Reach silence:** When a run ends with nothing to change, start a fresh session with a different model family (Claude, GPT, Gemini — versions of one model count as one family) and run `improve` on the unchanged artifact. Each verdict is recorded in the trail with the model family and version; three distinct families in a row is convergence. Any change resets the count. The agent cannot do this step for itself.
 
 The operator remembers one command: `/improve`. `/destination` and `/orient` remain manual overrides, not routine responsibilities.
 

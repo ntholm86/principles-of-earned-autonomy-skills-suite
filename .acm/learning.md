@@ -5,15 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 309 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-16 — remove-capability-route-prescription
-
-**[!REVERSAL]** The preceding self-target run explicitly decided to keep the lens unchanged, and the subsequent explanation defended a model-agnostic contract plus capability-adaptive route. The operator correctly identified that the lens itself already prescribed that route. Reversed the prior decision and removed the proposed architecture from the governing question.
-
-## 2026-08-16 — remove-self-targeting-condition-from-capability-lens
-
-**[!REALIZATION]** The Destination was not incomplete; learning carry-forward failed at the point of decision. The suite had already recorded the same operator rejection twice and had absorbed the positive requirement into Destination, yet a later correction preserved the special case as though naming scope were different from prescribing derivation. The recurring defect is promoting a correct consequence for this repository into generic skill text when Purpose was already capable of deriving it. This claim is falsified if diverse cold readers cannot derive recursive scope from the current Destination and generic Purpose lens.
+Showing the most recent 60 markers. 311 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-16 — remove-self-targeting-condition-from-capability-lens
 
@@ -246,6 +238,14 @@ Showing the most recent 60 markers. 309 older marker(s) are in `.acm/learning-ar
 ## 2026-09-09 — readme-convergence-is-operator-arranged
 
 **[!REALIZATION]** The README's "Automatic" column could not carry convergence because the column encodes Improve's authority to invoke, and convergence is the one step in the suite where authority sits outside the agent by design. The trail had already established this (2026-09-05) as an operational fact; the public surface still described the pre-lease picture in which the loop simply stops. Labels that encode authority need the same re-read as sentences that define it when the authority model changes - the 2026-09-05 realization about terms, applied to a table column.
+
+## 2026-09-09 — correction-readme-convergence-defers-to-principle-3
+
+**[!REALIZATION]** When a surface needs to say who holds an authority, and the honest answer is "the Principles define it and no one declares it", the agent's instinct to pick an owner (the loop, then the operator) is itself the defect. Deferring by link is the lean fix; both restatements were longer and both were wrong.
+
+## 2026-09-09 — correction-readme-convergence-defers-to-principle-3
+
+**[!REVERSAL]** Reverses the wording decision of the preceding entry (readme-convergence-is-operator-arranged): the label "You arrange it", the operator-addressed closing sentence, and Workflow step 3 are withdrawn. The finding that "Automatic" was wrong stands.
 
 ---
 
