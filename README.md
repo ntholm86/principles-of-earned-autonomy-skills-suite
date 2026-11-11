@@ -160,3 +160,7 @@ Together, these force the agent to lock its reasoning *before* acquiring evidenc
 
 MIT License.
 [CITATION.cff](./CITATION.cff) | Zenodo: [10.5281/zenodo.19842994](https://doi.org/10.5281/zenodo.19842994)
+
+---
+
+Author: [Nils Wendelboe Holmager](https://nilsholmager.com/) · [Project context and connected work](https://nilsholmager.com/research/pea-skills-suite/)
