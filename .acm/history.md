@@ -326,6 +326,7 @@ Do not edit by hand — re-run the command to refresh.
 | · 319 | 2026-09-09 | hook-target-agnostic-staged-coverage | material hook coverage defect reproduced and fixed; no bounded silence; convergence chain resets | v4.34.1 -> v4.34.2; suite-specific hook allowlist replaced by staged changes outside .acm/ requiring an added or modified repo/task trail; 10 new regression tests; guarantee clarified in docs |
 | · 320 | 2026-09-09 | hook-installers-respect-effective-git-path | installation activation defect reproduced and repaired; no silence; material change resets the convergence chain | v4.34.2 -> v4.34.3; both installers use Git's resolved hook path and preserve differing existing hooks; integration coverage and guidance added |
 | · 321 | 2026-09-09 | skill-installers-preflight-selected-files | incomplete-bundle success-reporting defect reproduced and repaired; no silence; material change resets the convergence chain | v4.34.3 -> v4.34.4; selected skill files checked before destination writes; 10 new tests pass across PowerShell and Bash |
+| ▸ 322 | 2026-11-11 | evidence-led-visibility-pilot (pre-action checkpoint) | implementation and four exploratory sessions explicitly authorized |  |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -1481,4 +1482,8 @@ Do not edit by hand — re-run the command to refresh.
 - **decided:** Check that each selected skill path is a file before creating or writing the destination; fail with a nonzero exit and a named missing-file error otherwise. Probe is selected only in research mode; PRINCIPLES.md remains optional. Apply this in both installers, add focused tests, and document the guarantee. Operator approved with "GO AHEAD".
 - **REVERSAL:** Corrected the test harness's assumption that launching MinGit's sh.exe alone provides its utility PATH. Added its containing directory to the child environment on Windows and reran the same checks. All 10 cases then passed, including actual Bash installation; no product edit was backed out.
 
-**321 runs total — 293 with changes, 28 silence**
+### Run 322 — 2026-11-11 — evidence-led-visibility-pilot (pre-action checkpoint)
+
+- **decided:** Add a small dependency-free cart fixture, frozen 17-check evaluator,
+
+**322 runs total — 294 with changes, 28 silence**

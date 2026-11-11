@@ -1,0 +1,50 @@
+name: Accountable agent pilot
+description: Report a useful result, failure or abandoned attempt; no positive testimonial required.
+title: "[Pilot] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Share only nonconfidential material. Remove credentials, private code,
+        personal data and unrelated transcript content. Submitting a report does
+        not grant permission to quote you or name your employer in promotion.
+  - type: textarea
+    id: environment
+    attributes:
+      label: Host, model and suite revision
+      description: Include unknown values as unknown rather than guessing.
+    validations:
+      required: true
+  - type: textarea
+    id: task
+    attributes:
+      label: Task and expected outcome
+      description: Synthetic fixture or your own bounded task; omit private code.
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: What happened
+      description: Include installation failures, incomplete work and the point where you stopped.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Verification and decision evidence
+      description: Link public tests/diffs if available. Did the trail help you examine a decision?
+  - type: textarea
+    id: cost
+    attributes:
+      label: Time, cost and willingness to reuse
+      description: Only report measured usage as measured. Would you voluntarily use it again, and why?
+  - type: dropdown
+    id: followup
+    attributes:
+      label: May the maintainer ask follow-up questions in this issue?
+      options:
+        - "No"
+        - "Yes"
+    validations:
+      required: true

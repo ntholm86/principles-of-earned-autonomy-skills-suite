@@ -18174,3 +18174,67 @@ The implementation assumption being corrected is that a missing selected file ca
 
 Orientation freshness: current - the map already distinguishes adoption evidence from clearer wording and requires machinery to earn its cost; this bounded preflight repair is consistent with those claims. No automatic Orient is scheduled.
 Destination need: not triggered - the approved change implements existing useful-first-run and evidence requirements; Destination remains frozen and unchanged.
+
+## 2026-11-11 - evidence-led-visibility-pilot (pre-action checkpoint)
+
+- target: public Skills Suite contribution, reproducible pilot and distribution
+- operator: Nils Wendelboe Holmager
+- agent: AI assistant using Copilot SDK in VS Code; model identity not exposed
+- skill: intent, improve, engineering-preferences, trail
+- outcome: implementation and four exploratory sessions explicitly authorized
+
+Interpretation: turn the approved visibility recommendations into an evidence-led
+effort, not a self-awarded pioneer label. Sharpen claims, create a reproducible
+demonstration, prepare three posts and targeted outreach, and seek independent
+criticism without claiming that author-run tests are independent validation.
+The operator approved "Run the four-session exploratory comparison" and
+"Publish the verified repository changes; show me social posts and outreach
+before sending." Posts/messages therefore remain review-gated.
+
+Purpose lens: the public framework/implementation exist, but readers need a
+bounded task and an easy way to report what happened. Inconsistency lens:
+"will immediately solve" overstates model-dependent instruction behavior;
+GitHub description still uses old names and an obsolete count. Evidence lens:
+workspace orientation records Far Horizon as one verified transfer, not zero
+adoption; wider active use and independent replication remain unproven.
+Challenge: another explanatory page alone would not meet the ask. A runnable
+task and independently collected outputs matter more than extra positioning.
+No framework redesign or skill-capability reduction is authorized or needed.
+
+[!DECISION] Add a small dependency-free cart fixture, frozen 17-check evaluator,
+four-run protocol, isolated CLI runner and opt-in report template. Reuse the
+existing benchmark replication boundary rather than relabel this pilot as B1
+or ARF validation. Correct only claim strength, not the research destination.
+Reject publishing unrelated local work: the original skills worktree is dirty
+and contains unpublished changes, so this branch starts at public a2bb654.
+Precedent check: current workspace/suite destinations, orientation and recent
+learning distinguish successful installation from host discovery, trace from
+independent evidence, and practitioner use from attention or distribution.
+
+Prediction before agent invocation: the initial fixture passes 6 original tests
+and 5/17 feature checks; both arms can solve the same explicit task, while PEA
+may leave a more inspectable decision record. All four attempts, failures and
+unknowns will be retained. No causal, speed, safety or independent-validation
+claim follows from two author-run trials per arm. Full protocol is frozen in
+experiments/accountable-agent-pilot/PROTOCOL.md before observing results.
+
+### Candidate Next Moves
+
+1. Invite existing adopter feedback first because actual transfer is stronger than speculative audience reach.
+2. Offer a local code-first demo and seek five independent trial reports before broad launch claims.
+3. Submit to wider developer communities only with an executable example and time to answer criticism.
+
+Destination need: not triggered - the operator approved this bounded adoption
+effort under the existing research/adoption priorities.
+Orientation freshness: current - program-level transfer/provenance and suite
+first-use evidence boundaries explain this iteration; no convergence verdict.
+
+Pre-action reflection: this fixture can test inspectable delivery, not the
+broader research thesis. The named blind spot is model/host availability in
+fresh isolated sessions. A practitioner could reasonably find the task too
+small to establish value; that is why independent own-task trials come next.
+
+- *Recurring finding-class:* not fired - recent installer/record-helper repairs concern delivery mechanics; this is a new bounded public comparison and distribution effort.
+- *About to declare silence:* not fired - implementation is staged and trial results are not yet observed.
+- *Contradicts prior realization:* not fired - one external transfer and the limitations of author-written traces remain acknowledged.
+- *Operator explicitly asked for arc reflection:* not fired - the operator approved execution of visibility recommendations, not a whole-trail review.

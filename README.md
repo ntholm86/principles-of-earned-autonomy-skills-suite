@@ -2,7 +2,7 @@
 
 ## Give your AI Intent, Reasoning & Memory.
 
-These skills will immediately solve:
+These skills are designed to address:
 
 - **Intent decay** — starts on your goal, drifts to a different one.
 - **Directionless autonomy** — implements exactly what you wrote, misses the obvious point.
@@ -15,6 +15,12 @@ These skills will immediately solve:
 - **No honest stop** — the loop invents work to keep running.
 
 This suite gives an agent a durable destination, memory of what happened, and a disciplined way to examine, improve, verify, and learn from its work. It interprets what you mean before acting, keeps the work anchored to the purpose, preserves decisions across sessions and model swaps, and stops when independent attempts find nothing material left to change.
+
+These are intended behaviors, not guaranteed outcomes. Results depend on the
+model, host, task and whether the protocol is followed. The suite does not
+establish reasoning faithfulness, safety or correctness merely by producing a
+trail. [Try the reproducible pilot](./experiments/accountable-agent-pilot/README.md)
+to examine observable behavior and report failures as well as useful results.
 
 **Try it:** run `Improve` on a real, bounded task. The agent chooses the route; you keep the destination and the consequential decisions.
 
