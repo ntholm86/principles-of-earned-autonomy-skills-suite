@@ -19,6 +19,8 @@ if (relative === '' || (!relative.startsWith(`..${path.sep}`) && !path.isAbsolut
 fs.mkdirSync(output, { recursive: true });
 
 const cli = process.env.PILOT_COPILOT ?? 'copilot';
+const cliCommand = cli.endsWith('.js') ? process.execPath : cli;
+const cliPrefix = cli.endsWith('.js') ? [cli] : [];
 const commonTask = fs.readFileSync(path.join(root, 'PROTOCOL.md'), 'utf8')
   .split('## Common task (verbatim)')[1].split('The baseline receives')[0]
   .split('\n').filter(line => line.startsWith('>')).map(line => line.replace(/^> ?/, '')).join(' ');
@@ -79,7 +81,7 @@ for (const name of ['baseline-1', 'pea-1', 'pea-2', 'baseline-2']) {
   };
   const originalTests = capture('before-tests', process.execPath, ['--test', 'cart.test.mjs']);
   if (originalTests.exitCode !== 0) throw new Error(`${name}: original fixture tests failed.`);
-  const discovered = capture('skills', cli, ['skill', 'list'], { timeout: 30_000 });
+  const discovered = capture('skills', cliCommand, [...cliPrefix, 'skill', 'list'], { timeout: 30_000 });
   const discoveryText = fs.readFileSync(path.join(runRoot, 'skills.stdout.txt'), 'utf8');
   const installed = [];
   let source = null;
@@ -104,11 +106,11 @@ for (const name of ['baseline-1', 'pea-1', 'pea-2', 'baseline-2']) {
   if (!skillIsolation) {
     invocation = { exitCode: null, signal: null, error: 'Skill isolation not established; no model invoked.' };
   } else {
-    invocation = capture('agent', cli, [
+    invocation = capture('agent', cliCommand, [...cliPrefix,
       '-p', prompt, '--output-format', 'json', '--stream', 'off',
       '--no-custom-instructions', '--disable-builtin-mcps', '--no-remote',
       '--no-remote-export', '--no-auto-update', '--no-ask-user',
-      '--disallow-temp-dir', '--max-ai-credits', '5',
+      '--disallow-temp-dir', '--max-ai-credits', '30',
       '--available-tools', 'powershell,read_file,create_file,replace_in_file,grep,glob,view,edit,create,skill',
       '--deny-tool', 'url', '--deny-tool', 'shell(git push)',
       '--allow-all-tools',

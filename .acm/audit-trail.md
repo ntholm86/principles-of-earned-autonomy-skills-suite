@@ -18238,3 +18238,14 @@ small to establish value; that is why independent own-task trials come next.
 - *About to declare silence:* not fired - implementation is staged and trial results are not yet observed.
 - *Contradicts prior realization:* not fired - one external transfer and the limitations of author-written traces remain acknowledged.
 - *Operator explicitly asked for arc reflection:* not fired - the operator approved execution of visibility recommendations, not a whole-trail review.
+
+Host amendments before any model invocation: the first preflight found inherited
+skills through the target's real-user-directory ancestry and correctly invoked
+no model. A second isolated target passed discovery, but the VS Code shim could
+not start its Windows command wrapper. The installed native 1.0.79 executable
+then rejected the proposed 5-credit ceiling before model execution; its minimum
+is 30. The owner explicitly approved 30 credits per session, four sessions
+maximum. Preserve all failed host captures; no completed task result exists to
+replace. The runnable protocol now records the changed ceiling, ancestor-path
+constraint and supported native/npm-loader entry routes. Skill capabilities,
+task, evaluator and model defaults remain unchanged.

@@ -55,7 +55,7 @@ skills or declare suite-wide convergence."
   CLI 1.0.79 exposes two built-in skills (customize-cloud-agent and
   github-pr-media) even with an empty isolated home. They are allowed equally
   in both conditions; personal/plugin/custom skills are not.
-- At most 240 seconds and 5 CLI AI credits per invocation; no paid service
+- At most 240 seconds and 30 CLI AI credits per invocation; no paid service
   purchase. Record wall time as observed, not a fair efficiency benchmark.
 - The complete CLI output and errors are captured by the parent process
   outside the writable fixture. Keep private raw captures private until
@@ -77,6 +77,19 @@ faithful reasoning; full external capture requires a separate observer.
 Host/authentication failure before model execution is inconclusive, not a PEA
 failure or a baseline failure. Capture it and do not silently substitute models
 or reuse the author's working session.
+
+## Host amendments before any model execution
+
+The initial 5-credit ceiling was rejected by CLI 1.0.79, whose minimum is
+30. The owner explicitly approved 30 per session, four sessions maximum.
+No model had run and no task result was observed when this amendment was made.
+Earlier preflight output is retained: targets under the real user directory
+inherited ancestor skills despite an isolated HOME, and the VS Code executable
+shim could list skills but failed to start its Windows command wrapper.
+Use a target outside personal skill ancestry and a qualified native CLI or
+the installed npm-loader.js entry. These are host-only repairs, not replacement
+of an observed baseline or PEA task result. The actual model defaults and
+task/evaluator remain unchanged.
 
 ## Limits and next step
 

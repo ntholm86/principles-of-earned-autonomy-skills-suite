@@ -38,19 +38,24 @@ an expected implementation into the fixture before trying it.
 
 Read [PROTOCOL.md](./PROTOCOL.md) before invoking anything. Four new sessions
 consume your existing AI allowance; the runner caps each at 240 seconds and
-5 CLI credits. It never replaces failed attempts.
+30 CLI credits (the CLI's minimum ceiling). It never replaces a completed
+model attempt because its result is unfavorable.
 
 On Windows PowerShell, from this directory:
 
 ```powershell
-$env:PILOT_COPILOT = (Get-Command copilot).Source
-node .\run.mjs "$env:TEMP\pea-pilot-UNIQUE-RUN-NAME"
+$env:PILOT_COPILOT = Join-Path (npm root -g) '@github\copilot\npm-loader.js'
+node .\run.mjs "C:\Temp\pea-pilot-UNIQUE-RUN-NAME"
 ```
 
 The output directory must not already exist. On macOS/Linux, set
 `PILOT_COPILOT` to the actual CLI executable and supply a new absolute output
 path. The runner is initially qualified only on the recorded Windows host;
 verify your host's discovery/authentication behavior rather than assuming it.
+Use a target outside directories whose ancestors supply personal/project
+skills: changing HOME alone does not prevent ancestor discovery. A native
+CLI executable can also be supplied; on the recorded Windows host, the VS Code
+shim was not a working invocation route for this runner.
 
 The runner isolates each session's home/config and preserves all original
 outputs outside the writable fixture. Isolation is an experimental control,
