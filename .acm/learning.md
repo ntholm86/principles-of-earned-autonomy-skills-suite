@@ -5,15 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 320 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-16 — orient-after-destination-center-and-leanness-reconciliation
-
-**[!REALIZATION]** The architecture's next risk is accretion that remains locally reasonable while becoming collectively expensive and hard to understand. Leanness protects the integrated purpose from that failure by forcing every element to earn its total burden. It does not authorize removing load-bearing cognition, evidence, learning, or control, and it cannot be validated by line count alone.
-
-## 2026-08-16 — destination-synthesis-confirmation-before-write
-
-**[!REALIZATION]** The recurring defect is not only route prescription inside generic skills. It begins one step earlier when an agent turns a confirmed purpose into a more specific durable abstraction without exposing the derivation. Operator's Intent requires authority over the meaning that becomes Destination, while the agent remains free to derive the route used to pursue that meaning.
+Showing the most recent 60 markers. 322 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-16 — destination-synthesis-confirmation-before-write
 
@@ -247,6 +239,14 @@ Showing the most recent 60 markers. 320 older marker(s) are in `.acm/learning-ar
 
 **[!REVERSAL]** Corrected the test harness's assumption that launching MinGit's sh.exe alone provides its utility PATH. Added its containing directory to the child environment on Windows and reran the same checks. All 10 cases then passed, including actual Bash installation; no product edit was backed out.
 
+## 2026-11-11 — evidence-led-visibility-pilot-results
+
+**[!REALIZATION]** The most consequential adoption boundary exposed here is
+
+## 2026-11-11 — evidence-led-visibility-pilot-results
+
+**[!REVERSAL]** Withheld the planned positive workflow demonstration after the
+
 ---
 
-**60 markers — 48 realisations, 12 reversals**
+**60 markers — 47 realisations, 13 reversals**

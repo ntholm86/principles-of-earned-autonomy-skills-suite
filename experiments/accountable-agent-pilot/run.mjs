@@ -3,7 +3,7 @@ import { createHash } from 'node:crypto';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 import { evaluate } from './acceptance.mjs';
 
 const root = path.dirname(fileURLToPath(import.meta.url));
@@ -19,8 +19,9 @@ if (relative === '' || (!relative.startsWith(`..${path.sep}`) && !path.isAbsolut
 fs.mkdirSync(output, { recursive: true });
 
 const cli = process.env.PILOT_COPILOT ?? 'copilot';
-const cliCommand = cli.endsWith('.js') ? process.execPath : cli;
-const cliPrefix = cli.endsWith('.js') ? [cli] : [];
+const scriptEntry = /\.(?:mjs|cjs|js)$/i.test(cli);
+const cliCommand = scriptEntry ? process.execPath : cli;
+const cliPrefix = scriptEntry ? [cli] : [];
 const commonTask = fs.readFileSync(path.join(root, 'PROTOCOL.md'), 'utf8')
   .split('## Common task (verbatim)')[1].split('The baseline receives')[0]
   .split('\n').filter(line => line.startsWith('>')).map(line => line.replace(/^> ?/, '')).join(' ');
@@ -53,6 +54,10 @@ for (const name of ['baseline-1', 'pea-1', 'pea-2', 'baseline-2']) {
   fs.mkdirSync(home, { recursive: true });
   fs.cpSync(path.join(root, 'fixture'), target, { recursive: true });
   fs.writeFileSync(path.join(target, '.acm-root'), '');
+  const originalTestPath = path.join(runRoot, 'original-cart.test.mjs');
+  const originalTestSource = fs.readFileSync(path.join(root, 'fixture', 'cart.test.mjs'), 'utf8')
+    .replace("'./cart.mjs'", JSON.stringify(pathToFileURL(path.join(target, 'cart.mjs')).href));
+  fs.writeFileSync(originalTestPath, originalTestSource);
   const suite = name.startsWith('pea');
   if (suite) {
     const skills = path.join(target, '.github', 'skills');
@@ -107,24 +112,25 @@ for (const name of ['baseline-1', 'pea-1', 'pea-2', 'baseline-2']) {
     invocation = { exitCode: null, signal: null, error: 'Skill isolation not established; no model invoked.' };
   } else {
     invocation = capture('agent', cliCommand, [...cliPrefix,
-      '-p', prompt, '--output-format', 'json', '--stream', 'off',
+      '-C', target, '-p', prompt, '--output-format', 'json', '--stream', 'off',
       '--no-custom-instructions', '--disable-builtin-mcps', '--no-remote',
       '--no-remote-export', '--no-auto-update', '--no-ask-user',
       '--disallow-temp-dir', '--max-ai-credits', '30',
-      '--available-tools', 'powershell,read_file,create_file,replace_in_file,grep,glob,view,edit,create,skill',
+      '--available-tools', 'powershell,read_powershell,stop_powershell,grep,glob,view,edit,create,skill',
       '--deny-tool', 'url', '--deny-tool', 'shell(git push)',
       '--allow-all-tools',
       '--log-dir', path.join(home, 'logs'),
     ]);
   }
   const finished = new Date();
-  const originalAfter = capture('after-tests', process.execPath, ['--test', 'cart.test.mjs']);
+  const originalAfter = capture('after-tests', process.execPath, ['--test', originalTestPath]);
   let acceptance;
   try {
     acceptance = await evaluate(target);
   } catch (error) {
     acceptance = { passed: 0, total: 17, error: error.message, cases: [] };
   }
+
   fs.writeFileSync(path.join(runRoot, 'acceptance.json'), JSON.stringify(acceptance, null, 2) + '\n');
   const result = {
     name, condition: suite ? 'PEA' : 'baseline',
@@ -143,3 +149,5 @@ for (const name of ['baseline-1', 'pea-1', 'pea-2', 'baseline-2']) {
   console.log(JSON.stringify({ run: name, classification: result.classification,
     acceptance: `${acceptance.passed}/${acceptance.total}`, skillIsolation, invocation }));
 }
+process.exitCode = summary.runs.every(run => run.classification === 'functional-pass' &&
+  (run.condition === 'baseline' || run.trailPresent)) ? 0 : 1;

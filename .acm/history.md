@@ -327,6 +327,7 @@ Do not edit by hand — re-run the command to refresh.
 | · 320 | 2026-09-09 | hook-installers-respect-effective-git-path | installation activation defect reproduced and repaired; no silence; material change resets the convergence chain | v4.34.2 -> v4.34.3; both installers use Git's resolved hook path and preserve differing existing hooks; integration coverage and guidance added |
 | · 321 | 2026-09-09 | skill-installers-preflight-selected-files | incomplete-bundle success-reporting defect reproduced and repaired; no silence; material change resets the convergence chain | v4.34.3 -> v4.34.4; selected skill files checked before destination writes; 10 new tests pass across PowerShell and Bash |
 | ▸ 322 | 2026-11-11 | evidence-led-visibility-pilot (pre-action checkpoint) | implementation and four exploratory sessions explicitly authorized |  |
+| ▸ 323 | 2026-11-11 | evidence-led-visibility-pilot-results | four functional passes; intended PEA comparison inconclusive; no PEA trace | bounded README/metadata claims, runnable pilot, all outcomes and review-gated outreach |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -1486,4 +1487,9 @@ Do not edit by hand — re-run the command to refresh.
 
 - **decided:** Add a small dependency-free cart fixture, frozen 17-check evaluator,
 
-**322 runs total — 294 with changes, 28 silence**
+### Run 323 — 2026-11-11 — evidence-led-visibility-pilot-results
+
+- **decided:** Publish all four outcomes, including the missing PEA workflow,
+- **REVERSAL:** Withheld the planned positive workflow demonstration after the
+
+**323 runs total — 295 with changes, 28 silence**

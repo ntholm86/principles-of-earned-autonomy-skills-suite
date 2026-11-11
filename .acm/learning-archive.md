@@ -1285,6 +1285,14 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** Universal improvement and trustworthy delegation are one architectural claim. The target must improve anything it understands while the Principles of Earned Autonomy make that capability safe to delegate. Future work falsifies this claim if it strengthens one half by weakening the other.
 
+## 2026-08-16 — orient-after-destination-center-and-leanness-reconciliation
+
+**[!REALIZATION]** The architecture's next risk is accretion that remains locally reasonable while becoming collectively expensive and hard to understand. Leanness protects the integrated purpose from that failure by forcing every element to earn its total burden. It does not authorize removing load-bearing cognition, evidence, learning, or control, and it cannot be validated by line count alone.
+
+## 2026-08-16 — destination-synthesis-confirmation-before-write
+
+**[!REALIZATION]** The recurring defect is not only route prescription inside generic skills. It begins one step earlier when an agent turns a confirmed purpose into a more specific durable abstraction without exposing the derivation. Operator's Intent requires authority over the meaning that becomes Destination, while the agent remains free to derive the route used to pursue that meaning.
+
 ---
 
-**320 markers — 281 realisations, 39 reversals**
+**322 markers — 283 realisations, 39 reversals**

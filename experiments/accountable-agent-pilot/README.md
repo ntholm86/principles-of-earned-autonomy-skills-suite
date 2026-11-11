@@ -8,6 +8,11 @@ This pilot makes a narrower question testable: can an agent deliver a working
 change and leave enough evidence for you to examine its interpretation,
 prediction, decisions and verification?
 
+**First result:** all four agents passed the functional checks, but neither
+PEA-labeled attempt applied the observable-trail workflow.
+[Read the complete negative/inconclusive result](./RESULTS.md); it is not
+evidence of an advantage over the baseline.
+
 ## Try it yourself
 
 Requirements: Git, Node.js 22+ and an existing supported AI coding-agent account.
@@ -61,6 +66,9 @@ The runner isolates each session's home/config and preserves all original
 outputs outside the writable fixture. Isolation is an experimental control,
 not an OS security sandbox. Review captured files before sharing: your host
 may include account details or other private metadata.
+The runner returns a nonzero exit if any attempt is inconclusive, fails
+functional checks or lacks a required PEA trace. A trace being present still
+requires manual examination; existence is not protocol compliance.
 
 ## Seeking five independent practitioners
 

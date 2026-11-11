@@ -100,7 +100,7 @@ The full trail exists, but it cannot be published in this repository because it 
 
 ## Agent Context Memory (ACM)
 
-Each skill externalizes what normally only lives inside a single model session — the goal, the destination, the decisions, the arc. Together they implement Agent Context Memory: a persistent memory layer that no model reset can erase.
+Each skill externalizes what normally only lives inside a single model session — the goal, the destination, the decisions, the arc. Together they implement Agent Context Memory: files that can persist beyond a model session. Continuity depends on preserving those files and the next agent reading and using them.
 
 This memory structure is formally specified by the [Agent Context Memory (ACM)](https://github.com/ntholm86/agent-context-memory) standard. ACM defines three tiers organized by trust level: Intent (`destination.md`, principal-authored), Trace (`audit-trail.md`, `orientation.md`, agent append-only), and Evidence (harness-captured session records). This suite implements the Intent and Trace tiers; the Evidence tier requires a separate harness.
 
@@ -108,7 +108,7 @@ The files (`.acm/audit-trail.md`, `.acm/destination.md`, `.acm/orientation.md`) 
 
 Memory alone is just retrieval; awareness is orientation. Because `Orient` reads the arc, `Destination` uncovers where you're heading, and `Intent` aligns the goal, the suite uses that memory to understand where it is and where it is going.
 
-When you swap from Claude to GPT to Gemini, the next model picks up this exact orientation. That accumulation is what makes the suite get smarter over time.
+When you swap models, the next agent can read the stored orientation and prior decisions. Whether it uses that context well must be checked in the resulting work; persistence alone does not demonstrate learning.
 
 ## Workflow
 
@@ -152,7 +152,7 @@ Trail logs what the agent *says* it decided. Research shows this is not always t
 4. **Adversarial audit (Orient):** A dedicated lens to actively hunt for outcome mismatch and logical discontinuities across the trail history.
 5. **Separating writer and decider (Improve, Trail):** In maximum-trust sequences (High-Fidelity Mode), the agent making the change is procedurally forbidden from writing the final trail entry, handing off to a second independent evaluator.
 
-Together, these force the agent to lock its reasoning *before* acquiring evidence, and introduce explicit adversarial structures to break the post-hoc rationalization loop.
+Together, these instructions ask the agent to record a prediction before observing the outcome and expose mismatches to later examination. They do not force compliance or establish access to the agent's true internal reasoning.
 
 **The deeper limitation — protocol, not structure:** The five mitigations above assume the agent follows the protocol. Skills are markdown instructions interpreted by an LLM. There is no structural guarantee that the agent writes the trail at the right moment, issues the pre-commit prediction before acting, or runs any step at all. The suite is only as reliable as the model reading it. Structural enforcement — intercepting every LLM call at the API layer, writing the ledger before the response is released to the agent, fail-closed — is the responsibility of [`llm-harness-proxy`](https://github.com/ntholm86/llm-harness-proxy) and [`ai-steward`](https://github.com/ntholm86/ai-steward). This skills suite is the behavioural scaffolding and the experiment that generated the requirement for that structural layer.
 

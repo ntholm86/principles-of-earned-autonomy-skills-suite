@@ -1,0 +1,613 @@
+{
+  "author": "Nils Wendelboe Holmager",
+  "independence": "Author-run exploratory pilot; not independent validation.",
+  "protocolSource": "7164cc220985520ff43f5291ebb17bbc360853f4",
+  "node": "v22.21.0",
+  "host": "win32 10.0.26300",
+  "skillHashes": {
+    "improve": "f3a7d2e056053667dace37518323a3e7976bb6e35f79dcaffd8fdc766d6a29c1",
+    "intent": "abcde159c308ba300a11258e901b221e199edc34739d06f4f4f618fe5d64a2c0",
+    "trail": "d83b6793a6c7e1b1401f611e9bd889758e3cad0275fa6824dcde638e59d0da8d",
+    "destination": "3429fdea39d5866fa0832e8a31f94273892abac5bcd6af7d18bb34a6c36b18ba",
+    "orient": "75da79b341a91cb211746b6dcc49587f16762f429ef3dfc1c08dbf28f857296c"
+  },
+  "acceptanceHash": "60a432a889314b6dc983b93998d176dd7775f1171d48e1ce5dc199a18f7d5455",
+  "runs": [
+    {
+      "name": "baseline-1",
+      "condition": "baseline",
+      "models": [
+        "claude-sonnet-5"
+      ],
+      "started": "2026-11-11T12:49:32.370Z",
+      "finished": "2026-11-11T12:50:00.690Z",
+      "elapsedSeconds": 28.32,
+      "invocationExit": 0,
+      "skillIsolation": true,
+      "discoveredSkills": [
+        {
+          "name": "customize-cloud-agent",
+          "source": "builtin"
+        },
+        {
+          "name": "github-pr-media",
+          "source": "builtin"
+        }
+      ],
+      "runtimeLoadedSkills": [
+        {
+          "name": "customize-cloud-agent",
+          "source": "builtin"
+        },
+        {
+          "name": "github-pr-media",
+          "source": "builtin"
+        }
+      ],
+      "operationalSkillContentReadOrInvoked": false,
+      "trailPresent": false,
+      "originalRegression": {
+        "exitCode": 0,
+        "passed": 6,
+        "total": 6
+      },
+      "acceptance": {
+        "passed": 17,
+        "total": 17,
+        "cases": [
+          {
+            "name": "default remains unchanged",
+            "passed": true
+          },
+          {
+            "name": "discount is applied to merchandise only",
+            "passed": true
+          },
+          {
+            "name": "zero discount is accepted",
+            "passed": true
+          },
+          {
+            "name": "full discount leaves shipping",
+            "passed": true
+          },
+          {
+            "name": "round once on combined subtotal",
+            "passed": true
+          },
+          {
+            "name": "fractional percentages are accepted",
+            "passed": true
+          },
+          {
+            "name": "free shipping uses original subtotal",
+            "passed": true
+          },
+          {
+            "name": "empty cart stays free",
+            "passed": true
+          },
+          {
+            "name": "reject negative percentage",
+            "passed": true
+          },
+          {
+            "name": "reject over 100 percentage",
+            "passed": true
+          },
+          {
+            "name": "reject NaN percentage",
+            "passed": true
+          },
+          {
+            "name": "reject infinite percentage",
+            "passed": true
+          },
+          {
+            "name": "reject string percentage",
+            "passed": true
+          },
+          {
+            "name": "reject null percentage",
+            "passed": true
+          },
+          {
+            "name": "input and options remain unchanged",
+            "passed": true
+          },
+          {
+            "name": "original invalid item rejection remains",
+            "passed": true
+          },
+          {
+            "name": "overflow remains rejected",
+            "passed": true
+          }
+        ]
+      },
+      "finalCartHash": "4a4e5a0d6f226681a41b2b8c0d11c1ad2bea226bf2545e2cc643f32489a567a4",
+      "stdoutHash": "1dafbcb4320b0259072cf2f6c66f44ceab56750b995d2faa59a66cf42d34b8cb",
+      "premiumRequestsReportedByCli": 1,
+      "toolNames": [
+        "grep",
+        "view",
+        "view",
+        "edit",
+        "edit",
+        "powershell"
+      ],
+      "comparisonValidity": "Inconclusive: intended PEA activation was not demonstrated.",
+      "cartSource": "export function calculateTotal(items, { shippingCents = 500, freeShippingAtCents = 5000, percentOff } = {}) {\r\n  if (!Array.isArray(items)) throw new TypeError('items must be an array');\r\n  for (const item of items) {\r\n    if (!item || !Number.isSafeInteger(item.priceCents) || item.priceCents < 0 ||\r\n        !Number.isSafeInteger(item.quantity) || item.quantity < 1) {\r\n      throw new TypeError('items require non-negative integer prices and positive integer quantities');\r\n    }\r\n  }\r\n  if (!Number.isSafeInteger(shippingCents) || shippingCents < 0 ||\r\n      !Number.isSafeInteger(freeShippingAtCents) || freeShippingAtCents < 0) {\r\n    throw new TypeError('shipping options must be non-negative safe integers');\r\n  }\r\n  if (percentOff !== undefined &&\r\n      (typeof percentOff !== 'number' || !Number.isFinite(percentOff) || percentOff < 0 || percentOff > 100)) {\r\n    throw new TypeError('percentOff must be a finite number from 0 to 100 inclusive');\r\n  }\r\n  const subtotalCents = items.reduce((sum, item) => sum + item.priceCents * item.quantity, 0);\r\n  if (!Number.isSafeInteger(subtotalCents)) throw new RangeError('subtotal exceeds safe integer range');\r\n  const appliedShipping = items.length === 0 || subtotalCents >= freeShippingAtCents ? 0 : shippingCents;\r\n  const discountedSubtotalCents = percentOff === undefined\r\n    ? subtotalCents\r\n    : Math.round(subtotalCents * (1 - percentOff / 100));\r\n  const totalCents = discountedSubtotalCents + appliedShipping;\r\n  if (!Number.isSafeInteger(totalCents)) throw new RangeError('total exceeds safe integer range');\r\n  return { subtotalCents, shippingCents: appliedShipping, totalCents };\r\n}\r\n",
+      "testSource": "import assert from 'node:assert/strict';\r\nimport test from 'node:test';\r\nimport { calculateTotal } from './cart.mjs';\r\n\r\ntest('empty cart has no shipping', () => {\r\n  assert.deepEqual(calculateTotal([]), { subtotalCents: 0, shippingCents: 0, totalCents: 0 });\r\n});\r\ntest('quantities and shipping use integer cents', () => {\r\n  assert.deepEqual(calculateTotal([{ priceCents: 1200, quantity: 2 }]),\r\n    { subtotalCents: 2400, shippingCents: 500, totalCents: 2900 });\r\n});\r\ntest('free shipping includes the exact threshold', () => {\r\n  assert.equal(calculateTotal([{ priceCents: 5000, quantity: 1 }]).shippingCents, 0);\r\n});\r\ntest('custom shipping is supported', () => {\r\n  assert.equal(calculateTotal([{ priceCents: 100, quantity: 1 }],\r\n    { shippingCents: 200, freeShippingAtCents: 1000 }).totalCents, 300);\r\n});\r\ntest('invalid input is rejected', () => {\r\n  for (const items of [null, {}, [{ priceCents: -1, quantity: 1 }], [{ priceCents: 1, quantity: 0 }]]) {\r\n    assert.throws(() => calculateTotal(items), TypeError);\r\n  }\r\n});\r\ntest('overflow is rejected', () => {\r\n  assert.throws(() => calculateTotal([{ priceCents: Number.MAX_SAFE_INTEGER, quantity: 2 }]), RangeError);\r\n});\r\ntest('percentOff discounts merchandise before shipping is added', () => {\r\n  assert.deepEqual(calculateTotal([{ priceCents: 1000, quantity: 1 }], { percentOff: 10 }),\r\n    { subtotalCents: 1000, shippingCents: 500, totalCents: 1400 });\r\n});\r\ntest('percentOff rounds the discounted amount once', () => {\r\n  assert.equal(calculateTotal([{ priceCents: 999, quantity: 1 }],\r\n    { percentOff: 33, shippingCents: 0 }).totalCents, 669);\r\n});\r\ntest('percentOff of 0 and 100 are accepted', () => {\r\n  assert.equal(calculateTotal([{ priceCents: 1000, quantity: 1 }], { percentOff: 0, shippingCents: 0 }).totalCents, 1000);\r\n  assert.equal(calculateTotal([{ priceCents: 1000, quantity: 1 }], { percentOff: 100, shippingCents: 0 }).totalCents, 0);\r\n});\r\ntest('shipping eligibility uses the original subtotal, not the discounted one', () => {\r\n  assert.equal(calculateTotal([{ priceCents: 5000, quantity: 1 }], { percentOff: 50 }).shippingCents, 0);\r\n});\r\ntest('invalid percentOff is rejected', () => {\r\n  for (const percentOff of [-1, 101, NaN, Infinity, '50', null]) {\r\n    assert.throws(() => calculateTotal([{ priceCents: 100, quantity: 1 }], { percentOff }), TypeError);\r\n  }\r\n});\r\ntest('percentOff is optional and preserves default behavior', () => {\r\n  assert.deepEqual(calculateTotal([{ priceCents: 1200, quantity: 2 }]),\r\n    { subtotalCents: 2400, shippingCents: 500, totalCents: 2900 });\r\n});\r\ntest('items and options are not mutated', () => {\r\n  const items = [{ priceCents: 1000, quantity: 1 }];\r\n  const options = { percentOff: 10 };\r\n  const frozenItems = Object.freeze([Object.freeze({ ...items[0] })]);\r\n  const frozenOptions = Object.freeze({ ...options });\r\n  assert.doesNotThrow(() => calculateTotal(frozenItems, frozenOptions));\r\n});\r\n"
+    },
+    {
+      "name": "pea-1",
+      "condition": "PEA",
+      "models": [
+        "claude-sonnet-5"
+      ],
+      "started": "2026-11-11T12:50:01.280Z",
+      "finished": "2026-11-11T12:50:39.599Z",
+      "elapsedSeconds": 38.319,
+      "invocationExit": 0,
+      "skillIsolation": true,
+      "discoveredSkills": [
+        {
+          "name": "destination",
+          "source": "project"
+        },
+        {
+          "name": "improve",
+          "source": "project"
+        },
+        {
+          "name": "intent",
+          "source": "project"
+        },
+        {
+          "name": "orient",
+          "source": "project"
+        },
+        {
+          "name": "trail",
+          "source": "project"
+        },
+        {
+          "name": "customize-cloud-agent",
+          "source": "builtin"
+        },
+        {
+          "name": "github-pr-media",
+          "source": "builtin"
+        }
+      ],
+      "runtimeLoadedSkills": [
+        {
+          "name": "destination",
+          "source": "project"
+        },
+        {
+          "name": "improve",
+          "source": "project"
+        },
+        {
+          "name": "intent",
+          "source": "project"
+        },
+        {
+          "name": "orient",
+          "source": "project"
+        },
+        {
+          "name": "trail",
+          "source": "project"
+        },
+        {
+          "name": "customize-cloud-agent",
+          "source": "builtin"
+        },
+        {
+          "name": "github-pr-media",
+          "source": "builtin"
+        }
+      ],
+      "operationalSkillContentReadOrInvoked": false,
+      "trailPresent": false,
+      "originalRegression": {
+        "exitCode": 0,
+        "passed": 6,
+        "total": 6
+      },
+      "acceptance": {
+        "passed": 17,
+        "total": 17,
+        "cases": [
+          {
+            "name": "default remains unchanged",
+            "passed": true
+          },
+          {
+            "name": "discount is applied to merchandise only",
+            "passed": true
+          },
+          {
+            "name": "zero discount is accepted",
+            "passed": true
+          },
+          {
+            "name": "full discount leaves shipping",
+            "passed": true
+          },
+          {
+            "name": "round once on combined subtotal",
+            "passed": true
+          },
+          {
+            "name": "fractional percentages are accepted",
+            "passed": true
+          },
+          {
+            "name": "free shipping uses original subtotal",
+            "passed": true
+          },
+          {
+            "name": "empty cart stays free",
+            "passed": true
+          },
+          {
+            "name": "reject negative percentage",
+            "passed": true
+          },
+          {
+            "name": "reject over 100 percentage",
+            "passed": true
+          },
+          {
+            "name": "reject NaN percentage",
+            "passed": true
+          },
+          {
+            "name": "reject infinite percentage",
+            "passed": true
+          },
+          {
+            "name": "reject string percentage",
+            "passed": true
+          },
+          {
+            "name": "reject null percentage",
+            "passed": true
+          },
+          {
+            "name": "input and options remain unchanged",
+            "passed": true
+          },
+          {
+            "name": "original invalid item rejection remains",
+            "passed": true
+          },
+          {
+            "name": "overflow remains rejected",
+            "passed": true
+          }
+        ]
+      },
+      "finalCartHash": "9ec95834c54e7076dce0c7c2b7ba872ab018ec228a15bb8df7209e77803f9efb",
+      "stdoutHash": "e89f575e598417756b61a001791ae833a7cc7d7615b49705ecbcfdc2019b6eb9",
+      "premiumRequestsReportedByCli": 1,
+      "toolNames": [
+        "glob",
+        "powershell",
+        "glob",
+        "glob",
+        "glob",
+        "powershell",
+        "view",
+        "view",
+        "view",
+        "edit",
+        "edit",
+        "edit",
+        "powershell"
+      ],
+      "comparisonValidity": "Inconclusive: intended PEA activation was not demonstrated.",
+      "cartSource": "export function calculateTotal(items, { shippingCents = 500, freeShippingAtCents = 5000, percentOff } = {}) {\r\n  if (!Array.isArray(items)) throw new TypeError('items must be an array');\r\n  for (const item of items) {\r\n    if (!item || !Number.isSafeInteger(item.priceCents) || item.priceCents < 0 ||\r\n        !Number.isSafeInteger(item.quantity) || item.quantity < 1) {\r\n      throw new TypeError('items require non-negative integer prices and positive integer quantities');\r\n    }\r\n  }\r\n  if (!Number.isSafeInteger(shippingCents) || shippingCents < 0 ||\r\n      !Number.isSafeInteger(freeShippingAtCents) || freeShippingAtCents < 0) {\r\n    throw new TypeError('shipping options must be non-negative safe integers');\r\n  }\r\n  if (percentOff !== undefined &&\r\n      (typeof percentOff !== 'number' || !Number.isFinite(percentOff) || percentOff < 0 || percentOff > 100)) {\r\n    throw new TypeError('percentOff must be a finite number from 0 to 100');\r\n  }\r\n  const subtotalCents = items.reduce((sum, item) => sum + item.priceCents * item.quantity, 0);\r\n  if (!Number.isSafeInteger(subtotalCents)) throw new RangeError('subtotal exceeds safe integer range');\r\n  const appliedShipping = items.length === 0 || subtotalCents >= freeShippingAtCents ? 0 : shippingCents;\r\n  const discountedSubtotalCents = percentOff === undefined\r\n    ? subtotalCents\r\n    : Math.round(subtotalCents * (1 - percentOff / 100));\r\n  const totalCents = discountedSubtotalCents + appliedShipping;\r\n  if (!Number.isSafeInteger(totalCents)) throw new RangeError('total exceeds safe integer range');\r\n  return { subtotalCents, shippingCents: appliedShipping, totalCents };\r\n}\r\n",
+      "testSource": "import assert from 'node:assert/strict';\r\nimport test from 'node:test';\r\nimport { calculateTotal } from './cart.mjs';\r\n\r\ntest('empty cart has no shipping', () => {\r\n  assert.deepEqual(calculateTotal([]), { subtotalCents: 0, shippingCents: 0, totalCents: 0 });\r\n});\r\ntest('quantities and shipping use integer cents', () => {\r\n  assert.deepEqual(calculateTotal([{ priceCents: 1200, quantity: 2 }]),\r\n    { subtotalCents: 2400, shippingCents: 500, totalCents: 2900 });\r\n});\r\ntest('free shipping includes the exact threshold', () => {\r\n  assert.equal(calculateTotal([{ priceCents: 5000, quantity: 1 }]).shippingCents, 0);\r\n});\r\ntest('custom shipping is supported', () => {\r\n  assert.equal(calculateTotal([{ priceCents: 100, quantity: 1 }],\r\n    { shippingCents: 200, freeShippingAtCents: 1000 }).totalCents, 300);\r\n});\r\ntest('invalid input is rejected', () => {\r\n  for (const items of [null, {}, [{ priceCents: -1, quantity: 1 }], [{ priceCents: 1, quantity: 0 }]]) {\r\n    assert.throws(() => calculateTotal(items), TypeError);\r\n  }\r\n});\r\ntest('overflow is rejected', () => {\r\n  assert.throws(() => calculateTotal([{ priceCents: Number.MAX_SAFE_INTEGER, quantity: 2 }]), RangeError);\r\n});\r\ntest('percentOff discounts merchandise before adding shipping', () => {\r\n  assert.deepEqual(\r\n    calculateTotal([{ priceCents: 1000, quantity: 1 }], { percentOff: 10 }),\r\n    { subtotalCents: 1000, shippingCents: 500, totalCents: 1400 });\r\n});\r\ntest('percentOff rounds the discounted amount once', () => {\r\n  assert.equal(\r\n    calculateTotal([{ priceCents: 999, quantity: 1 }], { percentOff: 10, shippingCents: 0 }).totalCents,\r\n    899);\r\n});\r\ntest('percentOff of 0 and 100 are accepted', () => {\r\n  assert.equal(calculateTotal([{ priceCents: 1000, quantity: 1 }], { percentOff: 0, shippingCents: 0 }).totalCents, 1000);\r\n  assert.equal(calculateTotal([{ priceCents: 1000, quantity: 1 }], { percentOff: 100, shippingCents: 0 }).totalCents, 0);\r\n});\r\ntest('shipping eligibility uses the original subtotal, not the discounted one', () => {\r\n  const result = calculateTotal([{ priceCents: 5000, quantity: 1 }], { percentOff: 50, freeShippingAtCents: 5000 });\r\n  assert.deepEqual(result, { subtotalCents: 5000, shippingCents: 0, totalCents: 2500 });\r\n});\r\ntest('invalid percentOff is rejected', () => {\r\n  for (const percentOff of [-1, 101, NaN, Infinity, '10', null]) {\r\n    assert.throws(() => calculateTotal([{ priceCents: 1000, quantity: 1 }], { percentOff }), TypeError);\r\n  }\r\n});\r\ntest('items array is not mutated by percentOff', () => {\r\n  const items = [{ priceCents: 1000, quantity: 1 }];\r\n  const snapshot = JSON.stringify(items);\r\n  calculateTotal(items, { percentOff: 25 });\r\n  assert.equal(JSON.stringify(items), snapshot);\r\n});\r\n"
+    },
+    {
+      "name": "pea-2",
+      "condition": "PEA",
+      "models": [
+        "claude-sonnet-5"
+      ],
+      "started": "2026-11-11T12:50:40.208Z",
+      "finished": "2026-11-11T12:51:07.277Z",
+      "elapsedSeconds": 27.069,
+      "invocationExit": 0,
+      "skillIsolation": true,
+      "discoveredSkills": [
+        {
+          "name": "destination",
+          "source": "project"
+        },
+        {
+          "name": "improve",
+          "source": "project"
+        },
+        {
+          "name": "intent",
+          "source": "project"
+        },
+        {
+          "name": "orient",
+          "source": "project"
+        },
+        {
+          "name": "trail",
+          "source": "project"
+        },
+        {
+          "name": "customize-cloud-agent",
+          "source": "builtin"
+        },
+        {
+          "name": "github-pr-media",
+          "source": "builtin"
+        }
+      ],
+      "runtimeLoadedSkills": [
+        {
+          "name": "destination",
+          "source": "project"
+        },
+        {
+          "name": "improve",
+          "source": "project"
+        },
+        {
+          "name": "intent",
+          "source": "project"
+        },
+        {
+          "name": "orient",
+          "source": "project"
+        },
+        {
+          "name": "trail",
+          "source": "project"
+        },
+        {
+          "name": "customize-cloud-agent",
+          "source": "builtin"
+        },
+        {
+          "name": "github-pr-media",
+          "source": "builtin"
+        }
+      ],
+      "operationalSkillContentReadOrInvoked": false,
+      "trailPresent": false,
+      "originalRegression": {
+        "exitCode": 0,
+        "passed": 6,
+        "total": 6
+      },
+      "acceptance": {
+        "passed": 17,
+        "total": 17,
+        "cases": [
+          {
+            "name": "default remains unchanged",
+            "passed": true
+          },
+          {
+            "name": "discount is applied to merchandise only",
+            "passed": true
+          },
+          {
+            "name": "zero discount is accepted",
+            "passed": true
+          },
+          {
+            "name": "full discount leaves shipping",
+            "passed": true
+          },
+          {
+            "name": "round once on combined subtotal",
+            "passed": true
+          },
+          {
+            "name": "fractional percentages are accepted",
+            "passed": true
+          },
+          {
+            "name": "free shipping uses original subtotal",
+            "passed": true
+          },
+          {
+            "name": "empty cart stays free",
+            "passed": true
+          },
+          {
+            "name": "reject negative percentage",
+            "passed": true
+          },
+          {
+            "name": "reject over 100 percentage",
+            "passed": true
+          },
+          {
+            "name": "reject NaN percentage",
+            "passed": true
+          },
+          {
+            "name": "reject infinite percentage",
+            "passed": true
+          },
+          {
+            "name": "reject string percentage",
+            "passed": true
+          },
+          {
+            "name": "reject null percentage",
+            "passed": true
+          },
+          {
+            "name": "input and options remain unchanged",
+            "passed": true
+          },
+          {
+            "name": "original invalid item rejection remains",
+            "passed": true
+          },
+          {
+            "name": "overflow remains rejected",
+            "passed": true
+          }
+        ]
+      },
+      "finalCartHash": "b3a7ae449c1ed553e0ec1f805cb66bb641271ade965b09fdfe64bafa91767cf7",
+      "stdoutHash": "cee45ad38c91d36285face0cb21a652376ab704302880812d3b9b0af49d4dc49",
+      "premiumRequestsReportedByCli": 1,
+      "toolNames": [
+        "glob",
+        "view",
+        "view",
+        "view",
+        "edit",
+        "edit",
+        "powershell"
+      ],
+      "comparisonValidity": "Inconclusive: intended PEA activation was not demonstrated.",
+      "cartSource": "export function calculateTotal(items, { shippingCents = 500, freeShippingAtCents = 5000, percentOff = 0 } = {}) {\r\n  if (!Array.isArray(items)) throw new TypeError('items must be an array');\r\n  for (const item of items) {\r\n    if (!item || !Number.isSafeInteger(item.priceCents) || item.priceCents < 0 ||\r\n        !Number.isSafeInteger(item.quantity) || item.quantity < 1) {\r\n      throw new TypeError('items require non-negative integer prices and positive integer quantities');\r\n    }\r\n  }\r\n  if (!Number.isSafeInteger(shippingCents) || shippingCents < 0 ||\r\n      !Number.isSafeInteger(freeShippingAtCents) || freeShippingAtCents < 0) {\r\n    throw new TypeError('shipping options must be non-negative safe integers');\r\n  }\r\n  if (!Number.isFinite(percentOff) || percentOff < 0 || percentOff > 100) {\r\n    throw new TypeError('percentOff must be a finite number from 0 to 100');\r\n  }\r\n  const subtotalCents = items.reduce((sum, item) => sum + item.priceCents * item.quantity, 0);\r\n  if (!Number.isSafeInteger(subtotalCents)) throw new RangeError('subtotal exceeds safe integer range');\r\n  const appliedShipping = items.length === 0 || subtotalCents >= freeShippingAtCents ? 0 : shippingCents;\r\n  const discountedMerchandiseCents = Math.round(subtotalCents * (1 - percentOff / 100));\r\n  const totalCents = discountedMerchandiseCents + appliedShipping;\r\n  if (!Number.isSafeInteger(totalCents)) throw new RangeError('total exceeds safe integer range');\r\n  return { subtotalCents, shippingCents: appliedShipping, totalCents };\r\n}\r\n",
+      "testSource": "import assert from 'node:assert/strict';\r\nimport test from 'node:test';\r\nimport { calculateTotal } from './cart.mjs';\r\n\r\ntest('empty cart has no shipping', () => {\r\n  assert.deepEqual(calculateTotal([]), { subtotalCents: 0, shippingCents: 0, totalCents: 0 });\r\n});\r\ntest('quantities and shipping use integer cents', () => {\r\n  assert.deepEqual(calculateTotal([{ priceCents: 1200, quantity: 2 }]),\r\n    { subtotalCents: 2400, shippingCents: 500, totalCents: 2900 });\r\n});\r\ntest('free shipping includes the exact threshold', () => {\r\n  assert.equal(calculateTotal([{ priceCents: 5000, quantity: 1 }]).shippingCents, 0);\r\n});\r\ntest('custom shipping is supported', () => {\r\n  assert.equal(calculateTotal([{ priceCents: 100, quantity: 1 }],\r\n    { shippingCents: 200, freeShippingAtCents: 1000 }).totalCents, 300);\r\n});\r\ntest('invalid input is rejected', () => {\r\n  for (const items of [null, {}, [{ priceCents: -1, quantity: 1 }], [{ priceCents: 1, quantity: 0 }]]) {\r\n    assert.throws(() => calculateTotal(items), TypeError);\r\n  }\r\n});\r\ntest('overflow is rejected', () => {\r\n  assert.throws(() => calculateTotal([{ priceCents: Number.MAX_SAFE_INTEGER, quantity: 2 }]), RangeError);\r\n});\r\ntest('percentOff discounts merchandise and rounds once before adding shipping', () => {\r\n  assert.deepEqual(calculateTotal([{ priceCents: 999, quantity: 1 }], { percentOff: 10 }),\r\n    { subtotalCents: 999, shippingCents: 500, totalCents: 899 + 500 });\r\n});\r\ntest('percentOff does not affect shipping eligibility', () => {\r\n  assert.equal(calculateTotal([{ priceCents: 5000, quantity: 1 }], { percentOff: 50 }).shippingCents, 0);\r\n});\r\ntest('percentOff defaults to no discount', () => {\r\n  assert.deepEqual(calculateTotal([{ priceCents: 1200, quantity: 2 }]),\r\n    { subtotalCents: 2400, shippingCents: 500, totalCents: 2900 });\r\n});\r\ntest('invalid percentOff is rejected', () => {\r\n  for (const percentOff of [-1, 101, NaN, Infinity, '10', null]) {\r\n    assert.throws(() => calculateTotal([{ priceCents: 100, quantity: 1 }], { percentOff }), TypeError);\r\n  }\r\n});\r\n"
+    },
+    {
+      "name": "baseline-2",
+      "condition": "baseline",
+      "models": [
+        "claude-sonnet-5"
+      ],
+      "started": "2026-11-11T12:51:07.867Z",
+      "finished": "2026-11-11T12:51:38.089Z",
+      "elapsedSeconds": 30.222,
+      "invocationExit": 0,
+      "skillIsolation": true,
+      "discoveredSkills": [
+        {
+          "name": "customize-cloud-agent",
+          "source": "builtin"
+        },
+        {
+          "name": "github-pr-media",
+          "source": "builtin"
+        }
+      ],
+      "runtimeLoadedSkills": [
+        {
+          "name": "customize-cloud-agent",
+          "source": "builtin"
+        },
+        {
+          "name": "github-pr-media",
+          "source": "builtin"
+        }
+      ],
+      "operationalSkillContentReadOrInvoked": false,
+      "trailPresent": false,
+      "originalRegression": {
+        "exitCode": 0,
+        "passed": 6,
+        "total": 6
+      },
+      "acceptance": {
+        "passed": 17,
+        "total": 17,
+        "cases": [
+          {
+            "name": "default remains unchanged",
+            "passed": true
+          },
+          {
+            "name": "discount is applied to merchandise only",
+            "passed": true
+          },
+          {
+            "name": "zero discount is accepted",
+            "passed": true
+          },
+          {
+            "name": "full discount leaves shipping",
+            "passed": true
+          },
+          {
+            "name": "round once on combined subtotal",
+            "passed": true
+          },
+          {
+            "name": "fractional percentages are accepted",
+            "passed": true
+          },
+          {
+            "name": "free shipping uses original subtotal",
+            "passed": true
+          },
+          {
+            "name": "empty cart stays free",
+            "passed": true
+          },
+          {
+            "name": "reject negative percentage",
+            "passed": true
+          },
+          {
+            "name": "reject over 100 percentage",
+            "passed": true
+          },
+          {
+            "name": "reject NaN percentage",
+            "passed": true
+          },
+          {
+            "name": "reject infinite percentage",
+            "passed": true
+          },
+          {
+            "name": "reject string percentage",
+            "passed": true
+          },
+          {
+            "name": "reject null percentage",
+            "passed": true
+          },
+          {
+            "name": "input and options remain unchanged",
+            "passed": true
+          },
+          {
+            "name": "original invalid item rejection remains",
+            "passed": true
+          },
+          {
+            "name": "overflow remains rejected",
+            "passed": true
+          }
+        ]
+      },
+      "finalCartHash": "47a515f6b171d13236377463224ca0fdf223b44c61294bf6be12352b41b90b96",
+      "stdoutHash": "8916d60c9e5876a08484dd6eee0b61824affbf7b31508ba921815238d50ce7b5",
+      "premiumRequestsReportedByCli": 1,
+      "toolNames": [
+        "grep",
+        "view",
+        "edit",
+        "view",
+        "edit",
+        "powershell"
+      ],
+      "comparisonValidity": "Inconclusive: intended PEA activation was not demonstrated.",
+      "cartSource": "export function calculateTotal(items, { shippingCents = 500, freeShippingAtCents = 5000, percentOff } = {}) {\r\n  if (!Array.isArray(items)) throw new TypeError('items must be an array');\r\n  for (const item of items) {\r\n    if (!item || !Number.isSafeInteger(item.priceCents) || item.priceCents < 0 ||\r\n        !Number.isSafeInteger(item.quantity) || item.quantity < 1) {\r\n      throw new TypeError('items require non-negative integer prices and positive integer quantities');\r\n    }\r\n  }\r\n  if (!Number.isSafeInteger(shippingCents) || shippingCents < 0 ||\r\n      !Number.isSafeInteger(freeShippingAtCents) || freeShippingAtCents < 0) {\r\n    throw new TypeError('shipping options must be non-negative safe integers');\r\n  }\r\n  if (percentOff !== undefined &&\r\n      (typeof percentOff !== 'number' || !Number.isFinite(percentOff) || percentOff < 0 || percentOff > 100)) {\r\n    throw new TypeError('percentOff must be a finite number between 0 and 100 inclusive');\r\n  }\r\n  const subtotalCents = items.reduce((sum, item) => sum + item.priceCents * item.quantity, 0);\r\n  if (!Number.isSafeInteger(subtotalCents)) throw new RangeError('subtotal exceeds safe integer range');\r\n  const appliedShipping = items.length === 0 || subtotalCents >= freeShippingAtCents ? 0 : shippingCents;\r\n  const discountedMerchandiseCents = percentOff === undefined\r\n    ? subtotalCents\r\n    : Math.round(subtotalCents * (1 - percentOff / 100));\r\n  const totalCents = discountedMerchandiseCents + appliedShipping;\r\n  if (!Number.isSafeInteger(totalCents)) throw new RangeError('total exceeds safe integer range');\r\n  return { subtotalCents, shippingCents: appliedShipping, totalCents };\r\n}\r\n",
+      "testSource": "import assert from 'node:assert/strict';\r\nimport test from 'node:test';\r\nimport { calculateTotal } from './cart.mjs';\r\n\r\ntest('empty cart has no shipping', () => {\r\n  assert.deepEqual(calculateTotal([]), { subtotalCents: 0, shippingCents: 0, totalCents: 0 });\r\n});\r\ntest('quantities and shipping use integer cents', () => {\r\n  assert.deepEqual(calculateTotal([{ priceCents: 1200, quantity: 2 }]),\r\n    { subtotalCents: 2400, shippingCents: 500, totalCents: 2900 });\r\n});\r\ntest('free shipping includes the exact threshold', () => {\r\n  assert.equal(calculateTotal([{ priceCents: 5000, quantity: 1 }]).shippingCents, 0);\r\n});\r\ntest('custom shipping is supported', () => {\r\n  assert.equal(calculateTotal([{ priceCents: 100, quantity: 1 }],\r\n    { shippingCents: 200, freeShippingAtCents: 1000 }).totalCents, 300);\r\n});\r\ntest('invalid input is rejected', () => {\r\n  for (const items of [null, {}, [{ priceCents: -1, quantity: 1 }], [{ priceCents: 1, quantity: 0 }]]) {\r\n    assert.throws(() => calculateTotal(items), TypeError);\r\n  }\r\n});\r\ntest('overflow is rejected', () => {\r\n  assert.throws(() => calculateTotal([{ priceCents: Number.MAX_SAFE_INTEGER, quantity: 2 }]), RangeError);\r\n});\r\ntest('percentOff discounts merchandise before adding shipping', () => {\r\n  assert.deepEqual(calculateTotal([{ priceCents: 1000, quantity: 1 }], { percentOff: 10 }),\r\n    { subtotalCents: 1000, shippingCents: 500, totalCents: 900 + 500 });\r\n});\r\ntest('percentOff rounds the discounted merchandise amount once', () => {\r\n  assert.deepEqual(calculateTotal([{ priceCents: 999, quantity: 1 }], { percentOff: 10 }),\r\n    { subtotalCents: 999, shippingCents: 500, totalCents: 899 + 500 });\r\n});\r\ntest('percentOff of 0 and 100 are valid boundaries', () => {\r\n  assert.equal(calculateTotal([{ priceCents: 1000, quantity: 1 }], { percentOff: 0 }).totalCents, 1000 + 500);\r\n  assert.equal(calculateTotal([{ priceCents: 1000, quantity: 1 }], { percentOff: 100 }).totalCents, 0 + 500);\r\n});\r\ntest('shipping eligibility uses the original subtotal, not the discounted one', () => {\r\n  const result = calculateTotal([{ priceCents: 5000, quantity: 1 }], { percentOff: 50 });\r\n  assert.equal(result.shippingCents, 0);\r\n  assert.equal(result.subtotalCents, 5000);\r\n  assert.equal(result.totalCents, 2500);\r\n});\r\ntest('invalid percentOff values throw TypeError', () => {\r\n  for (const percentOff of [-1, 101, NaN, Infinity, -Infinity, '10', null, {}]) {\r\n    assert.throws(() => calculateTotal([{ priceCents: 1000, quantity: 1 }], { percentOff }), TypeError);\r\n  }\r\n});\r\ntest('default behavior is preserved when percentOff is omitted', () => {\r\n  assert.deepEqual(calculateTotal([{ priceCents: 1200, quantity: 2 }]),\r\n    { subtotalCents: 2400, shippingCents: 500, totalCents: 2900 });\r\n});\r\ntest('items input is not mutated', () => {\r\n  const items = [{ priceCents: 1000, quantity: 1 }];\r\n  const snapshot = JSON.parse(JSON.stringify(items));\r\n  calculateTotal(items, { percentOff: 25 });\r\n  assert.deepEqual(items, snapshot);\r\n});\r\n"
+    }
+  ]
+}

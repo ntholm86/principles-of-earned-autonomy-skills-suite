@@ -21,3 +21,11 @@ jobs:
 
       - name: Run verify.py
         run: python verify.py
+
+      - name: Set up Node.js for the reproducible pilot
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Test pilot fixture and external acceptance evaluator
+        run: node --test experiments/accountable-agent-pilot/fixture/cart.test.mjs experiments/accountable-agent-pilot/acceptance.test.mjs experiments/accountable-agent-pilot/run.test.mjs

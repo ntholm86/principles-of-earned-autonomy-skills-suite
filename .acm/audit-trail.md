@@ -18249,3 +18249,135 @@ maximum. Preserve all failed host captures; no completed task result exists to
 replace. The runnable protocol now records the changed ceiling, ancestor-path
 constraint and supported native/npm-loader entry routes. Skill capabilities,
 task, evaluator and model defaults remain unchanged.
+
+## 2026-11-11 - evidence-led-visibility-pilot-results
+
+- target: public Skills Suite contribution, pilot evidence and distribution drafts
+- operator: Nils Wendelboe Holmager
+- agent: AI assistant using Copilot SDK in VS Code; model identity not exposed
+- skill: intent, improve, engineering-preferences, trail
+- outcome: four functional passes; intended PEA comparison inconclusive; no PEA trace
+- delta: bounded README/metadata claims, runnable pilot, all outcomes and review-gated outreach
+
+### Interpretation and examination
+
+Continuation of the explicitly approved visibility effort and preregistration
+above. Publication is authorized for verified repository changes; exact social
+posts and outreach remain owner-review-gated. No new model calls beyond the
+four authorized sessions are authorized by this result. The public source
+branch remains isolated from unrelated dirty/unpublished local suite work.
+
+Purpose: make the research tryable and discussable. Evidence: independent
+functional checks can pass while intended workflow delivery fails. Inconsistency:
+suite discovery and activation are different surfaces; a functional-pass label
+alone could hide the missing trace. Resource lens: observations include host
+overhead and are too small for speed or cost-effectiveness claims. Challenge:
+a polished positive launch story would be easier, but false for these results.
+
+### Decision and prediction comparison
+
+[!DECISION] Publish all four outcomes, including the missing PEA workflow,
+rather than claim a positive comparison or silently replace unsuccessful
+attempts. Fix the evidenced harness defects for future users without rewriting
+the frozen experiment. Precedent check: current destinations, orientation and
+the pre-action entry require negative results, meaningful evidence and explicit
+authority; neither genericity nor research/adoption priorities justify concealing
+a result. Reject an unapproved fifth model session and fabricated independence.
+
+Frozen invocation source: 7164cc220985520ff43f5291ebb17bbc360853f4.
+Runtime model in all four captures: claude-sonnet-5, selected by CLI default,
+not an override. Each session reported one premium request; this is not token
+usage or measured money. Actual source/skill/evaluator hashes, timestamps and
+final code/tests are in experiments/accountable-agent-pilot/evidence.json.
+
+All four attempts passed 17/17 unchanged external acceptance checks and,
+on observer-owned rerun, all six original regression tests. Neither PEA attempt
+read an operational SKILL.md or invoked Improve in its captured tool sequence.
+Neither produced .acm/audit-trail.md. Runtime discovery listed all five project
+skills, so this is not evidence that applied PEA outperformed or underperformed
+baseline; activation was not demonstrated and the end-to-end trace requirement
+was unmet. One PEA attempt searched relative paths from the run directory.
+The root cause cannot be assigned uniquely to host routing or model compliance.
+
+The functional prediction held; the hoped-for inspectable PEA decision record
+did not. Host-only failures before model execution remain separately retained:
+inherited ancestor skills, Windows shim startup and unsupported five-credit cap.
+No completed task result was replaced. Raw private captures are retained outside
+the repository; public receipts contain only task code, named checks, model,
+tool-name sequence and source hashes, not private account/config data or raw
+model reasoning.
+
+[!REVERSAL] Withheld the planned positive workflow demonstration after the
+captures showed neither PEA-labeled session left a trace. The prepared short
+video is instead explicitly an annotated evidence explainer, not live agent
+footage or a successful PEA demonstration. Posts include the negative result,
+not a testimonial. No post, message, event registration or invitation has been
+sent merely because a draft exists.
+
+### Implementation and verification
+
+The runner now supplies explicit -C targeting, removes unknown tool aliases,
+runs original regressions from observer-owned copies, and returns a nonzero
+exit if a PEA trace is missing or any trial is inconclusive. These corrections
+are not a new successful live-model result. A test-only CLI double exercises
+all four receipt paths, target selection, the approved cap, original tests
+despite deliberately poisoned agent tests, and refusal to overwrite outputs.
+Ten Node tests pass, including the six original tests, positive/negative
+acceptance controls and runner integration. verify.py and diff checks pass.
+The pre-commit verifier initially rejected non-italic trigger labels in the
+uncommitted checkpoint; labels were corrected and integrity passed without
+bypassing hooks. A runner unit test then exposed .mjs CLI-entry handling;
+the launcher now supports .js/.mjs/.cjs, and the same test passes.
+
+README entry claims now say designed to address rather than immediately solve;
+persistent files do not guarantee useful recall, and prediction instructions
+do not force compliance or expose true internal reasoning. The GitHub description
+was saved and reread without legacy skill names, obsolete iteration counts or
+an unqualified convergence boast. Existing framework thesis and skill contracts
+were not edited. CI includes the dependency-free Node pilot tests.
+
+The framework's GitHub description was likewise aligned with its current
+Operator's Intent name and proposed-framework/proposed-ARF status; its source
+README framing and philosophical thesis were not changed.
+
+Prepared a private three-post series, five source-checked outreach routes,
+local demo proposal, opt-in trial invitation and consent-aware feedback plan.
+The existing Far Horizon transfer is historical evidence, not a current
+testimonial: a current exact-name code search returned no matches, so the draft
+asks whether mechanisms remain useful rather than claiming current active use.
+Copenhagen's official event page lists a November 25 code-first demo night;
+no attendance or speaking acceptance is claimed. Latent Space and MLOps official
+community routes are confirmed; private sharing rules still require checking.
+Show HN requires runnable work and owner availability, not a landing page or
+vote solicitation. Five routes do not equal five recruited practitioners.
+
+### Reflection
+
+[!REALIZATION] The most consequential adoption boundary exposed here is
+discoverability versus actual invocation: publishing skills and seeing them in
+a host registry does not establish that the agent applies their governance.
+The falsifiable current model is that reliable first-use activation, rather
+than another description of the framework, is the next barrier to a convincing
+demonstration. A corrected host or independent practitioner could overturn it.
+Blind spot: the four calls test one small synthetic task on one model family;
+cross-session memory, independent use and true reasoning fidelity are untouched.
+A knowledgeable practitioner could object that the intended treatment never
+reached the workflow; the report explicitly treats causal comparison as
+inconclusive while retaining the real end-to-end failure.
+
+- *Recurring finding-class:* not fired - recent installer/record-helper repairs distinguish delivery from behavior, but this is the first four-session visibility pilot with direct activation evidence, not a repeated patch to the same failed comparison.
+- *About to declare silence:* not fired - a bounded pilot and explicit negative result are being published.
+- *Contradicts prior realization:* not fired - earlier warnings that installation is not discovery and natural-language protocols are not structural guarantees are reinforced; this does not refute earlier bounded successful runs.
+- *Operator explicitly asked for arc reflection:* not fired - approved a visibility effort, not a whole-trail review.
+
+### Candidate Next Moves
+
+1. Preregister a separately authorized activation-qualified run because the intended PEA treatment was not demonstrated here; keep this result.
+2. Obtain owner approval of exact posts and outreach, then recruit voluntary independent attempts with failures and consent recorded.
+3. Offer the verified Copenhagen demo route once the owner is ready to present the real limitations and answer questions.
+
+Destination need: not triggered - faithful negative results and deferred
+outbound approval remain within the existing research/adoption destination.
+Orientation freshness: current - the map already requires actual unassisted
+first-use evidence and warns that contracts alone do not prove behavior; this
+small result adds a concrete test, not a new program-wide convergence claim.
