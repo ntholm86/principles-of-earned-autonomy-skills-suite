@@ -51,7 +51,7 @@ Before forming any hunches, look at what is available in memory:
 
 - `destination.md` — what the operator has explicitly said (if it exists).
 - `orientation.md` — what the agent's last arc-read concluded about the target.
-- The trail (a legacy `.acm/audit-trail.md`, then `records/` records) — recent decisions, reversals, realisations.
+- The trail (a legacy `.acm/audit-trail.md`, then `records/`) — recent decisions, reversals, realisations.
 - When the run's active scope is a task scope (defined in [trail/SKILL.md](../trail/SKILL.md)), these paths mean that scope, and the file Destination writes is the task's `destination.md`. A task destination is layered under the repo destination: it may narrow it and never contradict it, because the higher scope always wins. Read the repo destination first.
 - Relevant prior conversation records, if available: `.acm/transcripts/`, linked host or harness capture, and `.acm/sessions/` (including legacy summaries). Distinguish independent capture from agent-authored summaries by provenance and fidelity markings, not directory name.
 - The current conversation — what the operator has been emphasising, dismissing, returning to.

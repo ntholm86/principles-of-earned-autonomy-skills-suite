@@ -335,6 +335,7 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 328 | 2026-11-21 | plain-memory-file-names | skills write destination.md, orientation.md plainly; chain is memory-wide, repository, path, task everywhere | trail 2.8.0, improve 3.22.0, intent 1.11.0, destination 2.11.0, orient 2.10.0 (CHANGELOG v4.36.0) |
 | ▸ 329 | 2026-11-21 | plain-memory-file-names-hansei-correction | the macro-Hansei for that entry's fired trigger is supplied here; the slug is grandfathered in verify.py | verify.py failed -> passes; the earlier entry is unchanged |
 | ▸ 330 | 2026-11-21 | records-folder-and-sealing | trail/ renamed records/; closed months are sealed into records/<yyyy-MM>.md with git and a SHA-256 tool, no script |  |
+| ▸ 331 | 2026-11-21 | trail-means-records-and-sealing-docs | redundant 'records/ records' wording removed; the trail defined as the scope's records/; sealing mentioned in user docs |  |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -1513,4 +1514,4 @@ Do not edit by hand — re-run the command to refresh.
 
 - **REVERSAL:** Its commit also went in without waiting for verify.py; the commit step is now gated on verify passing.
 
-**330 runs total — 302 with changes, 28 silence**
+**331 runs total — 303 with changes, 28 silence**

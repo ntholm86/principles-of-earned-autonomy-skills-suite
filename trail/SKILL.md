@@ -40,7 +40,7 @@ repositories/<id>/                         repository scope: the same three, plu
   paths/<code/path>/                       path scope: the same three, and its own tasks/
 ```
 
-One rule: a scope is a folder, and every scope folder has the same three entries — `destination.md` (the operator's mandate; written only by Destination after confirmation), `orientation.md` (Orient's derived synthesis) and `records/` (one file per record; closed months sealed). All are optional until used.
+One rule: a scope is a folder, and every scope folder has the same three entries — `destination.md` (the operator's mandate; written only by Destination after confirmation), `orientation.md` (Orient's derived synthesis) and `records/` (the trail: one file per record, closed months sealed). All are optional until used.
 
 **Resolve before reading or writing.** The work repository's identity is its root commits (`git rev-list --max-parents=0 HEAD`). Across the registered memory repositories, each of which must contain `.acm-root`, exactly one `repositories/*/repository.json` whose `root_commits` intersect is the **bound** scope. Folder names and remote URLs never decide identity, so a renamed clone keeps its memory and two same-named repositories are never conflated. No match is **unbound**; more than one is **ambiguous**; an unreadable registry, memory repository or binding is **unavailable**. `record.py resolve` performs this check.
 
@@ -60,7 +60,7 @@ One rule: a scope is a folder, and every scope folder has the same three entries
 
 ### Helper and commit routine
 
-The skills repository's optional `<skills-repo>/harness/tools/record.py` applies these rules from the work repository's directory (or `$TRAIL_ROOT`); the one-line installer does not copy it and it is never committed to a target. `resolve` prints the bound scope or the reason there is none; `new --slug=<slug>` creates a bound record (`--body-file <file>` accepts a finished entry create-only; a stub created without it is a local draft until committed) or appends a legacy stub; `history`, `learning` and `summary` read a legacy `audit-trail.md` first, then the `records/` records in filename order; `--scope <task>` addresses a task scope and `--path <code/path>` a path scope; together they address a task inside a path scope.
+The skills repository's optional `<skills-repo>/harness/tools/record.py` applies these rules from the work repository's directory (or `$TRAIL_ROOT`); the one-line installer does not copy it and it is never committed to a target. `resolve` prints the bound scope or the reason there is none; `new --slug=<slug>` creates a bound record (`--body-file <file>` accepts a finished entry create-only; a stub created without it is a local draft until committed) or appends a legacy stub; `history`, `learning` and `summary` read a legacy `audit-trail.md` first, then the `records/` in filename order; `--scope <task>` addresses a task scope and `--path <code/path>` a path scope; together they address a task inside a path scope.
 
 In a bound scope, commit the work in the work repository and the record in the memory repository per its policy, subject `trail: <slug>`. In legacy memory, regenerate the derived files and commit them with the entry:
 

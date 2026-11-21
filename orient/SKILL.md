@@ -56,7 +56,7 @@ A scope statement prevents the arc-read from being undirected. It also makes the
 
 ### 1b. Freshness guard (derived artifacts)
 
-The trail (a legacy `.acm/audit-trail.md`, then `records/` records) is the source of truth. `history.md`, `learning.md`, and `learning-archive.md` are optional derived surfaces (see [Trail](../trail/SKILL.md)); an arc-claim formed from a stale derived surface is a claim about a trail that no longer exists.
+The trail (a legacy `.acm/audit-trail.md`, then `records/`) is the source of truth. `history.md`, `learning.md`, and `learning-archive.md` are optional derived surfaces (see [Trail](../trail/SKILL.md)); an arc-claim formed from a stale derived surface is a claim about a trail that no longer exists.
 
 - **If the target uses derived artifacts**, regenerate them from the current trail before reading them. The helper lives in the skills clone, never in the target repo: `python <skills-repo>/harness/tools/record.py history --write` and `python <skills-repo>/harness/tools/record.py learning --write`, run from the target repository's directory so the scope resolves. Confirm each derived file is no older than the trail. If regeneration is not possible, read the trail directly and say so in the run notes; do not form arc-claims from the stale derived files.
 - **If the target has no derived artifacts**, there is nothing to refresh. Read the trail directly and proceed.
