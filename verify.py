@@ -504,6 +504,10 @@ GRANDFATHERED_ENTRIES: dict[str, set[str]] = {
     "retrospect-to-orient-rename": {"trigger"},
     "stormp-illustration-readme": {"trigger"},
     "replace-usage-blocker-with-host-fidelity-gate": {"trigger"},
+    # 2026-11-21 condensed entries wrote the four triggers on one line; the correction
+    # entry "shared-acm-layout-trigger-correction" restates them one per line.
+    "uniform-scope-layout": {"trigger"},
+    "path-scope-writer": {"trigger"},
     # Session-file references that predate/immediately-follow the fidelity
     # contract date but whose referenced files were never committed. The
     # content cannot be reconstructed without fabricating history.

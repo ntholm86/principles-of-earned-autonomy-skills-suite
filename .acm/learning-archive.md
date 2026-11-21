@@ -1305,6 +1305,10 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** The suite's route-prescription problem has an authority precursor: an unexposed synthesis can become governance before anyone debates whether it prescribes a route. Confirming completed Destination meaning closes that precursor while leaving the agent free to reason about implementation.
 
+## 2026-08-16 — sharpen-destination-for-moving-frontier-viability
+
+**[!REALIZATION]** Governance accretion is a moving-frontier risk: a mechanism that once earned its context cost can become unnecessary as models improve, while a locally justified flow addition can still make the whole contract harder and more expensive to reconcile.
+
 ---
 
-**325 markers — 285 realisations, 40 reversals**
+**326 markers — 286 realisations, 40 reversals**

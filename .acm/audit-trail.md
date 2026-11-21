@@ -18474,3 +18474,21 @@ Full record (decision, rejected routes, prediction, verification): acm-personal,
 Full record: acm-personal, repositories/acm-spec/trail/*-path-scope-writer.md.
 
 **Across-trail trigger evaluation:** recurring finding-class not fired; silence not fired; no realization contradicted; operator did not ask for an arc read.
+
+## 2026-11-21 - shared-acm-layout-trigger-correction
+
+- target: the trail entries uniform-scope-layout and path-scope-writer (correction)
+- operator: Nils Wendelboe Holmager
+- agent: Claude Opus (family identified by the operator; exact version not exposed); host: Copilot SDK in VS Code
+- skill: Trail (correction)
+- outcome: trigger evaluations for both entries restated one per line; both slugs grandfathered in verify.py
+- delta: verify.py failed on two condensed entries -> passes; earlier entries unchanged
+
+Both entries wrote the four-trigger evaluation on one line, which verify.py rejects. Append-only discipline forbids editing them, so the evaluations are restated here for both, unchanged in substance, and the two slugs are grandfathered with a pointer to this entry. [!REVERSAL] I declared iteration 1 verified after running verify.py before appending its entry, not after; the check now runs after the entry is written.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired for either entry; iteration 2 followed directly from iteration 1's named blind spot.
+- *About to declare silence:* not fired; both entries made changes.
+- *Contradicts prior [!REALIZATION]:* not fired; no realization contradicted.
+- *Operator explicitly asked:* not fired; the operator asked for a cross-project bounded-silence run, not an arc read.

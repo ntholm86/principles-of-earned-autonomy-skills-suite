@@ -5,11 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 325 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-16 — sharpen-destination-for-moving-frontier-viability
-
-**[!REALIZATION]** Governance accretion is a moving-frontier risk: a mechanism that once earned its context cost can become unnecessary as models improve, while a locally justified flow addition can still make the whole contract harder and more expensive to reconcile.
+Showing the most recent 60 markers. 326 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-16 — sharpen-destination-for-moving-frontier-viability
 
@@ -247,6 +243,10 @@ Showing the most recent 60 markers. 325 older marker(s) are in `.acm/learning-ar
 
 **[!REVERSAL]** Within this iteration: the first record.py draft took the mandate revision from `git -C <memory> rev-parse HEAD`. Replaced before the tests ran, after noticing that a memory directory which is not itself a repository would report the HEAD of an enclosing repository (the test fixtures sit inside this suite's checkout, so it would have attributed records to this suite's commit). The revision is now taken only when the memory directory is its own Git top level; otherwise it is "unknown".
 
+## 2026-11-21 — shared-acm-layout-trigger-correction
+
+**[!REVERSAL]** I declared iteration 1 verified after running verify.py before appending its entry, not after; the check now runs after the entry is written.
+
 ---
 
-**60 markers — 46 realisations, 14 reversals**
+**60 markers — 45 realisations, 15 reversals**

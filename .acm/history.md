@@ -331,6 +331,7 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 324 | 2026-11-21 | shared-acm-memory-repository-alignment | suite aligned to the shared-ACM memory-repository model; record.py resolves bindings and writes create-only records; legacy in-repo memory preserved | v4.34.4 -> v4.35.0; trail 2.6.0 -> 2.7.0, improve 3.20.0 -> 3.21.0, intent 1.9.0 -> 1.10.0, destination 2.9.0 -> 2.10.0, orient 2.8.0 -> 2.9.0, probe 3.4.2 -> 3.5.0 |
 | ▸ 325 | 2026-11-21 | uniform-scope-layout | scope layout now one rule: a scope is a folder with destination.md, orientation.md and trail/; no .acm/ inside memory repositories; path scopes under paths/ |  |
 | ▸ 326 | 2026-11-21 | path-scope-writer | a record goes to the narrowest applicable scope: named task, else path scope, else repository |  |
+| ▸ 327 | 2026-11-21 | shared-acm-layout-trigger-correction | trigger evaluations for both entries restated one per line; both slugs grandfathered in verify.py | verify.py failed on two condensed entries -> passes; earlier entries unchanged |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -1501,4 +1502,8 @@ Do not edit by hand — re-run the command to refresh.
 - **REVERSAL:** This reverses the 2026-06-22 to 2026-08-01 decision to have each primary skill walk parent directories for .acm/destination.md up to 4 levels. The governing ACM model changed from filesystem discovery to an explicit memory repository with root-commit binding; the walk would now read guessed mandates from neighbouring clone folders, which R-13 and R-15 forbid.
 - **REVERSAL:** Within this iteration: the first record.py draft took the mandate revision from `git -C <memory> rev-parse HEAD`. Replaced before the tests ran, after noticing that a memory directory which is not itself a repository would report the HEAD of an enclosing repository (the test fixtures sit inside this suite's checkout, so it would have attributed records to this suite's commit). The revision is now taken only when the memory directory is its own Git top level; otherwise it is "unknown".
 
-**326 runs total — 298 with changes, 28 silence**
+### Run 327 — 2026-11-21 — shared-acm-layout-trigger-correction
+
+- **REVERSAL:** I declared iteration 1 verified after running verify.py before appending its entry, not after; the check now runs after the entry is written.
+
+**327 runs total — 299 with changes, 28 silence**
