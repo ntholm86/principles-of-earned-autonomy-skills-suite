@@ -1,6 +1,6 @@
 ---
 name: record
-version: 3.2.1
+version: 3.2.2
 description: 'Automatic egress service for substantive work. Writes a structured record in the bound memory scope of the shared ACM (a new file in records/; legacy in-repo .acm/audit-trail.md is appended) — the interpretation, examination, decisions, actions, and reflection. Destination, Improve, Orient, and Probe apply Record automatically; the operator should never need to invoke it separately. Direct use remains available for consequential work outside those workflows and independent-writer mode.'
 argument-hint: 'The target being worked on (repo, file, system) — used to populate the record header'
 ---
@@ -42,7 +42,7 @@ repositories/<id>/                         repository scope: the same three, plu
   paths/<code/path>/                       path scope: the same three, and its own tasks/
 ```
 
-One rule: a scope is a folder, and every scope folder has the same three entries — `destination.md` (the operator's mandate; written only by Destination after confirmation), `orientation.md` (Orient's derived synthesis) and `records/` (the trail: one file per record, closed months sealed). All are optional until used. A code folder named `records`, `tasks` or `evidence`, ending in `.md`, or beginning with `_`, is written under `paths/` with one extra leading `_`.
+One rule: a scope is a folder, and every scope folder has the same three entries — `destination.md` (the operator's mandate; written only by Destination after confirmation), `orientation.md` (Orient's derived synthesis) and `records/` (the trail: one file per record, closed months sealed). All are optional until used. A code folder named `records`, `tasks` or `evidence`, ending in `.md`, or beginning with `_` (names compared without regard to letter case), is written under `paths/` with one extra leading `_` and its original spelling.
 
 **Resolve before reading or writing.** The work repository's identity is its root commits (`git rev-list --max-parents=0 HEAD`); work not tied to a repository has none and uses the memory-wide scope of the one registered memory, or of the memory the operator names when several are registered. Across the registered memory repositories, each of which must contain `.acm-root`, exactly one `repositories/*/repository.json` whose `root_commits` intersect is the **bound** scope. Folder names and remote URLs never decide identity, so a renamed clone keeps its memory and two same-named repositories are never conflated. Clones and forks that share a root commit share one binding. No match is **unbound**; more than one is **ambiguous**; an unreadable registry, memory repository or binding is **unavailable**. `record.py resolve` performs this check.
 
@@ -64,7 +64,7 @@ One rule: a scope is a folder, and every scope folder has the same three entries
 
 The skills repository's optional `<skills-repo>/harness/tools/record.py` applies these rules from the work repository's directory (or `$RECORD_ROOT`); the one-line installer does not copy it and it is never committed to a target. `resolve` prints the bound scope or the reason there is none; `new --slug=<slug>` creates a bound record (`--body-file <file>` accepts a finished entry create-only; a stub created without it is a local draft until committed) or appends a legacy stub; `history`, `learning` and `summary` read a legacy `audit-trail.md` first, then the `records/` in filename order; `--scope <task>` addresses a task scope and `--path <code/path>` a path scope; together they address a task inside a path scope.
 
-In a bound scope, commit the work in the work repository and the record in the memory repository per its policy, subject `trail: <slug>`. In legacy memory, regenerate the derived files and commit them with the entry:
+In a bound scope, commit the record in the memory repository per the memory-wide destination's policy, subject `trail: <slug>`, and commit the work only as the work's own authority allows. In legacy memory, regenerate the derived files and commit them with the entry:
 
 ```
 python <skills-repo>/harness/tools/record.py history --write
@@ -235,7 +235,7 @@ The Full source must be captured independently of the audited agent. Record does
 
 For every entry:
 
-1. Record the prediction before acting: a Change writes a checkpoint record before its first change or other consequential action (accepted intent, evidence examined, decision and rationale, rejected alternative, authority, falsifiable prediction) and a completion record after it that names the checkpoint with `completes:`; any other outcome writes one record.
+1. Record the prediction before acting: a Change writes a checkpoint record before its first change or other consequential action (accepted intent, evidence examined, decision and rationale, rejected alternative, authority, falsifiable prediction) and a completion record after it that names the checkpoint with `completes:`; any other outcome writes one record. A mechanical change with no real alternative says so instead of inventing one.
 2. Mark within-iteration reversals with `[!REVERSAL]`.
 3. Name and reject at least one alternative when a decision exists.
 4. Prefer literal operator text and tool evidence over paraphrase.
@@ -264,7 +264,7 @@ If you are unsure whether this session warrants an entry: if a decision was made
 
 **Each iteration is recorded before the next begins: a Change writes a checkpoint before its first change or other consequential action and a completion after it; any other outcome writes one record.**
 
-Do not buffer entries to write at the end of all iterations. The trail is the checkpoint: if the agent crashes, times out, or the user stops the run after iteration 3 of 10, the first 3 entries must already be recorded. At the start of a run, look for an open checkpoint (one no completion record names): complete it if its decision still holds, or write a record that supersedes it and says why; in a legacy trail, an entry whose decision and prediction were recorded but whose completion never followed.
+Do not buffer entries to write at the end of all iterations. The trail is the checkpoint: if the agent crashes, times out, or the user stops the run after iteration 3 of 10, the first 3 entries must already be recorded. At the start of a run, look for an open checkpoint (one no completion record names and no later record supersedes with `supersedes:`): complete it if its decision still holds, or write a record that says why it no longer does and states `supersedes:` with the checkpoint's identifier; in a legacy trail, an entry whose decision and prediction were recorded but whose completion never followed.
 
 The mandatory sequence per iteration:
 
@@ -311,5 +311,5 @@ Record also works standalone for consequential conversations, manual operations,
 The optional `<skills-repo>/harness/tools/record.py` helper can stub a new entry for you:
 
 ```sh
-python <skills-repo>/harness/tools/record.py new --slug=<slug> --target=<target> --skill=trail
+python <skills-repo>/harness/tools/record.py new --slug=<slug> --target=<target> --skill=record
 ```

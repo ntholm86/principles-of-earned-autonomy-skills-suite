@@ -1,6 +1,6 @@
 ---
 name: improve
-version: 3.25.1
+version: 3.25.2
 description: 'The improvement skill. Understand the ask, examine the target, challenge the first read, decide on one change (or argue for redesign, or declare silence), honor the operator''s supervision or delegation boundary, act, reflect, record, and report the result clearly. USE WHEN: improve, audit, review, fix, refactor, redesign, evaluate, what would make this better, am I missing something.'
 argument-hint: 'The target to improve, and optionally the concern (correctness, simplicity, performance, etc.)'
 ---
@@ -198,7 +198,7 @@ When active, the Improve agent pauses at this step without writing the completio
 
 **In multi-iteration runs, this step executes after every iteration — not once at the end of all iterations.** The completion entry is the commit point for that iteration (a Change's checkpoint was committed before acting). Record it (in legacy memory, also regenerate `history.md` and `learning.md` when the helper is available) and commit it as Record describes, where the memory-wide destination allows, before starting the next iteration. A user who stops a 10-iteration run after iteration 4 must have 4 committed trail entries, not 0.
 
-If this is a standalone Improve installation and Record is unavailable: record where step 1's ACM §4 paragraph resolves — for a Change a checkpoint before acting and a completion naming it with `completes:`, otherwise one entry, each a new create-only `records/<UTC yyyyMMddTHHmmssZ>-<slug>.md` in a bound scope (with the attribution fields Record defines), appended to `.acm/audit-trail.md` in legacy memory, or reported to the operator, not written, when unbound. The entry must include:
+If this is a standalone Improve installation and Record is unavailable: record where step 1's ACM §4 paragraph resolves — for a Change a checkpoint before acting and a completion naming it with `completes:`, otherwise one entry, each a new create-only `records/<UTC yyyyMMddTHHmmssZ>-<slug>.md` in a bound scope (with the attribution fields: `record` (its path in the memory repository), `time`, `scope`, `repository` (id @ root commit, or `none (memory-wide)`), `session`, `authority`, `mandate`, `agent`, and `completes:` on a completion), appended to `.acm/audit-trail.md` in legacy memory, or reported to the operator, not written, when unbound. The entry must include:
 
 - Date, target, operator (if known), model family and version (operator-stated if the host does not expose it; plus tool-call ID prefix if observable).
 - Your interpretation of the ask.

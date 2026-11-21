@@ -18744,3 +18744,22 @@ Sixth review (gpt-6.1-sol, gemini-4-hydrogen, kimi-k3). The material findings we
 ### Across-trail macro-Hansei
 
 Two rounds in a row the material findings sat in rules added within the previous few hours (the path escape, then the checkpoint protocol). The pattern is not carelessness in the wording but that each new rule touches several texts (the spec, Record, Work, Improve, the READMEs) and the reviewers find the one that was not updated. The structural answer is fewer places that repeat a rule: Improve should point at Record rather than restate the protocol, and Work's copy should stay an accepted exception. Until then each rule added needs a search for every place that states the one it changes before it is committed.
+## 2026-11-21 - seventh-review-fixes-record
+
+- target: record/SKILL.md, improve/SKILL.md, README.md
+- operator: Nils Wendelboe Holmager
+- agent: Claude (Sonnet 5.5; the session began on Claude Opus 5.5); host: Copilot SDK in VS Code
+- skill: Improve
+- outcome: seventh-round findings applied
+- delta: record/SKILL.md 3.2.1 -> 3.2.2; improve/SKILL.md 3.25.1 -> 3.25.2 (CHANGELOG v5.2.2)
+
+Seventh review (gpt-6.1-sol, gemini-4-hydrogen, kimi-k3) on the unchanged texts. The findings were narrower than in any earlier round: edge cases in rules that existed (supersession closing a checkpoint, case-insensitive folder names, the commit authority for work versus memory) plus leftovers (`--skill=trail`, a standalone fallback missing its fields).
+
+[!DECISION] Fixed all; rejected nothing except two points deliberately left (see the memory record): a fuller negative-fixture set for every Appendix A row, and a statement of which host capabilities each skill needs beyond the one sentence added to the README.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired in this repository's own trail this round.
+- *About to declare silence:* not fired.
+- *Contradicts prior [!REALIZATION]:* not fired.
+- *Operator explicitly asked:* not fired.
