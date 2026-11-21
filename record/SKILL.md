@@ -1,6 +1,6 @@
 ---
 name: record
-version: 3.2.0
+version: 3.2.1
 description: 'Automatic egress service for substantive work. Writes a structured record in the bound memory scope of the shared ACM (a new file in records/; legacy in-repo .acm/audit-trail.md is appended) — the interpretation, examination, decisions, actions, and reflection. Destination, Improve, Orient, and Probe apply Record automatically; the operator should never need to invoke it separately. Direct use remains available for consequential work outside those workflows and independent-writer mode.'
 argument-hint: 'The target being worked on (repo, file, system) — used to populate the record header'
 ---
@@ -42,7 +42,7 @@ repositories/<id>/                         repository scope: the same three, plu
   paths/<code/path>/                       path scope: the same three, and its own tasks/
 ```
 
-One rule: a scope is a folder, and every scope folder has the same three entries — `destination.md` (the operator's mandate; written only by Destination after confirmation), `orientation.md` (Orient's derived synthesis) and `records/` (the trail: one file per record, closed months sealed). All are optional until used. A code folder named like a scope entry (`destination.md`, `orientation.md`, `records`, `tasks`, `evidence`), or beginning with `_`, is written under `paths/` with one extra leading `_`.
+One rule: a scope is a folder, and every scope folder has the same three entries — `destination.md` (the operator's mandate; written only by Destination after confirmation), `orientation.md` (Orient's derived synthesis) and `records/` (the trail: one file per record, closed months sealed). All are optional until used. A code folder named `records`, `tasks` or `evidence`, ending in `.md`, or beginning with `_`, is written under `paths/` with one extra leading `_`.
 
 **Resolve before reading or writing.** The work repository's identity is its root commits (`git rev-list --max-parents=0 HEAD`); work not tied to a repository has none and uses the memory-wide scope of the one registered memory, or of the memory the operator names when several are registered. Across the registered memory repositories, each of which must contain `.acm-root`, exactly one `repositories/*/repository.json` whose `root_commits` intersect is the **bound** scope. Folder names and remote URLs never decide identity, so a renamed clone keeps its memory and two same-named repositories are never conflated. Clones and forks that share a root commit share one binding. No match is **unbound**; more than one is **ambiguous**; an unreadable registry, memory repository or binding is **unavailable**. `record.py resolve` performs this check.
 
@@ -54,11 +54,11 @@ One rule: a scope is a folder, and every scope folder has the same three entries
 
 **Task scopes.** One repository often carries several unrelated tasks, and a single trail then mixes arcs that share nothing but a directory. A task gets a named scope — `tasks/<task>/` in a bound scope, `.acm/<task>/` in legacy memory — with its own trail and optional `orientation.md` and `destination.md`. The active scope is the narrowest that applies: the task scope when the confirmed mandate names a task, else the path scope the work is inside (when one exists), else the repository scope, else (work not tied to a repository) the memory-wide scope of the one registered memory, or of the memory the operator names when several are registered, with `repository` stated as `none (memory-wide)`; Intent selects it and names it in its narration (see [intent/SKILL.md](../intent/SKILL.md)). Every skill reads the parent scopes first and reads and writes only the active scope. A task scope is created only when a confirmed mandate names it, never as a side effect of guessing a task boundary; entries are never merged or moved between scopes, and a finished task scope stays as evidence.
 
-**Recording in a bound scope.** Each entry is one new file `records/<UTC yyyyMMddTHHmmssZ>-<slug>.md`; its content is never changed or lost. An existing identifier with identical content is already accepted; with different content it is a collision: report it, never overwrite, and write the new record under a new identifier. A correction is a new record that references the old one. A legacy `audit-trail.md` in a bound scope is read before `records/` and never appended to. Besides the entry fields below, each record states `record` (its identifier: the file's path in the memory repository), `time` (UTC), `scope`, `repository` (id @ root commit), `session` (the host's session or run identifier; `unknown` when not exposed), `authority` (the prompt, destination or delegation acted under) and `mandate` (memory repository commit or destination hash); `agent` is `unknown` when not known, never invented. Ordinary writers do not regenerate and commit derived views in a shared scope: history and learning are generated locally on demand, `orientation.md` is refreshed only by Orient (or by Work in its own runs), and each is labelled derived with its source revision. Committing and pushing memory records follows the memory-wide destination's policy; without one, leave them for the operator and say so.
+**Recording in a bound scope.** Each entry is one new file `records/<UTC yyyyMMddTHHmmssZ>-<slug>.md`; its content is never changed or lost. An existing identifier with identical content is already accepted; with different content it is a collision: report it, never overwrite, and write the new record under a new identifier. A correction is a new record that references the old one. A legacy `audit-trail.md` in a bound scope is read before `records/` and never appended to. Besides the entry fields below, each record states `record` (its identifier: the file's path in the memory repository), `time` (UTC), `scope`, `repository` (id @ root commit, or `none (memory-wide)`), `session` (the host's session or run identifier; `unknown` when not exposed), `authority` (the prompt, destination or delegation acted under) and `mandate` (memory repository commit or destination hash); `agent` is `unknown` when not known, never invented. A completion also states `completes:` (the checkpoint it closes). A checkpoint carries the interpretation, evidence examined, decision, prediction and authority; the completion carries the action, validation, prediction comparison, reflection and next moves. Ordinary writers do not regenerate and commit derived views in a shared scope: history and learning are generated locally on demand, `orientation.md` is refreshed only by Orient (or by Work in its own runs), and each is labelled derived with its source revision. Committing and pushing memory records follows the memory-wide destination's policy; without one, leave them for the operator and say so.
 
 **Sealing.** So a scope's number of files grows with months, not with records, each closed UTC month is sealed. Before writing a record, if the scope's `records/` still holds records from an earlier month, seal that month first as its own commit: create `records/<yyyy-MM>.md` with each of that month's records in file-name order, each preceded by a line `<!-- record: <file name> bytes:<n> sha256:<hash> -->` (lowercase hex) and followed by its exact `n` bytes (then one LF that belongs to the sealed file, not to the record); remove exactly those records; commit both together. If the sealed file already exists or the push is rejected, pull: if the month is now sealed, drop your seal, re-accept any of your records of that month that the sealed file lacks under a new name with the current time, and never seal that month again; if it is not sealed, retry. Where commits are not permitted, leave closed months unsealed and say so. Never edit a sealed file. A record is exactly the `n` bytes after its marker, so a marker-like line inside a record is content. A record whose name is in a sealed file is already accepted when its SHA-256 equals the marker's, and a collision otherwise; a late record for a sealed month is written under a new name with the current time. Keep records byte for byte: the memory repository must not normalize their line endings (for Git, `**/records/** -text` in `.gitattributes`). Sealing needs only git and a byte-count and SHA-256 tool. Read `records/` in file-name order; sealed months sort first.
 
-**Recording in legacy memory.** One file per scope, `.acm/audit-trail.md` or `.acm/<task>/audit-trail.md`: append-only, one `##` entry per session, newest at the bottom, with `history.md` and `learning.md` regenerated and committed alongside it.
+**Recording in legacy memory.** One file per scope, `.acm/audit-trail.md` or `.acm/<task>/audit-trail.md`: append-only, one `##` entry per recorded iteration, newest at the bottom, with `history.md` and `learning.md` regenerated alongside it when the helper is available.
 
 ### Helper and commit routine
 
@@ -81,7 +81,7 @@ If Orient ran this session and updated `orientation.md`, include it in the same 
 
 The trail is what every run leaves; the other files are optional until used. Conformance to the Agent Context Memory specification this skillset implements ([agent-context-memory](https://github.com/ntholm86/agent-context-memory)) is defined by its section 7.3, not by this skill. The optional files:
 
-- `history.md`, `learning.md`, `learning-archive.md` — derived reading aids, never hand-written, generated only by `record.py history --write` / `learning --write`. Adopt them when the trail is long enough that reading it in full every run is wasteful. `learning.md` holds the most recent `[!REALIZATION]` and `[!REVERSAL]` markers with date+slug context, bounded to a recent window; older markers move to `learning-archive.md`, read only when the window does not cover what is needed. Improve, Orient and Intent read them conditionally, before the full trail. In legacy memory they are regenerated at every commit so they never lag the source; in a bound scope they are local views as above.
+- `history.md`, `learning.md`, `learning-archive.md` — derived reading aids, never hand-written, generated only by `record.py history --write` / `learning --write`. Adopt them when the trail is long enough that reading it in full every run is wasteful. `learning.md` holds the most recent `[!REALIZATION]` and `[!REVERSAL]` markers with date+slug context, bounded to a recent window; older markers move to `learning-archive.md`, read only when the window does not cover what is needed. Improve, Orient and Intent read them conditionally, before the full trail. In legacy memory they are regenerated at every commit when the helper is available, and otherwise may lag; in a bound scope they are local views as above.
 - `orientation.md` — Orient-derived current orientation; recommended once arc-level synthesis earns its cost. The destination is the goal the operator holds and rarely changes; the orientation is the agent's current synthesis of where the target is, rewritten each Orient run. The destination is input to the loop; the orientation is output.
 - `transcripts/` — verbatim transcript exports (see "Independent capture"). `sessions/` — legacy pre-v2.0.0 agent-authored summaries, not written routinely (not the specification's independent-evidence folder, `evidence/`).
 
@@ -235,7 +235,7 @@ The Full source must be captured independently of the audited agent. Record does
 
 For every entry:
 
-1. Record the prediction before acting: a Change writes a checkpoint record before its first change (accepted intent, evidence examined, decision and rationale, rejected alternative, authority, falsifiable prediction) and a completion record after it that names the checkpoint with `completes:`; any other outcome writes one record.
+1. Record the prediction before acting: a Change writes a checkpoint record before its first change or other consequential action (accepted intent, evidence examined, decision and rationale, rejected alternative, authority, falsifiable prediction) and a completion record after it that names the checkpoint with `completes:`; any other outcome writes one record.
 2. Mark within-iteration reversals with `[!REVERSAL]`.
 3. Name and reject at least one alternative when a decision exists.
 4. Prefer literal operator text and tool evidence over paraphrase.
@@ -262,7 +262,7 @@ If you are unsure whether this session warrants an entry: if a decision was made
 
 ### Multi-iteration runs
 
-**Each iteration is recorded before the next begins: a Change writes a checkpoint before its first change and a completion after it; any other outcome writes one record.**
+**Each iteration is recorded before the next begins: a Change writes a checkpoint before its first change or other consequential action and a completion after it; any other outcome writes one record.**
 
 Do not buffer entries to write at the end of all iterations. The trail is the checkpoint: if the agent crashes, times out, or the user stops the run after iteration 3 of 10, the first 3 entries must already be recorded. At the start of a run, look for an open checkpoint (one no completion record names): complete it if its decision still holds, or write a record that supersedes it and says why; in a legacy trail, an entry whose decision and prediction were recorded but whose completion never followed.
 
@@ -270,14 +270,17 @@ The mandatory sequence per iteration:
 
 ```
 iteration N:
-  1. record the checkpoint (a Change, before its first change) and the completion, or the one record
+  1. a Change: record the checkpoint, commit it where permitted, and only then make the first change
+       bound scope:   create records/<UTC>-<slug>-N-checkpoint.md (record.py new --body-file)
+       legacy memory: append to .acm/audit-trail.md
+  2. record the completion (or the one record for any other outcome)
        bound scope:   create records/<UTC>-<slug>-N.md (record.py new --body-file)
-       legacy memory: append to .acm/audit-trail.md, then record.py history --write and learning --write
-  2. commit per the "Helper and commit routine" above   ("trail: <slug>-N")
+       legacy memory: append to .acm/audit-trail.md, then record.py history --write and learning --write when the helper is available
+  3. commit per the "Helper and commit routine" above where the memory-wide destination allows ("trail: <slug>-N"); otherwise leave it for the operator and say so
   ↓ only now begin iteration N+1
 ```
 
-Do not begin the next iteration until both steps are complete. Each record is a checkpoint — if the agent crashes or the user stops after iteration 3 of 10, the first 3 entries already exist. Batching at the end defeats this.
+Do not begin the next iteration until these steps are complete (the commit only where permitted). Each record is a checkpoint — if the agent crashes or the user stops after iteration 3 of 10, the first 3 entries already exist. Batching at the end defeats this.
 
 ---
 

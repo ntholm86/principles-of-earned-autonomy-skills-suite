@@ -153,7 +153,7 @@ Record logs what the agent *says* it decided. Research shows this is not always 
 2. **Outcome anchoring (Orient):** Subsequent arc-reads systematically evaluate actual outcomes against those prior predictions to expose localized confabulation.
 3. **Reversal density (Record, Orient):** A uniform, unbroken trail of "successes" is actively flagged as suspect rationalization. True reasoning leaves a trail of reversals, dead ends, and tested predictions.
 4. **Adversarial audit (Orient):** A dedicated lens to actively hunt for outcome mismatch and logical discontinuities across the trail history.
-5. **Separating writer and decider (Improve, Record):** In maximum-trust sequences (High-Fidelity Mode), the agent making the change is procedurally forbidden from writing the final trail entry, handing off to a second independent evaluator.
+5. **Separating writer and decider (Improve, Record):** In maximum-trust sequences (High-Fidelity Mode), the agent making the change is procedurally forbidden from writing the final trail entry, handing off to an independent writer.
 
 Together, these instructions ask the agent to record a prediction before observing the outcome and expose mismatches to later examination. They do not force compliance or establish access to the agent's true internal reasoning.
 

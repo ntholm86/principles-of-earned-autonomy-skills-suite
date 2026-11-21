@@ -5,11 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 330 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-16 — remove-intent-implicit-permission-paths
-
-**[!REALIZATION]** The recurring authority defects are temporal accretion: each rule was locally coherent when introduced, but later architecture changed its meaning. The suite needs evidence that mechanisms still agree with current governing rules, not only evidence that each addition was justified when written.
+Showing the most recent 60 markers. 331 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-16 — orient-after-intent-implicit-permission-repair
 
@@ -246,6 +242,10 @@ Showing the most recent 60 markers. 330 older marker(s) are in `.acm/learning-ar
 ## 2026-11-21 — trail-skill-renamed-record
 
 **[!REVERSAL]** Two single-pair edits to INSTALLING.md and the installer test applied as one-character replacements (a PowerShell array-flattening quirk): every backtick became "/" and every quote became "i". Caught by the "0 matches" count and a character count against HEAD before any commit; both files were restored from git and the edits redone correctly. A second slip turned a shell "fi" into a form feed; fixed and syntax-checked. Lesson: after scripted edits, compare each changed file's character counts against HEAD.
+
+## 2026-11-21 — sixth-review-fixes-record
+
+**[!REALIZATION]** Every round has found its material defects in text added since the previous round, not in text that had survived earlier rounds. That supports the loop's usefulness and also its limit: the last change before a clean round is always a risk, so a silence claim must be made on an unchanged artifact and never on the fixes of the same hour.
 
 ---
 

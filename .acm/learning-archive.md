@@ -1325,6 +1325,10 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** Capability-preserving simplification can come from deleting superseded permission semantics rather than compressing reasoning operations. This reduced reconciliation burden while making authority more deterministic.
 
+## 2026-08-16 — remove-intent-implicit-permission-paths
+
+**[!REALIZATION]** The recurring authority defects are temporal accretion: each rule was locally coherent when introduced, but later architecture changed its meaning. The suite needs evidence that mechanisms still agree with current governing rules, not only evidence that each addition was justified when written.
+
 ---
 
-**330 markers — 290 realisations, 40 reversals**
+**331 markers — 291 realisations, 40 reversals**

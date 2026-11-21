@@ -1,6 +1,6 @@
 ---
 name: destination
-version: 2.13.0
+version: 2.13.1
 description: 'Automatic direction-consolidation service. Improve schedules it when accumulated work makes cross-run direction useful; it surfaces sourced guesses about durable direction as questions the operator can confirm, correct, or reject. Manual invocation remains available when the operator wants to explore or revise direction.'
 argument-hint: 'Optionally: the area you want hunches about (a specific concern, a recent decision, the project as a whole)'
 ---
@@ -47,7 +47,7 @@ Destination stops as soon as the operator confirms, corrects, or declines the pr
 
 Before forming any hunches, look at what is available in memory:
 
-**ACM §4 Scoped Memory.** Resolve the active scope and read the governing chain as [Record defines it](../record/SKILL.md#where-memory-lives) — memory-wide, then repository, then path, then task destination, broadest first; the higher scope wins; nothing above `.acm-root` and no walking up the code tree. File names such as `destination.md` mean that file in the active scope. Unbound, ambiguous or unavailable memory is reported as such, and no guessed memory is read or written; the in-repo `.acm/` of an unbound repository is legacy memory. Without Record installed, the essentials are: memory is a separate repository listed in `~/.acm/memories` and bound by the work repository's root commit, and no `.acm/` is ever created in the work repository. Destination authors the repository- or task-level `destination.md`, so a hunch formed without the higher mandates risks proposing what a higher scope has already settled.
+**ACM §4 Memory Repository and Scopes.** Resolve the active scope and read the governing chain as [Record defines it](../record/SKILL.md#where-memory-lives) — memory-wide, then repository, then path, then task destination, broadest first; the higher scope wins; nothing above `.acm-root` and no walking up the code tree. File names such as `destination.md` mean that file in the active scope. Unbound, ambiguous or unavailable memory is reported as such, and no guessed memory is read or written; the in-repo `.acm/` of an unbound repository is legacy memory. Without Record installed, the essentials are: memory is a separate repository listed in `~/.acm/memories` and bound by the work repository's root commit, and no `.acm/` is ever created in the work repository. Destination authors the repository- or task-level `destination.md`, so a hunch formed without the higher mandates risks proposing what a higher scope has already settled.
 
 - `destination.md` — what the operator has explicitly said (if it exists).
 - `orientation.md` — what the agent's last arc-read concluded about the target.

@@ -34,7 +34,7 @@ Checks:
     lexical reversal cues without a `[!REVERSAL]` marker. Matches are advisory:
     they do not establish that a decision changed.
 15. `improve/SKILL.md`, `orient/SKILL.md`, `intent/SKILL.md`, and
-    `destination/SKILL.md` each carry the ACM §4 Scoped Memory paragraph with
+    `destination/SKILL.md` each carry the ACM §4 Memory Repository and Scopes paragraph with
     the identical reference to Record's single definition of memory resolution
     and the governing chain — catches a copy drifting into its own rule.
 
@@ -325,7 +325,7 @@ def check_acm_scope_traversal_consistency() -> list[str]:
     """Fail when a primary skill's ACM \u00a74 reference drifts from the canonical form.
 
     improve/orient/intent/destination each read the governing chain before
-    forming their own reasoning (ACM \u00a74 Scoped Memory) and must defer to
+    forming their own reasoning (ACM \u00a74 Memory Repository and Scopes) and must defer to
     Record's single definition in the same words, so a future edit to the rule
     cannot silently update one file and miss the others. This mirrors the drift class that previously required repair in
     PRINCIPLES.md, CHANGELOG.md, and trail/README.md (splice defects) \u2014 here caught
@@ -337,8 +337,8 @@ def check_acm_scope_traversal_consistency() -> list[str]:
         if not path.exists():
             continue
         text = path.read_text(encoding="utf-8")
-        if "ACM \u00a74 Scoped Memory" not in text:
-            failures.append(f"{rel} is missing the 'ACM \u00a74 Scoped Memory' paragraph")
+        if "ACM \u00a74 Memory Repository and Scopes" not in text:
+            failures.append(f"{rel} is missing the 'ACM \u00a74 Memory Repository and Scopes' paragraph")
             continue
         if ACM_SCOPE_TRAVERSAL_INVARIANT not in text:
             failures.append(

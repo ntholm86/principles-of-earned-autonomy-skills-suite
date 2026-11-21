@@ -343,6 +343,7 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 336 | 2026-11-21 | third-review-fixes-record | round-three findings applied; two design findings deferred | record/SKILL.md 3.1.0 -> 3.1.1 (CHANGELOG v5.1.1) |
 | ▸ 337 | 2026-11-21 | fourth-review-fixes-record | round-four findings applied to the Record skill | record/SKILL.md 3.1.1 -> 3.1.2 (CHANGELOG v5.1.2) |
 | ▸ 338 | 2026-11-21 | record-checkpoint-completion | Record writes a checkpoint before a change and a completion after it; Improve follows | record/SKILL.md 3.1.2 -> 3.2.0; improve/SKILL.md 3.24.0 -> 3.25.0 (CHANGELOG v5.2.0) |
+| ▸ 339 | 2026-11-21 | sixth-review-fixes-record | sixth-round findings applied; the checkpoint protocol added in v5.2.0 made consistent | record/SKILL.md 3.2.0 -> 3.2.1; improve/SKILL.md 3.25.0 -> 3.25.1 (CHANGELOG v5.2.1) |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -1546,4 +1547,8 @@ Do not edit by hand — re-run the command to refresh.
 
 - **decided:** Implemented exactly that choice. Rejected: an extra "interpretation accepted" record before every examination (the author declined it; a record per run for runs that change nothing); leaving the gap as a known limitation (the author declined it). Improve was changed too, because its steps (decide, act, reflect, record) would otherwise contradict the new rule.
 
-**338 runs total — 310 with changes, 28 silence**
+### Run 339 — 2026-11-21 — sixth-review-fixes-record
+
+- **decided:** Fixed each with the smallest wording: separate file name for the checkpoint, commit before acting where permitted, commit conditional on policy, completion links by `completes:`. Rejected: removing the conditional so that every deployment must commit (a no-commit deployment would block forever).
+
+**339 runs total — 311 with changes, 28 silence**

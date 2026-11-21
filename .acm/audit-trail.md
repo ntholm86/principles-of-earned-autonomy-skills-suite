@@ -18719,3 +18719,28 @@ The fifth independent review (gpt-6.1-sol, gemini-4-hydrogen, kimi-k3) kept flag
 - *About to declare silence:* not fired.
 - *Contradicts prior [!REALIZATION]:* not fired.
 - *Operator explicitly asked:* not fired.
+## 2026-11-21 - sixth-review-fixes-record
+
+- target: record/SKILL.md, improve/SKILL.md, README.md
+- operator: Nils Wendelboe Holmager
+- agent: Claude (Sonnet 5.5; the session began on Claude Opus 5.5); host: Copilot SDK in VS Code
+- skill: Improve
+- outcome: sixth-round findings applied; the checkpoint protocol added in v5.2.0 made consistent
+- delta: record/SKILL.md 3.2.0 -> 3.2.1; improve/SKILL.md 3.25.0 -> 3.25.1 (CHANGELOG v5.2.1)
+
+Sixth review (gpt-6.1-sol, gemini-4-hydrogen, kimi-k3). The material findings were again in text added a few hours earlier: the checkpoint rule left the commit step unconditional and the checkpoint uncommitted when the first change happened, Improve's High-Fidelity and standalone paths still described one finished entry, and the checkpoint covered only mutation where R-09 says change or other consequential action.
+
+[!DECISION] Fixed each with the smallest wording: separate file name for the checkpoint, commit before acting where permitted, commit conditional on policy, completion links by `completes:`. Rejected: removing the conditional so that every deployment must commit (a no-commit deployment would block forever).
+
+[!REALIZATION] Every round has found its material defects in text added since the previous round, not in text that had survived earlier rounds. That supports the loop's usefulness and also its limit: the last change before a clean round is always a risk, so a silence claim must be made on an unchanged artifact and never on the fixes of the same hour.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* fired: defects in newly added rules, in a second consecutive round.
+- *About to declare silence:* not fired.
+- *Contradicts prior [!REALIZATION]:* not fired.
+- *Operator explicitly asked:* not fired.
+
+### Across-trail macro-Hansei
+
+Two rounds in a row the material findings sat in rules added within the previous few hours (the path escape, then the checkpoint protocol). The pattern is not carelessness in the wording but that each new rule touches several texts (the spec, Record, Work, Improve, the READMEs) and the reviewers find the one that was not updated. The structural answer is fewer places that repeat a rule: Improve should point at Record rather than restate the protocol, and Work's copy should stay an accepted exception. Until then each rule added needs a search for every place that states the one it changes before it is committed.
