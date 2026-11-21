@@ -18700,3 +18700,22 @@ Fourth review, first with three launched model families (gpt-6.1-sol, gemini-4-h
 - *About to declare silence:* not fired; silence is not claimed (see the memory record of this round).
 - *Contradicts prior [!REALIZATION]:* not fired.
 - *Operator explicitly asked:* not fired.
+## 2026-11-21 - record-checkpoint-completion
+
+- target: record/SKILL.md, improve/SKILL.md
+- operator: Nils Wendelboe Holmager
+- agent: Claude (Sonnet 5.5; the session began on Claude Opus 5.5); host: Copilot SDK in VS Code
+- skill: Improve
+- outcome: Record writes a checkpoint before a change and a completion after it; Improve follows
+- delta: record/SKILL.md 3.1.2 -> 3.2.0; improve/SKILL.md 3.24.0 -> 3.25.0 (CHANGELOG v5.2.0)
+
+The fifth independent review (gpt-6.1-sol, gemini-4-hydrogen, kimi-k3) kept flagging, from one reviewer, that an immutable finished entry cannot also be an accepted pre-action prediction, and that the specification's R-09 asked for accepted interpretation before any substantive action. I asked the author how to resolve it and he chose to relax R-09 to "before the first change or other consequential action" and to give Record Work's checkpoint and completion records.
+
+[!DECISION] Implemented exactly that choice. Rejected: an extra "interpretation accepted" record before every examination (the author declined it; a record per run for runs that change nothing); leaving the gap as a known limitation (the author declined it). Improve was changed too, because its steps (decide, act, reflect, record) would otherwise contradict the new rule.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired in this repository's own trail.
+- *About to declare silence:* not fired.
+- *Contradicts prior [!REALIZATION]:* not fired.
+- *Operator explicitly asked:* not fired.

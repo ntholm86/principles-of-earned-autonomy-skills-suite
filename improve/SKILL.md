@@ -1,6 +1,6 @@
 ---
 name: improve
-version: 3.24.0
+version: 3.25.0
 description: 'The improvement skill. Understand the ask, examine the target, challenge the first read, decide on one change (or argue for redesign, or declare silence), honor the operator''s supervision or delegation boundary, act, reflect, record, and report the result clearly. USE WHEN: improve, audit, review, fix, refactor, redesign, evaluate, what would make this better, am I missing something.'
 argument-hint: 'The target to improve, and optionally the concern (correctness, simplicity, performance, etc.)'
 ---
@@ -129,7 +129,7 @@ Write the ranking under a `### Candidate Next Moves` subsection inside the trail
 
 ### 5. Act (if a change was decided)
 
-Make the change. For each non-trivial step, state what you are about to do and why before doing it. Show the reasoning, not just the diff. After the change, verify it: run tests, check types, re-read the surrounding code to confirm no regression. Evaluate the actual outcome against the prediction made in Step 4. Observe and document if the prediction held or failed.
+Before the first change, write the checkpoint record as [Record](../record/SKILL.md) defines it (accepted intent, evidence examined, decision, rejected alternative, authority, prediction); step 7 writes the completion that names it. Make the change. For each non-trivial step, state what you are about to do and why before doing it. Show the reasoning, not just the diff. After the change, verify it: run tests, check types, re-read the surrounding code to confirm no regression. Evaluate the actual outcome against the prediction made in Step 4. Observe and document if the prediction held or failed.
 
 If the change introduces a problem, surface it immediately. Half-done work that pretends to be done is worse than no work at all.
 

@@ -342,6 +342,7 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 335 | 2026-11-21 | record-follows-published-spec | Record skill and README agree with ACM v0.5.0 as published; findings of two independent reviews applied | record/SKILL.md 3.0.2 -> 3.1.0 (CHANGELOG v5.1.0) |
 | ▸ 336 | 2026-11-21 | third-review-fixes-record | round-three findings applied; two design findings deferred | record/SKILL.md 3.1.0 -> 3.1.1 (CHANGELOG v5.1.1) |
 | ▸ 337 | 2026-11-21 | fourth-review-fixes-record | round-four findings applied to the Record skill | record/SKILL.md 3.1.1 -> 3.1.2 (CHANGELOG v5.1.2) |
+| ▸ 338 | 2026-11-21 | record-checkpoint-completion | Record writes a checkpoint before a change and a completion after it; Improve follows | record/SKILL.md 3.1.2 -> 3.2.0; improve/SKILL.md 3.24.0 -> 3.25.0 (CHANGELOG v5.2.0) |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -1541,4 +1542,8 @@ Do not edit by hand — re-run the command to refresh.
 
 - **decided:** Fixed all material findings with the smallest rule that closes each: a reversible escape instead of a lookup table; the identifier is the file's path; the file-count bound is stated per scope instead of promising a global bound. Rejected: restructuring the layout to avoid code-path names (more depth for a rare case).
 
-**337 runs total — 309 with changes, 28 silence**
+### Run 338 — 2026-11-21 — record-checkpoint-completion
+
+- **decided:** Implemented exactly that choice. Rejected: an extra "interpretation accepted" record before every examination (the author declined it; a record per run for runs that change nothing); leaving the gap as a known limitation (the author declined it). Improve was changed too, because its steps (decide, act, reflect, record) would otherwise contradict the new rule.
+
+**338 runs total — 310 with changes, 28 silence**

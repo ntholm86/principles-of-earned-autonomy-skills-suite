@@ -1,6 +1,6 @@
 ---
 name: record
-version: 3.1.2
+version: 3.2.0
 description: 'Automatic egress service for substantive work. Writes a structured record in the bound memory scope of the shared ACM (a new file in records/; legacy in-repo .acm/audit-trail.md is appended) — the interpretation, examination, decisions, actions, and reflection. Destination, Improve, Orient, and Probe apply Record automatically; the operator should never need to invoke it separately. Direct use remains available for consequential work outside those workflows and independent-writer mode.'
 argument-hint: 'The target being worked on (repo, file, system) — used to populate the record header'
 ---
@@ -42,9 +42,9 @@ repositories/<id>/                         repository scope: the same three, plu
   paths/<code/path>/                       path scope: the same three, and its own tasks/
 ```
 
-One rule: a scope is a folder, and every scope folder has the same three entries — `destination.md` (the operator's mandate; written only by Destination after confirmation), `orientation.md` (Orient's derived synthesis) and `records/` (the trail: one file per record, closed months sealed). All are optional until used. A code folder named `records`, `tasks` or `evidence`, or beginning with `_`, is written under `paths/` with one extra leading `_`.
+One rule: a scope is a folder, and every scope folder has the same three entries — `destination.md` (the operator's mandate; written only by Destination after confirmation), `orientation.md` (Orient's derived synthesis) and `records/` (the trail: one file per record, closed months sealed). All are optional until used. A code folder named like a scope entry (`destination.md`, `orientation.md`, `records`, `tasks`, `evidence`), or beginning with `_`, is written under `paths/` with one extra leading `_`.
 
-**Resolve before reading or writing.** The work repository's identity is its root commits (`git rev-list --max-parents=0 HEAD`). Across the registered memory repositories, each of which must contain `.acm-root`, exactly one `repositories/*/repository.json` whose `root_commits` intersect is the **bound** scope. Folder names and remote URLs never decide identity, so a renamed clone keeps its memory and two same-named repositories are never conflated. Clones and forks that share a root commit share one binding. No match is **unbound**; more than one is **ambiguous**; an unreadable registry, memory repository or binding is **unavailable**. `record.py resolve` performs this check.
+**Resolve before reading or writing.** The work repository's identity is its root commits (`git rev-list --max-parents=0 HEAD`); work not tied to a repository has none and uses the memory-wide scope of the one registered memory, or of the memory the operator names when several are registered. Across the registered memory repositories, each of which must contain `.acm-root`, exactly one `repositories/*/repository.json` whose `root_commits` intersect is the **bound** scope. Folder names and remote URLs never decide identity, so a renamed clone keeps its memory and two same-named repositories are never conflated. Clones and forks that share a root commit share one binding. No match is **unbound**; more than one is **ambiguous**; an unreadable registry, memory repository or binding is **unavailable**. `record.py resolve` performs this check.
 
 **When not bound.** Say exactly which case applies. Read and write no guessed memory and never create an `.acm/` in the work repository. Continue only the work the prompt independently authorises, and state that it is not ACM-recorded. Offer to register the repository — create `repositories/<id>/repository.json` with its root commit in a named memory repository — only with the operator's confirmation.
 
@@ -235,7 +235,7 @@ The Full source must be captured independently of the audited agent. Record does
 
 For every entry:
 
-1. Record the prediction before acting.
+1. Record the prediction before acting: a Change writes a checkpoint record before its first change (accepted intent, evidence examined, decision and rationale, rejected alternative, authority, falsifiable prediction) and a completion record after it that names the checkpoint with `completes:`; any other outcome writes one record.
 2. Mark within-iteration reversals with `[!REVERSAL]`.
 3. Name and reject at least one alternative when a decision exists.
 4. Prefer literal operator text and tool evidence over paraphrase.
@@ -262,15 +262,15 @@ If you are unsure whether this session warrants an entry: if a decision was made
 
 ### Multi-iteration runs
 
-**Each iteration is a separate trail entry. Record it immediately after that iteration completes — before beginning the next iteration.**
+**Each iteration is recorded before the next begins: a Change writes a checkpoint before its first change and a completion after it; any other outcome writes one record.**
 
-Do not buffer entries to write at the end of all iterations. The trail is the checkpoint: if the agent crashes, times out, or the user stops the run after iteration 3 of 10, the first 3 entries must already be recorded.
+Do not buffer entries to write at the end of all iterations. The trail is the checkpoint: if the agent crashes, times out, or the user stops the run after iteration 3 of 10, the first 3 entries must already be recorded. At the start of a run, look for an open checkpoint (one no completion record names): complete it if its decision still holds, or write a record that supersedes it and says why; in a legacy trail, an entry whose decision and prediction were recorded but whose completion never followed.
 
 The mandatory sequence per iteration:
 
 ```
 iteration N:
-  1. record the entry
+  1. record the checkpoint (a Change, before its first change) and the completion, or the one record
        bound scope:   create records/<UTC>-<slug>-N.md (record.py new --body-file)
        legacy memory: append to .acm/audit-trail.md, then record.py history --write and learning --write
   2. commit per the "Helper and commit routine" above   ("trail: <slug>-N")
