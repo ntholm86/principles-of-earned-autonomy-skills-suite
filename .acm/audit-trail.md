@@ -18564,3 +18564,45 @@ Full records: acm-personal, repositories/acm-spec/records/*-trail-means-records.
 - *About to declare silence:* not fired.
 - *Contradicts prior [!REALIZATION]:* not fired.
 - *Operator explicitly asked:* not fired.
+
+## 2026-11-21 - trail-skill-renamed-record
+
+- target: the whole suite (skill folder, all skills, docs, installers, tests, hook, verify.py, CHANGELOG v5.0.0)
+- operator: Nils Wendelboe Holmager
+- agent: Claude (Sonnet 5.5; the session started on Claude Opus 5.5); host: Copilot SDK in VS Code
+- skill: Improve
+- outcome: the Trail skill is now the Record skill; the concept "audit trail" and the file name audit-trail.md are unchanged
+- delta: trail/ -> record/ (name: record, 3.0.0); five skills bumped; installers remove a stale installed trail skill; 54 tests and verify.py pass
+
+### Interpretation of the ask
+
+The author: rename the Trail skill to "record" ("that is what it does - and its a synonym to the aviation black box recorder principles which it comes from"), everywhere, including other repos and websites. His answers: include the principles repository; do not rename "trail" where it means the audit-trail concept; keep the file name audit-trail.md for now; "audit-trail is still the concept". Read as: rename the skill, not the concept.
+
+### Decision
+
+[!DECISION] Rename only where the word names the skill (folder, name:, links, "Trail skill", "applies Trail", the /trail command, installer lists, tests, hook text, verify.py canonical sentence, `TRAIL_ROOT`); leave "audit trail", `audit-trail.md`, "Trail integrity" and "Trail recording" (concept, PRINCIPLES.md) and all append-only history. Old installs: a hard rename plus an installer cleanup that removes a stale `trail` skill only when its SKILL.md says `name: trail`. Rejected: a stub `trail` skill kept for a version (two skills in every install; the author was unsure and wanted simplicity); renaming "the trail" in prose (the author's answer 2).
+Precedent check: records-folder-and-sealing (the folder is `records/`, so "Record writes records" is consistent).
+
+### Prediction
+
+Every reference to the skill by name changes and nothing else; `verify.py` and all tests pass; the installer replaces `trail` with `record` without touching unrelated folders.
+
+### Action and verification
+
+Folder moved with git; 15 files rewritten by rule, then read through as added lines; installers and four new installer tests (stale `trail` removed, `trail-notes` and an unrelated `trail` folder kept, in PowerShell and shell); `record.py` reads `RECORD_ROOT`. 54 passed; verify.py OK; a repository-wide search finds no remaining skill-name use outside history and the intentional concept words.
+[!REVERSAL] Two single-pair edits to INSTALLING.md and the installer test applied as one-character replacements (a PowerShell array-flattening quirk): every backtick became "/" and every quote became "i". Caught by the "0 matches" count and a character count against HEAD before any commit; both files were restored from git and the edits redone correctly. A second slip turned a shell "fi" into a form feed; fixed and syntax-checked. Lesson: after scripted edits, compare each changed file's character counts against HEAD.
+
+### Reflection
+
+[!REALIZATION] The skill's name was used live in only four places across 31 repositories (this suite, one site, another site's two lines, one dated case study); the 7,000 other mentions were the concept or append-only history. Surveying by precise regex rather than by word count turned an apparent everywhere-rename into a bounded one.
+Blind spot: the published GitHub Pages and nilsholmager.com are not yet updated, and the Zenodo archives keep the old name.
+Pushback: some prose still says "the trail", which now sits next to a skill called Record; that is the author's explicit choice.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired; a single rename with two scripting slips, each caught and fixed.
+- *About to declare silence:* not fired; changes made.
+- *Contradicts prior [!REALIZATION]:* not fired.
+- *Operator explicitly asked:* not fired; a change request.
+
+Orientation freshness: current. Destination need: not triggered.

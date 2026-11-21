@@ -18,7 +18,7 @@ import subprocess
 import sys
 from pathlib import Path
 
-# Repo scope or a named task scope (.acm/<task>/audit-trail.md); see trail/SKILL.md.
+# Repo scope or a named task scope (.acm/<task>/audit-trail.md); see record/SKILL.md.
 TRAIL_LOG = re.compile(r"^\.acm/(?:[^/]+/)?audit-trail\.md$")
 
 
@@ -45,7 +45,7 @@ def main() -> int:
         print()
         print("Observable Autonomy requires a trail entry for substantive changes.")
         print("Either:")
-        print("  1. Append a structured entry to .acm/audit-trail.md (see trail/SKILL.md), or")
+        print("  1. Append a structured entry to .acm/audit-trail.md (see record/SKILL.md), or")
         print("  2. Override with: git commit --no-verify  (not recorded by this hook)")
         return 1
 

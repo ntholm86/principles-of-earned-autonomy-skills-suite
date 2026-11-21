@@ -30,7 +30,7 @@ The suite is the reference implementation of [Agent Context Memory (ACM)](https:
 
 ## One skill to rule them all: IMPROVE
 
-Run **Improve** on a real, bounded task. It invokes Intent before acting and Trail after substantive work, and schedules Destination or Orient when the accumulated evidence makes either service useful. You do not orchestrate the other operational skills; **Probe** is separate, optional research instrumentation.
+Run **Improve** on a real, bounded task. It invokes Intent before acting and Record after substantive work, and schedules Destination or Orient when the accumulated evidence makes either service useful. You do not orchestrate the other operational skills; **Probe** is separate, optional research instrumentation.
 
 ```text
 /improve create a professional knitting webshop in vanilla HTML, CSS, and JavaScript
@@ -40,7 +40,7 @@ Run **Improve** on a real, bounded task. It invokes Intent before acting and Tra
 | :--- | :--- | :--- | :--- | :--- |
 | **[Improve](./improve/SKILL.md)** | **Start here** | Makes one highest-leverage change per run. |  | reads all three |
 | **[Intent](./intent/SKILL.md)** | **Automatic** | States what the agent believes you mean before acting. | Operator's Intent |  |
-| **[Trail](./trail/SKILL.md)** | **Automatic** | Writes every run to an append-only audit trail. | Observable Autonomy | records/ (legacy: .acm/audit-trail.md) |
+| **[Record](./record/SKILL.md)** | **Automatic** | Writes every run to an append-only audit trail. | Observable Autonomy | records/ (legacy: .acm/audit-trail.md) |
 | **[Destination](./destination/SKILL.md)** | **Automatic** | Consolidates accepted mandates into durable direction. |  | destination.md |
 | **[Orient](./orient/SKILL.md)** | **Automatic** | Reflects on past runs to spot recurring mistakes and dead ends. |  | orientation.md |
 | **[Probe](./probe/SKILL.md)** | **Research** | Measures Autonomous Reasoning Fidelity. | Autonomous Reasoning Fidelity |  |
@@ -62,7 +62,7 @@ Each narrated Intent gives Improve a mandate for the current prompt. When accept
 
 ### Improve — Move toward the destination
 
-Improve is the workhorse and the single normal entry point. Point it at a target and run it. Each run applies Intent, explains its interpretation, examines what is there, challenges the first read, chooses the highest-leverage move, acts, verifies, records through Trail, and explains any automatic Destination or Orient handoff when the evidence triggers one.
+Improve is the workhorse and the single normal entry point. Point it at a target and run it. Each run applies Intent, explains its interpretation, examines what is there, challenges the first read, chooses the highest-leverage move, acts, verifies, records through Record, and explains any automatic Destination or Orient handoff when the evidence triggers one.
 
 > "Invest in the design of the system every day."
 >
@@ -76,11 +76,11 @@ After many locally sensible runs, the overall arc can still drift. When triggere
 >
 > — Søren Kierkegaard, Journals (1843)
 
-Intent and Trail operate automatically around the work. Destination and Orient activate automatically when their evidence-based triggers fire. Probe sits outside normal operation as optional ARF research instrumentation.
+Intent and Record operate automatically around the work. Destination and Orient activate automatically when their evidence-based triggers fire. Probe sits outside normal operation as optional ARF research instrumentation.
 
 ## The Suite Improved Itself — [314 self-improvement iterations](./.acm/ITERATION-COUNT.md)
 
-**314 runs improved the suite itself** — its skills, reasoning, memory, or architecture — out of **377 self-targeted runs** in the public trail; the rest were consistency, evidence, and onboarding work, recorded the same way. The earliest 30 rely on bulk or reconstructed provenance; runs 31 onward have per-run GENBA or Trail records preserved in git, though one commit can contain multiple runs. The full provenance breakdown — including git SHAs, verification commands, the classification rule behind the 314, and an honest account of what is independently verifiable — is in [ITERATION-COUNT.md](./.acm/ITERATION-COUNT.md).
+**314 runs improved the suite itself** — its skills, reasoning, memory, or architecture — out of **377 self-targeted runs** in the public trail; the rest were consistency, evidence, and onboarding work, recorded the same way. The earliest 30 rely on bulk or reconstructed provenance; runs 31 onward have per-run GENBA or audit-trail records preserved in git, though one commit can contain multiple runs. The full provenance breakdown — including git SHAs, verification commands, the classification rule behind the 314, and an honest account of what is independently verifiable — is in [ITERATION-COUNT.md](./.acm/ITERATION-COUNT.md).
 
 Convergence was declared only when **three independent evaluators from distinct model families** (Claude, GPT, Gemini) each ran the loop and found nothing left to change.
 
@@ -104,7 +104,7 @@ Each skill externalizes what normally only lives inside a single model session �
 
 This memory structure is formally specified by the [Agent Context Memory (ACM)](https://github.com/ntholm86/agent-context-memory) standard. ACM defines three tiers organized by trust level: Intent (`destination.md`, principal-authored), Trace (`audit-trail.md`, `orientation.md`, agent append-only), and Evidence (harness-captured session records). This suite implements the Intent and Trace tiers; the Evidence tier requires a separate harness.
 
-The files (`destination.md`, `orientation.md` and the trail records) live in a shared ACM memory repository, separate from your code: clone it once, list its path in `~/.acm/memories`, and each work repository is bound to its scope by its root commit ([definition](./trail/SKILL.md#where-memory-lives)). An in-repo `.acm/` from earlier ACM versions, like this repository's own, still works as legacy memory. The files provide the literal storage, but the interaction of the skills with those files creates **contextual awareness**.
+The files (`destination.md`, `orientation.md` and the trail records) live in a shared ACM memory repository, separate from your code: clone it once, list its path in `~/.acm/memories`, and each work repository is bound to its scope by its root commit ([definition](./record/SKILL.md#where-memory-lives)). An in-repo `.acm/` from earlier ACM versions, like this repository's own, still works as legacy memory. The files provide the literal storage, but the interaction of the skills with those files creates **contextual awareness**.
 
 Memory alone is just retrieval; awareness is orientation. Because `Orient` reads the arc, `Destination` uncovers where you're heading, and `Intent` aligns the goal, the suite uses that memory to understand where it is and where it is going.
 
@@ -136,7 +136,7 @@ Want a copy-pasteable, 10-minute path? See [QUICKSTART.md](./QUICKSTART.md).
 
 ## Known Limitation: Stated Reasoning ≠ True Reasoning
 
-Trail logs what the agent *says* it decided. Research shows this is not always the same as what actually drove the decision.
+Record logs what the agent *says* it decided. Research shows this is not always the same as what actually drove the decision.
 
 > "CoT explanations can be plausible yet misleading, which risks increasing our trust in LLMs without guaranteeing their safety."
 >
@@ -147,11 +147,11 @@ Trail logs what the agent *says* it decided. Research shows this is not always t
 > — Yanda Chen et al., [Reasoning Models Don't Always Say What They Think](https://arxiv.org/abs/2505.05410) (2025)
 
 **How this suite mitigates it:** To prevent LLMs from generating post-hoc justifications to fit decisions already made, the suite applies protocol constraints:
-1. **Pre-commit prediction (Improve, Trail):** The agent must record a falsifiable prediction of what a change will and will not achieve *before* acting or observing the actual outcome.
+1. **Pre-commit prediction (Improve, Record):** The agent must record a falsifiable prediction of what a change will and will not achieve *before* acting or observing the actual outcome.
 2. **Outcome anchoring (Orient):** Subsequent arc-reads systematically evaluate actual outcomes against those prior predictions to expose localized confabulation.
-3. **Reversal density (Trail, Orient):** A uniform, unbroken trail of "successes" is actively flagged as suspect rationalization. True reasoning leaves a trail of reversals, dead ends, and tested predictions.
+3. **Reversal density (Record, Orient):** A uniform, unbroken trail of "successes" is actively flagged as suspect rationalization. True reasoning leaves a trail of reversals, dead ends, and tested predictions.
 4. **Adversarial audit (Orient):** A dedicated lens to actively hunt for outcome mismatch and logical discontinuities across the trail history.
-5. **Separating writer and decider (Improve, Trail):** In maximum-trust sequences (High-Fidelity Mode), the agent making the change is procedurally forbidden from writing the final trail entry, handing off to a second independent evaluator.
+5. **Separating writer and decider (Improve, Record):** In maximum-trust sequences (High-Fidelity Mode), the agent making the change is procedurally forbidden from writing the final trail entry, handing off to a second independent evaluator.
 
 Together, these instructions ask the agent to record a prediction before observing the outcome and expose mismatches to later examination. They do not force compliance or establish access to the agent's true internal reasoning.
 

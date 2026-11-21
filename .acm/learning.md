@@ -5,15 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 328 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-16 — orient-after-moving-frontier-viability-clarification
-
-**[!REALIZATION]** The suite's strongest learning machinery currently favors addition and enforcement over retirement. A moving-frontier architecture must be able to discover that yesterday's necessary governance no longer earns today's processing cost without treating reduction itself as improvement.
-
-## 2026-08-16 — remove-intent-implicit-permission-paths
-
-**[!REALIZATION]** Capability-preserving simplification can come from deleting superseded permission semantics rather than compressing reasoning operations. This reduced reconciliation burden while making authority more deterministic.
+Showing the most recent 60 markers. 330 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-16 — remove-intent-implicit-permission-paths
 
@@ -247,6 +239,14 @@ Showing the most recent 60 markers. 328 older marker(s) are in `.acm/learning-ar
 
 **[!REVERSAL]** Its commit also went in without waiting for verify.py; the commit step is now gated on verify passing.
 
+## 2026-11-21 — trail-skill-renamed-record
+
+**[!REALIZATION]** The skill's name was used live in only four places across 31 repositories (this suite, one site, another site's two lines, one dated case study); the 7,000 other mentions were the concept or append-only history. Surveying by precise regex rather than by word count turned an apparent everywhere-rename into a bounded one.
+
+## 2026-11-21 — trail-skill-renamed-record
+
+**[!REVERSAL]** Two single-pair edits to INSTALLING.md and the installer test applied as one-character replacements (a PowerShell array-flattening quirk): every backtick became "/" and every quote became "i". Caught by the "0 matches" count and a character count against HEAD before any commit; both files were restored from git and the edits redone correctly. A second slip turned a shell "fi" into a form feed; fixed and syntax-checked. Lesson: after scripted edits, compare each changed file's character counts against HEAD.
+
 ---
 
-**60 markers — 44 realisations, 16 reversals**
+**60 markers — 43 realisations, 17 reversals**

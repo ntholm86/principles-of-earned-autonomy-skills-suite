@@ -1,6 +1,6 @@
 ---
 name: destination
-version: 2.12.0
+version: 2.13.0
 description: 'Automatic direction-consolidation service. Improve schedules it when accumulated work makes cross-run direction useful; it surfaces sourced guesses about durable direction as questions the operator can confirm, correct, or reject. Manual invocation remains available when the operator wants to explore or revise direction.'
 argument-hint: 'Optionally: the area you want hunches about (a specific concern, a recent decision, the project as a whole)'
 ---
@@ -47,12 +47,12 @@ Destination stops as soon as the operator confirms, corrects, or declines the pr
 
 Before forming any hunches, look at what is available in memory:
 
-**ACM §4 Scoped Memory.** Resolve the active scope and read the governing chain as [Trail defines it](../trail/SKILL.md#where-memory-lives) — memory-wide, then repository, then path, then task destination, broadest first; the higher scope wins; nothing above `.acm-root` and no walking up the code tree. File names such as `destination.md` mean that file in the active scope. Unbound, ambiguous or unavailable memory is reported as such, and no guessed memory is read or written; the in-repo `.acm/` of an unbound repository is legacy memory. Without Trail installed, the essentials are: memory is a separate repository listed in `~/.acm/memories` and bound by the work repository's root commit, and no `.acm/` is ever created in the work repository. Destination authors the repository- or task-level `destination.md`, so a hunch formed without the higher mandates risks proposing what a higher scope has already settled.
+**ACM §4 Scoped Memory.** Resolve the active scope and read the governing chain as [Record defines it](../record/SKILL.md#where-memory-lives) — memory-wide, then repository, then path, then task destination, broadest first; the higher scope wins; nothing above `.acm-root` and no walking up the code tree. File names such as `destination.md` mean that file in the active scope. Unbound, ambiguous or unavailable memory is reported as such, and no guessed memory is read or written; the in-repo `.acm/` of an unbound repository is legacy memory. Without Record installed, the essentials are: memory is a separate repository listed in `~/.acm/memories` and bound by the work repository's root commit, and no `.acm/` is ever created in the work repository. Destination authors the repository- or task-level `destination.md`, so a hunch formed without the higher mandates risks proposing what a higher scope has already settled.
 
 - `destination.md` — what the operator has explicitly said (if it exists).
 - `orientation.md` — what the agent's last arc-read concluded about the target.
 - The trail (a legacy `.acm/audit-trail.md`, then `records/`) — recent decisions, reversals, realisations.
-- When the run's active scope is a task scope (defined in [trail/SKILL.md](../trail/SKILL.md)), these paths mean that scope, and the file Destination writes is the task's `destination.md`. A task destination is layered under the repo destination: it may narrow it and never contradict it, because the higher scope always wins. Read the repo destination first.
+- When the run's active scope is a task scope (defined in [record/SKILL.md](../record/SKILL.md)), these paths mean that scope, and the file Destination writes is the task's `destination.md`. A task destination is layered under the repo destination: it may narrow it and never contradict it, because the higher scope always wins. Read the repo destination first.
 - Relevant prior conversation records, if available: `.acm/transcripts/`, linked host or harness capture, and `.acm/sessions/` (including legacy summaries). Distinguish independent capture from agent-authored summaries by provenance and fidelity markings, not directory name.
 - The current conversation — what the operator has been emphasising, dismissing, returning to.
 
@@ -131,7 +131,7 @@ If the conversation produced arc-claims about the target's current state rather 
 
 ### 6. Record the run in the trail
 
-**Apply [Trail](../trail/SKILL.md) automatically now.** The operator should never have to invoke Trail separately. If this is a standalone Destination installation and Trail is unavailable, use the entry contract below directly.
+**Apply [Record](../record/SKILL.md) automatically now.** The operator should never have to invoke Record separately. If this is a standalone Destination installation and Record is unavailable, use the entry contract below directly.
 
 The trail entry for a Destination run is shorter than an Improve entry. It must include:
 
@@ -145,7 +145,7 @@ A Destination run that produced no inferences is still recorded — silence is s
 
 ### 7. Refresh orientation when direction changed
 
-If this run created `destination.md` or materially changed its direction, constraints, priorities, or quality bars, **apply [Orient](../orient/SKILL.md) automatically after the Trail entry is durable.** The existing orientation was formed against an older destination and is now stale by definition. Scope the arc-read to: "Re-orient the accumulated work against the changed destination." Do not ask the operator to invoke `/orient`.
+If this run created `destination.md` or materially changed its direction, constraints, priorities, or quality bars, **apply [Orient](../orient/SKILL.md) automatically after the record is durable.** The existing orientation was formed against an older destination and is now stale by definition. Scope the arc-read to: "Re-orient the accumulated work against the changed destination." Do not ask the operator to invoke `/orient`.
 
 Do not run Orient when Destination produced no change, only corrected wording without changing meaning, or ended in silence. A destination edit is not automatically a destination change; material meaning is the trigger.
 

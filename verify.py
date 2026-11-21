@@ -35,7 +35,7 @@ Checks:
     they do not establish that a decision changed.
 15. `improve/SKILL.md`, `orient/SKILL.md`, `intent/SKILL.md`, and
     `destination/SKILL.md` each carry the ACM §4 Scoped Memory paragraph with
-    the identical reference to Trail's single definition of memory resolution
+    the identical reference to Record's single definition of memory resolution
     and the governing chain — catches a copy drifting into its own rule.
 
 Exit code: 0 if all blocking checks pass (review warnings may remain), 1 otherwise.
@@ -60,7 +60,7 @@ REQUIRED_FILES = [
     "improve/SKILL.md",
     "probe/SKILL.md",
     "intent/SKILL.md",
-    "trail/SKILL.md",
+    "record/SKILL.md",
     "destination/SKILL.md",
     "orient/SKILL.md",
     ".acm/audit-trail.md",
@@ -90,7 +90,7 @@ STALE_PATH_DOCS = [
     "intent/SKILL.md",
     "destination/SKILL.md",
     "improve/SKILL.md",
-    "trail/SKILL.md",
+    "record/SKILL.md",
     "orient/SKILL.md",
     "probe/SKILL.md",
 ]
@@ -102,7 +102,7 @@ ACM_SCOPE_TRAVERSAL_FILES = [
     "destination/SKILL.md",
 ]
 ACM_SCOPE_TRAVERSAL_INVARIANT = (
-    "read the governing chain as [Trail defines it](../trail/SKILL.md#where-memory-lives) \u2014 "
+    "read the governing chain as [Record defines it](../record/SKILL.md#where-memory-lives) \u2014 "
     "memory-wide, then repository, then path, then task destination, broadest first; the higher scope wins; "
     "nothing above `.acm-root` and no walking up the code tree."
 )
@@ -326,7 +326,7 @@ def check_acm_scope_traversal_consistency() -> list[str]:
 
     improve/orient/intent/destination each read the governing chain before
     forming their own reasoning (ACM \u00a74 Scoped Memory) and must defer to
-    Trail's single definition in the same words, so a future edit to the rule
+    Record's single definition in the same words, so a future edit to the rule
     cannot silently update one file and miss the others. This mirrors the drift class that previously required repair in
     PRINCIPLES.md, CHANGELOG.md, and trail/README.md (splice defects) \u2014 here caught
     mechanically instead of by a fresh-session evaluator noticing by hand.

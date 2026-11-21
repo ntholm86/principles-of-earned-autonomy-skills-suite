@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""record.py — write and read Trail records for the resolved memory scope.
+"""record.py — write and read records for the resolved memory scope.
 
 Replaces the kiroku-*.ps1 family from v2. Pure-Python, zero dependencies.
 
-The scope is resolved as trail/SKILL.md "Where memory lives" defines: the work
-repository (cwd or $TRAIL_ROOT) is bound by its git root commits to exactly one
+The scope is resolved as record/SKILL.md "Where memory lives" defines: the work
+repository (cwd or $RECORD_ROOT) is bound by its git root commits to exactly one
 `repositories/<id>/repository.json` in the memory repositories listed in
 ~/.acm/memories ($ACM_MEMORIES_FILE overrides the registry path). A bound scope
 uses create-only records in `records/`. An unbound repository that already has an
@@ -52,11 +52,11 @@ from typing import NamedTuple
 def _resolve_root() -> Path:
     """Resolve the target repo root.
 
-    Order: $TRAIL_ROOT env var, else current working directory.
+    Order: $RECORD_ROOT env var, else current working directory.
     record.py lives in the skills install (read-only); it always writes
     into the target repo, never into its own folder.
     """
-    env = os.environ.get("TRAIL_ROOT")
+    env = os.environ.get("RECORD_ROOT")
     if env:
         return Path(env).resolve()
     return Path.cwd().resolve()
@@ -257,7 +257,7 @@ LEGACY_HEADER = """\
 - delta: TODO
 """
 
-# A bound-scope record carries the attribution trail/SKILL.md requires (ACM R-16).
+# A bound-scope record carries the attribution record/SKILL.md requires (ACM R-16).
 RECORD_HEADER = """\
 ## {date} \u2014 {slug}
 
@@ -748,7 +748,7 @@ def cmd_summary(_args: argparse.Namespace) -> int:
 
 
 def build_parser() -> argparse.ArgumentParser:
-    p = argparse.ArgumentParser(prog="record.py", description="Write and read Trail records for the resolved memory scope.")
+    p = argparse.ArgumentParser(prog="record.py", description="Write and read Record records for the resolved memory scope.")
     p.add_argument("--scope", default=None, help="Named task scope (bound: tasks/<scope>/; legacy: .acm/<scope>/). Overrides $ACM_SCOPE.")
     p.add_argument("--path", default=None, help="Path scope for a sub-project, relative to the repository (bound only: paths/<path>/). Combines with --scope.")
     sub = p.add_subparsers(dest="cmd", required=True)
@@ -780,7 +780,7 @@ def build_parser() -> argparse.ArgumentParser:
 
 def main(argv: list[str] | None = None) -> int:
     # Ensure UTF-8 output on platforms where the default encoding is not UTF-8
-    # (e.g. Windows cp1252 terminals). Trail entries contain em-dashes, arrows,
+    # (e.g. Windows cp1252 terminals). records contain em-dashes, arrows,
     # and other Unicode characters that cp1252 cannot encode.
     for stream in (sys.stdout, sys.stderr):
         if hasattr(stream, "reconfigure"):

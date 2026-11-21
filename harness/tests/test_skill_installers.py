@@ -7,7 +7,7 @@ import unittest
 
 
 ROOT = Path(__file__).resolve().parents[2]
-SKILLS = ("intent", "destination", "improve", "trail", "orient")
+SKILLS = ("intent", "destination", "improve", "record", "orient")
 POWERSHELL = shutil.which("powershell") or shutil.which("pwsh")
 GIT = shutil.which("git")
 GIT_EXEC = Path(subprocess.check_output([GIT, "--exec-path"], text=True).strip()) if GIT else None
@@ -66,6 +66,23 @@ class SkillInstallerCases:
         self.assert_success(research=True)
         self.assertEqual((self.target / "PRINCIPLES.md").read_bytes(), principles.read_bytes())
 
+    def test_a_stale_installed_trail_skill_is_removed_but_other_folders_are_kept(self):
+        stale = self.target / "trail"
+        stale.mkdir(parents=True)
+        (stale / "SKILL.md").write_text("---\nname: trail\n---\n", encoding="utf-8")
+        unrelated = self.target / "trail-notes"
+        unrelated.mkdir()
+        (unrelated / "SKILL.md").write_text("---\nname: trail-notes\n---\n", encoding="utf-8")
+        self.assert_success()
+        self.assertFalse(stale.exists())
+        self.assertTrue((unrelated / "SKILL.md").is_file())
+
+    def test_an_unrelated_folder_named_trail_is_kept(self):
+        other = self.target / "trail"
+        other.mkdir(parents=True)
+        (other / "SKILL.md").write_text("---\nname: my-own-trail\n---\n", encoding="utf-8")
+        self.assert_success()
+        self.assertTrue((other / "SKILL.md").is_file())
     def test_each_missing_operational_skill_leaves_destination_absent(self):
         for skill in SKILLS:
             with self.subTest(skill=skill):

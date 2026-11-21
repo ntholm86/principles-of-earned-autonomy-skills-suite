@@ -1,7 +1,7 @@
 ---
 name: probe
-version: 3.6.0
-description: 'Optional scientific instrumentation for measuring Autonomous Reasoning Fidelity (ARF). Construct a controlled novelty probe that distinguishes genuine situated reasoning from pattern-matching against a checklist. Not required by Destination, Orient, Improve, Intent, or Trail, and not part of normal development use. USE WHEN: conducting ARF research, testing reasoning quality experimentally, novelty injection, ARF measurement.'
+version: 3.7.0
+description: 'Optional scientific instrumentation for measuring Autonomous Reasoning Fidelity (ARF). Construct a controlled novelty probe that distinguishes genuine situated reasoning from pattern-matching against a checklist. Not required by Destination, Orient, Improve, Intent, or Record, and not part of normal development use. USE WHEN: conducting ARF research, testing reasoning quality experimentally, novelty injection, ARF measurement.'
 argument-hint: 'The agent or skill to probe, and what claim about its reasoning you want to test'
 ---
 
@@ -13,7 +13,7 @@ argument-hint: 'The agent or skill to probe, and what claim about its reasoning 
 
 This is the only skill in the suite that genuinely tests something external. Improve makes the agent better; Probe finds out whether it is reasoning at all.
 
-**Probe is not part of the operational workflow.** Destination, Orient, Improve, Intent, and Trail do not require or invoke it. Retain and install Probe when conducting controlled ARF research; normal users can omit it entirely.
+**Probe is not part of the operational workflow.** Destination, Orient, Improve, Intent, and Record do not require or invoke it. Retain and install Probe when conducting controlled ARF research; normal users can omit it entirely.
 
 ## Governing principles
 
@@ -60,9 +60,9 @@ The probe outcome is one of:
 
 ### 5. Record
 
-**Apply [Trail](../trail/SKILL.md) automatically now.** The operator should never have to invoke Trail separately. Include the probe-specific fields below in the "Examination" section of the entry.
+**Apply [Record](../record/SKILL.md) automatically now.** The operator should never have to invoke Record separately. Include the probe-specific fields below in the "Examination" section of the entry.
 
-If this is a standalone Probe installation and Trail is unavailable: record an entry in the memory scope bound to the target by its root commit (a separate repository listed in `~/.acm/memories`) as a new `records/<UTC yyyyMMddTHHmmssZ>-<slug>.md`, or append it to an existing in-repo legacy `.acm/audit-trail.md`; never create an `.acm/` in the target, and when memory is unbound report the entry instead. It contains:
+If this is a standalone Probe installation and Record is unavailable: record an entry in the memory scope bound to the target by its root commit (a separate repository listed in `~/.acm/memories`) as a new `records/<UTC yyyyMMddTHHmmssZ>-<slug>.md`, or append it to an existing in-repo legacy `.acm/audit-trail.md`; never create an `.acm/` in the target, and when memory is unbound report the entry instead. It contains:
 
 - The mandatory metadata (`target`, `agent`, `skill`, `outcome`). For `outcome`, state the verdict.
 - The claim being tested.

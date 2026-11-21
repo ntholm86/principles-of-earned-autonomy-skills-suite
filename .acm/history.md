@@ -336,6 +336,7 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 329 | 2026-11-21 | plain-memory-file-names-hansei-correction | the macro-Hansei for that entry's fired trigger is supplied here; the slug is grandfathered in verify.py | verify.py failed -> passes; the earlier entry is unchanged |
 | ▸ 330 | 2026-11-21 | records-folder-and-sealing | trail/ renamed records/; closed months are sealed into records/<yyyy-MM>.md with git and a SHA-256 tool, no script |  |
 | ▸ 331 | 2026-11-21 | trail-means-records-and-sealing-docs | redundant 'records/ records' wording removed; the trail defined as the scope's records/; sealing mentioned in user docs |  |
+| ▸ 332 | 2026-11-21 | trail-skill-renamed-record | the Trail skill is now the Record skill; the concept "audit trail" and the file name audit-trail.md are unchanged | trail/ -> record/ (name: record, 3.0.0); five skills bumped; installers remove a stale installed trail skill; 54 tests and verify.py pass |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -1514,4 +1515,9 @@ Do not edit by hand — re-run the command to refresh.
 
 - **REVERSAL:** Its commit also went in without waiting for verify.py; the commit step is now gated on verify passing.
 
-**331 runs total — 303 with changes, 28 silence**
+### Run 332 — 2026-11-21 — trail-skill-renamed-record
+
+- **decided:** Rename only where the word names the skill (folder, name:, links, "Trail skill", "applies Trail", the /trail command, installer lists, tests, hook text, verify.py canonical sentence, `TRAIL_ROOT`); leave "audit trail", `audit-trail.md`, "Trail integrity" and "Trail recording" (concept, PRINCIPLES.md) and all append-only history. Old installs: a hard rename plus an installer cleanup that removes a stale `trail` skill only when its SKILL.md says `name: trail`. Rejected: a stub `trail` skill kept for a version (two skills in every install; the author was unsure and wanted simplicity); renaming "the trail" in prose (the author's answer 2).
+- **REVERSAL:** Two single-pair edits to INSTALLING.md and the installer test applied as one-character replacements (a PowerShell array-flattening quirk): every backtick became "/" and every quote became "i". Caught by the "0 matches" count and a character count against HEAD before any commit; both files were restored from git and the edits redone correctly. A second slip turned a shell "fi" into a form feed; fixed and syntax-checked. Lesson: after scripted edits, compare each changed file's character counts against HEAD.
+
+**332 runs total — 304 with changes, 28 silence**

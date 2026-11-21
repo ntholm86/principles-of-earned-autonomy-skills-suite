@@ -1,6 +1,6 @@
 ---
 name: improve
-version: 3.23.0
+version: 3.24.0
 description: 'The improvement skill. Understand the ask, examine the target, challenge the first read, decide on one change (or argue for redesign, or declare silence), honor the operator''s supervision or delegation boundary, act, reflect, record, and report the result clearly. USE WHEN: improve, audit, review, fix, refactor, redesign, evaluate, what would make this better, am I missing something.'
 argument-hint: 'The target to improve, and optionally the concern (correctness, simplicity, performance, etc.)'
 ---
@@ -11,7 +11,7 @@ argument-hint: 'The target to improve, and optionally the concern (correctness, 
 
 *ACM role: Reads the governing current surfaces and relevant evidence before every run; extends the memory layer with each iteration's findings.*
 
-This is the suite's single entry point for normal work. The operator invokes Improve; Improve applies Intent and Trail every run, and schedules Destination and Orient only when their evidence-based triggers fire. It combines what v2 split into Kaizen (incremental), Kaikaku (radical), and Hansei (reflection) — because in practice the agent should pick which mode the situation calls for, not be told.
+This is the suite's single entry point for normal work. The operator invokes Improve; Improve applies Intent and Record every run, and schedules Destination and Orient only when their evidence-based triggers fire. It combines what v2 split into Kaizen (incremental), Kaikaku (radical), and Hansei (reflection) — because in practice the agent should pick which mode the situation calls for, not be told.
 
 *Lineage:* Kaizen and Kaikaku both trace to PDCA (Plan-Do-Check-Act, Deming/Toyota) and Boyd's OODA loop — cited explicitly in this skill's own v1 ancestor but dropped when v2's three skills merged into this one. Restored here rather than left implicit.
 
@@ -39,7 +39,7 @@ If the ask is about convergence or publication readiness, read the repo's conver
 
 Before examining the target, read the active scope's memory, whichever files exist, in the order below. When Intent selected a task scope, read the repo scope's destination, orientation, and learning first, then the task scope's own files in the same order; the higher scope wins on conflict, and every write this run makes goes to the task scope only.
 
-**ACM §4 Scoped Memory.** Resolve the active scope and read the governing chain as [Trail defines it](../trail/SKILL.md#where-memory-lives) — memory-wide, then repository, then path, then task destination, broadest first; the higher scope wins; nothing above `.acm-root` and no walking up the code tree. File names such as `destination.md` mean that file in the active scope. Unbound, ambiguous or unavailable memory is reported as such, and no guessed memory is read or written; the in-repo `.acm/` of an unbound repository is legacy memory. Without Trail installed, the essentials are: memory is a separate repository listed in `~/.acm/memories` and bound by the work repository's root commit, and no `.acm/` is ever created in the work repository.
+**ACM §4 Scoped Memory.** Resolve the active scope and read the governing chain as [Record defines it](../record/SKILL.md#where-memory-lives) — memory-wide, then repository, then path, then task destination, broadest first; the higher scope wins; nothing above `.acm-root` and no walking up the code tree. File names such as `destination.md` mean that file in the active scope. Unbound, ambiguous or unavailable memory is reported as such, and no guessed memory is read or written; the in-repo `.acm/` of an unbound repository is legacy memory. Without Record installed, the essentials are: memory is a separate repository listed in `~/.acm/memories` and bound by the work repository's root commit, and no `.acm/` is ever created in the work repository.
 
 1. `destination.md` — the **operator-held destination**. What the target is for, the constraints that hold across all runs, the hard problem the work is trying to chip away at. Stable: Destination may draft or revise it from the evidence it can see, but it becomes a mandate only through the operator's review and approval; no other skill writes it. If present, it is the highest-priority context — it tells you what success means before you decide what to change.
 2. `orientation.md` — the **current Orient-derived orientation and operational rules**. What the arc currently shows is true of the target, and critically, the **Active operational rules** you must obey. Rewritten each Orient run. You must actively anchor your runtime behavior to any lessons learned recorded here (e.g., if it says "Always use pure functions here", you must comply).
@@ -179,26 +179,26 @@ For an arc-read that runs outside an improve iteration, use [Orient](../orient/S
 
 ### 7. Record
 
-Before applying Trail, answer two questions from current evidence:
+Before applying Record, answer two questions from current evidence:
 
 1. **Does the next work depend on durable direction the operator has not settled?** If yes, schedule [Destination](../destination/SKILL.md). Name the unresolved choice; missing files, age, and iteration count are never reasons by themselves.
 2. **Does the current Orientation still explain the governing Destination and the material trail?** If no, or if a multi-run convergence claim now depends on that arc-read, schedule [Orient](../orient/SKILL.md). Name the evidence the current map misses; cadence is never a reason by itself.
 
 These are purpose tests, not trigger checklists. Do not make the operator orchestrate the services.
 
-Include one line in the Trail entry: `Orientation freshness: current` or `Orientation freshness: STALE — <evidence>; automatic Orient scheduled.` This evaluation must be inside the entry before it becomes append-only history.
+Include one line in the record: `Orientation freshness: current` or `Orientation freshness: STALE — <evidence>; automatic Orient scheduled.` This evaluation must be inside the entry before it becomes append-only history.
 
 Include one line beside it: `Destination need: not triggered` or `Destination need: TRIGGERED — <evidence>; automatic Destination scheduled.`
 
-**Apply [Trail](../trail/SKILL.md) automatically now.** Trail is an egress service of the full suite, not a command the operator must remember to invoke. Do not ask the operator to run it separately.
+**Apply [Record](../record/SKILL.md) automatically now.** Record is an egress service of the full suite, not a command the operator must remember to invoke. Do not ask the operator to run it separately.
 
-**High-Fidelity Mode (Writer Splitting):** Standard mode is the default: the Improve agent applies Trail automatically. High-Fidelity Mode is active only when the operator explicitly requests independent Trail authorship or an execution contract declared it before the run; task consequence alone does not activate it. Before step 5 (Act), confirm that the current host can invoke a separate agent and return control to this run. If that round trip cannot be established, treat the writer as unavailable: stop before acting and ask whether standard mode is acceptable.
+**High-Fidelity Mode (Writer Splitting):** Standard mode is the default: the Improve agent applies Record automatically. High-Fidelity Mode is active only when the operator explicitly requests independent record authorship or an execution contract declared it before the run; task consequence alone does not activate it. Before step 5 (Act), confirm that the current host can invoke a separate agent and return control to this run. If that round trip cannot be established, treat the writer as unavailable: stop before acting and ask whether standard mode is acceptable.
 
-When active, the Improve agent pauses at this step without writing the entry and hands the independent writer its interpretation, examination, decision, pre-action prediction, action evidence, reflection, and exact Destination/Orientation evaluations. The writer applies Trail and commits the entry without recomputing Improve's decisions, then returns control. The Improve agent resumes at step 8. This separates writer from decider without changing who owns service scheduling.
+When active, the Improve agent pauses at this step without writing the entry and hands the independent writer its interpretation, examination, decision, pre-action prediction, action evidence, reflection, and exact Destination/Orientation evaluations. The writer applies Record and commits the entry without recomputing Improve's decisions, then returns control. The Improve agent resumes at step 8. This separates writer from decider without changing who owns service scheduling.
 
-**In multi-iteration runs, this step executes after every iteration — not once at the end of all iterations.** The trail entry is the commit point for that iteration. Record it (in legacy memory, also regenerate `history.md` and `learning.md`) and commit it as Trail describes before starting the next iteration. A user who stops a 10-iteration run after iteration 4 must have 4 committed trail entries, not 0.
+**In multi-iteration runs, this step executes after every iteration — not once at the end of all iterations.** The trail entry is the commit point for that iteration. Record it (in legacy memory, also regenerate `history.md` and `learning.md`) and commit it as Record describes before starting the next iteration. A user who stops a 10-iteration run after iteration 4 must have 4 committed trail entries, not 0.
 
-If this is a standalone Improve installation and Trail is unavailable: record a single entry where step 1's ACM §4 paragraph resolves — a new create-only `records/<UTC yyyyMMddTHHmmssZ>-<slug>.md` in a bound scope, appended to `.acm/audit-trail.md` in legacy memory, or reported to the operator, not written, when unbound. The entry must include:
+If this is a standalone Improve installation and Record is unavailable: record a single entry where step 1's ACM §4 paragraph resolves — a new create-only `records/<UTC yyyyMMddTHHmmssZ>-<slug>.md` in a bound scope, appended to `.acm/audit-trail.md` in legacy memory, or reported to the operator, not written, when unbound. The entry must include:
 
 - Date, target, operator (if known), model family and version (operator-stated if the host does not expose it; plus tool-call ID prefix if observable).
 - Your interpretation of the ask.
@@ -208,13 +208,13 @@ If this is a standalone Improve installation and Trail is unavailable: record a 
 - Reflection about the target (per step 6): a falsifiable model-claim, a named blind spot, and an imagined-reader pushback. Across-trail reflection if its triggers fired.
 - Marked moments: `[!DECISION]`, `[!REVERSAL]`, `[!REALIZATION]`.
 
-The format spec is in [trail/SKILL.md](../trail/SKILL.md). If you have the skills repository clone, its optional `<skills-repo>/harness/tools/record.py` helper can stub a new entry for you; the one-line skill installer does not copy this helper.
+The format spec is in [record/SKILL.md](../record/SKILL.md). If you have the skills repository clone, its optional `<skills-repo>/harness/tools/record.py` helper can stub a new entry for you; the one-line skill installer does not copy this helper.
 
 ### 8. Run scheduled services
 
-After the Trail entry is durable, apply Destination first if step 7 scheduled it. Destination synthesizes the accepted prompt-level mandates and accumulated evidence instead of asking the operator to describe the project from zero. It asks only the highest-priority unresolved sourced question, waits for confirmation or correction, and records the result. A confirmed Destination governs the next Improve iteration; it does not retroactively authorize or rewrite the completed one.
+After the record is durable, apply Destination first if step 7 scheduled it. Destination synthesizes the accepted prompt-level mandates and accumulated evidence instead of asking the operator to describe the project from zero. It asks only the highest-priority unresolved sourced question, waits for confirmation or correction, and records the result. A confirmed Destination governs the next Improve iteration; it does not retroactively authorize or rewrite the completed one.
 
-Then apply Orient if needed. When Improve already scheduled Orient and Destination materially changes direction, the post-Destination Orient satisfies both needs: run it once, against the changed Destination and full trail. Orient writes its own Trail entry and refreshes `orientation.md`; it never changes the target. If neither service was scheduled, stop without ceremony.
+Then apply Orient if needed. When Improve already scheduled Orient and Destination materially changes direction, the post-Destination Orient satisfies both needs: run it once, against the changed Destination and full trail. Orient writes its own record and refreshes `orientation.md`; it never changes the target. If neither service was scheduled, stop without ceremony.
 
 ### 9. Report the result
 
@@ -226,7 +226,7 @@ End with exactly one crisp operator-facing result line. Use the matching shape:
 - **Stopped:** `Stopped before changing <target>: <proposal> was not authorized. Verification: no target change.`
 - **Failed:** `Could not complete <target>: <blocker or failure>. Verification: <what did and did not run>.`
 
-Link to detailed evidence instead of repeating the Trail.
+Link to detailed evidence instead of repeating the trail.
 
 ## Self-targeting
 
@@ -235,6 +235,6 @@ This skill must be runnable on itself. If running Improve on `improve/SKILL.md` 
 ## What this skill does not do
 
 - It does not score the target on a numerical rubric. v2 did this and the question "who made up these metrics?" never went away. Convergence — diverse independent evaluators finding nothing to change — is the only honest measure of done.
-- It does not make the operator orchestrate support skills. In the full suite, Improve automatically applies Intent at ingress, Trail at egress, Destination when durable direction becomes necessary, and Orient when accumulated evidence makes Orientation stale. A standalone Improve installation retains local fallback behavior when a sibling is unavailable.
+- It does not make the operator orchestrate support skills. In the full suite, Improve automatically applies Intent at ingress, Record at egress, Destination when durable direction becomes necessary, and Orient when accumulated evidence makes Orientation stale. A standalone Improve installation retains local fallback behavior when a sibling is unavailable.
 - It does not treat host-wide autopilot as blanket permission. Routine gates may be explicitly delegated; operator-owned direction and consequential gates remain blocking.
 - It does not tell you when to stop. The convergence protocol in PRINCIPLES.md does.

@@ -1317,6 +1317,14 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** Governance accretion is observed rather than hypothetical. From the 2026-05-30 baseline to committed HEAD, the live skills grew from 1,010 to 1,134 lines and from 76,769 to 105,278 characters; Improve and Intent each grew by about 52% in characters. Some additions closed evidenced gaps, but the current contracts also contain at least one authority ambiguity. Growth alone cannot establish either bloat or earned capability.
 
+## 2026-08-16 — orient-after-moving-frontier-viability-clarification
+
+**[!REALIZATION]** The suite's strongest learning machinery currently favors addition and enforcement over retirement. A moving-frontier architecture must be able to discover that yesterday's necessary governance no longer earns today's processing cost without treating reduction itself as improvement.
+
+## 2026-08-16 — remove-intent-implicit-permission-paths
+
+**[!REALIZATION]** Capability-preserving simplification can come from deleting superseded permission semantics rather than compressing reasoning operations. This reduced reconciliation burden while making authority more deterministic.
+
 ---
 
-**328 markers — 288 realisations, 40 reversals**
+**330 markers — 290 realisations, 40 reversals**

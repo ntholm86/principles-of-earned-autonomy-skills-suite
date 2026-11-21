@@ -55,7 +55,7 @@ class MemoryFixture(unittest.TestCase):
         self.registry.write_text("".join(f"{m}\n" for m in memories), encoding="utf-8")
 
     def run_record(self, cwd, *arguments):
-        env = {k: v for k, v in os.environ.items() if k not in ("TRAIL_ROOT", "ACM_SCOPE")}
+        env = {k: v for k, v in os.environ.items() if k not in ("RECORD_ROOT", "ACM_SCOPE")}
         env["ACM_MEMORIES_FILE"] = str(self.registry)
         return subprocess.run(
             [sys.executable, str(RECORD), *arguments], cwd=cwd, env=env,
@@ -134,7 +134,7 @@ class RecordingTests(MemoryFixture):
         self.git(memory, "add", ".")
         self.git(memory, "commit", "--quiet", "-m", "memory")
         self.register(memory)
-        result = self.run_record(work, "new", "--slug", "First Change", "--skill", "trail")
+        result = self.run_record(work, "new", "--slug", "First Change", "--skill", "record")
         self.assertEqual(result.returncode, 0, result.stderr)
         records = list((memory / "repositories" / "work" / "records").glob("*.md"))
         self.assertEqual(len(records), 1)

@@ -6,7 +6,7 @@ abstract: >
   A suite of six composable reasoning skills for autonomous AI agents implementing the
   Principles of Earned Autonomy framework. Skills: Intent (surface interpretation before
   acting), Improve (examine, decide, change, verify, record), Probe (construct novelty
-  probes to distinguish situated reasoning from pattern-matching), Trail (append
+  probes to distinguish situated reasoning from pattern-matching), Record (append
   a structured evidence log after every session), Orient (read the full trail
   as a single document and form arc-level claims about the target's trajectory and the
   loop's effectiveness), and Destination (surface the agent's in-progress guesses about where

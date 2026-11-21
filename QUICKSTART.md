@@ -7,7 +7,7 @@ A minimal, copy-pasteable path to one real run that produces real evidence. Aim 
 1. A target repo you have write access to (yours or a fork).
 2. A terminal in that repo's root.
 3. VS Code with GitHub Copilot Chat, or any agent that loads `.copilot/skills/`.
-4. A shared ACM memory repository, cloned once, with its absolute path as a line of `~/.acm/memories` (Windows: `%USERPROFILE%\.acm\memories`). The target is bound by `repositories/<id>/repository.json` listing its root commit (`git rev-list --max-parents=0 HEAD`); the agent offers to create it with your confirmation. Without a binding the run still works but is not recorded. See [Trail](./trail/SKILL.md#where-memory-lives).
+4. A shared ACM memory repository, cloned once, with its absolute path as a line of `~/.acm/memories` (Windows: `%USERPROFILE%\.acm\memories`). The target is bound by `repositories/<id>/repository.json` listing its root commit (`git rev-list --max-parents=0 HEAD`); the agent offers to create it with your confirmation. Without a binding the run still works but is not recorded. See [Record](./record/SKILL.md#where-memory-lives).
 
 ## Install the skills (1 minute)
 
@@ -20,9 +20,9 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1     # Windows
 
 The default installer includes the five operational skills and omits Probe, keeping the visible command surface focused on normal use. ARF researchers can add it with `bash install.sh --research` or `powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1 -Research`.
 
-Or copy the five operational skill folders into `<your-repo>/.copilot/skills/`: `intent/`, `destination/`, `improve/`, `trail/`, `orient/`. Add `probe/` only if you are conducting ARF research.
+Or copy the five operational skill folders into `<your-repo>/.copilot/skills/`: `intent/`, `destination/`, `improve/`, `record/`, `orient/`. Add `probe/` only if you are conducting ARF research.
 
-The operator workflow is **Run Improve**. Intent interprets each prompt, Trail records each result, and Improve automatically triggers Destination or Orient when accumulated evidence makes durable direction or a refreshed map useful. Probe is optional scientific instrumentation and is not required for this workflow.
+The operator workflow is **Run Improve**. Intent interprets each prompt, Record writes each result, and Improve automatically triggers Destination or Orient when accumulated evidence makes durable direction or a refreshed map useful. Probe is optional scientific instrumentation and is not required for this workflow.
 
 ## Run one improve iteration (7 minutes)
 
@@ -37,7 +37,7 @@ Examples:
 - `/improve remove unused imports across src/ and verify nothing breaks`
 - `/improve tighten the README quickstart so a new user can run the first example in under five minutes`
 
-The agent applies Intent and asks you to **Confirm**, **Stop**, or **Specify** its reading. After examination, Improve states one proposed change and asks you to **Proceed**, **Stop**, or **Specify** before implementation. Specify restarts the reasoning with your added information. A completed run makes one change, verifies it, applies Trail, and ends with one short change-and-verification summary.
+The agent applies Intent and asks you to **Confirm**, **Stop**, or **Specify** its reading. After examination, Improve states one proposed change and asks you to **Proceed**, **Stop**, or **Specify** before implementation. Specify restarts the reasoning with your added information. A completed run makes one change, verifies it, applies Record, and ends with one short change-and-verification summary.
 
 Once the suite has earned your trust, explicitly delegate either routine gate in the prompt or in Destination. Delegation does not silence the narration, the final summary, unresolved Destination questions, or operator-declared consequential gates. Host autopilot alone grants no such authority.
 

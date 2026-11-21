@@ -11,7 +11,7 @@ A benchmark run counts as replication evidence only if all conditions are met:
 1. Fresh session (no prior evaluator context in the same chat/thread).
 2. Evaluator family recorded (for example: Claude, GPT, Gemini).
 3. Target and task are the same benchmark ID and acceptance criteria.
-4. Trail entry is appended with outcome, delta, and session-file link.
+4. record is appended with outcome, delta, and session-file link.
 5. At least one additional evaluator family reruns the same benchmark before the result is marked **Replicated**.
 
 ## Historical-Era Policy
@@ -26,10 +26,10 @@ The verifier enforces structural fidelity rules forward-only, from `SESSION_FIDE
 
 | ID | Benchmark | Target class | Required skills | Acceptance criteria |
 |---|---|---|---|---|
-| B1 | External improve correctness pass | Foreign codebase (not authored by operator) | Improve + Trail | One verifiable correctness improvement landed; trail entry with prediction and outcome |
-| B2 | External cross-session learning carry-forward | Same foreign codebase across at least 2 sessions | Improve + Orient + Trail | Session 2 acts on a Session 1 `[!REALIZATION]` without re-diagnosing it |
-| B3 | Cold-target destination inference | Foreign codebase with no pre-seeded destination/trail | Destination + Trail | Operator confirms at least one inferred direction was correct and previously unwritten |
-| B4 | Independent evaluator convergence check | Skills repo convergence pass under protocol | Improve + Trail | Three distinct evaluator families declare silence in succession under protocol |
+| B1 | External improve correctness pass | Foreign codebase (not authored by operator) | Improve + Record | One verifiable correctness improvement landed; trail entry with prediction and outcome |
+| B2 | External cross-session learning carry-forward | Same foreign codebase across at least 2 sessions | Improve + Orient + Record | Session 2 acts on a Session 1 `[!REALIZATION]` without re-diagnosing it |
+| B3 | Cold-target destination inference | Foreign codebase with no pre-seeded destination/trail | Destination + Record | Operator confirms at least one inferred direction was correct and previously unwritten |
+| B4 | Independent evaluator convergence check | Skills repo convergence pass under protocol | Improve + Record | Three distinct evaluator families declare silence in succession under protocol |
 | B5 | Benchmark target existence check | Local filesystem | verify.py | `verify.py` checks for the existence of `benchmark-b5-target/main.py` |
 
 ## Results Matrix v0.1

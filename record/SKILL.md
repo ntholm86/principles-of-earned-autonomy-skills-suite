@@ -1,11 +1,11 @@
 ---
-name: trail
-version: 2.9.0
-description: 'Automatic egress service for substantive work. Record a structured entry in the bound memory scope of the shared ACM (a new file in records/; legacy in-repo .acm/audit-trail.md is appended) — recording the interpretation, examination, decisions, actions, and reflection. Destination, Improve, Orient, and Probe apply Trail automatically; the operator should never need to invoke it separately. Direct use remains available for consequential work outside those workflows and independent-writer mode.'
-argument-hint: 'The target being worked on (repo, file, system) — used to populate the log entry header'
+name: record
+version: 3.0.0
+description: 'Automatic egress service for substantive work. Writes a structured record in the bound memory scope of the shared ACM (a new file in records/; legacy in-repo .acm/audit-trail.md is appended) — the interpretation, examination, decisions, actions, and reflection. Destination, Improve, Orient, and Probe apply Record automatically; the operator should never need to invoke it separately. Direct use remains available for consequential work outside those workflows and independent-writer mode.'
+argument-hint: 'The target being worked on (repo, file, system) — used to populate the record header'
 ---
 
-# Trail
+# Record
 
 *The record of what actually happened.*
 
@@ -17,7 +17,7 @@ Autonomy without evidence is abdication. When an agent does work autonomously, t
 
 A trail that answers this earns the right to more autonomy. A trail that doesn't — or doesn't exist — means autonomy must be constrained regardless of how competent the work was.
 
-**Automatic composition contract:** In the full suite, Destination, Improve, Orient, and Probe apply Trail automatically whenever they produce a substantive result. The operator should never have to remember or be told to invoke `/trail`. Direct invocation remains available for consequential conversations or manual work outside those workflows, repairing a missing record, and High-Fidelity Mode where the recorder must be independent from the agent that acted.
+**Automatic composition contract:** In the full suite, Destination, Improve, Orient, and Probe apply Record automatically whenever they produce a substantive result. The operator should never have to remember or be told to invoke `/record`. Direct invocation remains available for consequential conversations or manual work outside those workflows, repairing a missing record, and High-Fidelity Mode where the recorder must be independent from the agent that acted.
 
 ```
 Evidence → Trust → Autonomy
@@ -60,7 +60,7 @@ One rule: a scope is a folder, and every scope folder has the same three entries
 
 ### Helper and commit routine
 
-The skills repository's optional `<skills-repo>/harness/tools/record.py` applies these rules from the work repository's directory (or `$TRAIL_ROOT`); the one-line installer does not copy it and it is never committed to a target. `resolve` prints the bound scope or the reason there is none; `new --slug=<slug>` creates a bound record (`--body-file <file>` accepts a finished entry create-only; a stub created without it is a local draft until committed) or appends a legacy stub; `history`, `learning` and `summary` read a legacy `audit-trail.md` first, then the `records/` in filename order; `--scope <task>` addresses a task scope and `--path <code/path>` a path scope; together they address a task inside a path scope.
+The skills repository's optional `<skills-repo>/harness/tools/record.py` applies these rules from the work repository's directory (or `$RECORD_ROOT`); the one-line installer does not copy it and it is never committed to a target. `resolve` prints the bound scope or the reason there is none; `new --slug=<slug>` creates a bound record (`--body-file <file>` accepts a finished entry create-only; a stub created without it is a local draft until committed) or appends a legacy stub; `history`, `learning` and `summary` read a legacy `audit-trail.md` first, then the `records/` in filename order; `--scope <task>` addresses a task scope and `--path <code/path>` a path scope; together they address a task inside a path scope.
 
 In a bound scope, commit the work in the work repository and the record in the memory repository per its policy, subject `trail: <slug>`. In legacy memory, regenerate the derived files and commit them with the entry:
 
@@ -83,7 +83,7 @@ Only the trail is required: per the Agent Context Memory specification this skil
 - `orientation.md` — Orient-derived current orientation; recommended once arc-level synthesis earns its cost. The destination is the goal the operator holds and rarely changes; the orientation is the agent's current synthesis of where the target is, rewritten each Orient run. The destination is input to the loop; the orientation is output.
 - `transcripts/` — verbatim transcript exports (see "Independent capture"). `sessions/` — legacy pre-v2.0.0 agent-authored summaries, not written routinely.
 
-Trail does not routinely create agent-authored session summaries.
+Record does not routinely create agent-authored session summaries.
 
 The `agent:` field names the model family and version as precisely as the host exposes or the operator states (mark operator-stated identity as such, e.g. `Claude Fable 5.1; model identified by the operator`). The host product alone — `GitHub Copilot`, `Cursor` — is not a model family. Principle 3 counts same-family evaluators as one and needs fresh sessions on an unchanged artifact, so a silence entry whose `agent:` names only the host cannot be counted toward convergence.
 
@@ -221,7 +221,7 @@ grep -rn '\[!DECISION\]\|\[!REALIZATION\]\|\[!REVERSAL\]' <scope>/   # the bound
 
 ## Independent capture
 
-Trail serves three observer resolutions:
+Record serves three observer resolutions:
 
 | Resolution | Source | Answers |
 |---|---|---|
@@ -229,7 +229,7 @@ Trail serves three observer resolutions:
 | **Indexed** | `[!DECISION]`, `[!REALIZATION]`, and `[!REVERSAL]` markers | What changed in the reasoning? |
 | **Full** | A harness ledger or the host's session history | What was the complete interaction, including dead ends? |
 
-The Full source must be captured independently of the audited agent. Trail does not routinely create a second, agent-authored session summary; structured reasoning belongs in the trail, while full-fidelity telemetry belongs in the harness or host that observed the session.
+The Full source must be captured independently of the audited agent. Record does not routinely create a second, agent-authored session summary; structured reasoning belongs in the trail, while full-fidelity telemetry belongs in the harness or host that observed the session.
 
 For every entry:
 
@@ -238,7 +238,7 @@ For every entry:
 3. Name and reject at least one alternative when a decision exists.
 4. Prefer literal operator text and tool evidence over paraphrase.
 
-Independent capture is optional for ordinary Trail validity. When the operator wants it surfaced in memory, link or copy it at `transcripts/<date>-<slug>.md` in the active scope and add `transcript-file:` plus `transcript-fidelity:`:
+Independent capture is optional for ordinary Record validity. When the operator wants it surfaced in memory, link or copy it at `transcripts/<date>-<slug>.md` in the active scope and add `transcript-file:` plus `transcript-fidelity:`:
 
 - `verbatim` - exact export from an independent source.
 - `verbatim-structural` - independent export produced through a structural capture workflow.
@@ -299,9 +299,9 @@ If yes, the trail is sufficient. If no, something is missing.
 
 ## Composing with other skills
 
-Trail is the automatic egress service for the full suite. Destination, Improve, Orient, and Probe invoke it without operator orchestration. When Intent is active, paste its narration verbatim into the "Interpretation of the ask" section of the same entry — Intent and Trail form the ingress/egress envelope around one substantive operation, not two separate records.
+Record is the automatic egress service for the full suite. Destination, Improve, Orient, and Probe invoke it without operator orchestration. When Intent is active, paste its narration verbatim into the "Interpretation of the ask" section of the same entry — Intent and Record form the ingress/egress envelope around one substantive operation, not two separate records.
 
-Trail also works standalone for consequential conversations, manual operations, or decisions outside another skill's workflow, and as the independent writer in Improve's High-Fidelity Mode.
+Record also works standalone for consequential conversations, manual operations, or decisions outside another skill's workflow, and as the independent writer in Improve's High-Fidelity Mode.
 
 The optional `<skills-repo>/harness/tools/record.py` helper can stub a new entry for you:
 
