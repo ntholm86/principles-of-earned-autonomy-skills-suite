@@ -18643,3 +18643,22 @@ An independent review (a fresh session launched on gpt-6.1-sol, reviewing the AC
 - *About to declare silence:* not fired.
 - *Contradicts prior [!REALIZATION]:* not fired.
 - *Operator explicitly asked:* not fired; a change request, not an arc-level reflection.
+## 2026-11-21 - record-follows-published-spec
+
+- target: record/SKILL.md, README.md
+- operator: Nils Wendelboe Holmager
+- agent: Claude (Sonnet 5.5; the session began on Claude Opus 5.5); host: Copilot SDK in VS Code
+- skill: Improve
+- outcome: Record skill and README agree with ACM v0.5.0 as published; findings of two independent reviews applied
+- delta: record/SKILL.md 3.0.2 -> 3.1.0 (CHANGELOG v5.1.0)
+
+The author asked that everything reach the latest version. The ACM specification v0.5.0 was published to its public repository (commit 47e5b19; no tag, release or Zenodo record: the author said no release without his go). Two fresh-session reviewers (launched on gpt-6.1-sol and claude-opus-5.5; neither could confirm its own family, and the second shares the author agent's family) read the spec, the Record skill and the Work skill and found disagreements; this entry covers the Record skill's share (see CHANGELOG v5.1.0 for the list).
+
+[!DECISION] Fixed every finding that was a real disagreement. Rejected: one finding that asked Work to record its own memory in a separate repository (Work's destination already records the exception that its own trail is public research evidence) and a request to add sync notes inside the skills (they would cost every reader tokens; the drift risk is recorded instead). 54 tests and verify.py pass.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired in this repository's own trail; see the Work skill's entry the same day.
+- *About to declare silence:* not fired; silence is not claimed. Two reviewers found defects, and the changed texts have not been re-read by anyone independent.
+- *Contradicts prior [!REALIZATION]:* not fired.
+- *Operator explicitly asked:* not fired; a change request.

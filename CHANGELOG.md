@@ -1,5 +1,9 @@
 # Changelog
 
+## v5.1.0 - 2026-11-21
+
+- **The Record skill follows ACM v0.5.0 as published, after two independent reviews.** Fresh-session reviewers launched on gpt-6.1-sol and claude-opus-5.5 found disagreements between the specification, the Record skill and the Work skill. Fixed here: a name collision is reported, never silently renamed; a sealed name counts as accepted only when its SHA-256 equals the marker's; the seal separator is one LF; a rejected push means pull and compare, not assume someone sealed it; with no permission to commit, closed months stay unsealed and that is said; records are stored byte for byte (`records/** -text`); path scopes are read outermost first and a task may sit under the memory, a repository or a path; a task spanning paths lives at repository level; records state a `session` identifier; the conformance paraphrase became a pointer to the specification's section 7.3; the legacy `sessions/` folder is distinguished from the specification's `evidence/`; the README no longer calls `orientation.md` append-only. `record/SKILL.md` 3.0.2 -> 3.1.0.
+
 ## v5.0.2 - 2026-11-21
 
 - **Sealing and binding rules close the gaps an independent review found.** A fresh-session reviewer launched on gpt-6.1-sol (a different family from the author agent; the reviewer could not confirm its own family) of the ACM specification draft found that a sealed month's marker did not frame its record unambiguously and that a late or retried record could re-create a sealed file. The marker is now `<!-- record: <file name> bytes:<n> sha256:<hash> -->` and a record is exactly the `n` bytes after it; a record already named in a sealed file is already accepted, and a late record for a sealed month is written under a new name with the current time. Clones and forks that share a root commit share one binding. No sealed file existed yet, so nothing needed migrating. `record/SKILL.md` 3.0.1 -> 3.0.2.
