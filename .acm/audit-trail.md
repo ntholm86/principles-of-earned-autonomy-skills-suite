@@ -18462,3 +18462,15 @@ Records and derived files are left uncommitted in the working tree for the opera
 Full record (decision, rejected routes, prediction, verification): acm-personal, repositories/acm-spec/trail/*-uniform-scope-layout.md. Here: the layout and read-order text changed to match.
 
 **Across-trail trigger evaluation:** recurring finding-class not fired; silence not fired; no realization contradicted; operator did not ask for an arc read.
+
+## 2026-11-21 - path-scope-writer
+
+- target: which scope a record goes to (and, in the suite, record.py --path)
+- operator: Nils Wendelboe Holmager
+- agent: Claude Opus (family identified by the operator; exact version not exposed); host: Copilot SDK in VS Code
+- skill: Improve, iteration 2 of a cross-project bounded-silence run
+- outcome: a record goes to the narrowest applicable scope: named task, else path scope, else repository
+
+Full record: acm-personal, repositories/acm-spec/trail/*-path-scope-writer.md.
+
+**Across-trail trigger evaluation:** recurring finding-class not fired; silence not fired; no realization contradicted; operator did not ask for an arc read.

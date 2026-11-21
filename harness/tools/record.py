@@ -175,14 +175,20 @@ class Target(NamedTuple):
     task: str | None
 
 
-def _select_target(task: str | None) -> tuple[Target | None, Resolution]:
+def _select_target(task: str | None, code_path: str | None = None) -> tuple[Target | None, Resolution]:
     if task and (task in {".", ".."} or re.search(r"[\\/:]", task)):
         return None, Resolution("unavailable", f"invalid task scope name: {task!r}")
+    parts = [p for p in re.split(r"[\\/]", code_path or "") if p]
+    if code_path and (not parts or any(p in {".", ".."} or ":" in p for p in parts)):
+        return None, Resolution("unavailable", f"invalid path scope: {code_path!r}")
     res = resolve_binding(ROOT)
     if res.status == "bound":
         assert res.scope is not None
-        acm = res.scope / "tasks" / task if task else res.scope
+        acm = res.scope.joinpath("paths", *parts) if parts else res.scope
+        acm = acm / "tasks" / task if task else acm
         return Target(acm, True, res, task), res
+    if res.status == "unbound" and parts and (ROOT / ".acm").is_dir():
+        return None, Resolution("unavailable", "path scopes need a shared ACM; legacy in-repo memory has none")
     if res.status == "unbound" and (ROOT / ".acm").is_dir():
         acm = ROOT / ".acm" / task if task else ROOT / ".acm"
         return Target(acm, False, res, task), res
@@ -744,6 +750,7 @@ def cmd_summary(_args: argparse.Namespace) -> int:
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(prog="record.py", description="Write and read Trail records for the resolved memory scope.")
     p.add_argument("--scope", default=None, help="Named task scope (bound: tasks/<scope>/; legacy: .acm/<scope>/). Overrides $ACM_SCOPE.")
+    p.add_argument("--path", default=None, help="Path scope for a sub-project, relative to the repository (bound only: paths/<path>/). Combines with --scope.")
     sub = p.add_subparsers(dest="cmd", required=True)
 
     p_res = sub.add_parser("resolve", help="Print the bound scope path, or why there is none (exit 2 unbound, 3 ambiguous, 4 unavailable).")
@@ -781,7 +788,7 @@ def main(argv: list[str] | None = None) -> int:
     parser = build_parser()
     args = parser.parse_args(argv)
     global LOG, TARGET
-    TARGET, res = _select_target(args.scope or os.environ.get("ACM_SCOPE"))
+    TARGET, res = _select_target(args.scope or os.environ.get("ACM_SCOPE"), args.path)
     if args.func is None:
         if res.status != "bound" or TARGET is None:
             if TARGET is not None:

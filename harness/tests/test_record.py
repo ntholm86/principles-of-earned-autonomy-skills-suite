@@ -146,6 +146,18 @@ class RecordingTests(MemoryFixture):
         self.assertIn(f"- mandate: {self.git(memory, 'rev-parse', 'HEAD')}\n", text)
         self.assertFalse((work / ".acm").exists())
 
+    def test_path_and_task_scopes_nest_under_paths_and_reject_escapes(self):
+        work, root = self.work_repo("work")
+        memory = self.memory_repo("memory", {"work": root})
+        self.register(memory)
+        result = self.run_record(work, "--path", "src/ui", "--scope", "cr-1", "new", "--slug", "nested")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        scope = memory / "repositories" / "work" / "paths" / "src" / "ui" / "tasks" / "cr-1"
+        self.assertEqual(len(list((scope / "trail").glob("*-nested.md"))), 1)
+        escaped = self.run_record(work, "--path", "../other", "new", "--slug", "x")
+        self.assertNotEqual(escaped.returncode, 0)
+        self.assertIn("invalid path scope", escaped.stderr)
+
     def test_unbound_new_writes_nothing(self):
         work, _ = self.work_repo("work")
         self.register(self.memory_repo("memory", {}))
