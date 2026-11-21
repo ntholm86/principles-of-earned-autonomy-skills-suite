@@ -41,8 +41,8 @@ Run **Improve** on a real, bounded task. It invokes Intent before acting and Tra
 | **[Improve](./improve/SKILL.md)** | **Start here** | Makes one highest-leverage change per run. |  | reads all three |
 | **[Intent](./intent/SKILL.md)** | **Automatic** | States what the agent believes you mean before acting. | Operator's Intent |  |
 | **[Trail](./trail/SKILL.md)** | **Automatic** | Writes every run to an append-only audit trail. | Observable Autonomy | trail/ records (legacy: .acm/audit-trail.md) |
-| **[Destination](./destination/SKILL.md)** | **Automatic** | Consolidates accepted mandates into durable direction. |  | .acm/destination.md |
-| **[Orient](./orient/SKILL.md)** | **Automatic** | Reflects on past runs to spot recurring mistakes and dead ends. |  | .acm/orientation.md |
+| **[Destination](./destination/SKILL.md)** | **Automatic** | Consolidates accepted mandates into durable direction. |  | destination.md |
+| **[Orient](./orient/SKILL.md)** | **Automatic** | Reflects on past runs to spot recurring mistakes and dead ends. |  | orientation.md |
 | **[Probe](./probe/SKILL.md)** | **Research** | Measures Autonomous Reasoning Fidelity. | Autonomous Reasoning Fidelity |  |
 | **Convergence to silence** | **Principle 3** | The agent declares silence when it finds nothing material; convergence is defined by [Convergence Is Silence](./PRINCIPLES.md#principle-3-convergence-is-silence), not by this suite. | Convergence Is Silence | trail (silence entries) |
 

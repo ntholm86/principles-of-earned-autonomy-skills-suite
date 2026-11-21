@@ -332,6 +332,7 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 325 | 2026-11-21 | uniform-scope-layout | scope layout now one rule: a scope is a folder with destination.md, orientation.md and trail/; no .acm/ inside memory repositories; path scopes under paths/ |  |
 | ▸ 326 | 2026-11-21 | path-scope-writer | a record goes to the narrowest applicable scope: named task, else path scope, else repository |  |
 | ▸ 327 | 2026-11-21 | shared-acm-layout-trigger-correction | trigger evaluations for both entries restated one per line; both slugs grandfathered in verify.py | verify.py failed on two condensed entries -> passes; earlier entries unchanged |
+| ▸ 328 | 2026-11-21 | plain-memory-file-names | skills write destination.md, orientation.md plainly; chain is memory-wide, repository, path, task everywhere | trail 2.8.0, improve 3.22.0, intent 1.11.0, destination 2.11.0, orient 2.10.0 (CHANGELOG v4.36.0) |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -1506,4 +1507,4 @@ Do not edit by hand — re-run the command to refresh.
 
 - **REVERSAL:** I declared iteration 1 verified after running verify.py before appending its entry, not after; the check now runs after the entry is written.
 
-**327 runs total — 299 with changes, 28 silence**
+**328 runs total — 300 with changes, 28 silence**

@@ -103,7 +103,7 @@ ACM_SCOPE_TRAVERSAL_FILES = [
 ]
 ACM_SCOPE_TRAVERSAL_INVARIANT = (
     "read the governing chain as [Trail defines it](../trail/SKILL.md#where-memory-lives) \u2014 "
-    "memory-wide, then repository, then task destination, broadest first; the higher scope wins; "
+    "memory-wide, then repository, then path, then task destination, broadest first; the higher scope wins; "
     "nothing above `.acm-root` and no walking up the code tree."
 )
 

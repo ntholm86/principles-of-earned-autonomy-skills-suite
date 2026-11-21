@@ -18492,3 +18492,20 @@ Both entries wrote the four-trigger evaluation on one line, which verify.py reje
 - *About to declare silence:* not fired; both entries made changes.
 - *Contradicts prior [!REALIZATION]:* not fired; no realization contradicted.
 - *Operator explicitly asked:* not fired; the operator asked for a cross-project bounded-silence run, not an arc read.
+## 2026-11-21 - plain-memory-file-names
+
+- target: memory file names and governing chain in the suite skills
+- operator: Nils Wendelboe Holmager
+- agent: Claude Opus (family identified by the operator; exact version not exposed); host: Copilot SDK in VS Code
+- skill: Improve, iteration 3 of a cross-project bounded-silence run
+- outcome: skills write destination.md, orientation.md plainly; chain is memory-wide, repository, path, task everywhere
+- delta: trail 2.8.0, improve 3.22.0, intent 1.11.0, destination 2.11.0, orient 2.10.0 (CHANGELOG v4.36.0)
+
+Full record: acm-personal, repositories/acm-spec/trail/*-plain-memory-file-names.md.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED. Iterations 1-3 all removed a second way of naming the same location. Macro: the defect was one governing assumption (memory lives in `.acm/` beside the code) surviving in text after the model changed; fixed at the root in iteration 1, the residue now cleared from every skill.
+- *About to declare silence:* not fired; a change was made.
+- *Contradicts prior [!REALIZATION]:* not fired.
+- *Operator explicitly asked:* not fired; a bounded-silence run, not an arc read.

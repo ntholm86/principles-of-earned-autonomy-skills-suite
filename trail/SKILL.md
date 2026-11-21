@@ -1,6 +1,6 @@
 ---
 name: trail
-version: 2.7.0
+version: 2.8.0
 description: 'Automatic egress service for substantive work. Record a structured entry in the bound memory scope of the shared ACM (a create-only trail/ record; legacy in-repo .acm/audit-trail.md is appended) — recording the interpretation, examination, decisions, actions, and reflection. Destination, Improve, Orient, and Probe apply Trail automatically; the operator should never need to invoke it separately. Direct use remains available for consequential work outside those workflows and independent-writer mode.'
 argument-hint: 'The target being worked on (repo, file, system) — used to populate the log entry header'
 ---
