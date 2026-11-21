@@ -5,19 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 322 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-16 — destination-synthesis-confirmation-before-write
-
-**[!REVERSAL]** Within this iteration, directly edited `.acm/orientation.md` to retract the taxonomy. Reversed that edit after recognizing Orientation is Orient-owned. The corrected Destination and this durable Trail entry instead mark Orientation stale and schedule the owning service.
-
-## 2026-08-16 — orient-after-destination-synthesis-authority-correction
-
-**[!REALIZATION]** Destination authority requires confirmation of the completed synthesis, not only answers to the questions that produced it. Broad purposes can support several reasonable abstractions; only the operator can decide which meaning becomes the durable reference signal.
-
-## 2026-08-16 — orient-after-destination-synthesis-authority-correction
-
-**[!REALIZATION]** The suite's route-prescription problem has an authority precursor: an unexposed synthesis can become governance before anyone debates whether it prescribes a route. Confirming completed Destination meaning closes that precursor while leaving the agent free to reason about implementation.
+Showing the most recent 60 markers. 325 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-16 — sharpen-destination-for-moving-frontier-viability
 
@@ -247,6 +235,18 @@ Showing the most recent 60 markers. 322 older marker(s) are in `.acm/learning-ar
 
 **[!REVERSAL]** Withheld the planned positive workflow demonstration after the
 
+## 2026-11-21 — shared-acm-memory-repository-alignment
+
+**[!REALIZATION]** A drift check over duplicated normative text protects consistency, not correctness; when the governing specification changes, it becomes a second place the old rule lives. Guarding a short reference to a single definition keeps the drift protection while letting the rule change in one place.
+
+## 2026-11-21 — shared-acm-memory-repository-alignment
+
+**[!REVERSAL]** This reverses the 2026-06-22 to 2026-08-01 decision to have each primary skill walk parent directories for .acm/destination.md up to 4 levels. The governing ACM model changed from filesystem discovery to an explicit memory repository with root-commit binding; the walk would now read guessed mandates from neighbouring clone folders, which R-13 and R-15 forbid.
+
+## 2026-11-21 — shared-acm-memory-repository-alignment
+
+**[!REVERSAL]** Within this iteration: the first record.py draft took the mandate revision from `git -C <memory> rev-parse HEAD`. Replaced before the tests ran, after noticing that a memory directory which is not itself a repository would report the HEAD of an enclosing repository (the test fixtures sit inside this suite's checkout, so it would have attributed records to this suite's commit). The revision is now taken only when the memory directory is its own Git top level; otherwise it is "unknown".
+
 ---
 
-**60 markers — 47 realisations, 13 reversals**
+**60 markers — 46 realisations, 14 reversals**

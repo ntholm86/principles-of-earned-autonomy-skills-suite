@@ -1293,6 +1293,18 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** The recurring defect is not only route prescription inside generic skills. It begins one step earlier when an agent turns a confirmed purpose into a more specific durable abstraction without exposing the derivation. Operator's Intent requires authority over the meaning that becomes Destination, while the agent remains free to derive the route used to pursue that meaning.
 
+## 2026-08-16 — destination-synthesis-confirmation-before-write
+
+**[!REVERSAL]** Within this iteration, directly edited `.acm/orientation.md` to retract the taxonomy. Reversed that edit after recognizing Orientation is Orient-owned. The corrected Destination and this durable Trail entry instead mark Orientation stale and schedule the owning service.
+
+## 2026-08-16 — orient-after-destination-synthesis-authority-correction
+
+**[!REALIZATION]** Destination authority requires confirmation of the completed synthesis, not only answers to the questions that produced it. Broad purposes can support several reasonable abstractions; only the operator can decide which meaning becomes the durable reference signal.
+
+## 2026-08-16 — orient-after-destination-synthesis-authority-correction
+
+**[!REALIZATION]** The suite's route-prescription problem has an authority precursor: an unexposed synthesis can become governance before anyone debates whether it prescribes a route. Confirming completed Destination meaning closes that precursor while leaving the agent free to reason about implementation.
+
 ---
 
-**322 markers — 283 realisations, 39 reversals**
+**325 markers — 285 realisations, 40 reversals**

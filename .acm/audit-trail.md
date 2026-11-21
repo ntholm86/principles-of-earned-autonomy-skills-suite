@@ -18381,3 +18381,72 @@ outbound approval remain within the existing research/adoption destination.
 Orientation freshness: current - the map already requires actual unassisted
 first-use evidence and warns that contracts alone do not prove behavior; this
 small result adds a concrete test, not a new program-wide convergence claim.
+
+## 2026-11-21 — shared-acm-memory-repository-alignment
+
+- target: skills repo - trail/improve/intent/destination/orient/probe SKILL.md, harness/tools/record.py, verify.py check 15, README/QUICKSTART/INSTALLING, CHANGELOG
+- operator: Nils Wendelboe Holmager (the author), through a delegating parent agent session
+- agent: unknown version; self-reported Claude family (Anthropic) running as a GitHub Copilot CLI sub-agent; the host does not expose the model version
+- skill: improve (delegated implementation task), recorded through trail
+- authority: the author's decision quoted below and the parent session's written task, which delegated both routine gates and forbade commits, pushes, and edits to acm-memory, acm-spec, and work-skill
+- mandate: suite .acm/destination.md at HEAD d05fd41; memory-wide contract C:\git\acm-memory\README.md and ACM SPEC draft v0.5.0 (read-only, not bound to this repository)
+- outcome: suite aligned to the shared-ACM memory-repository model; record.py resolves bindings and writes create-only records; legacy in-repo memory preserved
+- delta: v4.34.4 -> v4.35.0; trail 2.6.0 -> 2.7.0, improve 3.20.0 -> 3.21.0, intent 1.9.0 -> 1.10.0, destination 2.9.0 -> 2.10.0, orient 2.8.0 -> 2.9.0, probe 3.4.2 -> 3.5.0
+
+### Interpretation of the ask
+
+The author decided: "Its either The work skill or the pea skills suite - both works with shared ACM. That way i can tell others to simply use the single work skill after cloning the shared ACM." Interpretation: the suite must implement the same memory contract as the Work skill (C:\git\acm-memory\README.md, SPEC v0.5.0 sections 3.3, 4, 7, 8) so that either skill family works against one cloned memory repository registered once in ~/.acm/memories. The suite's own in-repo .acm/ stays as public legacy evidence and must keep working. Leanness is a destination constraint: one definition in Trail, short references elsewhere. Rejected reading: migrate this repository's own trail into a memory repository now; the author explicitly excluded that. Scope: repo. Gates: delegated by the parent task; no commit.
+
+### Examination
+
+Purpose: four skills each carried an identical "ACM §4 Scoped Memory" paragraph instructing an upward parent-directory walk with a 4-level ceiling, and every skill placed memory in "the target repo's .acm/". Both contradict the contract: identity is the root commit, the chain is memory-wide -> repository -> task inside the memory repository, and no .acm/ is ever created in a work repository. verify.py check 15 mechanically enforced the retired traversal wording, so the skills could not be corrected without changing the check. Standalone fallbacks in Improve, Orient, Destination and Probe told agents to create .acm/ in the target. record.py only knew a single audit-trail.md under cwd. The optional pre-commit hook assumes an in-repo trail. Baseline tests: 31 passed, 7 failed for environmental reasons (subprocess PowerShell inherits a PSModulePath without Get-FileHash; the Git bash lacks dirname on PATH); verify.py passed. This repository is unbound: its root c04c262 is not in acm-memory, so record.py must resolve it as legacy.
+
+### Decision
+
+[!DECISION] Put one "Where memory lives" section in Trail that defines registry, layout, resolution, the unbound/ambiguous/unavailable/legacy behaviours, the governing chain, task scopes, bound and legacy recording, attribution fields, derived-view policy and commit policy. Replace the four traversal paragraphs with one identical reference paragraph that also carries a two-sentence standalone fallback, and retarget verify.py check 15 to that reference so the drift guard survives. In record.py, bound scopes always use create-only trail/ records; unbound repositories with an existing in-repo .acm/ always use the legacy single file. Rejected: applying the task's suggested heuristic (records when no audit-trail.md or when trail/ exists) to every scope, because in a bound scope it would append to a migrated legacy audit-trail.md and in a legacy repo it could create a new trail/ in the work repository, both of which the contract forbids. Rejected: deleting check 15, which would discard the drift guard the 2026-08-01 arc built. A missing registry file is classified unbound (nothing registered), while an unreadable registry, a registered path without .acm-root, or an unreadable repository.json is unavailable, so a legacy-only user without a shared ACM keeps working. Precedent check: learning-archive.md 2026-08-01 (acm4-sweep-complete-plus-consistency-enforcement, orient-post-acm4-closure) records the traversal arc as closed and self-defending through check 15; this run keeps that mechanism and changes what it guards.
+
+[!REVERSAL] This reverses the 2026-06-22 to 2026-08-01 decision to have each primary skill walk parent directories for .acm/destination.md up to 4 levels. The governing ACM model changed from filesystem discovery to an explicit memory repository with root-commit binding; the walk would now read guessed mandates from neighbouring clone folders, which R-13 and R-15 forbid.
+
+### Prediction
+
+Stated before editing: legacy history/learning output for this repository stays byte-identical; the four skills shrink rather than grow; verify.py passes; new tests distinguish match, renamed clone, same-named repositories with different roots, zero match, ambiguity, missing registry and unavailable memory; a bound new never writes into the work repository; create-only acceptance is idempotent for identical content and never overwrites. Not predicted: that agents will follow the prose, that the pre-commit hook supports bound scopes, or that the Work skill implements the same rules identically (owned elsewhere).
+
+### Action
+
+Trail: added "Where memory lives" plus "Helper and commit routine" and "What a scope holds", collapsing the former structure, commit and optional-file text; rewrote the multi-iteration sequence for both modes; generalized marker grep, digest table, transcripts location and "the test". Improve, Intent, Destination, Orient: replaced location phrasing and the traversal paragraph with the shared reference; reading lists name the trail as legacy file then records; write steps write only to a bound scope or legacy memory and otherwise hand the result to the operator; Orient's orientation shape is labelled derived with its source revision. Probe: standalone fallback no longer creates .acm/. verify.py: check 15 invariant and docstrings retargeted. record.py: resolve (exit 2/3/4 with reason, $ACM_MEMORIES_FILE override), create-only new with collision suffixes and --body-file, R-16 attribution stub, history/learning/summary reading legacy then trail/*.md in filename order with records-mode derived labels naming the memory revision, task scopes as tasks/<task> when bound, task-name containment check. harness/tests/test_record.py: 10 tests. README, QUICKSTART, INSTALLING: one-time setup, legacy support, hook marked legacy-only. CHANGELOG v4.35.0.
+
+[!REVERSAL] Within this iteration: the first record.py draft took the mandate revision from `git -C <memory> rev-parse HEAD`. Replaced before the tests ran, after noticing that a memory directory which is not itself a repository would report the HEAD of an enclosing repository (the test fixtures sit inside this suite's checkout, so it would have attributed records to this suite's commit). The revision is now taken only when the memory directory is its own Git top level; otherwise it is "unknown".
+
+Outcome against prediction: held. Regenerating history.md and learning.md before this entry produced no diff. verify.py passes. Tests in the inherited shell: 41 passed, 7 failed, the same 7 environmental failures as baseline; with PSModulePath cleared and Git's usr\bin on PATH: 48 passed, 0 failed. Skill diffs are net reductions in the four primary skills except where Trail absorbed the definition (trail/SKILL.md 36 insertions, 74 deletions before later small edits).
+
+### Reflection
+
+Falsifiable claim about the target: the suite now has exactly one normative description of memory location and resolution (Trail), and every other occurrence is either a reference to it or a scope-relative file name; a grep for "target repo root" or "traverse parent directories" in live skills returns nothing.
+
+Named blind spot: no agent was run against a bound scope, so whether a model following these skills actually resolves before reading, refuses to guess on ambiguity and records attribution fields is untested; only record.py's mechanics are tested. The Work skill's implementation of the same contract was not compared. The pre-commit hook still enforces an in-repo trail and would reject commits in a bound repository if installed there; it is documented as legacy-only rather than adapted.
+
+Imagined-reader pushback: the author may ask why a missing registry is "unbound" when the contract lists unreadable registry as failure; a missing file is not unreadable, but a stricter reader could want it reported as unavailable so a forgotten setup is not mistaken for an unregistered repository. The message names the missing path either way.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED - v4.34.1 found three contract migrations that reached every skill and doc but not harness/tools; this migration again had to reach tooling (record.py, verify.py check 15) and still leaves one tool, the pre-commit hook, on the old model.
+- *About to declare silence:* not fired - this is a contract change with material edits, not a silence verdict.
+- *Contradicts prior [!REALIZATION]:* FIRED - the 2026-08-01 realizations call the ACM §4 traversal arc complete and closed; the traversal rule they protected is retired here, although their mechanism (identical copies guarded by check 15) is kept.
+- *Operator explicitly asked:* not fired - the author asked for alignment work, not an arc-level reflection.
+
+**Across-trail macro-Hansei:**
+
+Read against the 2026-06-22 to 2026-08-01 arc and v4.34.0/v4.34.1, not the full history. The arc shows the suite treating "the same paragraph in four skills plus a mechanical drift check" as the closure of a governance rule. That closure was real for drift but not for correctness: the check made the old rule harder to change at exactly the moment the specification moved, and it had to be edited in lockstep. The governing variable is duplication itself; the 2026-08-01 realization answered "will copies drift?" and not "should there be copies?". Keeping one definition in Trail with a guarded reference shrinks what must change next time to one section plus one constant.
+
+[!REALIZATION] A drift check over duplicated normative text protects consistency, not correctness; when the governing specification changes, it becomes a second place the old rule lives. Guarding a short reference to a single definition keeps the drift protection while letting the rule change in one place.
+
+The recurring tooling-lag class appears again in the hook. It is a deliberate deferral here, named in INSTALLING, QUICKSTART, README and CHANGELOG, not an unnoticed gap.
+
+### Candidate Next Moves
+
+1. Run one Improve iteration in a disposable repository bound to a test memory repository and observe whether the agent resolves, reads the chain broadest first, writes a create-only record with attribution, and leaves the work repository without .acm/.
+2. Compare the Work skill's aligned text with Trail's "Where memory lives" for contract differences once it lands.
+3. Decide whether the pre-commit hook should resolve the binding and, for bound repositories, stay silent or check the memory repository instead.
+4. Make test_hook_installers.py independent of the inherited PSModulePath and add Git's usr/bin to the Bash child PATH, as test_skill_installers.py already does.
+
+Records and derived files are left uncommitted in the working tree for the operator, as the task required.
