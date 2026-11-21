@@ -340,6 +340,7 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 333 | 2026-11-21 | record-states-what-it-is | the skill names its job in one sentence, in the author's words | record/SKILL.md 3.0.0 -> 3.0.1 (CHANGELOG v5.0.1) |
 | ▸ 334 | 2026-11-21 | seal-framing-and-fork-binding | the sealing marker frames each record exactly; late and retried records and forks are covered | record/SKILL.md 3.0.1 -> 3.0.2 (CHANGELOG v5.0.2) |
 | ▸ 335 | 2026-11-21 | record-follows-published-spec | Record skill and README agree with ACM v0.5.0 as published; findings of two independent reviews applied | record/SKILL.md 3.0.2 -> 3.1.0 (CHANGELOG v5.1.0) |
+| ▸ 336 | 2026-11-21 | third-review-fixes-record | round-three findings applied; two design findings deferred | record/SKILL.md 3.1.0 -> 3.1.1 (CHANGELOG v5.1.1) |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -1531,4 +1532,8 @@ Do not edit by hand — re-run the command to refresh.
 
 - **decided:** Fixed every finding that was a real disagreement. Rejected: one finding that asked Work to record its own memory in a separate repository (Work's destination already records the exception that its own trail is public research evidence) and a request to add sync notes inside the skills (they would cost every reader tokens; the drift risk is recorded instead). 54 tests and verify.py pass.
 
-**335 runs total — 307 with changes, 28 silence**
+### Run 336 — 2026-11-21 — third-review-fixes-record
+
+- **decided:** Deferred, not fixed, two findings that are design questions for the author, not wording: (1) the specification says an interpretation must be accepted before substantive action (R-09), but Work and Record record the checkpoint before the first mutation, so a review that changes nothing leaves no durable pre-action record; (2) Record's entry lifecycle says "record after each iteration completes" while Work writes a separate checkpoint first. Making both write a minimal ingress record first would cost one record per run. Rejected: a path-escape that also changes the helper (record.py does not yet escape such folder names; the skill states the rule, the helper is optional).
+
+**336 runs total — 308 with changes, 28 silence**

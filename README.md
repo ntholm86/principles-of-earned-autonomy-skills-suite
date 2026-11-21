@@ -24,7 +24,7 @@ to examine observable behavior and report failures as well as useful results.
 
 **Try it:** run `Improve` on a real, bounded task. The agent chooses the route; you keep the destination and the consequential decisions.
 
-The suite is the reference implementation of [Agent Context Memory (ACM)](https://github.com/ntholm86/agent-context-memory) and the implementation repo for the [Principles of Earned Autonomy](https://github.com/ntholm86/principles-of-earned-autonomy). It is compatible with Claude (skills / Agent SDK), GitHub Copilot (custom skills), and any LLM agent that can read markdown and append to a file.
+The suite is a reference route to [Agent Context Memory (ACM)](https://github.com/ntholm86/agent-context-memory) and the implementation repo for the [Principles of Earned Autonomy](https://github.com/ntholm86/principles-of-earned-autonomy). It is compatible with Claude (skills / Agent SDK), GitHub Copilot (custom skills), and any LLM agent that can read markdown and append to a file.
 
 ![The full architecture illustrated as a Storm P-style Rube Goldberg machine: Operator's Intent feeds the Improve loop, the audit trail runs as a conveyor belt through the whole machine, Orient reads the arc and feeds learning back in, and the machine converges to silence.](./stormpInspired.png)
 
@@ -104,7 +104,7 @@ The full trail exists, but it cannot be published in this repository because it 
 
 Each skill externalizes what normally only lives inside a single model session — the goal, the destination, the decisions, the arc. Together they implement Agent Context Memory: files that can persist beyond a model session. Continuity depends on preserving those files and the next agent reading and using them.
 
-This memory structure is formally specified by the [Agent Context Memory (ACM)](https://github.com/ntholm86/agent-context-memory) standard. ACM defines three tiers organized by trust level: Intent (`destination.md`, principal-authored), Trace (the append-only records, with `orientation.md` as a replaceable derived view; legacy `audit-trail.md`), and Evidence (harness-captured session records). This suite implements the Intent and Trace tiers; the Evidence tier requires a separate harness.
+This memory structure is formally specified by the [Agent Context Memory (ACM)](https://github.com/ntholm86/agent-context-memory) standard. ACM defines three tiers organized by trust level: Intent (`destination.md`, principal-confirmed), Trace (the append-only records, with `orientation.md` as a replaceable derived view; legacy `audit-trail.md`), and Evidence (harness-captured session records). This suite implements the Intent and Trace tiers; the Evidence tier requires a separate harness.
 
 The files (`destination.md`, `orientation.md` and the trail records) live in a shared ACM memory repository, separate from your code: clone it once, list its path in `~/.acm/memories`, and each work repository is bound to its scope by its root commit ([definition](./record/SKILL.md#where-memory-lives)). An in-repo `.acm/` from earlier ACM versions, like this repository's own, still works as legacy memory. The files provide the literal storage, but the interaction of the skills with those files creates **contextual awareness**.
 

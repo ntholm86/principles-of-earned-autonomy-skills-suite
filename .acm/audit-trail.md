@@ -18662,3 +18662,22 @@ The author asked that everything reach the latest version. The ACM specification
 - *About to declare silence:* not fired; silence is not claimed. Two reviewers found defects, and the changed texts have not been re-read by anyone independent.
 - *Contradicts prior [!REALIZATION]:* not fired.
 - *Operator explicitly asked:* not fired; a change request.
+## 2026-11-21 - third-review-fixes-record
+
+- target: record/SKILL.md, README.md
+- operator: Nils Wendelboe Holmager
+- agent: Claude (Sonnet 5.5; the session began on Claude Opus 5.5); host: Copilot SDK in VS Code
+- skill: Improve
+- outcome: round-three findings applied; two design findings deferred
+- delta: record/SKILL.md 3.1.0 -> 3.1.1 (CHANGELOG v5.1.1)
+
+Third round of fresh-session review (gpt-6.1-sol and claude-opus-5.5; neither confirmed its own family; the second shares the author agent's family). Both reviewers independently found that `records/** -text` protected only the top-level folder, that the R-25 sealing check allowed a half-seal to be merely reported, that the sealing conflict recovery could discard records, and that the README overclaimed on collisions. Fixed (see CHANGELOG v5.1.1).
+
+[!DECISION] Deferred, not fixed, two findings that are design questions for the author, not wording: (1) the specification says an interpretation must be accepted before substantive action (R-09), but Work and Record record the checkpoint before the first mutation, so a review that changes nothing leaves no durable pre-action record; (2) Record's entry lifecycle says "record after each iteration completes" while Work writes a separate checkpoint first. Making both write a minimal ingress record first would cost one record per run. Rejected: a path-escape that also changes the helper (record.py does not yet escape such folder names; the skill states the rule, the helper is optional).
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired in this repository's own trail.
+- *About to declare silence:* not fired; silence is not claimed.
+- *Contradicts prior [!REALIZATION]:* not fired.
+- *Operator explicitly asked:* not fired; a change request.
