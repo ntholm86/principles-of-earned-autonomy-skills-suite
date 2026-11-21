@@ -1309,6 +1309,14 @@ Markers older than the recent window kept in `.acm/learning.md`. Read this only 
 
 **[!REALIZATION]** Governance accretion is a moving-frontier risk: a mechanism that once earned its context cost can become unnecessary as models improve, while a locally justified flow addition can still make the whole contract harder and more expensive to reconcile.
 
+## 2026-08-16 — sharpen-destination-for-moving-frontier-viability
+
+**[!REALIZATION]** The arc's recurring governance corrections are not only individual control improvements. Their cumulative instruction and context cost is now itself a governing concern. The double-loop response is the confirmed Destination clarification: every mechanism remains revisable, and its current contribution to trustworthy capability must continue to earn its processing cost as models and economics change.
+
+## 2026-08-16 — orient-after-moving-frontier-viability-clarification
+
+**[!REALIZATION]** Governance accretion is observed rather than hypothetical. From the 2026-05-30 baseline to committed HEAD, the live skills grew from 1,010 to 1,134 lines and from 76,769 to 105,278 characters; Improve and Intent each grew by about 52% in characters. Some additions closed evidenced gaps, but the current contracts also contain at least one authority ambiguity. Growth alone cannot establish either bloat or earned capability.
+
 ---
 
-**326 markers — 286 realisations, 40 reversals**
+**328 markers — 288 realisations, 40 reversals**

@@ -508,6 +508,9 @@ GRANDFATHERED_ENTRIES: dict[str, set[str]] = {
     # entry "shared-acm-layout-trigger-correction" restates them one per line.
     "uniform-scope-layout": {"trigger"},
     "path-scope-writer": {"trigger"},
+    # Fired trigger written without the macro-Hansei heading; supplied by
+    # "plain-memory-file-names-hansei-correction".
+    "plain-memory-file-names": {"trigger"},
     # Session-file references that predate/immediately-follow the fidelity
     # contract date but whose referenced files were never committed. The
     # content cannot be reconstructed without fabricating history.

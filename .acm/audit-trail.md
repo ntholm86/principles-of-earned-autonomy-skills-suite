@@ -18509,3 +18509,25 @@ Full record: acm-personal, repositories/acm-spec/trail/*-plain-memory-file-names
 - *About to declare silence:* not fired; a change was made.
 - *Contradicts prior [!REALIZATION]:* not fired.
 - *Operator explicitly asked:* not fired; a bounded-silence run, not an arc read.
+
+## 2026-11-21 - plain-memory-file-names-hansei-correction
+
+- target: the trail entry plain-memory-file-names (correction)
+- operator: Nils Wendelboe Holmager
+- agent: Claude Opus (family identified by the operator; exact version not exposed); host: Copilot SDK in VS Code
+- skill: Trail (correction)
+- outcome: the macro-Hansei for that entry's fired trigger is supplied here; the slug is grandfathered in verify.py
+- delta: verify.py failed -> passes; the earlier entry is unchanged
+
+The earlier entry fired the recurring finding-class trigger and put its macro reflection in the trigger line instead of under the required heading. [!REVERSAL] Its commit also went in without waiting for verify.py; the commit step is now gated on verify passing.
+
+### Across-trail macro-Hansei
+
+[!REALIZATION] Three iterations in a row removed a second name for the same place (`.acm/` inside the memory, unprefixed path scopes, `.acm/<file>` with a translation rule). One governing assumption caused all three: memory lives in a hidden `.acm/` beside the code. The memory-repository model replaced that assumption, but the text kept it. Once the root assumption changes, every description of it has to be read against the new one in a single pass. Patching where the old wording happens to show up keeps the old assumption alive in the rest.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* FIRED; macro-Hansei above.
+- *About to declare silence:* not fired; correction only.
+- *Contradicts prior [!REALIZATION]:* not fired.
+- *Operator explicitly asked:* not fired.

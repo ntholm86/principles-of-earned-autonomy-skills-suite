@@ -5,15 +5,7 @@ Do not edit by hand — re-run the command to refresh.
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers. The learning surface — what the loop has actually concluded across runs. Read this before reading `audit-trail.md` in full; reach for `audit-trail.md` only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 326 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-16 — sharpen-destination-for-moving-frontier-viability
-
-**[!REALIZATION]** The arc's recurring governance corrections are not only individual control improvements. Their cumulative instruction and context cost is now itself a governing concern. The double-loop response is the confirmed Destination clarification: every mechanism remains revisable, and its current contribution to trustworthy capability must continue to earn its processing cost as models and economics change.
-
-## 2026-08-16 — orient-after-moving-frontier-viability-clarification
-
-**[!REALIZATION]** Governance accretion is observed rather than hypothetical. From the 2026-05-30 baseline to committed HEAD, the live skills grew from 1,010 to 1,134 lines and from 76,769 to 105,278 characters; Improve and Intent each grew by about 52% in characters. Some additions closed evidenced gaps, but the current contracts also contain at least one authority ambiguity. Growth alone cannot establish either bloat or earned capability.
+Showing the most recent 60 markers. 328 older marker(s) are in `.acm/learning-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-16 — orient-after-moving-frontier-viability-clarification
 
@@ -247,6 +239,14 @@ Showing the most recent 60 markers. 326 older marker(s) are in `.acm/learning-ar
 
 **[!REVERSAL]** I declared iteration 1 verified after running verify.py before appending its entry, not after; the check now runs after the entry is written.
 
+## 2026-11-21 — plain-memory-file-names-hansei-correction
+
+**[!REALIZATION]** Three iterations in a row removed a second name for the same place (`.acm/` inside the memory, unprefixed path scopes, `.acm/<file>` with a translation rule). One governing assumption caused all three: memory lives in a hidden `.acm/` beside the code. The memory-repository model replaced that assumption, but the text kept it. Once the root assumption changes, every description of it has to be read against the new one in a single pass. Patching where the old wording happens to show up keeps the old assumption alive in the rest.
+
+## 2026-11-21 — plain-memory-file-names-hansei-correction
+
+**[!REVERSAL]** Its commit also went in without waiting for verify.py; the commit step is now gated on verify passing.
+
 ---
 
-**60 markers — 45 realisations, 15 reversals**
+**60 markers — 44 realisations, 16 reversals**
