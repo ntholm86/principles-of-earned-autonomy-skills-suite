@@ -73,7 +73,7 @@ class ResolutionTests(MemoryFixture):
         work, root = self.work_repo("work")
         memory = self.memory_repo("memory", {"work": root})
         self.register(memory)
-        scope = memory / "repositories" / "work" / ".acm"
+        scope = memory / "repositories" / "work"
         self.assert_resolves(work, scope)
         clone = self.base / "renamed-clone"
         self.git(self.base, "clone", "--quiet", str(work), str(clone))
@@ -84,7 +84,7 @@ class ResolutionTests(MemoryFixture):
         second, second_root = self.work_repo("b/project", "second")
         memory = self.memory_repo("memory", {"project": first_root})
         self.register(memory)
-        self.assert_resolves(first, memory / "repositories" / "project" / ".acm")
+        self.assert_resolves(first, memory / "repositories" / "project")
         unbound = self.run_record(second, "resolve")
         self.assertEqual(unbound.returncode, 2)
         self.assertIn("unbound", unbound.stderr)
@@ -136,12 +136,12 @@ class RecordingTests(MemoryFixture):
         self.register(memory)
         result = self.run_record(work, "new", "--slug", "First Change", "--skill", "trail")
         self.assertEqual(result.returncode, 0, result.stderr)
-        records = list((memory / "repositories" / "work" / ".acm" / "trail").glob("*.md"))
+        records = list((memory / "repositories" / "work" / "trail").glob("*.md"))
         self.assertEqual(len(records), 1)
         self.assertRegex(records[0].name, r"^\d{8}T\d{6}Z-first-change\.md$")
         text = records[0].read_text(encoding="utf-8")
         self.assertIn(f"- record: {records[0].stem}\n", text)
-        self.assertIn("- scope: repositories/work/.acm\n", text)
+        self.assertIn("- scope: repositories/work\n", text)
         self.assertIn(f"- repository: work @ {root}\n", text)
         self.assertIn(f"- mandate: {self.git(memory, 'rev-parse', 'HEAD')}\n", text)
         self.assertFalse((work / ".acm").exists())
@@ -169,7 +169,7 @@ class RecordingTests(MemoryFixture):
         work, root = self.work_repo("work")
         memory = self.memory_repo("memory", {"work": root})
         self.register(memory)
-        scope = memory / "repositories" / "work" / ".acm"
+        scope = memory / "repositories" / "work"
         (scope / "trail").mkdir(parents=True)
         (scope / "audit-trail.md").write_text(
             "# Audit trail\n\n" + ENTRY.format(date="2026-01-01", slug="legacy"), encoding="utf-8"

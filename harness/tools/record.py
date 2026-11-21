@@ -153,7 +153,7 @@ def resolve_binding(root: Path) -> Resolution:
             shared = sorted(commits.intersection(str(c).strip().lower() for c in bound))
             if not shared:
                 continue
-            scope = binding.parent / ".acm"
+            scope = binding.parent
             if not scope.resolve().is_relative_to(real):
                 return Resolution("unavailable", f"scope {scope} resolves outside its memory repository {memory}")
             repo_id = str(data.get("id") or binding.parent.name)

@@ -32,17 +32,15 @@ This is the suite's one definition of where memory lives, how it is resolved and
 **Memory repository.** Memory lives in a repository of its own, the shared ACM — never in the skills install and never as a new `.acm/` in a repository of work. Clone it once and add its absolute path as one line of the user-level registry `~/.acm/memories` (Windows: `%USERPROFILE%\.acm\memories`). Nothing is configured per prompt.
 
 ```text
-.acm-root                      ceiling: nothing above it is read
-.acm/destination.md            memory-wide mandate
-repositories/<id>/
-  repository.json              {"id", "root_commits": [...], "locators": [...]}
-  .acm/                        repository scope
-    destination.md             repository mandate (operator-held; written only by Destination after confirmation)
-    orientation.md             Orient's derived synthesis
-    trail/<UTC yyyyMMddTHHmmssZ>-<slug>.md    create-only records, one per entry
-    audit-trail.md             legacy single-file trail, read-only (migrated scopes only)
-    tasks/<task>/              named task scopes: destination.md, orientation.md, trail/
+destination.md / orientation.md / trail/   memory-wide scope (.acm-root marks the top; nothing above it is read)
+repositories/<id>/                         repository scope: the same three, plus
+  repository.json                          the binding: {"id", "root_commits": [...], "locators": [...]}
+  audit-trail.md                           legacy single-file trail, read-only (migrated scopes only)
+  tasks/<task>/                            task scope: the same three
+  paths/<code/path>/                       path scope: the same three, and its own tasks/
 ```
+
+One rule: a scope is a folder, and every scope folder has the same three entries — `destination.md` (the operator's mandate; written only by Destination after confirmation), `orientation.md` (Orient's derived synthesis) and `trail/<UTC yyyyMMddTHHmmssZ>-<slug>.md` (create-only records). All are optional until used.
 
 **Resolve before reading or writing.** The work repository's identity is its root commits (`git rev-list --max-parents=0 HEAD`). Across the registered memory repositories, each of which must contain `.acm-root`, exactly one `repositories/*/repository.json` whose `root_commits` intersect is the **bound** scope. Folder names and remote URLs never decide identity, so a renamed clone keeps its memory and two same-named repositories are never conflated. No match is **unbound**; more than one is **ambiguous**; an unreadable registry, memory repository or binding is **unavailable**. `record.py resolve` performs this check.
 
@@ -50,7 +48,7 @@ repositories/<id>/
 
 **Legacy in-repo memory.** If the repository is unbound and already has an `.acm/` from an earlier ACM version, that is legacy memory: say so, read it, record in its existing single-file format, create nothing new, and recommend migration.
 
-**Governing chain.** Memory-wide `.acm/destination.md` → repository `destination.md` → task `destination.md`. Read broadest first and label each ("memory mandate", "repo mandate", "task mandate"); the higher scope wins, and a lower one may narrow but never contradict it. Never read above `.acm-root` and never walk up the code tree for mandates. A required higher mandate that cannot be read blocks the governed work it covers. In legacy memory the chain is the in-repo `.acm/destination.md` and its task scopes.
+**Governing chain.** Memory-wide `destination.md` → repository → path → task `destination.md`. Read broadest first and label each ("memory mandate", "repo mandate", "path mandate", "task mandate"); the higher scope wins, and a lower one may narrow but never contradict it. Never read above `.acm-root` and never walk up the code tree for mandates. A required higher mandate that cannot be read blocks the governed work it covers. In legacy memory the chain is the in-repo `.acm/destination.md` and its task scopes.
 
 **Task scopes.** One repository often carries several unrelated tasks, and a single trail then mixes arcs that share nothing but a directory. A task gets a named scope — `tasks/<task>/` in a bound scope, `.acm/<task>/` in legacy memory — with its own trail and optional `orientation.md` and `destination.md`. The active scope is the repository scope unless the confirmed mandate names a task; Intent selects it and names it in its narration (see [intent/SKILL.md](../intent/SKILL.md)). Every skill reads the parent scopes first and reads and writes only the active scope. A task scope is created only when a confirmed mandate names it, never as a side effect of guessing a task boundary; entries are never merged or moved between scopes, and a finished task scope stays as evidence.
 
