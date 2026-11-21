@@ -1,6 +1,6 @@
 ---
 name: improve
-version: 3.25.2
+version: 3.25.3
 description: 'The improvement skill. Understand the ask, examine the target, challenge the first read, decide on one change (or argue for redesign, or declare silence), honor the operator''s supervision or delegation boundary, act, reflect, record, and report the result clearly. USE WHEN: improve, audit, review, fix, refactor, redesign, evaluate, what would make this better, am I missing something.'
 argument-hint: 'The target to improve, and optionally the concern (correctness, simplicity, performance, etc.)'
 ---
@@ -186,7 +186,7 @@ Before applying Record, answer two questions from current evidence:
 
 These are purpose tests, not trigger checklists. Do not make the operator orchestrate the services.
 
-Include one line in the record: `Orientation freshness: current` or `Orientation freshness: STALE — <evidence>; automatic Orient scheduled.` This evaluation must be inside the entry before it becomes append-only history.
+Include one line in the record: `Orientation freshness: current` or `Orientation freshness: STALE — <evidence>; automatic Orient scheduled.`, or `Orientation freshness: not yet needed` when there is none and none is warranted. This evaluation must be inside the entry before it becomes append-only history.
 
 Include one line beside it: `Destination need: not triggered` or `Destination need: TRIGGERED — <evidence>; automatic Destination scheduled.`
 

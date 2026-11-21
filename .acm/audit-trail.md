@@ -18763,3 +18763,22 @@ Seventh review (gpt-6.1-sol, gemini-4-hydrogen, kimi-k3) on the unchanged texts.
 - *About to declare silence:* not fired.
 - *Contradicts prior [!REALIZATION]:* not fired.
 - *Operator explicitly asked:* not fired.
+## 2026-11-21 - eighth-review-fixes-record
+
+- target: record/SKILL.md, improve/SKILL.md
+- operator: Nils Wendelboe Holmager
+- agent: Claude (Sonnet 5.5; the session began on Claude Opus 5.5); host: Copilot SDK in VS Code
+- skill: Improve
+- outcome: eighth-round findings applied
+- delta: record/SKILL.md 3.2.2 -> 3.2.3; improve/SKILL.md 3.25.2 -> 3.25.3 (CHANGELOG v5.2.3)
+
+Eighth review (gpt-6.1-sol, gemini-4-hydrogen, kimi-k3) on the unchanged texts. Two reviewers found no material defect; one found three Appendix A rows that a lazy implementation could pass (strengthened in the specification) and two small gaps in the skills (the Orientation verdict has no case for an Orientation that does not exist yet; "create nothing new" in legacy memory forbade the derived aids the skill allows). A Work-level case was also raised: what an uncommittable checkpoint means for the R-09 gate.
+
+[!DECISION] An uncommittable checkpoint is left for the operator to accept and the run waits for that before the first change; this is the strict reading of R-09 (accepted trace) and costs a pause only in no-commit deployments. Rejected: treating a local checkpoint as accepted (it would reopen the gap the author closed by relaxing R-09 to "first change").
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired.
+- *About to declare silence:* not fired.
+- *Contradicts prior [!REALIZATION]:* not fired.
+- *Operator explicitly asked:* not fired.

@@ -1,5 +1,9 @@
 # Changelog
 
+## v5.2.3 - 2026-11-21
+
+- **Eighth independent review (three families): no material finding from two, three weak check rows from one.** Fixed: an uncommittable checkpoint is left for the operator to accept and the run waits for that before the first change; Improve's Orientation verdict gains `not yet needed`; a legacy `.acm/` may gain its derived aids (only a new in-repository memory root is forbidden). `record/SKILL.md` 3.2.2 -> 3.2.3; `improve/SKILL.md` 3.25.2 -> 3.25.3.
+
 ## v5.2.2 - 2026-11-21
 
 - **Seventh independent review (three families): commit, supersession and leftovers.** Fixed in the Record and Improve skills: a superseded checkpoint is closed by a record that states `supersedes:` (an open checkpoint is one no completion names and nothing supersedes); the work repository is committed only as the work's own authority allows, separately from the memory-wide commit policy; a mechanical change says it has no real alternative instead of inventing one; the standalone Improve fallback lists the attribution fields itself; the folder-escape comparison ignores letter case and keeps the original spelling; the helper example uses `--skill=record` (a leftover `trail`); the README says what the shared memory needs from a host (git and a SHA-256 tool). `record/SKILL.md` 3.2.1 -> 3.2.2; `improve/SKILL.md` 3.25.1 -> 3.25.2.

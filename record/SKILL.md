@@ -1,6 +1,6 @@
 ---
 name: record
-version: 3.2.2
+version: 3.2.3
 description: 'Automatic egress service for substantive work. Writes a structured record in the bound memory scope of the shared ACM (a new file in records/; legacy in-repo .acm/audit-trail.md is appended) — the interpretation, examination, decisions, actions, and reflection. Destination, Improve, Orient, and Probe apply Record automatically; the operator should never need to invoke it separately. Direct use remains available for consequential work outside those workflows and independent-writer mode.'
 argument-hint: 'The target being worked on (repo, file, system) — used to populate the record header'
 ---
@@ -48,7 +48,7 @@ One rule: a scope is a folder, and every scope folder has the same three entries
 
 **When not bound.** Say exactly which case applies. Read and write no guessed memory and never create an `.acm/` in the work repository. Continue only the work the prompt independently authorises, and state that it is not ACM-recorded. Offer to register the repository — create `repositories/<id>/repository.json` with its root commit in a named memory repository — only with the operator's confirmation.
 
-**Legacy in-repo memory.** If the repository is unbound and already has an `.acm/` from an earlier ACM version, that is legacy memory: say so, read it, record in its existing single-file format, create nothing new, and recommend migration.
+**Legacy in-repo memory.** If the repository is unbound and already has an `.acm/` from an earlier ACM version, that is legacy memory: say so, read it, record in its existing single-file format, create no new in-repository memory root (its derived aids may be added), and recommend migration.
 
 **Governing chain.** Memory-wide `destination.md` → repository → each enclosing path scope, outermost first → task `destination.md`. A task that spans several paths lives at repository level and names those paths in its own `destination.md`; it reads those paths' mandates as peers, and a conflict between them pauses the affected action until authorized resolution. Read broadest first and label each ("memory mandate", "repo mandate", "path mandate", "task mandate"); the higher scope wins, and a lower one may narrow but never contradict it. Never read above `.acm-root` and never walk up the code tree for mandates. A required higher mandate that cannot be read blocks the governed work it covers. In legacy memory the chain is the in-repo `.acm/destination.md` and its task scopes.
 
@@ -270,7 +270,7 @@ The mandatory sequence per iteration:
 
 ```
 iteration N:
-  1. a Change: record the checkpoint, commit it where permitted, and only then make the first change
+  1. a Change: record the checkpoint, commit it where permitted (otherwise leave it for the operator to accept, and wait for that), and only then make the first change
        bound scope:   create records/<UTC>-<slug>-N-checkpoint.md (record.py new --body-file)
        legacy memory: append to .acm/audit-trail.md
   2. record the completion (or the one record for any other outcome)
