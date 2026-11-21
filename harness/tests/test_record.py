@@ -117,7 +117,7 @@ class ResolutionTests(MemoryFixture):
 
 class RecordingTests(MemoryFixture):
     def test_create_only_acceptance_is_idempotent_and_never_overwrites(self):
-        trail = self.base / "trail"
+        trail = self.base / "records"
         first, created = record._create_record(trail, "20261121T000000Z", "slug", lambda rid: "one\n")
         self.assertTrue(created)
         again, created = record._create_record(trail, "20261121T000000Z", "slug", lambda rid: "one\n")
@@ -136,7 +136,7 @@ class RecordingTests(MemoryFixture):
         self.register(memory)
         result = self.run_record(work, "new", "--slug", "First Change", "--skill", "trail")
         self.assertEqual(result.returncode, 0, result.stderr)
-        records = list((memory / "repositories" / "work" / "trail").glob("*.md"))
+        records = list((memory / "repositories" / "work" / "records").glob("*.md"))
         self.assertEqual(len(records), 1)
         self.assertRegex(records[0].name, r"^\d{8}T\d{6}Z-first-change\.md$")
         text = records[0].read_text(encoding="utf-8")
@@ -153,7 +153,7 @@ class RecordingTests(MemoryFixture):
         result = self.run_record(work, "--path", "src/ui", "--scope", "cr-1", "new", "--slug", "nested")
         self.assertEqual(result.returncode, 0, result.stderr)
         scope = memory / "repositories" / "work" / "paths" / "src" / "ui" / "tasks" / "cr-1"
-        self.assertEqual(len(list((scope / "trail").glob("*-nested.md"))), 1)
+        self.assertEqual(len(list((scope / "records").glob("*-nested.md"))), 1)
         escaped = self.run_record(work, "--path", "../other", "new", "--slug", "x")
         self.assertNotEqual(escaped.returncode, 0)
         self.assertIn("invalid path scope", escaped.stderr)
@@ -175,21 +175,21 @@ class RecordingTests(MemoryFixture):
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertIn("legacy in-repo memory", result.stderr)
         self.assertIn("legacy-entry", log.read_text(encoding="utf-8"))
-        self.assertFalse((work / ".acm" / "trail").exists())
+        self.assertFalse((work / ".acm" / "records").exists())
 
     def test_history_reads_legacy_trail_then_records_in_filename_order(self):
         work, root = self.work_repo("work")
         memory = self.memory_repo("memory", {"work": root})
         self.register(memory)
         scope = memory / "repositories" / "work"
-        (scope / "trail").mkdir(parents=True)
+        (scope / "records").mkdir(parents=True)
         (scope / "audit-trail.md").write_text(
             "# Audit trail\n\n" + ENTRY.format(date="2026-01-01", slug="legacy"), encoding="utf-8"
         )
-        (scope / "trail" / "20260102T000000Z-later.md").write_text(
+        (scope / "records" / "20260102T000000Z-later.md").write_text(
             ENTRY.format(date="2026-01-02", slug="later"), encoding="utf-8"
         )
-        (scope / "trail" / "20260101T120000Z-earlier.md").write_text(
+        (scope / "records" / "20260101T120000Z-earlier.md").write_text(
             ENTRY.format(date="2026-01-01", slug="earlier"), encoding="utf-8"
         )
         result = self.run_record(work, "history")
@@ -199,7 +199,23 @@ class RecordingTests(MemoryFixture):
         written = self.run_record(work, "history", "--write")
         self.assertEqual(written.returncode, 0, written.stderr)
         history = (scope / "history.md").read_text(encoding="utf-8")
-        self.assertIn("2 `trail/` record(s) at memory revision", history)
+        self.assertIn("2 `records/` record(s) at memory revision", history)
+
+    def test_a_sealed_month_reads_before_open_records(self):
+        work, root = self.work_repo("work")
+        memory = self.memory_repo("memory", {"work": root})
+        self.register(memory)
+        records = memory / "repositories" / "work" / "records"
+        records.mkdir(parents=True)
+        sealed = "".join(
+            f"<!-- record: {name}.md sha256:0 -->\n" + ENTRY.format(date=date, slug=slug)
+            for name, date, slug in [("20261001T000000Z-a", "2026-10-01", "a"), ("20261030T000000Z-b", "2026-10-30", "b")]
+        )
+        (records / "2026-10.md").write_text(sealed, encoding="utf-8")
+        (records / "20261101T000000Z-c.md").write_text(ENTRY.format(date="2026-11-01", slug="c"), encoding="utf-8")
+        result = self.run_record(work, "history")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual(re.findall(r"Run\s+\d+\s+\S+\s+(\S+)", result.stdout), ["a", "b", "c"])
 
 
 if __name__ == "__main__":

@@ -43,7 +43,7 @@ Once the suite has earned your trust, explicitly delegate either routine gate in
 
 If continuing safely requires broader direction, Improve explains why and invokes Destination after the completed run to ask one sourced question at a time.
 
-Done when: the bound scope's `trail/` has a new record (legacy in-repo memory: `.acm/audit-trail.md` has a new entry) with `outcome:` and `delta:`.
+Done when: the bound scope's `records/` has a new record (legacy in-repo memory: `.acm/audit-trail.md` has a new entry) with `outcome:` and `delta:`.
 
 ## Confirm evidence exists (1 minute)
 

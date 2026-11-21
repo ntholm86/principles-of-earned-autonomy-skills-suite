@@ -7,7 +7,7 @@ The scope is resolved as trail/SKILL.md "Where memory lives" defines: the work
 repository (cwd or $TRAIL_ROOT) is bound by its git root commits to exactly one
 `repositories/<id>/repository.json` in the memory repositories listed in
 ~/.acm/memories ($ACM_MEMORIES_FILE overrides the registry path). A bound scope
-uses create-only records in `trail/`. An unbound repository that already has an
+uses create-only records in `records/`. An unbound repository that already has an
 in-repo `.acm/` is legacy memory and keeps its single `audit-trail.md`.
 
 Subcommands:
@@ -16,7 +16,7 @@ Subcommands:
       on stderr with exit code 2/3/4.
 
   new --slug=<slug> [--target=<target>] [--skill=<skill>] [--body-file=<path>]
-      Bound scope: create the record trail/<UTC yyyyMMddTHHmmssZ>-<slug>.md
+      Bound scope: create the record records/<UTC yyyyMMddTHHmmssZ>-<slug>.md
       (create-only; an identical resubmission is a no-op, a different one gets
       a new identifier). Legacy scope: append a stub to audit-trail.md and
       print its line range.
@@ -34,7 +34,7 @@ Subcommands:
       The learning surface — what the loop has actually concluded across runs.
 
 history, learning and summary read a legacy audit-trail.md first, then the
-trail/ records in filename order.
+records/ records in filename order.
 """
 from __future__ import annotations
 
@@ -170,7 +170,7 @@ def resolve_binding(root: Path) -> Resolution:
 
 class Target(NamedTuple):
     acm: Path  # the active scope directory
-    records: bool  # True: create-only trail/ records; False: legacy single file
+    records: bool  # True: create-only records/ records; False: legacy single file
     resolution: Resolution
     task: str | None
 
@@ -344,8 +344,8 @@ def _safe_read_log() -> str:
 
 
 def _record_files() -> list[Path]:
-    trail = LOG.parent / "trail"
-    return sorted(trail.glob("*.md")) if TARGET is not None and TARGET.records and trail.is_dir() else []
+    records_dir = LOG.parent / "records"
+    return sorted(records_dir.glob("*.md")) if TARGET is not None and TARGET.records and records_dir.is_dir() else []
 
 
 def _sources_exist() -> bool:
@@ -353,7 +353,7 @@ def _sources_exist() -> bool:
 
 
 def _read_sources() -> str:
-    """Legacy audit-trail.md first, then trail/ records in filename (UTC) order."""
+    """Legacy audit-trail.md first, then the records/ files in filename (UTC) order."""
     parts = [_safe_read_log()] if LOG.exists() else []
     parts.extend(_read_text(p) for p in _record_files())
     return "\n".join(part if part.endswith("\n") else part + "\n" for part in parts)
@@ -367,13 +367,13 @@ def _source_label() -> str:
     memory = TARGET.resolution.memory
     revision = _memory_revision(memory) if memory else ""
     return (
-        f"{legacy}{count} `trail/` record(s) at memory revision {revision or 'unknown'} "
+        f"{legacy}{count} `records/` record(s) at memory revision {revision or 'unknown'} "
         "(derived view: generate locally on demand or in the Orient step; ordinary writers do not commit it)"
     )
 
 
 def _missing_sources() -> int:
-    print(f"ERROR: no trail in {LOG.parent} ({LOG.name} or trail/ records).", file=sys.stderr)
+    print(f"ERROR: no trail in {LOG.parent} ({LOG.name} or records/ records).", file=sys.stderr)
     return 1
 
 
@@ -420,7 +420,7 @@ def _new_record(args: argparse.Namespace) -> int:
             mandate=mandate, skill=args.skill or "improve",
         ) + STUB_BODY
 
-    path, created = _create_record(TARGET.acm / "trail", now.strftime("%Y%m%dT%H%M%SZ"), slug, render)
+    path, created = _create_record(TARGET.acm / "records", now.strftime("%Y%m%dT%H%M%SZ"), slug, render)
     verb = "created record" if created else "identical record already accepted"
     print(f"{verb}: {path}")
     return 0
@@ -756,7 +756,7 @@ def build_parser() -> argparse.ArgumentParser:
     p_res = sub.add_parser("resolve", help="Print the bound scope path, or why there is none (exit 2 unbound, 3 ambiguous, 4 unavailable).")
     p_res.set_defaults(func=None)
 
-    p_new = sub.add_parser("new", help="Create a trail/ record (bound scope) or append a stub to audit-trail.md (legacy).")
+    p_new = sub.add_parser("new", help="Create a record in records/ (bound scope) or append a stub to audit-trail.md (legacy).")
     p_new.add_argument("--slug", required=True, help="Short slug for the entry (e.g. 'v3-redesign').")
     p_new.add_argument("--target", default=None, help="What is being operated on.")
     p_new.add_argument("--skill", default=None, help="Which skill is running (improve | probe).")

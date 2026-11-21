@@ -1,6 +1,6 @@
 ---
 name: orient
-version: 2.10.0
+version: 2.11.0
 description: 'Automatic orientation service. Improve or Destination schedules it when accumulated evidence makes the current orientation stale; it reads the trail as a single document, forms arc-level claims, and refreshes orientation.md without changing the target. Manual invocation remains available for diagnostics or an explicit "how are we doing?" request.'
 argument-hint: 'The target and its trail, and optionally the specific arc-question to answer'
 ---
@@ -56,7 +56,7 @@ A scope statement prevents the arc-read from being undirected. It also makes the
 
 ### 1b. Freshness guard (derived artifacts)
 
-The trail (a legacy `.acm/audit-trail.md`, then `trail/` records) is the source of truth. `history.md`, `learning.md`, and `learning-archive.md` are optional derived surfaces (see [Trail](../trail/SKILL.md)); an arc-claim formed from a stale derived surface is a claim about a trail that no longer exists.
+The trail (a legacy `.acm/audit-trail.md`, then `records/` records) is the source of truth. `history.md`, `learning.md`, and `learning-archive.md` are optional derived surfaces (see [Trail](../trail/SKILL.md)); an arc-claim formed from a stale derived surface is a claim about a trail that no longer exists.
 
 - **If the target uses derived artifacts**, regenerate them from the current trail before reading them. The helper lives in the skills clone, never in the target repo: `python <skills-repo>/harness/tools/record.py history --write` and `python <skills-repo>/harness/tools/record.py learning --write`, run from the target repository's directory so the scope resolves. Confirm each derived file is no older than the trail. If regeneration is not possible, read the trail directly and say so in the run notes; do not form arc-claims from the stale derived files.
 - **If the target has no derived artifacts**, there is nothing to refresh. Read the trail directly and proceed.
@@ -184,7 +184,7 @@ If the orient run cannot name the bar, the silence claim is not yet ready to be 
 
 **Apply [Trail](../trail/SKILL.md) automatically now.** The operator should never have to invoke Trail separately. If this is a standalone Orient installation and Trail is unavailable, use the entry contract below directly.
 
-If Trail is not installed: record a single entry where step 0's ACM §4 paragraph resolves (a new `trail/` record in a bound scope, appended to `.acm/audit-trail.md` in legacy memory, reported to the operator when unbound) containing:
+If Trail is not installed: record a single entry where step 0's ACM §4 paragraph resolves (a new `records/` record in a bound scope, appended to `.acm/audit-trail.md` in legacy memory, reported to the operator when unbound) containing:
 
 - Date, target, operator (if known), model identity (provider + tool-call ID prefix if observable).
 - The scope statement from step 1.

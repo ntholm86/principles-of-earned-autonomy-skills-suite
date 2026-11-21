@@ -40,7 +40,7 @@ Run **Improve** on a real, bounded task. It invokes Intent before acting and Tra
 | :--- | :--- | :--- | :--- | :--- |
 | **[Improve](./improve/SKILL.md)** | **Start here** | Makes one highest-leverage change per run. |  | reads all three |
 | **[Intent](./intent/SKILL.md)** | **Automatic** | States what the agent believes you mean before acting. | Operator's Intent |  |
-| **[Trail](./trail/SKILL.md)** | **Automatic** | Writes every run to an append-only audit trail. | Observable Autonomy | trail/ records (legacy: .acm/audit-trail.md) |
+| **[Trail](./trail/SKILL.md)** | **Automatic** | Writes every run to an append-only audit trail. | Observable Autonomy | records/ records (legacy: .acm/audit-trail.md) |
 | **[Destination](./destination/SKILL.md)** | **Automatic** | Consolidates accepted mandates into durable direction. |  | destination.md |
 | **[Orient](./orient/SKILL.md)** | **Automatic** | Reflects on past runs to spot recurring mistakes and dead ends. |  | orientation.md |
 | **[Probe](./probe/SKILL.md)** | **Research** | Measures Autonomous Reasoning Fidelity. | Autonomous Reasoning Fidelity |  |
@@ -131,7 +131,7 @@ Want a copy-pasteable, 10-minute path? See [QUICKSTART.md](./QUICKSTART.md).
 3. In your target repo, run Improve on one concrete, verifiable task:
    - `/improve review the checkout module for waste and overburden`
 4. Confirm the run produced evidence:
-   - a new record in the bound scope's `trail/` (legacy in-repo memory: `.acm/audit-trail.md`) with outcome and delta.
+   - a new record in the bound scope's `records/` (legacy in-repo memory: `.acm/audit-trail.md`) with outcome and delta.
 5. Optional, for legacy in-repo trails: install the pre-commit hook from the cloned suite's `harness/tools/` directory (see [QUICKSTART.md](./QUICKSTART.md)) to enforce trail discipline structurally.
 
 ## Known Limitation: Stated Reasoning ≠ True Reasoning

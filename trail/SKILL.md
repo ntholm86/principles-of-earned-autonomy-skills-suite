@@ -1,7 +1,7 @@
 ---
 name: trail
-version: 2.8.0
-description: 'Automatic egress service for substantive work. Record a structured entry in the bound memory scope of the shared ACM (a create-only trail/ record; legacy in-repo .acm/audit-trail.md is appended) — recording the interpretation, examination, decisions, actions, and reflection. Destination, Improve, Orient, and Probe apply Trail automatically; the operator should never need to invoke it separately. Direct use remains available for consequential work outside those workflows and independent-writer mode.'
+version: 2.9.0
+description: 'Automatic egress service for substantive work. Record a structured entry in the bound memory scope of the shared ACM (a new file in records/; legacy in-repo .acm/audit-trail.md is appended) — recording the interpretation, examination, decisions, actions, and reflection. Destination, Improve, Orient, and Probe apply Trail automatically; the operator should never need to invoke it separately. Direct use remains available for consequential work outside those workflows and independent-writer mode.'
 argument-hint: 'The target being worked on (repo, file, system) — used to populate the log entry header'
 ---
 
@@ -9,7 +9,7 @@ argument-hint: 'The target being worked on (repo, file, system) — used to popu
 
 *The record of what actually happened.*
 
-*ACM role: Writes the core of the memory layer — the trail of create-only records every other skill reads — and defines where memory lives.*
+*ACM role: Writes the core of the memory layer — the records every other skill reads — and defines where memory lives.*
 
 > **Governing principle:** [Observable Autonomy](../PRINCIPLES.md#principle-2-observable-autonomy) — *The degree of autonomy a system deserves is bounded by the degree of transparency it provides.* This skill is how that transparency is produced.
 
@@ -32,7 +32,7 @@ This is the suite's one definition of where memory lives, how it is resolved and
 **Memory repository.** Memory lives in a repository of its own, the shared ACM — never in the skills install and never as a new `.acm/` in a repository of work. Clone it once and add its absolute path as one line of the user-level registry `~/.acm/memories` (Windows: `%USERPROFILE%\.acm\memories`). Nothing is configured per prompt.
 
 ```text
-destination.md / orientation.md / trail/   memory-wide scope (.acm-root marks the top; nothing above it is read)
+destination.md / orientation.md / records/   memory-wide scope (.acm-root marks the top; nothing above it is read)
 repositories/<id>/                         repository scope: the same three, plus
   repository.json                          the binding: {"id", "root_commits": [...], "locators": [...]}
   audit-trail.md                           legacy single-file trail, read-only (migrated scopes only)
@@ -40,7 +40,7 @@ repositories/<id>/                         repository scope: the same three, plu
   paths/<code/path>/                       path scope: the same three, and its own tasks/
 ```
 
-One rule: a scope is a folder, and every scope folder has the same three entries — `destination.md` (the operator's mandate; written only by Destination after confirmation), `orientation.md` (Orient's derived synthesis) and `trail/<UTC yyyyMMddTHHmmssZ>-<slug>.md` (create-only records). All are optional until used.
+One rule: a scope is a folder, and every scope folder has the same three entries — `destination.md` (the operator's mandate; written only by Destination after confirmation), `orientation.md` (Orient's derived synthesis) and `records/` (one file per record; closed months sealed). All are optional until used.
 
 **Resolve before reading or writing.** The work repository's identity is its root commits (`git rev-list --max-parents=0 HEAD`). Across the registered memory repositories, each of which must contain `.acm-root`, exactly one `repositories/*/repository.json` whose `root_commits` intersect is the **bound** scope. Folder names and remote URLs never decide identity, so a renamed clone keeps its memory and two same-named repositories are never conflated. No match is **unbound**; more than one is **ambiguous**; an unreadable registry, memory repository or binding is **unavailable**. `record.py resolve` performs this check.
 
@@ -52,13 +52,15 @@ One rule: a scope is a folder, and every scope folder has the same three entries
 
 **Task scopes.** One repository often carries several unrelated tasks, and a single trail then mixes arcs that share nothing but a directory. A task gets a named scope — `tasks/<task>/` in a bound scope, `.acm/<task>/` in legacy memory — with its own trail and optional `orientation.md` and `destination.md`. The active scope is the narrowest that applies: the task scope when the confirmed mandate names a task, else the path scope the work is inside (when one exists), else the repository scope; Intent selects it and names it in its narration (see [intent/SKILL.md](../intent/SKILL.md)). Every skill reads the parent scopes first and reads and writes only the active scope. A task scope is created only when a confirmed mandate names it, never as a side effect of guessing a task boundary; entries are never merged or moved between scopes, and a finished task scope stays as evidence.
 
-**Recording in a bound scope.** Each entry is one new file `trail/<UTC yyyyMMddTHHmmssZ>-<slug>.md`, never edited or deleted once accepted. An existing identifier with identical content is already accepted; with different content it is a collision and gets a new identifier, never an overwrite. A correction is a new record that references the old one. A legacy `audit-trail.md` in a bound scope is read before the `trail/` records and never appended to. Besides the entry fields below, each record states `record` (its identifier), `time` (UTC), `scope`, `repository` (id @ root commit), `authority` (the prompt, destination or delegation acted under) and `mandate` (memory repository commit or destination hash); `agent` is `unknown` when not known, never invented. Ordinary writers do not regenerate and commit derived views in a shared scope: history and learning are generated locally on demand, `orientation.md` is refreshed only by Orient, and each is labelled derived with its source revision. Committing and pushing memory records follows the memory-wide destination's policy; without one, leave them for the operator and say so.
+**Recording in a bound scope.** Each entry is one new file `records/<UTC yyyyMMddTHHmmssZ>-<slug>.md`; its content is never changed or lost. An existing identifier with identical content is already accepted; with different content it is a collision and gets a new identifier, never an overwrite. A correction is a new record that references the old one. A legacy `audit-trail.md` in a bound scope is read before `records/` and never appended to. Besides the entry fields below, each record states `record` (its identifier), `time` (UTC), `scope`, `repository` (id @ root commit), `authority` (the prompt, destination or delegation acted under) and `mandate` (memory repository commit or destination hash); `agent` is `unknown` when not known, never invented. Ordinary writers do not regenerate and commit derived views in a shared scope: history and learning are generated locally on demand, `orientation.md` is refreshed only by Orient, and each is labelled derived with its source revision. Committing and pushing memory records follows the memory-wide destination's policy; without one, leave them for the operator and say so.
+
+**Sealing.** So the number of files grows with months, not with records, each closed UTC month is sealed. Before writing a record, if the scope's `records/` still holds records from an earlier month, seal that month first as its own commit: create `records/<yyyy-MM>.md` with each of that month's records in file-name order, each preceded by a line `<!-- record: <file name> sha256:<hash> -->` and followed by its content unchanged; remove exactly those records; commit both together. If the sealed file already exists or the push conflicts, someone else sealed it: drop yours and pull. Never edit a sealed file. Sealing needs only git and a SHA-256 tool. Read `records/` in file-name order; sealed months sort first.
 
 **Recording in legacy memory.** One file per scope, `.acm/audit-trail.md` or `.acm/<task>/audit-trail.md`: append-only, one `##` entry per session, newest at the bottom, with `history.md` and `learning.md` regenerated and committed alongside it.
 
 ### Helper and commit routine
 
-The skills repository's optional `<skills-repo>/harness/tools/record.py` applies these rules from the work repository's directory (or `$TRAIL_ROOT`); the one-line installer does not copy it and it is never committed to a target. `resolve` prints the bound scope or the reason there is none; `new --slug=<slug>` creates a bound record (`--body-file <file>` accepts a finished entry create-only; a stub created without it is a local draft until committed) or appends a legacy stub; `history`, `learning` and `summary` read a legacy `audit-trail.md` first, then the `trail/` records in filename order; `--scope <task>` addresses a task scope and `--path <code/path>` a path scope; together they address a task inside a path scope.
+The skills repository's optional `<skills-repo>/harness/tools/record.py` applies these rules from the work repository's directory (or `$TRAIL_ROOT`); the one-line installer does not copy it and it is never committed to a target. `resolve` prints the bound scope or the reason there is none; `new --slug=<slug>` creates a bound record (`--body-file <file>` accepts a finished entry create-only; a stub created without it is a local draft until committed) or appends a legacy stub; `history`, `learning` and `summary` read a legacy `audit-trail.md` first, then the `records/` records in filename order; `--scope <task>` addresses a task scope and `--path <code/path>` a path scope; together they address a task inside a path scope.
 
 In a bound scope, commit the work in the work repository and the record in the memory repository per its policy, subject `trail: <slug>`. In legacy memory, regenerate the derived files and commit them with the entry:
 
@@ -267,7 +269,7 @@ The mandatory sequence per iteration:
 ```
 iteration N:
   1. record the entry
-       bound scope:   create trail/<UTC>-<slug>-N.md (record.py new --body-file)
+       bound scope:   create records/<UTC>-<slug>-N.md (record.py new --body-file)
        legacy memory: append to .acm/audit-trail.md, then record.py history --write and learning --write
   2. commit per the "Helper and commit routine" above   ("trail: <slug>-N")
   ↓ only now begin iteration N+1

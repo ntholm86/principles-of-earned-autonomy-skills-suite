@@ -1,6 +1,6 @@
 ---
 name: intent
-version: 1.11.0
+version: 1.12.0
 description: 'Automatic ingress service for substantive work. Apply Operator''s Intent to the user''s own prompt before acting: interpret what the user is trying to achieve, narrate it, and honor the operator''s explicit supervision or delegation boundary. The operator should never need to invoke this skill separately. SKIP only for direct operations that require neither interpretation nor action authority (for example, reading a named file or answering yes/no); never skip when composed with Improve.'
 argument-hint: 'Triggered automatically by any substantive user prompt; can also be invoked explicitly: "apply intent to this request"'
 ---
@@ -44,7 +44,7 @@ A single prompt is a thin signal. Before extracting intent, read what already ex
 
 - **Destination** (`destination.md`) — the operator-held destination. If present, this is the most important context. The prompt is a single instruction; the destination is the overarching goal it serves. Read it first. Interpret the prompt in light of where the operator has said they are trying to go.
 - **orientation.md** (`orientation.md`) — the Orient-derived current orientation. Where the work actually is right now, what the loop has been attending to, what findings have accumulated. The prompt means something different depending on whether the target is early-stage, mid-refactor, or nearly converged.
-- **The trail** (a legacy `.acm/audit-trail.md`, then `trail/` records) — past decisions, reversals, and realisations reveal what the user has consistently cared about, what they rejected, and where things went wrong before. A pattern of `[!REVERSAL]` entries around a particular approach is stronger evidence of intent than any single prompt.
+- **The trail** (a legacy `.acm/audit-trail.md`, then `records/` records) — past decisions, reversals, and realisations reveal what the user has consistently cared about, what they rejected, and where things went wrong before. A pattern of `[!REVERSAL]` entries around a particular approach is stronger evidence of intent than any single prompt.
 - **The conversation** — corrections, approvals, and the moments the user stepped in all carry intent signal. A user who keeps redirecting toward simplicity is telling you something that no single prompt states explicitly.
 - **Past sessions** — when relevant records are available, read the exchanges that clarify intent from `.acm/transcripts/`, linked host or harness capture, or `.acm/sessions/` (including legacy summaries). Use their provenance and fidelity markings to distinguish independent capture from agent-authored summaries; location alone establishes neither. Accumulated learnings about how this user frames problems, what they consider done, and what they care about carry over.
 

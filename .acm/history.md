@@ -334,6 +334,7 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 327 | 2026-11-21 | shared-acm-layout-trigger-correction | trigger evaluations for both entries restated one per line; both slugs grandfathered in verify.py | verify.py failed on two condensed entries -> passes; earlier entries unchanged |
 | ▸ 328 | 2026-11-21 | plain-memory-file-names | skills write destination.md, orientation.md plainly; chain is memory-wide, repository, path, task everywhere | trail 2.8.0, improve 3.22.0, intent 1.11.0, destination 2.11.0, orient 2.10.0 (CHANGELOG v4.36.0) |
 | ▸ 329 | 2026-11-21 | plain-memory-file-names-hansei-correction | the macro-Hansei for that entry's fired trigger is supplied here; the slug is grandfathered in verify.py | verify.py failed -> passes; the earlier entry is unchanged |
+| ▸ 330 | 2026-11-21 | records-folder-and-sealing | trail/ renamed records/; closed months are sealed into records/<yyyy-MM>.md with git and a SHA-256 tool, no script |  |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -1512,4 +1513,4 @@ Do not edit by hand — re-run the command to refresh.
 
 - **REVERSAL:** Its commit also went in without waiting for verify.py; the commit step is now gated on verify passing.
 
-**329 runs total — 301 with changes, 28 silence**
+**330 runs total — 302 with changes, 28 silence**
