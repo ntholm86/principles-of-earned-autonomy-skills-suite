@@ -7,6 +7,7 @@ A minimal, copy-pasteable path to one real run that produces real evidence. Aim 
 1. A target repo you have write access to (yours or a fork).
 2. A terminal in that repo's root.
 3. VS Code with GitHub Copilot Chat, or any agent that loads `.copilot/skills/`.
+4. A shared ACM memory repository, cloned once, with its absolute path as a line of `~/.acm/memories` (Windows: `%USERPROFILE%\.acm\memories`). The target is bound by `repositories/<id>/repository.json` listing its root commit (`git rev-list --max-parents=0 HEAD`); the agent offers to create it with your confirmation. Without a binding the run still works but is not recorded. See [Trail](./trail/SKILL.md#where-memory-lives).
 
 ## Install the skills (1 minute)
 
@@ -42,15 +43,15 @@ Once the suite has earned your trust, explicitly delegate either routine gate in
 
 If continuing safely requires broader direction, Improve explains why and invokes Destination after the completed run to ask one sourced question at a time.
 
-Done when: `.acm/audit-trail.md` has a new entry with `outcome:` and `delta:`.
+Done when: the bound scope's `trail/` has a new record (legacy in-repo memory: `.acm/audit-trail.md` has a new entry) with `outcome:` and `delta:`.
 
 ## Confirm evidence exists (1 minute)
 
 Open these and skim:
 
-1. `.acm/audit-trail.md` — the new entry has interpretation, decision, action, and outcome.
+1. The new trail record — it has interpretation, decision, action, and outcome.
 2. The change itself in the working tree.
-3. `.acm/destination.md`, if Improve found enough directional evidence to trigger Destination.
+3. The scope's `destination.md`, if Improve found enough directional evidence to trigger Destination.
 
 The first two are sufficient for a successful first run. Destination is created when the work needs durable cross-run direction, not as setup ceremony.
 
@@ -77,7 +78,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File C:\path\to\autonomous-agent-
 
 The installer respects `core.hooksPath` and stops without overwriting a different existing hook. Review the reported path before installing into a shared hook directory; see [INSTALLING.md](./INSTALLING.md) for existing-hook handling.
 
-This rejects staged changes outside `.acm/`, including deletions, unless the commit also adds or modifies `.acm/audit-trail.md` or `.acm/<task>/audit-trail.md`. Commits confined to `.acm/` are allowed. The hook checks staged paths; it does not validate entry truthfulness or append-only integrity.
+For legacy in-repo trails only: this rejects staged changes outside `.acm/`, including deletions, unless the commit also adds or modifies `.acm/audit-trail.md` or `.acm/<task>/audit-trail.md`. Commits confined to `.acm/` are allowed. The hook checks staged paths; it does not validate entry truthfulness or append-only integrity.
 
 ## If something went wrong
 

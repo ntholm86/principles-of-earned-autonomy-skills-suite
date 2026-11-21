@@ -1,7 +1,7 @@
 ---
 name: trail
-version: 2.6.0
-description: 'Automatic egress service for substantive work. Append a structured entry to .acm/audit-trail.md IN THE TARGET REPO ROOT — recording the interpretation, examination, decisions, actions, and reflection. Destination, Improve, Orient, and Probe apply Trail automatically; the operator should never need to invoke it separately. Direct use remains available for consequential work outside those workflows and independent-writer mode.'
+version: 2.7.0
+description: 'Automatic egress service for substantive work. Record a structured entry in the bound memory scope of the shared ACM (a create-only trail/ record; legacy in-repo .acm/audit-trail.md is appended) — recording the interpretation, examination, decisions, actions, and reflection. Destination, Improve, Orient, and Probe apply Trail automatically; the operator should never need to invoke it separately. Direct use remains available for consequential work outside those workflows and independent-writer mode.'
 argument-hint: 'The target being worked on (repo, file, system) — used to populate the log entry header'
 ---
 
@@ -9,7 +9,7 @@ argument-hint: 'The target being worked on (repo, file, system) — used to popu
 
 *The record of what actually happened.*
 
-*ACM role: Writes the core of the memory layer — `.acm/audit-trail.md`, the append-only record every other skill reads.*
+*ACM role: Writes the core of the memory layer — the trail of create-only records every other skill reads — and defines where memory lives.*
 
 > **Governing principle:** [Observable Autonomy](../PRINCIPLES.md#principle-2-observable-autonomy) — *The degree of autonomy a system deserves is bounded by the degree of transparency it provides.* This skill is how that transparency is produced.
 
@@ -25,107 +25,69 @@ Evidence → Trust → Autonomy
 
 ---
 
-## The Structure
+## Where memory lives
 
-The trail lives in the **root of the target repo being worked on** — not in the skills install directory.
+This is the suite's one definition of where memory lives, how it is resolved and how records are written; the other skills refer here. It implements the shared-ACM memory-repository model (ACM SPEC v0.5.0 §3.3, §4, §8).
 
-If you are improving `c:\git\clikit`, the trail is `c:\git\clikit\.acm\audit-trail.md`.
-If you are improving `~/projects/myapp`, the trail is `~/projects/myapp/.acm/audit-trail.md`.
+**Memory repository.** Memory lives in a repository of its own, the shared ACM — never in the skills install and never as a new `.acm/` in a repository of work. Clone it once and add its absolute path as one line of the user-level registry `~/.acm/memories` (Windows: `%USERPROFILE%\.acm\memories`). Nothing is configured per prompt.
 
-Every repo gets its own trail. The trail is local evidence for that project — it belongs with the project.
-
-### Task scopes inside a repo
-
-One repo often carries several unrelated tasks. A single trail then grows past what any run can read and mixes arcs that share nothing but a directory. ACM §4 organizes memory by scope and discovers scopes as `.acm/` directories up the filesystem; a task that has no directory of its own gets a **named scope inside the repo's `.acm/`** instead:
-
-```
-.acm/
-  destination.md        — repo scope; governs every task scope below it
-  audit-trail.md        — repo-wide work
-  orientation.md
-  live-assist/          — task scope, named by the operator's mandate
-    audit-trail.md      — required; same format, same append-only rules
-    orientation.md      — optional, Orient-written, about this task's arc only
-    destination.md      — optional task mandate, layered under the repo destination
-    history.md, learning.md, learning-archive.md — optional, derived, as at repo scope
+```text
+.acm-root                      ceiling: nothing above it is read
+.acm/destination.md            memory-wide mandate
+repositories/<id>/
+  repository.json              {"id", "root_commits": [...], "locators": [...]}
+  .acm/                        repository scope
+    destination.md             repository mandate (operator-held; written only by Destination after confirmation)
+    orientation.md             Orient's derived synthesis
+    trail/<UTC yyyyMMddTHHmmssZ>-<slug>.md    create-only records, one per entry
+    audit-trail.md             legacy single-file trail, read-only (migrated scopes only)
+    tasks/<task>/              named task scopes: destination.md, orientation.md, trail/
 ```
 
-**The hierarchy is strict: the higher-level `.acm/` always wins.** Workspace governs repo; repo governs task. A task destination can narrow the repo destination and never contradict it; a task orientation describes only its task. This is ACM §4.3 applied one level further down, not a second rule.
+**Resolve before reading or writing.** The work repository's identity is its root commits (`git rev-list --max-parents=0 HEAD`). Across the registered memory repositories, each of which must contain `.acm-root`, exactly one `repositories/*/repository.json` whose `root_commits` intersect is the **bound** scope. Folder names and remote URLs never decide identity, so a renamed clone keeps its memory and two same-named repositories are never conflated. No match is **unbound**; more than one is **ambiguous**; an unreadable registry, memory repository or binding is **unavailable**. `record.py resolve` performs this check.
 
-The **active scope** for a run is the repo `.acm/` unless the confirmed mandate names a task. Intent selects the scope and names it in its narration (see [intent/SKILL.md](../intent/SKILL.md)); every skill in the chain reads the parent scopes first and reads and writes only the active scope's files. Trail never merges or moves entries between scopes. A task scope is created only when a run's confirmed mandate names it — never as a silent side effect of an agent guessing a task boundary. When a task is finished, its scope stays as evidence; nothing is folded back into the repo trail.
+**When not bound.** Say exactly which case applies. Read and write no guessed memory and never create an `.acm/` in the work repository. Continue only the work the prompt independently authorises, and state that it is not ACM-recorded. Offer to register the repository — create `repositories/<id>/repository.json` with its root commit in a named memory repository — only with the operator's confirmation.
 
-`record.py` addresses a task scope with `--scope <name>` (or the `ACM_SCOPE` environment variable); without it, it operates on the repo scope as before.
+**Legacy in-repo memory.** If the repository is unbound and already has an `.acm/` from an earlier ACM version, that is legacy memory: say so, read it, record in its existing single-file format, create nothing new, and recommend migration.
 
-One file per scope: `.acm/audit-trail.md` in the target repo root, or `.acm/<task>/audit-trail.md` for a task scope. Append-only. One `##` entry per session, newest at the bottom.
+**Governing chain.** Memory-wide `.acm/destination.md` → repository `destination.md` → task `destination.md`. Read broadest first and label each ("memory mandate", "repo mandate", "task mandate"); the higher scope wins, and a lower one may narrow but never contradict it. Never read above `.acm-root` and never walk up the code tree for mandates. A required higher mandate that cannot be read blocks the governed work it covers. In legacy memory the chain is the in-repo `.acm/destination.md` and its task scopes.
 
-**Before any write: create the `.acm/` directory in the target repo root if it does not already exist.** This applies whether the skill is run alone, as part of a chain, or for the first time on a fresh repo.
+**Task scopes.** One repository often carries several unrelated tasks, and a single trail then mixes arcs that share nothing but a directory. A task gets a named scope — `tasks/<task>/` in a bound scope, `.acm/<task>/` in legacy memory — with its own trail and optional `orientation.md` and `destination.md`. The active scope is the repository scope unless the confirmed mandate names a task; Intent selects it and names it in its narration (see [intent/SKILL.md](../intent/SKILL.md)). Every skill reads the parent scopes first and reads and writes only the active scope. A task scope is created only when a confirmed mandate names it, never as a side effect of guessing a task boundary; entries are never merged or moved between scopes, and a finished task scope stays as evidence.
 
-If `.acm/audit-trail.md` does not exist yet, initialise it:
+**Recording in a bound scope.** Each entry is one new file `trail/<UTC yyyyMMddTHHmmssZ>-<slug>.md`, never edited or deleted once accepted. An existing identifier with identical content is already accepted; with different content it is a collision and gets a new identifier, never an overwrite. A correction is a new record that references the old one. A legacy `audit-trail.md` in a bound scope is read before the `trail/` records and never appended to. Besides the entry fields below, each record states `record` (its identifier), `time` (UTC), `scope`, `repository` (id @ root commit), `authority` (the prompt, destination or delegation acted under) and `mandate` (memory repository commit or destination hash); `agent` is `unknown` when not known, never invented. Ordinary writers do not regenerate and commit derived views in a shared scope: history and learning are generated locally on demand, `orientation.md` is refreshed only by Orient, and each is labelled derived with its source revision. Committing and pushing memory records follows the memory-wide destination's policy; without one, leave them for the operator and say so.
 
-Create `.acm/audit-trail.md` with this header:
+**Recording in legacy memory.** One file per scope, `.acm/audit-trail.md` or `.acm/<task>/audit-trail.md`: append-only, one `##` entry per session, newest at the bottom, with `history.md` and `learning.md` regenerated and committed alongside it.
 
-```markdown
-# Audit trail
+### Helper and commit routine
 
-Append-only ledger of autonomous operations on this repo. Newest entries at the bottom.
+The skills repository's optional `<skills-repo>/harness/tools/record.py` applies these rules from the work repository's directory (or `$TRAIL_ROOT`); the one-line installer does not copy it and it is never committed to a target. `resolve` prints the bound scope or the reason there is none; `new --slug=<slug>` creates a bound record (`--body-file <file>` accepts a finished entry create-only; a stub created without it is a local draft until committed) or appends a legacy stub; `history`, `learning` and `summary` read a legacy `audit-trail.md` first, then the `trail/` records in filename order; `--scope <task>` addresses a task scope.
 
----
-```
-
-That's it. Nothing else gets installed into the target repo. The skills repository includes an optional helper at `harness/tools/record.py`; the one-line skill installer does not copy it. Invoke it from the clone as `<skills-repo>/harness/tools/record.py` — it writes into the current working directory by default, or whatever `$TRAIL_ROOT` points to.
-
-After appending to `audit-trail.md`, regenerate the derived artifacts and commit them together:
+In a bound scope, commit the work in the work repository and the record in the memory repository per its policy, subject `trail: <slug>`. In legacy memory, regenerate the derived files and commit them with the entry:
 
 ```
 python <skills-repo>/harness/tools/record.py history --write
 python <skills-repo>/harness/tools/record.py learning --write
-git add .acm/audit-trail.md .acm/history.md .acm/learning.md .acm/learning-archive.md  # learning-archive.md only if it exists
+git add .acm/audit-trail.md .acm/history.md .acm/learning.md .acm/learning-archive.md  # learning-archive.md only if it exists; .acm/<task>/... with --scope <task>
 git commit -m "trail: <slug>"
 ```
 
-In a task scope, add `--scope <task>` to both `record.py` commands and stage `.acm/<task>/...` instead.
-
 When the entry records a silence verdict, put the verdict and the evaluator in the commit subject — `git commit -m "trail: <slug> - bounded silence, <model family and version>"` — so the lease state is readable from `git log` without opening the trail.
 
-If `history.md`/`learning.md` are not in use for this target (see below — they are optional), the commit needs only `.acm/audit-trail.md`.
+If Orient ran this session and updated `orientation.md`, include it in the same commit. `destination.md` is operator-managed and is committed only when the operator changes it — never as a side effect of an agent run.
 
-If Orient ran this session and updated `.acm/orientation.md`, include it in the same commit. `.acm/destination.md` is operator-managed and is committed only when the operator changes it — never as a side effect of an agent run.
+### What a scope holds
 
-`history.md` and `learning.md` are derived from `audit-trail.md` and are **regenerated as part of every Trail commit** — they must not lag behind the source. `record.py` exposes both as standalone subcommands too:
+Only the trail is required: per the Agent Context Memory specification this skillset implements ([agent-context-memory](https://github.com/ntholm86/agent-context-memory)), minimal conformance is about properties — append-only or create-only source records, author separation, mandate read first, interpretation visible — not about derived files. Everything else is optional:
 
-```
-python <skills-repo>/harness/tools/record.py history           # timeline to stdout (no write)
-python <skills-repo>/harness/tools/record.py learning          # markers to stdout (no write)
-python <skills-repo>/harness/tools/record.py summary           # digest of the most recent run
-```
+- `history.md`, `learning.md`, `learning-archive.md` — derived reading aids, never hand-written, generated only by `record.py history --write` / `learning --write`. Adopt them when the trail is long enough that reading it in full every run is wasteful. `learning.md` holds the most recent `[!REALIZATION]` and `[!REVERSAL]` markers with date+slug context, bounded to a recent window; older markers move to `learning-archive.md`, read only when the window does not cover what is needed. Improve, Orient and Intent read them conditionally, before the full trail. In legacy memory they are regenerated at every commit so they never lag the source; in a bound scope they are local views as above.
+- `orientation.md` — Orient-derived current orientation; recommended once arc-level synthesis earns its cost. The destination is the goal the operator holds and rarely changes; the orientation is the agent's current synthesis of where the target is, rewritten each Orient run. The destination is input to the loop; the orientation is output.
+- `transcripts/` — verbatim transcript exports (see "Independent capture"). `sessions/` — legacy pre-v2.0.0 agent-authored summaries, not written routinely.
 
-```
-.acm/
-  audit-trail.md  — append-only ledger, one entry per session (the source of truth; the only Trace-tier artifact required for ACM conformance)
-  history.md      — OPTIONAL. derived run timeline (regenerated by Trail at every commit, if used)
-  learning.md     — OPTIONAL. derived [!REALIZATION] / [!REVERSAL] surface, bounded to a recent window (regenerated by Trail at every commit, if used)
-  learning-archive.md — OPTIONAL. markers older than the recent window (created once the trail is long enough; regenerated alongside learning.md, if used)
-  destination.md  — operator-held destination (optional; written by Destination, read by Improve, never written by any other skill)
-  orientation.md  — Orient-derived current orientation (written by Orient, read by Improve; optional per ACM but recommended)
-  sessions/       — legacy: pre-v2.0.0 agent-authored session summaries may exist here from repos with history predating this change; not written to routinely going forward
-  transcripts/    — verbatim transcript exports (optional but strongly recommended for high-fidelity runs)
-```
-
-**Only `audit-trail.md` is required.** Per the Agent Context Memory specification this skillset implements ([agent-context-memory](https://github.com/ntholm86/agent-context-memory) SPEC.md §6.1, §6.3), a `.acm/` directory is minimally ACM-conformant with just `destination.md` and `audit-trail.md` — the spec's own six minimal-conformance criteria are entirely about properties (append-only, author separation, mandate-read-first, interpretation-visible) and never mention `history.md`, `learning.md`, or `learning-archive.md` at all. `orientation.md` is explicitly optional too, though recommended once a trail is long enough that arc-level synthesis earns its cost.
-
-`history.md`, `learning.md`, and `learning-archive.md` are never hand-written — they exist only as derived reading aids over `audit-trail.md` for repos where the trail has grown long enough that reading it in full, every run, would be wasteful. A new or small target does not need them: `audit-trail.md` alone is a fully ACM-conformant trace tier, and step 1 of Improve, Orient, and Intent all already read these files conditionally ("if present" / "if it exists") rather than assuming they exist. Adopt them when `audit-trail.md` has grown large enough that a compact digest and a bounded learning surface are worth the token cost of maintaining them — not as a default starting point. When adopted, they are exclusively generated by `record.py history --write` / `record.py learning --write`, never edited directly, and regenerated at every commit so neither lags behind the source of truth.
-
-`learning.md` is the compact learning surface — the most recent `[!REALIZATION]` and `[!REVERSAL]` markers, in chronological order with date+slug context, bounded to a recent window so the read stays cheap no matter how long the trail gets. Older markers move to `learning-archive.md`, read only when the recent window doesn't cover what's needed. Improve reads `learning.md` before `audit-trail.md`, when present, to act on prior conclusions without re-reading the full history. Both files are regenerated by Trail at every commit, when in use, so neither lags behind `audit-trail.md`.
-
-Trail does not routinely create agent-authored session summaries. See "Independent capture" for the full-fidelity contract.
-
-Destination and orientation.md are distinct: the destination is the goal the operator holds and rarely changes; orientation.md is the agent's current synthesis of where the target is, rewritten each Orient run. The destination is input to the loop; orientation.md is output.
-
-Both files are committed. `record.py` is **not** committed to the target repo — it stays in the skills install.
+Trail does not routinely create agent-authored session summaries.
 
 The `agent:` field names the model family and version as precisely as the host exposes or the operator states (mark operator-stated identity as such, e.g. `Claude Fable 5.1; model identified by the operator`). The host product alone — `GitHub Copilot`, `Cursor` — is not a model family. Principle 3 counts same-family evaluators as one and needs fresh sessions on an unchanged artifact, so a silence entry whose `agent:` names only the host cannot be counted toward convergence.
 
-Each entry in `audit-trail.md` follows this shape:
+Each entry — a bound record or a legacy `##` section — follows this shape (a bound record adds the attribution fields above after the heading; `record.py new` writes them):
 
 ```markdown
 ## YYYY-MM-DD — <slug>
@@ -252,7 +214,7 @@ The data-loss problem is solved at the source by the regex fix; the style check 
 To find every load-bearing decision across all sessions:
 
 ```sh
-grep -rn '\[!DECISION\]\|\[!REALIZATION\]\|\[!REVERSAL\]' .acm/
+grep -rn '\[!DECISION\]\|\[!REALIZATION\]\|\[!REVERSAL\]' <scope>/   # the bound scope, or .acm/ in legacy memory
 ```
 
 ---
@@ -263,11 +225,11 @@ Trail serves three observer resolutions:
 
 | Resolution | Source | Answers |
 |---|---|---|
-| **Digest** | `outcome` and `delta` in `audit-trail.md` | What happened? |
+| **Digest** | `outcome` and `delta` in the trail | What happened? |
 | **Indexed** | `[!DECISION]`, `[!REALIZATION]`, and `[!REVERSAL]` markers | What changed in the reasoning? |
 | **Full** | A harness ledger or the host's session history | What was the complete interaction, including dead ends? |
 
-The Full source must be captured independently of the audited agent. Trail does not routinely create a second, agent-authored session summary; structured reasoning belongs in `audit-trail.md`, while full-fidelity telemetry belongs in the harness or host that observed the session.
+The Full source must be captured independently of the audited agent. Trail does not routinely create a second, agent-authored session summary; structured reasoning belongs in the trail, while full-fidelity telemetry belongs in the harness or host that observed the session.
 
 For every entry:
 
@@ -276,7 +238,7 @@ For every entry:
 3. Name and reject at least one alternative when a decision exists.
 4. Prefer literal operator text and tool evidence over paraphrase.
 
-Independent capture is optional for ordinary Trail validity. When the operator wants it surfaced in the repo, link or copy it at `.acm/transcripts/<date>-<slug>.md` and add `transcript-file:` plus `transcript-fidelity:`:
+Independent capture is optional for ordinary Trail validity. When the operator wants it surfaced in memory, link or copy it at `transcripts/<date>-<slug>.md` in the active scope and add `transcript-file:` plus `transcript-fidelity:`:
 
 - `verbatim` - exact export from an independent source.
 - `verbatim-structural` - independent export produced through a structural capture workflow.
@@ -298,30 +260,22 @@ If you are unsure whether this session warrants an entry: if a decision was made
 
 ### Multi-iteration runs
 
-**Each iteration is a separate trail entry. Append it immediately after that iteration completes — before beginning the next iteration.**
+**Each iteration is a separate trail entry. Record it immediately after that iteration completes — before beginning the next iteration.**
 
-Do not buffer entries to write at the end of all iterations. The trail is the checkpoint: if the agent crashes, times out, or the user stops the run after iteration 3 of 10, the first 3 entries must already be committed to `audit-trail.md`.
+Do not buffer entries to write at the end of all iterations. The trail is the checkpoint: if the agent crashes, times out, or the user stops the run after iteration 3 of 10, the first 3 entries must already be recorded.
 
 The mandatory sequence per iteration:
 
 ```
-iteration 1:
-  1. append entry to .acm/audit-trail.md
-  2. python <skills-repo>/harness/tools/record.py history --write    ← updates .acm/history.md
-  3. python <skills-repo>/harness/tools/record.py learning --write   ← updates .acm/learning.md
-  4. git add .acm/audit-trail.md .acm/history.md .acm/learning.md .acm/learning-archive.md && git commit -m "trail: <slug>-1"
-  ↓ only now begin iteration 2
-
-iteration 2:
-  1. append entry to .acm/audit-trail.md
-  2. python <skills-repo>/harness/tools/record.py history --write
-  3. python <skills-repo>/harness/tools/record.py learning --write
-  4. git add .acm/audit-trail.md .acm/history.md .acm/learning.md .acm/learning-archive.md && git commit -m "trail: <slug>-2"
-  ↓ only now begin iteration 3
-...
+iteration N:
+  1. record the entry
+       bound scope:   create trail/<UTC>-<slug>-N.md (record.py new --body-file)
+       legacy memory: append to .acm/audit-trail.md, then record.py history --write and learning --write
+  2. commit per the "Helper and commit routine" above   ("trail: <slug>-N")
+  ↓ only now begin iteration N+1
 ```
 
-Do not begin the next iteration until steps 1–4 are complete. Each commit is a checkpoint — if the agent crashes or the user stops after iteration 3 of 10, the first 3 entries are already committed in all three files. Batching at the end defeats this.
+Do not begin the next iteration until both steps are complete. Each record is a checkpoint — if the agent crashes or the user stops after iteration 3 of 10, the first 3 entries already exist. Batching at the end defeats this.
 
 ---
 
@@ -337,7 +291,7 @@ Do not begin the next iteration until steps 1–4 are complete. Each commit is a
 
 ## The test
 
-Can someone who was not present reconstruct what was done, why each significant decision was made, and whether the work achieved what was asked for — using `.acm/audit-trail.md` alone, or with it plus an independent capture source (harness ledger, host product history, or a linked transcript) when one exists?
+Can someone who was not present reconstruct what was done, why each significant decision was made, and whether the work achieved what was asked for — using the scope's trail alone, or with it plus an independent capture source (harness ledger, host product history, or a linked transcript) when one exists?
 
 If yes, the trail is sufficient. If no, something is missing.
 

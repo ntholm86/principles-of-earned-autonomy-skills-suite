@@ -35,8 +35,8 @@ Checks:
     they do not establish that a decision changed.
 15. `improve/SKILL.md`, `orient/SKILL.md`, `intent/SKILL.md`, and
     `destination/SKILL.md` each carry the ACM §4 Scoped Memory paragraph with
-    an identical stop-condition clause (filesystem root, `.acm-root` marker,
-    4-level ceiling) — catches silent wording drift across the four copies.
+    the identical reference to Trail's single definition of memory resolution
+    and the governing chain — catches a copy drifting into its own rule.
 
 Exit code: 0 if all blocking checks pass (review warnings may remain), 1 otherwise.
 """
@@ -102,8 +102,9 @@ ACM_SCOPE_TRAVERSAL_FILES = [
     "destination/SKILL.md",
 ]
 ACM_SCOPE_TRAVERSAL_INVARIANT = (
-    "a `.acm-root` marker file is found in a directory (operator-declared ceiling \u2014 "
-    "read that directory's `.acm/` then stop); or 4 levels traversed (implementation ceiling)"
+    "read the governing chain as [Trail defines it](../trail/SKILL.md#where-memory-lives) \u2014 "
+    "memory-wide, then repository, then task destination, broadest first; the higher scope wins; "
+    "nothing above `.acm-root` and no walking up the code tree."
 )
 
 FIDELITY_TEXT = re.compile(
@@ -321,13 +322,12 @@ def check_stale_path_tokens() -> list[str]:
 
 
 def check_acm_scope_traversal_consistency() -> list[str]:
-    """Fail when a primary skill's ACM \u00a74 stop-condition wording drifts from the canonical form.
+    """Fail when a primary skill's ACM \u00a74 reference drifts from the canonical form.
 
-    improve/orient/intent/destination each read parent-scope destinations before
-    forming their own reasoning (ACM \u00a74 Scoped Memory) and must state the same
-    three stop conditions in the same words, so a future edit to the rule (e.g.
-    changing the traversal ceiling) cannot silently update one file and miss the
-    others. This mirrors the drift class that previously required repair in
+    improve/orient/intent/destination each read the governing chain before
+    forming their own reasoning (ACM \u00a74 Scoped Memory) and must defer to
+    Trail's single definition in the same words, so a future edit to the rule
+    cannot silently update one file and miss the others. This mirrors the drift class that previously required repair in
     PRINCIPLES.md, CHANGELOG.md, and trail/README.md (splice defects) \u2014 here caught
     mechanically instead of by a fresh-session evaluator noticing by hand.
     """
@@ -342,7 +342,7 @@ def check_acm_scope_traversal_consistency() -> list[str]:
             continue
         if ACM_SCOPE_TRAVERSAL_INVARIANT not in text:
             failures.append(
-                f"{rel}'s ACM \u00a74 stop-condition wording has drifted from the canonical form "
+                f"{rel}'s ACM \u00a74 reference has drifted from the canonical form "
                 f"(expected exact substring: {ACM_SCOPE_TRAVERSAL_INVARIANT!r})"
             )
     return failures

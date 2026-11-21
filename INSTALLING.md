@@ -44,7 +44,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File C:\path\to\autonomous-agent-
 
 The installers use Git's effective hook location, including `core.hooksPath`, and create the directory if needed. A configured directory may be shared by several repos; installing there affects each repo that uses it. An identical installed hook can be installed again. A different existing hook, including an older suite hook, is left untouched and installation stops: review and integrate or explicitly replace it yourself before retrying.
 
-This installs a pre-commit hook that rejects staged changes outside `.acm/`, including deletions, unless the commit also adds or modifies `.acm/audit-trail.md` or `.acm/<task>/audit-trail.md`. Commits confined to `.acm/` are allowed. Deleted or unstaged trails do not satisfy the gate. The hook checks staged paths; it does not validate entry truthfulness or append-only integrity.
+For legacy in-repo trails only, this installs a pre-commit hook that rejects staged changes outside `.acm/`, including deletions, unless the commit also adds or modifies `.acm/audit-trail.md` or `.acm/<task>/audit-trail.md`. Commits confined to `.acm/` are allowed. Deleted or unstaged trails do not satisfy the gate. The hook checks staged paths; it does not validate entry truthfulness or append-only integrity.
 
 Override with `git commit --no-verify`. The hook does not record the bypass, and `verify.py` does not detect commits with no trail entry. Neither should be treated as tamper-proof enforcement.
 
@@ -133,19 +133,18 @@ All skills work with only their own `SKILL.md`. No required sibling files.
 | **intent** | `PRINCIPLES.md` (cross-reference link; content is inlined) |
 | **destination** | `PRINCIPLES.md` |
 | **improve** | `PRINCIPLES.md` |
-| **trail** | nothing — creates `.acm/audit-trail.md` on first use |
-| **orient** | nothing — reads `.acm/audit-trail.md` written by trail |
+| **trail** | nothing — records in the bound scope of your shared ACM |
+| **orient** | nothing — reads the trail written by trail |
 
 ---
 
 ## The trail — where it lives
 
-The trail is **per project**. The AI writes it automatically — no scripts required.
+The trail lives in a shared ACM memory repository, separate from your code, with one scope per work repository. The AI writes it automatically — no scripts required.
 
-When the trail skill runs for the first time on a project it creates:
-`<repo-root>/.acm/audit-trail.md` (the append-only evidence log)
+Set up once per machine: clone the memory repository and add its absolute path as a line of `~/.acm/memories` (Windows: `%USERPROFILE%\.acm\memories`). A work repository is bound by `repositories/<id>/repository.json` listing its root commit; the skills offer to create it with your confirmation. Each entry is a create-only file `trail/<UTC yyyyMMddTHHmmssZ>-<slug>.md`, committed in the memory repository as its destination's policy says. Full definition: [Trail](./trail/SKILL.md#where-memory-lives).
 
-Commit `.acm/audit-trail.md` after each session. That's the full workflow.
+A repository that already has an in-repo `.acm/audit-trail.md` from earlier ACM versions keeps working as legacy memory: entries are appended there and committed with the work. Migration to a memory repository is recommended.
 
 ---
 
@@ -155,12 +154,13 @@ Commit `.acm/audit-trail.md` after each session. That's the full workflow.
 
 `harness/tools/record.py` and `verify.py` exist to support the experiment that produced this suite — running the loop 350+ times and proving the trail is intact. They remain in the cloned repository and are not copied by the one-line installer.
 
-**`harness/tools/record.py`** — generates a human-readable `history.md` from the trail log. Run from the repo root:
+**`harness/tools/record.py`** — resolves the scope, writes records, and generates a human-readable `history.md` from the trail. Run from the work repo root:
 ```
+python harness/tools/record.py resolve            # prints the bound scope, or why there is none
 python harness/tools/record.py history --write    # writes .acm/history.md
 python harness/tools/record.py summary            # prints the latest entry
 ```
-It only writes into `.acm/`. No network calls.
+It writes only into the resolved scope. No network calls.
 
 **`verify.py`** — read-only integrity check. Confirms the trail is well-formed, dates are in order, required files exist, and referenced session files are present. Writes nothing.
 ```

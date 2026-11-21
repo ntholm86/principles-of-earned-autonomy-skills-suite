@@ -1,6 +1,6 @@
 ---
 name: orient
-version: 2.8.0
+version: 2.9.0
 description: 'Automatic orientation service. Improve or Destination schedules it when accumulated evidence makes the current orientation stale; it reads the trail as a single document, forms arc-level claims, and refreshes .acm/orientation.md without changing the target. Manual invocation remains available for diagnostics or an explicit "how are we doing?" request.'
 argument-hint: 'The target and its trail, and optionally the specific arc-question to answer'
 ---
@@ -34,13 +34,13 @@ Full statement of the principles: [PRINCIPLES.md](../PRINCIPLES.md) — read it 
 
 ### 0. Read the destination first (all scopes)
 
-Before forming any scope statement, read `.acm/destination.md` **in the target repo root** if it exists. This is the operator-held destination — what the target is for and what constraints hold across all runs. Reading it first ensures the arc is read against what the operator actually cares about, not retrofitted afterward.
+Before forming any scope statement, read the governing destinations that exist. They are the operator-held destination — what the target is for and what constraints hold across all runs. Reading it first ensures the arc is read against what the operator actually cares about, not retrofitted afterward.
 
-**ACM §4 Scoped Memory — read parent scopes first.** Before reading the repo's `.acm/destination.md`, traverse parent directories upward and read any `.acm/destination.md` found there. Higher-scope mandates govern lower-scope ones — if a workspace or org destination conflicts with the repo destination, the higher scope wins. Label each scope when reading (e.g., "workspace mandate", "repo mandate"). Stop traversal when any of: filesystem root reached; a `.acm-root` marker file is found in a directory (operator-declared ceiling — read that directory's `.acm/` then stop); or 4 levels traversed (implementation ceiling). The workspace destination gives the arc its organizational context; arc-claims made without it may miss cross-repo coordination constraints.
+**ACM §4 Scoped Memory.** Resolve the active scope and read the governing chain as [Trail defines it](../trail/SKILL.md#where-memory-lives) — memory-wide, then repository, then task destination, broadest first; the higher scope wins; nothing above `.acm-root` and no walking up the code tree. In this skill `.acm/<file>` means that file in the active scope. Unbound, ambiguous or unavailable memory is reported as such, and no guessed memory is read or written; the in-repo `.acm/` of an unbound repository is legacy memory. Without Trail installed, the essentials are: memory is a separate repository listed in `~/.acm/memories` and bound by the work repository's root commit, and no `.acm/` is ever created in the work repository. Arc-claims made without the higher mandates may miss constraints that span repositories.
 
 If no `destination.md` exists at any scope, proceed — but note the absence. An Orient run on a target without a destination is reading the arc without somewhere to orient against.
 
-**Task scopes.** When the run's active scope is a task scope (`.acm/<task>/`, defined in [trail/SKILL.md](../trail/SKILL.md)), every `.acm/` path in the steps below means that scope: its trail is the arc, its `orientation.md` is the one written. The repo scope's destination and orientation are read first as parent context and win on conflict; Orient never rewrites a parent scope's orientation from a task arc.
+**Task scopes.** When the run's active scope is a task scope (defined in [trail/SKILL.md](../trail/SKILL.md)), every `.acm/` path in the steps below means that scope: its trail is the arc, its `orientation.md` is the one written. The repo scope's destination and orientation are read first as parent context and win on conflict; Orient never rewrites a parent scope's orientation from a task arc.
 
 **Bounded destination reads.** If a destination contains the exact comments `<!-- current-destination: complete -->` and `<!-- destination-history -->` in that order, the content between them is the operator-confirmed complete current mandate. Read that bounded section for routine orientation. Read the full file when Orientation must explain a destination change, resolve ambiguity or conflicting evidence, or establish historical provenance. If either comment is absent, malformed, or out of order, read the full file. Never infer a boundary from headings, dates, horizontal rules, or file position.
 
@@ -56,16 +56,16 @@ A scope statement prevents the arc-read from being undirected. It also makes the
 
 ### 1b. Freshness guard (derived artifacts)
 
-`.acm/audit-trail.md` is the source of truth. `.acm/history.md`, `.acm/learning.md`, and `.acm/learning-archive.md` are optional derived surfaces (see [Trail](../trail/SKILL.md)); an arc-claim formed from a stale derived surface is a claim about a trail that no longer exists.
+The trail (a legacy `.acm/audit-trail.md`, then `trail/` records) is the source of truth. `.acm/history.md`, `.acm/learning.md`, and `.acm/learning-archive.md` are optional derived surfaces (see [Trail](../trail/SKILL.md)); an arc-claim formed from a stale derived surface is a claim about a trail that no longer exists.
 
-- **If the target uses derived artifacts**, regenerate them from the current trail before reading them. The helper lives in the skills clone, never in the target repo: `python <skills-repo>/harness/tools/record.py history --write` and `python <skills-repo>/harness/tools/record.py learning --write`, run from the target repo root. Confirm each derived file is no older than `.acm/audit-trail.md`. If regeneration is not possible, read `.acm/audit-trail.md` directly and say so in the run notes; do not form arc-claims from the stale derived files.
-- **If the target has no derived artifacts**, there is nothing to refresh. Read `.acm/audit-trail.md` directly and proceed.
+- **If the target uses derived artifacts**, regenerate them from the current trail before reading them. The helper lives in the skills clone, never in the target repo: `python <skills-repo>/harness/tools/record.py history --write` and `python <skills-repo>/harness/tools/record.py learning --write`, run from the target repository's directory so the scope resolves. Confirm each derived file is no older than the trail. If regeneration is not possible, read the trail directly and say so in the run notes; do not form arc-claims from the stale derived files.
+- **If the target has no derived artifacts**, there is nothing to refresh. Read the trail directly and proceed.
 
 Record in the run notes which case applied and what evidence established it (commands run, or the absence of derived files).
 
 ### 2. Read the arc
 
-Read `.acm/audit-trail.md` **in the target repo root** as a single document about the target — not as a list of past runs. Look for:
+Read the trail as a single document about the target — not as a list of past runs. Look for:
 
 - **What has changed, and in what order?** The sequence often reveals a target's actual architecture more clearly than any single snapshot.
 - **Outcome anchoring:** For every claim and prediction made in the trail across the arc, did it actually hold up over subsequent runs? If multiple entries confidently claim improvements (e.g., "reduced complexity") but reality contradicts it, the trail is confabulating per-iteration.
@@ -132,20 +132,20 @@ The arc is the mechanism by which the agent learns how to work within the specif
 
 ### 5. Write the orientation.md
 
-**Before writing: create the `.acm/` directory in the target repo root if it does not already exist.**
+**Write only to a bound scope or legacy memory**; when memory is unbound, give the orientation to the operator instead.
 
-Write the arc-claims from step 3 (and any loop-effectiveness findings from step 4) to `.acm/orientation.md` in the target repo root. This file is the **orientation.md** — the current Orient-derived orientation: where the loop's attention has been, what the arc currently shows is true of the target, and what the next runs should test.
+Write the arc-claims from step 3 (and any loop-effectiveness findings from step 4) to `.acm/orientation.md`. This file is the **orientation.md** — the current Orient-derived orientation: where the loop's attention has been, what the arc currently shows is true of the target, and what the next runs should test.
 
 The orientation.md should make sense in light of the destination (read at step 0) — arc-claims may reference whether the loop has been pursuing what the destination says matters — but must not duplicate destination content. Never write to `.acm/destination.md` from an Orient run.
 
-`.acm/orientation.md` is not append-only. Orient replaces it each time it runs. The full reasoning history lives in `audit-trail.md`; the destination is where the target is going; the orientation.md is the current distillation of where the target is along the way.
+`.acm/orientation.md` is not append-only. Orient replaces it each time it runs. The full reasoning history lives in the trail; the destination is where the target is going; the orientation.md is the current distillation of where the target is along the way.
 
 The file shape is simple:
 
 ```markdown
 # orientation.md — <target name>
 
-_Last updated: YYYY-MM-DD (run: <slug>)_
+_Derived view of the trail at <memory revision, or last record id>; last updated: YYYY-MM-DD (run: <slug>)_
 
 ## Current claims
 
@@ -164,7 +164,7 @@ _Last updated: YYYY-MM-DD (run: <slug>)_
 <From step 4, if triggered. Omit section if step 4 was not run.>
 ```
 
-Commit `.acm/orientation.md` alongside `audit-trail.md`, `history.md`, and `learning.md` after the run. Never commit changes to `.acm/destination.md` from an Orient run.
+Orient is the only writer that refreshes `orientation.md`; label it with the trail revision it was derived from (the `_Derived view_` line of the shape above) and commit it as Trail's commit routine describes. Never commit changes to `.acm/destination.md` from an Orient run.
 
 ### 5a. Bound every silence claim
 
@@ -184,7 +184,7 @@ If the orient run cannot name the bar, the silence claim is not yet ready to be 
 
 **Apply [Trail](../trail/SKILL.md) automatically now.** The operator should never have to invoke Trail separately. If this is a standalone Orient installation and Trail is unavailable, use the entry contract below directly.
 
-If Trail is not installed: append a single entry to `.acm/audit-trail.md` containing:
+If Trail is not installed: record a single entry where step 0's ACM §4 paragraph resolves (a new `trail/` record in a bound scope, appended to `.acm/audit-trail.md` in legacy memory, reported to the operator when unbound) containing:
 
 - Date, target, operator (if known), model identity (provider + tool-call ID prefix if observable).
 - The scope statement from step 1.

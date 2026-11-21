@@ -40,11 +40,11 @@ Run **Improve** on a real, bounded task. It invokes Intent before acting and Tra
 | :--- | :--- | :--- | :--- | :--- |
 | **[Improve](./improve/SKILL.md)** | **Start here** | Makes one highest-leverage change per run. |  | reads all three |
 | **[Intent](./intent/SKILL.md)** | **Automatic** | States what the agent believes you mean before acting. | Operator's Intent |  |
-| **[Trail](./trail/SKILL.md)** | **Automatic** | Writes every run to an append-only audit trail. | Observable Autonomy | .acm/audit-trail.md |
+| **[Trail](./trail/SKILL.md)** | **Automatic** | Writes every run to an append-only audit trail. | Observable Autonomy | trail/ records (legacy: .acm/audit-trail.md) |
 | **[Destination](./destination/SKILL.md)** | **Automatic** | Consolidates accepted mandates into durable direction. |  | .acm/destination.md |
 | **[Orient](./orient/SKILL.md)** | **Automatic** | Reflects on past runs to spot recurring mistakes and dead ends. |  | .acm/orientation.md |
 | **[Probe](./probe/SKILL.md)** | **Research** | Measures Autonomous Reasoning Fidelity. | Autonomous Reasoning Fidelity |  |
-| **Convergence to silence** | **Principle 3** | The agent declares silence when it finds nothing material; convergence is defined by [Convergence Is Silence](./PRINCIPLES.md#principle-3-convergence-is-silence), not by this suite. | Convergence Is Silence | .acm/audit-trail.md (silence entries) |
+| **Convergence to silence** | **Principle 3** | The agent declares silence when it finds nothing material; convergence is defined by [Convergence Is Silence](./PRINCIPLES.md#principle-3-convergence-is-silence), not by this suite. | Convergence Is Silence | trail (silence entries) |
 
 The operator remembers one command: `/improve`. The rest is automatic under Improve's control.
 
@@ -104,7 +104,7 @@ Each skill externalizes what normally only lives inside a single model session â
 
 This memory structure is formally specified by the [Agent Context Memory (ACM)](https://github.com/ntholm86/agent-context-memory) standard. ACM defines three tiers organized by trust level: Intent (`destination.md`, principal-authored), Trace (`audit-trail.md`, `orientation.md`, agent append-only), and Evidence (harness-captured session records). This suite implements the Intent and Trace tiers; the Evidence tier requires a separate harness.
 
-The files (`.acm/audit-trail.md`, `.acm/destination.md`, `.acm/orientation.md`) provide the literal storage, but the interaction of the skills with those files creates **contextual awareness**.
+The files (`destination.md`, `orientation.md` and the trail records) live in a shared ACM memory repository, separate from your code: clone it once, list its path in `~/.acm/memories`, and each work repository is bound to its scope by its root commit ([definition](./trail/SKILL.md#where-memory-lives)). An in-repo `.acm/` from earlier ACM versions, like this repository's own, still works as legacy memory. The files provide the literal storage, but the interaction of the skills with those files creates **contextual awareness**.
 
 Memory alone is just retrieval; awareness is orientation. Because `Orient` reads the arc, `Destination` uncovers where you're heading, and `Intent` aligns the goal, the suite uses that memory to understand where it is and where it is going.
 
@@ -127,11 +127,12 @@ Want a copy-pasteable, 10-minute path? See [QUICKSTART.md](./QUICKSTART.md).
    - macOS / Linux: `bash install.sh`
    - Windows: `powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1`
    - ARF researchers only: add `--research` on macOS/Linux or `-Research` on Windows to include Probe.
-2. In your target repo, run Improve on one concrete, verifiable task:
+2. Set up memory once: clone your shared ACM memory repository and add its absolute path as a line of `~/.acm/memories`. The skills offer to bind a new target repo (a `repositories/<id>/repository.json` listing its root commit) with your confirmation.
+3. In your target repo, run Improve on one concrete, verifiable task:
    - `/improve review the checkout module for waste and overburden`
-3. Confirm the run produced evidence:
-   - `.acm/audit-trail.md` has a new entry with outcome and delta.
-4. Optional but recommended: install the pre-commit hook from the cloned suite's `harness/tools/` directory (see [QUICKSTART.md](./QUICKSTART.md)) to enforce trail discipline structurally.
+4. Confirm the run produced evidence:
+   - a new record in the bound scope's `trail/` (legacy in-repo memory: `.acm/audit-trail.md`) with outcome and delta.
+5. Optional, for legacy in-repo trails: install the pre-commit hook from the cloned suite's `harness/tools/` directory (see [QUICKSTART.md](./QUICKSTART.md)) to enforce trail discipline structurally.
 
 ## Known Limitation: Stated Reasoning â‰  True Reasoning
 

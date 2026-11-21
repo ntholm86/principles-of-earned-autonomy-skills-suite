@@ -1,6 +1,6 @@
 ---
 name: destination
-version: 2.9.0
+version: 2.10.0
 description: 'Automatic direction-consolidation service. Improve schedules it when accumulated work makes cross-run direction useful; it surfaces sourced guesses about durable direction as questions the operator can confirm, correct, or reject. Manual invocation remains available when the operator wants to explore or revise direction.'
 argument-hint: 'Optionally: the area you want hunches about (a specific concern, a recent decision, the project as a whole)'
 ---
@@ -45,14 +45,14 @@ Destination stops as soon as the operator confirms, corrects, or declines the pr
 
 ### 1. Gather signal
 
-Before forming any hunches, look at what is available in the **target repo's `.acm/` folder** (in the root of the repo being worked on — not the skills install directory):
+Before forming any hunches, look at what is available in memory:
 
-**ACM §4 Scoped Memory — read parent scopes first.** Before reading the repo's own `.acm/destination.md`, traverse parent directories upward and read any `.acm/destination.md` found there. Higher-scope mandates govern lower-scope ones — if a workspace or org destination conflicts with the repo destination, the higher scope wins. Label each scope when reading (e.g., "workspace mandate", "repo mandate"). Stop traversal when any of: filesystem root reached; a `.acm-root` marker file is found in a directory (operator-declared ceiling — read that directory's `.acm/` then stop); or 4 levels traversed (implementation ceiling). Destination is the skill that authors the repo-level destination.md — a hunch formed or a revision written without first reading the workspace mandate risks proposing something a higher scope has already settled, or duplicating a coordination constraint that belongs one level up.
+**ACM §4 Scoped Memory.** Resolve the active scope and read the governing chain as [Trail defines it](../trail/SKILL.md#where-memory-lives) — memory-wide, then repository, then task destination, broadest first; the higher scope wins; nothing above `.acm-root` and no walking up the code tree. In this skill `.acm/<file>` means that file in the active scope. Unbound, ambiguous or unavailable memory is reported as such, and no guessed memory is read or written; the in-repo `.acm/` of an unbound repository is legacy memory. Without Trail installed, the essentials are: memory is a separate repository listed in `~/.acm/memories` and bound by the work repository's root commit, and no `.acm/` is ever created in the work repository. Destination authors the repository- or task-level `destination.md`, so a hunch formed without the higher mandates risks proposing what a higher scope has already settled.
 
 - `.acm/destination.md` — what the operator has explicitly said (if it exists).
 - `.acm/orientation.md` — what the agent's last arc-read concluded about the target.
-- `.acm/audit-trail.md` — recent decisions, reversals, realisations.
-- When the run's active scope is a task scope (`.acm/<task>/`, defined in [trail/SKILL.md](../trail/SKILL.md)), these paths mean that scope, and the file Destination writes is the task's `destination.md`. A task destination is layered under the repo destination: it may narrow it and never contradict it, because the higher-level `.acm/` always wins. Read the repo destination first.
+- The trail (a legacy `.acm/audit-trail.md`, then `trail/` records) — recent decisions, reversals, realisations.
+- When the run's active scope is a task scope (defined in [trail/SKILL.md](../trail/SKILL.md)), these paths mean that scope, and the file Destination writes is the task's `destination.md`. A task destination is layered under the repo destination: it may narrow it and never contradict it, because the higher-level `.acm/` always wins. Read the repo destination first.
 - Relevant prior conversation records, if available: `.acm/transcripts/`, linked host or harness capture, and `.acm/sessions/` (including legacy summaries). Distinguish independent capture from agent-authored summaries by provenance and fidelity markings, not directory name.
 - The current conversation — what the operator has been emphasising, dismissing, returning to.
 
@@ -112,7 +112,7 @@ After the conversation, capture three things:
 
 Before writing, show the operator the complete durable meaning you intend to carry forward, clearly distinguishing their confirmed statements from implications you derived. Ask them to confirm or correct it, and wait. Earlier answers confirm only what they establish; they do not authorize unstated implications. If corrected, resynthesize and show it again. Without confirmation, do not write.
 
-**Before writing: create the `.acm/` directory in the target repo root if it does not already exist.** Then write `.acm/destination.md` with the agent's current understanding of the destination. Do not ask the operator to do this — write it as part of completing the run. The operator's review and approval make the synthesized meaning a mandate, regardless of who drafted it or whether it is committed to git. Leave committing the destination file to the operator; it is never a side effect of an agent run.
+**Write only to a bound scope or legacy memory** — when memory is unbound, give the confirmed destination to the operator instead. Write `.acm/destination.md` with the agent's current understanding of the destination. Do not ask the operator to do this — write it as part of completing the run. The operator's review and approval make the synthesized meaning a mandate, regardless of who drafted it or whether it is committed to git. Leave committing the destination file to the operator; it is never a side effect of an agent run.
 
 If `.acm/destination.md` already exists, update it in place rather than replacing it wholesale — preserve anything the operator has written that the current inferences do not change.
 
