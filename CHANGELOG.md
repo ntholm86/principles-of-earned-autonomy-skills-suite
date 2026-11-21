@@ -1,5 +1,9 @@
 # Changelog
 
+## v5.0.2 - 2026-11-21
+
+- **Sealing and binding rules close the gaps an independent review found.** A fresh-session reviewer launched on gpt-6.1-sol (a different family from the author agent; the reviewer could not confirm its own family) of the ACM specification draft found that a sealed month's marker did not frame its record unambiguously and that a late or retried record could re-create a sealed file. The marker is now `<!-- record: <file name> bytes:<n> sha256:<hash> -->` and a record is exactly the `n` bytes after it; a record already named in a sealed file is already accepted, and a late record for a sealed month is written under a new name with the current time. Clones and forks that share a root commit share one binding. No sealed file existed yet, so nothing needed migrating. `record/SKILL.md` 3.0.1 -> 3.0.2.
+
 ## v5.0.1 - 2026-11-21
 
 - **The Record skill states what it is.** One sentence, in the author's words, now opens the Record skill and follows the roster table in the README: the Record skill records an audit trail, the append-only account of what the agent did and why, in the way an aircraft's black-box recorder keeps the account of a flight. `record/SKILL.md` 3.0.0 -> 3.0.1.

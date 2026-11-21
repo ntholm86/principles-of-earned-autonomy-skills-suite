@@ -338,6 +338,7 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 331 | 2026-11-21 | trail-means-records-and-sealing-docs | redundant 'records/ records' wording removed; the trail defined as the scope's records/; sealing mentioned in user docs |  |
 | ▸ 332 | 2026-11-21 | trail-skill-renamed-record | the Trail skill is now the Record skill; the concept "audit trail" and the file name audit-trail.md are unchanged | trail/ -> record/ (name: record, 3.0.0); five skills bumped; installers remove a stale installed trail skill; 54 tests and verify.py pass |
 | ▸ 333 | 2026-11-21 | record-states-what-it-is | the skill names its job in one sentence, in the author's words | record/SKILL.md 3.0.0 -> 3.0.1 (CHANGELOG v5.0.1) |
+| ▸ 334 | 2026-11-21 | seal-framing-and-fork-binding | the sealing marker frames each record exactly; late and retried records and forks are covered | record/SKILL.md 3.0.1 -> 3.0.2 (CHANGELOG v5.0.2) |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -1521,4 +1522,8 @@ Do not edit by hand — re-run the command to refresh.
 - **decided:** Rename only where the word names the skill (folder, name:, links, "Trail skill", "applies Trail", the /trail command, installer lists, tests, hook text, verify.py canonical sentence, `TRAIL_ROOT`); leave "audit trail", `audit-trail.md`, "Trail integrity" and "Trail recording" (concept, PRINCIPLES.md) and all append-only history. Old installs: a hard rename plus an installer cleanup that removes a stale `trail` skill only when its SKILL.md says `name: trail`. Rejected: a stub `trail` skill kept for a version (two skills in every install; the author was unsure and wanted simplicity); renaming "the trail" in prose (the author's answer 2).
 - **REVERSAL:** Two single-pair edits to INSTALLING.md and the installer test applied as one-character replacements (a PowerShell array-flattening quirk): every backtick became "/" and every quote became "i". Caught by the "0 matches" count and a character count against HEAD before any commit; both files were restored from git and the edits redone correctly. A second slip turned a shell "fi" into a form feed; fixed and syntax-checked. Lesson: after scripted edits, compare each changed file's character counts against HEAD.
 
-**333 runs total — 305 with changes, 28 silence**
+### Run 334 — 2026-11-21 — seal-framing-and-fork-binding
+
+- **decided:** Marker is now `bytes:<n> sha256:<hash>` and a record is exactly the n bytes after it; a record already named in a sealed file counts as accepted; a late record for a sealed month is written under a new name; forks with the same root commit share one binding. Rejected: a separator/escape scheme (fragile with CRLF and BOM) and a per-fork discriminator now (complexity for a case nobody has). No sealed file existed, record.py does not parse the marker, so nothing needed migrating. 54 tests and verify.py pass.
+
+**334 runs total — 306 with changes, 28 silence**

@@ -18623,3 +18623,23 @@ The author: "the Record skill Records an audit-trail - thats something everyone 
 - *About to declare silence:* not fired.
 - *Contradicts prior [!REALIZATION]:* not fired.
 - *Operator explicitly asked:* not fired; a change request, not an arc-level reflection.
+
+## 2026-11-21 - seal-framing-and-fork-binding
+
+- target: record/SKILL.md
+- operator: Nils Wendelboe Holmager
+- agent: Claude (Sonnet 5.5; the session began on Claude Opus 5.5); host: Copilot SDK in VS Code
+- skill: Improve
+- outcome: the sealing marker frames each record exactly; late and retried records and forks are covered
+- delta: record/SKILL.md 3.0.1 -> 3.0.2 (CHANGELOG v5.0.2)
+
+An independent review (a fresh session launched on gpt-6.1-sol, reviewing the ACM spec draft; see the acm-spec record independent-review-of-spec-draft in the shared memory) found that the seal marker did not say where a record ends, that a late or retried record could re-create a sealed file, and that forks share root commits.
+
+[!DECISION] Marker is now `bytes:<n> sha256:<hash>` and a record is exactly the n bytes after it; a record already named in a sealed file counts as accepted; a late record for a sealed month is written under a new name; forks with the same root commit share one binding. Rejected: a separator/escape scheme (fragile with CRLF and BOM) and a per-fork discriminator now (complexity for a case nobody has). No sealed file existed, record.py does not parse the marker, so nothing needed migrating. 54 tests and verify.py pass.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired.
+- *About to declare silence:* not fired.
+- *Contradicts prior [!REALIZATION]:* not fired.
+- *Operator explicitly asked:* not fired; a change request, not an arc-level reflection.
