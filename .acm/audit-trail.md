@@ -18681,3 +18681,22 @@ Third round of fresh-session review (gpt-6.1-sol and claude-opus-5.5; neither co
 - *About to declare silence:* not fired; silence is not claimed.
 - *Contradicts prior [!REALIZATION]:* not fired.
 - *Operator explicitly asked:* not fired; a change request.
+## 2026-11-21 - fourth-review-fixes-record
+
+- target: record/SKILL.md
+- operator: Nils Wendelboe Holmager
+- agent: Claude (Sonnet 5.5; the session began on Claude Opus 5.5); host: Copilot SDK in VS Code
+- skill: Improve
+- outcome: round-four findings applied to the Record skill
+- delta: record/SKILL.md 3.1.1 -> 3.1.2 (CHANGELOG v5.1.2)
+
+Fourth review, first with three launched model families (gpt-6.1-sol, gemini-4-hydrogen, kimi-k3; none could confirm its family from inside). Gemini and Kimi found no material defect; gpt-6.1-sol found five material ones, three in text added earlier today (the lossy underscore escape, scope-local identifiers against a memory-wide uniqueness rule, no route to the memory for work outside a repository). Fixed (see CHANGELOG v5.1.2).
+
+[!DECISION] Fixed all material findings with the smallest rule that closes each: a reversible escape instead of a lookup table; the identifier is the file's path; the file-count bound is stated per scope instead of promising a global bound. Rejected: restructuring the layout to avoid code-path names (more depth for a rare case).
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired in this repository's own trail.
+- *About to declare silence:* not fired; silence is not claimed (see the memory record of this round).
+- *Contradicts prior [!REALIZATION]:* not fired.
+- *Operator explicitly asked:* not fired.
