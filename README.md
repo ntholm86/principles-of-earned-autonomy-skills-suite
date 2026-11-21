@@ -46,6 +46,8 @@ Run **Improve** on a real, bounded task. It invokes Intent before acting and Rec
 | **[Probe](./probe/SKILL.md)** | **Research** | Measures Autonomous Reasoning Fidelity. | Autonomous Reasoning Fidelity |  |
 | **Convergence to silence** | **Principle 3** | The agent declares silence when it finds nothing material; convergence is defined by [Convergence Is Silence](./PRINCIPLES.md#principle-3-convergence-is-silence), not by this suite. | Convergence Is Silence | trail (silence entries) |
 
+The Record skill records an audit trail: the append-only account of what the agent did and why, in the way an aircraft's black-box recorder keeps the account of a flight.
+
 The operator remembers one command: `/improve`. The rest is automatic under Improve's control.
 
 ## How The Model Works

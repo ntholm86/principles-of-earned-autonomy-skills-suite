@@ -18606,3 +18606,20 @@ Pushback: some prose still says "the trail", which now sits next to a skill call
 - *Operator explicitly asked:* not fired; a change request.
 
 Orientation freshness: current. Destination need: not triggered.
+## 2026-11-21 - record-states-what-it-is
+
+- target: record/SKILL.md, README.md
+- operator: Nils Wendelboe Holmager
+- agent: Claude (Sonnet 5.5; the session began on Claude Opus 5.5); host: Copilot SDK in VS Code
+- skill: Improve
+- outcome: the skill names its job in one sentence, in the author's words
+- delta: record/SKILL.md 3.0.0 -> 3.0.1 (CHANGELOG v5.0.1)
+
+The author: "the Record skill Records an audit-trail - thats something everyone can understand". Added that sentence, with the black-box-recorder origin he gave for the name, to the skill and to the README. Wording only; verify.py OK. No decision to record beyond placing it where a first-time reader meets the name.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired.
+- *About to declare silence:* not fired.
+- *Contradicts prior [!REALIZATION]:* not fired.
+- *Operator explicitly asked:* not fired; a change request, not an arc-level reflection.

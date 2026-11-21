@@ -1,5 +1,9 @@
 # Changelog
 
+## v5.0.1 - 2026-11-21
+
+- **The Record skill states what it is.** One sentence, in the author's words, now opens the Record skill and follows the roster table in the README: the Record skill records an audit trail, the append-only account of what the agent did and why, in the way an aircraft's black-box recorder keeps the account of a flight. `record/SKILL.md` 3.0.0 -> 3.0.1.
+
 ## v5.0.0 - 2026-11-21
 
 - **The Trail skill is now the Record skill.** The author renamed it because that is what it does, and because the aviation black-box recorder is the principle it comes from. `trail/` is now `record/` (`name: record`, `/record`), and every skill, document, installer, test, hook and `verify.py` refers to it by the new name; `record.py`'s optional environment variable `TRAIL_ROOT` is now `RECORD_ROOT`. **Breaking for existing installs:** both installers now remove a stale installed `trail` skill (only when its `SKILL.md` says `name: trail`) so no one ends up with two skills; a `/trail` invocation must become `/record`. What did *not* change: the concept "audit trail", the legacy file name `audit-trail.md`, "Trail integrity" and "Trail recording" in PRINCIPLES.md, the `records/` folder, and all history (the in-repo `.acm/` trail, this changelog's earlier entries, `archive/` and `experiments/`), which are append-only. Published archives and DOIs keep the old name; new versions carry the new one. `record/SKILL.md` 2.9.0 -> 3.0.0; `improve/SKILL.md` 3.23.0 -> 3.24.0; `intent/SKILL.md` 1.12.0 -> 1.13.0; `destination/SKILL.md` 2.12.0 -> 2.13.0; `orient/SKILL.md` 2.11.0 -> 2.12.0; `probe/SKILL.md` 3.6.0 -> 3.7.0.

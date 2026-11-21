@@ -1,6 +1,6 @@
 ---
 name: record
-version: 3.0.0
+version: 3.0.1
 description: 'Automatic egress service for substantive work. Writes a structured record in the bound memory scope of the shared ACM (a new file in records/; legacy in-repo .acm/audit-trail.md is appended) — the interpretation, examination, decisions, actions, and reflection. Destination, Improve, Orient, and Probe apply Record automatically; the operator should never need to invoke it separately. Direct use remains available for consequential work outside those workflows and independent-writer mode.'
 argument-hint: 'The target being worked on (repo, file, system) — used to populate the record header'
 ---
@@ -8,6 +8,8 @@ argument-hint: 'The target being worked on (repo, file, system) — used to popu
 # Record
 
 *The record of what actually happened.*
+
+**The Record skill records an audit trail:** the append-only account of what the agent did and why, in the way an aircraft's black-box recorder keeps the account of a flight.
 
 *ACM role: Writes the core of the memory layer — the records every other skill reads — and defines where memory lives.*
 
