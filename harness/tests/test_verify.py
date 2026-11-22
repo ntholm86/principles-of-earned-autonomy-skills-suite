@@ -29,14 +29,17 @@ BLOCKING_CHECKS = (
 )
 
 
-def synthetic_log(body: str, slug: str | None = None) -> Mock:
-    log = Mock()
-    log.exists.return_value = True
-    log.read_text.return_value = (
+def synthetic_trail(body: str, slug: str | None = None, present: bool = True):
+    text = (
         f"## 2026-09-05 - {slug or verify.REVERSAL_HONESTY_CONTRACT_SLUG}\n\n"
         f"{body}\n"
     )
-    return log
+    return patch.multiple(
+        verify,
+        SCOPE=Path("scope"),
+        _trail_files=Mock(return_value=[Path("scope/audit-trail.md")] if present else []),
+        _trail_text=Mock(return_value=text),
+    )
 
 
 class ReversalReviewTests(unittest.TestCase):
@@ -46,28 +49,26 @@ class ReversalReviewTests(unittest.TestCase):
             "The file was reverted after the test failed.",
             'An example of a reversal is "I reverted the change".',
         ):
-            with self.subTest(body=body), patch.object(verify, "LOG", synthetic_log(body)):
+            with self.subTest(body=body), synthetic_trail(body):
                 warnings = verify.check_reversal_honesty_gate()
                 self.assertEqual(len(warnings), 1)
                 self.assertIn("reverted", warnings[0])
 
     def test_marked_reversal_needs_no_warning(self):
-        with patch.object(verify, "LOG", synthetic_log("[!REVERSAL] The file was reverted.")):
+        with synthetic_trail("[!REVERSAL] The file was reverted."):
             self.assertEqual(verify.check_reversal_honesty_gate(), [])
 
     def test_cueless_text_is_not_claimed_as_semantically_verified(self):
         body = "Initially chose X; later chose Y instead after the check failed."
-        with patch.object(verify, "LOG", synthetic_log(body)):
+        with synthetic_trail(body):
             self.assertEqual(verify.check_reversal_honesty_gate(), [])
 
     def test_pre_contract_entry_is_not_flagged(self):
-        with patch.object(verify, "LOG", synthetic_log("The file was reverted.", "older-entry")):
+        with synthetic_trail("The file was reverted.", "older-entry"):
             self.assertEqual(verify.check_reversal_honesty_gate(), [])
 
     def test_missing_log_is_left_to_blocking_checks(self):
-        log = synthetic_log("The file was reverted.")
-        log.exists.return_value = False
-        with patch.object(verify, "LOG", log):
+        with synthetic_trail("The file was reverted.", present=False):
             self.assertEqual(verify.check_reversal_honesty_gate(), [])
 
 
@@ -78,9 +79,7 @@ class VerifierExitTests(unittest.TestCase):
             for name in BLOCKING_CHECKS
         }
         output = StringIO()
-        with patch.multiple(verify, **checks), patch.object(
-            verify, "LOG", synthetic_log(body)
-        ), redirect_stdout(output):
+        with patch.multiple(verify, **checks), synthetic_trail(body), redirect_stdout(output):
             exit_code = verify.main()
         for check in checks.values():
             check.assert_called_once_with()
