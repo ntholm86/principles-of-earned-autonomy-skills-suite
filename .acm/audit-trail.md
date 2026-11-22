@@ -18910,3 +18910,24 @@ Prediction: the checker passes the author's personal memory and the employer mem
 - *About to declare silence:* not fired.
 - *Contradicts prior [!REALIZATION]:* not fired.
 - *Operator explicitly asked:* not fired.
+## 2026-11-22 - record-skill-stops-pinning-a-spec-version
+
+- target: record/SKILL.md, CHANGELOG, CITATION
+- operator: Nils Wendelboe Holmager
+- agent: Claude (Sonnet 5.5; the session began on Claude Opus 5.5); host: Copilot SDK in VS Code
+- skill: Improve
+- outcome: no skill or document in this repository pins a specification version any more; the Record skill names the current ACM specification and the sections it relies on
+- delta: record/SKILL.md 3.3.0 -> 3.3.1; CHANGELOG v6.0.4; CITATION 6.0.4
+
+The author asked that there be only one version of the current specification. A search of the suite found one statement pinned to an old version: the Record skill said it implements "ACM SPEC v0.5.0 §3.3, §4, §8" while the specification is at 0.6.0.
+
+[!DECISION] The cited sections (unavailable memory, memory repository and scopes, shared recording) are unchanged in 0.6.0, so the pin is replaced by "the current ACM specification" rather than by another version number that would drift the same way.
+
+Prediction: verify.py and the 68 tests still pass. Result: confirmed.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired.
+- *About to declare silence:* not fired.
+- *Contradicts prior [!REALIZATION]:* not fired.
+- *Operator explicitly asked:* not fired.

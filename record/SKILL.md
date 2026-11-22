@@ -1,6 +1,6 @@
 ---
 name: record
-version: 3.3.0
+version: 3.3.1
 description: 'Automatic egress service for substantive work. Writes a structured record in the bound memory scope of the shared ACM (a new file in records/; legacy in-repo .acm/audit-trail.md is appended) — the interpretation, examination, decisions, actions, and reflection. Destination, Improve, Learn, and Probe apply Record automatically; the operator should never need to invoke it separately. Direct use remains available for consequential work outside those workflows and independent-writer mode.'
 argument-hint: 'The target being worked on (repo, file, system) — used to populate the record header'
 ---
@@ -29,7 +29,7 @@ Evidence → Trust → Autonomy
 
 ## Where memory lives
 
-This is the suite's one definition of where memory lives, how it is resolved and how records are written; the other skills refer here. It implements the shared-ACM memory-repository model (ACM SPEC v0.5.0 §3.3, §4, §8).
+This is the suite's one definition of where memory lives, how it is resolved and how records are written; the other skills refer here. It implements the shared-ACM memory-repository model (the current ACM specification, §3.3, §4 and §8).
 
 **Memory repository.** Memory lives in a repository of its own, the shared ACM — never in the skills install and never as a new `.acm/` in a repository of work. Clone it once and add its absolute path as one line of the user-level registry `~/.acm/memories` (Windows: `%USERPROFILE%\.acm\memories`). Nothing is configured per prompt.
 

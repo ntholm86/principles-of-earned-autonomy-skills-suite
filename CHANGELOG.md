@@ -1,5 +1,9 @@
 # Changelog
 
+## v6.0.4 - 2026-11-22
+
+- **The Record skill no longer pins an old specification version.** It said it implements "ACM SPEC v0.5.0 §3.3, §4, §8"; the specification is at 0.6.0 and the sections it cites (unavailable memory, memory repository and scopes, shared recording) are unchanged, so it now says "the current ACM specification" and cannot go stale on the version again. Found while making sure only one version of the specification is described anywhere. ``record/SKILL.md`` 3.3.0 -> 3.3.1.
+
 ## v6.0.3 - 2026-11-22
 
 - **A memory checker, and the citation version is checked.** ``harness/tools/memory_check.py <memory-root>`` (optional, stdlib only) checks a memory repository against the reference layout: the ``.acm-root`` marker, no hidden ``.acm/`` folder, no retired file names, every ``destination.md`` with its current-destination and destination-history lines in order and a ``## Human gate`` section in the current mandate (R-02), every ``repositories/<id>/repository.json`` valid and unambiguous, record names and identifiers; it warns about records without the R-16 attribution fields and about tracked ``generated/`` files. ``verify.py`` now checks that ``CITATION.cff`` states the version of the newest changelog entry (it said 4.17.0 while the suite was at 6.0.2); the citation is brought to 6.0.3. No skill changed.

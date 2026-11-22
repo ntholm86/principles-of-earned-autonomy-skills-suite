@@ -21,7 +21,7 @@ authors:
     orcid: "https://orcid.org/0009-0009-7157-9084"
 repository-code: "https://github.com/ntholm86/principles-of-earned-autonomy-skills-suite"
 license: MIT
-version: "6.0.3"
+version: "6.0.4"
 date-released: "2026-11-22"
 identifiers:
   - type: doi
