@@ -346,6 +346,7 @@ Do not edit by hand — re-run the command to refresh.
 | ▸ 339 | 2026-11-21 | sixth-review-fixes-record | sixth-round findings applied; the checkpoint protocol added in v5.2.0 made consistent | record/SKILL.md 3.2.0 -> 3.2.1; improve/SKILL.md 3.25.0 -> 3.25.1 (CHANGELOG v5.2.1) |
 | ▸ 340 | 2026-11-21 | seventh-review-fixes-record | seventh-round findings applied | record/SKILL.md 3.2.1 -> 3.2.2; improve/SKILL.md 3.25.1 -> 3.25.2 (CHANGELOG v5.2.2) |
 | ▸ 341 | 2026-11-21 | eighth-review-fixes-record | eighth-round findings applied | record/SKILL.md 3.2.2 -> 3.2.3; improve/SKILL.md 3.25.2 -> 3.25.3 (CHANGELOG v5.2.3) |
+| ▸ 342 | 2026-11-22 | human-gate-in-mandates | the human gate is asked for and named; ACM v0.5.1 and the skills say the same | destination/SKILL.md 2.13.1 -> 2.14.0; intent/SKILL.md 1.13.1 -> 1.14.0 (CHANGELOG v5.3.0) |
 
 ### Run 1 — 2026-04-23 — v3 redesign
 
@@ -1561,4 +1562,8 @@ Do not edit by hand — re-run the command to refresh.
 
 - **decided:** An uncommittable checkpoint is left for the operator to accept and the run waits for that before the first change; this is the strict reading of R-09 (accepted trace) and costs a pause only in no-commit deployments. Rejected: treating a local checkpoint as accepted (it would reopen the gap the author closed by relaxing R-09 to "first change").
 
-**341 runs total — 313 with changes, 28 silence**
+### Run 342 — 2026-11-22 — human-gate-in-mandates
+
+- **decided:** Added one inference shape to Destination ("Human gate"), one narration duty to Intent and one sentence to Work, rather than a new step or a new field in the destination file, because the gate is a fact about the work that a confirmed mandate already has room to state. Rejected: a required "gate" heading in every destination (a form to fill rather than a question to ask) and changing Record (its rules do not depend on the gate).
+
+**342 runs total — 314 with changes, 28 silence**

@@ -1,6 +1,6 @@
 ---
 name: intent
-version: 1.13.1
+version: 1.14.0
 description: 'Automatic ingress service for substantive work. Apply Operator''s Intent to the user''s own prompt before acting: interpret what the user is trying to achieve, narrate it, and honor the operator''s explicit supervision or delegation boundary. The operator should never need to invoke this skill separately. SKIP only for direct operations that require neither interpretation nor action authority (for example, reading a named file or answering yes/no); never skip when composed with Improve.'
 argument-hint: 'Triggered automatically by any substantive user prompt; can also be invoked explicitly: "apply intent to this request"'
 ---
@@ -59,6 +59,8 @@ The immediate prompt is the latest instruction. The trail and conversation histo
 State the interpretation before acting. Brief is fine; silent is not. The user cannot correct a misreading they cannot see.
 
 Determine routine execution authority only from explicit evidence in the current prompt or a confirmed Destination. Do not infer delegation from silence, familiarity, accumulated trust, prior autonomous behavior, or a host-wide autonomy setting.
+
+Name where the human gate is for this work. If the interpreted work would take effect with no one reviewing it first (live data, deployment, an irreversible action), say so in the narration and ask for direction; delegating routine confirmation does not answer it, and a confirmed Destination that states the gate does.
 
 Without explicit delegation, pause after a concise narration:
 

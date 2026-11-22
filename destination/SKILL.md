@@ -1,6 +1,6 @@
 ---
 name: destination
-version: 2.13.1
+version: 2.14.0
 description: 'Automatic direction-consolidation service. Improve schedules it when accumulated work makes cross-run direction useful; it surfaces sourced guesses about durable direction as questions the operator can confirm, correct, or reject. Manual invocation remains available when the operator wants to explore or revise direction.'
 argument-hint: 'Optionally: the area you want hunches about (a specific concern, a recent decision, the project as a whole)'
 ---
@@ -71,6 +71,7 @@ Write down two to five sourced inferences. Each is a claim the evidence supports
 - **Constraint.** "I think you would reject Z even though nothing currently rules it out."
 - **Question being asked.** "I think the question you are actually trying to answer is W, even though you have been phrasing it as V."
 - **Quality bar.** "I think the bar you are actually holding the target to is Q (e.g. comparative defensibility under hostile external review, comparator coverage, empirical replication, operational deployability), not just internal consistency." Surfacing the operator-held quality bars early is what lets a later Orient run declare silence against a named bar rather than infer one. *Origin:* the manifesto target's retro-v201 → retro-v202 transition (2026-06-04) showed that orient runs which silence-claim against bars they have never been challenged on are structurally fragile; the upstream fix is for the destination to name the bars in the first place. Full provenance: this repo's `.acm/audit-trail.md`, entry slug `improve-destination-named-boundary-symmetric`.
+- **Human gate.** "I think this work reaches its users only after <who> reviews it, and that without that review you would want me to <stop / only prepare>." Or: "I think nobody reviews this before it takes effect." A mandate states where the human gate is and what the agent may do before it and without it (ACM R-02); where the evidence does not show it, make it the first question. Work with no gate also needs independent evidence capture (ACM R-04).
 
 Each inference must be:
 

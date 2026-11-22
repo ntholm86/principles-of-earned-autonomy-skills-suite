@@ -1,5 +1,9 @@
 # Changelog
 
+## v5.3.0 - 2026-11-22
+
+- **The human gate is part of every mandate (ACM v0.5.1).** The author decided that independent evidence capture is needed only where work takes effect without a human gate, and that access restrictions are reminders (an agent can often act around them), so the framework relies on intent, then detection, then gates. The Destination skill now asks where the human gate is and what the agent may do before it and without it, as its first question when the evidence does not show it; the Intent skill names the gate in its narration and asks for direction when work would take effect with none; the Work skill does the same in its authority step. `destination/SKILL.md` 2.13.1 -> 2.14.0; `intent/SKILL.md` 1.13.1 -> 1.14.0. Nothing in the Record skill changed.
+
 ## v5.2.3 - 2026-11-21
 
 - **Eighth independent review (three families): no material finding from two, three weak check rows from one.** Fixed: an uncommittable checkpoint is left for the operator to accept and the run waits for that before the first change; Improve's Orientation verdict gains `not yet needed`; a legacy `.acm/` may gain its derived aids (only a new in-repository memory root is forbidden). `record/SKILL.md` 3.2.2 -> 3.2.3; `improve/SKILL.md` 3.25.2 -> 3.25.3.

@@ -18782,3 +18782,22 @@ Eighth review (gpt-6.1-sol, gemini-4-hydrogen, kimi-k3) on the unchanged texts. 
 - *About to declare silence:* not fired.
 - *Contradicts prior [!REALIZATION]:* not fired.
 - *Operator explicitly asked:* not fired.
+## 2026-11-22 - human-gate-in-mandates
+
+- target: destination/SKILL.md, intent/SKILL.md, CHANGELOG.md
+- operator: Nils Wendelboe Holmager
+- agent: Claude (Sonnet 5.5; the session began on Claude Opus 5.5); host: Copilot SDK in VS Code
+- skill: Improve
+- outcome: the human gate is asked for and named; ACM v0.5.1 and the skills say the same
+- delta: destination/SKILL.md 2.13.1 -> 2.14.0; intent/SKILL.md 1.13.1 -> 1.14.0 (CHANGELOG v5.3.0)
+
+The author: independent evidence capture matters only where there is no human gate (the harness proxy is for that case); access boundaries are reminders, intent matters most. The specification moved to 0.5.1 with a mandate that states its gate (R-02), R-04's warrant, and a section on controls and their limits. This entry covers the skills' share.
+
+[!DECISION] Added one inference shape to Destination ("Human gate"), one narration duty to Intent and one sentence to Work, rather than a new step or a new field in the destination file, because the gate is a fact about the work that a confirmed mandate already has room to state. Rejected: a required "gate" heading in every destination (a form to fill rather than a question to ask) and changing Record (its rules do not depend on the gate).
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired.
+- *About to declare silence:* not fired.
+- *Contradicts prior [!REALIZATION]:* not fired.
+- *Operator explicitly asked:* not fired; a change request.
