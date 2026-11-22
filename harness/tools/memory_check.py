@@ -14,8 +14,8 @@ Failures (exit code 1):
   - a `repositories/<id>/repository.json` that is not valid, whose `id` differs from its folder, whose
     `root_commits` are not a non-empty list of 40-hex commits, or that shares a root commit with another
     binding (an ambiguous binding);
-  - a file in `records/` whose name is neither `<yyyyMMddTHHmmssZ>-<slug>.md` nor a sealed `<yyyy-MM>.md`,
-    or whose `- record:` line differs from its file name.
+  - a file in `records/` whose name is not `<yyyyMMddTHHmmssZ>-<slug>.md`, or whose `- record:` line
+    differs from its file name.
 Warnings (do not fail): an ordinary record without the attribution fields of R-16 (record, time, scope,
 agent, authority, mandate), and a tracked file under a `generated/` folder (disposable reading aids are
 not committed).
@@ -32,7 +32,6 @@ RETIRED = ("orientation.md", "history.md", "learning-archive.md")
 STRUCTURAL = {"records", "tasks", "paths", "evidence", "generated", "drafts"}
 SCOPE_FILES = ("destination.md", "learning.md", "audit-trail.md")
 RECORD_NAME = re.compile(r"^\d{8}T\d{6}Z-[a-z0-9][a-z0-9-]*\.md$")
-SEALED_NAME = re.compile(r"^\d{4}-\d{2}\.md$")
 FIELD = re.compile(r"^-\s+([a-z-]+):\s*(.*)$", re.M)
 ATTRIBUTION = ("record", "time", "scope", "agent", "authority", "mandate")
 OPEN = re.compile(r"^<!-- current-destination: complete -->\s*$", re.M)
@@ -123,10 +122,8 @@ def check_records(scope: Path, root: Path) -> tuple[list[str], list[str]]:
         return failures, warnings
     for record in sorted(records.glob("*.md")):
         where = record.relative_to(root).as_posix()
-        if SEALED_NAME.match(record.name):
-            continue
         if not RECORD_NAME.match(record.name):
-            failures.append(f"{where}: the name is neither <yyyyMMddTHHmmssZ>-<slug>.md nor a sealed <yyyy-MM>.md")
+            failures.append(f"{where}: the name is not <yyyyMMddTHHmmssZ>-<slug>.md")
             continue
         text = record.read_text(encoding="utf-8", errors="replace")
         fields = dict(FIELD.findall(text.split("\n###", 1)[0]))

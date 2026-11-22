@@ -16,8 +16,8 @@ Before writing to the destination, both installers check that every selected ski
 To install into a project instead of user-global:
 
 ```
-bash install.sh ./my-repo/.copilot/skills
-powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1 -Target .\my-repo\.copilot\skills
+bash install.sh ./my-repo/.github/skills
+powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1 -Target .\my-repo\.github\skills
 ```
 
 To include Probe for controlled ARF research:
@@ -27,8 +27,8 @@ bash install.sh --research
 powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1 -Research
 
 # Project-local research install
-bash install.sh ./my-repo/.copilot/skills --research
-powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1 -Target .\my-repo\.copilot\skills -Research
+bash install.sh ./my-repo/.github/skills --research
+powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1 -Target .\my-repo\.github\skills -Research
 ```
 
 Nothing else is installed and nothing is executed at runtime.
@@ -38,8 +38,8 @@ Nothing else is installed and nothing is executed at runtime.
 The one-line installer does not copy optional tooling. From the target repo where you'll be running the skills, invoke the hook installer by its path in your cloned skills suite:
 
 ```
-bash /path/to/autonomous-agent-skills/harness/tools/install-hooks.sh
-powershell -NoProfile -ExecutionPolicy Bypass -File C:\path\to\autonomous-agent-skills\harness\tools\install-hooks.ps1
+bash /path/to/principles-of-earned-autonomy-skills-suite/harness/tools/install-hooks.sh
+powershell -NoProfile -ExecutionPolicy Bypass -File C:\path\to\principles-of-earned-autonomy-skills-suite\harness\tools\install-hooks.ps1
 ```
 
 The installers use Git's effective hook location, including `core.hooksPath`, and create the directory if needed. A configured directory may be shared by several repos; installing there affects each repo that uses it. An identical installed hook can be installed again. A different existing hook, including an older suite hook, is left untouched and installation stops: review and integrate or explicitly replace it yourself before retrying.
@@ -50,45 +50,27 @@ Override with `git commit --no-verify`. The hook does not record the bypass, and
 
 ---
 
-## How VS Code Copilot discovers skills
+## Where GitHub Copilot finds skills
 
-Copilot looks for skills at exactly **one level deep** under `.copilot/skills/`:
+Each skill is its own folder with a `SKILL.md`, placed directly in a skills directory:
+
+- Personal skills, shared across projects: `~/.copilot/skills` (also `~/.agents/skills`).
+- Project skills, stored in the repository: `.github/skills` (also `.claude/skills` and `.agents/skills`).
 
 ```
-.copilot/
-  skills/
-    intent/
-      SKILL.md     ← found
-    improve/
-      SKILL.md     ← found
-    some-folder/
-      subfolder/
-        SKILL.md   ← NOT found (too deep)
+.github/skills/
+  intent/SKILL.md
+  improve/SKILL.md
+  ...
 ```
 
-**This means: do not drop the entire repo folder into your skills directory.** That adds an extra nesting level and Copilot finds nothing. Copy the individual skill folders directly.
+**Do not drop the whole suite checkout into a skills directory.** Copy the individual skill folders.
 
 ---
 
 ## Operational install (recommended)
 
-The normal operating model uses five installed skills but only one deliberate operator action: **Run Improve**. Intent and Record are automatic services; Destination and Learn activate when Improve detects that accumulated evidence needs durable direction or a refreshed map.
-
-```
-your-repo/
-  .copilot/
-    skills/
-      destination/
-        SKILL.md
-      learn/
-        SKILL.md
-      improve/
-        SKILL.md
-      intent/
-        SKILL.md
-      record/
-        SKILL.md
-```
+The normal operating model uses five installed skills (`intent`, `destination`, `improve`, `record`, `learn`) but only one deliberate operator action: **Run Improve**. Intent and Record are automatic services; Destination and Learn activate when Improve detects that accumulated evidence needs durable direction or a refreshed map.
 
 Invoke `/improve`. Do not add routine `/intent`, `/destination`, `/record`, or `/learn` steps; manual `/destination` and `/learn` remain available as overrides.
 
@@ -96,25 +78,7 @@ Invoke `/improve`. Do not add routine `/intent`, `/destination`, `/record`, or `
 
 ## Research install (adds Probe)
 
-```
-your-repo/
-  .copilot/
-    skills/
-      intent/
-        SKILL.md
-      destination/
-        SKILL.md
-      improve/
-        SKILL.md
-      record/
-        SKILL.md
-      learn/
-        SKILL.md
-      probe/
-        SKILL.md
-```
-
-This is what the installer copies only when research mode is enabled. The skills are plain markdown files — no scripts, no dependencies, nothing to execute at runtime.
+The same five skill folders plus `probe/`. The installer copies `probe/` only when research mode is enabled. The skills are plain markdown files — no scripts, no dependencies, nothing to execute at runtime.
 
 Optionally copy `PRINCIPLES.md` next to the skill folders — the skills reference it but work fully without it (the principles are inlined in each SKILL.md).
 
@@ -133,8 +97,8 @@ All skills work with only their own `SKILL.md`. No required sibling files.
 | **intent** | `PRINCIPLES.md` (cross-reference link; content is inlined) |
 | **destination** | `PRINCIPLES.md` |
 | **improve** | `PRINCIPLES.md` |
-| **trail** | nothing — records in the bound scope of your shared ACM |
-| **learn** | nothing — reads the trail written by trail |
+| **record** | nothing — records in the bound scope of your shared ACM |
+| **learn** | nothing — reads the trail written by record |
 
 ---
 
@@ -142,7 +106,7 @@ All skills work with only their own `SKILL.md`. No required sibling files.
 
 The trail lives in a shared ACM memory repository, separate from your code, with one scope per work repository. The AI writes it automatically — no scripts required.
 
-Set up once per machine: clone the memory repository and add its absolute path as a line of `~/.acm/memories` (Windows: `%USERPROFILE%\.acm\memories`). A work repository is bound by `repositories/<id>/repository.json` listing its root commit; the skills offer to create it with your confirmation. Each entry is a create-only file `records/<UTC yyyyMMddTHHmmssZ>-<slug>.md`, committed in the memory repository as its destination's policy says; each closed month is sealed into one file, `records/<yyyy-MM>.md`. Full definition: [Record](./record/SKILL.md#where-memory-lives).
+The trail lives in a shared ACM memory repository, separate from your code, with one scope per work repository. The AI writes it automatically — no scripts required. Setting one up is four steps; see the worked example in [QUICKSTART.md](./QUICKSTART.md#set-up-a-memory-and-make-a-first-record). Each entry is a create-only file `records/<UTC yyyyMMddTHHmmssZ>-<slug>.md`, committed in the memory repository as its destination's policy says. Full definition: [Record](./record/SKILL.md#where-memory-lives).
 
 A repository that already has an in-repo `.acm/audit-trail.md` from earlier ACM versions keeps working as legacy memory: entries are appended there and committed with the work. Migration to a memory repository is recommended.
 

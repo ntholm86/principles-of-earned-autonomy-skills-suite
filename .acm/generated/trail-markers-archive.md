@@ -1336,6 +1336,10 @@ Markers older than the recent window kept in `trail-markers.md`. Read this only 
 
 **[!REALIZATION]** Retirement can be a learning outcome when evidence shows that a newer rule subsumes an older exception. The relevant proof is preserved behavior under discriminating scenarios, not reduced character count by itself.
 
+## 2026-08-19 — readme-problem-first-opening
+
+**[!REALIZATION]** Adoption friction begins before installation or workflow: a reader who cannot recognize the failure the suite addresses has no reason to learn its vocabulary or try Improve. The README opening is therefore part of the operational adoption path, not a cosmetic layer over it.
+
 ---
 
-**333 markers — 293 realisations, 40 reversals**
+**334 markers — 294 realisations, 40 reversals**

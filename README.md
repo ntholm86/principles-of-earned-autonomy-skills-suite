@@ -24,7 +24,7 @@ to examine observable behavior and report failures as well as useful results.
 
 **Try it:** run `Improve` on a real, bounded task. The agent chooses the route; you keep the destination and the consequential decisions.
 
-The suite is a reference route to [Agent Context Memory (ACM)](https://github.com/ntholm86/agent-context-memory) and the implementation repo for the [Principles of Earned Autonomy](https://github.com/ntholm86/principles-of-earned-autonomy). It is compatible with Claude (skills / Agent SDK), GitHub Copilot (custom skills), and any LLM agent that can read markdown and append to a file (legacy in-repo memory); the shared memory also needs git and a SHA-256 tool.
+The suite is a reference route to [Agent Context Memory (ACM)](https://github.com/ntholm86/agent-context-memory) and the implementation repo for the [Principles of Earned Autonomy](https://github.com/ntholm86/principles-of-earned-autonomy). It is compatible with Claude (skills / Agent SDK), GitHub Copilot (custom skills), and any LLM agent that can read markdown and append to a file (legacy in-repo memory); the shared memory also needs git.
 
 ![The full architecture illustrated as a Storm P-style Rube Goldberg machine: Operator's Intent feeds the Improve loop, the audit trail runs as a conveyor belt through the whole machine, Learn reads the arc and feeds learning back in, and the machine converges to silence.](./stormpInspired.png)
 
@@ -129,7 +129,7 @@ Want a copy-pasteable, 10-minute path? See [QUICKSTART.md](./QUICKSTART.md).
    - macOS / Linux: `bash install.sh`
    - Windows: `powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1`
    - ARF researchers only: add `--research` on macOS/Linux or `-Research` on Windows to include Probe.
-2. Set up memory once: clone your shared ACM memory repository and add its absolute path as a line of `~/.acm/memories`. The skills offer to bind a new target repo (a `repositories/<id>/repository.json` listing its root commit) with your confirmation.
+2. Set up memory once: [QUICKSTART.md](./QUICKSTART.md#set-up-a-memory-and-make-a-first-record) shows the four steps. The skills offer to bind a new target repo with your confirmation.
 3. In your target repo, run Improve on one concrete, verifiable task:
    - `/improve review the checkout module for waste and overburden`
 4. Confirm the run produced evidence:

@@ -122,10 +122,10 @@ class RecordingTests(MemoryFixture):
         self.assertTrue(created)
         again, created = record._create_record(trail, "20261121T000000Z", "slug", lambda rid: "one\n")
         self.assertEqual((again, created), (first, False))
-        other, created = record._create_record(trail, "20261121T000000Z", "slug", lambda rid: "two\n")
-        self.assertTrue(created)
-        self.assertEqual(other.name, "20261121T000000Z-slug-2.md")
+        with self.assertRaises(RuntimeError):
+            record._create_record(trail, "20261121T000000Z", "slug", lambda rid: "two\n")
         self.assertEqual(first.read_text(encoding="utf-8"), "one\n")
+        self.assertEqual(len(list(trail.glob("*.md"))), 1)
 
     def test_bound_new_creates_an_attributed_record_and_nothing_in_the_work_repo(self):
         work, root = self.work_repo("work")
@@ -143,8 +143,74 @@ class RecordingTests(MemoryFixture):
         self.assertIn(f"- record: {records[0].stem}\n", text)
         self.assertIn("- scope: repositories/work\n", text)
         self.assertIn(f"- repository: work @ {root}\n", text)
-        self.assertIn(f"- mandate: {self.git(memory, 'rev-parse', 'HEAD')}\n", text)
+        self.assertIn("- mandate: none\n", text)
         self.assertFalse((work / ".acm").exists())
+
+    def test_mandate_is_the_hash_of_the_narrowest_governing_destination(self):
+        import hashlib
+
+        work, root = self.work_repo("work")
+        memory = self.memory_repo("memory", {"work": root})
+        self.register(memory)
+        (memory / "destination.md").write_bytes(b"memory-wide\n")
+        (memory / "repositories" / "work" / "paths" / "src").mkdir(parents=True)
+        (memory / "repositories" / "work" / "paths" / "src" / "destination.md").write_bytes(b"path\n")
+
+        def mandate(*arguments):
+            self.assertEqual(self.run_record(work, *arguments, "new", "--slug", "m").returncode, 0)
+            found = sorted(memory.rglob("*-m.md"), key=lambda p: p.stat().st_mtime)[-1]
+            return re.search(r"^- mandate: (.+)$", found.read_text(encoding="utf-8"), re.M).group(1)
+
+        digest = lambda text: "sha256:" + hashlib.sha256(text).hexdigest()[:12]
+        self.assertEqual(mandate(), digest(b"memory-wide\n"))
+        self.assertEqual(mandate("--path", "src"), digest(b"path\n"))
+
+    def test_a_code_folder_named_like_a_scope_entry_is_escaped(self):
+        work, root = self.work_repo("work")
+        memory = self.memory_repo("memory", {"work": root})
+        self.register(memory)
+        result = self.run_record(work, "--path", "src/records", "new", "--slug", "x")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual(len(list((memory / "repositories" / "work" / "paths" / "src" / "_records" / "records").glob("*-x.md"))), 1)
+
+    def test_a_path_that_leaves_the_memory_through_a_link_is_refused(self):
+        work, root = self.work_repo("work")
+        memory = self.memory_repo("memory", {"work": root})
+        self.register(memory)
+        outside = self.base / "outside"
+        outside.mkdir()
+        link = memory / "repositories" / "work" / "paths"
+        if os.name == "nt":
+            made = subprocess.run(["cmd", "/c", "mklink", "/J", str(link), str(outside)], capture_output=True).returncode == 0
+        else:
+            try:
+                os.symlink(outside, link)
+                made = True
+            except OSError:
+                made = False
+        if not made:
+            self.skipTest("cannot create a link here")
+        result = self.run_record(work, "--path", "x", "new", "--slug", "y")
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("outside", result.stderr)
+        self.assertEqual(list(outside.rglob("*.md")), [])
+
+    def test_a_shallow_clone_is_unavailable_not_unbound(self):
+        work, root = self.work_repo("work")
+        self.git(work, "commit", "--quiet", "--allow-empty", "-m", "second")
+        memory = self.memory_repo("memory", {"work": root})
+        self.register(memory)
+        shallow = self.base / "shallow"
+        self.git(self.base, "clone", "--quiet", "--depth", "1", work.as_uri(), str(shallow))
+        result = self.run_record(shallow, "resolve")
+        self.assertEqual(result.returncode, 4)
+        self.assertIn("shallow", result.stderr)
+
+    def test_a_registry_with_a_byte_order_mark_still_binds(self):
+        work, root = self.work_repo("work")
+        memory = self.memory_repo("memory", {"work": root})
+        self.registry.write_text(f"{memory}\n", encoding="utf-8-sig")
+        self.assert_resolves(work, memory / "repositories" / "work")
 
     def test_path_and_task_scopes_nest_under_paths_and_reject_escapes(self):
         work, root = self.work_repo("work")

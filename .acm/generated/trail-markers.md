@@ -4,11 +4,7 @@ GENERATED from `.acm/audit-trail.md` by `record.py markers --write`. Do not edit
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers: what the loop has concluded across runs. Read this before reading the trail in full; reach for the trail only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 333 older marker(s) are in `trail-markers-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-19 — readme-problem-first-opening
-
-**[!REALIZATION]** Adoption friction begins before installation or workflow: a reader who cannot recognize the failure the suite addresses has no reason to learn its vocabulary or try Improve. The README opening is therefore part of the operational adoption path, not a cosmetic layer over it.
+Showing the most recent 60 markers. 334 older marker(s) are in `trail-markers-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-19 — repair-cp850-mojibake-in-audit-trail
 
@@ -245,6 +241,10 @@ Showing the most recent 60 markers. 333 older marker(s) are in `trail-markers-ar
 ## 2026-11-22 — suite-keeps-its-own-trail
 
 **[!REVERSAL]** The earlier step of this session, moving the suite's .acm/ into the private memory (pushed as the commit that removed it), was reversed: the folder is restored from commit 5941042 and the private scope is removed.
+
+## 2026-11-22 — simplify-after-the-cold-audit
+
+**[!REALIZATION]** The audit's most expensive findings were not about missing features but about features that existed to support an earlier complication; the cheapest fix for each was deleting the cause.
 
 ---
 

@@ -18931,3 +18931,30 @@ Prediction: verify.py and the 68 tests still pass. Result: confirmed.
 - *About to declare silence:* not fired.
 - *Contradicts prior [!REALIZATION]:* not fired.
 - *Operator explicitly asked:* not fired.
+## 2026-11-22 - simplify-after-the-cold-audit
+
+- target: record.py, memory_check.py, the Record, Destination, Improve and Intent skills, QUICKSTART, INSTALLING, README (and the Work skill's text)
+- operator: Nils Wendelboe Holmager
+- agent: Claude (Sonnet 5.5; the session began on Claude Opus 5.5); host: Copilot SDK in VS Code
+- skill: Improve
+- outcome: the audit's findings were fixed mostly by removal: sealing, transcripts/ and sessions/, the second checkpoint rule and install prose are gone; record.py gained five small behaviours and no commands
+- delta: v6.1.0 (record 3.4.0, destination 2.16.0, improve 3.26.1, intent 1.15.1); 73 tests
+
+Three independent cold reviewers rated the specification and its reference tools about 4.5 of 10 and named fixes that mostly added machinery (seal and verify-seal tools, init and bind commands, flags, exit codes, new documents). The owner emphasised that a problem solvable by simplification is almost always best solved that way.
+
+[!DECISION] For each finding I asked whether removing something solves it. Sealing was the root of four findings (the byte-for-byte rule, CRLF, the unverified seal, the identifier conflict), so it was dropped, and records stay one flat file each. Two evidence locations were dropped for one (evidence/). The checkpoint rule now has one definition. Setup is four documented steps, not commands. What had to be added is small: the mandate hash, fail-on-collision, containment and a shallow-clone report.
+
+[!REALIZATION] The audit's most expensive findings were not about missing features but about features that existed to support an earlier complication; the cheapest fix for each was deleting the cause.
+
+Prediction: verify.py and the tests pass and a stranger can follow QUICKSTART end to end. Result: 73 tests and verify.py pass; the QUICKSTART example was run end to end by an independent session.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired.
+- *About to declare silence:* not fired.
+- *Contradicts prior [!REALIZATION]:* fired for the earlier decision to seal closed months (the author's own bar 13); the decision was reversed at his direction the same day.
+- *Operator explicitly asked:* not fired.
+
+**Across-trail macro-Hansei:**
+
+Sealing was adopted to keep the file count bounded and then needed a procedure, a hash format, a byte-exactness rule and a verifier it never got. The cost of a mechanism is its whole support surface; flat records cost nothing to specify and git copes with the count.

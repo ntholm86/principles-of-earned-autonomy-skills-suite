@@ -1,6 +1,6 @@
 ---
 name: destination
-version: 2.15.0
+version: 2.16.0
 description: 'Automatic direction-consolidation service. Improve schedules it when accumulated work makes cross-run direction useful; it surfaces sourced guesses about durable direction as questions the operator can confirm, correct, or reject. Manual invocation remains available when the operator wants to explore or revise direction.'
 argument-hint: 'Optionally: the area you want hunches about (a specific concern, a recent decision, the project as a whole)'
 ---
@@ -53,7 +53,7 @@ Before forming any hunches, look at what is available in memory:
 - `learning.md` — what the agent's last arc-read concluded about the target.
 - The trail (a legacy `.acm/audit-trail.md`, then `records/`) — recent decisions, reversals, realisations.
 - When the run's active scope is a task scope (defined in [record/SKILL.md](../record/SKILL.md)), these paths mean that scope, and the file Destination writes is the task's `destination.md`. A task destination is layered under the repo destination: it may narrow it and never contradict it, because the higher scope always wins. Read the repo destination first.
-- Relevant prior conversation records, if available: `.acm/transcripts/`, linked host or harness capture, and `.acm/sessions/` (including legacy summaries). Distinguish independent capture from agent-authored summaries by provenance and fidelity markings, not directory name.
+- Relevant prior conversation records, if available: `evidence/` and linked host or harness capture. Distinguish independent capture from agent-authored summaries by provenance and fidelity markings, not directory name.
 - The current conversation — what the operator has been emphasising, dismissing, returning to.
 
 The point is not to summarise these. The point is to notice what the operator has *not* said directly but that the signal points to.
@@ -122,11 +122,14 @@ Keep the active mandate cheap and unambiguous to read as the destination evolves
 ```markdown
 <!-- current-destination: complete -->
 [The complete current scope, success criteria, constraints, priorities, and open questions]
+
+## Human gate
+[Where the human gate is; what the agent may do before it and without it]
 <!-- destination-history -->
 [Preserved evolution]
 ```
 
-`complete` is a governance claim, not a formatting convenience. Before adding or retaining it, reconcile every earlier destination layer: carry each still-active commitment into the current section, or make its rejection or supersession explicit there. If that reconciliation has not been performed, omit the comments; every consuming skill will then read the full file. Never infer that a heading, horizontal rule, date, or position in the file marks a complete current destination.
+`complete` is a governance claim, not a formatting convenience. A mandate that does not state its Human gate is incomplete (ACM R-02). Before adding or retaining it, reconcile every earlier destination layer: carry each still-active commitment into the current section, or make its rejection or supersession explicit there. If that reconciliation has not been performed, omit the comments; every consuming skill will then read the full file. Never infer that a heading, horizontal rule, date, or position in the file marks a complete current destination.
 
 If the conversation produced arc-claims about the target's current state rather than destination claims, those belong in learning.md — but learning.md is Learn's to write. Destination surfaces them; Learn (or the next Improve run) decides what to do with them.
 

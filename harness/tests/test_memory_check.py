@@ -84,12 +84,10 @@ class MemoryCheckTests(unittest.TestCase):
     def test_record_names_and_identifiers(self):
         self.write("records/notes.md", "## 2026-11-22 — x\n")
         self.write("records/20261122T010203Z-other.md", GOOD_RECORD)
-        self.write("records/2026-10.md", "sealed")
         failures, _ = self.run_check()
         joined = "\n".join(failures)
         self.assertIn("records/notes.md", joined)
         self.assertIn("differs from the file name", joined)
-        self.assertNotIn("2026-10.md", joined)
 
     def test_missing_attribution_is_only_a_warning(self):
         self.write("records/20261122T010203Z-thing.md", "## 2026-11-22 — thing\n\n- record: 20261122T010203Z-thing\n\n### Decision\n")

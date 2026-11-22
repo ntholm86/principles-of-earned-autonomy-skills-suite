@@ -42,6 +42,7 @@ from __future__ import annotations
 
 import argparse
 import datetime as _dt
+import hashlib
 import json
 import os
 import re
@@ -121,11 +122,13 @@ def resolve_binding(root: Path) -> Resolution:
     commits = _root_commits(root)
     if not commits:
         return Resolution("unbound", f"{root} has no git root commit, so it has no repository identity")
+    if (_git(root, "rev-parse", "--is-shallow-repository") or "").strip() == "true":
+        return Resolution("unavailable", f"{root} is a shallow clone, so its root commit is not the repository's identity; fetch the full history first (git fetch --unshallow)")
     registry = _registry_path()
     if not registry.exists():
         return Resolution("unbound", f"no memory registry at {registry}")
     try:
-        entries = registry.read_text(encoding="utf-8").splitlines()
+        entries = registry.read_text(encoding="utf-8-sig").splitlines()
     except (OSError, UnicodeDecodeError) as exc:
         return Resolution("unavailable", f"memory registry {registry} is unreadable: {exc}")
 
@@ -162,7 +165,7 @@ def resolve_binding(root: Path) -> Resolution:
             matches.append(Resolution("bound", f"bound by {binding}", scope, memory, repo_id, shared[0]))
 
     if not matches:
-        listed = ", ".join(sorted(c[:12] for c in commits))
+        listed = ", ".join(sorted(commits))
         return Resolution("unbound", f"no repository.json in the memory repositories listed in {registry} has root commit {listed}")
     if len(matches) > 1:
         sources = "; ".join(m.reason.removeprefix("bound by ") for m in matches)
@@ -177,6 +180,14 @@ class Target(NamedTuple):
     task: str | None
 
 
+_RESERVED = {"records", "tasks", "evidence", "generated"}
+
+
+def _escape_component(name: str) -> str:
+    """A code folder named like a scope entry gets one extra leading underscore, so a path can never be read as a scope entry."""
+    return "_" + name if name.lower() in _RESERVED or name.lower().endswith(".md") or name.startswith("_") else name
+
+
 def _select_target(task: str | None, code_path: str | None = None) -> tuple[Target | None, Resolution]:
     if task and (task in {".", ".."} or re.search(r"[\\/:]", task)):
         return None, Resolution("unavailable", f"invalid task scope name: {task!r}")
@@ -185,9 +196,11 @@ def _select_target(task: str | None, code_path: str | None = None) -> tuple[Targ
         return None, Resolution("unavailable", f"invalid path scope: {code_path!r}")
     res = resolve_binding(ROOT)
     if res.status == "bound":
-        assert res.scope is not None
-        acm = res.scope.joinpath("paths", *parts) if parts else res.scope
+        assert res.scope is not None and res.memory is not None
+        acm = res.scope.joinpath("paths", *[_escape_component(p) for p in parts]) if parts else res.scope
         acm = acm / "tasks" / task if task else acm
+        if not acm.resolve().is_relative_to(res.memory.resolve()):
+            return None, Resolution("unavailable", f"scope {acm} resolves outside its memory repository {res.memory}")
         return Target(acm, True, res, task), res
     if res.status == "unbound" and parts and (ROOT / ".acm").is_dir():
         return None, Resolution("unavailable", "path scopes need a shared ACM; legacy in-repo memory has none")
@@ -384,20 +397,32 @@ def _slugify(text: str) -> str:
 
 
 def _create_record(trail: Path, stamp: str, slug: str, render) -> tuple[Path, bool]:
-    """Create-only acceptance: identical resubmission is a no-op, a collision gets a new identifier."""
+    """Create-only acceptance: identical resubmission is a no-op; a different record with the same identifier fails."""
     trail.mkdir(parents=True, exist_ok=True)
-    for attempt in range(1, 1000):
-        record_id = f"{stamp}-{slug}" if attempt == 1 else f"{stamp}-{slug}-{attempt}"
-        path = trail / f"{record_id}.md"
-        content = render(record_id)
-        try:
-            with path.open("x", encoding="utf-8", newline="\n") as handle:
-                handle.write(content)
-            return path, True
-        except FileExistsError:
-            if _read_text(path) == content:
-                return path, False
-    raise RuntimeError(f"no free record identifier for {stamp}-{slug}")
+    record_id = f"{stamp}-{slug}"
+    path = trail / f"{record_id}.md"
+    content = render(record_id)
+    try:
+        with path.open("x", encoding="utf-8", newline="\n") as handle:
+            handle.write(content)
+        return path, True
+    except FileExistsError:
+        if _read_text(path) == content:
+            return path, False
+        raise RuntimeError(f"record {record_id} already exists with different content; nothing was written (run again for a new timestamp)")
+
+
+def _mandate_hash(scope: Path, memory: Path) -> str:
+    """sha256 of the narrowest governing destination.md (the scope's, else the next broader one), or 'none'."""
+    folder = scope.resolve()
+    top = memory.resolve()
+    while True:
+        destination = folder / "destination.md"
+        if destination.is_file():
+            return "sha256:" + hashlib.sha256(destination.read_bytes()).hexdigest()[:12]
+        if folder == top or top not in folder.parents:
+            return "none"
+        folder = folder.parent
 
 
 def _new_record(args: argparse.Namespace) -> int:
@@ -409,7 +434,7 @@ def _new_record(args: argparse.Namespace) -> int:
     body = None
     if args.body_file:
         body = sys.stdin.read() if args.body_file == "-" else _read_text(Path(args.body_file))
-    mandate = _memory_revision(res.memory) or "unknown (memory repository has no commit)"
+    mandate = _mandate_hash(TARGET.acm, res.memory)
     scope = TARGET.acm.relative_to(res.memory).as_posix()
 
     def render(record_id: str) -> str:
@@ -422,7 +447,11 @@ def _new_record(args: argparse.Namespace) -> int:
             mandate=mandate, skill=args.skill or "improve",
         ) + STUB_BODY
 
-    path, created = _create_record(TARGET.acm / "records", now.strftime("%Y%m%dT%H%M%SZ"), slug, render)
+    try:
+        path, created = _create_record(TARGET.acm / "records", now.strftime("%Y%m%dT%H%M%SZ"), slug, render)
+    except RuntimeError as exc:
+        print(f"ERROR: {exc}", file=sys.stderr)
+        return 1
     verb = "created record" if created else "identical record already accepted"
     print(f"{verb}: {path}")
     return 0

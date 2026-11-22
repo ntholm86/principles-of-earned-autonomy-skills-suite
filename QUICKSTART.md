@@ -6,8 +6,8 @@ A minimal, copy-pasteable path to one real run that produces real evidence. Aim 
 
 1. A target repo you have write access to (yours or a fork).
 2. A terminal in that repo's root.
-3. VS Code with GitHub Copilot Chat, or any agent that loads `.copilot/skills/`.
-4. A shared ACM memory repository, cloned once, with its absolute path as a line of `~/.acm/memories` (Windows: `%USERPROFILE%\.acm\memories`). The target is bound by `repositories/<id>/repository.json` listing its root commit (`git rev-list --max-parents=0 HEAD`); the agent offers to create it with your confirmation. Without a binding the run still works but is not recorded. See [Record](./record/SKILL.md#where-memory-lives).
+3. VS Code with GitHub Copilot Chat, or any agent that loads skills from `~/.copilot/skills` (personal) or `.github/skills` (project; `.claude/skills` and `.agents/skills` are also recognised).
+4. A memory repository for the records. Without one the run still works but is not recorded; [set one up below](#set-up-a-memory-and-make-a-first-record) (5 minutes, once).
 
 ## Install the skills (1 minute)
 
@@ -20,9 +20,69 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1     # Windows
 
 The default installer includes the five operational skills and omits Probe, keeping the visible command surface focused on normal use. ARF researchers can add it with `bash install.sh --research` or `powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1 -Research`.
 
-Or copy the five operational skill folders into `<your-repo>/.copilot/skills/`: `intent/`, `destination/`, `improve/`, `record/`, `learn/`. Add `probe/` only if you are conducting ARF research.
+Or copy the five operational skill folders into `~/.copilot/skills/` (all projects) or `<your-repo>/.github/skills/` (one project): `intent/`, `destination/`, `improve/`, `record/`, `learn/`. Add `probe/` only if you are conducting ARF research.
 
 The operator workflow is **Run Improve**. Intent interprets each prompt, Record writes each result, and Improve automatically triggers Destination or Learn when accumulated evidence makes durable direction or a refreshed map useful. Probe is optional scientific instrumentation and is not required for this workflow.
+
+## Set up a memory and make a first record
+
+`<suite>` is your checkout of `principles-of-earned-autonomy-skills-suite`. Memory is a repository of its own, never a folder in your code.
+
+```
+git init <memory-folder>
+```
+
+Create an empty file `.acm-root` in it (`touch <memory-folder>/.acm-root`, or `New-Item <memory-folder>\.acm-root` in PowerShell). Add the folder's absolute path as one line of `~/.acm/memories` (Windows: `%USERPROFILE%\.acm\memories`; UTF-8, with or without a BOM; create the file if missing).
+
+In the work repository, bind it:
+
+```
+python <suite>/harness/tools/record.py resolve
+```
+
+It prints `unbound: ...` and the repository's root commit (a shallow clone is reported: fetch the full history first). With your confirmation, create `<memory-folder>/repositories/<id>/repository.json` using the full commit from `git rev-list --max-parents=0 HEAD`:
+
+```json
+{"id": "<id>", "root_commits": ["<that commit>"], "locators": ["<optional remote url>"]}
+```
+
+Now the mandate, `<memory-folder>/repositories/<id>/destination.md`:
+
+```markdown
+<!-- current-destination: complete -->
+Make the checkout module easier to test without changing its public API.
+
+## Human gate
+A maintainer reviews every pull request before it merges. Before that review the agent may edit and test on a branch; without it, it may not merge or release.
+<!-- destination-history -->
+```
+
+Make the first record from the work repository:
+
+```
+python <suite>/harness/tools/record.py new --slug first-run
+```
+
+It creates `<memory-folder>/repositories/<id>/records/<UTC yyyyMMddTHHmmssZ>-first-run.md`, a stub the agent fills in:
+
+```markdown
+## 2026-11-22 — first-run
+
+- record: 20261122T083358Z-first-run
+- time: 2026-11-22T08:33:58Z
+- scope: repositories/<id>
+- repository: <id> @ <root commit>
+- mandate: sha256:3aca039a5f52
+- outcome: TODO
+```
+
+`mandate:` is the first 12 hex characters of the governing `destination.md` (`none` when no destination governs). If the name already exists the command exits non-zero and writes nothing; run it again for a new timestamp. Finally:
+
+```
+python <suite>/harness/tools/memory_check.py <memory-folder>
+```
+
+`PASS: 2 scope(s) checked, 0 failure(s), 0 warning(s)` means the layout, the binding, every mandate's Human gate and the record names are valid. Any failure exits non-zero and names the file.
 
 ## Run one improve iteration (7 minutes)
 
@@ -43,7 +103,7 @@ Once the suite has earned your trust, explicitly delegate either routine gate in
 
 If continuing safely requires broader direction, Improve explains why and invokes Destination after the completed run to ask one sourced question at a time.
 
-Done when: the bound scope's `records/` has a new record (legacy in-repo memory: `.acm/audit-trail.md` has a new entry) with `outcome:` and `delta:`.
+Done when: the bound scope's `records/` has a new record (legacy in-repo memory: `.acm/audit-trail.md` has a new entry) with `outcome:` and `delta:`, and the run stated its mandate (a `mandate:` line, or that the run was ungoverned).
 
 ## Confirm evidence exists (1 minute)
 
@@ -72,8 +132,8 @@ Manual `/learn` is an override, not part of the normal workflow.
 The one-line installer does not copy optional tooling. From your target repo, invoke the hook installer by its path in your cloned skills suite:
 
 ```
-bash /path/to/autonomous-agent-skills/harness/tools/install-hooks.sh
-powershell -NoProfile -ExecutionPolicy Bypass -File C:\path\to\autonomous-agent-skills\harness\tools\install-hooks.ps1
+bash /path/to/principles-of-earned-autonomy-skills-suite/harness/tools/install-hooks.sh
+powershell -NoProfile -ExecutionPolicy Bypass -File C:\path\to\principles-of-earned-autonomy-skills-suite\harness\tools\install-hooks.ps1
 ```
 
 The installer respects `core.hooksPath` and stops without overwriting a different existing hook. Review the reported path before installing into a shared hook directory; see [INSTALLING.md](./INSTALLING.md) for existing-hook handling.
