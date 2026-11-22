@@ -283,7 +283,7 @@ RECORD_HEADER = """\
 - target: {target}
 - operator: TODO
 - agent: TODO (model family and version as the host exposes or the operator states; "unknown" if neither, never invented)
-- authority: TODO (the prompt, destination or delegation this work acts under)
+- authority: TODO (the prompt, mission or delegation this work acts under)
 - session: TODO (the host's session or run identifier; "unknown" when not exposed)
 - mandate: {mandate}
 - skill: {skill}
@@ -414,13 +414,13 @@ def _create_record(trail: Path, stamp: str, slug: str, render) -> tuple[Path, bo
 
 
 def _mandate_hash(scope: Path, memory: Path) -> str:
-    """sha256 of the narrowest governing destination.md (the scope's, else the next broader one), or 'none'."""
+    """sha256 of the narrowest governing mission.md (the scope's, else the next broader one), or 'none'."""
     folder = scope.resolve()
     top = memory.resolve()
     while True:
-        destination = folder / "destination.md"
-        if destination.is_file():
-            return "sha256:" + hashlib.sha256(destination.read_bytes()).hexdigest()[:12]
+        mission = folder / "mission.md"
+        if mission.is_file():
+            return "sha256:" + hashlib.sha256(mission.read_bytes()).hexdigest()[:12]
         if folder == top or top not in folder.parents:
             return "none"
         folder = folder.parent

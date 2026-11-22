@@ -1,7 +1,7 @@
 ---
 name: probe
-version: 3.8.0
-description: 'Optional scientific instrumentation for measuring Autonomous Reasoning Fidelity (ARF). Construct a controlled novelty probe that distinguishes genuine situated reasoning from pattern-matching against a checklist. Not required by Destination, Learn, Improve, Intent, or Record, and not part of normal development use. USE WHEN: conducting ARF research, testing reasoning quality experimentally, novelty injection, ARF measurement.'
+version: 3.9.0
+description: 'Optional scientific instrumentation for measuring Autonomous Reasoning Fidelity (ARF). Construct a controlled novelty probe that distinguishes genuine situated reasoning from pattern-matching against a checklist. Not required by Mission, Learn, Improve, Intent, or Record, and not part of normal development use. USE WHEN: conducting ARF research, testing reasoning quality experimentally, novelty injection, ARF measurement.'
 argument-hint: 'The agent or skill to probe, and what claim about its reasoning you want to test'
 ---
 
@@ -13,7 +13,7 @@ argument-hint: 'The agent or skill to probe, and what claim about its reasoning 
 
 This is the only skill in the suite that genuinely tests something external. Improve makes the agent better; Probe finds out whether it is reasoning at all.
 
-**Probe is not part of the operational workflow.** Destination, Learn, Improve, Intent, and Record do not require or invoke it. Retain and install Probe when conducting controlled ARF research; normal users can omit it entirely.
+**Probe is not part of the operational workflow.** Mission, Learn, Improve, Intent, and Record do not require or invoke it. Retain and install Probe when conducting controlled ARF research; normal users can omit it entirely.
 
 ## Governing principles
 

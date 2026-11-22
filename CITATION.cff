@@ -9,9 +9,9 @@ abstract: >
   probes to distinguish situated reasoning from pattern-matching), Record (append
   a structured evidence log after every session), Learn (read the full trail
   as a single document and form arc-level claims about the target's trajectory and the
-  loop's effectiveness), and Destination (surface the agent's in-progress guesses about where
+  loop's effectiveness), and Mission (surface the agent's in-progress guesses about where
   the operator is heading and turn them into questions the operator can confirm or
-  correct, closing the gap between the explicitly stated destination and implicit direction).
+  correct, closing the gap between the explicitly stated mission and implicit direction).
   Accompanied by Python tools for trail management and integrity
   verification. Evaluated across multiple model families with convergence protocols.
   Constitutional foundation in the companion Principles of Earned Autonomy repository.
@@ -21,7 +21,7 @@ authors:
     orcid: "https://orcid.org/0009-0009-7157-9084"
 repository-code: "https://github.com/ntholm86/principles-of-earned-autonomy-skills-suite"
 license: MIT
-version: "6.1.3"
+version: "7.0.0"
 date-released: "2026-11-22"
 identifiers:
   - type: doi

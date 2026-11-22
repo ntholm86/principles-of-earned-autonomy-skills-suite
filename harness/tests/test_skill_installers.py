@@ -7,7 +7,7 @@ import unittest
 
 
 ROOT = Path(__file__).resolve().parents[2]
-SKILLS = ("intent", "destination", "improve", "record", "learn")
+SKILLS = ("intent", "mission", "improve", "record", "learn")
 POWERSHELL = shutil.which("powershell") or shutil.which("pwsh")
 GIT = shutil.which("git")
 GIT_EXEC = Path(subprocess.check_output([GIT, "--exec-path"], text=True).strip()) if GIT else None
@@ -101,7 +101,7 @@ class SkillInstallerCases:
         (other / "SKILL.md").write_text("---\nname: my-own-trail\n---\n", encoding="utf-8")
         self.assert_success()
         self.assertTrue((other / "SKILL.md").is_file())
-    def test_each_missing_operational_skill_leaves_destination_absent(self):
+    def test_each_missing_operational_skill_leaves_mission_absent(self):
         for skill in SKILLS:
             with self.subTest(skill=skill):
                 original = self.source / skill / "SKILL.md"
@@ -116,7 +116,7 @@ class SkillInstallerCases:
                 finally:
                     hidden.rename(original)
 
-    def test_missing_research_skill_preserves_existing_destination(self):
+    def test_missing_research_skill_preserves_existing_mission(self):
         self.assert_success()
         before = self.snapshot()
         (self.source / "intent" / "SKILL.md").write_text("changed source\n", encoding="utf-8")

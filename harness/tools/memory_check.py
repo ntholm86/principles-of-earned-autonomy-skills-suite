@@ -7,8 +7,8 @@ Usage
 Failures (exit code 1):
   - the memory root has no `.acm-root` marker;
   - a hidden `.acm/` folder inside the memory (a scope is a folder, not a hidden folder);
-  - a retired file name in a scope (`orientation.md`, `history.md`, `learning-archive.md`);
-  - a `destination.md` whose `<!-- current-destination: complete -->` and `<!-- destination-history -->`
+  - a retired file name in a scope (`orientation.md`, `history.md`, `learning-archive.md`, `destination.md`: now `learning.md` and `mission.md`);
+  - a `mission.md` whose `<!-- current-mission: complete -->` and `<!-- mission-history -->`
     lines are not both present and in that order, or whose current mandate has no (or an empty) `## Human gate`
     section (R-02: a mandate that does not state its human gate is incomplete);
   - a `repositories/<id>/repository.json` that is not valid, whose `id` differs from its folder, whose
@@ -28,15 +28,15 @@ import subprocess
 import sys
 from pathlib import Path
 
-RETIRED = ("orientation.md", "history.md", "learning-archive.md")
+RETIRED = ("orientation.md", "history.md", "learning-archive.md", "destination.md")
 STRUCTURAL = {"records", "tasks", "paths", "evidence", "generated", "drafts"}
-SCOPE_FILES = ("destination.md", "learning.md", "audit-trail.md")
+SCOPE_FILES = ("mission.md", "learning.md", "audit-trail.md")
 RECORD_NAME = re.compile(r"^\d{8}T\d{6}Z-[a-z0-9][a-z0-9-]*\.md$")
 FIELD = re.compile(r"^-\s+([a-z-]+):\s*(.*)$", re.M)
 ATTRIBUTION = ("record", "time", "scope", "agent", "authority", "session", "mandate")
 PLACEHOLDER = re.compile(r"^-\s+(operator|agent|authority|session|outcome|delta):\s*TODO\b", re.M)
-OPEN = re.compile(r"^<!-- current-destination: complete -->\s*$", re.M)
-CLOSE = re.compile(r"^<!-- destination-history -->\s*$", re.M)
+OPEN = re.compile(r"^<!-- current-mission: complete -->\s*$", re.M)
+CLOSE = re.compile(r"^<!-- mission-history -->\s*$", re.M)
 
 
 def is_scope(path: Path) -> bool:
@@ -74,12 +74,12 @@ def scopes(root: Path) -> list[Path]:
     return found
 
 
-def check_destination(path: Path) -> list[str]:
+def check_mission(path: Path) -> list[str]:
     text = path.read_text(encoding="utf-8", errors="replace")
     opened = OPEN.search(text)
     closed = CLOSE.search(text, opened.end()) if opened else None
     if bool(OPEN.search(text)) != bool(CLOSE.search(text)) or (opened and not closed):
-        return ["the current-destination and destination-history lines must both be present, in that order"]
+        return ["the current-mission and mission-history lines must both be present, in that order"]
     current = text[opened.end():closed.start()] if opened and closed else text
     gate = re.search(r"^## Human gate\s*$(.*?)(?=^## |\Z)", current, re.M | re.S)
     if not gate:
@@ -164,9 +164,9 @@ def check(root: Path) -> tuple[list[str], list[str]]:
         for name in RETIRED:
             if (scope / name).exists():
                 failures.append(f"{where}/{name}: retired file name")
-        destination = scope / "destination.md"
-        if destination.is_file():
-            failures += [f"{destination.relative_to(root).as_posix()}: {m}" for m in check_destination(destination)]
+        mission = scope / "mission.md"
+        if mission.is_file():
+            failures += [f"{mission.relative_to(root).as_posix()}: {m}" for m in check_mission(mission)]
         record_failures, record_warnings = check_records(scope, root)
         failures += record_failures
         warnings += record_warnings

@@ -146,15 +146,15 @@ class RecordingTests(MemoryFixture):
         self.assertIn("- mandate: none\n", text)
         self.assertFalse((work / ".acm").exists())
 
-    def test_mandate_is_the_hash_of_the_narrowest_governing_destination(self):
+    def test_mandate_is_the_hash_of_the_narrowest_governing_mission(self):
         import hashlib
 
         work, root = self.work_repo("work")
         memory = self.memory_repo("memory", {"work": root})
         self.register(memory)
-        (memory / "destination.md").write_bytes(b"memory-wide\n")
+        (memory / "mission.md").write_bytes(b"memory-wide\n")
         (memory / "repositories" / "work" / "paths" / "src").mkdir(parents=True)
-        (memory / "repositories" / "work" / "paths" / "src" / "destination.md").write_bytes(b"path\n")
+        (memory / "repositories" / "work" / "paths" / "src" / "mission.md").write_bytes(b"path\n")
 
         def mandate(*arguments):
             self.assertEqual(self.run_record(work, *arguments, "new", "--slug", "m").returncode, 0)

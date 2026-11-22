@@ -20,7 +20,7 @@ One premise, three principles, one emergent property.
 
 **Premise — The agent is an unreliable narrator of itself.** Stated reasoning is not internal reasoning; self-correction often degrades performance; the agent's account of its own decisions cannot be the only account. The three principles are structural responses to this fact.
 
-1. **Operator's Intent** — *Define the destination. Never prescribe the route.* The agent must interpret and adapt, not execute a checklist. *(The operator narrates the goal; the agent does not self-interpret it.)*
+1. **Operator's Intent** — *Define the mission. Never prescribe the route.* The agent must interpret and adapt, not execute a checklist. *(The operator narrates the goal; the agent does not self-interpret it.)*
 2. **Observable Autonomy** — *Autonomy is a function of transparency.* Every autonomous operation produces a visible audit trail captured as the work happens, which the agent cannot retroactively edit. *(The degree of autonomy a system deserves is bounded by the degree of transparency it provides.)*
 3. **Convergence Is Silence** — *The system has converged when diverse independent evaluators find nothing left to change.* Not when a score stops moving. *(Independent evaluators judge the work; the agent does not self-assess.)*
 
@@ -56,20 +56,20 @@ A framework that omits any of the three leaves one role undefended. A framework 
 
 ## Principle 1: Operator's Intent
 
-*Define the destination. Never prescribe the route.*
+*Define the mission. Never prescribe the route.*
 
 **Origin:** Auftragstaktik (Prussian mission-type command), the Coaching Kata (Toyota), the Socratic Method.
 
 **The problem it solves:** A prescriptive instruction ("check if param count > 5, apply the Strangler Fig pattern, scan for these 8 waste types") produces compliance, not understanding. An agent following a checklist scores well on the checklist and misses everything the checklist didn't mention. The checklist becomes the ceiling.
 
-**The principle:** An autonomous agent must understand *what* needs to be achieved and *why* it matters. It must then determine *how* — interpreting the destination and adapting to the specific situation it encounters. The destination defines the shape of the work. The agent discovers the content.
+**The principle:** An autonomous agent must understand *what* needs to be achieved and *why* it matters. It must then determine *how* — interpreting the mission and adapting to the specific situation it encounters. The mission defines the shape of the work. The agent discovers the content.
 
 **In practice:**
 
 - **Ask, don't tell.** "What here doesn't earn its existence?" not "Look for unused imports, dead code, and unreachable branches." The agent should arrive at those specifics because they're the right answer, not because they were listed.
 - **State the goal, not the steps.** "Find where the system is asked to do too much" not "Check function length > 50 lines, parameter count > 5." Those thresholds may be correct — but the agent should derive them from understanding overburden, not from reading a bullet point.
 - **Provide vocabulary, not answers.** Introduce concepts as a *thinking framework* — language to reason with — not as a lookup table.
-- **Trust the interpretation.** If the agent's interpretation of the destination leads to a different answer than the checklist would have, the interpretation might be right and the checklist wrong. That's the whole point.
+- **Trust the interpretation.** If the agent's interpretation of the mission leads to a different answer than the checklist would have, the interpretation might be right and the checklist wrong. That's the whole point.
 
 **The test:** If you removed all the specific examples and thresholds from an instruction, would an intelligent agent still know what to do? If yes, the instruction embodies Operator's Intent. If no, it's a checklist in disguise.
 
@@ -149,7 +149,7 @@ Score stability is necessary but not sufficient. Change-rate stability is necess
 
 **The principle:** Convergence requires diverse independent evaluators to arrive at the same assessment *and* find nothing material to change. Silence is the strongest available stopping signal for the loop, not a guarantee that the artifact is correct.
 
-**The cybernetic grounding:** Wiener established cybernetics as the study of control and communication in animals and machines. Read as a feedback system, PEA's three principles form one steering architecture: Operator's Intent supplies the reference state — the destination; Observable Autonomy makes the system's state, actions, and history available for comparison; and independent evaluation feeds detected deviation back into the next action. Convergence Is Silence names the stopping condition: the feedback channel produces no material corrective signal across diverse observers. This is stability relative to the current destination and the system's observational capacity, not proof of correctness or permanent equilibrium. A changed destination, changed artifact, or new material finding reopens the loop.
+**The cybernetic grounding:** Wiener established cybernetics as the study of control and communication in animals and machines. Read as a feedback system, PEA's three principles form one steering architecture: Operator's Intent supplies the reference state — the mission; Observable Autonomy makes the system's state, actions, and history available for comparison; and independent evaluation feeds detected deviation back into the next action. Convergence Is Silence names the stopping condition: the feedback channel produces no material corrective signal across diverse observers. This is stability relative to the current mission and the system's observational capacity, not proof of correctness or permanent equilibrium. A changed mission, changed artifact, or new material finding reopens the loop.
 
 Cybernetics grounds the mechanism of steering by feedback. PEA adds a governance constraint the control model alone does not provide: the acting agent cannot be its own only sensor, judge, or historian. Feedback must come through independent evaluation and an auditable trail.
 
@@ -179,9 +179,9 @@ Operator's Intent without Observable Autonomy is dangerous — you told the agen
 
 Observable Autonomy without Operator's Intent is theater — you can see everything the agent does, but it's just following a checklist, so the observability shows compliance, not interpretation.
 
-Together: the agent understands the goal, interprets the destination, adapts to what it encounters, and makes every step of that process visible. The human can trust the autonomy because they can see how the agent arrived at its conclusions. The agent can be autonomous because it has earned that trust through transparency.
+Together: the agent understands the goal, interprets the mission, adapts to what it encounters, and makes every step of that process visible. The human can trust the autonomy because they can see how the agent arrived at its conclusions. The agent can be autonomous because it has earned that trust through transparency.
 
-Convergence Is Silence completes the system: it defines *when the work is done.* Without it, Operator's Intent gives purpose and Observable Autonomy gives visibility, but the loop has no honest exit. Convergence provides the stopping condition — and critically, it requires the other two to function. You can only measure convergence if the evaluator interprets the destination independently (Operator's Intent, not checklist compliance) and the entire trail is visible (Observable Autonomy, not self-reported scores).
+Convergence Is Silence completes the system: it defines *when the work is done.* Without it, Operator's Intent gives purpose and Observable Autonomy gives visibility, but the loop has no honest exit. Convergence provides the stopping condition — and critically, it requires the other two to function. You can only measure convergence if the evaluator interprets the mission independently (Operator's Intent, not checklist compliance) and the entire trail is visible (Observable Autonomy, not self-reported scores).
 
 ```
 Operator's Intent     Observable Autonomy     Convergence Is Silence
@@ -210,7 +210,7 @@ ARF is not a fourth principle. It is the measurable external signal that exists 
 - **Auftragstaktik** (Prussian mission-type command) — telling subordinates *what* and *why*, then trusting them to determine *how*. Origin of Principle 1 and the "freedom of thought" half of ARF.
 - **Meaningful Human Control** (autonomy ethics) — autonomous systems must operate within boundaries that allow humans to maintain appropriate oversight without real-time intervention. Shapes the "trail integrity" half.
 - **Trust Calibration** (Lee & See, 2004) — trust in autonomous systems should be calibrated to actual capabilities, and calibration requires observability. Over-trust and under-trust are both failures. Principle 2 is the calibration mechanism.
-- **Cybernetics** ([Wiener, 1948](https://mitpress.mit.edu/9780262730099/cybernetics/)) — control is achieved through communication and feedback between observed state and intended state. Grounds the steering mechanism across all three principles: destination as reference, observability as state information, and convergence as the absence of material corrective feedback. PEA adds independent evaluation and capture-author separation as governance constraints on who may supply and preserve that feedback.
+- **Cybernetics** ([Wiener, 1948](https://mitpress.mit.edu/9780262730099/cybernetics/)) — control is achieved through communication and feedback between observed state and intended state. Grounds the steering mechanism across all three principles: mission as reference, observability as state information, and convergence as the absence of material corrective feedback. PEA adds independent evaluation and capture-author separation as governance constraints on who may supply and preserve that feedback.
 
 **Preconditions** (principle compliance — verify the environment, not the agent):
 

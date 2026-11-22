@@ -1,7 +1,7 @@
 ---
 name: learn
-version: 3.0.3
-description: 'Automatic learning service. Improve or Destination schedules it when accumulated evidence makes the current learning stale; it reads the trail as a single document, forms arc-level claims, and refreshes learning.md without changing the target. Manual invocation remains available for diagnostics or an explicit "how are we doing?" request.'
+version: 3.1.0
+description: 'Automatic learning service. Improve or Mission schedules it when accumulated evidence makes the current learning stale; it reads the trail as a single document, forms arc-level claims, and refreshes learning.md without changing the target. Manual invocation remains available for diagnostics or an explicit "how are we doing?" request.'
 argument-hint: 'The target and its trail, and optionally the specific arc-question to answer'
 ---
 
@@ -17,9 +17,9 @@ The Improve loop is optimised for one iteration at a time. Learn is optimised fo
 
 *Older memories use the former names.* Before 2026-11-22 the skill was Orient and its file was `orientation.md` (now `learning.md`); the machine-made files were `learning.md`, `learning-archive.md` and `history.md` (now `generated/trail-markers.md`, `generated/trail-markers-archive.md` and `record.py index`). Trails are append-only and keep the old names; when an entry says Orient or `orientation.md`, read it as Learn and `learning.md`.
 
-Improve schedules Learn with evidence that the current learning no longer explains the governing Destination and material trail. A material Destination change is such evidence. Learn accepts that arc-question; it does not maintain a second trigger taxonomy. Manual `/learn` remains available as a diagnostic override or when the operator explicitly asks "how are we doing?"
+Improve schedules Learn with evidence that the current learning no longer explains the governing Mission and material trail. A material Mission change is such evidence. Learn accepts that arc-question; it does not maintain a second trigger taxonomy. Manual `/learn` remains available as a diagnostic override or when the operator explicitly asks "how are we doing?"
 
-**Automatic-service contract:** Learn observes and refreshes derived learning. It never changes the target, chooses work on the operator's behalf, or revises `destination.md`. Improve or Destination schedules when the arc is read; that scheduling does not change Learn's authority.
+**Automatic-service contract:** Learn observes and refreshes derived learning. It never changes the target, chooses work on the operator's behalf, or revises `mission.md`. Improve or Mission schedules when the arc is read; that scheduling does not change Learn's authority.
 
 ## Governing principles
 
@@ -32,19 +32,19 @@ Full statement of the principles: [PRINCIPLES.md](../PRINCIPLES.md) — read it 
 
 ## The work
 
-**Apply [Intent](../intent/SKILL.md) automatically before beginning.** For an automatically scheduled run, Intent aligns the trigger and scope inherited from Destination or Improve; for a manual diagnostic run, it aligns the operator's arc-question. The operator should never have to invoke Intent separately. If this is a standalone Learn installation and Intent is unavailable, narrate the trigger and scope before continuing.
+**Apply [Intent](../intent/SKILL.md) automatically before beginning.** For an automatically scheduled run, Intent aligns the trigger and scope inherited from Mission or Improve; for a manual diagnostic run, it aligns the operator's arc-question. The operator should never have to invoke Intent separately. If this is a standalone Learn installation and Intent is unavailable, narrate the trigger and scope before continuing.
 
-### 0. Read the destination first (all scopes)
+### 0. Read the mission first (all scopes)
 
-Before forming any scope statement, read the governing destinations that exist. They are the operator-held destination — what the target is for and what constraints hold across all runs. Reading it first ensures the arc is read against what the operator actually cares about, not retrofitted afterward.
+Before forming any scope statement, read the governing missions that exist. They are the operator-held mission — what the target is for and what constraints hold across all runs. Reading it first ensures the arc is read against what the operator actually cares about, not retrofitted afterward.
 
-**ACM §4 Memory Repository and Scopes.** Resolve the active scope and read the governing chain as [Record defines it](../record/SKILL.md#where-memory-lives) — memory-wide, then repository, then path, then task destination, broadest first; the higher scope wins; nothing above `.acm-root` and no walking up the code tree. File names such as `destination.md` mean that file in the active scope. Unbound, ambiguous or unavailable memory is reported as such, and no guessed memory is read or written; the in-repo `.acm/` of an unbound repository is legacy memory. Without Record installed, the essentials are: memory is a separate repository listed in `~/.acm/memories` and bound by the work repository's root commit, and no `.acm/` is ever created in the work repository. Arc-claims made without the higher mandates may miss constraints that span repositories.
+**ACM §4 Memory Repository and Scopes.** Resolve the active scope and read the governing chain as [Record defines it](../record/SKILL.md#where-memory-lives) — memory-wide, then repository, then path, then task mission, broadest first; the higher scope wins; nothing above `.acm-root` and no walking up the code tree. File names such as `mission.md` mean that file in the active scope. Unbound, ambiguous or unavailable memory is reported as such, and no guessed memory is read or written; the in-repo `.acm/` of an unbound repository is legacy memory. Without Record installed, the essentials are: memory is a separate repository listed in `~/.acm/memories` and bound by the work repository's root commit, and no `.acm/` is ever created in the work repository. Arc-claims made without the higher mandates may miss constraints that span repositories.
 
-If no `destination.md` exists at any scope, proceed — but note the absence. A Learn run on a target without a destination is reading the arc without a destination to measure the learning against.
+If no `mission.md` exists at any scope, proceed — but note the absence. A Learn run on a target without a mission is reading the arc without a mission to measure the learning against.
 
-**Task scopes.** When the run's active scope is a task scope (defined in [record/SKILL.md](../record/SKILL.md)), every memory file named in the steps below means that file in that scope: its trail is the arc, its `learning.md` is the one written. The repo scope's destination and learning are read first as parent context and win on conflict; Learn never rewrites a parent scope's learning from a task arc.
+**Task scopes.** When the run's active scope is a task scope (defined in [record/SKILL.md](../record/SKILL.md)), every memory file named in the steps below means that file in that scope: its trail is the arc, its `learning.md` is the one written. The repo scope's mission and learning are read first as parent context and win on conflict; Learn never rewrites a parent scope's learning from a task arc.
 
-**Bounded destination reads.** If a destination contains the exact comments `<!-- current-destination: complete -->` and `<!-- destination-history -->` in that order, the content between them is the operator-confirmed complete current mandate. Read that bounded section for routine learning. Read the full file when Learning must explain a destination change, resolve ambiguity or conflicting evidence, or establish historical provenance. If either comment is absent, malformed, or out of order, read the full file. Never infer a boundary from headings, dates, horizontal rules, or file position.
+**Bounded mission reads.** If a mission contains the exact comments `<!-- current-mission: complete -->` and `<!-- mission-history -->` in that order, the content between them is the operator-confirmed complete current mandate. Read that bounded section for routine learning. Read the full file when Learning must explain a mission change, resolve ambiguity or conflicting evidence, or establish historical provenance. If either comment is absent, malformed, or out of order, read the full file. Never infer a boundary from headings, dates, horizontal rules, or file position.
 
 ### 1. Identify the scope
 
@@ -99,11 +99,11 @@ Avoid: "The target seems to be in good shape." That is an observation without co
 
 ### 3b. Ask whether a recurring arc-claim is a single-loop symptom or a double-loop signal
 
-When step 3 produces a claim describing a *recurring* pattern — the same finding-class across multiple entries, the same kind of correction applied repeatedly, the same corner returned to again and again — ask explicitly whether the recurrence is a single-loop symptom or a double-loop signal. Single-loop correction fixes the action within existing governing variables (a goal, constraint, or quality-bar choice in `destination.md`, or an unstated assumption the arc has been carrying) while leaving those variables themselves unexamined. If the same finding-class keeps recurring despite repeated correction, the recurrence itself is evidence that the governing variable — not the action — is the actual defect.
+When step 3 produces a claim describing a *recurring* pattern — the same finding-class across multiple entries, the same kind of correction applied repeatedly, the same corner returned to again and again — ask explicitly whether the recurrence is a single-loop symptom or a double-loop signal. Single-loop correction fixes the action within existing governing variables (a goal, constraint, or quality-bar choice in `mission.md`, or an unstated assumption the arc has been carrying) while leaving those variables themselves unexamined. If the same finding-class keeps recurring despite repeated correction, the recurrence itself is evidence that the governing variable — not the action — is the actual defect.
 
 This question can resolve to "no." A recurring pattern is not automatically a governing-variable defect — some recurrences are the arc correctly behaving as designed (candidates sitting unpicked across entries while the operator directs attention elsewhere is an explicitly valid pattern, not a defect). Answer honestly in both directions; the question exists to be asked, not to manufacture an escalation.
 
-When it resolves to "yes": name the specific governing variable implicated, write it as a candidate destination-revision — not another arc-claim about the target's surface — and record it as such. Whether to act on it is the operator's decision via [Destination](../destination/SKILL.md); Learn's job is to make the governing-variable question visible, not to resolve it unilaterally.
+When it resolves to "yes": name the specific governing variable implicated, write it as a candidate mission-revision — not another arc-claim about the target's surface — and record it as such. Whether to act on it is the operator's decision via [Mission](../mission/SKILL.md); Learn's job is to make the governing-variable question visible, not to resolve it unilaterally.
 
 *Why this belongs in Learn, and not only in Improve's step 6b:* step 6b fires from inside a single iteration, when that iteration happens to notice a recurring pattern. Learn reads the whole arc at once and is positioned to catch governing-variable-level recurrences that no individual iteration had enough surface area to see — exactly the kind of finding an arc-level read exists for. (Argyris, *Organizational Learning*, 1977 — single-loop learning corrects action within existing governing variables; double-loop learning questions and revises the governing variables themselves.)
 
@@ -121,7 +121,7 @@ Ask:
 
 Run this step when: the loop is about to declare convergence, the finding pattern looks suspiciously tidy, or the operator explicitly asked how the loop is performing.
 
-**If this step surfaces a structural blind spot in how the loop itself learns** — a lens it never applies, a trigger that never fires, a trail format that hides the evidence it should show — that is not a target-level finding to file away among this run's arc-claims. Name the specific mechanism implicated (a lens, a trigger, a check, the trail format itself), state it as a candidate revision to the loop's own design, and route it to the operator via [Destination](../destination/SKILL.md) — the same way step 3b routes governing-variable findings. A blind spot in how the loop learns is at least as load-bearing as a blind spot in the target itself: it silently caps every future run's ability to find anything the current mechanism cannot see.
+**If this step surfaces a structural blind spot in how the loop itself learns** — a lens it never applies, a trigger that never fires, a trail format that hides the evidence it should show — that is not a target-level finding to file away among this run's arc-claims. Name the specific mechanism implicated (a lens, a trigger, a check, the trail format itself), state it as a candidate revision to the loop's own design, and route it to the operator via [Mission](../mission/SKILL.md) — the same way step 3b routes governing-variable findings. A blind spot in how the loop learns is at least as load-bearing as a blind spot in the target itself: it silently caps every future run's ability to find anything the current mechanism cannot see.
 
 Acting on the candidate is itself a subsequent [Improve](../improve/SKILL.md) iteration targeting the implicated mechanism — no separate incremental-vs-radical logic is needed here, because that iteration's own Purpose lens and Kaikaku question (step 3) already make that decision generically, for any target. If the outcome is a redesign of how the loop reasons, its validation is Convergence Is Silence, not the agent's own judgment that it improved.
 
@@ -138,9 +138,9 @@ The arc is the mechanism by which the agent learns how to work within the specif
 
 Write the arc-claims from step 3 (and any loop-effectiveness findings from step 4) to `learning.md`. This file is **learning.md** — what this scope has learned so far: where the loop's attention has been, what the arc currently shows is true of the target, and what the next runs should test.
 
-learning.md should make sense in light of the destination (read at step 0) — arc-claims may reference whether the loop has been pursuing what the destination says matters — but must not duplicate destination content. Never write to `destination.md` from a Learn run.
+learning.md should make sense in light of the mission (read at step 0) — arc-claims may reference whether the loop has been pursuing what the mission says matters — but must not duplicate mission content. Never write to `mission.md` from a Learn run.
 
-`learning.md` is not append-only. Learn replaces it each time it runs. The full reasoning history lives in the trail; the destination is where the target is going; the learning.md is the current distillation of where the target is along the way.
+`learning.md` is not append-only. Learn replaces it each time it runs. The full reasoning history lives in the trail; the mission is where the target is going; the learning.md is the current distillation of where the target is along the way.
 
 The file shape is simple:
 
@@ -166,7 +166,7 @@ _Derived view of the trail at <memory revision, or last record id>; last updated
 <From step 4, if triggered. Omit section if step 4 was not run.>
 ```
 
-Only Learn, or Work in its own runs, refreshes `learning.md`; label it with the trail revision it was derived from (the `_Derived view_` line of the shape above) and commit it as Record's commit routine describes. Never commit changes to `destination.md` from a Learn run.
+Only Learn, or Work in its own runs, refreshes `learning.md`; label it with the trail revision it was derived from (the `_Derived view_` line of the shape above) and commit it as Record's commit routine describes. Never commit changes to `mission.md` from a Learn run.
 
 ### 5a. Bound every silence claim
 
