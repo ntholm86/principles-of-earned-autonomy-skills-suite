@@ -1,6 +1,6 @@
 ---
 name: record
-version: 3.4.0
+version: 3.4.1
 description: 'Automatic egress service for substantive work. Writes a structured record in the bound memory scope of the shared ACM (a new file in records/; legacy in-repo .acm/audit-trail.md is appended) — the interpretation, examination, decisions, actions, and reflection. Destination, Improve, Learn, and Probe apply Record automatically; the operator should never need to invoke it separately. Direct use remains available for consequential work outside those workflows and independent-writer mode.'
 argument-hint: 'The target being worked on (repo, file, system) — used to populate the record header'
 ---
@@ -9,7 +9,7 @@ argument-hint: 'The target being worked on (repo, file, system) — used to popu
 
 *The record of what actually happened.*
 
-**The Record skill records an audit trail:** the append-only account of what the agent did and why, in the way an aircraft's black-box recorder keeps the account of a flight.
+**The Record skill records an audit trail:** the append-only account of what the agent did and why, in the way an aircraft's black-box recorder keeps the account of a flight. The agent writes it, so it is the agent's own account: testimony, not independent evidence of what happened (see "Independent capture").
 
 *ACM role: Writes the core of the memory layer — the records every other skill reads — and defines where memory lives.*
 
@@ -262,7 +262,7 @@ If you are unsure whether this session warrants an entry: if a decision was made
 
 **Each iteration is recorded before the next begins: a Change writes a checkpoint before its first change or other consequential action and a completion after it; any other outcome writes one record.**
 
-**Checkpoint rule (the single definition).** Write the checkpoint. If the mandate's Human gate says the agent may proceed before review, proceed; otherwise leave the checkpoint for the operator to accept and wait.
+**Checkpoint rule (the single definition).** Write the checkpoint. If the mandate's Human gate says the agent may proceed before review, proceed; otherwise leave the checkpoint for the operator to accept and wait. A run with no destination has no Human gate section: the operator's Proceed (or delegation) for that run is the acceptance.
 
 Do not buffer entries to write at the end of all iterations. The trail is the checkpoint: if the agent crashes, times out, or the user stops the run after iteration 3 of 10, the first 3 entries must already be recorded. At the start of a run, look for an open checkpoint (one no completion record names and no later record supersedes with `supersedes:`): complete it if its decision still holds, or write a record that says why it no longer does and states `supersedes:` with the checkpoint's identifier; in a legacy trail, an entry whose decision and prediction were recorded but whose completion never followed.
 

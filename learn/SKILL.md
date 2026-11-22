@@ -1,6 +1,6 @@
 ---
 name: learn
-version: 3.0.1
+version: 3.0.2
 description: 'Automatic learning service. Improve or Destination schedules it when accumulated evidence makes the current learning stale; it reads the trail as a single document, forms arc-level claims, and refreshes learning.md without changing the target. Manual invocation remains available for diagnostics or an explicit "how are we doing?" request.'
 argument-hint: 'The target and its trail, and optionally the specific arc-question to answer'
 ---
@@ -166,7 +166,7 @@ _Derived view of the trail at <memory revision, or last record id>; last updated
 <From step 4, if triggered. Omit section if step 4 was not run.>
 ```
 
-Learn is the only writer that refreshes `learning.md`; label it with the trail revision it was derived from (the `_Derived view_` line of the shape above) and commit it as Record's commit routine describes. Never commit changes to `destination.md` from a Learn run.
+Only Learn, or Work in its own runs, refreshes `learning.md`; label it with the trail revision it was derived from (the `_Derived view_` line of the shape above) and commit it as Record's commit routine describes. Never commit changes to `destination.md` from a Learn run.
 
 ### 5a. Bound every silence claim
 
