@@ -1,6 +1,6 @@
 ---
 name: learn
-version: 3.0.2
+version: 3.0.3
 description: 'Automatic learning service. Improve or Destination schedules it when accumulated evidence makes the current learning stale; it reads the trail as a single document, forms arc-level claims, and refreshes learning.md without changing the target. Manual invocation remains available for diagnostics or an explicit "how are we doing?" request.'
 argument-hint: 'The target and its trail, and optionally the specific arc-question to answer'
 ---
@@ -172,7 +172,7 @@ Only Learn, or Work in its own runs, refreshes `learning.md`; label it with the 
 
 Any claim in `learning.md` that the target has reached silence, convergence, or readiness must name **which quality bar** the silence applies to and **which surfaces** are in scope. Unbounded silence claims ("the target is in good shape", "text-layer silence is now earned") are the form most likely to be overturned by the next operator-initiated probe, because a bar the learn has never tested cannot be inside the silence claim.
 
-The pattern: *"Silence on `<named bar>` for `<named surfaces>`. Bars not tested by this Learn run: `<list>`."
+The pattern: *"Silence on `<named bar>` for `<named surfaces>`. Bars not tested by this Learn run: `<list>`."* Such a claim is Learn's own reading of the arc, never convergence: convergence comes only from independent evaluators (Principle 3).
 
 Examples:
 - *"Silence on internal text-layer consistency for all non-operator-locked surfaces. Bars not tested: comparative defensibility under hostile external review, comparator coverage."*

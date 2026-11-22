@@ -1,6 +1,6 @@
 ---
 name: record
-version: 3.4.1
+version: 3.4.2
 description: 'Automatic egress service for substantive work. Writes a structured record in the bound memory scope of the shared ACM (a new file in records/; legacy in-repo .acm/audit-trail.md is appended) — the interpretation, examination, decisions, actions, and reflection. Destination, Improve, Learn, and Probe apply Record automatically; the operator should never need to invoke it separately. Direct use remains available for consequential work outside those workflows and independent-writer mode.'
 argument-hint: 'The target being worked on (repo, file, system) — used to populate the record header'
 ---
@@ -238,11 +238,11 @@ For every entry:
 3. Name and reject at least one alternative when a decision exists.
 4. Prefer literal operator text and tool evidence over paraphrase.
 
-Independent capture is optional for ordinary Record validity. When the operator wants it surfaced in memory, link or copy it at `evidence/<date>-<slug>.md` in the active scope and add `transcript-file:` plus `transcript-fidelity:`:
+Independent capture is required for work that takes effect with no human gate (ACM R-04); without it the record is the agent's testimony only. For gated work it is optional. When the operator wants it surfaced in memory, link or copy it at `evidence/<date>-<slug>.md` in the active scope and add `transcript-file:` plus `transcript-fidelity:`:
 
 - `verbatim` - exact export from an independent source.
 - `verbatim-structural` - independent export produced through a structural capture workflow.
-- `reconstructed` - legacy self-authored reconstruction; weakest fidelity and never independent.
+- `reconstructed` - self-authored reconstruction; weakest fidelity and never independent. It is not placed in `evidence/`; if kept, it belongs in a record, marked reconstructed.
 
 Never label reconstructed material as verbatim.
 
