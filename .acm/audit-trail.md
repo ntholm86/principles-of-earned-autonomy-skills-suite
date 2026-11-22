@@ -18889,3 +18889,24 @@ Prediction: verify.py still passes and no skill or tool reads the new section. R
 - *About to declare silence:* not fired.
 - *Contradicts prior [!REALIZATION]:* not fired.
 - *Operator explicitly asked:* not fired.
+## 2026-11-22 - memory-checker-and-citation-version
+
+- target: harness/tools/memory_check.py (new), verify.py, CITATION.cff, CHANGELOG, INSTALLING
+- operator: Nils Wendelboe Holmager
+- agent: Claude (Sonnet 5.5; the session began on Claude Opus 5.5); host: Copilot SDK in VS Code
+- skill: Improve
+- outcome: a memory repository can be checked against the reference layout and each mandate's human gate by one command; the citation version can no longer drift from the changelog
+- delta: memory_check.py and 8 tests; verify.py check_citation_version and 2 tests; CITATION.cff 4.17.0 to 6.0.3; CHANGELOG v6.0.3; one INSTALLING line
+
+The author asked to tie up the loose ends. Two were known: the citation said 4.17.0 while the suite was at 6.0.2, and the hand check of "every mandate states its human gate" (R-02) done the same morning was not repeatable.
+
+[!DECISION] The citation tracks the current changelog version, as the specification repository's citation already does for an untagged version; its DOIs are labelled archives of older versions, so nothing claims a release. A check in verify.py keeps the two equal. The memory checker is optional, standard-library only and reports structure as failures and attribution (R-16, still Proposed) as warnings, because old records cannot be edited.
+
+Prediction: the checker passes the author's personal memory and the employer memory on structure and finds only disposable generated files tracked in the latter. Result: confirmed (0 failures; 13 attribution warnings in the personal memory, 11 tracked generated files in the employer memory).
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired.
+- *About to declare silence:* not fired.
+- *Contradicts prior [!REALIZATION]:* not fired.
+- *Operator explicitly asked:* not fired.

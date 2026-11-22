@@ -1,5 +1,9 @@
 # Changelog
 
+## v6.0.3 - 2026-11-22
+
+- **A memory checker, and the citation version is checked.** ``harness/tools/memory_check.py <memory-root>`` (optional, stdlib only) checks a memory repository against the reference layout: the ``.acm-root`` marker, no hidden ``.acm/`` folder, no retired file names, every ``destination.md`` with its current-destination and destination-history lines in order and a ``## Human gate`` section in the current mandate (R-02), every ``repositories/<id>/repository.json`` valid and unambiguous, record names and identifiers; it warns about records without the R-16 attribution fields and about tracked ``generated/`` files. ``verify.py`` now checks that ``CITATION.cff`` states the version of the newest changelog entry (it said 4.17.0 while the suite was at 6.0.2); the citation is brought to 6.0.3. No skill changed.
+
 ## v6.0.2 - 2026-11-22
 
 - **`verify.py` runs on a bound memory scope as well as on this repository's own `.acm/`.** It reads a legacy `audit-trail.md` plus `records/` from the bound scope when the clone is bound, otherwise the in-repository `.acm/`; it resolves `.acm/...` evidence paths in the active scope, requires the marker extract only in a legacy `.acm/`, and skips the trail checks with a note on a clone that has no memory at all; `harness/tests/test_verify.py` follows. The suite's own `.acm/` stays in this repository, public, as research evidence: the author briefly moved it to a private memory and undid that the same day. No skill changed.

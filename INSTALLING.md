@@ -160,6 +160,7 @@ python harness/tools/record.py resolve            # prints the bound scope, or w
 python harness/tools/record.py markers --write    # writes .acm/generated/trail-markers.md
 python harness/tools/record.py index              # prints the timeline of all entries
 python harness/tools/record.py summary            # prints the latest entry
+python harness/tools/memory_check.py <memory-root>   # checks a memory repository: layout, retired names, each mandate's human gate, bindings, record names
 ```
 It writes only into the resolved scope. No network calls.
 

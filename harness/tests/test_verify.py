@@ -26,6 +26,7 @@ BLOCKING_CHECKS = (
     "check_session_fidelity_structure",
     "check_trigger_evaluation",
     "check_derived_artifact_freshness",
+    "check_citation_version",
 )
 
 
@@ -70,6 +71,27 @@ class ReversalReviewTests(unittest.TestCase):
     def test_missing_log_is_left_to_blocking_checks(self):
         with synthetic_trail("The file was reverted.", present=False):
             self.assertEqual(verify.check_reversal_honesty_gate(), [])
+
+
+class CitationVersionTests(unittest.TestCase):
+    def check(self, changelog: str, citation: str) -> list[str]:
+        import tempfile
+
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "CHANGELOG.md").write_text(changelog, encoding="utf-8")
+            (root / "CITATION.cff").write_text(citation, encoding="utf-8")
+            with patch.object(verify, "ROOT", root):
+                return verify.check_citation_version()
+
+    def test_matching_versions_pass(self):
+        self.assertEqual(self.check("# Changelog\n\n## v6.0.2 - 2026-11-22\n\n## v6.0.1 - x\n", 'version: "6.0.2"\n'), [])
+
+    def test_stale_citation_fails(self):
+        failures = self.check("# Changelog\n\n## v6.0.2 - 2026-11-22\n", 'version: "4.17.0"\n')
+        self.assertEqual(len(failures), 1)
+        self.assertIn("4.17.0", failures[0])
+        self.assertIn("v6.0.2", failures[0])
 
 
 class VerifierExitTests(unittest.TestCase):

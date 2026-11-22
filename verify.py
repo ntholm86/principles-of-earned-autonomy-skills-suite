@@ -36,6 +36,7 @@ Checks:
 14. Entries under the reversal honesty contract produce review warnings for
     lexical reversal cues without a `[!REVERSAL]` marker. Matches are advisory:
     they do not establish that a decision changed.
+16. `CITATION.cff` states the version of the newest `CHANGELOG.md` entry.
 15. `improve/SKILL.md`, `learn/SKILL.md`, `intent/SKILL.md`, and
     `destination/SKILL.md` each carry the ACM §4 Memory Repository and Scopes paragraph with
     the identical reference to Record's single definition of memory resolution
@@ -657,6 +658,25 @@ def check_trigger_evaluation() -> list[str]:
     return failures
 
 
+def check_citation_version() -> list[str]:
+    """CITATION.cff must state the version of the newest CHANGELOG entry.
+
+    The version drifted between the two before; a release takes its metadata from
+    CITATION.cff, so a stale value would be cited as the current version.
+    """
+    changelog = ROOT / "CHANGELOG.md"
+    citation = ROOT / "CITATION.cff"
+    if not changelog.is_file() or not citation.is_file():
+        return []
+    newest = re.search(r"^## v(\d+\.\d+\.\d+)\b", changelog.read_text(encoding="utf-8"), re.M)
+    cited = re.search(r"^version:\s*\"?(\d+\.\d+\.\d+)\"?\s*$", citation.read_text(encoding="utf-8"), re.M)
+    if newest is None or cited is None:
+        return ["CITATION.cff has no version or CHANGELOG.md has no version entry to compare"]
+    if newest.group(1) != cited.group(1):
+        return [f"CITATION.cff version {cited.group(1)} differs from the newest CHANGELOG entry v{newest.group(1)}"]
+    return []
+
+
 def check_derived_artifact_freshness() -> list[str]:
     """Fail when generated/trail-markers.md is older than the trail.
 
@@ -757,6 +777,7 @@ def main() -> int:
     all_failures.extend(check_trigger_evaluation())
     reversal_warnings = check_reversal_honesty_gate()
     all_failures.extend(check_derived_artifact_freshness())
+    all_failures.extend(check_citation_version())
 
     if reversal_warnings:
         print(f"WARNING - {len(reversal_warnings)} possible unrecorded reversal(s); review context:")
