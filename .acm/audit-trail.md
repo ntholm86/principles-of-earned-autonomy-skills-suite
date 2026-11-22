@@ -18820,3 +18820,22 @@ The author approved the proposal (drafts/v0.6.0/naming-proposal.md in the shared
 - *About to declare silence:* not fired.
 - *Contradicts prior [!REALIZATION]:* not fired.
 - *Operator explicitly asked:* not fired; a change request.
+## 2026-11-22 - rename-integrity-check
+
+- target: every repository after the Orient to Learn rename (suite, Work, specification, memories, sites, employer repositories)
+- operator: Nils Wendelboe Holmager
+- agent: Claude (Sonnet 5.5; the session began on Claude Opus 5.5); host: Copilot SDK in VS Code
+- skill: Improve
+- outcome: no old name is read by any current skill, installer, checker or page; older trails keep their names and learn/SKILL.md now maps them; four items need the author (acm-work working tree, ai-steward, in-repository employer memory, orphan index files)
+- delta: learn/SKILL.md 3.0.1; CHANGELOG v6.0.1
+
+The author asked for an integrity check across all repositories, including the files in trails, after the rename.
+
+[!DECISION] Trails stay append-only; instead of editing them, the Learn skill states the former names (Orient, orientation.md, and the generated learning.md, learning-archive.md, history.md) so a reader of an old entry can map it. Found by the check, not fixed in the work memory: the 22 generated files moved into generated/ still carry their old headings and name commands that no longer exist (record.py history/learning --write), and eight trail-index.md files have no producer left; another process was changing the acm-work working tree during the check (root records/, generated/ and wsa-software-conventions/.acm deleted from the working tree, nothing committed), so no change was made there. ai-steward's code still reads .acm/orientation.md and the old generated learning.md, and running Learn in that repository would overwrite its generated learning.md.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired.
+- *About to declare silence:* not fired.
+- *Contradicts prior [!REALIZATION]:* not fired.
+- *Operator explicitly asked:* not fired; a check request.
