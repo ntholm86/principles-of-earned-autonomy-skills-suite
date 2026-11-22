@@ -2,6 +2,8 @@
 
 _Author: Nils Holmager ([@ntholm86](https://github.com/ntholm86)). Version 0.1, 2026-05-01. This is a stance, not a paper. It states what I'm betting on, where I think it differs from adjacent work, and what would prove me wrong._
 
+> **Note on names (2026-11-22).** This stance is kept as written on its date. Two of its skills have since been renamed: **Trail is now Record** and **Orient is now Learn** (its file orientation.md is now learning.md). The concept of an audit trail, and the file udit-trail.md, are unchanged.
+
 ---
 
 ## The situation, in plain language

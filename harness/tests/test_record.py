@@ -177,7 +177,7 @@ class RecordingTests(MemoryFixture):
         self.assertIn("legacy-entry", log.read_text(encoding="utf-8"))
         self.assertFalse((work / ".acm" / "records").exists())
 
-    def test_history_reads_legacy_trail_then_records_in_filename_order(self):
+    def test_index_reads_legacy_trail_then_records_in_filename_order(self):
         work, root = self.work_repo("work")
         memory = self.memory_repo("memory", {"work": root})
         self.register(memory)
@@ -192,14 +192,17 @@ class RecordingTests(MemoryFixture):
         (scope / "records" / "20260101T120000Z-earlier.md").write_text(
             ENTRY.format(date="2026-01-01", slug="earlier"), encoding="utf-8"
         )
-        result = self.run_record(work, "history")
+        result = self.run_record(work, "index")
         self.assertEqual(result.returncode, 0, result.stderr)
         slugs = re.findall(r"Run\s+\d+\s+\S+\s+(\S+)", result.stdout)
         self.assertEqual(slugs, ["legacy", "earlier", "later"])
-        written = self.run_record(work, "history", "--write")
+        written = self.run_record(work, "markers", "--write")
         self.assertEqual(written.returncode, 0, written.stderr)
-        history = (scope / "history.md").read_text(encoding="utf-8")
-        self.assertIn("2 `records/` record(s) at memory revision", history)
+        markers = (scope / "generated" / "trail-markers.md").read_text(encoding="utf-8")
+        self.assertIn("GENERATED from", markers)
+        self.assertIn("2 `records/` record(s) at memory revision", markers)
+        self.assertFalse((scope / "history.md").exists())
+        self.assertFalse((scope / "learning.md").exists())
 
     def test_a_sealed_month_reads_before_open_records(self):
         work, root = self.work_repo("work")
@@ -213,7 +216,7 @@ class RecordingTests(MemoryFixture):
         )
         (records / "2026-10.md").write_text(sealed, encoding="utf-8")
         (records / "20261101T000000Z-c.md").write_text(ENTRY.format(date="2026-11-01", slug="c"), encoding="utf-8")
-        result = self.run_record(work, "history")
+        result = self.run_record(work, "index")
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertEqual(re.findall(r"Run\s+\d+\s+\S+\s+(\S+)", result.stdout), ["a", "b", "c"])
 

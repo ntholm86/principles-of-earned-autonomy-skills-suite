@@ -18801,3 +18801,22 @@ The author: independent evidence capture matters only where there is no human ga
 - *About to declare silence:* not fired.
 - *Contradicts prior [!REALIZATION]:* not fired.
 - *Operator explicitly asked:* not fired; a change request.
+## 2026-11-22 - orient-becomes-learn
+
+- target: the skills suite (learn/, record/, improve/, intent/, destination/, probe/, installers, record.py, verify.py, tests, docs, own .acm/)
+- operator: Nils Wendelboe Holmager
+- agent: Claude (Sonnet 5.5; the session began on Claude Opus 5.5); host: Copilot SDK in VS Code
+- skill: Improve
+- outcome: Orient is Learn, orientation.md is learning.md, generated files live in generated/; history.md retired
+- delta: learn/SKILL.md 3.0.0; record/SKILL.md 3.3.0; improve/SKILL.md 3.26.0; intent/SKILL.md 1.15.0; destination/SKILL.md 2.15.0; probe/SKILL.md 3.8.0 (CHANGELOG v6.0.0)
+
+The author approved the proposal (drafts/v0.6.0/naming-proposal.md in the shared memory): skill `learn`; `learning.md`; a `generated/` folder with `trail-markers.md` and `trail-markers-archive.md`; `history.md` retired; rename before his colleague starts. He ticked leaving ai-steward's own REORIENT alone and adding one dated line to the principles case study; he did not tick deleting the work memory's generated files, so those move into `generated/` and are kept.
+
+[!DECISION] Done in the same order as Trail to Record: helper and verifier first, then installers and tests (a stale `orient` is removed only when its `SKILL.md` says `name: orient`; two new tests), then the text with a global rename and a hand pass for grammar and for the places that named both the generated and the synthesized file (they were edited before the global rename so `learning.md` could not be confused). Moved this repository's own `.acm/` generated files before renaming `orientation.md` (the collision order in the proposal). Corrected the proposal on one point: `record.py summary` does not print the index; `record.py index` now does, print only. Kept the lineage sentence naming Boyd's OODA `Orient`. Rejected: renaming history (trails, changelog, archives), the older Zenodo versions, or POSITION.md's text (a dated note was added instead).
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired.
+- *About to declare silence:* not fired.
+- *Contradicts prior [!REALIZATION]:* not fired.
+- *Operator explicitly asked:* not fired; a change request.

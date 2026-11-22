@@ -1,6 +1,6 @@
 ---
 name: intent
-version: 1.14.0
+version: 1.15.0
 description: 'Automatic ingress service for substantive work. Apply Operator''s Intent to the user''s own prompt before acting: interpret what the user is trying to achieve, narrate it, and honor the operator''s explicit supervision or delegation boundary. The operator should never need to invoke this skill separately. SKIP only for direct operations that require neither interpretation nor action authority (for example, reading a named file or answering yes/no); never skip when composed with Improve.'
 argument-hint: 'Triggered automatically by any substantive user prompt; can also be invoked explicitly: "apply intent to this request"'
 ---
@@ -17,7 +17,7 @@ A prompt is a compressed statement of intent. The user has a destination in mind
 
 This skill makes that interpretation explicit and visible.
 
-**Automatic composition contract:** In the full suite, Intent runs before Destination, Improve, Orient, Probe, and any other substantive work. The operator should never have to remember or be told to invoke `/intent`. A direct invocation remains available for testing, debugging, or an interpretation-only conversation.
+**Automatic composition contract:** In the full suite, Intent runs before Destination, Improve, Learn, Probe, and any other substantive work. The operator should never have to remember or be told to invoke `/intent`. A direct invocation remains available for testing, debugging, or an interpretation-only conversation.
 
 ---
 
@@ -40,10 +40,10 @@ A single prompt is a thin signal. Before extracting intent, read what already ex
 
 **ACM §4 Memory Repository and Scopes.** Resolve the active scope and read the governing chain as [Record defines it](../record/SKILL.md#where-memory-lives) — memory-wide, then repository, then path, then task destination, broadest first; the higher scope wins; nothing above `.acm-root` and no walking up the code tree. File names such as `destination.md` mean that file in the active scope. Unbound, ambiguous or unavailable memory is reported as such, and no guessed memory is read or written; the in-repo `.acm/` of an unbound repository is legacy memory. Without Record installed, the essentials are: memory is a separate repository listed in `~/.acm/memories` and bound by the work repository's root commit, and no `.acm/` is ever created in the work repository. A prompt interpreted without the higher mandates may miss constraints that reshape what it means.
 
-**Task scopes inside the repo — select the active scope.** A repository scope may contain named task scopes (structure and hierarchy in [record/SKILL.md](../record/SKILL.md)). Deciding which scope this prompt belongs to is part of interpreting it: an existing task scope when the prompt names or clearly continues that task; otherwise the path scope the work is inside, when one exists; otherwise the repo scope; a new task scope only when the prompt names a task no existing scope covers. Name the chosen scope in the narration ("scope: checkout-redesign", "scope: repo") so the operator can correct it at the same gate as the rest of the interpretation; creating a scope is never a silent side effect. Read the repo scope's destination, orientation, and learning before the task scope's own files, and let the higher scope win on any conflict.
+**Task scopes inside the repo — select the active scope.** A repository scope may contain named task scopes (structure and hierarchy in [record/SKILL.md](../record/SKILL.md)). Deciding which scope this prompt belongs to is part of interpreting it: an existing task scope when the prompt names or clearly continues that task; otherwise the path scope the work is inside, when one exists; otherwise the repo scope; a new task scope only when the prompt names a task no existing scope covers. Name the chosen scope in the narration ("scope: checkout-redesign", "scope: repo") so the operator can correct it at the same gate as the rest of the interpretation; creating a scope is never a silent side effect. Read the repo scope's destination, learning, and learning before the task scope's own files, and let the higher scope win on any conflict.
 
 - **Destination** (`destination.md`) — the operator-held destination. If present, this is the most important context. The prompt is a single instruction; the destination is the overarching goal it serves. Read it first. Interpret the prompt in light of where the operator has said they are trying to go.
-- **orientation.md** (`orientation.md`) — the Orient-derived current orientation. Where the work actually is right now, what the loop has been attending to, what findings have accumulated. The prompt means something different depending on whether the target is early-stage, mid-refactor, or nearly converged.
+- **learning.md** — what this scope has learned so far, written by Learn. Where the work actually is right now, what the loop has been attending to, what findings have accumulated. The prompt means something different depending on whether the target is early-stage, mid-refactor, or nearly converged.
 - **The trail** (a legacy `.acm/audit-trail.md`, then `records/`) — past decisions, reversals, and realisations reveal what the user has consistently cared about, what they rejected, and where things went wrong before. A pattern of `[!REVERSAL]` entries around a particular approach is stronger evidence of intent than any single prompt.
 - **The conversation** — corrections, approvals, and the moments the user stepped in all carry intent signal. A user who keeps redirecting toward simplicity is telling you something that no single prompt states explicitly.
 - **Past sessions** — when relevant records are available, read the exchanges that clarify intent from `.acm/transcripts/`, linked host or harness capture, or `.acm/sessions/` (including legacy summaries). Use their provenance and fidelity markings to distinguish independent capture from agent-authored summaries; location alone establishes neither. Accumulated learnings about how this user frames problems, what they consider done, and what they care about carry over.
@@ -108,7 +108,7 @@ Proceed with the interpreted task. If during the work the interpretation turns o
 
 This skill runs first. When Improve or Probe is also active, Intent operates on the prompt that identifies the target before those skills examine the target itself. If Intent changes what the target is, the downstream skill works on the corrected target.
 
-When Destination or Orient is also active, their output files (`destination.md` and `orientation.md`) are already read as part of Intent's own 'Read the accumulated context' step — no additional ordering is needed. Intent reads these files; it never writes them.
+When Destination or Learn is also active, their output files (`destination.md` and `learning.md`) are already read as part of Intent's own 'Read the accumulated context' step — no additional ordering is needed. Intent reads these files; it never writes them.
 
 Record is the automatic egress service paired with Intent. When Intent prefixes another skill, that downstream skill records one combined entry and includes the Intent narration verbatim in "Interpretation of the ask" — do not create a separate entry for the prefix. When Intent is the only active skill and the interaction itself produces a decision, realization, or finding, apply Record automatically at the end so the next session does not start cold.
 

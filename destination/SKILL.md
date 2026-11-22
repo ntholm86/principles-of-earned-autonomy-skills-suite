@@ -1,6 +1,6 @@
 ---
 name: destination
-version: 2.14.0
+version: 2.15.0
 description: 'Automatic direction-consolidation service. Improve schedules it when accumulated work makes cross-run direction useful; it surfaces sourced guesses about durable direction as questions the operator can confirm, correct, or reject. Manual invocation remains available when the operator wants to explore or revise direction.'
 argument-hint: 'Optionally: the area you want hunches about (a specific concern, a recent decision, the project as a whole)'
 ---
@@ -50,7 +50,7 @@ Before forming any hunches, look at what is available in memory:
 **ACM §4 Memory Repository and Scopes.** Resolve the active scope and read the governing chain as [Record defines it](../record/SKILL.md#where-memory-lives) — memory-wide, then repository, then path, then task destination, broadest first; the higher scope wins; nothing above `.acm-root` and no walking up the code tree. File names such as `destination.md` mean that file in the active scope. Unbound, ambiguous or unavailable memory is reported as such, and no guessed memory is read or written; the in-repo `.acm/` of an unbound repository is legacy memory. Without Record installed, the essentials are: memory is a separate repository listed in `~/.acm/memories` and bound by the work repository's root commit, and no `.acm/` is ever created in the work repository. Destination authors the repository- or task-level `destination.md`, so a hunch formed without the higher mandates risks proposing what a higher scope has already settled.
 
 - `destination.md` — what the operator has explicitly said (if it exists).
-- `orientation.md` — what the agent's last arc-read concluded about the target.
+- `learning.md` — what the agent's last arc-read concluded about the target.
 - The trail (a legacy `.acm/audit-trail.md`, then `records/`) — recent decisions, reversals, realisations.
 - When the run's active scope is a task scope (defined in [record/SKILL.md](../record/SKILL.md)), these paths mean that scope, and the file Destination writes is the task's `destination.md`. A task destination is layered under the repo destination: it may narrow it and never contradict it, because the higher scope always wins. Read the repo destination first.
 - Relevant prior conversation records, if available: `.acm/transcripts/`, linked host or harness capture, and `.acm/sessions/` (including legacy summaries). Distinguish independent capture from agent-authored summaries by provenance and fidelity markings, not directory name.
@@ -70,7 +70,7 @@ Write down two to five sourced inferences. Each is a claim the evidence supports
 - **Priority.** "I think Y matters more to you than the trail's attention split would imply."
 - **Constraint.** "I think you would reject Z even though nothing currently rules it out."
 - **Question being asked.** "I think the question you are actually trying to answer is W, even though you have been phrasing it as V."
-- **Quality bar.** "I think the bar you are actually holding the target to is Q (e.g. comparative defensibility under hostile external review, comparator coverage, empirical replication, operational deployability), not just internal consistency." Surfacing the operator-held quality bars early is what lets a later Orient run declare silence against a named bar rather than infer one. *Origin:* the manifesto target's retro-v201 → retro-v202 transition (2026-06-04) showed that orient runs which silence-claim against bars they have never been challenged on are structurally fragile; the upstream fix is for the destination to name the bars in the first place. Full provenance: this repo's `.acm/audit-trail.md`, entry slug `improve-destination-named-boundary-symmetric`.
+- **Quality bar.** "I think the bar you are actually holding the target to is Q (e.g. comparative defensibility under hostile external review, comparator coverage, empirical replication, operational deployability), not just internal consistency." Surfacing the operator-held quality bars early is what lets a later Learn run declare silence against a named bar rather than infer one. *Origin:* the manifesto target's retro-v201 → retro-v202 transition (2026-06-04) showed that learn runs which silence-claim against bars they have never been challenged on are structurally fragile; the upstream fix is for the destination to name the bars in the first place. Full provenance: this repo's `.acm/audit-trail.md`, entry slug `improve-destination-named-boundary-symmetric`.
 - **Human gate.** "I think this work reaches its users only after <who> reviews it, and that without that review you would want me to <stop / only prepare>." Or: "I think nobody reviews this before it takes effect." A mandate states where the human gate is and what the agent may do before it and without it (ACM R-02); where the evidence does not show it, make it the first question. Work with no gate also needs independent evidence capture (ACM R-04).
 
 Each inference must be:
@@ -128,7 +128,7 @@ Keep the active mandate cheap and unambiguous to read as the destination evolves
 
 `complete` is a governance claim, not a formatting convenience. Before adding or retaining it, reconcile every earlier destination layer: carry each still-active commitment into the current section, or make its rejection or supersession explicit there. If that reconciliation has not been performed, omit the comments; every consuming skill will then read the full file. Never infer that a heading, horizontal rule, date, or position in the file marks a complete current destination.
 
-If the conversation produced arc-claims about the target's current state rather than destination claims, those belong in orientation.md — but orientation.md is Orient's to write. Destination surfaces them; Orient (or the next Improve run) decides what to do with them.
+If the conversation produced arc-claims about the target's current state rather than destination claims, those belong in learning.md — but learning.md is Learn's to write. Destination surfaces them; Learn (or the next Improve run) decides what to do with them.
 
 ### 6. Record the run in the trail
 
@@ -144,19 +144,19 @@ The trail entry for a Destination run is shorter than an Improve entry. It must 
 
 A Destination run that produced no inferences is still recorded — silence is signal too.
 
-### 7. Refresh orientation when direction changed
+### 7. Refresh learning when direction changed
 
-If this run created `destination.md` or materially changed its direction, constraints, priorities, or quality bars, **apply [Orient](../orient/SKILL.md) automatically after the record is durable.** The existing orientation was formed against an older destination and is now stale by definition. Scope the arc-read to: "Re-orient the accumulated work against the changed destination." Do not ask the operator to invoke `/orient`.
+If this run created `destination.md` or materially changed its direction, constraints, priorities, or quality bars, **apply [Learn](../learn/SKILL.md) automatically after the record is durable.** The existing learning was formed against an older destination and is now stale by definition. Scope the arc-read to: "Re-learn the accumulated work against the changed destination." Do not ask the operator to invoke `/learn`.
 
-Do not run Orient when Destination produced no change, only corrected wording without changing meaning, or ended in silence. A destination edit is not automatically a destination change; material meaning is the trigger.
+Do not run Learn when Destination produced no change, only corrected wording without changing meaning, or ended in silence. A destination edit is not automatically a destination change; material meaning is the trigger.
 
-This automatic handoff preserves ownership: Destination changes where the work is going; Orient automatically recomputes where the work now stands relative to it. Orient must not revise the destination or change the target.
+This automatic handoff preserves ownership: Destination changes where the work is going; Learn automatically recomputes where the work now stands relative to it. Learn must not revise the destination or change the target.
 
 ## What this skill does not do
 
 - **It does not act on unconfirmed inferences.** A confirmed destination becomes input to the next run; it does not become the next run. The separation matters: an agent that acts on its own inferences without confirmation has stopped being autonomous-with-oversight and started being autonomous-without-it.
 - **It does not replace Intent.** Intent surfaces interpretation of *one specific request*. Destination surfaces interpretation of *the broader direction* across requests. Run Intent at the start of a request; run Destination when the broader direction itself is unclear.
-- **It does not replace Orient.** Orient reads the trail and forms claims about what the target *is becoming*. Destination reads conversation and forms claims about what the operator *wants the target to become*. A material Destination change automatically schedules Orient so the current orientation is recomputed against the new direction.
+- **It does not replace Learn.** Learn reads the trail and forms claims about what the target *is becoming*. Destination reads conversation and forms claims about what the operator *wants the target to become*. A material Destination change automatically schedules Learn so the current learning is recomputed against the new direction.
 - **It does not score the operator's clarity.** No rubric for "destination quality." If the operator is exploring, that is a legitimate state — the skill helps them externalise the exploration, not grade it.
 
 ## Self-targeting

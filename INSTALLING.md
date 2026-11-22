@@ -72,7 +72,7 @@ Copilot looks for skills at exactly **one level deep** under `.copilot/skills/`:
 
 ## Operational install (recommended)
 
-The normal operating model uses five installed skills but only one deliberate operator action: **Run Improve**. Intent and Record are automatic services; Destination and Orient activate when Improve detects that accumulated evidence needs durable direction or a refreshed map.
+The normal operating model uses five installed skills but only one deliberate operator action: **Run Improve**. Intent and Record are automatic services; Destination and Learn activate when Improve detects that accumulated evidence needs durable direction or a refreshed map.
 
 ```
 your-repo/
@@ -80,7 +80,7 @@ your-repo/
     skills/
       destination/
         SKILL.md
-      orient/
+      learn/
         SKILL.md
       improve/
         SKILL.md
@@ -90,7 +90,7 @@ your-repo/
         SKILL.md
 ```
 
-Invoke `/improve`. Do not add routine `/intent`, `/destination`, `/record`, or `/orient` steps; manual `/destination` and `/orient` remain available as overrides.
+Invoke `/improve`. Do not add routine `/intent`, `/destination`, `/record`, or `/learn` steps; manual `/destination` and `/learn` remain available as overrides.
 
 ---
 
@@ -108,7 +108,7 @@ your-repo/
         SKILL.md
       record/
         SKILL.md
-      orient/
+      learn/
         SKILL.md
       probe/
         SKILL.md
@@ -120,7 +120,7 @@ Optionally copy `PRINCIPLES.md` next to the skill folders — the skills referen
 
 ### Probe is optional scientific instrumentation
 
-`probe/SKILL.md` measures [Autonomous Reasoning Fidelity](https://github.com/ntholm86/autonomous-agent-principles/blob/v1.0.0/PRINCIPLES.md#autonomous-reasoning-fidelity-operational-definition). It exists so controlled ARF experiments can be reproduced. Destination, Orient, Improve, Intent, and Record neither require nor invoke it. Install it with `--research` or `-Research` only when conducting that research; the default installer leaves it out.
+`probe/SKILL.md` measures [Autonomous Reasoning Fidelity](https://github.com/ntholm86/autonomous-agent-principles/blob/v1.0.0/PRINCIPLES.md#autonomous-reasoning-fidelity-operational-definition). It exists so controlled ARF experiments can be reproduced. Destination, Learn, Improve, Intent, and Record neither require nor invoke it. Install it with `--research` or `-Research` only when conducting that research; the default installer leaves it out.
 
 ---
 
@@ -134,7 +134,7 @@ All skills work with only their own `SKILL.md`. No required sibling files.
 | **destination** | `PRINCIPLES.md` |
 | **improve** | `PRINCIPLES.md` |
 | **trail** | nothing — records in the bound scope of your shared ACM |
-| **orient** | nothing — reads the trail written by trail |
+| **learn** | nothing — reads the trail written by trail |
 
 ---
 
@@ -154,10 +154,11 @@ A repository that already has an in-repo `.acm/audit-trail.md` from earlier ACM 
 
 `harness/tools/record.py` and `verify.py` exist to support the experiment that produced this suite — running the loop 350+ times and proving the trail is intact. They remain in the cloned repository and are not copied by the one-line installer.
 
-**`harness/tools/record.py`** — resolves the scope, writes records, and generates a human-readable `history.md` from the trail. Run from the work repo root:
+**`harness/tools/record.py`** — resolves the scope, writes records, and generates `generated/trail-markers.md` from the trail. Run from the work repo root:
 ```
 python harness/tools/record.py resolve            # prints the bound scope, or why there is none
-python harness/tools/record.py history --write    # writes .acm/history.md
+python harness/tools/record.py markers --write    # writes .acm/generated/trail-markers.md
+python harness/tools/record.py index              # prints the timeline of all entries
 python harness/tools/record.py summary            # prints the latest entry
 ```
 It writes only into the resolved scope. No network calls.
@@ -176,7 +177,7 @@ Once installed, remember one action:
 
 - **Run** (`/improve`) — interpret this prompt, advance the work, and coordinate the suite.
 
-Intent runs automatically before substantive work. Record runs automatically afterward. Improve triggers Destination when broader direction needs operator confirmation and Orient when the evidence-based freshness check fires. Manual `/destination` and `/orient` remain available as overrides, but are not routine workflow steps. Probe is outside this operating model; `/probe` is only for controlled ARF research.
+Intent runs automatically before substantive work. Record runs automatically afterward. Improve triggers Destination when broader direction needs operator confirmation and Learn when the evidence-based freshness check fires. Manual `/destination` and `/learn` remain available as overrides, but are not routine workflow steps. Probe is outside this operating model; `/probe` is only for controlled ARF research.
 
 Example:
 ```

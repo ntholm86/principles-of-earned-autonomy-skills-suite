@@ -20,9 +20,9 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1     # Windows
 
 The default installer includes the five operational skills and omits Probe, keeping the visible command surface focused on normal use. ARF researchers can add it with `bash install.sh --research` or `powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1 -Research`.
 
-Or copy the five operational skill folders into `<your-repo>/.copilot/skills/`: `intent/`, `destination/`, `improve/`, `record/`, `orient/`. Add `probe/` only if you are conducting ARF research.
+Or copy the five operational skill folders into `<your-repo>/.copilot/skills/`: `intent/`, `destination/`, `improve/`, `record/`, `learn/`. Add `probe/` only if you are conducting ARF research.
 
-The operator workflow is **Run Improve**. Intent interprets each prompt, Record writes each result, and Improve automatically triggers Destination or Orient when accumulated evidence makes durable direction or a refreshed map useful. Probe is optional scientific instrumentation and is not required for this workflow.
+The operator workflow is **Run Improve**. Intent interprets each prompt, Record writes each result, and Improve automatically triggers Destination or Learn when accumulated evidence makes durable direction or a refreshed map useful. Probe is optional scientific instrumentation and is not required for this workflow.
 
 ## Run one improve iteration (7 minutes)
 
@@ -55,17 +55,17 @@ Open these and skim:
 
 The first two are sufficient for a successful first run. Destination is created when the work needs durable cross-run direction, not as setup ceremony.
 
-## Orientation happens automatically
+## Learning happens automatically
 
-You do not need to count iterations or remember an Orient step. A material Destination change schedules Orient. Improve also evaluates orientation freshness after every recorded run and schedules Orient when the trail forms a meaningful arc, contradicts the current orientation, or approaches convergence.
+You do not need to count iterations or remember a Learn step. A material Destination change schedules Learn. Improve also evaluates learning freshness after every recorded run and schedules Learn when the trail forms a meaningful arc, contradicts the current learning, or approaches convergence.
 
 For a diagnostic arc-read at any time, you can still run:
 
 ```
-/orient read the accumulated trail and tell me whether the loop is still working on the right things
+/learn read the accumulated trail and tell me whether the loop is still working on the right things
 ```
 
-Manual `/orient` is an override, not part of the normal workflow.
+Manual `/learn` is an override, not part of the normal workflow.
 
 ## Optional: lock in trail discipline
 

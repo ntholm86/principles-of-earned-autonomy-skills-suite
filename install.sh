@@ -9,7 +9,7 @@
 # Add --research to include the optional Probe skill.
 set -e
 
-SKILLS=(intent destination improve record orient)
+SKILLS=(intent destination improve record learn)
 
 SRC=$(cd "$(dirname "$0")" && pwd)
 DST="$HOME/.copilot/skills"
@@ -57,6 +57,12 @@ if grep -qx 'name: trail' "$DST/trail/SKILL.md" 2>/dev/null; then
   echo "  removed: trail (renamed to record)"
 fi
 
+# The Orient skill was renamed Learn in v6.0.0; remove a stale installed copy (only if it is that skill).
+if grep -qx 'name: orient' "$DST/orient/SKILL.md" 2>/dev/null; then
+  rm -rf "$DST/orient"
+  echo "  removed: orient (renamed to learn)"
+fi
+
 # Optional: PRINCIPLES.md alongside the skills folders
 if [ -f "$SRC/PRINCIPLES.md" ]; then
   cp "$SRC/PRINCIPLES.md" "$DST/PRINCIPLES.md"
@@ -66,7 +72,7 @@ fi
 echo ""
 echo "Installed PEA skills to: $DST"
 echo "Action: Run (/improve)"
-echo "Automatic: intent before work; record afterward; destination and orientation when evidence requires them"
+echo "Automatic: intent before work; record afterward; destination and learning when evidence requires them"
 if [ "$RESEARCH" -eq 1 ]; then
   echo "Research: /probe installed for ARF experiments"
 else

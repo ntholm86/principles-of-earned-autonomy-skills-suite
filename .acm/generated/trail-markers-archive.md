@@ -1,9 +1,8 @@
-# Learning (archive)
+# Trail markers (archive)
 
-Auto-generated from `.acm/audit-trail.md` by the `record.py learning --write` command in the autonomous-agent-skills install.
-Do not edit by hand — re-run the command to refresh.
+GENERATED from `.acm/audit-trail.md` by `record.py markers --write`. Do not edit. Safe to delete. Not required reading.
 
-Markers older than the recent window kept in `.acm/learning.md`. Read this only when the recent window doesn't cover what you're looking for — most runs will never need it.
+Markers older than the recent window kept in `trail-markers.md`. Read this only when the recent window doesn't cover what you're looking for — most runs will never need it.
 
 ## 2026-04-23 — v3 self-target and v2 retirement
 

@@ -1,36 +1,36 @@
 ---
-name: orient
-version: 2.12.1
-description: 'Automatic orientation service. Improve or Destination schedules it when accumulated evidence makes the current orientation stale; it reads the trail as a single document, forms arc-level claims, and refreshes orientation.md without changing the target. Manual invocation remains available for diagnostics or an explicit "how are we doing?" request.'
+name: learn
+version: 3.0.0
+description: 'Automatic learning service. Improve or Destination schedules it when accumulated evidence makes the current learning stale; it reads the trail as a single document, forms arc-level claims, and refreshes learning.md without changing the target. Manual invocation remains available for diagnostics or an explicit "how are we doing?" request.'
 argument-hint: 'The target and its trail, and optionally the specific arc-question to answer'
 ---
 
-# Orient
+# Learn
 
 *Read the whole arc. See what no single iteration can.*
 
-*ACM role: Synthesizes the trail into `orientation.md` — the arc-level orientation the next run starts from.*
+*ACM role: Synthesizes the trail into `learning.md` — the arc-level learning the next run starts from.*
 
-The Improve loop is optimised for one iteration at a time. Orient is optimised for reading all of them at once. Where Improve asks "what should change next?", Orient asks "what has been changing, where is the weight of this target actually sitting, and is the loop looking at the right thing?"
+The Improve loop is optimised for one iteration at a time. Learn is optimised for reading all of them at once. Where Improve asks "what should change next?", Learn asks "what has been changing, where is the weight of this target actually sitting, and is the loop looking at the right thing?"
 
-*Lineage:* this split mirrors Boyd's OODA loop (Observe-Orient-Decide-Act) — Boyd's own insight was that Orientation, not Decision, is the phase that shapes everything downstream and the one most commonly neglected. Cited explicitly in this suite's v1 ancestor but dropped when v2's skills merged into v3; restored here since it is this skill's own namesake.
+*Lineage:* Learn is the "Orient" step of Boyd's OODA loop (Observe-Orient-Decide-Act), under its former name Orient — Boyd's own insight was that orientation, not decision, is the phase that shapes everything downstream and the one most commonly neglected. Cited explicitly in this suite's v1 ancestor but dropped when v2's skills merged into v3; restored here since it is this skill's own namesake.
 
-Improve schedules Orient with evidence that the current Orientation no longer explains the governing Destination and material trail. A material Destination change is such evidence. Orient accepts that arc-question; it does not maintain a second trigger taxonomy. Manual `/orient` remains available as a diagnostic override or when the operator explicitly asks "how are we doing?"
+Improve schedules Learn with evidence that the current learning no longer explains the governing Destination and material trail. A material Destination change is such evidence. Learn accepts that arc-question; it does not maintain a second trigger taxonomy. Manual `/learn` remains available as a diagnostic override or when the operator explicitly asks "how are we doing?"
 
-**Automatic-service contract:** Orient observes and refreshes derived orientation. It never changes the target, chooses work on the operator's behalf, or revises `destination.md`. Improve or Destination schedules when the arc is read; that scheduling does not change Orient's authority.
+**Automatic-service contract:** Learn observes and refreshes derived learning. It never changes the target, chooses work on the operator's behalf, or revises `destination.md`. Improve or Destination schedules when the arc is read; that scheduling does not change Learn's authority.
 
 ## Governing principles
 
 This skill enacts two principles:
 
-1. **Observable Autonomy** — the trail exists so that arc-claims can be made and checked. Orient is the mechanism that reads the trail as evidence rather than as a log.
-2. **Convergence Is Silence** — convergence is only meaningful if the arc was read honestly before it was declared. Orient is that check.
+1. **Observable Autonomy** — the trail exists so that arc-claims can be made and checked. Learn is the mechanism that reads the trail as evidence rather than as a log.
+2. **Convergence Is Silence** — convergence is only meaningful if the arc was read honestly before it was declared. Learn is that check.
 
 Full statement of the principles: [PRINCIPLES.md](../PRINCIPLES.md) — read it if available, but this skill operates fully without it.
 
 ## The work
 
-**Apply [Intent](../intent/SKILL.md) automatically before beginning.** For an automatically scheduled run, Intent aligns the trigger and scope inherited from Destination or Improve; for a manual diagnostic run, it aligns the operator's arc-question. The operator should never have to invoke Intent separately. If this is a standalone Orient installation and Intent is unavailable, narrate the trigger and scope before continuing.
+**Apply [Intent](../intent/SKILL.md) automatically before beginning.** For an automatically scheduled run, Intent aligns the trigger and scope inherited from Destination or Improve; for a manual diagnostic run, it aligns the operator's arc-question. The operator should never have to invoke Intent separately. If this is a standalone Learn installation and Intent is unavailable, narrate the trigger and scope before continuing.
 
 ### 0. Read the destination first (all scopes)
 
@@ -38,11 +38,11 @@ Before forming any scope statement, read the governing destinations that exist. 
 
 **ACM §4 Memory Repository and Scopes.** Resolve the active scope and read the governing chain as [Record defines it](../record/SKILL.md#where-memory-lives) — memory-wide, then repository, then path, then task destination, broadest first; the higher scope wins; nothing above `.acm-root` and no walking up the code tree. File names such as `destination.md` mean that file in the active scope. Unbound, ambiguous or unavailable memory is reported as such, and no guessed memory is read or written; the in-repo `.acm/` of an unbound repository is legacy memory. Without Record installed, the essentials are: memory is a separate repository listed in `~/.acm/memories` and bound by the work repository's root commit, and no `.acm/` is ever created in the work repository. Arc-claims made without the higher mandates may miss constraints that span repositories.
 
-If no `destination.md` exists at any scope, proceed — but note the absence. An Orient run on a target without a destination is reading the arc without somewhere to orient against.
+If no `destination.md` exists at any scope, proceed — but note the absence. A Learn run on a target without a destination is reading the arc without a destination to measure the learning against.
 
-**Task scopes.** When the run's active scope is a task scope (defined in [record/SKILL.md](../record/SKILL.md)), every memory file named in the steps below means that file in that scope: its trail is the arc, its `orientation.md` is the one written. The repo scope's destination and orientation are read first as parent context and win on conflict; Orient never rewrites a parent scope's orientation from a task arc.
+**Task scopes.** When the run's active scope is a task scope (defined in [record/SKILL.md](../record/SKILL.md)), every memory file named in the steps below means that file in that scope: its trail is the arc, its `learning.md` is the one written. The repo scope's destination and learning are read first as parent context and win on conflict; Learn never rewrites a parent scope's learning from a task arc.
 
-**Bounded destination reads.** If a destination contains the exact comments `<!-- current-destination: complete -->` and `<!-- destination-history -->` in that order, the content between them is the operator-confirmed complete current mandate. Read that bounded section for routine orientation. Read the full file when Orientation must explain a destination change, resolve ambiguity or conflicting evidence, or establish historical provenance. If either comment is absent, malformed, or out of order, read the full file. Never infer a boundary from headings, dates, horizontal rules, or file position.
+**Bounded destination reads.** If a destination contains the exact comments `<!-- current-destination: complete -->` and `<!-- destination-history -->` in that order, the content between them is the operator-confirmed complete current mandate. Read that bounded section for routine learning. Read the full file when Learning must explain a destination change, resolve ambiguity or conflicting evidence, or establish historical provenance. If either comment is absent, malformed, or out of order, read the full file. Never infer a boundary from headings, dates, horizontal rules, or file position.
 
 ### 1. Identify the scope
 
@@ -56,9 +56,9 @@ A scope statement prevents the arc-read from being undirected. It also makes the
 
 ### 1b. Freshness guard (derived artifacts)
 
-The trail (a legacy `.acm/audit-trail.md`, then `records/`) is the source of truth. `history.md`, `learning.md`, and `learning-archive.md` are optional derived surfaces (see [Record](../record/SKILL.md)); an arc-claim formed from a stale derived surface is a claim about a trail that no longer exists.
+The trail (a legacy `.acm/audit-trail.md`, then `records/`) is the source of truth. `generated/trail-markers.md` and its archive are optional derived surfaces (see [Record](../record/SKILL.md)); an arc-claim formed from a stale derived surface is a claim about a trail that no longer exists.
 
-- **If the target uses derived artifacts**, regenerate them from the current trail before reading them. The helper lives in the skills clone, never in the target repo: `python <skills-repo>/harness/tools/record.py history --write` and `python <skills-repo>/harness/tools/record.py learning --write`, run from the target repository's directory so the scope resolves. Confirm each derived file is no older than the trail. If regeneration is not possible, read the trail directly and say so in the run notes; do not form arc-claims from the stale derived files.
+- **If the target uses derived artifacts**, regenerate them from the current trail before reading them. The helper lives in the skills clone, never in the target repo: `python <skills-repo>/harness/tools/record.py markers --write`, run from the target repository's directory so the scope resolves. Confirm the derived file is no older than the trail. If regeneration is not possible, read the trail directly and say so in the run notes; do not form arc-claims from the stale derived files.
 - **If the target has no derived artifacts**, there is nothing to refresh. Read the trail directly and proceed.
 
 Record in the run notes which case applied and what evidence established it (commands run, or the absence of derived files).
@@ -101,9 +101,9 @@ When step 3 produces a claim describing a *recurring* pattern — the same findi
 
 This question can resolve to "no." A recurring pattern is not automatically a governing-variable defect — some recurrences are the arc correctly behaving as designed (candidates sitting unpicked across entries while the operator directs attention elsewhere is an explicitly valid pattern, not a defect). Answer honestly in both directions; the question exists to be asked, not to manufacture an escalation.
 
-When it resolves to "yes": name the specific governing variable implicated, write it as a candidate destination-revision — not another arc-claim about the target's surface — and record it as such. Whether to act on it is the operator's decision via [Destination](../destination/SKILL.md); Orient's job is to make the governing-variable question visible, not to resolve it unilaterally.
+When it resolves to "yes": name the specific governing variable implicated, write it as a candidate destination-revision — not another arc-claim about the target's surface — and record it as such. Whether to act on it is the operator's decision via [Destination](../destination/SKILL.md); Learn's job is to make the governing-variable question visible, not to resolve it unilaterally.
 
-*Why this belongs in Orient, and not only in Improve's step 6b:* step 6b fires from inside a single iteration, when that iteration happens to notice a recurring pattern. Orient reads the whole arc at once and is positioned to catch governing-variable-level recurrences that no individual iteration had enough surface area to see — exactly the kind of finding an arc-level read exists for. (Argyris, *Organizational Learning*, 1977 — single-loop learning corrects action within existing governing variables; double-loop learning questions and revises the governing variables themselves.)
+*Why this belongs in Learn, and not only in Improve's step 6b:* step 6b fires from inside a single iteration, when that iteration happens to notice a recurring pattern. Learn reads the whole arc at once and is positioned to catch governing-variable-level recurrences that no individual iteration had enough surface area to see — exactly the kind of finding an arc-level read exists for. (Argyris, *Organizational Learning*, 1977 — single-loop learning corrects action within existing governing variables; double-loop learning questions and revises the governing variables themselves.)
 
 ### 4. Evaluate loop effectiveness (Argyris & Schon's deutero-learning: is the way this loop learns itself sound?)
 
@@ -113,7 +113,7 @@ Ask:
 
 - Has the loop been finding genuine findings, or finding excuses to act?
 - Is the silence earned, or is the loop stuck looking at easy surfaces?
-- **Which quality bars has the loop actually tested, and which has it never been challenged on?** An orient run can only test the bars it knows about. Internal text-layer consistency, comparative defensibility under hostile external review, comparator coverage, empirical replication, and operational deployability are distinct bars; passing one says nothing about the others. Name the bar this orient run's silence claim applies to.
+- **Which quality bars has the loop actually tested, and which has it never been challenged on?** A Learn run can only test the bars it knows about. Internal text-layer consistency, comparative defensibility under hostile external review, comparator coverage, empirical replication, and operational deployability are distinct bars; passing one says nothing about the others. Name the bar this learn run's silence claim applies to.
 - What kind of finding would this loop structurally miss? Name it concretely.
 - If the operator could see the arc as a whole, would they say "yes, that is the right focus"?
 
@@ -130,20 +130,20 @@ The arc is the mechanism by which the agent learns how to work within the specif
 - Look for `[!REALIZATION]` markers across the arc that describe operational failures, successful rules of engagement, or architectural landmines specific to this target (e.g., "Never trust the build script to clean up," "This repo forbids adding third-party dependencies").
 - Synthesize these historical realizations into concrete, imperative rules for future agents. Do not just summarize what happened; state *what must be done differently next time*.
 
-### 5. Write the orientation.md
+### 5. Write the learning.md
 
-**Write only to a bound scope or legacy memory**; when memory is unbound, give the orientation to the operator instead.
+**Write only to a bound scope or legacy memory**; when memory is unbound, give the learning to the operator instead.
 
-Write the arc-claims from step 3 (and any loop-effectiveness findings from step 4) to `orientation.md`. This file is the **orientation.md** — the current Orient-derived orientation: where the loop's attention has been, what the arc currently shows is true of the target, and what the next runs should test.
+Write the arc-claims from step 3 (and any loop-effectiveness findings from step 4) to `learning.md`. This file is **learning.md** — what this scope has learned so far: where the loop's attention has been, what the arc currently shows is true of the target, and what the next runs should test.
 
-The orientation.md should make sense in light of the destination (read at step 0) — arc-claims may reference whether the loop has been pursuing what the destination says matters — but must not duplicate destination content. Never write to `destination.md` from an Orient run.
+learning.md should make sense in light of the destination (read at step 0) — arc-claims may reference whether the loop has been pursuing what the destination says matters — but must not duplicate destination content. Never write to `destination.md` from a Learn run.
 
-`orientation.md` is not append-only. Orient replaces it each time it runs. The full reasoning history lives in the trail; the destination is where the target is going; the orientation.md is the current distillation of where the target is along the way.
+`learning.md` is not append-only. Learn replaces it each time it runs. The full reasoning history lives in the trail; the destination is where the target is going; the learning.md is the current distillation of where the target is along the way.
 
 The file shape is simple:
 
 ```markdown
-# orientation.md — <target name>
+# learning.md — <target name>
 
 _Derived view of the trail at <memory revision, or last record id>; last updated: YYYY-MM-DD (run: <slug>)_
 
@@ -164,25 +164,25 @@ _Derived view of the trail at <memory revision, or last record id>; last updated
 <From step 4, if triggered. Omit section if step 4 was not run.>
 ```
 
-Orient is the only writer that refreshes `orientation.md`; label it with the trail revision it was derived from (the `_Derived view_` line of the shape above) and commit it as Record's commit routine describes. Never commit changes to `destination.md` from an Orient run.
+Learn is the only writer that refreshes `learning.md`; label it with the trail revision it was derived from (the `_Derived view_` line of the shape above) and commit it as Record's commit routine describes. Never commit changes to `destination.md` from a Learn run.
 
 ### 5a. Bound every silence claim
 
-Any claim in `orientation.md` that the target has reached silence, convergence, or readiness must name **which quality bar** the silence applies to and **which surfaces** are in scope. Unbounded silence claims ("the target is in good shape", "text-layer silence is now earned") are the form most likely to be overturned by the next operator-initiated probe, because a bar the orient has never tested cannot be inside the silence claim.
+Any claim in `learning.md` that the target has reached silence, convergence, or readiness must name **which quality bar** the silence applies to and **which surfaces** are in scope. Unbounded silence claims ("the target is in good shape", "text-layer silence is now earned") are the form most likely to be overturned by the next operator-initiated probe, because a bar the learn has never tested cannot be inside the silence claim.
 
-The pattern: *"Silence on `<named bar>` for `<named surfaces>`. Bars not tested by this orient run: `<list>`."
+The pattern: *"Silence on `<named bar>` for `<named surfaces>`. Bars not tested by this Learn run: `<list>`."
 
 Examples:
 - *"Silence on internal text-layer consistency for all non-operator-locked surfaces. Bars not tested: comparative defensibility under hostile external review, comparator coverage."*
 - *"Silence on comparative defensibility for the prior-work bullets currently in scope. Bars not tested: comparator coverage (whether the right set of prior works has been engaged at all), empirical replication."*
 
-If the orient run cannot name the bar, the silence claim is not yet ready to be made. Either name the bar or write the claim as a bar-scoped observation rather than as silence.
+If the Learn run cannot name the bar, the silence claim is not yet ready to be made. Either name the bar or write the claim as a bar-scoped observation rather than as silence.
 
 *Origin:* This rule was promoted from the manifesto target's `retro-v201` -> `retro-v202` transition (entry slug `retrospect-v202-comparative-defensibility`, 2026-06-04), where a retrospect-declared text-layer silence was overturned within the same day by an operator-initiated publication-rigour-review run that tested a quality bar the prior retrospect had never been challenged on. Full provenance in this repo's `.acm/audit-trail.md` under entry slug `retro-named-boundary-rule-from-manifesto-arc`.
 
 ### 6. Record
 
-**Apply [Record](../record/SKILL.md) automatically now.** The operator should never have to invoke Record separately. If this is a standalone Orient installation and Record is unavailable, use the entry contract below directly.
+**Apply [Record](../record/SKILL.md) automatically now.** The operator should never have to invoke Record separately. If this is a standalone Learn installation and Record is unavailable, use the entry contract below directly.
 
 If Record is not installed: record a single entry where step 0's ACM §4 paragraph resolves (a new `records/` record in a bound scope, appended to `.acm/audit-trail.md` in legacy memory, reported to the operator when unbound) containing:
 
@@ -191,10 +191,10 @@ If Record is not installed: record a single entry where step 0's ACM §4 paragra
 - The arc-claims from step 3 — written as falsifiable statements, not summaries.
 - Loop-effectiveness findings from step 4 (if triggered), marked with `[!REALIZATION]` where material.
 
-There is no separate "decision" or "action" field unless a follow-up action was identified. Orient is observational; its output is claims, not changes.
+There is no separate "decision" or "action" field unless a follow-up action was identified. Learn is observational; its output is claims, not changes.
 
 ## What this skill does not do
 
-- **It does not make changes to the target.** Orient reads and claims; Improve changes. If the arc reveals a specific finding, hand off to Improve.
-- **It does not replace Improve's step 6b.** Step 6b is a lightweight in-loop reflection. Improve's orientation-freshness check schedules this full arc-read only when accumulated evidence warrants it; most Improve runs should not trigger Orient.
+- **It does not make changes to the target.** Learn reads and claims; Improve changes. If the arc reveals a specific finding, hand off to Improve.
+- **It does not replace Improve's step 6b.** Step 6b is a lightweight in-loop reflection. Improve's learning-freshness check schedules this full arc-read only when accumulated evidence warrants it; most Improve runs should not trigger Learn.
 - **It does not score the trail.** No number, no rubric, no grade. Claims are the output — claims a future run can test.

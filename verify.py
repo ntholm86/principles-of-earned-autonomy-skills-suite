@@ -22,8 +22,8 @@ Checks:
     `improve-step6b-trigger-observability` onward) record an explicit
     four-trigger evaluation — bare "N/A"/"TODO" rejected — and include a
     macro-Hansei subsection when any trigger fired.
-10. `.acm/history.md` and `.acm/learning.md` are not older than
-    `.acm/audit-trail.md` (staleness check using file mtime).
+10. `.acm/generated/trail-markers.md` (and its archive, when present) is not
+    older than `.acm/audit-trail.md` (staleness check using file mtime).
 11. Live docs do not contain stale trail path tokens (`trail/log.md` or
     `.acm/log.md`); canonical path is `.acm/audit-trail.md`.
 12. Entries on or after the session-fidelity contract date use structurally
@@ -33,7 +33,7 @@ Checks:
 14. Entries under the reversal honesty contract produce review warnings for
     lexical reversal cues without a `[!REVERSAL]` marker. Matches are advisory:
     they do not establish that a decision changed.
-15. `improve/SKILL.md`, `orient/SKILL.md`, `intent/SKILL.md`, and
+15. `improve/SKILL.md`, `learn/SKILL.md`, `intent/SKILL.md`, and
     `destination/SKILL.md` each carry the ACM §4 Memory Repository and Scopes paragraph with
     the identical reference to Record's single definition of memory resolution
     and the governing chain — catches a copy drifting into its own rule.
@@ -62,7 +62,7 @@ REQUIRED_FILES = [
     "intent/SKILL.md",
     "record/SKILL.md",
     "destination/SKILL.md",
-    "orient/SKILL.md",
+    "learn/SKILL.md",
     ".acm/audit-trail.md",
     "PRINCIPLES.md",
 ]
@@ -91,13 +91,13 @@ STALE_PATH_DOCS = [
     "destination/SKILL.md",
     "improve/SKILL.md",
     "record/SKILL.md",
-    "orient/SKILL.md",
+    "learn/SKILL.md",
     "probe/SKILL.md",
 ]
 
 ACM_SCOPE_TRAVERSAL_FILES = [
     "improve/SKILL.md",
-    "orient/SKILL.md",
+    "learn/SKILL.md",
     "intent/SKILL.md",
     "destination/SKILL.md",
 ]
@@ -324,7 +324,7 @@ def check_stale_path_tokens() -> list[str]:
 def check_acm_scope_traversal_consistency() -> list[str]:
     """Fail when a primary skill's ACM \u00a74 reference drifts from the canonical form.
 
-    improve/orient/intent/destination each read the governing chain before
+    improve/learn/intent/destination each read the governing chain before
     forming their own reasoning (ACM \u00a74 Memory Repository and Scopes) and must defer to
     Record's single definition in the same words, so a future edit to the rule
     cannot silently update one file and miss the others. This mirrors the drift class that previously required repair in
@@ -602,42 +602,40 @@ def check_trigger_evaluation() -> list[str]:
 
 
 def check_derived_artifact_freshness() -> list[str]:
-    """Fail when history.md or learning.md is older than audit-trail.md.
+    """Fail when generated/trail-markers.md is older than audit-trail.md.
 
     Uses file mtime. After a git checkout both files have the same checkout
     timestamp and the check correctly passes. The check catches the primary
     failure mode: agent appended to audit-trail.md but forgot to regenerate the
-    derived artifacts before committing.
+    marker extract before committing.
 
-    learning-archive.md is conditional: record.py only creates it once the
+    trail-markers-archive.md is conditional: record.py only creates it once the
     marker count exceeds the recent-window size, so its absence is not a
-    failure. If it exists, it must not be stale, same as the other two.
+    failure. If it exists, it must not be stale, same as the other file.
     """
     failures: list[str] = []
     if not LOG.exists():
         return failures
     log_mtime = LOG.stat().st_mtime
-    for artifact_name in ("history.md", "learning.md"):
-        artifact = ROOT / ".acm" / artifact_name
-        subcommand = artifact_name.replace(".md", "")
-        if not artifact.exists():
-            failures.append(
-                f"missing derived artifact .acm/{artifact_name} — "
-                f"run: python harness/tools/record.py {subcommand} --write"
-            )
-        elif artifact.stat().st_mtime < log_mtime:
-            failures.append(
-                f"stale derived artifact .acm/{artifact_name} is older than .acm/audit-trail.md — "
-                f"run: python harness/tools/record.py {subcommand} --write"
-            )
-    archive = ROOT / ".acm" / "learning-archive.md"
+    generated = ROOT / ".acm" / "generated"
+    markers = generated / "trail-markers.md"
+    if not markers.exists():
+        failures.append(
+            "missing derived artifact .acm/generated/trail-markers.md — "
+            "run: python harness/tools/record.py markers --write"
+        )
+    elif markers.stat().st_mtime < log_mtime:
+        failures.append(
+            "stale derived artifact .acm/generated/trail-markers.md is older than .acm/audit-trail.md — "
+            "run: python harness/tools/record.py markers --write"
+        )
+    archive = generated / "trail-markers-archive.md"
     if archive.exists() and archive.stat().st_mtime < log_mtime:
         failures.append(
-            "stale derived artifact .acm/learning-archive.md is older than .acm/audit-trail.md — "
-            "run: python harness/tools/record.py learning --write"
+            "stale derived artifact .acm/generated/trail-markers-archive.md is older than .acm/audit-trail.md — "
+            "run: python harness/tools/record.py markers --write"
         )
     return failures
-
 
 def check_reversal_honesty_gate() -> list[str]:
     """Return review warnings for unmarked lexical cues, not proven reversals."""

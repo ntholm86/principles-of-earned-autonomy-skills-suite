@@ -26,11 +26,11 @@ to examine observable behavior and report failures as well as useful results.
 
 The suite is a reference route to [Agent Context Memory (ACM)](https://github.com/ntholm86/agent-context-memory) and the implementation repo for the [Principles of Earned Autonomy](https://github.com/ntholm86/principles-of-earned-autonomy). It is compatible with Claude (skills / Agent SDK), GitHub Copilot (custom skills), and any LLM agent that can read markdown and append to a file (legacy in-repo memory); the shared memory also needs git and a SHA-256 tool.
 
-![The full architecture illustrated as a Storm P-style Rube Goldberg machine: Operator's Intent feeds the Improve loop, the audit trail runs as a conveyor belt through the whole machine, Orient reads the arc and feeds learning back in, and the machine converges to silence.](./stormpInspired.png)
+![The full architecture illustrated as a Storm P-style Rube Goldberg machine: Operator's Intent feeds the Improve loop, the audit trail runs as a conveyor belt through the whole machine, Learn reads the arc and feeds learning back in, and the machine converges to silence.](./stormpInspired.png)
 
 ## One skill to rule them all: IMPROVE
 
-Run **Improve** on a real, bounded task. It invokes Intent before acting and Record after substantive work, and schedules Destination or Orient when the accumulated evidence makes either service useful. You do not orchestrate the other operational skills; **Probe** is separate, optional research instrumentation.
+Run **Improve** on a real, bounded task. It invokes Intent before acting and Record after substantive work, and schedules Destination or Learn when the accumulated evidence makes either service useful. You do not orchestrate the other operational skills; **Probe** is separate, optional research instrumentation.
 
 ```text
 /improve create a professional knitting webshop in vanilla HTML, CSS, and JavaScript
@@ -42,7 +42,7 @@ Run **Improve** on a real, bounded task. It invokes Intent before acting and Rec
 | **[Intent](./intent/SKILL.md)** | **Automatic** | States what the agent believes you mean before acting. | Operator's Intent |  |
 | **[Record](./record/SKILL.md)** | **Automatic** | Writes every run to an append-only audit trail. | Observable Autonomy | records/ (legacy: .acm/audit-trail.md) |
 | **[Destination](./destination/SKILL.md)** | **Automatic** | Consolidates accepted mandates into durable direction. |  | destination.md |
-| **[Orient](./orient/SKILL.md)** | **Automatic** | Reflects on past runs to spot recurring mistakes and dead ends. |  | orientation.md |
+| **[Learn](./learn/SKILL.md)** | **Automatic** | Reflects on past runs to spot recurring mistakes and dead ends. |  | learning.md |
 | **[Probe](./probe/SKILL.md)** | **Research** | Measures Autonomous Reasoning Fidelity. | Autonomous Reasoning Fidelity |  |
 | **Convergence to silence** | **Principle 3** | The agent declares silence when it finds nothing material; convergence is defined by [Convergence Is Silence](./PRINCIPLES.md#principle-3-convergence-is-silence), not by this suite. | Convergence Is Silence | trail (silence entries) |
 
@@ -64,21 +64,21 @@ Each narrated Intent gives Improve a mandate for the current prompt. When accept
 
 ### Improve — Move toward the destination
 
-Improve is the workhorse and the single normal entry point. Point it at a target and run it. Each run applies Intent, explains its interpretation, examines what is there, challenges the first read, chooses the highest-leverage move, acts, verifies, records through Record, and explains any automatic Destination or Orient handoff when the evidence triggers one.
+Improve is the workhorse and the single normal entry point. Point it at a target and run it. Each run applies Intent, explains its interpretation, examines what is there, challenges the first read, chooses the highest-leverage move, acts, verifies, records through Record, and explains any automatic Destination or Learn handoff when the evidence triggers one.
 
 > "Invest in the design of the system every day."
 >
 > — Kent Beck, [Extreme Programming Explained](https://www.amazon.com/Extreme-Programming-Explained-Embrace-Change/dp/0321278658)
 
-### Orientation — The architecture keeps its map current
+### Learning — The architecture keeps its map current
 
-After many locally sensible runs, the overall arc can still drift. When triggered, Orient reads the accumulated history as one document and refreshes the current orientation: what the target is becoming, where attention has gone, and whether that is where the real weight lies. Destination schedules it after material direction changes; Improve schedules it when the evidence forms a meaningful arc, contradicts the current map, or approaches convergence. A raw iteration count alone does not trigger it.
+After many locally sensible runs, the overall arc can still drift. When triggered, Learn reads the accumulated history as one document and refreshes the current learning: what the target is becoming, where attention has gone, and whether that is where the real weight lies. Destination schedules it after material direction changes; Improve schedules it when the evidence forms a meaningful arc, contradicts the current map, or approaches convergence. A raw iteration count alone does not trigger it.
 
 > "Life can only be understood backwards; but it must be lived forwards."
 >
 > — Søren Kierkegaard, Journals (1843)
 
-Intent and Record operate automatically around the work. Destination and Orient activate automatically when their evidence-based triggers fire. Probe sits outside normal operation as optional ARF research instrumentation.
+Intent and Record operate automatically around the work. Destination and Learn activate automatically when their evidence-based triggers fire. Probe sits outside normal operation as optional ARF research instrumentation.
 
 ## The Suite Improved Itself — [314 self-improvement iterations](./.acm/ITERATION-COUNT.md)
 
@@ -104,20 +104,20 @@ The full trail exists, but it cannot be published in this repository because it 
 
 Each skill externalizes what normally only lives inside a single model session — the goal, the destination, the decisions, the arc. Together they implement Agent Context Memory: files that can persist beyond a model session. Continuity depends on preserving those files and the next agent reading and using them.
 
-This memory structure is formally specified by the [Agent Context Memory (ACM)](https://github.com/ntholm86/agent-context-memory) standard. ACM defines three tiers organized by trust level: Intent (`destination.md`, principal-confirmed), Trace (the append-only records, with `orientation.md` as a replaceable derived view; legacy `audit-trail.md`), and Evidence (harness-captured session records). This suite implements the Intent and Trace tiers; the Evidence tier requires a separate harness.
+This memory structure is formally specified by the [Agent Context Memory (ACM)](https://github.com/ntholm86/agent-context-memory) standard. ACM defines three tiers organized by trust level: Intent (`destination.md`, principal-confirmed), Trace (the append-only records, with `learning.md` as a replaceable derived view; legacy `audit-trail.md`), and Evidence (harness-captured session records). This suite implements the Intent and Trace tiers; the Evidence tier requires a separate harness.
 
-The files (`destination.md`, `orientation.md` and the trail records) live in a shared ACM memory repository, separate from your code: clone it once, list its path in `~/.acm/memories`, and each work repository is bound to its scope by its root commit ([definition](./record/SKILL.md#where-memory-lives)). An in-repo `.acm/` from earlier ACM versions, like this repository's own, still works as legacy memory. The files provide the literal storage, but the interaction of the skills with those files creates **contextual awareness**.
+The files (`destination.md`, `learning.md` and the trail records) live in a shared ACM memory repository, separate from your code: clone it once, list its path in `~/.acm/memories`, and each work repository is bound to its scope by its root commit ([definition](./record/SKILL.md#where-memory-lives)). An in-repo `.acm/` from earlier ACM versions, like this repository's own, still works as legacy memory. The files provide the literal storage, but the interaction of the skills with those files creates **contextual awareness**.
 
-Memory alone is just retrieval; awareness is orientation. Because `Orient` reads the arc, `Destination` uncovers where you're heading, and `Intent` aligns the goal, the suite uses that memory to understand where it is and where it is going.
+Memory alone is just retrieval; awareness is learning. Because `Learn` reads the arc, `Destination` uncovers where you're heading, and `Intent` aligns the goal, the suite uses that memory to understand where it is and where it is going.
 
-When you swap models, the next agent can read the stored orientation and prior decisions. Whether it uses that context well must be checked in the resulting work; persistence alone does not demonstrate learning.
+When you swap models, the next agent can read the stored learning and prior decisions. Whether it uses that context well must be checked in the resulting work; persistence alone does not demonstrate learning.
 
 ## Workflow
 
 1. **Run:** Invoke `improve` with a concrete prompt. Without explicit delegation, Intent asks you to confirm its interpretation and Improve asks you to approve its proposed change. Each accepts Stop or Specify instead.
-2. **Keep going:** Invoke `improve` again when there is more work. Improve automatically schedules Destination when broader direction needs confirmation and Orient when accumulated evidence makes the current orientation stale.
+2. **Keep going:** Invoke `improve` again when there is more work. Improve automatically schedules Destination when broader direction needs confirmation and Learn when accumulated evidence makes the current learning stale.
 
-The operator remembers one command: `/improve`. `/destination` and `/orient` remain manual overrides, not routine responsibilities.
+The operator remembers one command: `/improve`. `/destination` and `/learn` remain manual overrides, not routine responsibilities.
 
 After trust is earned, explicitly delegate either routine gate for one prompt or in Destination. Delegation preserves visible narration and the final change summary; it never answers Destination questions or bypasses operator-declared consequential gates. A host-wide autopilot setting does not replace this boundary.
 
@@ -150,9 +150,9 @@ Record logs what the agent *says* it decided. Research shows this is not always 
 
 **How this suite mitigates it:** To prevent LLMs from generating post-hoc justifications to fit decisions already made, the suite applies protocol constraints:
 1. **Pre-commit prediction (Improve, Record):** The agent must record a falsifiable prediction of what a change will and will not achieve *before* acting or observing the actual outcome.
-2. **Outcome anchoring (Orient):** Subsequent arc-reads systematically evaluate actual outcomes against those prior predictions to expose localized confabulation.
-3. **Reversal density (Record, Orient):** A uniform, unbroken trail of "successes" is actively flagged as suspect rationalization. True reasoning leaves a trail of reversals, dead ends, and tested predictions.
-4. **Adversarial audit (Orient):** A dedicated lens to actively hunt for outcome mismatch and logical discontinuities across the trail history.
+2. **Outcome anchoring (Learn):** Subsequent arc-reads systematically evaluate actual outcomes against those prior predictions to expose localized confabulation.
+3. **Reversal density (Record, Learn):** A uniform, unbroken trail of "successes" is actively flagged as suspect rationalization. True reasoning leaves a trail of reversals, dead ends, and tested predictions.
+4. **Adversarial audit (Learn):** A dedicated lens to actively hunt for outcome mismatch and logical discontinuities across the trail history.
 5. **Separating writer and decider (Improve, Record):** In maximum-trust sequences (High-Fidelity Mode), the agent making the change is procedurally forbidden from writing the final trail entry, handing off to an independent writer.
 
 Together, these instructions ask the agent to record a prediction before observing the outcome and expose mismatches to later examination. They do not force compliance or establish access to the agent's true internal reasoning.

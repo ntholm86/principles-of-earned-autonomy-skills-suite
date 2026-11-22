@@ -11,7 +11,7 @@ param(
 
 $ErrorActionPreference = 'Stop'
 
-$skills = @('intent', 'destination', 'improve', 'record', 'orient')
+$skills = @('intent', 'destination', 'improve', 'record', 'learn')
 if ($Research) {
     $skills += 'probe'
 }
@@ -43,6 +43,13 @@ if ((Test-Path -LiteralPath $stale) -and (Select-String -LiteralPath $stale -Pat
     Write-Host "  removed: trail (renamed to record)"
 }
 
+# The Orient skill was renamed Learn in v6.0.0; remove a stale installed copy (only if it is that skill).
+$stale = Join-Path $Target 'orient\SKILL.md'
+if ((Test-Path -LiteralPath $stale) -and (Select-String -LiteralPath $stale -Pattern '^name: orient$' -Quiet)) {
+    Remove-Item -LiteralPath (Join-Path $Target 'orient') -Recurse -Force
+    Write-Host "  removed: orient (renamed to learn)"
+}
+
 $principles = Join-Path $src 'PRINCIPLES.md'
 if (Test-Path $principles) {
     Copy-Item $principles (Join-Path $Target 'PRINCIPLES.md') -Force
@@ -52,7 +59,7 @@ if (Test-Path $principles) {
 Write-Host ""
 Write-Host "Installed PEA skills to: $Target"
 Write-Host "Action: Run (/improve)"
-Write-Host "Automatic: intent before work; record afterward; destination and orientation when evidence requires them"
+Write-Host "Automatic: intent before work; record afterward; destination and learning when evidence requires them"
 if ($Research) {
     Write-Host "Research: /probe installed for ARF experiments"
 } else {

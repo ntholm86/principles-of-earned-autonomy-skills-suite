@@ -93,12 +93,12 @@ class TrailHookTests(unittest.TestCase):
 
     def test_other_evidence_does_not_satisfy_gate(self):
         self.stage("src/checkout.ts")
-        self.stage(".acm/history.md")
+        self.stage(".acm/generated/trail-markers.md")
         self.assert_hook(1)
 
     def test_empty_or_evidence_only_index_is_allowed(self):
         self.assert_hook(0)
-        self.stage(".acm/history.md")
+        self.stage(".acm/generated/trail-markers.md")
         self.assert_hook(0)
 
     def test_rename_out_of_evidence_requires_trail(self):
