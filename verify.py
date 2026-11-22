@@ -5,7 +5,9 @@ Replaces verify-suite.ps1 from v2. Pure-Python, zero dependencies, runs on
 Windows / macOS / Linux.
 
 Checks:
-1. .acm/audit-trail.md exists and is non-empty.
+1. The trail exists and is non-empty (a legacy `audit-trail.md` plus `records/` in the
+   bound scope of the shared ACM, or a legacy in-repository `.acm/`). A clone with no
+   memory scope, such as CI, skips every trail check and says so.
 2. Every entry heading matches `## YYYY-MM-DD — <slug>`.
 3. Entries are in non-decreasing date order.
 4. Every entry contains the mandatory metadata fields: target, agent, skill, outcome.
@@ -22,10 +24,11 @@ Checks:
     `improve-step6b-trigger-observability` onward) record an explicit
     four-trigger evaluation — bare "N/A"/"TODO" rejected — and include a
     macro-Hansei subsection when any trigger fired.
-10. `.acm/generated/trail-markers.md` (and its archive, when present) is not
-    older than `.acm/audit-trail.md` (staleness check using file mtime).
+10. `generated/trail-markers.md` (and its archive, when present) is not older than
+    the trail (staleness check using file mtime; the extract must exist only in a
+    legacy in-repository `.acm/`).
 11. Live docs do not contain stale trail path tokens (`trail/log.md` or
-    `.acm/log.md`); canonical path is `.acm/audit-trail.md`.
+    `.acm/log.md`); canonical path is `audit-trail.md`.
 12. Entries on or after the session-fidelity contract date use structurally
     correct session artifacts (`.acm/sessions/` summaries,
     `.acm/transcripts/` verbatim exports) with explicit fidelity metadata.
@@ -47,7 +50,57 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-LOG = ROOT / ".acm" / "audit-trail.md"
+
+
+def _locate_scope() -> tuple[Path | None, str]:
+    """The suite's own memory scope and a note when none could be used.
+
+    The bound scope of the shared ACM when this clone is bound in a registered
+    memory, else a legacy in-repository `.acm/`, else None (a clone without
+    access to the memory, such as CI: the trail checks are then skipped).
+    """
+    import importlib.util
+
+    spec = importlib.util.spec_from_file_location("record_tool", ROOT / "harness" / "tools" / "record.py")
+    assert spec is not None and spec.loader is not None
+    record_tool = importlib.util.module_from_spec(spec)
+    sys.modules["record_tool"] = record_tool
+    spec.loader.exec_module(record_tool)
+    resolution = record_tool.resolve_binding(ROOT)
+    if resolution.status == "bound":
+        return resolution.scope, ""
+    legacy = ROOT / ".acm"
+    if legacy.is_dir():
+        return legacy, ""
+    return None, f"{resolution.status}: {resolution.reason}"
+
+
+SCOPE, SCOPE_NOTE = _locate_scope()
+LEGACY_SCOPE = ROOT / ".acm"
+
+
+def _trail_files() -> list[Path]:
+    """A legacy audit-trail.md first, then records/ in filename order."""
+    if SCOPE is None:
+        return []
+    files = [SCOPE / "audit-trail.md"] if (SCOPE / "audit-trail.md").is_file() else []
+    records = SCOPE / "records"
+    if records.is_dir():
+        files += sorted(records.glob("*.md"))
+    return files
+
+
+def _trail_text() -> str:
+    parts = [path.read_text(encoding="utf-8") for path in _trail_files()]
+    return "\n".join(part if part.endswith("\n") else part + "\n" for part in parts)
+
+
+def _ref_path(rel: str) -> Path:
+    """Entries cite evidence as `.acm/...`; that prefix means the active scope."""
+    if SCOPE is not None and rel.startswith(".acm/"):
+        return SCOPE / rel[len(".acm/"):]
+    return ROOT / rel
+
 
 REQUIRED_FILES = [
     "README.md",
@@ -63,7 +116,6 @@ REQUIRED_FILES = [
     "record/SKILL.md",
     "destination/SKILL.md",
     "learn/SKILL.md",
-    ".acm/audit-trail.md",
     "PRINCIPLES.md",
 ]
 
@@ -150,11 +202,15 @@ def check_required_files() -> list[str]:
 
 def check_log_format() -> list[str]:
     failures: list[str] = []
-    if not LOG.exists():
-        return [".acm/audit-trail.md does not exist"]
-    text = LOG.read_text(encoding="utf-8")
+    if not _trail_files():
+        if SCOPE is not None:
+            return [f"no trail (audit-trail.md or records/) in {SCOPE}"]
+        return failures
+    text = _trail_text()
     if not text.strip():
-        return [".acm/audit-trail.md is empty"]
+        return ["the trail is empty"]
+    if "\ufffd" in text:
+        failures.append("the trail contains U+FFFD replacement characters")
 
     entries: list[tuple[str, str, str]] = []
     current_date: str | None = None
@@ -179,14 +235,14 @@ def check_log_format() -> list[str]:
                 current_slug = None
                 current_body = []
                 continue
-            failures.append(f"malformed entry heading in .acm/audit-trail.md: {line}")
+            failures.append(f"malformed entry heading in the trail: {line}")
         elif current_date is not None:
             current_body.append(line)
     if current_date is not None:
         entries.append((current_date, current_slug or "", "\n".join(current_body)))
 
     if not entries:
-        failures.append(".acm/audit-trail.md contains no entries matching '## YYYY-MM-DD — slug'")
+        failures.append("the trail contains no entries matching '## YYYY-MM-DD — slug'")
         return failures
 
     prev_date: str | None = None
@@ -264,7 +320,7 @@ def check_required_markdown_docs() -> list[str]:
     # v3-principles-copy-repair); excluding it from this function entirely
     # would silently leave that defect class unchecked for the one file it
     # actually happened to.
-    markdown_files = [rel for rel in REQUIRED_FILES if rel.endswith(".md") and rel != ".acm/audit-trail.md"]
+    markdown_files = [rel for rel in REQUIRED_FILES if rel.endswith(".md")]
     for rel in markdown_files:
         path = ROOT / rel
         if not path.exists():
@@ -361,17 +417,17 @@ def _extract_fidelity_value(text: str) -> str | None:
 
 def check_session_fidelity_structure() -> list[str]:
     failures: list[str] = []
-    if not LOG.exists():
+    if not _trail_files():
         return failures
 
-    entries = _parse_entries(LOG.read_text(encoding="utf-8"))
+    entries = _parse_entries(_trail_text())
     for date, slug, body in entries:
         if date < SESSION_FIDELITY_CONTRACT_DATE:
             continue
 
         for m in SESSION_FILE_META.finditer(body):
             rel_path = m.group(1).strip()
-            path = ROOT / rel_path
+            path = _ref_path(rel_path)
             if not path.exists():
                 # Existence is validated separately by check_session_files.
                 continue
@@ -411,7 +467,7 @@ def check_session_fidelity_structure() -> list[str]:
 
         for m in TRANSCRIPT_FILE_META.finditer(body):
             rel_path = m.group(1).strip()
-            path = ROOT / rel_path
+            path = _ref_path(rel_path)
             if not path.exists():
                 # Existence is validated separately by check_transcript_references.
                 continue
@@ -438,12 +494,12 @@ def check_session_fidelity_structure() -> list[str]:
 def check_transcript_references() -> list[str]:
     """Check that every transcript-file reference in audit-trail.md points to an existing file."""
     failures: list[str] = []
-    if not LOG.exists():
+    if not _trail_files():
         return failures
-    for date, slug, body in _parse_entries(LOG.read_text(encoding="utf-8")):
+    for date, slug, body in _parse_entries(_trail_text()):
         for m in TRANSCRIPT_FILE_META.finditer(body):
             rel_path = m.group(1).strip()
-            if not (ROOT / rel_path).exists():
+            if not _ref_path(rel_path).exists():
                 failures.append(
                     f"entry '{date} {slug}' references missing transcript file: {rel_path}"
                 )
@@ -552,9 +608,9 @@ def _parse_entries(text: str) -> list[tuple[str, str, str]]:
 def check_trigger_evaluation() -> list[str]:
     """Enforce the v3.8.0 reflection contract for entries from the contract slug onward."""
     failures: list[str] = []
-    if not LOG.exists():
+    if not _trail_files():
         return failures
-    entries = _parse_entries(LOG.read_text(encoding="utf-8"))
+    entries = _parse_entries(_trail_text())
 
     contract_index: int | None = None
     for i, (_, slug, _) in enumerate(entries):
@@ -602,47 +658,43 @@ def check_trigger_evaluation() -> list[str]:
 
 
 def check_derived_artifact_freshness() -> list[str]:
-    """Fail when generated/trail-markers.md is older than audit-trail.md.
+    """Fail when generated/trail-markers.md is older than the trail.
 
     Uses file mtime. After a git checkout both files have the same checkout
     timestamp and the check correctly passes. The check catches the primary
-    failure mode: agent appended to audit-trail.md but forgot to regenerate the
+    failure mode: agent appended to the trail but forgot to regenerate the
     marker extract before committing.
 
-    trail-markers-archive.md is conditional: record.py only creates it once the
-    marker count exceeds the recent-window size, so its absence is not a
-    failure. If it exists, it must not be stale, same as the other file.
+    In a legacy in-repository `.acm/` the extract is committed, so it must
+    exist. In a bound scope it is a disposable reading aid that is not
+    committed, so only a stale copy is a failure. trail-markers-archive.md is
+    conditional: record.py only creates it once the marker count exceeds the
+    recent-window size. If it exists, it must not be stale.
     """
     failures: list[str] = []
-    if not LOG.exists():
+    files = _trail_files()
+    if not files or SCOPE is None:
         return failures
-    log_mtime = LOG.stat().st_mtime
-    generated = ROOT / ".acm" / "generated"
+    trail_mtime = max(path.stat().st_mtime for path in files)
+    generated = SCOPE / "generated"
     markers = generated / "trail-markers.md"
+    rerun = "run: python harness/tools/record.py markers --write"
     if not markers.exists():
-        failures.append(
-            "missing derived artifact .acm/generated/trail-markers.md — "
-            "run: python harness/tools/record.py markers --write"
-        )
-    elif markers.stat().st_mtime < log_mtime:
-        failures.append(
-            "stale derived artifact .acm/generated/trail-markers.md is older than .acm/audit-trail.md — "
-            "run: python harness/tools/record.py markers --write"
-        )
+        if SCOPE == LEGACY_SCOPE:
+            failures.append(f"missing derived artifact .acm/generated/trail-markers.md — {rerun}")
+    elif markers.stat().st_mtime < trail_mtime:
+        failures.append(f"stale derived artifact generated/trail-markers.md is older than the trail — {rerun}")
     archive = generated / "trail-markers-archive.md"
-    if archive.exists() and archive.stat().st_mtime < log_mtime:
-        failures.append(
-            "stale derived artifact .acm/generated/trail-markers-archive.md is older than .acm/audit-trail.md — "
-            "run: python harness/tools/record.py markers --write"
-        )
+    if archive.exists() and archive.stat().st_mtime < trail_mtime:
+        failures.append(f"stale derived artifact generated/trail-markers-archive.md is older than the trail — {rerun}")
     return failures
 
 def check_reversal_honesty_gate() -> list[str]:
     """Return review warnings for unmarked lexical cues, not proven reversals."""
     failures: list[str] = []
-    if not LOG.exists():
+    if not _trail_files():
         return failures
-    entries = _parse_entries(LOG.read_text(encoding="utf-8"))
+    entries = _parse_entries(_trail_text())
 
     contract_index: int | None = None
     for i, (_, slug, _) in enumerate(entries):
@@ -666,9 +718,9 @@ def check_reversal_honesty_gate() -> list[str]:
 def check_session_files() -> list[str]:
     """Check that every session-file: reference in audit-trail.md points to an existing file."""
     failures: list[str] = []
-    if not LOG.exists():
+    if not _trail_files():
         return failures
-    for date, slug, body in _parse_entries(LOG.read_text(encoding="utf-8")):
+    for date, slug, body in _parse_entries(_trail_text()):
         # Pre-contract entries predate the requirement that session-file
         # references resolve to real, structurally-correct artifacts (see
         # check_session_fidelity_structure). Enforcing existence retroactively
@@ -681,7 +733,7 @@ def check_session_files() -> list[str]:
             rel_path = m.group(1).strip()
             if rel_path.startswith("none") or rel_path.startswith("("):
                 continue  # explicit "no session file" indicator
-            if not (ROOT / rel_path).exists():
+            if not _ref_path(rel_path).exists():
                 failures.append(
                     f"entry '{date} {slug}' references missing session file: {rel_path}"
                 )
@@ -690,6 +742,9 @@ def check_session_files() -> list[str]:
 
 def main() -> int:
     all_failures: list[str] = []
+    if SCOPE is None:
+        print(f"NOTE - no memory scope for this clone ({SCOPE_NOTE}); the trail checks are skipped.")
+        print("Bind it through ~/.acm/memories to run them.")
     all_failures.extend(check_required_files())
     all_failures.extend(check_log_format())
     all_failures.extend(check_no_mojibake())
