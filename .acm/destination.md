@@ -90,7 +90,18 @@ Integration with a particular autonomous harness remains a horizon rather than t
 
 The sections below preserve how the Destination evolved; they are provenance, not additional active instructions. Still-active commitments have been carried into the current mandate. Superseded items include the May 2026 priority sequence, mandatory approval of every implementation choice, fixed use of Retrospect and the old Memory Model vocabulary, and any implication that the current skills or architecture are immutable. Older references to Commander's Intent mean Operator's Intent in the current principles.
 
+## Human gate
+
+Human gate. The author reviews every change before it takes effect. The agent may read, draft, edit and commit as he directs and pushes every commit to origin at once; it publishes nothing (no tag, release, deployment, archive record or message sent to anyone) without his go.
+
+*(R-02 of the ACM specification: a mandate states its human gate. The author confirmed this wording, 2026-11-22.)*
+
 <!-- destination-history -->
+
+## History
+
+**2026-11-22 (the author confirmed the wording): the human gate is stated.** A section "Human gate" was added to the current mandate, because a mandate that does not state its human gate is incomplete (R-02 of the ACM specification). No other direction, constraint or bar changed.
+
 
 ## Destination note - 2026-11-22 (Orient is now Learn; the synthesis file is learning.md)
 The author renamed the Orient skill Learn, and its file `orientation.md` `learning.md`, so that each skill owns one file (Destination: `destination.md`; Learn: `learning.md`; Record: `records/`). The machine-made reading aids moved into a `generated/` folder as `trail-markers.md` and `trail-markers-archive.md`; `history.md` was retired because no skill read it. The current section above uses the new names (and, in the Automatic bullet, the earlier Trail to Record rename it had missed); every note below keeps the names of its date. This is a naming change: no direction, constraint or quality bar changed.

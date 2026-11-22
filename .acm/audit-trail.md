@@ -18868,3 +18868,24 @@ Prediction: verify.py passes in legacy mode, in a bound mode and on a clone with
 **Across-trail macro-Hansei:**
 
 The author's destination for the suite treats the public trail as evidence, and the move treated it as ordinary memory. The decision to detach "all repositories" was read too literally against a decision I had myself recommended the opposite of. Next time a request would remove or relocate something that published text cites, the run asks first, even when the operator has just stated a broad rule.
+## 2026-11-22 - human-gate-stated
+
+- target: this repository's own destination (.acm/destination.md)
+- operator: Nils Wendelboe Holmager
+- agent: Claude (Sonnet 5.5; the session began on Claude Opus 5.5); host: Copilot SDK in VS Code
+- skill: Improve
+- outcome: the destination states its human gate, as R-02 of the ACM specification requires of every mandate; one consolidated destination for the specification now lives in the author's memory and every destination follows it
+- delta: .acm/destination.md gains a "Human gate" section and a dated history note
+
+The author asked for one consolidated destination for the specification in one place and for every memory that uses ACM to adhere to it. R-02 says a mandate that does not state its human gate is incomplete; this destination did not. The author confirmed the wording for personal and research destinations: he reviews every change before it takes effect; the agent commits as he directs and pushes every commit; it publishes nothing (tag, release, deployment, archive record, message) without his go.
+
+[!DECISION] Added one section, "Human gate", at the end of the current mandate, with a dated history note; nothing else in the destination changed.
+
+Prediction: verify.py still passes and no skill or tool reads the new section. Result: confirmed.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired.
+- *About to declare silence:* not fired.
+- *Contradicts prior [!REALIZATION]:* not fired.
+- *Operator explicitly asked:* not fired.
