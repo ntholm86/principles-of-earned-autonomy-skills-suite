@@ -149,7 +149,7 @@ def resolve_binding(root: Path) -> Resolution:
         seen.add(real)
         for binding in sorted((memory / "repositories").glob("*/repository.json")):
             try:
-                data = json.loads(binding.read_text(encoding="utf-8"))
+                data = json.loads(binding.read_text(encoding="utf-8-sig"))
                 bound = data["root_commits"]
                 if not isinstance(bound, list):
                     raise TypeError("root_commits is not a list")
@@ -284,6 +284,7 @@ RECORD_HEADER = """\
 - operator: TODO
 - agent: TODO (model family and version as the host exposes or the operator states; "unknown" if neither, never invented)
 - authority: TODO (the prompt, destination or delegation this work acts under)
+- session: TODO (the host's session or run identifier; "unknown" when not exposed)
 - mandate: {mandate}
 - skill: {skill}
 - outcome: TODO
@@ -436,6 +437,9 @@ def _new_record(args: argparse.Namespace) -> int:
         body = sys.stdin.read() if args.body_file == "-" else _read_text(Path(args.body_file))
     mandate = _mandate_hash(TARGET.acm, res.memory)
     scope = TARGET.acm.relative_to(res.memory).as_posix()
+    if not (TARGET.acm / "records").resolve().is_relative_to(res.memory.resolve()):
+        print(f"ERROR: {TARGET.acm / 'records'} resolves outside its memory repository {res.memory}; nothing was written", file=sys.stderr)
+        return 1
 
     def render(record_id: str) -> str:
         if body is not None:

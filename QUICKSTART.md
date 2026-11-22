@@ -8,6 +8,7 @@ A minimal, copy-pasteable path to one real run that produces real evidence. Aim 
 2. A terminal in that repo's root.
 3. VS Code with GitHub Copilot Chat, or any agent that loads skills from `~/.copilot/skills` (personal) or `.github/skills` (project; `.claude/skills` and `.agents/skills` are also recognised).
 4. A memory repository for the records. Without one the run still works but is not recorded; [set one up below](#set-up-a-memory-and-make-a-first-record) (5 minutes, once).
+5. Python 3 (`python`, or `python3` on macOS and Linux) and git for the optional helper scripts in `harness/tools/`.
 
 ## Install the skills (1 minute)
 
@@ -32,7 +33,7 @@ The operator workflow is **Run Improve**. Intent interprets each prompt, Record 
 git init <memory-folder>
 ```
 
-Create an empty file `.acm-root` in it (`touch <memory-folder>/.acm-root`, or `New-Item <memory-folder>\.acm-root` in PowerShell). Add the folder's absolute path as one line of `~/.acm/memories` (Windows: `%USERPROFILE%\.acm\memories`; UTF-8, with or without a BOM; create the file if missing).
+Create an empty file `.acm-root` in it (`touch <memory-folder>/.acm-root`, or `New-Item <memory-folder>\.acm-root` in PowerShell), and a `.gitattributes` file containing `* text=auto eol=lf` so a mandate hashes the same on every operating system. Add the folder's absolute path as one line of `~/.acm/memories` (Windows: `%USERPROFILE%\.acm\memories`; UTF-8, with or without a BOM; create the file if missing; the environment variable `ACM_MEMORIES_FILE` names a different registry file).
 
 In the work repository, bind it:
 
@@ -63,7 +64,7 @@ Make the first record from the work repository:
 python <suite>/harness/tools/record.py new --slug first-run
 ```
 
-It creates `<memory-folder>/repositories/<id>/records/<UTC yyyyMMddTHHmmssZ>-first-run.md`, a stub the agent fills in:
+It creates `<memory-folder>/repositories/<id>/records/<UTC yyyyMMddTHHmmssZ>-first-run.md`, a stub the agent fills in (the stub continues with the interpretation, decision, prediction, validation and reflection sections that `record/SKILL.md` describes):
 
 ```markdown
 ## 2026-11-22 — first-run
@@ -72,11 +73,18 @@ It creates `<memory-folder>/repositories/<id>/records/<UTC yyyyMMddTHHmmssZ>-fir
 - time: 2026-11-22T08:33:58Z
 - scope: repositories/<id>
 - repository: <id> @ <root commit>
+- target: TODO
+- operator: TODO
+- agent: TODO (model family and version as the host exposes or the operator states; "unknown" if neither, never invented)
+- authority: TODO (the prompt, destination or delegation this work acts under)
+- session: TODO (the host's session or run identifier; "unknown" when not exposed)
 - mandate: sha256:3aca039a5f52
+- skill: improve
 - outcome: TODO
+- delta: TODO
 ```
 
-`mandate:` is the first 12 hex characters of the governing `destination.md` (`none` when no destination governs). If the name already exists the command exits non-zero and writes nothing; run it again for a new timestamp. Finally:
+`mandate:` is the first 12 hex characters of the governing `destination.md` (`none` when no destination governs). If the name already exists the command exits non-zero and writes nothing; run it again for a new timestamp. Replace every `TODO` before the record counts; the checker below warns about the ones left. Finally:
 
 ```
 python <suite>/harness/tools/memory_check.py <memory-folder>

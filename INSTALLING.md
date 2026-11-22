@@ -106,7 +106,7 @@ All skills work with only their own `SKILL.md`. No required sibling files.
 
 The trail lives in a shared ACM memory repository, separate from your code, with one scope per work repository. The AI writes it automatically — no scripts required.
 
-The trail lives in a shared ACM memory repository, separate from your code, with one scope per work repository. The AI writes it automatically — no scripts required. Setting one up is four steps; see the worked example in [QUICKSTART.md](./QUICKSTART.md#set-up-a-memory-and-make-a-first-record). Each entry is a create-only file `records/<UTC yyyyMMddTHHmmssZ>-<slug>.md`, committed in the memory repository as its destination's policy says. Full definition: [Record](./record/SKILL.md#where-memory-lives).
+The trail lives in a shared ACM memory repository, separate from your code, with one scope per work repository. The AI writes it automatically — no scripts required. Setting one up takes a few short steps; see the worked example in [QUICKSTART.md](./QUICKSTART.md#set-up-a-memory-and-make-a-first-record). Each entry is a create-only file `records/<UTC yyyyMMddTHHmmssZ>-<slug>.md`, committed in the memory repository as its destination's policy says. Full definition: [Record](./record/SKILL.md#where-memory-lives).
 
 A repository that already has an in-repo `.acm/audit-trail.md` from earlier ACM versions keeps working as legacy memory: entries are appended there and committed with the work. Migration to a memory repository is recommended.
 

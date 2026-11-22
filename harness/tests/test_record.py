@@ -195,6 +195,38 @@ class RecordingTests(MemoryFixture):
         self.assertIn("outside", result.stderr)
         self.assertEqual(list(outside.rglob("*.md")), [])
 
+    def test_a_records_folder_that_is_a_link_out_of_the_memory_is_refused(self):
+        work, root = self.work_repo("work")
+        memory = self.memory_repo("memory", {"work": root})
+        self.register(memory)
+        outside = self.base / "outside-records"
+        outside.mkdir()
+        link = memory / "repositories" / "work" / "records"
+        if os.name == "nt":
+            made = subprocess.run(["cmd", "/c", "mklink", "/J", str(link), str(outside)], capture_output=True).returncode == 0
+        else:
+            try:
+                os.symlink(outside, link)
+                made = True
+            except OSError:
+                made = False
+        if not made:
+            self.skipTest("cannot create a link here")
+        result = self.run_record(work, "new", "--slug", "y")
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("outside", result.stderr)
+        self.assertEqual(list(outside.rglob("*.md")), [])
+
+    def test_a_binding_file_with_a_byte_order_mark_is_read(self):
+        work, root = self.work_repo("work")
+        memory = self.memory_repo("memory", {"work": root})
+        self.register(memory)
+        binding = memory / "repositories" / "work" / "repository.json"
+        binding.write_bytes(b"\xef\xbb\xbf" + binding.read_bytes())
+        result = self.run_record(work, "resolve")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn(str(Path("repositories") / "work"), result.stdout)
+
     def test_a_shallow_clone_is_unavailable_not_unbound(self):
         work, root = self.work_repo("work")
         self.git(work, "commit", "--quiet", "--allow-empty", "-m", "second")

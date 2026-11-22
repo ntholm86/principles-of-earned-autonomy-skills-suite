@@ -9,7 +9,7 @@ Failures (exit code 1):
   - a hidden `.acm/` folder inside the memory (a scope is a folder, not a hidden folder);
   - a retired file name in a scope (`orientation.md`, `history.md`, `learning-archive.md`);
   - a `destination.md` whose `<!-- current-destination: complete -->` and `<!-- destination-history -->`
-    lines are not both present and in that order, or whose current mandate has no `## Human gate`
+    lines are not both present and in that order, or whose current mandate has no (or an empty) `## Human gate`
     section (R-02: a mandate that does not state its human gate is incomplete);
   - a `repositories/<id>/repository.json` that is not valid, whose `id` differs from its folder, whose
     `root_commits` are not a non-empty list of 40-hex commits, or that shares a root commit with another
@@ -17,8 +17,8 @@ Failures (exit code 1):
   - a file in `records/` whose name is not `<yyyyMMddTHHmmssZ>-<slug>.md`, or whose `- record:` line
     differs from its file name.
 Warnings (do not fail): an ordinary record without the attribution fields of R-16 (record, time, scope,
-agent, authority, mandate), and a tracked file under a `generated/` folder (disposable reading aids are
-not committed).
+agent, authority, session, mandate), a record whose header still holds an unfilled `TODO` stub field, and a
+tracked file under a `generated/` folder (disposable reading aids are not committed).
 """
 from __future__ import annotations
 
@@ -33,7 +33,8 @@ STRUCTURAL = {"records", "tasks", "paths", "evidence", "generated", "drafts"}
 SCOPE_FILES = ("destination.md", "learning.md", "audit-trail.md")
 RECORD_NAME = re.compile(r"^\d{8}T\d{6}Z-[a-z0-9][a-z0-9-]*\.md$")
 FIELD = re.compile(r"^-\s+([a-z-]+):\s*(.*)$", re.M)
-ATTRIBUTION = ("record", "time", "scope", "agent", "authority", "mandate")
+ATTRIBUTION = ("record", "time", "scope", "agent", "authority", "session", "mandate")
+PLACEHOLDER = re.compile(r"^-\s+(operator|agent|authority|session|outcome|delta):\s*TODO\b", re.M)
 OPEN = re.compile(r"^<!-- current-destination: complete -->\s*$", re.M)
 CLOSE = re.compile(r"^<!-- destination-history -->\s*$", re.M)
 
@@ -80,8 +81,11 @@ def check_destination(path: Path) -> list[str]:
     if bool(OPEN.search(text)) != bool(CLOSE.search(text)) or (opened and not closed):
         return ["the current-destination and destination-history lines must both be present, in that order"]
     current = text[opened.end():closed.start()] if opened and closed else text
-    if not re.search(r"^## Human gate\s*$", current, re.M):
+    gate = re.search(r"^## Human gate\s*$(.*?)(?=^## |\Z)", current, re.M | re.S)
+    if not gate:
         return ["the current mandate has no '## Human gate' section (R-02)"]
+    if not gate.group(1).strip():
+        return ["the '## Human gate' section is empty (R-02: a mandate states where its human gate is)"]
     return []
 
 
@@ -97,7 +101,7 @@ def check_bindings(root: Path) -> list[str]:
             continue
         where = binding.relative_to(root).as_posix()
         try:
-            data = json.loads(binding.read_text(encoding="utf-8"))
+            data = json.loads(binding.read_text(encoding="utf-8-sig"))
         except (OSError, ValueError) as exc:
             problems.append(f"{where}: not valid JSON ({exc})")
             continue
@@ -132,6 +136,9 @@ def check_records(scope: Path, root: Path) -> tuple[list[str], list[str]]:
         missing = [name for name in ATTRIBUTION if name not in fields]
         if missing:
             warnings.append(f"{where}: no {', '.join(missing)} (R-16 attribution)")
+        unfilled = sorted({m.group(1) for m in PLACEHOLDER.finditer(text.split("\n###", 1)[0])})
+        if unfilled:
+            warnings.append(f"{where}: unfilled stub field(s): {', '.join(unfilled)}")
     return failures, warnings
 
 

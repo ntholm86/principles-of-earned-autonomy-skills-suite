@@ -18,7 +18,7 @@ GOOD_DESTINATION = (
 )
 GOOD_RECORD = (
     "## 2026-11-22 — thing\n\n- record: 20261122T010203Z-thing\n- time: 2026-11-22T01.02.03Z\n- scope: memory-wide\n"
-    "- agent: a\n- authority: the author\n- mandate: memory at abc\n\n### Decision\n\n[!DECISION] x\n"
+    "- agent: a\n- authority: the author\n- session: s1\n- mandate: memory at abc\n\n### Decision\n\n[!DECISION] x\n"
 )
 
 
@@ -69,6 +69,13 @@ class MemoryCheckTests(unittest.TestCase):
         self.write("destination.md", GOOD_DESTINATION.replace("## Human gate", "## Gate").replace("## History", "## Human gate"))
         failures, _ = self.run_check()
         self.assertTrue(any("Human gate" in f for f in failures))
+
+    def test_an_empty_gate_fails_and_an_unfilled_stub_warns(self):
+        self.write("destination.md", GOOD_DESTINATION.replace("The author reviews every change.", ""))
+        self.write("records/20261122T010203Z-thing.md", GOOD_RECORD.replace("- agent: a", "- agent: TODO (model)"))
+        failures, warnings = self.run_check()
+        self.assertTrue(any("is empty" in f for f in failures))
+        self.assertTrue(any("unfilled stub field" in w and "agent" in w for w in warnings))
 
     def test_bindings_must_be_valid_and_unambiguous(self):
         self.binding("one", [COMMIT_A])
