@@ -1,6 +1,6 @@
 ---
 name: learn
-version: 3.0.0
+version: 3.0.1
 description: 'Automatic learning service. Improve or Destination schedules it when accumulated evidence makes the current learning stale; it reads the trail as a single document, forms arc-level claims, and refreshes learning.md without changing the target. Manual invocation remains available for diagnostics or an explicit "how are we doing?" request.'
 argument-hint: 'The target and its trail, and optionally the specific arc-question to answer'
 ---
@@ -14,6 +14,8 @@ argument-hint: 'The target and its trail, and optionally the specific arc-questi
 The Improve loop is optimised for one iteration at a time. Learn is optimised for reading all of them at once. Where Improve asks "what should change next?", Learn asks "what has been changing, where is the weight of this target actually sitting, and is the loop looking at the right thing?"
 
 *Lineage:* Learn is the "Orient" step of Boyd's OODA loop (Observe-Orient-Decide-Act), under its former name Orient — Boyd's own insight was that orientation, not decision, is the phase that shapes everything downstream and the one most commonly neglected. Cited explicitly in this suite's v1 ancestor but dropped when v2's skills merged into v3; restored here since it is this skill's own namesake.
+
+*Older memories use the former names.* Before 2026-11-22 the skill was Orient and its file was `orientation.md` (now `learning.md`); the machine-made files were `learning.md`, `learning-archive.md` and `history.md` (now `generated/trail-markers.md`, `generated/trail-markers-archive.md` and `record.py index`). Trails are append-only and keep the old names; when an entry says Orient or `orientation.md`, read it as Learn and `learning.md`.
 
 Improve schedules Learn with evidence that the current learning no longer explains the governing Destination and material trail. A material Destination change is such evidence. Learn accepts that arc-question; it does not maintain a second trigger taxonomy. Manual `/learn` remains available as a diagnostic override or when the operator explicitly asks "how are we doing?"
 
