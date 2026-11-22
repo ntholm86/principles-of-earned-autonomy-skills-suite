@@ -2,7 +2,7 @@
 
 ## v6.0.2 - 2026-11-22
 
-- **The suite's own memory moved out of this repository.** The author detached the in-repository `.acm/` of every personal repository into his private shared memory (scope `pea-skills-suite`). `verify.py` now runs its trail checks on the bound scope (a legacy `audit-trail.md` plus `records/`) or a legacy in-repository `.acm/`, resolves `.acm/...` evidence paths in the active scope, requires the marker extract only in a legacy `.acm/`, and skips the trail checks with a note on a clone that has no memory (such as CI); `harness/tests/test_verify.py` follows. The history up to commit `5941042` keeps the old `.acm/` in git; README, POSITION and the changelog link to it by commit. No skill changed.
+- **`verify.py` runs on a bound memory scope as well as on this repository's own `.acm/`.** It reads a legacy `audit-trail.md` plus `records/` from the bound scope when the clone is bound, otherwise the in-repository `.acm/`; it resolves `.acm/...` evidence paths in the active scope, requires the marker extract only in a legacy `.acm/`, and skips the trail checks with a note on a clone that has no memory at all; `harness/tests/test_verify.py` follows. The suite's own `.acm/` stays in this repository, public, as research evidence: the author briefly moved it to a private memory and undid that the same day. No skill changed.
 
 ## v6.0.1 - 2026-11-22
 
@@ -793,7 +793,7 @@ All four skills now operate correctly with only their own `SKILL.md` present —
 
 ## v3.0.0 — 2026-04-23 (branch `v3-redesign`)
 
-Radical redesign. See [.trail/audit-trail.md](https://github.com/ntholm86/principles-of-earned-autonomy-skills-suite/blob/59410421fa4148a3d789f24d1d9899f4b72a007a/.acm/audit-trail.md) for the rationale and decision trail.
+Radical redesign. See [.trail/audit-trail.md](./.acm/audit-trail.md) for the rationale and decision trail.
 
 ### Changed
 - Skill count reduced from 6 to 2: `improve` (Kaizen + Kaikaku + Hansei + Intent + Kata) and `probe` (Shiken).
