@@ -69,6 +69,22 @@ class MemoryFixture(unittest.TestCase):
 
 
 class ResolutionTests(MemoryFixture):
+    def test_a_clone_that_shares_the_root_commit_but_not_the_locator_is_ambiguous(self):
+        work, root = self.work_repo("work")
+        memory = self.memory_repo("memory", {"work": root})
+        binding = memory / "repositories" / "work" / "repository.json"
+        data = json.loads(binding.read_text(encoding="utf-8"))
+        data["locators"] = ["https://example.invalid/me/work"]
+        binding.write_text(json.dumps(data), encoding="utf-8")
+        self.register(memory)
+        self.git(work, "remote", "add", "origin", "https://example.invalid/someone-else/work.git")
+        result = self.run_record(work, "resolve")
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("ambiguous", result.stderr)
+        self.assertIn("fork or a copy", result.stderr)
+        self.git(work, "remote", "set-url", "origin", "https://EXAMPLE.invalid/me/work.git/")
+        self.assert_resolves(work, memory / "repositories" / "work")
+
     def test_root_commit_binding_survives_a_renamed_clone(self):
         work, root = self.work_repo("work")
         memory = self.memory_repo("memory", {"work": root})

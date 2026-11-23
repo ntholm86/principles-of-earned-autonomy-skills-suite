@@ -125,6 +125,31 @@ class MemoryCheckTests(unittest.TestCase):
         failures, _ = self.run_check()
         self.assertTrue(any("link.md" in f and "symbolic link" in f for f in failures))
 
+    def test_history_finds_an_edited_record_until_a_later_record_acknowledges_it(self):
+        import subprocess
+
+        def git(*arguments):
+            return subprocess.run(
+                ["git", "-c", "user.name=T", "-c", "user.email=t@example.invalid", "-c", "commit.gpgsign=false", *arguments],
+                cwd=self.root, capture_output=True, text=True, check=True,
+            ).stdout.strip()
+
+        git("init", "--quiet")
+        self.write("records/20261122T010203Z-thing.md", GOOD_RECORD)
+        git("add", "."); git("commit", "--quiet", "-m", "accept")
+        self.write("records/20261122T010203Z-thing.md", GOOD_RECORD + "\nedited\n")
+        git("add", "."); git("commit", "--quiet", "-m", "edit")
+        found = memory_check.history_failures(self.root)
+        self.assertEqual(len(found), 1)
+        self.assertIn("modified", found[0])
+        self.assertEqual(memory_check.check(self.root)[0], [])  # history is only checked when asked for
+        sha = git("rev-parse", "HEAD")[:7]
+        self.write(
+            "records/20261122T020304Z-override.md",
+            GOOD_RECORD.replace("20261122T010203Z-thing", "20261122T020304Z-override").replace("- time:", f"- overrides: {sha}\n- time:"),
+        )
+        self.assertEqual(memory_check.history_failures(self.root), [])
+
     def test_scopes_under_paths_and_tasks_are_found(self):
         self.write("repositories/r/paths/src/area/mission.md", GOOD_MISSION)
         self.write("repositories/r/paths/src/area/tasks/t/mission.md", GOOD_MISSION)

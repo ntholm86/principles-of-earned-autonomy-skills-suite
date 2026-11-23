@@ -1,5 +1,9 @@
 # Changelog
 
+## v7.2.0 - 2026-11-23
+
+- **Second iteration against the released specification: accepted records are checked after the fact, and a fork or copy no longer inherits a binding.** `memory_check.py <memory> --history` fails for each accepted record that a commit modified, deleted or renamed (R-05), unless a later record names the commit in an `- overrides: <commit>` line, which is how an administrative override is recorded; the Record skill says plainly that a tool cannot stop a writer who can rewrite the repository, so the protection is detection plus the memory's own access controls. `record.py resolve` reports a clone **ambiguous** when it shares a root commit with a binding that lists `locators` but none of its remotes matches one (R-13); a binding with no locators still binds by root commit. Run on the author's own memory, the history check found three earlier edits to accepted records, now acknowledged by a record there. ``record/SKILL.md`` 3.6.0 -> 3.7.0.
+
 ## v7.1.0 - 2026-11-23
 
 - **First of three iterations against the released Shared Agent Context Memory specification (v0.7.0), which is quality bar 7 of the suite's mission.** A fresh read-only audit found no requirement fully met and named the gaps. This iteration: new records state `format: 1` (R-16; a record without the line is format 1, so older records stay valid); `memory_check.py` fails an unknown record format and any symbolic link in the memory (R-15), and no longer hides a code folder named `drafts` from path scopes (R-14); the Record skill says a record's identifier is its file name within its scope (what the tool already enforced) and no longer cites sections of the specification that do not exist; the Improve skill treats the rules in `learning.md` as agent-written advice that never outranks a mandate, where it said the agent "must obey" them (R-03). ``record/SKILL.md`` 3.5.2 -> 3.6.0; ``improve/SKILL.md`` 3.27.0 -> 3.27.1.

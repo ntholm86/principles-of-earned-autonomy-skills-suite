@@ -1340,6 +1340,10 @@ Markers older than the recent window kept in `trail-markers.md`. Read this only 
 
 **[!REALIZATION]** Adoption friction begins before installation or workflow: a reader who cannot recognize the failure the suite addresses has no reason to learn its vocabulary or try Improve. The README opening is therefore part of the operational adoption path, not a cosmetic layer over it.
 
+## 2026-08-19 — repair-cp850-mojibake-in-audit-trail
+
+**[!REALIZATION]** Evidence integrity cannot be inferred from append-only discipline alone. The transport and encoding path that carries evidence is part of the evidence boundary; a correct recovery procedure must preserve raw bytes or verify the encoding before reusing reconstructed text.
+
 ---
 
-**334 markers — 294 realisations, 40 reversals**
+**335 markers — 295 realisations, 40 reversals**

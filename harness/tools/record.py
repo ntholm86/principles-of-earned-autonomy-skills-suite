@@ -117,6 +117,15 @@ def _root_commits(root: Path) -> set[str]:
     return {line.strip().lower() for line in out.splitlines() if line.strip()}
 
 
+def _remote_urls(root: Path) -> set[str]:
+    out = _git(root, "config", "--get-regexp", r"^remote\..*\.url$") or ""
+    return {_normal_url(line.split(None, 1)[1]) for line in out.splitlines() if " " in line}
+
+
+def _normal_url(url: str) -> str:
+    return url.strip().lower().rstrip("/").removesuffix(".git")
+
+
 def resolve_binding(root: Path) -> Resolution:
     """Bind the work repository to one memory scope by root commit, never by name."""
     commits = _root_commits(root)
@@ -158,6 +167,13 @@ def resolve_binding(root: Path) -> Resolution:
             shared = sorted(commits.intersection(str(c).strip().lower() for c in bound))
             if not shared:
                 continue
+            locators = {_normal_url(str(u)) for u in data.get("locators") or []}
+            if locators and not locators & _remote_urls(root):
+                return Resolution(
+                    "ambiguous",
+                    f"{root} shares root commit {shared[0][:12]} with {binding}, but none of its remotes matches the binding's locators; "
+                    "it may be a fork or a copy (R-13). Add this clone's URL to the locators with the operator's confirmation, or leave it unbound",
+                )
             scope = binding.parent
             if not scope.resolve().is_relative_to(real):
                 return Resolution("unavailable", f"scope {scope} resolves outside its memory repository {memory}")

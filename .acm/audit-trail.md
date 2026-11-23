@@ -19001,3 +19001,29 @@ Prediction: the tests and verify.py pass and `memory_check` on the author's memo
 - *About to declare silence:* not fired.
 - *Contradicts prior [!REALIZATION]:* not fired.
 - *Operator explicitly asked:* not fired (the author asked for the sequence of runs, not for an arc reflection).
+## 2026-11-23 - suite-iteration-2-immutability-and-binding
+
+- target: memory_check.py, record.py, the Record skill
+- operator: Nils Wendelboe Holmager
+- agent: unknown (the operator addressed the session as Opus); host: Copilot SDK in VS Code
+- skill: Improve
+- completes: suite-vs-released-spec-checkpoint (iteration 2 of 3)
+- outcome: `memory_check.py <memory> --history` fails for each accepted record a commit modified, deleted or renamed, unless a later record acknowledges the commit with an `- overrides:` line (R-05); a clone that shares a root commit with a binding that has locators but matches none of them is reported ambiguous, never bound (R-13)
+- delta: v7.2.0 (record 3.7.0); 80 tests pass
+
+[!DECISION] R-05 cannot be structural in a tool that the writer can bypass, so the change is detection after the fact plus an honest sentence in the skill, not a hook that pretends to prevent it. The override acknowledgement is a record line, which is what the specification asks of an administrative override. R-13: a binding that lists no locators still binds by root commit alone, because requiring a locator would unbind every local-only repository; a binding that lists locators now demands that this clone matches one.
+
+[!REALIZATION] Running the new history check on the author's own memory found three past edits to accepted records, made by this same agent the day before while moving the suite's memory out. A rule written as "never changed" had been broken, unseen, by the party that wrote it; only a check on the history found it.
+
+Prediction: tests and verify.py pass; the author's memory shows no locator-related unbinding; the history check finds only commits that can be named. Result: held; three commits found and acknowledged by a memory-wide record in the author's memory; all four bound repositories still resolve.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired.
+- *About to declare silence:* not fired.
+- *Contradicts prior [!REALIZATION]:* fired for the claim, made in earlier entries, that records are never changed: the history shows three changes. This entry corrects it.
+- *Operator explicitly asked:* not fired (the author asked for the sequence of runs, not for an arc reflection).
+
+**Across-trail macro-Hansei:**
+
+Iterations so far have each found that a stated rule had no check behind it: the record identifier, the format version, the immutability. The cheapest check that matches the rule, even if it only detects, turned up a real violation in the first minute; rules written in skills without a check are claims about the agent's discipline, and the agent that wrote them broke one.

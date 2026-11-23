@@ -2,7 +2,12 @@
 """memory_check.py: check a memory repository against the reference layout and mandate rules.
 
 Usage
-  python harness/tools/memory_check.py <memory-root>
+  python harness/tools/memory_check.py <memory-root> [--history]
+
+With `--history` (a git memory repository), also fail for each accepted record that a commit modified,
+deleted or renamed (R-05: accepted records are create-only). A later record that names the commit in an
+`- overrides: <commit>[, <commit>]` line acknowledges it, which is how an administrative override is recorded.
+This detects after the fact; it does not prevent a writer who can rewrite the repository.
 
 Failures (exit code 1):
   - the memory root has no `.acm-root` marker;
@@ -148,6 +153,40 @@ def check_records(scope: Path, root: Path) -> tuple[list[str], list[str]]:
     return failures, warnings
 
 
+def acknowledged_overrides(root: Path) -> set[str]:
+    found: set[str] = set()
+    for record in root.rglob("records/*.md"):
+        if ".git" in record.relative_to(root).parts:
+            continue
+        head = record.read_text(encoding="utf-8", errors="replace").split("\n###", 1)[0]
+        for value in re.findall(r"^-\s+overrides:\s*(.*)$", head, re.M):
+            found.update(c.lower() for c in re.findall(r"[0-9a-fA-F]{7,40}", value))
+    return found
+
+
+def history_failures(root: Path) -> list[str]:
+    if not (root / ".git").exists():
+        return []
+    try:
+        out = subprocess.run(
+            ["git", "-C", str(root), "log", "--diff-filter=MDR", "--name-status", "--format=@%H", "--", ":(glob)**/records/*.md"],
+            capture_output=True, text=True, check=True,
+        ).stdout
+    except (OSError, subprocess.CalledProcessError):
+        return []
+    acknowledged = acknowledged_overrides(root)
+    failures: list[str] = []
+    commit = ""
+    for line in out.splitlines():
+        if line.startswith("@"):
+            commit = line[1:]
+        elif line.strip() and commit and not any(commit.startswith(a) for a in acknowledged):
+            status, *paths = line.split("\t")
+            verb = {"M": "modified", "D": "deleted"}.get(status[:1], "renamed")
+            failures.append(f"{paths[0]}: an accepted record was {verb} in commit {commit[:7]} (R-05); acknowledge it with an '- overrides: {commit[:7]}' line in a new record")
+    return failures
+
+
 def tracked_generated(root: Path) -> list[str]:
     try:
         out = subprocess.run(["git", "-C", str(root), "ls-files"], capture_output=True, text=True, check=True).stdout
@@ -192,6 +231,8 @@ def check(root: Path) -> tuple[list[str], list[str]]:
 
 
 def main(argv: list[str]) -> int:
+    history = "--history" in argv
+    argv = [a for a in argv if a != "--history"]
     if len(argv) != 2 or argv[1] in {"-h", "--help"}:
         print(__doc__)
         return 2
@@ -200,6 +241,8 @@ def main(argv: list[str]) -> int:
         print(f"not a directory: {root}", file=sys.stderr)
         return 2
     failures, warnings = check(root)
+    if history:
+        failures += history_failures(root)
     for message in warnings:
         print(f"WARN  {message}")
     for message in failures:
