@@ -24,7 +24,7 @@ import path from 'node:path';
 const args = process.argv.slice(2);
 const suite = fs.existsSync(path.join(process.cwd(), '.github', 'skills'));
 if (args[0] === 'skill') {
-  if (suite) console.log('Project skills:\\n' + ['improve','intent','trail','destination','orient'].map(n => '  ' + n + ' - test fixture').join('\\n'));
+  if (suite) console.log('Project skills:\\n' + ['improve','intent','record','goal','learn'].map(n => '  ' + n + ' - test fixture').join('\\n'));
   console.log('Builtin skills:\\n  customize-cloud-agent - test fixture\\n  github-pr-media - test fixture');
 } else {
   if (args[args.indexOf('-C') + 1] !== process.cwd()) throw new Error('Missing explicit target');

@@ -29,7 +29,7 @@ if (!commonTask.startsWith('Add an optional percentOff')) throw new Error('Canno
 const sha = spawnSync('git', ['rev-parse', 'HEAD'], { cwd: repo, encoding: 'utf8' });
 if (sha.status !== 0) throw new Error(`Cannot identify source: ${sha.stderr}`);
 const hash = file => createHash('sha256').update(fs.readFileSync(file)).digest('hex');
-const skillNames = ['improve', 'intent', 'trail', 'destination', 'orient'];
+const skillNames = ['improve', 'intent', 'record', 'goal', 'learn'];
 const sourceHashes = Object.fromEntries(skillNames.map(name =>
   [name, hash(path.join(repo, name, 'SKILL.md'))]));
 const summary = {
