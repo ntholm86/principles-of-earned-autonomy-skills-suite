@@ -95,7 +95,7 @@ The sections below preserve how the Mission evolved; they are provenance, not ad
 
 Human gate. The author reviews every change before it takes effect. The agent may read, draft, edit and commit as he directs and pushes every commit to origin at once; it publishes nothing (no tag, release, deployment, archive record or message sent to anyone) without his go.
 
-*(R-02 of the ACM specification: a mandate states its human gate. The author confirmed this wording, 2026-11-22.)*
+*(The Mission skill states the human gate in every mission. The author confirmed this wording, 2026-11-22.)*
 
 <!-- mission-history -->
 

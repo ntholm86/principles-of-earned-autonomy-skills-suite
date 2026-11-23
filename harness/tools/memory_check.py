@@ -10,7 +10,7 @@ Failures (exit code 1):
   - a retired file name in a scope (`orientation.md`, `history.md`, `learning-archive.md`, `destination.md`: now `learning.md` and `mission.md`);
   - a `mission.md` whose `<!-- current-mission: complete -->` and `<!-- mission-history -->`
     lines are not both present and in that order, or whose current mandate has no (or an empty) `## Human gate`
-    section (R-02: a mandate that does not state its human gate is incomplete);
+    section (the Mission skill: a mission that does not state its human gate is incomplete);
   - a `repositories/<id>/repository.json` that is not valid, whose `id` differs from its folder, whose
     `root_commits` are not a non-empty list of 40-hex commits, or that shares a root commit with another
     binding (an ambiguous binding);
@@ -83,9 +83,9 @@ def check_mission(path: Path) -> list[str]:
     current = text[opened.end():closed.start()] if opened and closed else text
     gate = re.search(r"^## Human gate\s*$(.*?)(?=^## |\Z)", current, re.M | re.S)
     if not gate:
-        return ["the current mandate has no '## Human gate' section (R-02)"]
+        return ["the current mandate has no '## Human gate' section"]
     if not gate.group(1).strip():
-        return ["the '## Human gate' section is empty (R-02: a mandate states where its human gate is)"]
+        return ["the '## Human gate' section is empty (a mission states where its human gate is)"]
     return []
 
 
