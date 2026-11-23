@@ -1,6 +1,6 @@
 ---
 name: record
-version: 3.7.1
+version: 3.7.2
 description: 'Automatic egress service for substantive work. Writes a structured record in the bound memory scope of the shared ACM (a new file in records/; legacy in-repo .acm/audit-trail.md is appended) — the interpretation, examination, decisions, actions, and reflection. Mission, Improve, Learn, and Probe apply Record automatically; the operator should never need to invoke it separately. Direct use remains available for consequential work outside those workflows and independent-writer mode.'
 argument-hint: 'The target being worked on (repo, file, system) — used to populate the record header'
 ---
@@ -61,7 +61,7 @@ One rule: a scope is a folder, and every scope folder has the same three entries
 
 ### Helper and commit routine
 
-The skills repository's optional `<skills-repo>/harness/tools/record.py` applies these rules from the work repository's directory (or `$RECORD_ROOT`); the one-line installer does not copy it and it is never committed to a target. `resolve` prints the bound scope or the reason there is none (and says when the work repository is a shallow clone: fetch the full history first); `new --slug=<slug>` creates a bound record — it exits non-zero without writing when the record name already exists, so re-run it for a new timestamp — (`--body-file <file>` accepts a finished entry create-only; a stub created without it is a local draft until committed) or appends a legacy stub; `index`, `markers` and `summary` read a legacy `audit-trail.md` first, then the `records/` in filename order; `--scope <task>` addresses a task scope and `--path <code/path>` a path scope; together they address a task inside a path scope.
+The skills repository's optional `<skills-repo>/harness/tools/record.py` applies these rules from the work repository's directory (or `$RECORD_ROOT`); the one-line installer does not copy it and it is never committed to a target. `resolve` prints the bound scope or the reason there is none (and says when the work repository is a shallow clone: fetch the full history first); `new --slug=<slug>` creates a bound record — it exits non-zero without writing when the record name already exists with different content (an identical resubmission is a no-op), so re-run it for a new timestamp — (`--body-file <file>` accepts a finished entry create-only; a stub created without it is a local draft until committed) or appends a legacy stub; `index`, `markers` and `summary` read a legacy `audit-trail.md` first, then the `records/` in filename order; `--scope <task>` addresses a task scope and `--path <code/path>` a path scope; together they address a task inside a path scope.
 
 In a bound scope, commit the record in the memory repository per the memory-wide mission's policy, subject `trail: <slug>`, and commit the work only as the work's own authority allows. In legacy memory, regenerate the derived files and commit them with the entry:
 
@@ -87,7 +87,7 @@ Record does not routinely create agent-authored session summaries.
 
 The `agent:` field names the model family and version as precisely as the host exposes or the operator states (mark operator-stated identity as such, e.g. `Claude Fable 5.1; model identified by the operator`). The host product alone — `GitHub Copilot`, `Cursor` — is not a model family. Principle 3 counts same-family evaluators as one and needs fresh sessions on an unchanged artifact, so a silence entry whose `agent:` names only the host cannot be counted toward convergence.
 
-Each entry — a bound record or a legacy `##` section — follows this shape (a bound record adds the attribution fields above after the heading; `record.py new` writes them):
+Each entry — a bound record or a legacy `##` section — follows this shape (a bound record adds the attribution fields above after the heading; `record.py new` writes `record`, `format`, `time`, `scope`, `repository` and `mandate`, and leaves `agent`, `session` and `authority` as placeholders for the agent to fill; with `--body-file` it adds the lines of that set the body lacks):
 
 ```markdown
 ## YYYY-MM-DD — <slug>

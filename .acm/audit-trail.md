@@ -19075,3 +19075,27 @@ Prediction: a third audit finds no claim in the README or changelog that the cod
 **Across-trail macro-Hansei:**
 
 The pattern in this sequence is that every claim I wrote about my own change was checked only on the path I had just exercised. The second audit read the other path (finished bodies) and the claim failed. The cheap countermeasure is the one that worked: a reviewer who has not seen my tests reads the code against the claim; and a test for each path a skill actually uses, not only the one the tool's stub creates.
+## 2026-11-23 - suite-iteration-5-claims-corrected
+
+- target: memory_check.py, the Record and Learn skills, the README
+- operator: Nils Wendelboe Holmager
+- agent: unknown (the operator addressed the session as Opus); host: Copilot SDK in VS Code
+- skill: Improve
+- authority: the author's instruction for the sequence (see the checkpoint); a third fresh audit, of claims against code only, supplied the findings
+- outcome: one false and four overstated statements are corrected; the checker no longer hides a code folder named `paths`, and `--history` fails instead of passing when it checked nothing
+- delta: v7.3.2 (record 3.7.2, learn 3.2.1); 84 tests pass
+
+[!DECISION] Corrected in text where the claim was too strong for a reasonable tool (a finished body keeps its own scope and mandate lines, unverified; any record naming the commit acknowledges it) and in code where the behaviour was a silent pass (`--history` outside git) or hid a valid scope. Rejected: verifying a body's own scope and mandate against the computed values (an agent that wrote a record for a different scope on purpose would be refused; the specification does not ask for it); adding `paths` to the escape list (the layout needs no escape for it, and the specification does not list it). Carried: the whole governing chain from `resolve`, a missing registry classed unavailable when `.acm/` exists, the policy gate and erasure.
+
+Prediction: a further audit finds only gaps against the specification, not false claims. Result: not run; the audits stop here because the remaining gaps are listed, named and need the author's decision or a larger change.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* fired (as in the previous entry): claims written about a change that the change did not fully support; the countermeasure, a fresh reader of code against claim, found each.
+- *About to declare silence:* not fired.
+- *Contradicts prior [!REALIZATION]:* not fired.
+- *Operator explicitly asked:* not fired (the author asked for the sequence of runs, not for an arc reflection).
+
+**Across-trail macro-Hansei:**
+
+Three audits found respectively gaps against the specification, claims the code did not support, and five smaller overstatements. The third class shrank each round, which is the shape of convergence for claim accuracy; the first class did not shrink by iteration, it was partly closed and partly named as not met, which is the honest result for an implementation of its kind. Silence on claim accuracy is bounded to three fresh readers of one family at one host.

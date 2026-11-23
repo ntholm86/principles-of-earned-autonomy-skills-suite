@@ -39,7 +39,7 @@ import sys
 from pathlib import Path
 
 RETIRED = ("orientation.md", "history.md", "learning-archive.md", "destination.md")
-STRUCTURAL = {"records", "tasks", "paths", "evidence", "generated"}
+STRUCTURAL = {"records", "tasks", "evidence", "generated"}
 SCOPE_FILES = ("mission.md", "learning.md", "audit-trail.md")
 KNOWN_FORMATS = {"1"}
 RECORD_NAME = re.compile(r"^\d{8}T\d{6}Z-[a-z0-9][a-z0-9-]*\.md$")
@@ -168,14 +168,14 @@ def acknowledged_overrides(root: Path) -> set[str]:
 
 def history_failures(root: Path) -> list[str]:
     if not (root / ".git").exists():
-        return []
+        return ["--history: the memory is not a git repository, so no history was checked"]
     try:
         out = subprocess.run(
             ["git", "-C", str(root), "log", "--diff-filter=MDR", "--name-status", "--format=@%H", "--", ":(glob)**/records/*.md"],
             capture_output=True, text=True, check=True,
         ).stdout
-    except (OSError, subprocess.CalledProcessError):
-        return []
+    except (OSError, subprocess.CalledProcessError) as exc:
+        return [f"--history: git could not list the history, so none was checked ({exc})"]
     acknowledged = acknowledged_overrides(root)
     failures: list[str] = []
     commit = ""

@@ -113,8 +113,13 @@ class MemoryCheckTests(unittest.TestCase):
 
     def test_a_code_folder_named_drafts_is_a_path_scope(self):
         self.write("repositories/r/paths/drafts/mission.md", GOOD_MISSION)
+        self.write("repositories/r/paths/paths/mission.md", GOOD_MISSION)
         names = {p.relative_to(self.root).as_posix() for p in memory_check.scopes(self.root)}
         self.assertIn("repositories/r/paths/drafts", names)
+        self.assertIn("repositories/r/paths/paths", names)
+
+    def test_history_fails_when_it_cannot_be_checked(self):
+        self.assertIn("not a git repository", memory_check.history_failures(self.root)[0])
 
     def test_a_symbolic_link_in_the_memory_fails(self):
         self.write("target.md", "x")

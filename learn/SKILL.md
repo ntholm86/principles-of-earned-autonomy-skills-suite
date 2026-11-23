@@ -1,6 +1,6 @@
 ---
 name: learn
-version: 3.2.0
+version: 3.2.1
 description: 'Automatic learning service. Improve or Mission schedules it when accumulated evidence makes the current learning stale; it reads the trail as a single document, forms arc-level claims, and refreshes learning.md without changing the target. Manual invocation remains available for diagnostics or an explicit "how are we doing?" request.'
 argument-hint: 'The target and its trail, and optionally the specific arc-question to answer'
 ---
@@ -147,7 +147,7 @@ The file shape is simple:
 ```markdown
 # learning.md — <target name>
 
-_Derived view of the trail at <last record id of this scope, or memory revision>; written by the agent; last updated: YYYY-MM-DD (run: <slug>)_
+_Derived view of the trail at <last record id of this scope>; written by the agent; last updated: YYYY-MM-DD (run: <slug>)_
 
 ## Current claims
 
