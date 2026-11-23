@@ -24,7 +24,7 @@ to examine observable behavior and report failures as well as useful results.
 
 **Try it:** run `Improve` on a real, bounded task. The agent chooses the route; you keep the mission and the consequential decisions.
 
-The suite is a reference route to [Agent Context Memory (ACM)](https://github.com/ntholm86/agent-context-memory) and the implementation repo for the [Principles of Earned Autonomy](https://github.com/ntholm86/principles-of-earned-autonomy). It is compatible with Claude (skills / Agent SDK), GitHub Copilot (custom skills), and any LLM agent that can read markdown and append to a file (legacy in-repo memory); the shared memory also needs git.
+The suite is a reference route to [Shared Agent Context Memory (SACM)](https://github.com/ntholm86/shared-agent-context-memory) and the implementation repo for the [Principles of Earned Autonomy](https://github.com/ntholm86/principles-of-earned-autonomy). It is compatible with Claude (skills / Agent SDK), GitHub Copilot (custom skills), and any LLM agent that can read markdown and append to a file (legacy in-repo memory); the shared memory also needs git.
 
 ![The full architecture illustrated as a Storm P-style Rube Goldberg machine: Operator's Intent feeds the Improve loop, the audit trail runs as a conveyor belt through the whole machine, Learn reads the arc and feeds learning back in, and the machine converges to silence.](./stormpInspired.png)
 
@@ -36,7 +36,7 @@ Run **Improve** on a real, bounded task. It invokes Intent before acting and Rec
 /improve create a professional knitting webshop in vanilla HTML, CSS, and JavaScript
 ```
 
-| Component | Role | What it does | PEA principle | ACM artifact |
+| Component | Role | What it does | PEA principle | SACM artifact |
 | :--- | :--- | :--- | :--- | :--- |
 | **[Improve](./improve/SKILL.md)** | **Start here** | Makes one highest-leverage change per run. |  | reads all three |
 | **[Intent](./intent/SKILL.md)** | **Automatic** | States what the agent believes you mean before acting. | Operator's Intent |  |
@@ -100,13 +100,13 @@ In that deployment, a scope estimated internally as a large T-shirt-size effort 
 
 The full trail exists, but it cannot be published in this repository because it is employer-owned professional work product and covered by intellectual property and confidentiality obligations. Treat this as high-signal private field evidence: a strong indication of practical leverage, but not public, independently reproducible proof.
 
-## Agent Context Memory (ACM)
+## Shared Agent Context Memory (SACM)
 
-Each skill externalizes what normally only lives inside a single model session — the goal, the mission, the decisions, the arc. Together they implement Agent Context Memory: files that can persist beyond a model session. Continuity depends on preserving those files and the next agent reading and using them.
+Each skill externalizes what normally only lives inside a single model session — the goal, the mission, the decisions, the arc. Together they implement Shared Agent Context Memory: files that can persist beyond a model session. Continuity depends on preserving those files and the next agent reading and using them.
 
-This memory structure is formally specified by the [Agent Context Memory (ACM)](https://github.com/ntholm86/agent-context-memory) standard. ACM defines three tiers organized by trust level: Intent (`mission.md`, principal-confirmed), Trace (the append-only records, with `learning.md` as a replaceable derived view; legacy `audit-trail.md`), and Evidence (harness-captured session records). This suite implements the Intent and Trace tiers; the Evidence tier requires a separate harness.
+This memory structure is formally specified by the [Shared Agent Context Memory (SACM)](https://github.com/ntholm86/shared-agent-context-memory) standard. SACM defines three tiers organized by trust level: Intent (`mission.md`, principal-confirmed), Trace (the append-only records, with `learning.md` as a replaceable derived view; legacy `audit-trail.md`), and Evidence (harness-captured session records). This suite implements the Intent and Trace tiers; the Evidence tier requires a separate harness.
 
-The files (`mission.md`, `learning.md` and the trail records) live in a shared ACM memory repository, separate from your code: clone it once, list its path in `~/.acm/memories`, and each work repository is bound to its scope by its root commit ([definition](./record/SKILL.md#where-memory-lives)). An in-repo `.acm/` from earlier ACM versions, like this repository's own, still works as legacy memory. The files provide the literal storage, but the interaction of the skills with those files creates **contextual awareness**.
+The files (`mission.md`, `learning.md` and the trail records) live in a shared SACM memory repository, separate from your code: clone it once, list its path in `~/.acm/memories`, and each work repository is bound to its scope by its root commit ([definition](./record/SKILL.md#where-memory-lives)). An in-repo `.acm/` from earlier ACM versions, like this repository's own, still works as legacy memory. The files provide the literal storage, but the interaction of the skills with those files creates **contextual awareness**.
 
 Memory alone is just retrieval; awareness is learning. Because `Learn` reads the arc, `Mission` uncovers where you're heading, and `Intent` aligns the goal, the suite uses that memory to understand where it is and where it is going.
 

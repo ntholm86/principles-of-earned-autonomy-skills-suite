@@ -1,5 +1,9 @@
 # Changelog
 
+## v7.0.2 - 2026-11-23
+
+- **The specification is named Shared Agent Context Memory (SACM) and its repository is `shared-agent-context-memory`.** The README, the Record skill's link to the specification, the archive metadata and the suite's mission now use the new name and address (the old address redirects); "ACM" in text that is older than 2026-11-23, in artifact names (`.acm-root`, `.acm/`) and in the append-only trail, archives and experiments is unchanged and means the same specification. No behaviour changed. ``record/SKILL.md`` 3.5.1 -> 3.5.2.
+
 ## v7.0.1 - 2026-11-23
 
 - **The human gate is the suite's practice, not a requirement of the ACM specification.** The author set the specification back to its original concepts (SACM, minimal and full conformance), so it no longer has a requirement that a mandate states its human gate; the Mission skill and `memory_check.py` still ask for and check a ``## Human gate`` section, and the Record skill still requires independent capture for work with no human gate, but none of them cites ACM R-02 any more (R-04 is cited as the evidence tier of full conformance). The human-gate note in the missions of the author's memories now says the Mission skill states it. No behaviour changed. ``mission/SKILL.md`` 3.0.0 -> 3.0.1; ``record/SKILL.md`` 3.5.0 -> 3.5.1.
