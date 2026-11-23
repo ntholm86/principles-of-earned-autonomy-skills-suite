@@ -21,9 +21,9 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1     # Windows
 
 The default installer includes the five operational skills and omits Probe, keeping the visible command surface focused on normal use. ARF researchers can add it with `bash install.sh --research` or `powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1 -Research`.
 
-Or copy the five operational skill folders into `~/.copilot/skills/` (all projects) or `<your-repo>/.github/skills/` (one project): `intent/`, `mission/`, `improve/`, `record/`, `learn/`. Add `probe/` only if you are conducting ARF research.
+Or copy the five operational skill folders into `~/.copilot/skills/` (all projects) or `<your-repo>/.github/skills/` (one project): `intent/`, `goal/`, `improve/`, `record/`, `learn/`. Add `probe/` only if you are conducting ARF research.
 
-The operator workflow is **Run Improve**. Intent interprets each prompt, Record writes each result, and Improve automatically triggers Mission or Learn when accumulated evidence makes durable direction or a refreshed map useful. Probe is optional scientific instrumentation and is not required for this workflow.
+The operator workflow is **Run Improve**. Intent interprets each prompt, Record writes each result, and Improve automatically triggers Goal or Learn when accumulated evidence makes durable direction or a refreshed map useful. Probe is optional scientific instrumentation and is not required for this workflow.
 
 ## Set up a memory and make a first record
 
@@ -47,15 +47,15 @@ It prints `unbound: ...` and the repository's root commit (a shallow clone is re
 {"id": "<id>", "root_commits": ["<that commit>"], "locators": ["<optional remote url>"]}
 ```
 
-Now the mandate, `<memory-folder>/repositories/<id>/mission.md`:
+Now the mandate, `<memory-folder>/repositories/<id>/goal.md`:
 
 ```markdown
-<!-- current-mission: complete -->
+<!-- current-goal: complete -->
 Make the checkout module easier to test without changing its public API.
 
 ## Human gate
 A maintainer reviews every pull request before it merges. Before that review the agent may edit and test on a branch; without it, it may not merge or release.
-<!-- mission-history -->
+<!-- goal-history -->
 ```
 
 Make the first record from the work repository:

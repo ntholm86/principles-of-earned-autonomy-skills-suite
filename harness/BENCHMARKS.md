@@ -28,7 +28,7 @@ The verifier enforces structural fidelity rules forward-only, from `SESSION_FIDE
 |---|---|---|---|---|
 | B1 | External improve correctness pass | Foreign codebase (not authored by operator) | Improve + Record | One verifiable correctness improvement landed; trail entry with prediction and outcome |
 | B2 | External cross-session learning carry-forward | Same foreign codebase across at least 2 sessions | Improve + Learn + Record | Session 2 acts on a Session 1 `[!REALIZATION]` without re-diagnosing it |
-| B3 | Cold-target mission inference | Foreign codebase with no pre-seeded mission/trail | Mission + Record | Operator confirms at least one inferred direction was correct and previously unwritten |
+| B3 | Cold-target goal inference | Foreign codebase with no pre-seeded goal/trail | Goal + Record | Operator confirms at least one inferred direction was correct and previously unwritten |
 | B4 | Independent evaluator convergence check | Skills repo convergence pass under protocol | Improve + Record | Three distinct evaluator families declare silence in succession under protocol |
 | B5 | Benchmark target existence check | Local filesystem | verify.py | `verify.py` checks for the existence of `benchmark-b5-target/main.py` |
 
@@ -44,7 +44,7 @@ Status legend:
 |---|---|---|---|---|
 | B1 | Seed (audit-trail entry `external-proof-vectorium-improve-run`) | Pending | Pending | Seed |
 | B2 | Seed (audit-trail entry `external-proof-vectorium-arc`) | Pending | Pending | Seed |
-| B3 | Seed (audit-trail Mission-on-cold-target entries) | Pending | Pending | Seed |
+| B3 | Seed (audit-trail Goal-on-cold-target entries) | Pending | Pending | Seed |
 | B4 | Replicated (silence-1 / silence-2 / silence-3 entries) | Replicated (same chain) | Replicated (same chain) | Replicated |
 | B5 | Seed (audit-trail entry `harness-finalize-arf-b5-seed`) | Pending | Pending | Seed |
 

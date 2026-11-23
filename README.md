@@ -14,7 +14,7 @@ These skills are designed to address:
 - **Quietly wasted effort** — sensible edits that move nothing that matters.
 - **No honest stop** — the loop invents work to keep running.
 
-This suite gives an agent a durable mission, memory of what happened, and a disciplined way to examine, improve, verify, and learn from its work. It interprets what you mean before acting, keeps the work anchored to the purpose, preserves decisions across sessions and model swaps, and stops when independent attempts find nothing material left to change.
+This suite gives an agent a durable goal, memory of what happened, and a disciplined way to examine, improve, verify, and learn from its work. It interprets what you mean before acting, keeps the work anchored to the purpose, preserves decisions across sessions and model swaps, and stops when independent attempts find nothing material left to change.
 
 These are intended behaviors, not guaranteed outcomes. Results depend on the
 model, host, task and whether the protocol is followed. The suite does not
@@ -22,7 +22,7 @@ establish reasoning faithfulness, safety or correctness merely by producing a
 trail. [Try the reproducible pilot](./experiments/accountable-agent-pilot/README.md)
 to examine observable behavior and report failures as well as useful results.
 
-**Try it:** run `Improve` on a real, bounded task. The agent chooses the route; you keep the mission and the consequential decisions.
+**Try it:** run `Improve` on a real, bounded task. The agent chooses the route; you keep the goal and the consequential decisions.
 
 The suite is a reference route to [Shared Agent Context Memory (SACM)](https://github.com/ntholm86/shared-agent-context-memory) and the implementation repo for the [Principles of Earned Autonomy](https://github.com/ntholm86/principles-of-earned-autonomy). It is compatible with Claude (skills / Agent SDK), GitHub Copilot (custom skills), and any LLM agent that can read markdown and append to a file (legacy in-repo memory); the shared memory also needs git.
 
@@ -30,7 +30,7 @@ The suite is a reference route to [Shared Agent Context Memory (SACM)](https://g
 
 ## One skill to rule them all: IMPROVE
 
-Run **Improve** on a real, bounded task. It invokes Intent before acting and Record after substantive work, and schedules Mission or Learn when the accumulated evidence makes either service useful. You do not orchestrate the other operational skills; **Probe** is separate, optional research instrumentation.
+Run **Improve** on a real, bounded task. It invokes Intent before acting and Record after substantive work, and schedules Goal or Learn when the accumulated evidence makes either service useful. You do not orchestrate the other operational skills; **Probe** is separate, optional research instrumentation.
 
 ```text
 /improve create a professional knitting webshop in vanilla HTML, CSS, and JavaScript
@@ -41,7 +41,7 @@ Run **Improve** on a real, bounded task. It invokes Intent before acting and Rec
 | **[Improve](./improve/SKILL.md)** | **Start here** | Makes one highest-leverage change per run. |  | reads all three |
 | **[Intent](./intent/SKILL.md)** | **Automatic** | States what the agent believes you mean before acting. | Operator's Intent |  |
 | **[Record](./record/SKILL.md)** | **Automatic** | Writes every run to an append-only audit trail. | Observable Autonomy | records/ (legacy: .acm/audit-trail.md) |
-| **[Mission](./mission/SKILL.md)** | **Automatic** | Consolidates accepted mandates into durable direction. |  | mission.md |
+| **[Goal](./goal/SKILL.md)** | **Automatic** | Consolidates accepted mandates into durable direction. |  | goal.md |
 | **[Learn](./learn/SKILL.md)** | **Automatic** | Reflects on past runs to spot recurring mistakes and dead ends. |  | learning.md |
 | **[Probe](./probe/SKILL.md)** | **Research** | Measures Autonomous Reasoning Fidelity. | Autonomous Reasoning Fidelity |  |
 | **Convergence to silence** | **Principle 3** | The agent declares silence when it finds nothing material; convergence is defined by [Convergence Is Silence](./PRINCIPLES.md#principle-3-convergence-is-silence), not by this suite. | Convergence Is Silence | trail (silence entries) |
@@ -52,19 +52,19 @@ The operator remembers one command: `/improve`. The rest is automatic under Impr
 
 ## How The Model Works
 
-Point Improve at a task. Each run reads your mission, the current map, and the trail; examines the target; makes one highest-leverage change; verifies it against a prediction recorded in advance; and writes the whole thing to an append-only ledger before finishing. When accumulated runs expose an unclear direction, Improve pauses to ask you; when the trail contradicts the map, it re-reads the whole arc and refreshes the map; and every lesson feeds the next run, so the suite gets smarter across sessions and model swaps. A run that finds nothing material declares silence; convergence is Principle 3.
+Point Improve at a task. Each run reads your goal, the current map, and the trail; examines the target; makes one highest-leverage change; verifies it against a prediction recorded in advance; and writes the whole thing to an append-only ledger before finishing. When accumulated runs expose an unclear direction, Improve pauses to ask you; when the trail contradicts the map, it re-reads the whole arc and refreshes the map; and every lesson feeds the next run, so the suite gets smarter across sessions and model swaps. A run that finds nothing material declares silence; convergence is Principle 3.
 
-### Mission — Where are we going?
+### Goal — Where are we going?
 
-Each narrated Intent gives Improve a mandate for the current prompt. When accepted mandates accumulate, conflict, or expose an unresolved priority, Improve triggers Mission to consolidate them into durable cross-run direction. Mission asks one sourced question at a time and never turns an unconfirmed agent inference into operator-held direction.
+Each narrated Intent gives Improve a mandate for the current prompt. When accepted mandates accumulate, conflict, or expose an unresolved priority, Improve triggers Goal to consolidate them into durable cross-run direction. Goal asks one sourced question at a time and never turns an unconfirmed agent inference into operator-held direction.
 
 > "No-one knows exactly what they want."
 >
 > — David Thomas & Andrew Hunt, [The Pragmatic Programmer](https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/)
 
-### Improve — Move toward the mission
+### Improve — Move toward the goal
 
-Improve is the workhorse and the single normal entry point. Point it at a target and run it. Each run applies Intent, explains its interpretation, examines what is there, challenges the first read, chooses the highest-leverage move, acts, verifies, records through Record, and explains any automatic Mission or Learn handoff when the evidence triggers one.
+Improve is the workhorse and the single normal entry point. Point it at a target and run it. Each run applies Intent, explains its interpretation, examines what is there, challenges the first read, chooses the highest-leverage move, acts, verifies, records through Record, and explains any automatic Goal or Learn handoff when the evidence triggers one.
 
 > "Invest in the design of the system every day."
 >
@@ -72,13 +72,13 @@ Improve is the workhorse and the single normal entry point. Point it at a target
 
 ### Learning — The architecture keeps its map current
 
-After many locally sensible runs, the overall arc can still drift. When triggered, Learn reads the accumulated history as one document and refreshes the current learning: what the target is becoming, where attention has gone, and whether that is where the real weight lies. Mission schedules it after material direction changes; Improve schedules it when the evidence forms a meaningful arc, contradicts the current map, or approaches convergence. A raw iteration count alone does not trigger it.
+After many locally sensible runs, the overall arc can still drift. When triggered, Learn reads the accumulated history as one document and refreshes the current learning: what the target is becoming, where attention has gone, and whether that is where the real weight lies. Goal schedules it after material direction changes; Improve schedules it when the evidence forms a meaningful arc, contradicts the current map, or approaches convergence. A raw iteration count alone does not trigger it.
 
 > "Life can only be understood backwards; but it must be lived forwards."
 >
 > — Søren Kierkegaard, Journals (1843)
 
-Intent and Record operate automatically around the work. Mission and Learn activate automatically when their evidence-based triggers fire. Probe sits outside normal operation as optional ARF research instrumentation.
+Intent and Record operate automatically around the work. Goal and Learn activate automatically when their evidence-based triggers fire. Probe sits outside normal operation as optional ARF research instrumentation.
 
 ## The Suite Improved Itself — [314 self-improvement iterations](./.acm/ITERATION-COUNT.md)
 
@@ -102,26 +102,26 @@ The full trail exists, but it cannot be published in this repository because it 
 
 ## Shared Agent Context Memory (SACM)
 
-Each skill externalizes what normally only lives inside a single model session — the goal, the mission, the decisions, the arc. Together they implement Shared Agent Context Memory: files that can persist beyond a model session. Continuity depends on preserving those files and the next agent reading and using them.
+Each skill externalizes what normally only lives inside a single model session — the intent, the goal, the decisions, the arc. Together they implement Shared Agent Context Memory: files that can persist beyond a model session. Continuity depends on preserving those files and the next agent reading and using them.
 
-This memory structure is formally specified by the [Shared Agent Context Memory (SACM)](https://github.com/ntholm86/shared-agent-context-memory) standard. SACM defines three tiers organized by trust level: Intent (`mission.md`, principal-confirmed), Trace (the append-only records, with `learning.md` as a replaceable derived view; legacy `audit-trail.md`), and Evidence (harness-captured session records). This suite implements the Intent and Trace tiers; the Evidence tier requires a separate harness.
+This memory structure is formally specified by the [Shared Agent Context Memory (SACM)](https://github.com/ntholm86/shared-agent-context-memory) standard. SACM defines three tiers organized by trust level: Intent (`goal.md`, principal-confirmed), Trace (the append-only records, with `learning.md` as a replaceable derived view; legacy `audit-trail.md`), and Evidence (harness-captured session records). This suite implements the Intent and Trace tiers; the Evidence tier requires a separate harness.
 
-**Conformance.** The suite follows the specification's current text (v0.7.0) and claims no conformance level. What its tools check or enforce: binding by root commit, with a fork or copy reported ambiguous when the binding lists locators (R-13; a binding with no locators binds by root commit alone); path scopes and their escaping (R-14); containment of paths and no symbolic links in the memory (R-15); records written with their identifier, format version, time, scope, repository and mandate added by the tool, and for a finished body only the lines it lacks, with a differing identifier refused (R-16; the other fields are the agent's and are only warned about; a scope or mandate line the body brings is not verified); create-only creation of a record (R-18; not atomic, and a retry in a later second makes a new record); detection after the fact of an edited, deleted or renamed record, with an acknowledgement by a record that names the commit (R-05, `memory_check.py --history`; it does not cover `mission.md` and cannot stop a writer who can rewrite the repository); and a derived-view label and a stale-view warning for `learning.md` (R-19; the claim-by-claim rules are in the Learn skill, not checked). **Not met:** independent evidence capture (R-04, which needs a separate component), structural protection of records and mandates against the agent that writes the memory (R-06), a recording, access and retention policy before recording (R-07), and an erasure procedure (R-08). **Partly met, in the skills' prose only:** confirmation of a mandate (R-02), trust ordering (R-03), the gate before work (R-09), authority changes mid-work (R-10), degraded memory (R-11), resolution of the whole governing chain (R-15; `record.py resolve` returns only the write scope), convergence (R-17) and bounded retrieval and the observable start-up read (R-20). **Legacy mode** (an in-repository `.acm/`, as this repository has) does not meet R-05, R-12 or R-18. `record.py` does not yet write to the memory-wide scope for work that has no repository, which the Record skill describes. R-21 does not apply: the suite has no extraction pipeline.
+**Conformance.** The suite follows the specification's current text (v0.8.0) and claims no conformance level. What its tools check or enforce: binding by root commit, with a fork or copy reported ambiguous when the binding lists locators (R-13; a binding with no locators binds by root commit alone); path scopes and their escaping (R-14); containment of paths and no symbolic links in the memory (R-15); records written with their identifier, format version, time, scope, repository and mandate added by the tool, and for a finished body only the lines it lacks, with a differing identifier refused (R-16; the other fields are the agent's and are only warned about; a scope or mandate line the body brings is not verified); create-only creation of a record (R-18; not atomic, and a retry in a later second makes a new record); detection after the fact of an edited, deleted or renamed record, with an acknowledgement by a record that names the commit (R-05, `memory_check.py --history`; it does not cover `goal.md` and cannot stop a writer who can rewrite the repository); and a derived-view label and a stale-view warning for `learning.md` (R-19; the claim-by-claim rules are in the Learn skill, not checked). **Not met:** independent evidence capture (R-04, which needs a separate component), structural protection of records and mandates against the agent that writes the memory (R-06), a recording, access and retention policy before recording (R-07), and an erasure procedure (R-08). **Partly met, in the skills' prose only:** confirmation of a mandate (R-02), trust ordering (R-03), the gate before work (R-09), authority changes mid-work (R-10), degraded memory (R-11), resolution of the whole governing chain (R-15; `record.py resolve` returns only the write scope), convergence (R-17) and bounded retrieval and the observable start-up read (R-20). **Legacy mode** (an in-repository `.acm/`, as this repository has) does not meet R-05, R-12 or R-18. `record.py` does not yet write to the memory-wide scope for work that has no repository, which the Record skill describes. R-21 does not apply: the suite has no extraction pipeline.
 
-The files (`mission.md`, `learning.md` and the trail records) live in a shared SACM memory repository, separate from your code: clone it once, list its path in `~/.acm/memories`, and each work repository is bound to its scope by its root commit ([definition](./record/SKILL.md#where-memory-lives)). An in-repo `.acm/` from earlier ACM versions, like this repository's own, still works as legacy memory. The files provide the literal storage, but the interaction of the skills with those files creates **contextual awareness**.
+The files (`goal.md`, `learning.md` and the trail records) live in a shared SACM memory repository, separate from your code: clone it once, list its path in `~/.acm/memories`, and each work repository is bound to its scope by its root commit ([definition](./record/SKILL.md#where-memory-lives)). An in-repo `.acm/` from earlier ACM versions, like this repository's own, still works as legacy memory. The files provide the literal storage, but the interaction of the skills with those files creates **contextual awareness**.
 
-Memory alone is just retrieval; awareness is learning. Because `Learn` reads the arc, `Mission` uncovers where you're heading, and `Intent` aligns the goal, the suite uses that memory to understand where it is and where it is going.
+Memory alone is just retrieval; awareness is learning. Because `Learn` reads the arc, `Goal` uncovers where you're heading, and `Intent` aligns each request with it, the suite uses that memory to understand where it is and where it is going.
 
 When you swap models, the next agent can read the stored learning and prior decisions. Whether it uses that context well must be checked in the resulting work; persistence alone does not demonstrate learning.
 
 ## Workflow
 
 1. **Run:** Invoke `improve` with a concrete prompt. Without explicit delegation, Intent asks you to confirm its interpretation and Improve asks you to approve its proposed change. Each accepts Stop or Specify instead.
-2. **Keep going:** Invoke `improve` again when there is more work. Improve automatically schedules Mission when broader direction needs confirmation and Learn when accumulated evidence makes the current learning stale.
+2. **Keep going:** Invoke `improve` again when there is more work. Improve automatically schedules Goal when broader direction needs confirmation and Learn when accumulated evidence makes the current learning stale.
 
-The operator remembers one command: `/improve`. `/mission` and `/learn` remain manual overrides, not routine responsibilities.
+The operator remembers one command: `/improve`. `/goal` and `/learn` remain manual overrides, not routine responsibilities.
 
-After trust is earned, explicitly delegate either routine gate for one prompt or in Mission. Delegation preserves visible narration and the final change summary; it never answers Mission questions or bypasses operator-declared consequential gates. A host-wide autopilot setting does not replace this boundary.
+After trust is earned, explicitly delegate either routine gate for one prompt or in Goal. Delegation preserves visible narration and the final change summary; it never answers Goal questions or bypasses operator-declared consequential gates. A host-wide autopilot setting does not replace this boundary.
 
 ## Quickstart (First Successful Run)
 

@@ -12,9 +12,9 @@ SPEC.loader.exec_module(memory_check)
 
 COMMIT_A = "a" * 40
 COMMIT_B = "b" * 40
-GOOD_MISSION = (
-    "# mission.md\n\n<!-- current-mission: complete -->\n\n## What this is\n\nx\n\n"
-    "## Human gate\n\nThe author reviews every change.\n\n<!-- mission-history -->\n\n## History\n"
+GOOD_GOAL = (
+    "# goal.md\n\n<!-- current-goal: complete -->\n\n## What this is\n\nx\n\n"
+    "## Human gate\n\nThe author reviews every change.\n\n<!-- goal-history -->\n\n## History\n"
 )
 GOOD_RECORD = (
     "## 2026-11-22 — thing\n\n- record: 20261122T010203Z-thing\n- time: 2026-11-22T01.02.03Z\n- scope: memory-wide\n"
@@ -41,11 +41,11 @@ class MemoryCheckTests(unittest.TestCase):
         return memory_check.check(self.root)
 
     def test_a_valid_memory_passes(self):
-        self.write("mission.md", GOOD_MISSION)
+        self.write("goal.md", GOOD_GOAL)
         self.write("records/20261122T010203Z-thing.md", GOOD_RECORD)
         self.binding("r", [COMMIT_A])
-        self.write("repositories/r/mission.md", GOOD_MISSION)
-        self.write("repositories/r/tasks/t/mission.md", GOOD_MISSION)
+        self.write("repositories/r/goal.md", GOOD_GOAL)
+        self.write("repositories/r/tasks/t/goal.md", GOOD_GOAL)
         self.assertEqual(self.run_check(), ([], []))
 
     def test_missing_marker_hidden_folder_and_retired_name_fail(self):
@@ -53,26 +53,28 @@ class MemoryCheckTests(unittest.TestCase):
         self.write("repositories/r/.acm/x.md", "x")
         self.write("repositories/r/orientation.md", "old")
         self.write("repositories/r/destination.md", "old")
+        self.write("repositories/r/mission.md", "old")
         failures, _ = self.run_check()
         joined = "\n".join(failures)
         self.assertIn("no .acm-root", joined)
         self.assertIn("hidden .acm/", joined)
         self.assertIn("retired file name", joined)
+        self.assertIn("repositories/r/mission.md: retired file name", joined)
 
-    def test_mission_without_a_gate_or_with_misordered_markers_fails(self):
-        self.write("mission.md", GOOD_MISSION.replace("## Human gate", "## Something else"))
-        self.write("repositories/r/mission.md", "<!-- mission-history -->\n<!-- current-mission: complete -->\n")
+    def test_goal_without_a_gate_or_with_misordered_markers_fails(self):
+        self.write("goal.md", GOOD_GOAL.replace("## Human gate", "## Something else"))
+        self.write("repositories/r/goal.md", "<!-- goal-history -->\n<!-- current-goal: complete -->\n")
         failures, _ = self.run_check()
         self.assertTrue(any("Human gate" in f for f in failures))
         self.assertTrue(any("in that order" in f for f in failures))
 
     def test_a_gate_in_the_history_does_not_count(self):
-        self.write("mission.md", GOOD_MISSION.replace("## Human gate", "## Gate").replace("## History", "## Human gate"))
+        self.write("goal.md", GOOD_GOAL.replace("## Human gate", "## Gate").replace("## History", "## Human gate"))
         failures, _ = self.run_check()
         self.assertTrue(any("Human gate" in f for f in failures))
 
     def test_an_empty_gate_fails_and_an_unfilled_stub_warns(self):
-        self.write("mission.md", GOOD_MISSION.replace("The author reviews every change.", ""))
+        self.write("goal.md", GOOD_GOAL.replace("The author reviews every change.", ""))
         self.write("records/20261122T010203Z-thing.md", GOOD_RECORD.replace("- agent: a", "- agent: TODO (model)"))
         failures, warnings = self.run_check()
         self.assertTrue(any("is empty" in f for f in failures))
@@ -112,8 +114,8 @@ class MemoryCheckTests(unittest.TestCase):
         self.assertIn("format: 9", failures[0])
 
     def test_a_code_folder_named_drafts_is_a_path_scope(self):
-        self.write("repositories/r/paths/drafts/mission.md", GOOD_MISSION)
-        self.write("repositories/r/paths/paths/mission.md", GOOD_MISSION)
+        self.write("repositories/r/paths/drafts/goal.md", GOOD_GOAL)
+        self.write("repositories/r/paths/paths/goal.md", GOOD_GOAL)
         names = {p.relative_to(self.root).as_posix() for p in memory_check.scopes(self.root)}
         self.assertIn("repositories/r/paths/drafts", names)
         self.assertIn("repositories/r/paths/paths", names)
@@ -167,8 +169,8 @@ class MemoryCheckTests(unittest.TestCase):
         self.assertTrue(any("stale" in w and "20261122T020304Z-newer" in w for w in warnings))
 
     def test_scopes_under_paths_and_tasks_are_found(self):
-        self.write("repositories/r/paths/src/area/mission.md", GOOD_MISSION)
-        self.write("repositories/r/paths/src/area/tasks/t/mission.md", GOOD_MISSION)
+        self.write("repositories/r/paths/src/area/goal.md", GOOD_GOAL)
+        self.write("repositories/r/paths/src/area/tasks/t/goal.md", GOOD_GOAL)
         self.write("repositories/r/paths/src/area/records/readme.md", "x")
         names = {p.relative_to(self.root).as_posix() for p in memory_check.scopes(self.root)}
         self.assertIn("repositories/r/paths/src/area", names)

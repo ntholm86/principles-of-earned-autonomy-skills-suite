@@ -4,11 +4,11 @@ _Last updated: 2026-08-19 (mini-orient: one-normal-entry operating-model clarifi
 
 ## Mini-orient addendum - 2026-08-19 (one normal entry, one automatic chain)
 
-The operator resolved the Mission's open question about the Active/Passive/Triggered taxonomy: it hides a false distinction for normal use. **Improve is the sole normal entry point.** Intent, Trail, Mission, and Orient are one automatic chain under Improve's orchestration; Mission may schedule Orient after a material direction change. Probe remains a separately invoked entry point only for controlled ARF research.
+The operator resolved the Goal's open question about the Active/Passive/Triggered taxonomy: it hides a false distinction for normal use. **Improve is the sole normal entry point.** Intent, Trail, Goal, and Orient are one automatic chain under Improve's orchestration; Goal may schedule Orient after a material direction change. Probe remains a separately invoked entry point only for controlled ARF research.
 
-**Falsifiable by:** a normal workflow requiring the operator to invoke Intent, Trail, Mission, or Orient for the work to proceed, or an automatic step gaining authority to change the target or mission without Improve's governing run and the existing operator boundaries.
+**Falsifiable by:** a normal workflow requiring the operator to invoke Intent, Trail, Goal, or Orient for the work to proceed, or an automatic step gaining authority to change the target or goal without Improve's governing run and the existing operator boundaries.
 
-**What this changes:** the operational explanation must lead with Improve rather than an internal activation taxonomy. It does not reduce the authority of Mission, Orient, Intent, or Trail; it clarifies who invokes them and removes a newcomer-facing orchestration burden that never reflected the intended workflow.
+**What this changes:** the operational explanation must lead with Improve rather than an internal activation taxonomy. It does not reduce the authority of Goal, Orient, Intent, or Trail; it clarifies who invokes them and removes a newcomer-facing orchestration burden that never reflected the intended workflow.
 
 **What it does not establish:** whether readers now understand the one-normal-entry model. That remains a first-use comprehension test, not an inference from clearer wording.
 
@@ -33,15 +33,15 @@ The May origin and August reconciliation now agree explicitly: the target is an 
 
 **Falsifiable by:** future work optimizing generic improvement while weakening operator intent, evidence, or convergence, or optimizing governance while losing the ability to produce material improvement on varied targets.
 
-### 2. Mission now gates the complete synthesized meaning, not only its source questions
+### 2. Goal now gates the complete synthesized meaning, not only its source questions
 
-Mission previously asked the operator to confirm sourced hunches, then allowed the agent to write its own more specific understanding. Intent could not cover implications synthesized after its ingress gate, and commit review happened after the file, Trail, and Orientation could already change. Mission 2.8.0 now requires the agent to expose the complete durable synthesis, distinguish confirmed statements from derived implications, and wait for confirmation before writing.
+Goal previously asked the operator to confirm sourced hunches, then allowed the agent to write its own more specific understanding. Intent could not cover implications synthesized after its ingress gate, and commit review happened after the file, Trail, and Orientation could already change. Goal 2.8.0 now requires the agent to expose the complete durable synthesis, distinguish confirmed statements from derived implications, and wait for confirmation before writing.
 
-**Falsifiable by:** a future Mission run writing an unstated implication after only its broader source hunch was confirmed, or the new pause proving indistinguishable from an earlier question in natural use.
+**Falsifiable by:** a future Goal run writing an unstated implication after only its broader source hunch was confirmed, or the new pause proving indistinguishable from an earlier question in natural use.
 
 ### 3. Viability is a moving capability-to-cost relationship, not a brevity target
 
-The operator confirmed that trustworthy capability per resource applies to live skill and orchestration contracts, reasoning, routinely processed ACM context, and newcomer understanding. Those costs must remain proportionate to the work and be reconsidered as model ability, context capacity, and token economics change. Shorter text is not automatically lean: the layered-Improve replication found weaker reflection and reversal behavior after compression. Adaptive reasoning and derived memory surfaces remain candidate routes, not Mission requirements.
+The operator confirmed that trustworthy capability per resource applies to live skill and orchestration contracts, reasoning, routinely processed ACM context, and newcomer understanding. Those costs must remain proportionate to the work and be reconsidered as model ability, context capacity, and token economics change. Shorter text is not automatically lean: the layered-Improve replication found weaker reflection and reversal behavior after compression. Adaptive reasoning and derived memory surfaces remain candidate routes, not Goal requirements.
 
 **Falsifiable by:** a longer contract measurably improving trustworthy outcomes or newcomer understanding enough to earn its processing burden, or a shorter or differently loaded contract preserving those outcomes while reducing lifecycle cost.
 
@@ -53,13 +53,13 @@ The prior bar allowed conceptual fluency to develop after successful use. Eviden
 
 ### 5. Recursive capability awareness remains generic and Purpose-derived
 
-Capability leverage now asks only whether changed capability alters what is possible or worthwhile for the target. Recursive examination of the suite's own reasoning, learning, architecture, and operation comes from Mission and generic Purpose, not a self-targeting condition. Today's correction arc showed that naming a correct current route can still narrow future reasoning.
+Capability leverage now asks only whether changed capability alters what is possible or worthwhile for the target. Recursive examination of the suite's own reasoning, learning, architecture, and operation comes from Goal and generic Purpose, not a self-targeting condition. Today's correction arc showed that naming a correct current route can still narrow future reasoning.
 
 **Falsifiable by:** diverse capable readers failing to derive self-examination or relevant capability scope from Purpose, or future generic runs requiring repository-specific examples to notice material leverage.
 
 ### 6. Explicit authority now covers prompt, action, and durable-direction synthesis
 
-Supervised runs confirm Intent before examination and Improve before implementation unless either routine gate is explicitly delegated. Mission now separately confirms the complete meaning before synthesized direction is written. Direction changes and consequential boundaries remain operator-owned. The contracts passed textual readers and one live Intent confirmation, but the Improve action gate, corrected Mission gate, authority terminology, and surrounding explanation have not passed the clarified newcomer operational-understanding bar.
+Supervised runs confirm Intent before examination and Improve before implementation unless either routine gate is explicitly delegated. Goal now separately confirms the complete meaning before synthesized direction is written. Direction changes and consequential boundaries remain operator-owned. The contracts passed textual readers and one live Intent confirmation, but the Improve action gate, corrected Goal gate, authority terminology, and surrounding explanation have not passed the clarified newcomer operational-understanding bar.
 
 **Falsifiable by:** unassisted users failing to distinguish the three authority objects, or repeated use showing that one pause adds no distinct steering value.
 
@@ -73,19 +73,19 @@ From the 2026-05-30 baseline to committed HEAD before the latest repair, the liv
 
 1. Observe an unassisted newcomer and identify the exact words, concepts, or exchanges that block understanding of what happens, why it matters, and where control remains.
 2. Examine representative live runs to determine which skill instructions and orchestration paths change behavior and which merely repeat or contradict a current governing rule.
-3. Measure routine ACM access on a mature target to learn whether bounded Mission, Orientation, and recent Learning prevent full-history cost in practice while preserving relevant evidence.
+3. Measure routine ACM access on a mature target to learn whether bounded Goal, Orientation, and recent Learning prevent full-history cost in practice while preserving relevant evidence.
 4. Exercise the Improve action gate and Specify during natural work, then compare their distinct steering value against interaction cost.
 
 ## Active operational rules
 
-- Treat Improve as the sole normal entry point. Intent, Trail, Mission, and Orient are automatic in its orchestration chain; Probe is a separate research entry point.
+- Treat Improve as the sole normal entry point. Intent, Trail, Goal, and Orient are automatic in its orchestration chain; Probe is a separate research entry point.
 - Preserve the integrated center: every route must improve target capability while upholding Operator's Intent, Observable Autonomy, and Convergence Is Silence.
 - Treat every skill, orchestration, and routine-context addition as a processing burden that must continue to earn its contribution to trustworthy capability; do not use line count alone as the decision rule.
 - Reconsider current machinery as model capability, context capacity, and token economics change; do not preserve assumptions solely because they were once necessary.
 - Explain first-use behavior in plain operational terms: what happens, why it matters, and where the operator controls it.
-- Before Mission writes, expose the complete durable synthesis, distinguish operator-confirmed meaning from agent-derived implications, and wait for confirmation.
-- Require explicit prompt or confirmed Mission evidence before skipping either routine gate; never infer delegation from trust or host settings.
-- Never let routine delegation answer Mission, approve direction change, cross an operator-declared consequential gate, or authorize cognitive-capability reduction.
+- Before Goal writes, expose the complete durable synthesis, distinguish operator-confirmed meaning from agent-derived implications, and wait for confirmation.
+- Require explicit prompt or confirmed Goal evidence before skipping either routine gate; never infer delegation from trust or host settings.
+- Never let routine delegation answer Goal, approve direction change, cross an operator-declared consequential gate, or authorize cognitive-capability reduction.
 - Prefer purpose tests over trigger taxonomies and mechanism examples; apply prior genericity reversals at decision time before adding skill conditions.
 - Preserve append-only Trail history and regenerate derived ACM artifacts after every append.
 

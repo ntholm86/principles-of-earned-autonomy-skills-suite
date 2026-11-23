@@ -1,14 +1,14 @@
-# Mission — autonomous-agent-skills
+# Goal — autonomous-agent-skills
 
-_Operator-held. Stable within runs — no skill changes this file; only the operator revises it. Read by Improve at step 1, before the trail and the retrospect.md. Revisit with the Mission skill whenever the operator's understanding has evolved or after a major arc milestone._
+_Operator-held. Stable within runs — no skill changes this file; only the operator revises it. Read by Improve at step 1, before the trail and the retrospect.md. Revisit with the Goal skill whenever the operator's understanding has evolved or after a major arc milestone._
 
-_Renamed from `vision.md` on 2026-05-28 alongside the Vision→Mission skill rename (skill v2.0.0). Historical entries referencing "Vision" describe the same skill under its prior name._
+_Renamed from `vision.md` on 2026-05-28 alongside the Vision→Goal skill rename (skill v2.0.0). Historical entries referencing "Vision" describe the same skill under its prior name._
 
 ---
 
-<!-- current-mission: complete -->
+<!-- current-goal: complete -->
 
-## Current mission (reconciled 2026-08-16)
+## Current goal (reconciled 2026-08-16)
 
 ### Purpose
 
@@ -22,7 +22,7 @@ When the engine targets itself, the same theory applies recursively. It should d
 
 Only the three Principles of Earned Autonomy are architectural constraints:
 
-1. **Operator's Intent:** the operator defines the mission; the agent reasons about the route.
+1. **Operator's Intent:** the operator defines the goal; the agent reasons about the route.
 2. **Observable Autonomy:** autonomous work leaves trustworthy evidence that the agent cannot retroactively rewrite.
 3. **Convergence Is Silence:** completion requires diverse independent evaluators to find nothing material left to change.
 
@@ -33,9 +33,9 @@ Everything else is revisable when reasoning and evidence support a better route.
 Two priorities are co-equal:
 
 1. **Research:** continue producing bounded evidence about what trustworthy delegation requires, including negative results and improvements to the engine's own reasoning capability.
-2. **Adoption:** enable a new developer to install the suite and complete a useful first Improve run without author assistance or mission setup. Improve is the single normal entry point; it applies prompt-level Intent immediately and triggers durable Mission and Learning only when accumulated evidence makes them useful. On first use, the developer should understand in plain operational terms what the agent will do, why it matters, and where they retain control. Deeper conceptual fluency may develop through use.
+2. **Adoption:** enable a new developer to install the suite and complete a useful first Improve run without author assistance or goal setup. Improve is the single normal entry point; it applies prompt-level Intent immediately and triggers durable Goal and Learning only when accumulated evidence makes them useful. On first use, the developer should understand in plain operational terms what the agent will do, why it matters, and where they retain control. Deeper conceptual fluency may develop through use.
 
-Leanness and resource efficiency are cross-cutting viability constraints, not standing size targets. The skills should resist becoming bloated, too long, or burdened with unnecessary expensive logic, and remain easy to use and understand. Optimize trustworthy capability per unit of resource without treating shorter as automatically better. This must hold across the full improvement lifecycle, including when progress slows and the remaining distance to the Mission narrows. A protocol that remains trustworthy but spends nearly fixed reasoning, verification, reflection, and evidence cost on progressively smaller gains may become operationally ineffective before it reaches honest silence. The engine must preserve its pressure toward the highest-leverage remaining work while discovering for itself how to keep that work worth its resource cost; the Mission does not prescribe iteration size, batching, thresholds, or another mechanism.
+Leanness and resource efficiency are cross-cutting viability constraints, not standing size targets. The skills should resist becoming bloated, too long, or burdened with unnecessary expensive logic, and remain easy to use and understand. Optimize trustworthy capability per unit of resource without treating shorter as automatically better. This must hold across the full improvement lifecycle, including when progress slows and the remaining distance to the Goal narrows. A protocol that remains trustworthy but spends nearly fixed reasoning, verification, reflection, and evidence cost on progressively smaller gains may become operationally ineffective before it reaches honest silence. The engine must preserve its pressure toward the highest-leverage remaining work while discovering for itself how to keep that work worth its resource cost; the Goal does not prescribe iteration size, batching, thresholds, or another mechanism.
 
 The same viability constraint applies to the architecture's own accumulated context. Live skill and orchestration contracts must not keep growing simply because each local flow improvement is defensible, and durable SACM evidence must not require every routine iteration to reprocess the full history. Reasoning and context should remain proportionate to the work while preserving the capabilities and evidence the principles require. Because model ability, context capacity, and token economics are changing, the architecture must repeatedly reconsider what machinery and context are still necessary instead of preserving assumptions optimized for today's frontier. Adaptive reasoning depth and derived memory surfaces are possible routes to investigate, not mandated mechanisms.
 
@@ -43,19 +43,19 @@ The engine may autonomously pursue reductions that preserve reasoning, memory, l
 
 ### Authority and autonomy
 
-The operator owns the Mission and any change to it. Within a confirmed Mission, the engine may autonomously select and implement the highest-leverage route while leaving observable evidence. The historical claim that a human must approve every implementation choice is superseded; explicit delegation can include choosing what to implement.
+The operator owns the Goal and any change to it. Within a confirmed Goal, the engine may autonomously select and implement the highest-leverage route while leaving observable evidence. The historical claim that a human must approve every implementation choice is superseded; explicit delegation can include choosing what to implement.
 
-Without explicit delegation, routine Improve work is supervised: the operator confirms Intent's interpretation before examination and confirms Improve's proposed change before implementation. The operator may delegate either routine gate for one prompt or durably in Mission after trust is earned. Delegation must be explicit; silence, accumulated trust, and a host-wide autonomy setting do not grant it. Routine delegation never answers a Mission question, authorizes a direction change, or bypasses an operator-declared consequential-action gate. The operator may narrow or revoke delegation at any time.
+Without explicit delegation, routine Improve work is supervised: the operator confirms Intent's interpretation before examination and confirms Improve's proposed change before implementation. The operator may delegate either routine gate for one prompt or durably in Goal after trust is earned. Delegation must be explicit; silence, accumulated trust, and a host-wide autonomy setting do not grant it. Routine delegation never answers a Goal question, authorizes a direction change, or bypasses an operator-declared consequential-action gate. The operator may narrow or revoke delegation at any time.
 
 Direction changes and operator-declared consequential actions remain human-gated. The framework should support explicit boundaries that reasoning quality or accumulated trust cannot override. Private enterprise evidence remains private when confidentiality or ownership obligations apply.
 
-Convergence is a renewable lease tied to the current Mission, artifact, and available model frontier. The operational minimum is three independent fresh-session evaluations by current frontier-capable models from three distinct model families. When a newly available model plausibly extends that frontier, it must independently challenge the converged artifact. Silence renews the lease without forcing the existing evaluators to rerun; a material change resets the chain and requires three fresh family-diverse evaluations of the changed artifact. Any Mission change invalidates all prior convergence evidence for the old Mission and starts a new three-family evaluation chain. Model selection remains an operator judgment based on capability evidence and practical access, rather than a permanent vendor or model list.
+Convergence is a renewable lease tied to the current Goal, artifact, and available model frontier. The operational minimum is three independent fresh-session evaluations by current frontier-capable models from three distinct model families. When a newly available model plausibly extends that frontier, it must independently challenge the converged artifact. Silence renews the lease without forcing the existing evaluators to rerun; a material change resets the chain and requires three fresh family-diverse evaluations of the changed artifact. Any Goal change invalidates all prior convergence evidence for the old Goal and starts a new three-family evaluation chain. Model selection remains an operator judgment based on capability evidence and practical access, rather than a permanent vendor or model list.
 
 ### Current operating model
 
 - **Normal entry point:** Improve is the single entry point for normal work. Probe is a separate entry point only for controlled ARF research.
-- **Automatic:** Improve invokes Intent and Record around substantive work, and owns the orchestration chain that schedules Mission when durable direction is needed and Learn when the current learning is stale. Mission may in turn schedule Learn after a material direction change; this is one automatic chain, not a second operator workflow.
-- **Memory architecture and the ACM specification:** The suite implements two things and knows both: the Principles of Earned Autonomy and the Shared Agent Context Memory (SACM) specification. ACM stands on its own, implements the principles and knows no implementation except that implementations exist; the suite does not define it. The suite may read, write and use the shared ACM (a memory repository of its own, bound to the work repository by identity) and complies with the specification for how that memory is kept, resolved and recorded, following its current text with no pinned version. Where the suite and the specification differ, Improve closes the difference toward this mission; where the specification should change instead, the finding is carried upstream and the author decides. A requirement the suite cannot meet alone (independent evidence capture needs a separate component) is stated plainly as not met. The suite's own memory stays in this repository's public `.acm/` as research evidence. "The Memory Model" and Retrospect are historical names, not parallel current concepts. *(the author, 2026-11-22)*
+- **Automatic:** Improve invokes Intent and Record around substantive work, and owns the orchestration chain that schedules Goal when durable direction is needed and Learn when the current learning is stale. Goal may in turn schedule Learn after a material direction change; this is one automatic chain, not a second operator workflow.
+- **Memory architecture and the ACM specification:** The suite implements two things and knows both: the Principles of Earned Autonomy and the Shared Agent Context Memory (SACM) specification. ACM stands on its own, implements the principles and knows no implementation except that implementations exist; the suite does not define it. The suite may read, write and use the shared ACM (a memory repository of its own, bound to the work repository by identity) and complies with the specification for how that memory is kept, resolved and recorded, following its current text with no pinned version. Where the suite and the specification differ, Improve closes the difference toward this goal; where the specification should change instead, the finding is carried upstream and the author decides. A requirement the suite cannot meet alone (independent evidence capture needs a separate component) is stated plainly as not met. The suite's own memory stays in this repository's public `.acm/` as research evidence. "The Memory Model" and Retrospect are historical names, not parallel current concepts. *(the author, 2026-11-22)*
 - **How this suite fits with the author's other projects:** The Principles of Earned Autonomy govern everything the author does. Three projects put them into practice and work together: the Shared Agent Context Memory specification defines how memory is governed; the Work skill and the PEA skills suite are two interchangeable ways to work under the principles — the Work skill a lightweight single skill, the suite the full set — and both use the same shared SACM memory. Either can be named in a prompt for the same purpose. A finding in one project that concerns another is carried to that project rather than changed locally. *(confirmed by the author, 2026-11-21)*
 
 This operating model is a current implementation, not part of the fixed boundary. It should remain target-agnostic, human-readable, and specifiable enough for another capable agent or execution harness to implement without becoming a checklist. The protocol must preserve memory of what happened, learning that changes later behavior, and meta-cognition about what the target is becoming; the present files and skills are revisable means of providing those capabilities.
@@ -69,7 +69,7 @@ Integration with a particular autonomous harness remains a horizon rather than t
 ### Immediate quality bars
 
 1. Self-targeting runs discover and improve previously unnamed limitations in reasoning or operation rather than only repairing skill-file consistency or following named examples.
-2. A new developer completes a useful first Improve run without author help or prior Mission setup, and understands what the agent will do, why it matters, and where they retain control without first learning the framework's internal vocabulary.
+2. A new developer completes a useful first Improve run without author help or prior Goal setup, and understands what the agent will do, why it matters, and where they retain control without first learning the framework's internal vocabulary.
 3. Automatic work leaves durable evidence sufficient for a later session or different model to continue coherently.
 4. Research claims stay within what public trails, reproducible probes, external targets, and independent evaluators support.
 5. Improvement remains resource-effective as the target approaches silence: fixed loop cost does not overwhelm the trustworthy capability gained, highest-leverage selection remains intact, and reasoning, learning, operator control, and evidence integrity are not degraded.
@@ -89,17 +89,19 @@ Integration with a particular autonomous harness remains a horizon rather than t
 
 ### Historical reconciliation
 
-The sections below preserve how the Mission evolved; they are provenance, not additional active instructions. Still-active commitments have been carried into the current mandate. Superseded items include the May 2026 priority sequence, mandatory approval of every implementation choice, fixed use of Retrospect and the old Memory Model vocabulary, and any implication that the current skills or architecture are immutable. Older references to Commander's Intent mean Operator's Intent in the current principles.
+The sections below preserve how the Goal evolved; they are provenance, not additional active instructions. Still-active commitments have been carried into the current mandate. Superseded items include the May 2026 priority sequence, mandatory approval of every implementation choice, fixed use of Retrospect and the old Memory Model vocabulary, and any implication that the current skills or architecture are immutable. Older references to Commander's Intent mean Operator's Intent in the current principles.
 
 ## Human gate
 
 Human gate. The author reviews every change before it takes effect. The agent may read, draft, edit and commit as he directs and pushes every commit to origin at once; it publishes nothing (no tag, release, deployment, archive record or message sent to anyone) without his go.
 
-*(The Mission skill states the human gate in every mission. The author confirmed this wording, 2026-11-22.)*
+*(The Goal skill states the human gate in every goal. The author confirmed this wording, 2026-11-22.)*
 
-<!-- mission-history -->
+<!-- goal-history -->
 
 ## History
+
+**2026-11-23, Mission is now Goal (the author: "I want to rename the Mission skill to Goal skill and mission.md to goal.md. What convinces me is that Mission is explained by 'The goal and the limit'").** This file was `mission.md`, and the skill that maintains it is now Goal. In the current part above the word and the file name follow; the markers are `<!-- current-goal: complete -->` and `<!-- goal-history -->`. This history keeps its original wording, and `mission` and `destination` in it mean the goal. No direction, bar, constraint or gate changed.
 
 **2026-11-23, the specification's name and address (the author: "Yes rename the repo as well"; references in his other projects to be updated).** The specification is called Shared Agent Context Memory (SACM) and its repository is `shared-agent-context-memory`; this mission now uses the new name and address in its current part. "ACM" in this history, and in artifact names such as `.acm-root` and `.acm/`, keeps its old wording and means the same specification. Name and address only; no direction, bar, constraint or gate changed.
 

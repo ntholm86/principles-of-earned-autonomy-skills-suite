@@ -191,15 +191,15 @@ class RecordingTests(MemoryFixture):
         self.assertIn("names another identifier", result.stderr)
         self.assertEqual(list((memory / "repositories" / "work").glob("records/*.md")), [])
 
-    def test_mandate_is_the_hash_of_the_narrowest_governing_mission(self):
+    def test_mandate_is_the_hash_of_the_narrowest_governing_goal(self):
         import hashlib
 
         work, root = self.work_repo("work")
         memory = self.memory_repo("memory", {"work": root})
         self.register(memory)
-        (memory / "mission.md").write_bytes(b"memory-wide\n")
+        (memory / "goal.md").write_bytes(b"memory-wide\n")
         (memory / "repositories" / "work" / "paths" / "src").mkdir(parents=True)
-        (memory / "repositories" / "work" / "paths" / "src" / "mission.md").write_bytes(b"path\n")
+        (memory / "repositories" / "work" / "paths" / "src" / "goal.md").write_bytes(b"path\n")
 
         def mandate(*arguments):
             self.assertEqual(self.run_record(work, *arguments, "new", "--slug", "m").returncode, 0)

@@ -1,6 +1,6 @@
 ---
 name: improve
-version: 3.27.2
+version: 3.28.0
 description: 'The improvement skill. Understand the ask, examine the target, challenge the first read, decide on one change (or argue for redesign, or declare silence), honor the operator''s supervision or delegation boundary, act, reflect, record, and report the result clearly. USE WHEN: improve, audit, review, fix, refactor, redesign, evaluate, what would make this better, am I missing something.'
 argument-hint: 'The target to improve, and optionally the concern (correctness, simplicity, performance, etc.)'
 ---
@@ -11,7 +11,7 @@ argument-hint: 'The target to improve, and optionally the concern (correctness, 
 
 *ACM role: Reads the governing current surfaces and relevant evidence before every run; extends the memory layer with each iteration's findings.*
 
-This is the suite's single entry point for normal work. The operator invokes Improve; Improve applies Intent and Record every run, and schedules Mission and Learn only when their evidence-based triggers fire. It combines what v2 split into Kaizen (incremental), Kaikaku (radical), and Hansei (reflection) — because in practice the agent should pick which mode the situation calls for, not be told.
+This is the suite's single entry point for normal work. The operator invokes Improve; Improve applies Intent and Record every run, and schedules Goal and Learn only when their evidence-based triggers fire. It combines what v2 split into Kaizen (incremental), Kaikaku (radical), and Hansei (reflection) — because in practice the agent should pick which mode the situation calls for, not be told.
 
 *Lineage:* Kaizen and Kaikaku both trace to PDCA (Plan-Do-Check-Act, Deming/Toyota) and Boyd's OODA loop — cited explicitly in this skill's own v1 ancestor but dropped when v2's three skills merged into this one. Restored here rather than left implicit.
 
@@ -19,7 +19,7 @@ This is the suite's single entry point for normal work. The operator invokes Imp
 
 This skill exists to enact three principles:
 
-1. **Operator's Intent** — *what + why, not how.* You are given a mission, not a route. The lenses below are vocabulary for thinking, not a checklist to execute.
+1. **Operator's Intent** — *what + why, not how.* You are given a goal, not a route. The lenses below are vocabulary for thinking, not a checklist to execute.
 2. **Observable Autonomy** — *every reasoning step is recorded as it happens.* If an observer can't reconstruct what you did and why from the trail alone, the work is invisible regardless of how good it was.
 3. **Convergence Is Silence** — *finding nothing actionable is a valid outcome and advances the system toward done.* Do not manufacture findings to justify the run.
 
@@ -31,30 +31,30 @@ Full statement of the principles: [PRINCIPLES.md](../PRINCIPLES.md) — read it 
 
 **Apply [Intent](../intent/SKILL.md) automatically now.** Intent is an ingress service of the full suite, not a command the operator must remember to invoke. Do not ask the operator to run it separately. Continue to step 2 when done.
 
-Tell the operator what is happening in one useful sentence: Intent is interpreting this prompt as the mandate for the current run (within the governing Mission where one exists), then will honor the explicit supervision or delegation boundary before Improve continues. A repository-level `mission.md` is not required for the first run. When no durable Mission exists, the confirmed interpretation, current conversation, and target evidence govern this iteration.
+Tell the operator what is happening in one useful sentence: Intent is interpreting this prompt as the mandate for the current run (within the governing Goal where one exists), then will honor the explicit supervision or delegation boundary before Improve continues. A repository-level `goal.md` is not required for the first run. When no durable Goal exists, the confirmed interpretation, current conversation, and target evidence govern this iteration.
 
-If this is a standalone Improve installation and Intent is unavailable: before examining anything, narrate your interpretation of what you've been asked to do, in your own words. State what you believe the mission is and what would count as success. If your interpretation diverges from a literal reading of the request, say so explicitly so the operator can correct course before you act.
+If this is a standalone Improve installation and Intent is unavailable: before examining anything, narrate your interpretation of what you've been asked to do, in your own words. State what you believe the goal is and what would count as success. If your interpretation diverges from a literal reading of the request, say so explicitly so the operator can correct course before you act.
 
 If the ask is about convergence or publication readiness, read the repo's convergence-scope protocol before proceeding if it has one, then declare which layer (problem, principles, skills, cross-layer coherence) this run is evaluating.
 
-Before examining the target, read the active scope's memory, whichever files exist, in the order below. When Intent selected a task scope, read the repo scope's mission and learning first, then the task scope's own files in the same order; the higher scope wins on conflict, and every write this run makes goes to the task scope only.
+Before examining the target, read the active scope's memory, whichever files exist, in the order below. When Intent selected a task scope, read the repo scope's goal and learning first, then the task scope's own files in the same order; the higher scope wins on conflict, and every write this run makes goes to the task scope only.
 
-**ACM §4 Memory Repository and Scopes.** Resolve the active scope and read the governing chain as [Record defines it](../record/SKILL.md#where-memory-lives) — memory-wide, then repository, then path, then task mission, broadest first; the higher scope wins; nothing above `.acm-root` and no walking up the code tree. File names such as `mission.md` mean that file in the active scope. Unbound, ambiguous or unavailable memory is reported as such, and no guessed memory is read or written; the in-repo `.acm/` of an unbound repository is legacy memory. Without Record installed, the essentials are: memory is a separate repository listed in `~/.acm/memories` and bound by the work repository's root commit, and no `.acm/` is ever created in the work repository.
+**ACM §4 Memory Repository and Scopes.** Resolve the active scope and read the governing chain as [Record defines it](../record/SKILL.md#where-memory-lives) — memory-wide, then repository, then path, then task goal, broadest first; the higher scope wins; nothing above `.acm-root` and no walking up the code tree. File names such as `goal.md` mean that file in the active scope. Unbound, ambiguous or unavailable memory is reported as such, and no guessed memory is read or written; the in-repo `.acm/` of an unbound repository is legacy memory. Without Record installed, the essentials are: memory is a separate repository listed in `~/.acm/memories` and bound by the work repository's root commit, and no `.acm/` is ever created in the work repository.
 
-1. `mission.md` — the **operator-held mission**. What the target is for, the constraints that hold across all runs, the hard problem the work is trying to chip away at. Stable: Mission may draft or revise it from the evidence it can see, but it becomes a mandate only through the operator's review and approval; no other skill writes it. If present, it is the highest-priority context — it tells you what success means before you decide what to change.
-2. `learning.md` — **what this scope has learned so far, with its operational rules** (written by Learn). What the arc currently shows is true of the target, and the **Active operational rules** the agent has drawn from it. Updated by Learn in small sourced items. Use it only if its named source revision covers the current records; otherwise treat it as unusable until Learn refreshes it. The rules are agent-written guidance, not authority: follow one while it serves the mission and fits the evidence in front of you (e.g., "Always use pure functions here"), never let one outrank a mandate, and say so when you set one aside.
+1. `goal.md` — the **operator-held goal**. What the target is for, the constraints that hold across all runs, the hard problem the work is trying to chip away at. Stable: Goal may draft or revise it from the evidence it can see, but it becomes a mandate only through the operator's review and approval; no other skill writes it. If present, it is the highest-priority context — it tells you what success means before you decide what to change.
+2. `learning.md` — **what this scope has learned so far, with its operational rules** (written by Learn). What the arc currently shows is true of the target, and the **Active operational rules** the agent has drawn from it. Updated by Learn in small sourced items. Use it only if its named source revision covers the current records; otherwise treat it as unusable until Learn refreshes it. The rules are agent-written guidance, not authority: follow one while it serves the goal and fits the evidence in front of you (e.g., "Always use pure functions here"), never let one outrank a mandate, and say so when you set one aside.
 3. `generated/trail-markers.md` — the **compact marker extract** if present. A generated, disposable chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers, with date+slug context. Read this before the trail — it is what the loop has actually concluded across runs, and it surfaces learning that predates the most recent Learn run. Generated by `record.py markers --write`, bounded to a recent window so this read stays cheap regardless of how long the trail gets; if it looks stale relative to the trail's most recent entries, regenerate it. If `generated/trail-markers-archive.md` exists and the recent window doesn't cover what you're looking for, check there before falling back to the full trail.
 4. The trail — the full history: a legacy `.acm/audit-trail.md` first, then `records/` in filename order. Read for the evidence behind anything in the marker extract that needs its surrounding context, and for any specific prior decision the current run might contradict. With the extract available, you should rarely need to read the trail end-to-end.
 
-**Bounded mission reads.** If a mission contains the exact comments `<!-- current-mission: complete -->` and `<!-- mission-history -->` in that order, the content between them is the operator-confirmed complete current mandate. Read that bounded section for routine work. Read the full file when running Mission, when the current section is ambiguous or conflicts with other evidence, or when historical provenance is material to the request. If either comment is absent, malformed, or out of order, read the full file. Never infer a boundary from headings, dates, horizontal rules, or file position.
+**Bounded goal reads.** If a goal contains the exact comments `<!-- current-goal: complete -->` and `<!-- goal-history -->` in that order, the content between them is the operator-confirmed complete current mandate. Read that bounded section for routine work. Read the full file when running Goal, when the current section is ambiguous or conflicts with other evidence, or when historical provenance is material to the request. If either comment is absent, malformed, or out of order, read the full file. Never infer a boundary from headings, dates, horizontal rules, or file position.
 
-The mission is where you are going, learning.md is the current location, the trail is the path. If mission and learning.md disagree, mission wins (the operator holds the mission); if learning.md and trail disagree, the trail wins (the trail is the evidence).
+The goal is where you are going, learning.md is the current location, the trail is the path. If goal and learning.md disagree, goal wins (the operator holds the goal); if learning.md and trail disagree, the trail wins (the trail is the evidence).
 
-If Intent cannot form a defensible current-run mandate because materially different interpretations would produce different outcomes, or because a long autonomous scope would compound an unresolved directional assumption, pause and apply [Mission](../mission/SKILL.md) before acting. Explain which unresolved direction makes the conversation necessary. Missing `mission.md` alone is never sufficient evidence to trigger Mission.
+If Intent cannot form a defensible current-run mandate because materially different interpretations would produce different outcomes, or because a long autonomous scope would compound an unresolved directional assumption, pause and apply [Goal](../goal/SKILL.md) before acting. Explain which unresolved direction makes the conversation necessary. Missing `goal.md` alone is never sufficient evidence to trigger Goal.
 
 If the ask is underspecified (for example: "continue", "keep going", "next", or equivalent), do not wait for the operator to inject a topic. Generate one agent-initiated direction question before step 2:
 
-1. Form 1-3 sourced hunches from the mission, learning.md, and recent trail entries about what structural uncertainty matters most now.
+1. Form 1-3 sourced hunches from the goal, learning.md, and recent trail entries about what structural uncertainty matters most now.
 2. State one prioritized falsifiable question that would change what you choose to work on.
 3. If no operator answer is available in this run, present that hunch to Intent as the interpretation for the operator's Confirm, Stop or Specify; delegation of routine confirmation never lets it settle a direction question.
 
@@ -68,7 +68,7 @@ Look at the target. Read what is there. Run what can be run. Form a mental model
 
 Several lenses are available as thinking tools — not a procedure, not a checklist. Apply the ones the target invites:
 
-- **Purpose.** Does the target achieve what it is for? Read `mission.md` and the target's own README. Is there a gap between the stated goal and what the artifact actually does? Is the design the right one for the job? This lens runs first.
+- **Purpose.** Does the target achieve what it is for? Read `goal.md` and the target's own README. Is there a gap between the stated goal and what the artifact actually does? Is the design the right one for the job? This lens runs first.
 - **Inconsistency.** Where does the target contradict itself? Mixed conventions, asymmetric handling of similar cases, naming patterns that diverge for no reason. Inconsistency is often a root cause whose symptoms surface elsewhere.
 - **Overburden.** Where is some component asked to do too much? Functions, modules, files, or processes that concentrate too many responsibilities. Overburden concentrates risk: the overburdened component is the one most likely to break and hardest to change.
 - **Waste.** Where does the target carry things that don't earn their existence? Dead code, abstractions with one consumer, validation that can never fire, documentation that restates the obvious. Waste creates cognitive load without contributing value.
@@ -105,13 +105,13 @@ Before Act, state the proposed change and its verification in one short sentence
 
 > I want to <change> because <reason>, then verify it by <check>.
 
-Determine authority only from explicit evidence in the current prompt or confirmed Mission. Without explicit delegation of this routine gate, ask: **Proceed**, **Stop**, or **Specify**. Wait for the answer.
+Determine authority only from explicit evidence in the current prompt or confirmed Goal. Without explicit delegation of this routine gate, ask: **Proceed**, **Stop**, or **Specify**. Wait for the answer.
 
 - **Proceed:** continue to Act.
 - **Stop:** make no target change; record the stopped decision when it produced a material finding or authority signal.
 - **Specify:** return to Intent with the operator's additional information, then re-examine and decide again. Do not apply the old proposal under a patched mandate.
 
-When this routine gate was explicitly delegated, name the source and scope briefly and continue without waiting. Delegation never answers a Mission question, approves a direction change, bypasses an operator-declared consequential-action gate, or authorizes a deliberate reduction in reasoning, memory, learning, or evidence capability. Host-wide autopilot is not authority evidence because it cannot preserve those distinctions.
+When this routine gate was explicitly delegated, name the source and scope briefly and continue without waiting. Delegation never answers a Goal question, approves a direction change, bypasses an operator-declared consequential-action gate, or authorizes a deliberate reduction in reasoning, memory, learning, or evidence capability. Host-wide autopilot is not authority evidence because it cannot preserve those distinctions.
 
 #### 4c. Offer Next Moves
 
@@ -171,7 +171,7 @@ When the macro reflection runs, read the trail as a *single document about the t
 - Which prior realisations aged well, and which were wrong in retrospect? If the trail is long enough, name at least one of each.
 - Where has attention been spent, and is that where the target's real weight lies? A long tail of small fixes in one corner can mean either "that corner is the bottleneck" or "this is the corner the loop has grown comfortable looking at." The trail itself is the evidence — re-read it.
 - What does the target need next that *no individual iteration would have surfaced* — only the arc reveals?
-- **Is the recurring pattern a single-loop symptom or a double-loop signal?** Single-loop correction fixes the action while leaving the governing variable that produced it untouched — the goal, constraint, or assumption in `mission.md` (or an unstated assumption the loop has been carrying) that shaped every one of the recurring fixes. If the same finding-class keeps recurring despite repeated correction, the recurrence itself is evidence that the governing variable, not the action, is the actual defect. Name the specific governing variable implicated, state it as a candidate mission-revision (not another artifact patch), and route it to the operator via the [Mission](../mission/SKILL.md) skill rather than proposing a fifth fix for the same symptom. (Argyris, *Organizational Learning*, 1977 — single-loop learning corrects action within existing governing variables; double-loop learning questions and revises the governing variables themselves.)
+- **Is the recurring pattern a single-loop symptom or a double-loop signal?** Single-loop correction fixes the action while leaving the governing variable that produced it untouched — the goal, constraint, or assumption in `goal.md` (or an unstated assumption the loop has been carrying) that shaped every one of the recurring fixes. If the same finding-class keeps recurring despite repeated correction, the recurrence itself is evidence that the governing variable, not the action, is the actual defect. Name the specific governing variable implicated, state it as a candidate goal-revision (not another artifact patch), and route it to the operator via the [Goal](../goal/SKILL.md) skill rather than proposing a fifth fix for the same symptom. (Argyris, *Organizational Learning*, 1977 — single-loop learning corrects action within existing governing variables; double-loop learning questions and revises the governing variables themselves.)
 
 Write the result as `[!REALIZATION]` in this entry, framed as a claim about the target. If it changes the priority for the next iteration, say so plainly.
 
@@ -181,22 +181,22 @@ For an arc-read that runs outside an improve iteration, use [Learn](../learn/SKI
 
 Before applying Record, answer two questions from current evidence:
 
-1. **Does the next work depend on durable direction the operator has not settled?** If yes, schedule [Mission](../mission/SKILL.md). Name the unresolved choice; missing files, age, and iteration count are never reasons by themselves.
-2. **Does the current learning still explain the governing Mission and the material trail?** If no, or if a multi-run convergence claim now depends on that arc-read, schedule [Learn](../learn/SKILL.md). Name the evidence the current map misses; cadence is never a reason by itself.
+1. **Does the next work depend on durable direction the operator has not settled?** If yes, schedule [Goal](../goal/SKILL.md). Name the unresolved choice; missing files, age, and iteration count are never reasons by themselves.
+2. **Does the current learning still explain the governing Goal and the material trail?** If no, or if a multi-run convergence claim now depends on that arc-read, schedule [Learn](../learn/SKILL.md). Name the evidence the current map misses; cadence is never a reason by itself.
 
 These are purpose tests, not trigger checklists. Do not make the operator orchestrate the services.
 
 Include one line in the record: `Learning freshness: current` or `Learning freshness: STALE — <evidence>; automatic Learn scheduled.`, or `Learning freshness: not yet needed` when there is none and none is warranted. This evaluation must be inside the entry before it becomes append-only history.
 
-Include one line beside it: `Mission need: not triggered` or `Mission need: TRIGGERED — <evidence>; automatic Mission scheduled.`
+Include one line beside it: `Goal need: not triggered` or `Goal need: TRIGGERED — <evidence>; automatic Goal scheduled.`
 
 **Apply [Record](../record/SKILL.md) automatically now.** Record is an egress service of the full suite, not a command the operator must remember to invoke. Do not ask the operator to run it separately.
 
 **High-Fidelity Mode (Writer Splitting):** Standard mode is the default: the Improve agent applies Record automatically. High-Fidelity Mode is active only when the operator explicitly requests independent record authorship or an execution contract declared it before the run; task consequence alone does not activate it. Before step 5 (Act), confirm that the current host can invoke a separate agent and return control to this run. If that round trip cannot be established, treat the writer as unavailable: stop before acting and ask whether standard mode is acceptable.
 
-When active, the Improve agent pauses at this step without writing the completion entry (the checkpoint is still its own, written before acting) and hands the independent writer its interpretation, examination, decision, pre-action prediction, action evidence, reflection, and exact Mission/Learning evaluations. The writer applies Record and commits the entry without recomputing Improve's decisions, then returns control. The Improve agent resumes at step 8. This separates writer from decider without changing who owns service scheduling.
+When active, the Improve agent pauses at this step without writing the completion entry (the checkpoint is still its own, written before acting) and hands the independent writer its interpretation, examination, decision, pre-action prediction, action evidence, reflection, and exact Goal/Learning evaluations. The writer applies Record and commits the entry without recomputing Improve's decisions, then returns control. The Improve agent resumes at step 8. This separates writer from decider without changing who owns service scheduling.
 
-**In multi-iteration runs, this step executes after every iteration — not once at the end of all iterations.** The completion entry is the commit point for that iteration (a Change's checkpoint was committed before acting). Record it (in legacy memory, also regenerate `generated/trail-markers.md` when the helper is available) and commit it as Record describes, where the memory-wide mission allows, before starting the next iteration. A user who stops a 10-iteration run after iteration 4 must have 4 committed trail entries, not 0.
+**In multi-iteration runs, this step executes after every iteration — not once at the end of all iterations.** The completion entry is the commit point for that iteration (a Change's checkpoint was committed before acting). Record it (in legacy memory, also regenerate `generated/trail-markers.md` when the helper is available) and commit it as Record describes, where the memory-wide goal allows, before starting the next iteration. A user who stops a 10-iteration run after iteration 4 must have 4 committed trail entries, not 0.
 
 If this is a standalone Improve installation and Record is unavailable: record where step 1's ACM §4 paragraph resolves — for a Change a checkpoint before acting and a completion naming it with `completes:`, otherwise one entry, each a new create-only `records/<UTC yyyyMMddTHHmmssZ>-<slug>.md` in a bound scope (with the attribution fields: `record` (its path in the memory repository), `time`, `scope`, `repository` (id @ root commit, or `none (memory-wide)`), `session`, `authority`, `mandate`, `agent`, and `completes:` on a completion), appended to `.acm/audit-trail.md` in legacy memory, or reported to the operator, not written, when unbound. The entry must include:
 
@@ -212,9 +212,9 @@ The format spec is in [record/SKILL.md](../record/SKILL.md). If you have the ski
 
 ### 8. Run scheduled services
 
-After the record is durable, apply Mission first if step 7 scheduled it. Mission synthesizes the accepted prompt-level mandates and accumulated evidence instead of asking the operator to describe the project from zero. It asks only the highest-priority unresolved sourced question, waits for confirmation or correction, and records the result. A confirmed Mission governs the next Improve iteration; it does not retroactively authorize or rewrite the completed one.
+After the record is durable, apply Goal first if step 7 scheduled it. Goal synthesizes the accepted prompt-level mandates and accumulated evidence instead of asking the operator to describe the project from zero. It asks only the highest-priority unresolved sourced question, waits for confirmation or correction, and records the result. A confirmed Goal governs the next Improve iteration; it does not retroactively authorize or rewrite the completed one.
 
-Then apply Learn if needed. When Improve already scheduled Learn and Mission materially changes direction, the post-Mission Learn satisfies both needs: run it once, against the changed Mission and full trail. Learn writes its own record and refreshes `learning.md`; it never changes the target. If neither service was scheduled, stop without ceremony.
+Then apply Learn if needed. When Improve already scheduled Learn and Goal materially changes direction, the post-Goal Learn satisfies both needs: run it once, against the changed Goal and full trail. Learn writes its own record and refreshes `learning.md`; it never changes the target. If neither service was scheduled, stop without ceremony.
 
 ### 9. Report the result
 
@@ -235,6 +235,6 @@ This skill must be runnable on itself. If running Improve on `improve/SKILL.md` 
 ## What this skill does not do
 
 - It does not score the target on a numerical rubric. v2 did this and the question "who made up these metrics?" never went away. Convergence — diverse independent evaluators finding nothing to change — is the only honest measure of done.
-- It does not make the operator orchestrate support skills. In the full suite, Improve automatically applies Intent at ingress, Record at egress, Mission when durable direction becomes necessary, and Learn when accumulated evidence makes Learning stale. A standalone Improve installation retains local fallback behavior when a sibling is unavailable.
+- It does not make the operator orchestrate support skills. In the full suite, Improve automatically applies Intent at ingress, Record at egress, Goal when durable direction becomes necessary, and Learn when accumulated evidence makes Learning stale. A standalone Improve installation retains local fallback behavior when a sibling is unavailable.
 - It does not treat host-wide autopilot as blanket permission. Routine gates may be explicitly delegated; operator-owned direction and consequential gates remain blocking.
 - It does not tell you when to stop. The convergence protocol in PRINCIPLES.md does.

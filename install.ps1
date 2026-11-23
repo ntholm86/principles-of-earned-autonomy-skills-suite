@@ -11,7 +11,7 @@ param(
 
 $ErrorActionPreference = 'Stop'
 
-$skills = @('intent', 'mission', 'improve', 'record', 'learn')
+$skills = @('intent', 'goal', 'improve', 'record', 'learn')
 if ($Research) {
     $skills += 'probe'
 }
@@ -50,11 +50,11 @@ if ((Test-Path -LiteralPath $stale) -and (Select-String -LiteralPath $stale -Pat
     Write-Host "  removed: orient (renamed to learn)"
 }
 
-# The Destination skill was renamed Mission in v7.0.0; remove a stale installed copy (only if it is that skill).
+# The Destination skill was renamed Goal in v7.0.0; remove a stale installed copy (only if it is that skill).
 $staleDestination = Join-Path $Target 'destination\SKILL.md'
 if ((Test-Path -LiteralPath $staleDestination) -and (Select-String -LiteralPath $staleDestination -Pattern '^name: destination$' -Quiet)) {
     Remove-Item -LiteralPath (Join-Path $Target 'destination') -Recurse -Force
-    Write-Host "  removed: destination (renamed to mission)"
+    Write-Host "  removed: destination (renamed to goal)"
 }
 
 $principles = Join-Path $src 'PRINCIPLES.md'
@@ -66,7 +66,7 @@ if (Test-Path $principles) {
 Write-Host ""
 Write-Host "Installed PEA skills to: $Target"
 Write-Host "Action: Run (/improve)"
-Write-Host "Automatic: intent before work; record afterward; mission and learning when evidence requires them"
+Write-Host "Automatic: intent before work; record afterward; goal and learning when evidence requires them"
 if ($Research) {
     Write-Host "Research: /probe installed for ARF experiments"
 } else {

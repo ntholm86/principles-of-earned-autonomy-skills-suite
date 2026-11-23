@@ -38,7 +38,7 @@ Checks:
     they do not establish that a decision changed.
 16. `CITATION.cff` states the version of the newest `CHANGELOG.md` entry.
 15. `improve/SKILL.md`, `learn/SKILL.md`, `intent/SKILL.md`, and
-    `mission/SKILL.md` each carry the ACM §4 Memory Repository and Scopes paragraph with
+    `goal/SKILL.md` each carry the ACM §4 Memory Repository and Scopes paragraph with
     the identical reference to Record's single definition of memory resolution
     and the governing chain — catches a copy drifting into its own rule.
 
@@ -115,7 +115,7 @@ REQUIRED_FILES = [
     "probe/SKILL.md",
     "intent/SKILL.md",
     "record/SKILL.md",
-    "mission/SKILL.md",
+    "goal/SKILL.md",
     "learn/SKILL.md",
     "PRINCIPLES.md",
 ]
@@ -141,7 +141,7 @@ STALE_PATH_DOCS = [
     "PRINCIPLES.md",
     "harness/BENCHMARKS.md",
     "intent/SKILL.md",
-    "mission/SKILL.md",
+    "goal/SKILL.md",
     "improve/SKILL.md",
     "record/SKILL.md",
     "learn/SKILL.md",
@@ -152,11 +152,11 @@ ACM_SCOPE_TRAVERSAL_FILES = [
     "improve/SKILL.md",
     "learn/SKILL.md",
     "intent/SKILL.md",
-    "mission/SKILL.md",
+    "goal/SKILL.md",
 ]
 ACM_SCOPE_TRAVERSAL_INVARIANT = (
     "read the governing chain as [Record defines it](../record/SKILL.md#where-memory-lives) \u2014 "
-    "memory-wide, then repository, then path, then task mission, broadest first; the higher scope wins; "
+    "memory-wide, then repository, then path, then task goal, broadest first; the higher scope wins; "
     "nothing above `.acm-root` and no walking up the code tree."
 )
 
@@ -381,7 +381,7 @@ def check_stale_path_tokens() -> list[str]:
 def check_acm_scope_traversal_consistency() -> list[str]:
     """Fail when a primary skill's ACM \u00a74 reference drifts from the canonical form.
 
-    improve/learn/intent/mission each read the governing chain before
+    improve/learn/intent/goal each read the governing chain before
     forming their own reasoning (ACM \u00a74 Memory Repository and Scopes) and must defer to
     Record's single definition in the same words, so a future edit to the rule
     cannot silently update one file and miss the others. This mirrors the drift class that previously required repair in

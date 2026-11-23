@@ -11,7 +11,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1     # Windows 
 
 The default install copies the five operational skills plus PRINCIPLES.md. Probe is omitted so normal users see only the operational command surface.
 
-Before writing to the destination, both installers check that every selected skill has a `SKILL.md` file. A missing file stops installation with an error and leaves the mission unchanged. Probe is required only when research mode is selected; `PRINCIPLES.md` remains optional. This preflight does not provide rollback for later copy or disk errors.
+Before writing to the destination, both installers check that every selected skill has a `SKILL.md` file. A missing file stops installation with an error and leaves the goal unchanged. Probe is required only when research mode is selected; `PRINCIPLES.md` remains optional. This preflight does not provide rollback for later copy or disk errors.
 
 To install into a project instead of user-global:
 
@@ -70,9 +70,9 @@ Each skill is its own folder with a `SKILL.md`, placed directly in a skills dire
 
 ## Operational install (recommended)
 
-The normal operating model uses five installed skills (`intent`, `mission`, `improve`, `record`, `learn`) but only one deliberate operator action: **Run Improve**. Intent and Record are automatic services; Mission and Learn activate when Improve detects that accumulated evidence needs durable direction or a refreshed map.
+The normal operating model uses five installed skills (`intent`, `goal`, `improve`, `record`, `learn`) but only one deliberate operator action: **Run Improve**. Intent and Record are automatic services; Goal and Learn activate when Improve detects that accumulated evidence needs durable direction or a refreshed map.
 
-Invoke `/improve`. Do not add routine `/intent`, `/mission`, `/record`, or `/learn` steps; manual `/mission` and `/learn` remain available as overrides.
+Invoke `/improve`. Do not add routine `/intent`, `/goal`, `/record`, or `/learn` steps; manual `/goal` and `/learn` remain available as overrides.
 
 ---
 
@@ -84,7 +84,7 @@ Optionally copy `PRINCIPLES.md` next to the skill folders — the skills referen
 
 ### Probe is optional scientific instrumentation
 
-`probe/SKILL.md` measures [Autonomous Reasoning Fidelity](https://github.com/ntholm86/autonomous-agent-principles/blob/v1.0.0/PRINCIPLES.md#autonomous-reasoning-fidelity-operational-definition). It exists so controlled ARF experiments can be reproduced. Mission, Learn, Improve, Intent, and Record neither require nor invoke it. Install it with `--research` or `-Research` only when conducting that research; the default installer leaves it out.
+`probe/SKILL.md` measures [Autonomous Reasoning Fidelity](https://github.com/ntholm86/autonomous-agent-principles/blob/v1.0.0/PRINCIPLES.md#autonomous-reasoning-fidelity-operational-definition). It exists so controlled ARF experiments can be reproduced. Goal, Learn, Improve, Intent, and Record neither require nor invoke it. Install it with `--research` or `-Research` only when conducting that research; the default installer leaves it out.
 
 ---
 
@@ -95,7 +95,7 @@ All skills work with only their own `SKILL.md`. No required sibling files.
 | Skill | Optional sibling files |
 |---|---|
 | **intent** | `PRINCIPLES.md` (cross-reference link; content is inlined) |
-| **mission** | `PRINCIPLES.md` |
+| **goal** | `PRINCIPLES.md` |
 | **improve** | `PRINCIPLES.md` |
 | **record** | nothing — records in the bound scope of your shared ACM |
 | **learn** | nothing — reads the trail written by record |
@@ -106,7 +106,7 @@ All skills work with only their own `SKILL.md`. No required sibling files.
 
 The trail lives in a shared ACM memory repository, separate from your code, with one scope per work repository. The AI writes it automatically — no scripts required.
 
-The trail lives in a shared ACM memory repository, separate from your code, with one scope per work repository. The AI writes it automatically — no scripts required. Setting one up takes a few short steps; see the worked example in [QUICKSTART.md](./QUICKSTART.md#set-up-a-memory-and-make-a-first-record). Each entry is a create-only file `records/<UTC yyyyMMddTHHmmssZ>-<slug>.md`, committed in the memory repository as its mission's policy says. Full definition: [Record](./record/SKILL.md#where-memory-lives).
+The trail lives in a shared ACM memory repository, separate from your code, with one scope per work repository. The AI writes it automatically — no scripts required. Setting one up takes a few short steps; see the worked example in [QUICKSTART.md](./QUICKSTART.md#set-up-a-memory-and-make-a-first-record). Each entry is a create-only file `records/<UTC yyyyMMddTHHmmssZ>-<slug>.md`, committed in the memory repository as its goal's policy says. Full definition: [Record](./record/SKILL.md#where-memory-lives).
 
 A repository that already has an in-repo `.acm/audit-trail.md` from earlier ACM versions keeps working as legacy memory: entries are appended there and committed with the work. Migration to a memory repository is recommended.
 
@@ -142,7 +142,7 @@ Once installed, remember one action:
 
 - **Run** (`/improve`) — interpret this prompt, advance the work, and coordinate the suite.
 
-Intent runs automatically before substantive work. Record runs automatically afterward. Improve triggers Mission when broader direction needs operator confirmation and Learn when the evidence-based freshness check fires. Manual `/mission` and `/learn` remain available as overrides, but are not routine workflow steps. Probe is outside this operating model; `/probe` is only for controlled ARF research.
+Intent runs automatically before substantive work. Record runs automatically afterward. Improve triggers Goal when broader direction needs operator confirmation and Learn when the evidence-based freshness check fires. Manual `/goal` and `/learn` remain available as overrides, but are not routine workflow steps. Probe is outside this operating model; `/probe` is only for controlled ARF research.
 
 Example:
 ```
