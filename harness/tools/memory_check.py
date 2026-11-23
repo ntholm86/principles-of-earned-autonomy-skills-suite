@@ -15,7 +15,9 @@ Failures (exit code 1):
     `root_commits` are not a non-empty list of 40-hex commits, or that shares a root commit with another
     binding (an ambiguous binding);
   - a file in `records/` whose name is not `<yyyyMMddTHHmmssZ>-<slug>.md`, or whose `- record:` line
-    differs from its file name.
+    differs from its file name, or whose `- format:` line names a format this tool does not know (a record
+    without a `format` line is format 1);
+  - a symbolic link anywhere in the memory (a link can leave the memory or hide a scope: R-15).
 Warnings (do not fail): an ordinary record without the attribution fields of R-16 (record, time, scope,
 agent, authority, session, mandate), a record whose header still holds an unfilled `TODO` stub field, and a
 tracked file under a `generated/` folder (disposable reading aids are not committed).
@@ -23,14 +25,16 @@ tracked file under a `generated/` folder (disposable reading aids are not commit
 from __future__ import annotations
 
 import json
+import os
 import re
 import subprocess
 import sys
 from pathlib import Path
 
 RETIRED = ("orientation.md", "history.md", "learning-archive.md", "destination.md")
-STRUCTURAL = {"records", "tasks", "paths", "evidence", "generated", "drafts"}
+STRUCTURAL = {"records", "tasks", "paths", "evidence", "generated"}
 SCOPE_FILES = ("mission.md", "learning.md", "audit-trail.md")
+KNOWN_FORMATS = {"1"}
 RECORD_NAME = re.compile(r"^\d{8}T\d{6}Z-[a-z0-9][a-z0-9-]*\.md$")
 FIELD = re.compile(r"^-\s+([a-z-]+):\s*(.*)$", re.M)
 ATTRIBUTION = ("record", "time", "scope", "agent", "authority", "session", "mandate")
@@ -133,6 +137,8 @@ def check_records(scope: Path, root: Path) -> tuple[list[str], list[str]]:
         fields = dict(FIELD.findall(text.split("\n###", 1)[0]))
         if "record" in fields and fields["record"].strip() != record.stem:
             failures.append(f"{where}: '- record: {fields['record'].strip()}' differs from the file name")
+        if fields.get("format", "1").strip() not in KNOWN_FORMATS:
+            failures.append(f"{where}: '- format: {fields['format'].strip()}' is not a record format this tool knows")
         missing = [name for name in ATTRIBUTION if name not in fields]
         if missing:
             warnings.append(f"{where}: no {', '.join(missing)} (R-16 attribution)")
@@ -151,6 +157,14 @@ def tracked_generated(root: Path) -> list[str]:
             for line in out.splitlines() if "/generated/" in "/" + line]
 
 
+def symlinks(root: Path) -> list[Path]:
+    found: list[Path] = []
+    for folder, names, files in os.walk(root):
+        names[:] = [n for n in names if n != ".git"]
+        found += [Path(folder, n) for n in names + files if Path(folder, n).is_symlink()]
+    return sorted(found)
+
+
 def check(root: Path) -> tuple[list[str], list[str]]:
     failures: list[str] = []
     warnings: list[str] = []
@@ -159,6 +173,8 @@ def check(root: Path) -> tuple[list[str], list[str]]:
     for hidden in sorted(root.rglob(".acm")):
         if ".git" not in hidden.relative_to(root).parts and hidden.is_dir():
             failures.append(f"{hidden.relative_to(root).as_posix()}: a hidden .acm/ folder inside the memory (a scope is a folder)")
+    for link in symlinks(root):
+        failures.append(f"{link.relative_to(root).as_posix()}: a symbolic link inside the memory (R-15: a link can leave the memory)")
     for scope in scopes(root):
         where = scope.relative_to(root).as_posix() or "."
         for name in RETIRED:

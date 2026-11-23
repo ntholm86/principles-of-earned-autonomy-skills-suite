@@ -104,6 +104,27 @@ class MemoryCheckTests(unittest.TestCase):
         self.assertEqual(len(warnings), 1)
         self.assertIn("authority", warnings[0])
 
+    def test_an_unknown_record_format_fails_and_a_missing_one_is_format_one(self):
+        self.write("records/20261122T010203Z-thing.md", GOOD_RECORD.replace("- time:", "- format: 9\n- time:"))
+        self.write("records/20261122T010204Z-old.md", GOOD_RECORD.replace("20261122T010203Z-thing", "20261122T010204Z-old"))
+        failures, _ = self.run_check()
+        self.assertEqual(len(failures), 1)
+        self.assertIn("format: 9", failures[0])
+
+    def test_a_code_folder_named_drafts_is_a_path_scope(self):
+        self.write("repositories/r/paths/drafts/mission.md", GOOD_MISSION)
+        names = {p.relative_to(self.root).as_posix() for p in memory_check.scopes(self.root)}
+        self.assertIn("repositories/r/paths/drafts", names)
+
+    def test_a_symbolic_link_in_the_memory_fails(self):
+        self.write("target.md", "x")
+        try:
+            (self.root / "link.md").symlink_to(self.root / "target.md")
+        except (OSError, NotImplementedError):
+            self.skipTest("symbolic links are not available here")
+        failures, _ = self.run_check()
+        self.assertTrue(any("link.md" in f and "symbolic link" in f for f in failures))
+
     def test_scopes_under_paths_and_tasks_are_found(self):
         self.write("repositories/r/paths/src/area/mission.md", GOOD_MISSION)
         self.write("repositories/r/paths/src/area/tasks/t/mission.md", GOOD_MISSION)

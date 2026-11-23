@@ -1,5 +1,9 @@
 # Changelog
 
+## v7.1.0 - 2026-11-23
+
+- **First of three iterations against the released Shared Agent Context Memory specification (v0.7.0), which is quality bar 7 of the suite's mission.** A fresh read-only audit found no requirement fully met and named the gaps. This iteration: new records state `format: 1` (R-16; a record without the line is format 1, so older records stay valid); `memory_check.py` fails an unknown record format and any symbolic link in the memory (R-15), and no longer hides a code folder named `drafts` from path scopes (R-14); the Record skill says a record's identifier is its file name within its scope (what the tool already enforced) and no longer cites sections of the specification that do not exist; the Improve skill treats the rules in `learning.md` as agent-written advice that never outranks a mandate, where it said the agent "must obey" them (R-03). ``record/SKILL.md`` 3.5.2 -> 3.6.0; ``improve/SKILL.md`` 3.27.0 -> 3.27.1.
+
 ## v7.0.2 - 2026-11-23
 
 - **The specification is named Shared Agent Context Memory (SACM) and its repository is `shared-agent-context-memory`.** The README, the Record skill's link to the specification, the archive metadata and the suite's mission now use the new name and address (the old address redirects); "ACM" in text that is older than 2026-11-23, in artifact names (`.acm-root`, `.acm/`) and in the append-only trail, archives and experiments is unchanged and means the same specification. No behaviour changed. ``record/SKILL.md`` 3.5.1 -> 3.5.2.

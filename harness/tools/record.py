@@ -272,11 +272,12 @@ LEGACY_HEADER = """\
 - delta: TODO
 """
 
-# A bound-scope record carries the attribution record/SKILL.md requires (ACM R-16).
+# A bound-scope record carries the attribution record/SKILL.md requires (ACM R-16); a record without a `format` line is format 1.
 RECORD_HEADER = """\
 ## {date} \u2014 {slug}
 
 - record: {record_id}
+- format: 1
 - time: {time}
 - scope: {scope}
 - repository: {repo_id} @ {root_commit}

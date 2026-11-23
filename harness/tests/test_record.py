@@ -141,6 +141,7 @@ class RecordingTests(MemoryFixture):
         self.assertRegex(records[0].name, r"^\d{8}T\d{6}Z-first-change\.md$")
         text = records[0].read_text(encoding="utf-8")
         self.assertIn(f"- record: {records[0].stem}\n", text)
+        self.assertIn("- format: 1\n", text)
         self.assertIn("- scope: repositories/work\n", text)
         self.assertIn(f"- repository: work @ {root}\n", text)
         self.assertIn("- mandate: none\n", text)

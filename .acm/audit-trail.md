@@ -18958,3 +18958,46 @@ Prediction: verify.py and the tests pass and a stranger can follow QUICKSTART en
 **Across-trail macro-Hansei:**
 
 Sealing was adopted to keep the file count bounded and then needed a procedure, a hash format, a byte-exactness rule and a verifier it never got. The cost of a mechanism is its whole support surface; flat records cost nothing to specify and git copes with the count.
+
+## 2026-11-23 - suite-vs-released-spec-checkpoint
+
+- target: the suite's skills and harness tools (record.py, memory_check.py, the Record, Improve, Learn and Mission skills) against the released Shared Agent Context Memory specification v0.7.0
+- operator: Nils Wendelboe Holmager
+- agent: unknown (the operator addressed the session as Opus); host: Copilot SDK in VS Code
+- skill: Improve
+- authority: the author, 2026-11-23: "a sequence of improve iterations on the skillset against the released spec (which should be a part of the skillsets goal)"; the goal is already this mission's quality bar 7; the routine Proceed gate is delegated for this sequence by that instruction
+- outcome: checkpoint; no change made yet
+- delta: none yet
+
+A fresh read-only auditor compared the suite to the specification, requirement by requirement. Result: no requirement fully met at minimal conformance, most partial; roughly a third to two fifths of the substance; R-04 can never be met by the suite alone, nor R-05 and R-06 as structural protection while the agent can write to the memory repository. Contradictions named: a clone sharing a root commit shares a binding (R-13); `learning.md`'s rules are written as instructions the agent "must obey" and the file is "rewritten each Learn run" (R-03, R-19); the record skill calls the identifier a path while the tool writes a stem (R-18); two stale section cites; `drafts` hidden from the checker's path scopes (R-14); the legacy in-repo `.acm/` fallback (R-12, R-11), which the mission already accepts.
+
+[!DECISION] Three iterations, smallest change first, mechanical checks before prose. (1) Record format and identity: a `format` line in new records, the identifier wording, stale cites, `drafts`, symlinks in the memory, and "learning is advice, not authority" in Improve. (2) Immutability and binding: a history check for edited or deleted records, and a clone that shares a root commit but not a locator is reported as ambiguous. (3) Derived views and an honest statement: dated, sourced claims in learning and a staleness warning, plus one plain statement of what the suite meets and cannot meet. Not planned: a policy gate (R-07, R-08) that blocks recording until the memory-wide mission has recording, access and retention sections, and per-scope role separation: both change how the author works and need his decision; they are carried to the author as findings.
+
+Prediction: after iteration 3 the same audit finds the three named contradictions gone and at least five requirements moved from partial or not met to met or stated as not met; the suite's tests and verify.py pass; no skill grows by more than a few lines. Not expected: full or minimal conformance.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired.
+- *About to declare silence:* not fired.
+- *Contradicts prior [!REALIZATION]:* not fired.
+- *Operator explicitly asked:* not fired (the author asked for the sequence of runs, not for an arc reflection).
+## 2026-11-23 - suite-iteration-1-format-identity-advice
+
+- target: record.py, memory_check.py, the Record and Improve skills
+- operator: Nils Wendelboe Holmager
+- agent: unknown (the operator addressed the session as Opus); host: Copilot SDK in VS Code
+- skill: Improve
+- completes: suite-vs-released-spec-checkpoint (iteration 1 of 3)
+- outcome: new records state `format: 1`; the checker fails an unknown format and any symbolic link in the memory and no longer hides a code folder named `drafts`; the Record skill's identifier wording and two stale section cites are fixed; Improve treats `learning.md`'s rules as advice, never authority
+- delta: v7.1.0 (record 3.6.0, improve 3.27.1); 78 tests pass (the symbolic-link test skips where links need a privilege)
+
+[!DECISION] R-16 gets its format version as a line, not a migration: a record without it is format 1, so the immutable older records stay valid and the checker adds no warnings. The identifier is the file name and, with the scope's path, unique in the memory: that is what the tool already enforced, so the skill was changed, not the tool. R-03: the "you must obey" sentence was the only place the suite told an agent to treat agent-written text as an instruction; it now says advice, never above a mandate.
+
+Prediction: the tests and verify.py pass and `memory_check` on the author's memory stays at 0 failures. Result: held; 50 warnings unchanged.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired.
+- *About to declare silence:* not fired.
+- *Contradicts prior [!REALIZATION]:* not fired.
+- *Operator explicitly asked:* not fired (the author asked for the sequence of runs, not for an arc reflection).
