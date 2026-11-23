@@ -19027,3 +19027,25 @@ Prediction: tests and verify.py pass; the author's memory shows no locator-relat
 **Across-trail macro-Hansei:**
 
 Iterations so far have each found that a stated rule had no check behind it: the record identifier, the format version, the immutability. The cheapest check that matches the rule, even if it only detects, turned up a real violation in the first minute; rules written in skills without a check are claims about the agent's discipline, and the agent that wrote them broke one.
+## 2026-11-23 - suite-iteration-3-derived-views-and-honesty
+
+- target: memory_check.py, the Learn and Improve skills, the README
+- operator: Nils Wendelboe Holmager
+- agent: unknown (the operator addressed the session as Opus); host: Copilot SDK in VS Code
+- skill: Improve
+- completes: suite-vs-released-spec-checkpoint (iteration 3 of 3)
+- outcome: Learn updates `learning.md` by small sourced items, retires superseded claims, dates each claim and cites its records, and calls its rules advice (R-03, R-19); `memory_check.py` warns for a `learning.md` that is not labelled a derived view or whose named source record is older than a newer record of its scope; the README states what the suite meets, what it does not, and that it claims no conformance level
+- delta: v7.3.0 (learn 3.2.0, improve 3.27.2); 81 tests pass
+
+[!DECISION] The staleness check compares record ids, not git revisions: a learning view names the last record it was derived from, and a newer record in the scope makes it stale. It is mechanical, cheap, and does not need the memory to be a git repository. The conformance statement lists what the tools check, what is not met and why, instead of a percentage; no level is claimed. Not done: the recording, access and retention policy gate (R-07) and an erasure procedure (R-08). They change how the author records (a recording could be refused until a policy exists) or need a legal view, so they are carried to the author as findings.
+
+[!REALIZATION] The new label check found seven `learning.md` files without a derived-view label: two in the author's personal memory (labelled now, one line each) and five in the employer memory (left alone; for the employer memory's owner). A derived file that does not say it is derived is the first way a summary gains standing it has not earned (R-01).
+
+Prediction: tests and verify.py pass; the same audit finds the three named contradictions gone and at least five requirements better stated or met. Result: the three contradictions are fixed in the text and tools (the audit itself is rerun separately by a fresh reviewer).
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired.
+- *About to declare silence:* not fired.
+- *Contradicts prior [!REALIZATION]:* not fired.
+- *Operator explicitly asked:* not fired (the author asked for the sequence of runs, not for an arc reflection).

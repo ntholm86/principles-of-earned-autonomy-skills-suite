@@ -1,6 +1,6 @@
 ---
 name: learn
-version: 3.1.0
+version: 3.2.0
 description: 'Automatic learning service. Improve or Mission schedules it when accumulated evidence makes the current learning stale; it reads the trail as a single document, forms arc-level claims, and refreshes learning.md without changing the target. Manual invocation remains available for diagnostics or an explicit "how are we doing?" request.'
 argument-hint: 'The target and its trail, and optionally the specific arc-question to answer'
 ---
@@ -130,7 +130,7 @@ Acting on the candidate is itself a subsequent [Improve](../improve/SKILL.md) it
 The arc is the mechanism by which the agent learns how to work within the specific target environment. Without explicitly harvesting structural lessons, the agent will repeat the same mistakes in fresh sessions.
 
 - Look for `[!REALIZATION]` markers across the arc that describe operational failures, successful rules of engagement, or architectural landmines specific to this target (e.g., "Never trust the build script to clean up," "This repo forbids adding third-party dependencies").
-- Synthesize these historical realizations into concrete, imperative rules for future agents. Do not just summarize what happened; state *what must be done differently next time*.
+- Synthesize these historical realizations into concrete rules for future agents, each naming the records it rests on. Do not just summarize what happened; state *what should be done differently next time*. The rules are advice from the agent, never authority: they cannot outrank a mandate.
 
 ### 5. Write the learning.md
 
@@ -140,18 +140,18 @@ Write the arc-claims from step 3 (and any loop-effectiveness findings from step 
 
 learning.md should make sense in light of the mission (read at step 0) — arc-claims may reference whether the loop has been pursuing what the mission says matters — but must not duplicate mission content. Never write to `mission.md` from a Learn run.
 
-`learning.md` is not append-only. Learn replaces it each time it runs. The full reasoning history lives in the trail; the mission is where the target is going; the learning.md is the current distillation of where the target is along the way.
+`learning.md` is a derived view, not source: the full reasoning history lives in the trail; the mission is where the target is going; the learning.md is the current distillation of where the target is along the way. When Learn runs, it changes the file by small sourced items: it adds a claim, revises one, or retires one that is superseded or no longer true (the history stays in the trail), and it leaves unchanged whatever the arc still shows. It does not rewrite the whole file when the arc has not changed its meaning, because a rewrite loses detail and makes the file grow or shrink for no reason. Each claim and rule carries its date and the record ids it rests on.
 
 The file shape is simple:
 
 ```markdown
 # learning.md — <target name>
 
-_Derived view of the trail at <memory revision, or last record id>; last updated: YYYY-MM-DD (run: <slug>)_
+_Derived view of the trail at <last record id of this scope, or memory revision>; written by the agent; last updated: YYYY-MM-DD (run: <slug>)_
 
 ## Current claims
 
-<Arc-claims from step 3, each as a falsifiable statement.>
+<Arc-claims from step 3, each as a falsifiable statement, with its date and the record ids it rests on.>
 
 ## What the next runs should test
 
@@ -159,7 +159,7 @@ _Derived view of the trail at <memory revision, or last record id>; last updated
 
 ## Active operational rules
 
-<Imperative, target-specific rules of engagement extracted from step 4b (e.g., "Do not bypass the prediction block", "Always use replace encoding when reading audit-trail.md"). These carry the 'Learning' forward across sessions.>
+<Target-specific rules of engagement, each with its source records, extracted from step 4b (e.g., "Do not bypass the prediction block", "Always use replace encoding when reading audit-trail.md"). These carry the 'Learning' forward across sessions.>
 
 ## Loop-effectiveness notes
 

@@ -1344,6 +1344,10 @@ Markers older than the recent window kept in `trail-markers.md`. Read this only 
 
 **[!REALIZATION]** Evidence integrity cannot be inferred from append-only discipline alone. The transport and encoding path that carries evidence is part of the evidence boundary; a correct recovery procedure must preserve raw bytes or verify the encoding before reusing reconstructed text.
 
+## 2026-08-19 — readme-four-part-offer-heading
+
+**[!REALIZATION]** Adoption language needs a compressed theory of the product, not only a diagnosis of the user's pain. The four-part offer provides that theory; the problem list supplies the evidence that it is needed.
+
 ---
 
-**335 markers — 295 realisations, 40 reversals**
+**336 markers — 296 realisations, 40 reversals**

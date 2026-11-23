@@ -24,8 +24,10 @@ Failures (exit code 1):
     without a `format` line is format 1);
   - a symbolic link anywhere in the memory (a link can leave the memory or hide a scope: R-15).
 Warnings (do not fail): an ordinary record without the attribution fields of R-16 (record, time, scope,
-agent, authority, session, mandate), a record whose header still holds an unfilled `TODO` stub field, and a
-tracked file under a `generated/` folder (disposable reading aids are not committed).
+agent, authority, session, mandate), a record whose header still holds an unfilled `TODO` stub field, a
+`learning.md` that is not labelled a derived view or whose named source record is older than a newer record of
+its scope (R-19: a stale view is not used), and a tracked file under a `generated/` folder (disposable reading
+aids are not committed).
 """
 from __future__ import annotations
 
@@ -187,6 +189,27 @@ def history_failures(root: Path) -> list[str]:
     return failures
 
 
+LEARNING_SOURCE = re.compile(r"\b(\d{8}T\d{6}Z-[a-z0-9][a-z0-9-]*)\b")
+
+
+def check_learning(scope: Path, root: Path) -> list[str]:
+    learning = scope / "learning.md"
+    if not learning.is_file():
+        return []
+    where = learning.relative_to(root).as_posix()
+    head = "\n".join(learning.read_text(encoding="utf-8", errors="replace").splitlines()[:6])
+    warnings: list[str] = []
+    if not re.search(r"derived view", head, re.I):
+        warnings.append(f"{where}: not labelled a derived view (R-19)")
+    named = LEARNING_SOURCE.findall(head)
+    records = scope / "records"
+    if named and records.is_dir():
+        newest = max(r.stem for r in records.glob("*.md") if RECORD_NAME.match(r.name)) if any(records.glob("*.md")) else ""
+        if newest and newest > max(named):
+            warnings.append(f"{where}: derived from {max(named)}, but the scope has a newer record {newest}; the view is stale (R-19)")
+    return warnings
+
+
 def tracked_generated(root: Path) -> list[str]:
     try:
         out = subprocess.run(["git", "-C", str(root), "ls-files"], capture_output=True, text=True, check=True).stdout
@@ -225,6 +248,7 @@ def check(root: Path) -> tuple[list[str], list[str]]:
         record_failures, record_warnings = check_records(scope, root)
         failures += record_failures
         warnings += record_warnings
+        warnings += check_learning(scope, root)
     failures += check_bindings(root)
     warnings += tracked_generated(root)
     return failures, warnings

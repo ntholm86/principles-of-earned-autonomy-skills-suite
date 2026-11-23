@@ -150,6 +150,17 @@ class MemoryCheckTests(unittest.TestCase):
         )
         self.assertEqual(memory_check.history_failures(self.root), [])
 
+    def test_a_learning_view_must_be_labelled_and_not_older_than_its_scope_records(self):
+        self.write("learning.md", "# learning.md\n\nclaims\n")
+        self.write("records/20261122T010203Z-thing.md", GOOD_RECORD)
+        _, warnings = self.run_check()
+        self.assertTrue(any("not labelled a derived view" in w for w in warnings))
+        self.write("learning.md", "# learning.md\n\n_Derived view of the trail at 20261122T010203Z-thing; written by the agent_\n")
+        self.assertEqual(self.run_check(), ([], []))
+        self.write("records/20261122T020304Z-newer.md", GOOD_RECORD.replace("20261122T010203Z-thing", "20261122T020304Z-newer"))
+        _, warnings = self.run_check()
+        self.assertTrue(any("stale" in w and "20261122T020304Z-newer" in w for w in warnings))
+
     def test_scopes_under_paths_and_tasks_are_found(self):
         self.write("repositories/r/paths/src/area/mission.md", GOOD_MISSION)
         self.write("repositories/r/paths/src/area/tasks/t/mission.md", GOOD_MISSION)
