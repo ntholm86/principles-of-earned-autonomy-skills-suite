@@ -17,8 +17,11 @@ Subcommands:
 
   new --slug=<slug> [--target=<target>] [--skill=<skill>] [--body-file=<path>]
       Bound scope: create the record records/<UTC yyyyMMddTHHmmssZ>-<slug>.md
-      (create-only; an identical resubmission is a no-op, a different one gets
-      a new identifier). Legacy scope: append a stub to audit-trail.md and
+      (create-only; an identical resubmission is a no-op, a different record
+      with the same identifier is an error). With --body-file the tool adds the
+      header lines it knows (record, format, time, scope, repository, mandate)
+      that the body lacks, and refuses a body whose `- record:` line names another
+      identifier. Legacy scope: append a stub to audit-trail.md and
       print its line range.
 
   summary
@@ -443,6 +446,30 @@ def _mandate_hash(scope: Path, memory: Path) -> str:
         folder = folder.parent
 
 
+MACHINE_FIELDS = ("record", "format", "time", "scope", "repository", "mandate")
+
+
+def _with_machine_fields(body: str, values: dict[str, str]) -> str:
+    """Add the header lines the tool knows that a finished body lacks; refuse a body that names another identifier."""
+    lines = body.replace("\r\n", "\n").split("\n")
+    heading = next((i for i, line in enumerate(lines) if line.startswith("## ")), -1)
+    start = heading + 1
+    if start < len(lines) and not lines[start].strip():
+        start += 1
+    end = start
+    while end < len(lines) and lines[end].startswith("- "):
+        end += 1
+    present = {m.group(1): m.group(2).strip() for m in map(re.compile(r"^-\s+([a-z-]+):\s*(.*)$").match, lines[start:end]) if m}
+    if "record" in present and present["record"] != values["record"]:
+        raise RuntimeError(f"the body's '- record: {present['record']}' names another identifier than {values['record']}; omit the line and the tool adds it")
+    added = [f"- {name}: {values[name]}" for name in MACHINE_FIELDS if name not in present]
+    if not added:
+        return "\n".join(lines)
+    if end == start:
+        added.append("")
+    return "\n".join(lines[:start] + added + lines[start:])
+
+
 def _new_record(args: argparse.Namespace) -> int:
     assert TARGET is not None
     res = TARGET.resolution
@@ -460,7 +487,10 @@ def _new_record(args: argparse.Namespace) -> int:
 
     def render(record_id: str) -> str:
         if body is not None:
-            return body
+            return _with_machine_fields(body, {
+                "record": record_id, "format": "1", "time": now.isoformat().replace("+00:00", "Z"), "scope": scope,
+                "repository": f"{res.repo_id} @ {res.root_commit}", "mandate": mandate,
+            })
         return RECORD_HEADER.format(
             date=now.date().isoformat(), slug=slug, record_id=record_id,
             time=now.isoformat().replace("+00:00", "Z"), scope=scope,

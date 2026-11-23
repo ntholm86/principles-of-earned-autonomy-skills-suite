@@ -163,6 +163,34 @@ class RecordingTests(MemoryFixture):
         self.assertIn("- mandate: none\n", text)
         self.assertFalse((work / ".acm").exists())
 
+    def test_a_finished_body_gets_the_header_lines_the_tool_knows(self):
+        work, root = self.work_repo("work")
+        memory = self.memory_repo("memory", {"work": root})
+        self.register(memory)
+        body = self.base / "body.md"
+        body.write_text("## 2026-11-23 \u2014 done\n\n- target: t\n- agent: unknown\n\n### Decision\n\n[!DECISION] x\n", encoding="utf-8")
+        result = self.run_record(work, "new", "--slug", "done", "--body-file", str(body))
+        self.assertEqual(result.returncode, 0, result.stderr)
+        written = next((memory / "repositories" / "work" / "records").glob("*.md"))
+        text = written.read_text(encoding="utf-8")
+        self.assertIn(f"- record: {written.stem}\n", text)
+        self.assertIn("- format: 1\n", text)
+        self.assertIn("- scope: repositories/work\n", text)
+        self.assertIn(f"- repository: work @ {root}\n", text)
+        self.assertIn("- target: t\n- agent: unknown\n", text)
+        self.assertLess(text.index("- record:"), text.index("- target:"))
+
+    def test_a_finished_body_that_names_another_identifier_is_refused(self):
+        work, root = self.work_repo("work")
+        memory = self.memory_repo("memory", {"work": root})
+        self.register(memory)
+        body = self.base / "body.md"
+        body.write_text("## 2026-11-23 \u2014 done\n\n- record: 20200101T000000Z-other\n- target: t\n", encoding="utf-8")
+        result = self.run_record(work, "new", "--slug", "done", "--body-file", str(body))
+        self.assertEqual(result.returncode, 1)
+        self.assertIn("names another identifier", result.stderr)
+        self.assertEqual(list((memory / "repositories" / "work").glob("records/*.md")), [])
+
     def test_mandate_is_the_hash_of_the_narrowest_governing_mission(self):
         import hashlib
 

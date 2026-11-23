@@ -4,11 +4,7 @@ GENERATED from `.acm/audit-trail.md` by `record.py markers --write`. Do not edit
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers: what the loop has concluded across runs. Read this before reading the trail in full; reach for the trail only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 336 older marker(s) are in `trail-markers-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-19 — readme-one-normal-command-operating-model
-
-**[!REALIZATION]** Internal taxonomy and first-use workflow are different representations of the same system. A README that leads with taxonomy makes the operator learn architecture before acting; a README that leads with Improve lets the architecture remain automatic until evidence requires its services.
+Showing the most recent 60 markers. 337 older marker(s) are in `trail-markers-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-19 — collapse-service-activation-taxonomy
 
@@ -246,6 +242,10 @@ Showing the most recent 60 markers. 336 older marker(s) are in `trail-markers-ar
 
 **[!REALIZATION]** The new label check found seven `learning.md` files without a derived-view label: two in the author's personal memory (labelled now, one line each) and five in the employer memory (left alone; for the employer memory's owner). A derived file that does not say it is derived is the first way a summary gains standing it has not earned (R-01).
 
+## 2026-11-23 — suite-iteration-4-claims-match-code
+
+**[!REVERSAL]** This reverses the claim, written into the README and changelog one iteration earlier, that the tools write attributed records with a format version: that held for the stub the tool creates and not for a finished body, which is the path the skills use for checkpoints and completions. A fresh auditor, not the author of the claim, found it by reading the code; the author of the claim had tested only the stub.
+
 ---
 
-**60 markers — 42 realisations, 18 reversals**
+**60 markers — 41 realisations, 19 reversals**

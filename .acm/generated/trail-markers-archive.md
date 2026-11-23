@@ -1348,6 +1348,10 @@ Markers older than the recent window kept in `trail-markers.md`. Read this only 
 
 **[!REALIZATION]** Adoption language needs a compressed theory of the product, not only a diagnosis of the user's pain. The four-part offer provides that theory; the problem list supplies the evidence that it is needed.
 
+## 2026-08-19 — readme-one-normal-command-operating-model
+
+**[!REALIZATION]** Internal taxonomy and first-use workflow are different representations of the same system. A README that leads with taxonomy makes the operator learn architecture before acting; a README that leads with Improve lets the architecture remain automatic until evidence requires its services.
+
 ---
 
-**336 markers — 296 realisations, 40 reversals**
+**337 markers — 297 realisations, 40 reversals**

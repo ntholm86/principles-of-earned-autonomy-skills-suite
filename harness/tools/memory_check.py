@@ -70,7 +70,7 @@ def scopes(root: Path) -> list[Path]:
 
     def walk_paths(folder: Path) -> None:
         for child in sorted(folder.iterdir()):
-            if not child.is_dir() or child.name in STRUCTURAL or child.name.startswith("."):
+            if not child.is_dir() or child.name in STRUCTURAL:
                 continue
             if is_scope(child) or (child / "tasks").is_dir():
                 visit(child)
@@ -204,7 +204,7 @@ def check_learning(scope: Path, root: Path) -> list[str]:
     named = LEARNING_SOURCE.findall(head)
     records = scope / "records"
     if named and records.is_dir():
-        newest = max(r.stem for r in records.glob("*.md") if RECORD_NAME.match(r.name)) if any(records.glob("*.md")) else ""
+        newest = max((r.stem for r in records.glob("*.md") if RECORD_NAME.match(r.name)), default="")
         if newest and newest > max(named):
             warnings.append(f"{where}: derived from {max(named)}, but the scope has a newer record {newest}; the view is stale (R-19)")
     return warnings
@@ -223,7 +223,7 @@ def symlinks(root: Path) -> list[Path]:
     found: list[Path] = []
     for folder, names, files in os.walk(root):
         names[:] = [n for n in names if n != ".git"]
-        found += [Path(folder, n) for n in names + files if Path(folder, n).is_symlink()]
+        found += [Path(folder, n) for n in names + files if Path(folder, n).is_symlink() or getattr(os.path, "isjunction", lambda p: False)(Path(folder, n))]
     return sorted(found)
 
 

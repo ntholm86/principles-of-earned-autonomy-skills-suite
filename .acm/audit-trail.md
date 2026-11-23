@@ -19049,3 +19049,29 @@ Prediction: tests and verify.py pass; the same audit finds the three named contr
 - *About to declare silence:* not fired.
 - *Contradicts prior [!REALIZATION]:* not fired.
 - *Operator explicitly asked:* not fired (the author asked for the sequence of runs, not for an arc reflection).
+## 2026-11-23 - suite-iteration-4-claims-match-code
+
+- target: record.py, memory_check.py, the README Conformance paragraph, the Record skill
+- operator: Nils Wendelboe Holmager
+- agent: unknown (the operator addressed the session as Opus); host: Copilot SDK in VS Code
+- skill: Improve
+- authority: the author's instruction for the sequence (see the checkpoint); a fresh read-only second audit of 7.1.0 to 7.3.0 supplied the findings
+- outcome: a finished record written with `--body-file` now gets the header lines the tool knows; the checker no longer crashes on a records folder of malformed names, checks dot-folders and treats junctions as links; the README names every partly met requirement and states what legacy mode and the history check do not cover; the Record skill says the tool does not yet select the memory-wide scope
+- delta: v7.3.1 (record 3.7.1); 83 tests pass
+
+[!REVERSAL] This reverses the claim, written into the README and changelog one iteration earlier, that the tools write attributed records with a format version: that held for the stub the tool creates and not for a finished body, which is the path the skills use for checkpoints and completions. A fresh auditor, not the author of the claim, found it by reading the code; the author of the claim had tested only the stub.
+
+[!DECISION] Fix the code where the claim was reasonable (the header fields a tool knows should be written by the tool, not guessed by an agent that cannot know the timestamp) and fix the text where it was not (the partial requirements are now named; legacy mode and `--history` limits are stated). Carried, not done, because each changes how the author works or is larger than a sentence: the whole governing chain from `resolve`, a missing registry becoming unavailable when `.acm/` exists, the policy gate and erasure.
+
+Prediction: a third audit finds no claim in the README or changelog that the code contradicts. Not expected: that it finds nothing. Result: pending a fresh read.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* fired: iterations 1 to 4 each found a written claim without a check, then a check that did not cover the claim's whole path.
+- *About to declare silence:* not fired.
+- *Contradicts prior [!REALIZATION]:* fired: this entry's reversal.
+- *Operator explicitly asked:* not fired (the author asked for the sequence of runs, not for an arc reflection).
+
+**Across-trail macro-Hansei:**
+
+The pattern in this sequence is that every claim I wrote about my own change was checked only on the path I had just exercised. The second audit read the other path (finished bodies) and the claim failed. The cheap countermeasure is the one that worked: a reviewer who has not seen my tests reads the code against the claim; and a test for each path a skill actually uses, not only the one the tool's stub creates.
