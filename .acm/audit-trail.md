@@ -19099,3 +19099,52 @@ Prediction: a further audit finds only gaps against the specification, not false
 **Across-trail macro-Hansei:**
 
 Three audits found respectively gaps against the specification, claims the code did not support, and five smaller overstatements. The third class shrank each round, which is the shape of convergence for claim accuracy; the first class did not shrink by iteration, it was partly closed and partly named as not met, which is the honest result for an implementation of its kind. Silence on claim accuracy is bounded to three fresh readers of one family at one host.
+
+## 2026-11-23 — zenodo-metadata-fix
+
+- target: Suite v8.0.1: .zenodo.json relation Zenodo rejected
+- operator: Nils Wendelboe Holmager ("check/enable Zenodo archiving for suite v8.0.0")
+- agent: unknown (the operator addressed the session as Opus); host: Copilot SDK in VS Code
+- skill: improve
+- outcome: the suite's `.zenodo.json` no longer carries a relation Zenodo rejects; v8.0.1 is released and archived at 10.5281/zenodo.24469825
+- delta: `.zenodo.json` one value changed (`isImplementationOf` to `isSupplementTo`); CITATION.cff 8.0.0 to 8.0.1; CHANGELOG entry; commit `9d692c3`
+
+### Interpretation of the ask
+
+The question was whether Zenodo archives v8.0.0, which had not appeared on the record. "Enable" is only needed if the integration is off, so the first step is to look.
+
+### Examination
+
+The Zenodo settings page shows the repository switched on, and v8.0.0 listed as **Failed** with the error "Invalid value isimplementationof." The cause is in `.zenodo.json`: a `related_identifiers` entry used the relation `isImplementationOf`, which Zenodo's vocabulary does not contain. The specification's own `.zenodo.json` uses `isSupplementTo` for the suite, so that is the accepted way to state the same link from this side.
+
+### Decision
+
+[!DECISION] Correct the relation and publish a patch release, v8.0.1, rather than move the v8.0.0 tag: Zenodo archives a tag's contents, so the fix has to be in a tag, and rewriting a published tag would hide that v8.0.0 failed.
+
+### Prediction
+
+Zenodo accepts v8.0.1 and the concept record's newest version becomes v8.0.1; nothing else in the suite changes; v8.0.0 stays marked Failed on Zenodo.
+
+### Action
+
+Changed the one value, bumped CITATION.cff, added the CHANGELOG entry, ran `verify.py` (passes), pushed (`Verify ACM Integrity` green on `9d692c3`), ran the Create Release workflow for v8.0.1. Within about two minutes the concept record listed v8.0.1 as 10.5281/zenodo.24469825. The prediction held.
+
+### Reflection
+
+**Falsifiable claim about the target's current state:** the suite's Zenodo record now lists v8.0.1 as its latest version, and a new release will archive unless `.zenodo.json` gains another value outside Zenodo's vocabulary.
+
+**Named blind spot:** I could not validate `.zenodo.json` against Zenodo before releasing; the only test is a release. Other values (resource types, the old DOI under `isDerivedFrom`) passed on earlier releases but are not proven for every future change.
+
+**Imagined-reader pushback:** a version whose only change is metadata clutters the release list. That is the price of an archive that matches a tag; v8.0.0 remains as the first GitHub release.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired; the last entries are about claim accuracy in code and prose, this is a release-process failure found by looking at the remote after publishing.
+- *About to declare silence:* not fired.
+- *Contradicts prior [!REALIZATION]:* not fired; it extends the one about checking the remote after every push: the archive is a remote too.
+- *Operator explicitly asked:* not fired.
+
+### Candidate Next Moves
+
+1. Check Zenodo's result after each release, as part of publishing.
+2. CITATION.cff lists archive identifiers for v3.1.0 and v3.2.0 only; add the v8.0.1 archive (10.5281/zenodo.24469825) at the next release.
