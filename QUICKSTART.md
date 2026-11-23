@@ -76,7 +76,7 @@ It creates `<memory-folder>/repositories/<id>/records/<UTC yyyyMMddTHHmmssZ>-fir
 - target: TODO
 - operator: TODO
 - agent: TODO (model family and version as the host exposes or the operator states; "unknown" if neither, never invented)
-- authority: TODO (the prompt, mission or delegation this work acts under)
+- authority: TODO (the prompt, goal or delegation this work acts under)
 - session: TODO (the host's session or run identifier; "unknown" when not exposed)
 - mandate: sha256:3aca039a5f52
 - skill: improve
@@ -84,7 +84,7 @@ It creates `<memory-folder>/repositories/<id>/records/<UTC yyyyMMddTHHmmssZ>-fir
 - delta: TODO
 ```
 
-`mandate:` is the first 12 hex characters of the governing `mission.md` (`none` when no mission governs). If the name already exists the command exits non-zero and writes nothing; run it again for a new timestamp. Replace every `TODO` before the record counts; the checker below warns about the ones left. Finally:
+`mandate:` is the first 12 hex characters of the governing `goal.md` (`none` when no goal governs). If the name already exists the command exits non-zero and writes nothing; run it again for a new timestamp. Replace every `TODO` before the record counts; the checker below warns about the ones left. Finally:
 
 ```
 python <suite>/harness/tools/memory_check.py <memory-folder>
@@ -107,9 +107,9 @@ Examples:
 
 The agent applies Intent and asks you to **Confirm**, **Stop**, or **Specify** its reading. After examination, Improve states one proposed change and asks you to **Proceed**, **Stop**, or **Specify** before implementation. Specify restarts the reasoning with your added information. A completed run makes one change, verifies it, applies Record, and ends with one short change-and-verification summary.
 
-Once the suite has earned your trust, explicitly delegate either routine gate in the prompt or in Mission. Delegation does not silence the narration, the final summary, unresolved Mission questions, or operator-declared consequential gates. Host autopilot alone grants no such authority.
+Once the suite has earned your trust, explicitly delegate either routine gate in the prompt or in Goal. Delegation does not silence the narration, the final summary, unresolved Goal questions, or operator-declared consequential gates. Host autopilot alone grants no such authority.
 
-If continuing safely requires broader direction, Improve explains why and invokes Mission after the completed run to ask one sourced question at a time.
+If continuing safely requires broader direction, Improve explains why and invokes Goal after the completed run to ask one sourced question at a time.
 
 Done when: the bound scope's `records/` has a new record (legacy in-repo memory: `.acm/audit-trail.md` has a new entry) with `outcome:` and `delta:`, and the run stated its mandate (a `mandate:` line, or that the run was ungoverned).
 
@@ -119,13 +119,13 @@ Open these and skim:
 
 1. The new trail record — it has interpretation, decision, action, and outcome.
 2. The change itself in the working tree.
-3. The scope's `mission.md`, if Improve found enough directional evidence to trigger Mission.
+3. The scope's `goal.md`, if Improve found enough directional evidence to trigger Goal.
 
-The first two are sufficient for a successful first run. Mission is created when the work needs durable cross-run direction, not as setup ceremony.
+The first two are sufficient for a successful first run. Goal is created when the work needs durable cross-run direction, not as setup ceremony.
 
 ## Learning happens automatically
 
-You do not need to count iterations or remember a Learn step. A material Mission change schedules Learn. Improve also evaluates learning freshness after every recorded run and schedules Learn when the trail forms a meaningful arc, contradicts the current learning, or approaches convergence.
+You do not need to count iterations or remember a Learn step. A material Goal change schedules Learn. Improve also evaluates learning freshness after every recorded run and schedules Learn when the trail forms a meaningful arc, contradicts the current learning, or approaches convergence.
 
 For a diagnostic arc-read at any time, you can still run:
 
@@ -152,4 +152,4 @@ For legacy in-repo trails only: this rejects staged changes outside `.acm/`, inc
 
 1. No audit entry appended → re-run `/improve` with a smaller, more concrete task.
 2. Agent did not narrate intent → retry and report that automatic Intent composition failed; manually invoking `/intent` is a diagnostic, not a normal workflow step.
-3. Mission triggered without directional evidence → ask the agent to name the accepted mandates or unresolved choice that triggered it; a missing file or iteration count is not sufficient.
+3. Goal triggered without directional evidence → ask the agent to name the accepted mandates or unresolved choice that triggered it; a missing file or iteration count is not sufficient.

@@ -1,6 +1,6 @@
 ---
 name: goal
-version: 4.0.0
+version: 4.0.1
 description: 'Automatic direction-consolidation service. Improve schedules it when accumulated work makes cross-run direction useful; it surfaces sourced guesses about durable direction as questions the operator can confirm, correct, or reject. Manual invocation remains available when the operator wants to explore or revise direction.'
 argument-hint: 'Optionally: the area you want hunches about (a specific concern, a recent decision, the project as a whole)'
 ---
@@ -131,39 +131,39 @@ Keep the active mandate cheap and unambiguous to read as the goal evolves. When 
 [Preserved evolution]
 ```
 
-`complete` is a governance claim, not a formatting convenience. A mandate that does not state its Human gate is incomplete. Before adding or retaining it, reconcile every earlier mission layer: carry each still-active commitment into the current section, or make its rejection or supersession explicit there. If that reconciliation has not been performed, omit the comments; every consuming skill will then read the full file. Never infer that a heading, horizontal rule, date, or position in the file marks a complete current mission.
+`complete` is a governance claim, not a formatting convenience. A mandate that does not state its Human gate is incomplete. Before adding or retaining it, reconcile every earlier goal layer: carry each still-active commitment into the current section, or make its rejection or supersession explicit there. If that reconciliation has not been performed, omit the comments; every consuming skill will then read the full file. Never infer that a heading, horizontal rule, date, or position in the file marks a complete current goal.
 
-If the conversation produced arc-claims about the target's current state rather than mission claims, those belong in learning.md — but learning.md is Learn's to write. Mission surfaces them; Learn (or the next Improve run) decides what to do with them.
+If the conversation produced arc-claims about the target's current state rather than goal claims, those belong in learning.md — but learning.md is Learn's to write. Goal surfaces them; Learn (or the next Improve run) decides what to do with them.
 
 ### 6. Record the run in the trail
 
-**Apply [Record](../record/SKILL.md) automatically now.** The operator should never have to invoke Record separately. If this is a standalone Mission installation and Record is unavailable, use the entry contract below directly.
+**Apply [Record](../record/SKILL.md) automatically now.** The operator should never have to invoke Record separately. If this is a standalone Goal installation and Record is unavailable, use the entry contract below directly.
 
-The trail entry for a Mission run is shorter than an Improve entry. It must include:
+The trail entry for a Goal run is shorter than an Improve entry. It must include:
 
 - The sourced inferences the agent formed and their citations.
 - The questions actually asked.
 - The operator's responses (verbatim where possible — this is high-fidelity signal).
 - What the agent believes now, what was rejected, what is still open.
-- Any proposed updates to `mission.md` and whether the operator accepted them.
+- Any proposed updates to `goal.md` and whether the operator accepted them.
 
-A Mission run that produced no inferences is still recorded — silence is signal too.
+A Goal run that produced no inferences is still recorded — silence is signal too.
 
 ### 7. Refresh learning when direction changed
 
-If this run created `mission.md` or materially changed its direction, constraints, priorities, or quality bars, **apply [Learn](../learn/SKILL.md) automatically after the record is durable.** The existing learning was formed against an older mission and is now stale by definition. Scope the arc-read to: "Re-learn the accumulated work against the changed mission." Do not ask the operator to invoke `/learn`.
+If this run created `goal.md` or materially changed its direction, constraints, priorities, or quality bars, **apply [Learn](../learn/SKILL.md) automatically after the record is durable.** The existing learning was formed against an older goal and is now stale by definition. Scope the arc-read to: "Re-learn the accumulated work against the changed goal." Do not ask the operator to invoke `/learn`.
 
-Do not run Learn when Mission produced no change, only corrected wording without changing meaning, or ended in silence. A mission edit is not automatically a mission change; material meaning is the trigger.
+Do not run Learn when Goal produced no change, only corrected wording without changing meaning, or ended in silence. A goal edit is not automatically a goal change; material meaning is the trigger.
 
-This automatic handoff preserves ownership: Mission changes where the work is going; Learn automatically recomputes where the work now stands relative to it. Learn must not revise the mission or change the target.
+This automatic handoff preserves ownership: Goal changes where the work is going; Learn automatically recomputes where the work now stands relative to it. Learn must not revise the goal or change the target.
 
 ## What this skill does not do
 
-- **It does not act on unconfirmed inferences.** A confirmed mission becomes input to the next run; it does not become the next run. The separation matters: an agent that acts on its own inferences without confirmation has stopped being autonomous-with-oversight and started being autonomous-without-it.
-- **It does not replace Intent.** Intent surfaces interpretation of *one specific request*. Mission surfaces interpretation of *the broader direction* across requests. Run Intent at the start of a request; run Mission when the broader direction itself is unclear.
-- **It does not replace Learn.** Learn reads the trail and forms claims about what the target *is becoming*. Mission reads conversation and forms claims about what the operator *wants the target to become*. A material Mission change automatically schedules Learn so the current learning is recomputed against the new direction.
-- **It does not score the operator's clarity.** No rubric for "mission quality." If the operator is exploring, that is a legitimate state — the skill helps them externalise the exploration, not grade it.
+- **It does not act on unconfirmed inferences.** A confirmed goal becomes input to the next run; it does not become the next run. The separation matters: an agent that acts on its own inferences without confirmation has stopped being autonomous-with-oversight and started being autonomous-without-it.
+- **It does not replace Intent.** Intent surfaces interpretation of *one specific request*. Goal surfaces interpretation of *the broader direction* across requests. Run Intent at the start of a request; run Goal when the broader direction itself is unclear.
+- **It does not replace Learn.** Learn reads the trail and forms claims about what the target *is becoming*. Goal reads conversation and forms claims about what the operator *wants the target to become*. A material Goal change automatically schedules Learn so the current learning is recomputed against the new direction.
+- **It does not score the operator's clarity.** No rubric for "goal quality." If the operator is exploring, that is a legitimate state — the skill helps them externalise the exploration, not grade it.
 
 ## Self-targeting
 
-Mission should be runnable on the operator of *this* repository — the one writing the skills. If the agent cannot form a mission-hunch about where this skill suite is being taken next, either the signal in this repo's trail is too thin (a finding) or the agent is not actually reading it (a different finding). Either is useful.
+Goal should be runnable on the operator of *this* repository — the one writing the skills. If the agent cannot form a goal-hunch about where this skill suite is being taken next, either the signal in this repo's trail is too thin (a finding) or the agent is not actually reading it (a different finding). Either is useful.

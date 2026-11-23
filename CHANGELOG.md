@@ -1,5 +1,9 @@
 # Changelog
 
+## v8.0.2 - 2026-11-23
+
+- **The Goal rename was incomplete in two files; both are finished.** The rename script stopped converting a file after any line that looked like the `goal-history` marker, and `goal/SKILL.md` and `QUICKSTART.md` quote that marker in examples, so 22 lines below it still said Mission (the run description, the trail entry contract, the "does not replace" list, the QUICKSTART delegation and mandate lines). They now say Goal. `goal/SKILL.md` 4.0.0 -> 4.0.1. Found by a wide search for the old words across every repository; the remaining hits are history, the former-names notes, the retired-file-name check, and "Mission Command".
+
 ## v8.0.1 - 2026-11-23
 
 - **Zenodo rejected v8.0.0 because `.zenodo.json` used a relation Zenodo does not accept (`isImplementationOf`); it now says `isSupplementTo`, the relation the specification's own record uses for this suite.** Nothing else changed: v8.0.1 is v8.0.0 with a corrected archive description, so the release can be archived.
