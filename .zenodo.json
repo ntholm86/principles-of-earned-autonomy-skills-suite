@@ -28,7 +28,7 @@
     },
     {
       "identifier": "https://github.com/ntholm86/shared-agent-context-memory",
-      "relation": "isImplementationOf",
+      "relation": "isSupplementTo",
       "resource_type": "software",
       "scheme": "url"
     }

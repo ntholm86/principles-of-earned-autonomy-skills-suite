@@ -1,5 +1,9 @@
 # Changelog
 
+## v8.0.1 - 2026-11-23
+
+- **Zenodo rejected v8.0.0 because `.zenodo.json` used a relation Zenodo does not accept (`isImplementationOf`); it now says `isSupplementTo`, the relation the specification's own record uses for this suite.** Nothing else changed: v8.0.1 is v8.0.0 with a corrected archive description, so the release can be archived.
+
 ## v8.0.0 - 2026-11-23
 
 - **The Mission skill is now the Goal skill, and `mission.md` is `goal.md`.** The file holds the goal and the limits, so it is called what it is. `mission/` is `goal/` (`name: goal`); the memory file is `goal.md` in every scope; the markers are `<!-- current-goal: complete -->` and `<!-- goal-history -->`. `record.py` and `memory_check.py` read the new names (the mandate revision is the hash of `goal.md`), `memory_check.py` fails a scope that still has `mission.md` as a retired file name, and the installers, `verify.py`, the tests and every skill, document and the principles text use Goal. There is no compatibility alias: nothing outside the author's own memories used the old name. Trails, records, changelogs and archives are append-only and keep the old name; read Mission as Goal in them. "Mission Command" and "mission-type command" (the doctrine behind Operator's Intent, Auftragstaktik) keep their own name. Breaking: a memory with `mission.md` files must rename them to `goal.md` and the two markers. `goal/SKILL.md` 3.0.1 -> 4.0.0 (was `mission/SKILL.md`); `improve/SKILL.md` 3.27.2 -> 3.28.0; `intent/SKILL.md` 1.16.0 -> 1.17.0; `learn/SKILL.md` 3.2.1 -> 3.3.0; `record/SKILL.md` 3.7.2 -> 3.8.0; `probe/SKILL.md` 3.9.0 -> 3.9.1. Follows the specification's current text, v0.8.0, which makes the same rename in its reference layout.
