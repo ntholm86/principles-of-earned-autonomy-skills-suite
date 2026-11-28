@@ -11,7 +11,7 @@ This is a non-experimental host smoke. It does not invoke Improve, use the adopt
 ## Frozen route
 
 - GitHub Copilot CLI: `1.0.79`
-- Provider: Anthropic BYOK through local `llm-harness-proxy`
+- Provider: Anthropic BYOK through local `agent-evidence-proxy`
 - Proxy source: commit `cd33c15`, including usage-capture commits `36c6151` and `e17e2a8`
 - Proxy binary SHA-256: `241626F7D51A945F9C48286EFF26E055FDDA9137C2635DE1FD35094D391701C3`
 - Endpoint: `http://127.0.0.1:8475`

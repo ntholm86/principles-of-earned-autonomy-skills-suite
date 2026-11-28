@@ -20,7 +20,7 @@ An incomplete invocation remains incomplete and is not replaced after output is 
 - Installation: `install.ps1` into a fresh `COPILOT_HOME`; exactly `destination`, `improve`, `intent`, `orient`, and `trail` plus `PRINCIPLES.md`; Probe absent.
 - GitHub Copilot CLI: `1.0.79`.
 - Model: `claude-sonnet-4-5` with high reasoning effort.
-- Provider: Anthropic BYOK through `llm-harness-proxy` at `http://127.0.0.1:8475`.
+- Provider: Anthropic BYOK through `agent-evidence-proxy` at `http://127.0.0.1:8475`.
 - Proxy binary SHA-256: `241626F7D51A945F9C48286EFF26E055FDDA9137C2635DE1FD35094D391701C3`.
 - Provider headers: `Accept-Encoding: identity`, one fresh requested harness session ID, and one disposable empty harness root.
 - State: a fresh external target repository, fresh Copilot home, external capture root, and no built-in MCPs, custom instructions, remote operations, auto-update, or temporary directory.

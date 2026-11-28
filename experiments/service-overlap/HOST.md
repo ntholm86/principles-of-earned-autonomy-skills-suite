@@ -7,8 +7,8 @@ Status: preregistered 2026-08-13; not yet invoked
 - Skills source: committed `main` checkout containing this host record and the frozen fixture.
 - GitHub Copilot CLI: `1.0.79`.
 - Model: `claude-sonnet-4-5`, high reasoning effort.
-- Provider: Anthropic BYOK through `llm-harness-proxy` at `http://127.0.0.1:8475`.
-- Proxy binary: `C:\git\pea\llm-harness-proxy\proxy-rust\target\release\llm-harness-proxy.exe`.
+- Provider: Anthropic BYOK through `agent-evidence-proxy` at `http://127.0.0.1:8475`.
+- Proxy binary: `C:\git\pea\agent-evidence-proxy\proxy-rust\target\release\agent-evidence-proxy.exe`.
 - Proxy SHA-256: `241626F7D51A945F9C48286EFF26E055FDDA9137C2635DE1FD35094D391701C3`.
 - CLI session UUID: `34c4fdd7-0b91-40c2-9aa5-421bddf2b089`.
 - Requested harness session: `KYP13KYMCBJZ2MWJC3XNP97Z31`.

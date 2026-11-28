@@ -9,7 +9,7 @@ This file freezes the execution host required by `PROTOCOL.md` and `SNAPSHOTS.md
 - Product: GitHub Copilot CLI
 - Version: `1.0.79`
 - Mode: non-interactive prompt mode
-- Provider mode: Anthropic BYOK through local `llm-harness-proxy`
+- Provider mode: Anthropic BYOK through local `agent-evidence-proxy`
 - Proxy source commits: `36c6151` usage capture, `e17e2a8` buffered integration proof, `cd33c15` SSE integration proof
 - Proxy endpoint: `http://127.0.0.1:8475`
 - Model ID and wire model: `claude-sonnet-4-5`

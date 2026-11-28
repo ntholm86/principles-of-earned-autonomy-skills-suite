@@ -8,7 +8,7 @@ The one authorized non-experimental qualification call completed through the fro
 
 - GitHub Copilot CLI `1.0.79`
 - model `claude-sonnet-4-5`
-- Anthropic BYOK through `llm-harness-proxy` at `127.0.0.1:8475`
+- Anthropic BYOK through `agent-evidence-proxy` at `127.0.0.1:8475`
 - proxy binary SHA-256 `241626F7D51A945F9C48286EFF26E055FDDA9137C2635DE1FD35094D391701C3`
 - identity encoding
 - fresh `COPILOT_HOME` containing the five operational skills plus `PRINCIPLES.md`

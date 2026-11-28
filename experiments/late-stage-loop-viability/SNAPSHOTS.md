@@ -50,7 +50,7 @@ The current `work-skill` checkout has unrelated untracked `docs/` content. Exper
 
 Independent token capture and host fidelity were preregistered before execution. `RESULTS.md` reports two eligible completed arms and the exclusion of the silence snapshot after its first invocation ended incomplete and an accidental duplicate began from a dirty worktree.
 
-The owning `llm-harness-proxy` repository added provider-reported usage capture in commit `36c6151` (`feat: capture provider token usage`). Commits `e17e2a8` and `cd33c15` prove buffered and SSE handler-to-ledger integration. The Rust suite passes 43 tests.
+The owning `agent-evidence-proxy` repository added provider-reported usage capture in commit `36c6151` (`feat: capture provider token usage`). Commits `e17e2a8` and `cd33c15` prove buffered and SSE handler-to-ledger integration. The Rust suite passes 43 tests.
 
 A controlled live Anthropic call through the release proxy produced matching response and ledger counts: 13 input tokens and 5 output tokens. The sequence-zero ledger entry also preserved Anthropic's native cache, service-tier, and inference metadata under `usage.raw`. This discharges the prior instrumentation blocker for buffered Anthropic runs; historical sessions remain ineligible and are not retroactively estimated.
 
