@@ -19824,3 +19824,40 @@ Goal need: not triggered.
 1. Prepare the separate Storm P image regeneration phase.
 2. Decide separately whether AI Steward's product name should change.
 3. At release time, update only new version metadata; preserve historical release titles and DOI records.
+
+## 2026-11-28 - acs-v9.0.0-release-1-checkpoint
+
+- target: Agent Cognition Skills v9.0.0 release preparation
+- operator: Nils Wendelboe Holmager
+- agent: Copilot SDK in VS Code
+- skill: Improve
+- authority: the operator explicitly approved the dependency-aware release plan and asked to continue
+- outcome: checkpoint recorded before ACS release metadata/version changes
+- delta: no ACS source changed yet in this iteration
+
+### Interpretation
+
+Publish ACS v9.0.0 as the first canonical Agent Cognition Skills release, folding in the already-completed but untagged v8.0.2 Goal fix, the repository/name migration, installation-path changes, current PEA/ACM/AEP links, and release metadata with rich Zenodo relationships.
+
+### Examination
+
+The suite's integrity verifier passes and all 10 reproducible pilot tests pass. CFF currently says 8.0.2, the newest changelog entry is 8.0.2, `.zenodo.json` has no version field, and the newest Git tag is v8.0.1. The post-v8.0.1 delta is sufficiently public-identity and installation-breaking to warrant v9.0.0. The new Zenodo version DOI is reserved as 10.5281/zenodo.24624743.
+
+### Decision
+
+[!DECISION] Release as v9.0.0. Add an explicit v9.0.0 changelog entry, synchronize CFF and `.zenodo.json`, add PEA v2.4.0, ACM v0.9.0, AEP v0.1.0, and AII relationships, and retain earlier Skill Suite titles and version records only as history.
+
+Rejected alternative: tag v8.0.2. Rejected because the canonical project and installation identity changed after 8.0.1, making this a major public migration rather than a patch.
+
+Precedent check: earlier ACS releases use semantic versioning and a verifier that requires CFF to match the newest changelog entry. The operator's final name audit already classified historical release titles as immutable.
+
+### Prediction
+
+CFF, `.zenodo.json`, and changelog will agree at 9.0.0; the integrity verifier and 10 pilot tests will still pass; the tagged GitHub archive will carry the canonical ACS name and published PEA/ACM/AEP DOIs. Not expected: behavior changes to the six skills beyond those already present in the unreleased commit arc.
+
+### Candidate Next Moves
+
+1. Publish ACS v9.0.0 and verify the GitHub/Zenodo archive.
+2. Then prepare AI Steward v0.1.0 against the stable PEA/ACM/ACS/AEP release chain.
+
+*** End Patch
