@@ -19442,3 +19442,67 @@ Goal need: not triggered for this audit.
 1. Audit URL and release identity surfaces, including GitHub redirects, citations, badges, issue templates and installer links.
 2. Audit repository trees and executable configuration for stale slugs or display names.
 3. Re-run binary/image references and private memory provenance without editing those assets.
+
+## 2026-11-28 - rename-audit-2-repository-urls
+
+- target: GitHub repository identities and every live old-path reference
+- operator: Nils Wendelboe Holmager
+- agent: MAI Code 2; host: Copilot SDK in VS Code
+- skill: Improve
+- outcome: URL migration is bounded and verified; no repository rename or URL change was made
+- delta: no product files changed; one audit trail record added
+
+### Interpretation of the ask
+
+Find every place that depends on the old repository slugs and verify what happens at the target names before any remote rename.
+
+### Examination
+
+The purpose lens found 37 live references across 17 files, excluding `.acm/`, changelog/history, generated output, private memory and archived experiment fixtures. References occur in ACS/ACM citation and Zenodo metadata, Work skill guidance, framework and personal websites, tests, the ACS pilot issue link, and current source examples.
+
+GitHub API verification:
+
+- `ntholm86/principles-of-earned-autonomy-skills-suite` is canonical, public, default branch `main`, and returns 200.
+- `ntholm86/agent-cognition-skills` returns 404 and is therefore the unclaimed target name.
+- `ntholm86/shared-agent-context-memory` is canonical, public, default branch `main`, and returns 200.
+- `ntholm86/agent-context-memory` returns the same repository through GitHub's prior-name redirect; its API canonical name is still `ntholm86/shared-agent-context-memory`.
+
+### Decision
+
+[!DECISION] Do not change URLs during this audit. A partial URL migration would point to target names before the canonical repositories move. At the later remote migration, rename both repositories, update all 37 live references in one coordinated pass, then re-check canonical API names, old-name redirects, raw GitHub files, blob/tree/commit URLs and the issue form.
+
+### Prediction
+
+The next remote migration can be bounded by the inventoried files, and no product code needs a behavior change for the URL rename. Not expected: old links to stop working immediately after a normal GitHub rename, because GitHub redirects old repository locations; this must still be tested after the operation.
+
+### Action
+
+Read-only external identity checks and a source-wide URL search; no source, repository, release, or image change.
+
+### Verification
+
+Four current/target repository addresses and 37 current references were checked. The two repositories are still under their current canonical names, and no releases were created. The prediction is a migration plan, not an untested claim of completion.
+
+### Reflection
+
+**Falsifiable model claim:** all live old-slug references are known within the audited personal repositories, and `agent-cognition-skills` is the only target identity that is not already a GitHub redirect name.
+
+**Named blind spot:** this audit cannot enumerate external bookmarks, copied citation metadata, cached search results, other forks, CI actions outside these repositories, or Zenodo's stored metadata from prior versions.
+
+**Imagined-reader pushback:** GitHub redirects reduce breakage, but GitHub Actions hosted in renamed repositories and GitHub Pages URLs have different migration risks; the final operation must test each dependent integration explicitly.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired; URL identity is a distinct class from current prose wording.
+- *About to declare silence:* not fired; the external rename and separate image audit remain.
+- *Contradicts prior [!REALIZATION]:* not fired.
+- *Operator explicitly asked:* not fired for full arc reflection; this is one of the requested bounded audits.
+
+Learning freshness: STALE - a maintained rename map still needs the final remote state.
+Goal need: TRIGGERED - operator approval is needed before the external repository-name operation.
+
+### Candidate Next Moves
+
+1. Audit trees, filenames, package manifests, badges and executable configuration for old identities.
+2. Perform the external rename and 37-reference URL migration atomically when the operator approves.
+3. Re-test old/new GitHub, raw file, issue, commit and Pages links after the rename.
