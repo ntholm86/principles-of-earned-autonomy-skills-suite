@@ -19746,3 +19746,81 @@ Goal need: TRIGGERED - the operator should identify or approve the image generat
 1. Confirm the generator/model route and generate at least one full replacement from the preserved prompt.
 2. Inspect the generated image against the prompt and preserve the chosen artifact as a new source of truth.
 3. Only then derive WebPs and update image paths, alt text, prompt provenance and tests.
+
+## 2026-11-28 - final-cross-repository-name-audit
+
+- target: current-facing names across AII, PEA, ACS, ACM, AEP and AI Steward
+- operator: Nils Wendelboe Holmager
+- agent: MAI Code 2; host: Copilot SDK in VS Code
+- skill: Improve
+- authority: the operator's request for one thorough final cross-repository naming audit
+- outcome: no unclassified current old product name remains; first-use acronym and GitHub About copy were normalized
+- delta: current READMEs/citation metadata, Work helper prose, website copy/tests, and four GitHub repository descriptions
+
+### Interpretation
+
+Audit the identity system as a whole, not only each repository in isolation: AII is the scientific publication; PEA is the governance framework; ACS is the cognitive skill set; ACM is the memory specification; AEP is the independent evidence proxy; AI Steward is the code-improvement implementation.
+
+### Examination
+
+The source audit found:
+
+- Canonical folders and origins match for ACS, ACM, AEP and dependent projects.
+- Current docs generally use the correct names, but several principal files did not expand PEA, ACS or PEA on first use.
+- Work still carried an obsolete ACS repository path in one legacy-memory helper sentence.
+- AI Steward's README linked the old `manifesto` location and used the old doctrine phrase in a current description.
+- One current website sentence still said "Commander's intent."
+- GitHub About descriptions did not consistently lead with `Name (Acronym)`.
+- Remaining old-name hits after exclusions are intentional: historical SCM/archival titles, transition notes, captured experiment evidence and deferred visual asset names.
+
+### Decision
+
+[!DECISION] Fix current-facing acronym expansion, stale URLs and doctrine wording; normalize GitHub descriptions to one-line `Name (Acronym): what it is`; leave historical trails, release titles, captured experiments and deferred image text unchanged.
+
+### Prediction
+
+The final source search finds no stale old product name outside classified exceptions, metadata parsers and project tests pass, GitHub APIs return consistent descriptions, and the live profile remains AII-first with AEP in the stack. Not expected: a change to AI Steward's chosen name or any release.
+
+### Action
+
+Updated ACS README/CITATION/Zenodo and ACM README for acronym discipline; corrected Work's ACS helper URL; corrected AI Steward's PEA link/name and concise purpose text; changed the website's current Operator's Intent wording and test; updated GitHub About descriptions for PEA, ACS, ACM, AEP and AI Steward. No historical record or captured fixture was rewritten.
+
+### Verification
+
+`git diff --check` and JSON/CFF syntax checks pass. AI Steward's 16 AEP-focused integration/readiness tests pass. Website type-check and the 7 method-copy tests pass after rebuild. GitHub APIs now return:
+
+- Principles of Earned Autonomy (PEA): governance framework description.
+- Agent Cognition Skills (ACS): general-purpose skills description.
+- Agent Context Memory (ACM): governed context specification description.
+- Agent Evidence Proxy (AEP): fail-closed evidence-capture description.
+- AI Steward: autonomous code improvement with operator-held intent and human review.
+
+The profile still renders AII, PEA, ACS, ACM, AI Steward and AEP in order. The prediction held.
+
+### Reflection
+
+**Falsifiable model claim:** the active naming system is now consistent enough that a new reader encounters the same full name and acronym from README, citation, website and GitHub About surfaces.
+
+**Named blind spot:** this audit cannot rewrite external caches, forks, old Zenodo versions or third-party citations; the old canonical GitHub URLs redirect, and historical published titles remain intentionally old.
+
+**Imagined-reader pushback:** retaining SACM in historical archive titles and old AEP binary paths in captured evidence can look untidy, but rewriting them would destroy provenance.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* fired as the operator-requested final coverage pass, not as repeated failed correction.
+- *About to declare silence:* fired only for active cross-repository naming surfaces; image regeneration and releases are separate future phases.
+- *Contradicts prior [!REALIZATION]:* not fired.
+- *Operator explicitly asked:* fired for this final audit.
+
+**Across-trail macro-Hansei**
+
+The naming problem had three layers: canonical repository identity, first-use acronym expansion, and external GitHub metadata. Earlier work solved the first. This audit closes the other two while preserving historical evidence. The correct next rule is: new surfaces expand the full name and acronym once, use the acronym after that, and never rename a historical title unless a new release deliberately supersedes it.
+
+Learning freshness: STALE - a future Learn pass should summarize this naming invariant across all six projects.
+Goal need: not triggered.
+
+### Candidate Next Moves
+
+1. Prepare the separate Storm P image regeneration phase.
+2. Decide separately whether AI Steward's product name should change.
+3. At release time, update only new version metadata; preserve historical release titles and DOI records.

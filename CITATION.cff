@@ -4,7 +4,7 @@ type: software
 title: "Agent Cognition Skills (ACS)"
 abstract: >
   Agent Cognition Skills (ACS) is a set of six composable reasoning skills for autonomous AI agents implementing the
-  Principles of Earned Autonomy framework. Skills: Intent (surface interpretation before
+  Principles of Earned Autonomy (PEA) framework. Skills: Intent (surface interpretation before
   acting), Improve (examine, decide, change, verify, record), Probe (construct novelty
   probes to distinguish situated reasoning from pattern-matching), Record (append
   a structured evidence log after every session), Learn (read the full trail
@@ -14,7 +14,7 @@ abstract: >
   correct, closing the gap between the explicitly stated goal and implicit direction).
   Accompanied by Python tools for trail management and integrity
   verification. Evaluated across multiple model families with convergence protocols.
-  Constitutional foundation in the companion Principles of Earned Autonomy repository.
+  Constitutional foundation in the companion Principles of Earned Autonomy (PEA) repository.
 authors:
   - family-names: Holmager
     given-names: Nils Wendelboe

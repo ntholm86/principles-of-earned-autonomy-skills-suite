@@ -24,7 +24,7 @@ to examine observable behavior and report failures as well as useful results.
 
 **Try it:** run `Improve` on a real, bounded task. The agent chooses the route; you keep the goal and the consequential decisions.
 
-ACS is a reference implementation for [Agent Context Memory (ACM)](https://github.com/ntholm86/agent-context-memory) and an implementation of the [Principles of Earned Autonomy](https://github.com/ntholm86/principles-of-earned-autonomy). It is compatible with Claude (skills / Agent SDK), GitHub Copilot (custom skills), and any LLM agent that can read markdown and append to a file (legacy in-repo memory); Shared ACM needs git. ACS was previously called the Principles of Earned Autonomy Skills Suite; that history remains unchanged.
+ACS is a reference implementation for [Agent Context Memory (ACM)](https://github.com/ntholm86/agent-context-memory) and an implementation of the [Principles of Earned Autonomy (PEA)](https://github.com/ntholm86/principles-of-earned-autonomy). It is compatible with Claude (skills / Agent SDK), GitHub Copilot (custom skills), and any LLM agent that can read markdown and append to a file (legacy in-repo memory); Shared ACM needs git. ACS was previously called the Principles of Earned Autonomy Skills Suite; that history remains unchanged.
 
 ![The full architecture illustrated as a Storm P-style Rube Goldberg machine: Operator's Intent feeds the Improve loop, the audit trail runs as a conveyor belt through the whole machine, Learn reads the arc and feeds learning back in, and the machine converges to silence.](./stormpInspired.png)
 
