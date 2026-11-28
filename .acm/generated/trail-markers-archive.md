@@ -1356,6 +1356,14 @@ Markers older than the recent window kept in `trail-markers.md`. Read this only 
 
 **[!REALIZATION]** The suite's simplest truthful explanation is not its inventory of skills but its control topology: one normal entry point invokes one automatic chain while preserving distinct authorities inside that chain. Internal distinctions belong in contracts and evidence, not as an onboarding taxonomy unless they create a different user decision.
 
+## 2026-08-19 — correction-automatic-category-label
+
+**[!REALIZATION]** A category label should name the distinction the operator needs to make, not the implementation noun behind it. "Automatic" is sufficient; adding "service" recreated vocabulary without adding a decision.
+
+## 2026-08-19 — correction-improve-first-start-here
+
+**[!REALIZATION]** A table's order is part of its instruction. Putting Improve first and labeling it "Start here" expresses the one normal action before any internal capability detail.
+
 ---
 
-**338 markers — 298 realisations, 40 reversals**
+**340 markers — 300 realisations, 40 reversals**

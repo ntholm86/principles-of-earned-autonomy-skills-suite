@@ -4,15 +4,7 @@ GENERATED from `.acm/audit-trail.md` by `record.py markers --write`. Do not edit
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers: what the loop has concluded across runs. Read this before reading the trail in full; reach for the trail only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 338 older marker(s) are in `trail-markers-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-19 — correction-automatic-category-label
-
-**[!REALIZATION]** A category label should name the distinction the operator needs to make, not the implementation noun behind it. "Automatic" is sufficient; adding "service" recreated vocabulary without adding a decision.
-
-## 2026-08-19 — correction-improve-first-start-here
-
-**[!REALIZATION]** A table's order is part of its instruction. Putting Improve first and labeling it "Start here" expresses the one normal action before any internal capability detail.
+Showing the most recent 60 markers. 340 older marker(s) are in `trail-markers-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-20 — readme-how-model-works-before-iteration-proof
 
@@ -246,6 +238,14 @@ Showing the most recent 60 markers. 338 older marker(s) are in `trail-markers-ar
 
 **[!REVERSAL]** Reverse the Storm P PNG retouch and the newly generated WebP derivatives. Keep the Foundations plate and ACM SVG changes because they are separate assets with straightforward text/content updates. Prepare `imageprompt.txt` for full regeneration and stop before generation until the available model is identified.
 
+## 2026-11-28 — acs-v9.0.0-release-1-completion
+
+**[!REALIZATION]** Release metadata has its own execution evidence: a passing test suite is necessary but insufficient if the CFF, changelog, archive DOI, GitHub notes, and live Zenodo description disagree.
+
+## 2026-11-28 — acs-v9.0.0-release-1-completion
+
+**[!REVERSAL]** The first checkpoint commit omitted its four trigger-evaluation lines. The verifier caught this before release; the missing lines were appended to the still-current checkpoint entry, generated markers were refreshed, and verification reran before tagging.
+
 ---
 
-**60 markers — 40 realisations, 20 reversals**
+**60 markers — 39 realisations, 21 reversals**
