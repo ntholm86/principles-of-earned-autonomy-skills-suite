@@ -11,7 +11,7 @@ argument-hint: 'The agent or skill to probe, and what claim about its reasoning 
 
 *ACM role: Produces external ARF evidence — probe verdicts recorded in the trail are the primary signal that the loop is reasoning rather than pattern-matching.*
 
-This is the only skill in the suite that genuinely tests something external. Improve makes the agent better; Probe finds out whether it is reasoning at all.
+This is the only skill in ACS that genuinely tests something external. Improve makes the agent better; Probe finds out whether it is reasoning at all.
 
 **Probe is not part of the operational workflow.** Goal, Learn, Improve, Intent, and Record do not require or invoke it. Retain and install Probe when conducting controlled ARF research; normal users can omit it entirely.
 

@@ -19264,3 +19264,61 @@ Goal need: not triggered.
 1. Update current terminology inside the five operational skill files while preserving skill behavior and every historical mention.
 2. Rename the ACM specification's current entry surfaces, citation metadata, diagrams, and release workflow.
 3. Trace and update all current repository-to-repository links after the two canonical surfaces are consistent.
+
+## 2026-11-28 - acs-iteration-3-installed-skill-prose
+
+- target: the installed ACS skill prose
+- operator: Nils Wendelboe Holmager
+- agent: MAI Code 2; host: Copilot SDK in VS Code
+- skill: Improve
+- authority: the author's request to rename through several Improve iterations, with releases deferred
+- outcome: current operational skill text calls the product ACS and the memory ACM, while leaving behavior unchanged
+- delta: five SKILL.md files changed in terminology only; historical lineage and repository URLs remain
+
+### Interpretation of the ask
+
+Carry the product name into the instructions users actually install, without changing the skills' operating model, authority gates, or historical evidence.
+
+### Examination
+
+The consistency lens found that Record was the one operational file still teaching the old Shared Agent Context Memory name, while Intent, Goal, Improve, and Probe repeatedly used the generic "suite" where ACS is now the clear product name. The behavior lens found no route, gate, record schema, or tool contract that needed to change for the rename.
+
+### Decision
+
+[!DECISION] Replace current identity language only in installed skill prose. Keep historical lineage, old URLs still required for compatibility, skill versions, and all behavioral wording unchanged.
+
+### Prediction
+
+A scoped search will find no SACM or Shared Agent Context Memory wording in the operational SKILL.md files, and `verify.py` plus diff checks will pass. Not expected: that every generic use of "suite" disappears from historical lineage or comments.
+
+### Action
+
+Updated the composition descriptions and Record's memory definition to ACS and ACM, with Shared ACM explicitly limited to a team repository. Kept the existing historical GitHub path and added a migration note where Record links to it.
+
+### Verification
+
+`python verify.py` passed. `git diff --check` passed. A scoped search found no SACM, Shared Agent Context Memory, PEA skills suite, or old full suite title in the six operational skill files. The prediction held.
+
+### Reflection
+
+**Falsifiable model claim:** the canonical ACS and ACM projects now teach the same current identity, but dependent repositories and public websites can still expose the old name even though the core reader and install paths are consistent.
+
+**Named blind spot:** this terminology-only run did not exercise a freshly installed ACS copy under a different host; install-script behavior is mechanically unchanged, but discovery descriptions were not host-tested.
+
+**Imagined-reader pushback:** replacing "suite" with "ACS" everywhere can make the skill prose less readable for someone who has not seen the acronym. README and installing surfaces define it first, but a standalone copied skill cannot rely on that reader path.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired; the finding class remains planned terminology surfaces, not a failed or repeated local correction.
+- *About to declare silence:* not fired; dependent-project references and links remain.
+- *Contradicts prior [!REALIZATION]:* not fired; the run follows the prior plan to rename operational prose after install docs.
+- *Operator explicitly asked:* not fired for arc-level reflection; the request remains bounded iterative rename work.
+
+Learning freshness: not yet needed.
+Goal need: not triggered.
+
+### Candidate Next Moves
+
+1. Propagate ACS and ACM into current Work skill, proxy, and website surfaces.
+2. Audit remaining current references in the ACS repository while excluding historical `.acm/` evidence.
+3. Resolve repository URL and release metadata changes only after the content-level rename is consistent.

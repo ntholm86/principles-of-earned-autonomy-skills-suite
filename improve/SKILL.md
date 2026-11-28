@@ -11,7 +11,7 @@ argument-hint: 'The target to improve, and optionally the concern (correctness, 
 
 *ACM role: Reads the governing current surfaces and relevant evidence before every run; extends the memory layer with each iteration's findings.*
 
-This is the suite's single entry point for normal work. The operator invokes Improve; Improve applies Intent and Record every run, and schedules Goal and Learn only when their evidence-based triggers fire. It combines what v2 split into Kaizen (incremental), Kaikaku (radical), and Hansei (reflection) — because in practice the agent should pick which mode the situation calls for, not be told.
+This is ACS's single entry point for normal work. The operator invokes Improve; Improve applies Intent and Record every run, and schedules Goal and Learn only when their evidence-based triggers fire. It combines what v2 split into Kaizen (incremental), Kaikaku (radical), and Hansei (reflection) — because in practice the agent should pick which mode the situation calls for, not be told.
 
 *Lineage:* Kaizen and Kaikaku both trace to PDCA (Plan-Do-Check-Act, Deming/Toyota) and Boyd's OODA loop — cited explicitly in this skill's own v1 ancestor but dropped when v2's three skills merged into this one. Restored here rather than left implicit.
 
@@ -29,7 +29,7 @@ Full statement of the principles: [PRINCIPLES.md](../PRINCIPLES.md) — read it 
 
 ### 1. Understand the target and the ask
 
-**Apply [Intent](../intent/SKILL.md) automatically now.** Intent is an ingress service of the full suite, not a command the operator must remember to invoke. Do not ask the operator to run it separately. Continue to step 2 when done.
+**Apply [Intent](../intent/SKILL.md) automatically now.** Intent is an ingress service of ACS, not a command the operator must remember to invoke. Do not ask the operator to run it separately. Continue to step 2 when done.
 
 Tell the operator what is happening in one useful sentence: Intent is interpreting this prompt as the mandate for the current run (within the governing Goal where one exists), then will honor the explicit supervision or delegation boundary before Improve continues. A repository-level `goal.md` is not required for the first run. When no durable Goal exists, the confirmed interpretation, current conversation, and target evidence govern this iteration.
 
@@ -190,7 +190,7 @@ Include one line in the record: `Learning freshness: current` or `Learning fresh
 
 Include one line beside it: `Goal need: not triggered` or `Goal need: TRIGGERED — <evidence>; automatic Goal scheduled.`
 
-**Apply [Record](../record/SKILL.md) automatically now.** Record is an egress service of the full suite, not a command the operator must remember to invoke. Do not ask the operator to run it separately.
+**Apply [Record](../record/SKILL.md) automatically now.** Record is an egress service of ACS, not a command the operator must remember to invoke. Do not ask the operator to run it separately.
 
 **High-Fidelity Mode (Writer Splitting):** Standard mode is the default: the Improve agent applies Record automatically. High-Fidelity Mode is active only when the operator explicitly requests independent record authorship or an execution contract declared it before the run; task consequence alone does not activate it. Before step 5 (Act), confirm that the current host can invoke a separate agent and return control to this run. If that round trip cannot be established, treat the writer as unavailable: stop before acting and ask whether standard mode is acceptable.
 
@@ -235,6 +235,6 @@ This skill must be runnable on itself. If running Improve on `improve/SKILL.md` 
 ## What this skill does not do
 
 - It does not score the target on a numerical rubric. v2 did this and the question "who made up these metrics?" never went away. Convergence — diverse independent evaluators finding nothing to change — is the only honest measure of done.
-- It does not make the operator orchestrate support skills. In the full suite, Improve automatically applies Intent at ingress, Record at egress, Goal when durable direction becomes necessary, and Learn when accumulated evidence makes Learning stale. A standalone Improve installation retains local fallback behavior when a sibling is unavailable.
+- It does not make the operator orchestrate support skills. In ACS, Improve automatically applies Intent at ingress, Record at egress, Goal when durable direction becomes necessary, and Learn when accumulated evidence makes Learning stale. A standalone Improve installation retains local fallback behavior when a sibling is unavailable.
 - It does not treat host-wide autopilot as blanket permission. Routine gates may be explicitly delegated; operator-owned direction and consequential gates remain blocking.
 - It does not tell you when to stop. The convergence protocol in PRINCIPLES.md does.

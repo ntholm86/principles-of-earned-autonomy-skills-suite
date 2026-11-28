@@ -1,7 +1,7 @@
 ---
 name: record
 version: 3.8.0
-description: 'Automatic egress service for substantive work. Writes a structured record in the bound memory scope of the shared ACM (a new file in records/; legacy in-repo .acm/audit-trail.md is appended) — the interpretation, examination, decisions, actions, and reflection. Goal, Improve, Learn, and Probe apply Record automatically; the operator should never need to invoke it separately. Direct use remains available for consequential work outside those workflows and independent-writer mode.'
+description: 'Automatic egress service for substantive work. Writes a structured record in the bound ACM scope (a new file in records/; legacy in-repo .acm/audit-trail.md is appended) — the interpretation, examination, decisions, actions, and reflection. Goal, Improve, Learn, and Probe apply Record automatically; the operator should never need to invoke it separately. Direct use remains available for consequential work outside those workflows and independent-writer mode.'
 argument-hint: 'The target being worked on (repo, file, system) — used to populate the record header'
 ---
 
@@ -19,7 +19,7 @@ Autonomy without evidence is abdication. When an agent does work autonomously, t
 
 A trail that answers this earns the right to more autonomy. A trail that doesn't — or doesn't exist — means autonomy must be constrained regardless of how competent the work was.
 
-**Automatic composition contract:** In the full suite, Goal, Improve, Learn, and Probe apply Record automatically whenever they produce a substantive result. The operator should never have to remember or be told to invoke `/record`. Direct invocation remains available for consequential conversations or manual work outside those workflows, repairing a missing record, and High-Fidelity Mode where the recorder must be independent from the agent that acted.
+**Automatic composition contract:** In ACS, Goal, Improve, Learn, and Probe apply Record automatically whenever they produce a substantive result. The operator should never have to remember or be told to invoke `/record`. Direct invocation remains available for consequential conversations or manual work outside those workflows, repairing a missing record, and High-Fidelity Mode where the recorder must be independent from the agent that acted.
 
 ```
 Evidence → Trust → Autonomy
@@ -29,9 +29,9 @@ Evidence → Trust → Autonomy
 
 ## Where memory lives
 
-This is the suite's one definition of where memory lives, how it is resolved and how records are written; the other skills refer here. It implements the shared-ACM memory-repository model (the current Shared Agent Context Memory specification, sections 4 and 8).
+This is ACS's one definition of where memory lives, how it is resolved and how records are written; the other skills refer here. It implements the Agent Context Memory (ACM) repository model (sections 4 and 8); a repository shared by a team is Shared ACM.
 
-**Memory repository.** Memory lives in a repository of its own, the shared ACM — never in the skills install and never as a new `.acm/` in a repository of work. Clone it once and add its absolute path as one line of the user-level registry `~/.acm/memories` (Windows: `%USERPROFILE%\.acm\memories`; UTF-8, with or without a BOM). Nothing is configured per prompt.
+**Memory repository.** Memory lives in an ACM repository of its own — never in the skills install and never as a new `.acm/` in a repository of work. Clone it once and add its absolute path as one line of the user-level registry `~/.acm/memories` (Windows: `%USERPROFILE%\.acm\memories`; UTF-8, with or without a BOM). Nothing is configured per prompt.
 
 ```text
 goal.md / learning.md / records/   memory-wide scope (.acm-root marks the top; nothing above it is read)
@@ -77,7 +77,7 @@ If Learn ran this session and updated `learning.md`, include it in the same comm
 
 ### What a scope holds
 
-The trail is what every run leaves; the other files are optional until used. Conformance to the Shared Agent Context Memory specification this skillset implements ([shared-agent-context-memory](https://github.com/ntholm86/shared-agent-context-memory)) is defined by its section 7, not by this skill. The optional files:
+The trail is what every run leaves; the other files are optional until used. Conformance to the Agent Context Memory specification ACS implements ([agent-context-memory](https://github.com/ntholm86/shared-agent-context-memory)) is defined by its section 7, not by this skill. The link remains at its current historical GitHub path until the repository rename. The optional files:
 
 - `generated/` — optional, disposable reading aids, never hand-written: `trail-markers.md` and, once the recent window is full, `trail-markers-archive.md`, made only by `record.py markers --write`. Every file starts with a GENERATED banner and none is required reading. `trail-markers.md` holds the most recent `[!REALIZATION]` and `[!REVERSAL]` markers with date+slug context, bounded to a recent window; older markers move to `trail-markers-archive.md`, read only when the window does not cover what is needed. Improve, Learn and Intent read the extract conditionally, before the full trail. Adopt it when the trail is long enough that reading it in full every run is wasteful. In legacy memory it is regenerated at every commit when the helper is available, and otherwise may lag; in a bound scope it is a local view as above, and memory repositories ignore `generated/`.
 - `learning.md` — what this scope has learned so far, written by Learn; recommended once arc-level synthesis earns its cost. The goal is what the operator holds and rarely changes; the learning is the agent's current synthesis of where the target is, rewritten each Learn run. The goal is input to the loop; the learning is output. It has nothing to do with training a model.
@@ -304,7 +304,7 @@ If yes, the trail is sufficient. If no, something is missing.
 
 ## Composing with other skills
 
-Record is the automatic egress service for the full suite. Goal, Improve, Learn, and Probe invoke it without operator orchestration. When Intent is active, paste its narration verbatim into the "Interpretation of the ask" section of the same entry — Intent and Record form the ingress/egress envelope around one substantive operation, not two separate records.
+Record is the automatic egress service for ACS. Goal, Improve, Learn, and Probe invoke it without operator orchestration. When Intent is active, paste its narration verbatim into the "Interpretation of the ask" section of the same entry — Intent and Record form the ingress/egress envelope around one substantive operation, not two separate records.
 
 Record also works standalone for consequential conversations, manual operations, or decisions outside another skill's workflow, and as the independent writer in Improve's High-Fidelity Mode.
 

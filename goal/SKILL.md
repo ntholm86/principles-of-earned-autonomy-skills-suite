@@ -15,7 +15,7 @@ argument-hint: 'Optionally: the area you want hunches about (a specific concern,
 
 *Older memories use the former names.* Until 2026-11-23 this skill was Mission, with the file `mission.md` and the markers `<!-- current-mission: complete -->` and `<!-- mission-history -->`; from 2026-06-21 to 2026-11-22 it was Destination, with `destination.md` and `<!-- current-destination: complete -->` and `<!-- destination-history -->`. It is Goal now, with `goal.md` and `<!-- current-goal: complete -->` and `<!-- goal-history -->`. Trails are append-only and keep the old names: when an entry says Destination or Mission, or names `destination.md` or `mission.md`, read it as Goal and `goal.md`. The name Mission was dropped on 2026-11-23 because the file holds the goal and the limits: it is a goal. The doctrine behind Operator's Intent keeps its own name (Auftragstaktik, mission-type command, "Mission Command").
 
-This skill exists for one bottleneck the rest of the suite cannot touch: **the operator's articulation cost**. The goal is whatever the human has so far managed to write down. But the human is operating from a much richer interior model — interests, focus, ethics, hunches of their own — most of it implicit. Even they cannot extract it on demand.
+This skill exists for one bottleneck the rest of ACS cannot touch: **the operator's articulation cost**. The goal is whatever the human has so far managed to write down. But the human is operating from a much richer interior model — interests, focus, ethics, hunches of their own — most of it implicit. Even they cannot extract it on demand.
 
 Meanwhile the agent has signal the operator never deliberately gave it: what gets emphasised in conversation, what gets pushed back on, what gets re-routed, what makes the operator say "no, more like this." Today that signal evaporates between sessions. Goal keeps it.
 
@@ -23,7 +23,7 @@ The mechanism is not autonomous; it is conversational. The agent forms guesses, 
 
 ## Governing principles
 
-Goal enacts the same three principles as the rest of the suite, with one specific emphasis:
+Goal enacts the same three principles as the rest of ACS, with one specific emphasis:
 
 1. **Operator's Intent** — Goal's job is *only* to make the goal clearer, never to commit to a route. A goal-hunch must be stated as a guess to be confirmed, not as an assumption to act on.
 2. **Observable Autonomy** — every goal-hunch surfaced and every operator response is recorded, so a future run can see what was guessed, what was confirmed, what was rejected, and what is still open.
@@ -166,4 +166,4 @@ This automatic handoff preserves ownership: Goal changes where the work is going
 
 ## Self-targeting
 
-Goal should be runnable on the operator of *this* repository — the one writing the skills. If the agent cannot form a goal-hunch about where this skill suite is being taken next, either the signal in this repo's trail is too thin (a finding) or the agent is not actually reading it (a different finding). Either is useful.
+Goal should be runnable on the operator of *this* repository — the one writing the skills. If the agent cannot form a goal-hunch about where ACS is being taken next, either the signal in this repo's trail is too thin (a finding) or the agent is not actually reading it (a different finding). Either is useful.

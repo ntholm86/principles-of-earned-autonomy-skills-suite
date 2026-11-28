@@ -17,7 +17,7 @@ A prompt is a compressed statement of intent. The user has a goal in mind and ha
 
 This skill makes that interpretation explicit and visible.
 
-**Automatic composition contract:** In the full suite, Intent runs before Goal, Improve, Learn, Probe, and any other substantive work. The operator should never have to remember or be told to invoke `/intent`. A direct invocation remains available for testing, debugging, or an interpretation-only conversation.
+**Automatic composition contract:** In ACS, Intent runs before Goal, Improve, Learn, Probe, and any other substantive work. The operator should never have to remember or be told to invoke `/intent`. A direct invocation remains available for testing, debugging, or an interpretation-only conversation.
 
 ---
 
@@ -70,7 +70,7 @@ Wait for the answer. On **Confirm**, hand the accepted mandate to the calling sk
 
 When the operator explicitly delegated this routine gate, narrate the same interpretation, name the source and scope of delegation briefly, and continue without waiting. Delegation of routine confirmation does not let the agent resolve a material ambiguity, change Goal, or answer any question another skill reserves for the operator.
 
-When Improve is the entry point, briefly name the handoff as well as the interpretation. Explain later automatic handoffs at the moment they become relevant, not as an up-front tour of the suite.
+When Improve is the entry point, briefly name the handoff as well as the interpretation. Explain later automatic handoffs at the moment they become relevant, not as an up-front tour of ACS.
 
 The narration must contain enough for the user to catch a wrong interpretation cheaply — at minimum the goal you extracted and, when a material alternative exists, the one you rejected and why. If the prompt was unambiguous, say so in one line; the authority rule above still determines whether to pause.
 
@@ -112,4 +112,4 @@ When Goal or Learn is also active, their output files (`goal.md` and `learning.m
 
 Record is the automatic egress service paired with Intent. When Intent prefixes another skill, that downstream skill records one combined entry and includes the Intent narration verbatim in "Interpretation of the ask" — do not create a separate entry for the prefix. When Intent is the only active skill and the interaction itself produces a decision, realization, or finding, apply Record automatically at the end so the next session does not start cold.
 
-Intent still works as a standalone installation; automatic composition is the full-suite contract, not a hard runtime dependency.
+Intent still works as a standalone installation; automatic composition is the ACS contract, not a hard runtime dependency.
