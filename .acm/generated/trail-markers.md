@@ -4,11 +4,7 @@ GENERATED from `.acm/audit-trail.md` by `record.py markers --write`. Do not edit
 
 Compact chronological extract of the most recent `[!REALIZATION]` and `[!REVERSAL]` markers: what the loop has concluded across runs. Read this before reading the trail in full; reach for the trail only when an item here needs its surrounding context.
 
-Showing the most recent 60 markers. 337 older marker(s) are in `trail-markers-archive.md` — check there if the recent window doesn't cover what you're looking for.
-
-## 2026-08-19 — collapse-service-activation-taxonomy
-
-**[!REALIZATION]** The suite's simplest truthful explanation is not its inventory of skills but its control topology: one normal entry point invokes one automatic chain while preserving distinct authorities inside that chain. Internal distinctions belong in contracts and evidence, not as an onboarding taxonomy unless they create a different user decision.
+Showing the most recent 60 markers. 338 older marker(s) are in `trail-markers-archive.md` — check there if the recent window doesn't cover what you're looking for.
 
 ## 2026-08-19 — correction-automatic-category-label
 
@@ -246,6 +242,10 @@ Showing the most recent 60 markers. 337 older marker(s) are in `trail-markers-ar
 
 **[!REVERSAL]** This reverses the claim, written into the README and changelog one iteration earlier, that the tools write attributed records with a format version: that held for the stub the tool creates and not for a finished body, which is the path the skills use for checkpoints and completions. A fresh auditor, not the author of the claim, found it by reading the code; the author of the claim had tested only the stub.
 
+## 2026-11-28 — image-rename-stormp-full-regeneration
+
+**[!REVERSAL]** Reverse the Storm P PNG retouch and the newly generated WebP derivatives. Keep the Foundations plate and ACM SVG changes because they are separate assets with straightforward text/content updates. Prepare `imageprompt.txt` for full regeneration and stop before generation until the available model is identified.
+
 ---
 
-**60 markers — 41 realisations, 19 reversals**
+**60 markers — 40 realisations, 20 reversals**

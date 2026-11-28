@@ -1352,6 +1352,10 @@ Markers older than the recent window kept in `trail-markers.md`. Read this only 
 
 **[!REALIZATION]** Internal taxonomy and first-use workflow are different representations of the same system. A README that leads with taxonomy makes the operator learn architecture before acting; a README that leads with Improve lets the architecture remain automatic until evidence requires its services.
 
+## 2026-08-19 — collapse-service-activation-taxonomy
+
+**[!REALIZATION]** The suite's simplest truthful explanation is not its inventory of skills but its control topology: one normal entry point invokes one automatic chain while preserving distinct authorities inside that chain. Internal distinctions belong in contracts and evidence, not as an onboarding taxonomy unless they create a different user decision.
+
 ---
 
-**337 markers — 297 realisations, 40 reversals**
+**338 markers — 298 realisations, 40 reversals**
