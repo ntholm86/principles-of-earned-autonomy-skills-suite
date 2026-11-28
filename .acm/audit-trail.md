@@ -19636,3 +19636,51 @@ Goal need: not triggered; the operator authorized this external phase.
 1. Perform the separately scoped image/filename rename after selecting or confirming the generator path.
 2. Recheck all old/new links and GitHub integrations after cache propagation.
 3. Prepare version bumps and GitHub/Zenodo releases only when the operator opens the publication phase.
+
+## 2026-11-28 - image-rename-checkpoint
+
+- target: approved ACS and ACM illustrations
+- operator: Nils Wendelboe Holmager
+- agent: MAI Code 2; host: Copilot SDK in VS Code
+- skill: Improve
+- authority: the author's explicit instruction that it is time for the image phase
+- outcome: checkpoint before visual changes
+- delta: none yet; pre-action checkpoint
+
+### Interpretation of the ask
+
+Update the existing approved artwork to **Agent Cognition Skills (ACS)** and **Agent Context Memory (ACM)**. Preserve composition, rename affected files and references, and leave historical trails and published archives unchanged.
+
+### Examination
+
+The mismatches are bounded: the Storm P machine's top sign; the foundations plate's title; the machine WebP filenames and selectors; and the ACM SVG's title, accessible description, footer label and filename. The rest of the Storm P artwork already contains current ACM and skill labels.
+
+The prior retouch record established the safe precedent: repaint bounded text at native resolution and derive smaller copies with Lanczos resizing. The prompt is preserved, but no original generator/model identity is evidenced, so regenerating the whole scene would add avoidable risk.
+
+### Decision
+
+[!DECISION] Retouch only stale identity labels, then rename affected asset paths and current metadata. Preserve all visual mechanics and unrelated pixels.
+
+### Prediction
+
+Images keep their dimensions; old names disappear from current visual assets, prompts, filenames and accessibility/test references; ACS integrity and website tests pass. Not expected: any composition, historical archive or unrelated illustration change.
+
+### Verification
+
+Before-action checkpoint only. No visual asset has changed.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired; the previous image retouch is the precedent.
+- *About to declare silence:* not fired; changes have not begun.
+- *Contradicts prior [!REALIZATION]:* not fired; this follows the preserved-prompt and local-retouch evidence.
+- *Operator explicitly asked:* not fired for an arc-level reflection; this is the bounded image phase.
+
+Learning freshness: STALE - visual naming is outside the text-focused summary.
+Goal need: not triggered.
+
+### Candidate Next Moves
+
+1. Retouch native-resolution Storm P and foundations assets and compare derivatives.
+2. Rename SVG/WebP paths and update prompts, HTML, metadata and tests.
+3. Verify dimensions, absence of old names, ACS integrity and website browser tests.
