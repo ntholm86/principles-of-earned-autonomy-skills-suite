@@ -19574,3 +19574,65 @@ Goal need: TRIGGERED - the next move needs operator approval for remote reposito
 1. Obtain operator approval for the exact external GitHub rename sequence.
 2. Keep the image generator decision separate and use `imageprompt.txt` as source, not as proof of a particular historical model.
 3. Prepare version bumps, GitHub releases and Zenodo only after repository names, URLs and visuals are accepted.
+
+## 2026-11-28 - github-repository-and-live-url-rename
+
+- target: GitHub repository identities and audited live dependencies
+- operator: Nils Wendelboe Holmager
+- agent: MAI Code 2; host: Copilot SDK in VS Code
+- skill: Improve
+- authority: the author's authenticated-browser instruction to rename the repositories
+- outcome: GitHub now canonicalizes ACS as `ntholm86/agent-cognition-skills` and ACM as `ntholm86/agent-context-memory`; all audited live URLs and the two local origin remotes use the new names
+- delta: two GitHub repository settings changed; 16 current source/metadata files updated across five public repositories; no tag, release, Zenodo publication, historical trail, or image changed
+
+### Interpretation of the ask
+
+Perform the actual GitHub repository renames, not fork or recreate them, then migrate dependent live URLs atomically. Keep the old names as redirect paths and hold releases.
+
+### Examination
+
+The prior URL audit identified 37 live references. External verification showed `agent-cognition-skills` was available and `agent-context-memory` was already a GitHub redirect to `shared-agent-context-memory`, so the target name was safe to adopt. The code/config audit found no executable name dependencies.
+
+### Decision
+
+[!DECISION] Rename the two canonical repositories in GitHub Settings, update the ACS and ACM local remotes, and replace old GitHub/raw URLs in current tracked source and metadata only. Exclude `.acm/`, changelog history, archived experiment evidence, legacy imports, generated output and image assets.
+
+### Prediction
+
+GitHub API checks will report the two new canonical names, both old addresses will redirect to them, `git ls-remote` will work on both canonical remotes, no old live URL remains in audited current files, ACS/pilot and website checks pass, and no release is created. Not expected: that image files or historical citations change.
+
+### Action
+
+Renamed `principles-of-earned-autonomy-skills-suite` to `agent-cognition-skills` and `shared-agent-context-memory` to `agent-context-memory` through authenticated GitHub Settings. Repointed both local origins. Updated current GitHub/raw URLs in ACS, ACM, Work, earned-autonomy and nilsholmager source/test/metadata files. A first bulk pass touched preserved experiment fixtures; those 12 files were restored exactly from HEAD before staging.
+
+### Verification
+
+GitHub API canonicalized both old and new names to the new repositories. `git ls-remote origin HEAD` succeeded for both canonical remotes. The scoped URL search found no old live GitHub/raw URL. ACS integrity and all 10 pilot tests passed; ACM JSON/CFF parsed; website type-check/build passed; all 47 website application/metadata tests passed; every changed diff passed `git diff --check`. No tag, release, or Zenodo action ran. The prediction held.
+
+### Reflection
+
+**Falsifiable model claim:** the canonical repository names now match ACS and ACM, and the audited current ecosystem links point to them; only external copies and search-engine caches can still carry the old display/URL strings.
+
+**Named blind spot:** GitHub Pages custom-domain behavior, external integrations, and third-party forks cannot be exhaustively tested from local repositories; old URLs were confirmed to redirect, but external consumers may cache them.
+
+**Imagined-reader pushback:** preserving historical old-name text and deferred image labels makes the migration temporally mixed. Those exceptions are explicit, necessary provenance surfaces, not missed current links.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired as a correction; this is the planned external migration after the three audits.
+- *About to declare silence:* not fired globally; image and release phases remain.
+- *Contradicts prior [!REALIZATION]:* not fired; the migration follows the established inventory and scope boundaries.
+- *Operator explicitly asked:* fired for the repository-renaming action, but not as a request for full-trail reflection.
+
+**Across-trail macro-Hansei**
+
+The rename sequence shows why a broad content pass could not safely be the external operation: text migration, repository identity, URL migration, historical preservation and visual assets each had different authority and failure modes. The successful order was local text convergence, remote-name verification, authenticated rename, then atomic live-link replacement. Any later image or release work should preserve that sequence rather than combine unrelated surfaces into another bulk pass.
+
+Learning freshness: STALE - the completed local and remote naming map should be summarized after this committed migration.
+Goal need: not triggered; the operator authorized this external phase.
+
+### Candidate Next Moves
+
+1. Perform the separately scoped image/filename rename after selecting or confirming the generator path.
+2. Recheck all old/new links and GitHub integrations after cache propagation.
+3. Prepare version bumps and GitHub/Zenodo releases only when the operator opens the publication phase.

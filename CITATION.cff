@@ -19,7 +19,7 @@ authors:
   - family-names: Holmager
     given-names: Nils Wendelboe
     orcid: "https://orcid.org/0009-0009-7157-9084"
-repository-code: "https://github.com/ntholm86/principles-of-earned-autonomy-skills-suite"
+repository-code: "https://github.com/ntholm86/agent-cognition-skills"
 license: MIT
 version: "8.0.2"
 date-released: "2026-11-23"

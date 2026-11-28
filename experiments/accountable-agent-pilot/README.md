@@ -80,7 +80,7 @@ Try one bounded, nonconfidential task of your own. A useful report includes:
 - Whether the evidence helped you understand or challenge a decision.
 - Time/cost if actually recorded; whether you chose to use it again.
 
-[Open a pilot report](https://github.com/ntholm86/principles-of-earned-autonomy-skills-suite/issues/new?template=pilot-report.yml).
+[Open a pilot report](https://github.com/ntholm86/agent-cognition-skills/issues/new?template=pilot-report.yml).
 Do not post credentials, employer code, private transcripts or personal data.
 You can report a failed installation or abandon the pilot; no positive
 testimonial is expected. Reporting publicly is optional.

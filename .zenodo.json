@@ -1,6 +1,6 @@
 {
   "title": "Agent Cognition Skills (ACS)",
-  "description": "<h1>Agent Cognition Skills (ACS)</h1><p>A general-purpose AI cognition skill set for understanding human intent, improving a target, preserving decisions across sessions, learning from accumulated work, and stopping when independent evaluation finds nothing material left to change.</p><p>The operational skills are <strong>Intent</strong>, <strong>Goal</strong>, <strong>Improve</strong>, <strong>Record</strong> and <strong>Learn</strong>. <strong>Probe</strong> is optional research instrumentation. Improve is the normal entry point: Intent interprets the prompt, Improve selects and verifies the highest-leverage change, and Record preserves the evidence.</p><p>ACS implements the <a href=\"https://github.com/ntholm86/principles-of-earned-autonomy\">Principles of Earned Autonomy</a> and works with <a href=\"https://github.com/ntholm86/shared-agent-context-memory\">Agent Context Memory (ACM)</a>. It gives no structural guarantee of faithful model reasoning; it keeps claims bounded, makes them observable, and requires independent evidence and evaluation where stronger conclusions are needed.</p><p>The public trail records repeated self-application and releases. Current behavior, installation, limitations and reproducible pilot evidence are documented in the repository README.</p>",
+  "description": "<h1>Agent Cognition Skills (ACS)</h1><p>A general-purpose AI cognition skill set for understanding human intent, improving a target, preserving decisions across sessions, learning from accumulated work, and stopping when independent evaluation finds nothing material left to change.</p><p>The operational skills are <strong>Intent</strong>, <strong>Goal</strong>, <strong>Improve</strong>, <strong>Record</strong> and <strong>Learn</strong>. <strong>Probe</strong> is optional research instrumentation. Improve is the normal entry point: Intent interprets the prompt, Improve selects and verifies the highest-leverage change, and Record preserves the evidence.</p><p>ACS implements the <a href=\"https://github.com/ntholm86/principles-of-earned-autonomy\">Principles of Earned Autonomy</a> and works with <a href=\"https://github.com/ntholm86/agent-context-memory\">Agent Context Memory (ACM)</a>. It gives no structural guarantee of faithful model reasoning; it keeps claims bounded, makes them observable, and requires independent evidence and evaluation where stronger conclusions are needed.</p><p>The public trail records repeated self-application and releases. Current behavior, installation, limitations and reproducible pilot evidence are documented in the repository README.</p>",
   "creators": [
     {
       "name": "Holmager, Nils Wendelboe",
@@ -27,7 +27,7 @@
       "scheme": "doi"
     },
     {
-      "identifier": "https://github.com/ntholm86/shared-agent-context-memory",
+      "identifier": "https://github.com/ntholm86/agent-context-memory",
       "relation": "isSupplementTo",
       "resource_type": "software",
       "scheme": "url"
