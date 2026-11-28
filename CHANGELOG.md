@@ -1,5 +1,23 @@
 # Changelog
 
+## v9.0.0 - 2026-11-28
+
+- **Agent Cognition Skills is the canonical public identity.** The repository
+  and installation paths now use `agent-cognition-skills`; current docs, skill
+  prose, archive metadata, GitHub links, and artwork references consistently
+  name ACS. Historical records and prior release titles retain their original
+  names.
+- **The post-v8.0.1 release surface is complete.** This major release includes
+  the previously untagged v8.0.2 Goal cleanup, the six-skill operational model,
+  canonical Operator's Intent wording, and the completed PEA/ACM/AEP
+  terminology migration.
+- **Dependencies are citation-stable.** ACS v9.0.0 relates to PEA v2.4.0,
+  ACM v0.9.0, AEP v0.1.0, and the AII research publication through versioned
+  Zenodo DOIs and canonical repository links.
+- **The release remains bounded evidence.** ACS is behavioral scaffolding, not
+  structural proof of faithful model reasoning; independent capture belongs to
+  AEP, and no ACM implementation conformance is claimed.
+
 ## v8.0.2 - 2026-11-23
 
 - **The Goal rename was incomplete in two files; both are finished.** The rename script stopped converting a file after any line that looked like the `goal-history` marker, and `goal/SKILL.md` and `QUICKSTART.md` quote that marker in examples, so 22 lines below it still said Mission (the run description, the trail entry contract, the "does not replace" list, the QUICKSTART delegation and mandate lines). They now say Goal. `goal/SKILL.md` 4.0.0 -> 4.0.1. Found by a wide search for the old words across every repository; the remaining hits are history, the former-names notes, the retired-file-name check, and "Mission Command".

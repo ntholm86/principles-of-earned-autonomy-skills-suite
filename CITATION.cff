@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "If you use this skill suite, please cite it as below."
+message: "If you use Agent Cognition Skills, please cite it as below."
 type: software
 title: "Agent Cognition Skills (ACS)"
 abstract: >
@@ -21,9 +21,12 @@ authors:
     orcid: "https://orcid.org/0009-0009-7157-9084"
 repository-code: "https://github.com/ntholm86/agent-cognition-skills"
 license: MIT
-version: "8.0.2"
-date-released: "2026-11-23"
+version: "9.0.0"
+date-released: "2026-11-28"
 identifiers:
+  - type: doi
+    value: "10.5281/zenodo.24624743"
+    description: "Zenodo archive reserved for Agent Cognition Skills v9.0.0"
   - type: doi
     value: "10.5281/zenodo.19842994"
     description: "Zenodo archive of v3.2.0"
@@ -44,4 +47,25 @@ references:
     authors:
       - family-names: Holmager
         given-names: Nils Wendelboe
+    doi: "10.5281/zenodo.24624324"
     repository-code: "https://github.com/ntholm86/principles-of-earned-autonomy"
+  - type: software
+    title: "Agent Context Memory (ACM): A Governance-First Specification"
+    authors:
+      - family-names: Holmager
+        given-names: Nils Wendelboe
+    doi: "10.5281/zenodo.24624570"
+    repository-code: "https://github.com/ntholm86/agent-context-memory"
+  - type: software
+    title: "Agent Evidence Proxy (AEP)"
+    authors:
+      - family-names: Holmager
+        given-names: Nils Wendelboe
+    doi: "10.5281/zenodo.24624043"
+    repository-code: "https://github.com/ntholm86/agent-evidence-proxy"
+  - type: article
+    title: "Augmented Individual Intelligence (AII): A New Mode of Hybrid Human-AI Cognition"
+    authors:
+      - family-names: Holmager
+        given-names: Nils Wendelboe
+    doi: "10.5281/zenodo.18417872"

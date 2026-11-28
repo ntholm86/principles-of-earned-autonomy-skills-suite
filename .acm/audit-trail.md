@@ -19860,4 +19860,18 @@ CFF, `.zenodo.json`, and changelog will agree at 9.0.0; the integrity verifier a
 1. Publish ACS v9.0.0 and verify the GitHub/Zenodo archive.
 2. Then prepare AI Steward v0.1.0 against the stable PEA/ACM/ACS/AEP release chain.
 
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired; this is the first canonical ACS release preparation after the name migration.
+- *About to declare silence:* not fired; the release checkpoint must still be completed by a published tag and verified archive.
+- *Contradicts prior [!REALIZATION]:* not fired; historical release titles remain preserved while the new release uses the canonical identity.
+- *Operator explicitly asked:* fired for the approved release program, not for an arc-level reflection.
+
+Learning freshness: current for release identity and versioning.
+Goal need: not triggered; the operator explicitly approved the release sequence.
+
+**Across-trail macro-Hansei**
+
+Release work after a large rename must be treated as a provenance transition, not as cleanup. The major version is earned by changed public and install identities; the release metadata then has to connect the new identity to stable dependency versions without rewriting the old archives. This checkpoint makes that distinction explicit before the tag exists.
+
 *** End Patch

@@ -170,7 +170,7 @@ Together, these instructions ask the agent to record a prediction before observi
 ## Citation and License
 
 MIT License.
-[CITATION.cff](./CITATION.cff) | Zenodo: [10.5281/zenodo.19842994](https://doi.org/10.5281/zenodo.19842994)
+[CITATION.cff](./CITATION.cff) | Zenodo v9.0.0: [10.5281/zenodo.24624743](https://doi.org/10.5281/zenodo.24624743)
 
 ---
 

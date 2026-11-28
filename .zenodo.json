@@ -1,6 +1,8 @@
 {
   "title": "Agent Cognition Skills (ACS)",
-  "description": "<h1>Agent Cognition Skills (ACS)</h1><p>A general-purpose AI cognition skill set for understanding human intent, improving a target, preserving decisions across sessions, learning from accumulated work, and stopping when independent evaluation finds nothing material left to change.</p><p>The operational skills are <strong>Intent</strong>, <strong>Goal</strong>, <strong>Improve</strong>, <strong>Record</strong> and <strong>Learn</strong>. <strong>Probe</strong> is optional research instrumentation. Improve is the normal entry point: Intent interprets the prompt, Improve selects and verifies the highest-leverage change, and Record preserves the evidence.</p><p>ACS implements the <a href=\"https://github.com/ntholm86/principles-of-earned-autonomy\">Principles of Earned Autonomy (PEA)</a> and works with <a href=\"https://github.com/ntholm86/agent-context-memory\">Agent Context Memory (ACM)</a>. It gives no structural guarantee of faithful model reasoning; it keeps claims bounded, makes them observable, and requires independent evidence and evaluation where stronger conclusions are needed.</p><p>The public trail records repeated self-application and releases. Current behavior, installation, limitations and reproducible pilot evidence are documented in the repository README.</p>",
+  "version": "9.0.0",
+  "language": "eng",
+  "description": "<h1>Agent Cognition Skills (ACS)</h1><p><strong>What this is.</strong> A general-purpose cognition skill set for AI agents: understand human intent, improve a target, preserve decisions across sessions, learn from accumulated work, and stop when independent evaluation finds nothing material left to change.</p><p><strong>Operational model.</strong> The skills are Intent, Goal, Improve, Record, and Learn; Probe is optional research instrumentation. Improve is the normal entry point. Intent interprets the prompt, Improve selects and verifies a highest-leverage change, and Record preserves the evidence.</p><p><strong>v9.0.0 release.</strong> This is the first canonical Agent Cognition Skills release after the repository, installation path, repository links, artwork references, and current terminology moved away from the former Skills Suite identity. It also includes the previously untagged v8.0.2 Goal cleanup and the completed PEA/ACM/AEP naming audit.</p><p><strong>Relationships.</strong> ACS implements the <a href='https://doi.org/10.5281/zenodo.24624324'>Principles of Earned Autonomy</a>, works with <a href='https://doi.org/10.5281/zenodo.24624570'>Agent Context Memory</a>, and treats <a href='https://doi.org/10.5281/zenodo.24624043'>Agent Evidence Proxy</a> as the structural capture companion.</p><p><strong>Evidence and limitations.</strong> The public trail records repeated self-application; the repository includes an integrity verifier and reproducible pilot tests. ACS is behavioral scaffolding, not structural proof of faithful model reasoning or ACL compliance. Independent evidence must be captured separately, and no ACM implementation conformance is claimed.</p>",
   "creators": [
     {
       "name": "Holmager, Nils Wendelboe",
@@ -21,9 +23,27 @@
   ],
   "related_identifiers": [
     {
-      "identifier": "10.5281/zenodo.19732890",
+      "identifier": "10.5281/zenodo.24624324",
       "relation": "isDerivedFrom",
       "resource_type": "software",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.5281/zenodo.24624570",
+      "relation": "isSupplementTo",
+      "resource_type": "software",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.5281/zenodo.24624043",
+      "relation": "isSupplementedBy",
+      "resource_type": "software",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.5281/zenodo.18417872",
+      "relation": "isSupplementTo",
+      "resource_type": "publication",
       "scheme": "doi"
     },
     {
@@ -32,5 +52,6 @@
       "resource_type": "software",
       "scheme": "url"
     }
-  ]
+  ],
+  "notes": "Versions before v9.0.0 were published under earlier suite titles and repository names; those titles and DOI records remain historical. v9.0.0 is the first canonical Agent Cognition Skills release."
 }
