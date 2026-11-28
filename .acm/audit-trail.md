@@ -19874,4 +19874,48 @@ Goal need: not triggered; the operator explicitly approved the release sequence.
 
 Release work after a large rename must be treated as a provenance transition, not as cleanup. The major version is earned by changed public and install identities; the release metadata then has to connect the new identity to stable dependency versions without rewriting the old archives. This checkpoint makes that distinction explicit before the tag exists.
 
+## 2026-11-28 - acs-v9.0.0-release-1-completion
+
+- target: Agent Cognition Skills v9.0.0 release
+- operator: Nils Wendelboe Holmager
+- agent: Copilot SDK in VS Code
+- skill: Improve
+- authority: the operator explicitly approved the dependency-aware release plan and asked to continue
+- outcome: ACS v9.0.0 published on GitHub and Zenodo
+- delta: canonical release metadata committed and tagged; integrity and pilot evidence verified
+- completes: 2026-11-28 - acs-v9.0.0-release-1-checkpoint
+
+### Action
+
+Released tag `v9.0.0` at commit `8fb12a6`, with a GitHub release and Zenodo version DOI `10.5281/zenodo.24624743`. The metadata names ACS canonically and links to PEA v2.4.0, ACM v0.9.0, AEP v0.1.0, and AII.
+
+### Verification
+
+`python verify.py` passed after the checkpoint's trigger-evaluation lines and macro reflection were completed, marker extracts were regenerated, and all 10 reproducible pilot tests passed. The GitHub release is published. Zenodo published the exact `ntholm86/agent-cognition-skills-v9.0.0.zip` archive with the expected ORCID, MIT license, title, relationships, and limitations. One published metadata typo (`ACL compliance`) was corrected to `ACM implementation conformance` without changing the archive.
+
+### Reflection
+
+[!REVERSAL] The first checkpoint commit omitted its four trigger-evaluation lines. The verifier caught this before release; the missing lines were appended to the still-current checkpoint entry, generated markers were refreshed, and verification reran before tagging.
+
+[!REALIZATION] Release metadata has its own execution evidence: a passing test suite is necessary but insufficient if the CFF, changelog, archive DOI, GitHub notes, and live Zenodo description disagree.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* fired; this run exposed the same verifier-before-record ordering risk the trail has corrected previously.
+- *About to declare silence:* not fired; AI Steward and the final cross-release audit remain.
+- *Contradicts prior [!REALIZATION]:* not fired; the release preserved historical titles and current evidence boundaries.
+- *Operator explicitly asked:* fired for the approved release program.
+
+**Across-trail macro-Hansei**
+
+The canonical-name migration should not be treated as complete at source search success. It becomes durable only when the new tag, GitHub release, Zenodo title, DOI relationships, CFF, README, changelog, tests, and post-release audit all converge on the same identity. v9.0.0 now satisfies that bar.
+
+Learning freshness: current.
+Goal need: not triggered.
+
+### Candidate Next Moves
+
+1. Prepare and publish AI Steward v0.1.0 with PEA/ACM/ACS/AEP/AII citations.
+2. Run the final cross-release DOI, link, archive, and synchronization audit.
+
 *** End Patch
