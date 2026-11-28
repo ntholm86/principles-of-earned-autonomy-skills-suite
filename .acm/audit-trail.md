@@ -19684,3 +19684,65 @@ Goal need: not triggered.
 1. Retouch native-resolution Storm P and foundations assets and compare derivatives.
 2. Rename SVG/WebP paths and update prompts, HTML, metadata and tests.
 3. Verify dimensions, absence of old names, ACS integrity and website browser tests.
+
+## 2026-11-28 - image-rename-stormp-full-regeneration
+
+- target: Storm P / Rube Goldberg machine illustration
+- operator: Nils Wendelboe Holmager
+- agent: MAI Code 2; host: Copilot SDK in VS Code
+- skill: Improve
+- authority: the author's correction that this image must be created entirely anew, not edited
+- outcome: retouched Storm P pixels and derived new filenames reverted; full regeneration selected
+- delta: only the rejected Storm P retouch was reversed; Foundations and ACM SVG work remains
+
+### Interpretation of the ask
+
+Use the existing visual brief and prompt as a specification for a genuinely new machine illustration with current ACS/ACM names. Do not paint new wording over the old generated composition.
+
+### Examination
+
+The local retouch was visually plausible but did not meet the operator's intended image-quality and provenance bar. A new full image can preserve the Storm P/Rube Goldberg language while presenting the ACS identity natively instead of as an overlay.
+
+### Decision
+
+[!REVERSAL] Reverse the Storm P PNG retouch and the newly generated WebP derivatives. Keep the Foundations plate and ACM SVG changes because they are separate assets with straightforward text/content updates. Prepare `imageprompt.txt` for full regeneration and stop before generation until the available model is identified.
+
+### Prediction
+
+No repository retains retouched Storm P pixels, and the old derivative filenames are restored. A later generated image must be recorded with the generator/model actually used; if the model identity is unavailable, that limitation will be stated. Not expected: any impact on the already renamed repositories or non-visual code.
+
+### Action
+
+Restored both `stormpInspired.png` copies and the two original website WebP names byte-for-byte from HEAD. Removed the two newly created ACS WebP paths. Updated the prompt title previously to ACS; no image generation has occurred yet.
+
+### Verification
+
+The four tracked image paths were restored from the current HEAD and the two temporary renamed derivative paths were removed. Final verification follows after the separate generation decision.
+
+### Reflection
+
+**Falsifiable claim about the target:** a full regeneration is the only route consistent with the operator's stated quality requirement for the Storm P machine; local repainting cannot count as the new image.
+
+**Named blind spot:** no exact original generator/model identity is recorded, so matching its rendering engine is not currently possible.
+
+**Imagined-reader pushback:** preserving the prompt is useful, but the new generator may interpret it differently enough that several visual review rounds are needed.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired; this is an operator override of the route, not another failed occurrence.
+- *About to declare silence:* not fired; generation has not started.
+- *Contradicts prior [!REALIZATION]:* fired; the operator reverses the earlier local-retouch decision for this specific bitmap.
+- *Operator explicitly asked:* not fired for arc-level reflection; it is a scoped correction.
+
+**Across-trail macro-Hansei**
+
+The text/image retouch precedent was valid for small label corrections but not for a product identity change embedded in a generated hero image. Identity-bearing hero art carries composition, typography and provenance quality that cannot be reduced to text replacement. Future renames should separate small artifacts and simple diagrams from generated hero illustrations.
+
+Learning freshness: STALE - the visual asset route now needs a fresh model/generator decision.
+Goal need: TRIGGERED - the operator should identify or approve the image generator/model before generation.
+
+### Candidate Next Moves
+
+1. Confirm the generator/model route and generate at least one full replacement from the preserved prompt.
+2. Inspect the generated image against the prompt and preserve the chosen artifact as a new source of truth.
+3. Only then derive WebPs and update image paths, alt text, prompt provenance and tests.
