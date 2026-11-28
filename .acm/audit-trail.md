@@ -19384,3 +19384,61 @@ Goal need: TRIGGERED - the operator must choose the remote repository rename tim
 1. Confirm the final repository slugs (`agent-cognition-skills` and `agent-context-memory`) and the order of GitHub renames and dependent URL updates.
 2. Run a fresh external inventory after local convergence, then update all compatibility links atomically.
 3. Perform the separate visual/image rename pass, then prepare version bumps, releases, and Zenodo only after both text and images are accepted.
+
+## 2026-11-28 - rename-audit-1-current-content
+
+- target: all public repositories' current text and release metadata
+- operator: Nils Wendelboe Holmager
+- agent: MAI Code 2; host: Copilot SDK in VS Code
+- skill: Improve
+- authority: the author's request for three more all-project rename audits, committed and pushed, with releases held
+- outcome: stale current wording was removed from ACS archive metadata, current docs, websites, VTT copy, and the proxy landscape
+- delta: five current surfaces changed across four public repositories; history, URLs, images and releases remain untouched
+
+### Interpretation of the ask
+
+Sweep all work for old names after the main rename, fixing only live text that an adopter or release consumer would currently encounter. Do not rewrite history or visual assets.
+
+### Examination
+
+The broad search found a material stale `Autonomous Development Skills Suite` heading inside `.zenodo.json`, despite the record's new title; generic "skills suite" wording in ACS's limitation paragraph, website trail tooltip/footer, website maintainer metadata, a VTT, and the proxy landscape; and historical or deferred matches in ACM release notes, CHANGELOG, archive titles, image prompts, SVG text, and image selectors.
+
+### Decision
+
+[!DECISION] Update the live metadata and prose hits. Classify and leave the historical/archive/visual hits for later dedicated work rather than broad replacement.
+
+### Prediction
+
+JSON, integrity, type and pilot checks pass, and a repeat exact-name search leaves only classified historical or deferred visual matches. Not expected: every old phrase to disappear, because release history and visual assets are intentionally out of scope.
+
+### Action
+
+Replaced the oversized stale Zenodo description with a concise current ACS description, changed remaining current generic wording to ACS, and left every repository URL and image unchanged.
+
+### Verification
+
+The ACS Zenodo JSON parsed, `python verify.py` and all 10 pilot tests passed, `npm run check` passed, and all repository diff checks passed. The repeated search found only historical SACM notes, archived titles, and image/test labels. The prediction held.
+
+### Reflection
+
+**Falsifiable model claim:** the live non-visual text layer is converged enough that the remaining old-name risk is concentrated in compatibility URLs, archives and images.
+
+**Named blind spot:** this local search cannot see copied text on external package directories, search-engine snippets, Zenodo records, or other people's forks.
+
+**Imagined-reader pushback:** rewriting the Zenodo description before a new archive is released makes the pending metadata clearer, but it also creates a mismatch with the currently published record until the release phase, which is already explicitly held.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired as a failed correction; this is a planned broad audit after the earlier surface-specific passes.
+- *About to declare silence:* not fired; URL/repository identity and visual audits remain.
+- *Contradicts prior [!REALIZATION]:* not fired; the result extends the prior classification of history, URLs and images.
+- *Operator explicitly asked:* not fired for an arc-level reflection; the operator requested three bounded audits, not a full-trail synthesis.
+
+Learning freshness: STALE - the rename arc's current summary has not yet been refreshed.
+Goal need: not triggered for this audit.
+
+### Candidate Next Moves
+
+1. Audit URL and release identity surfaces, including GitHub redirects, citations, badges, issue templates and installer links.
+2. Audit repository trees and executable configuration for stale slugs or display names.
+3. Re-run binary/image references and private memory provenance without editing those assets.
