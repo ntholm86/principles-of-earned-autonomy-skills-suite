@@ -1,9 +1,9 @@
 cff-version: 1.2.0
 message: "If you use this skill suite, please cite it as below."
 type: software
-title: "Principles of Earned Autonomy - Skills Suite"
+title: "Agent Cognition Skills (ACS)"
 abstract: >
-  A suite of six composable reasoning skills for autonomous AI agents implementing the
+  Agent Cognition Skills (ACS) is a set of six composable reasoning skills for autonomous AI agents implementing the
   Principles of Earned Autonomy framework. Skills: Intent (surface interpretation before
   acting), Improve (examine, decide, change, verify, record), Probe (construct novelty
   probes to distinguish situated reasoning from pattern-matching), Record (append

@@ -19148,3 +19148,61 @@ Changed the one value, bumped CITATION.cff, added the CHANGELOG entry, ran `veri
 
 1. Check Zenodo's result after each release, as part of publishing.
 2. CITATION.cff lists archive identifiers for v3.1.0 and v3.2.0 only; add the v8.0.1 archive (10.5281/zenodo.24469825) at the next release.
+
+## 2026-11-28 - acs-iteration-1-public-identity
+
+- target: the suite's public entry-point identity
+- operator: Nils Wendelboe Holmager
+- agent: MAI Code 2; host: Copilot SDK in VS Code
+- skill: Improve
+- authority: the author's request to begin the rename after synchronization, using several Improve iterations and holding releases until the end
+- outcome: README and citation/deposit metadata now introduce the project as Agent Cognition Skills (ACS), and call the memory specification Agent Context Memory (ACM), with Shared ACM as the team use
+- delta: three current public surfaces changed; no release, tag, remote rename, skill behavior, URL, or historical memory edited
+
+### Interpretation of the ask
+
+Rename the current product identity without rewriting historical evidence or changing the operational contract. GitHub and Zenodo release work is explicitly deferred until the rename has converged.
+
+### Examination
+
+The purpose lens found that the first contact point, README title and citation titles, still used the old long suite name. The consistency lens found that the README still called the memory SACM while the operator wants ACM in all current usage and Shared ACM for team use. The history boundary lens found that `.acm/` is evidence and must retain its old names.
+
+### Decision
+
+[!DECISION] Make one bounded identity change across the README, CITATION.cff, and `.zenodo.json`. Preserve old repository URLs, release versions, skill instructions, and every historical trail entry.
+
+### Prediction
+
+Current entry-point readers will encounter ACS and ACM terminology without ambiguity, and neither integrity checks nor the reproducible pilot will regress. Not expected: that this iteration removes every old name from the repository, because operational docs and the remaining ecosystem are deliberately deferred.
+
+### Action
+
+Changed the README title and tagline, defined Shared ACM, replaced current SACM references in the README, and changed the citation and deposit titles. Preserved a sentence naming the prior suite title for migration continuity.
+
+### Verification
+
+`python verify.py` passed. All 10 Node pilot tests passed. `git diff --check` passed. A scoped search found no `SACM`, `Shared Agent Context Memory`, or old suite title in the three changed current identity files. The prediction held.
+
+### Reflection
+
+**Falsifiable model claim:** the product is currently split between a clear new entry-point identity and old terminology in installation, operational, and ecosystem surfaces; the next highest-leverage rename work should follow reader paths outward from the README rather than perform a global replacement.
+
+**Named blind spot:** the public package phrase still says only "ACS" in the entry metadata while the legacy repository slug and links remain; users may hesitate whether the repository name and install path have changed.
+
+**Imagined-reader pushback:** renaming the citation title before the repository and release surfaces are migrated could make the identity look premature. This is acceptable only as an unpushed, multi-iteration local migration with releases held.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired; this is the first naming iteration after a long release-focused pause.
+- *About to declare silence:* not fired; the change intentionally leaves other rename surfaces for later iterations.
+- *Contradicts prior [!REALIZATION]:* not fired; no prior naming realization applies to this bounded entry-point run.
+- *Operator explicitly asked:* not fired for arc-level reflection; the request is for several Improve iterations, not a full trail analysis.
+
+Learning freshness: not yet needed.
+Goal need: not triggered.
+
+### Candidate Next Moves
+
+1. Rename the suite's installation and quickstart paths so a new reader can install ACS without meeting the old product name first.
+2. Update the ACS skill prose's current ACM terminology while preserving examples and historical names.
+3. Rename the memory specification's current surfaces to ACM, then propagate the two identities across dependent repositories.
