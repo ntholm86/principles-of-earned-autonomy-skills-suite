@@ -19322,3 +19322,65 @@ Goal need: not triggered.
 1. Propagate ACS and ACM into current Work skill, proxy, and website surfaces.
 2. Audit remaining current references in the ACS repository while excluding historical `.acm/` evidence.
 3. Resolve repository URL and release metadata changes only after the content-level rename is consistent.
+
+## 2026-11-28 - acs-iteration-4-release-and-current-docs-audit
+
+- target: ACS release-facing text and remaining current project documentation
+- operator: Nils Wendelboe Holmager
+- agent: MAI Code 2; host: Copilot SDK in VS Code
+- skill: Improve
+- authority: the author's request for bounded Improve iterations before any GitHub or Zenodo release
+- outcome: current ACS release titles and pilot documentation use the new name; the remaining old-name matches are classified as history, compatibility URLs, or deferred images
+- delta: ACS release workflow and pilot README updated; nilsholmager maintainer documentation updated; no tag, release, repository rename, URL, image, or historical trail changed
+
+### Interpretation of the ask
+
+Audit current documentation after propagation and prepare release-facing text without actually publishing anything.
+
+### Examination
+
+The purpose lens found that the ACS GitHub release workflow would still label a future release "Autonomous Development Skills Suite." The inconsistency lens found current references in the pilot README and nilsholmager maintainer docs. The scope lens classified remaining occurrences in CHANGELOG, experiments, archive metadata, private ACM, compatibility URLs, tests tied to deferred image labels, and SVG/website image content as intentionally unchanged.
+
+### Decision
+
+[!DECISION] Update current release titles and maintainer-facing prose, while retaining old names in historical artifacts, archive titles, compatibility URLs and the separate visual/image pass.
+
+### Prediction
+
+The release workflow and selected current docs will have no old suite/SACM wording, `verify.py` and the 10 pilot tests will pass, and the website will still type-check. Not expected: that old names disappear from all repository paths or historical records.
+
+### Action
+
+Changed both ACS release-title branches, the pilot README introduction, the website's maintainer README and React README, and one hosting note. No tag or release was created. Website runtime source was unchanged by this audit.
+
+### Verification
+
+`python verify.py` passed; all 10 pilot tests passed; `npm run check` passed; scoped searches found no old current term in the changed files; `git diff --check` passed. The prediction held.
+
+### Reflection
+
+**Falsifiable model claim:** text-level ACS/ACM consistency is now broad enough that the remaining risky work is not more word replacement, but coordinated repository URL and remote-name changes plus the separate visual pass.
+
+**Named blind spot:** this iteration did not search files outside C:\git\personal or external services for copied documentation, package listings, and archived descriptions that may need links or explanatory notes.
+
+**Imagined-reader pushback:** updating release titles before bumping versions is harmless locally, but users could read the unpushed source as imminent publication; the workflow will not run until the operator approves the final release phase.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* fired as a completed planned rename-coverage class across several surfaces; it is not repeated failure, but the arc now shows the content migration is substantially complete.
+- *About to declare silence:* not fired; remote repository names and URL propagation are still unresolved.
+- *Contradicts prior [!REALIZATION]:* not fired; this follows the prior plan to separate text consistency from URL and visual migration.
+- *Operator explicitly asked:* not fired for full arc analysis; the author asked for several bounded Improve iterations.
+
+**Across-trail macro-Hansei**
+
+The rename sequence separated into four clean phases: primary identity, reader installation path, installed skill memory terminology, then dependent and release-facing text. The earlier image reversal confirmed that assets are not a mechanical continuation of prose. The next decision is therefore architectural and external: change repository slugs and all compatibility links together, or defer that remote operation while continuing only local work. A global textual cleanup would now create more risk than it removes.
+
+Learning freshness: STALE - the public naming arc now warrants a maintained summary distinguishing current names, historical titles, compatibility URLs, and deferred images; automatic Learn scheduled.
+Goal need: TRIGGERED - the operator must choose the remote repository rename timing and how to migrate URLs before external names change; automatic Goal scheduled.
+
+### Candidate Next Moves
+
+1. Confirm the final repository slugs (`agent-cognition-skills` and `agent-context-memory`) and the order of GitHub renames and dependent URL updates.
+2. Run a fresh external inventory after local convergence, then update all compatibility links atomically.
+3. Perform the separate visual/image rename pass, then prepare version bumps, releases, and Zenodo only after both text and images are accepted.

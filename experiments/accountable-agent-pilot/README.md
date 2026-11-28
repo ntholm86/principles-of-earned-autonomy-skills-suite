@@ -1,7 +1,7 @@
 # Try accountable AI work on one bounded task
 
 **Principles of Earned Autonomy** is Nils Wendelboe Holmager's proposed
-governance framework. The **PEA Skills Suite** is a practical reference
+governance framework. **Agent Cognition Skills (ACS)** is a practical reference
 implementation, not a certificate that an agent is safe.
 
 This pilot makes a narrower question testable: can an agent deliver a working

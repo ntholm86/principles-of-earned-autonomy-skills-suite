@@ -56,11 +56,11 @@ jobs:
           if gh release view "$VERSION" >/dev/null 2>&1; then
             echo "Release $VERSION already exists - updating notes."
             gh release edit "$VERSION" \
-              --title "Autonomous Development Skills Suite $VERSION" \
+              --title "Agent Cognition Skills $VERSION" \
               --notes "$NOTES"
           else
             gh release create "$VERSION" \
-              --title "Autonomous Development Skills Suite $VERSION" \
+              --title "Agent Cognition Skills $VERSION" \
               --notes "$NOTES" \
               --latest
           fi
