@@ -19506,3 +19506,71 @@ Goal need: TRIGGERED - operator approval is needed before the external repositor
 1. Audit trees, filenames, package manifests, badges and executable configuration for old identities.
 2. Perform the external rename and 37-reference URL migration atomically when the operator approves.
 3. Re-test old/new GitHub, raw file, issue, commit and Pages links after the rename.
+
+## 2026-11-28 - rename-audit-3-repository-and-assets
+
+- target: repository trees, executable configuration, package identity, and deferred visual provenance
+- operator: Nils Wendelboe Holmager
+- agent: MAI Code 2; host: Copilot SDK in VS Code
+- skill: Improve
+- authority: the author's request for a third all-project audit, committed and pushed, with releases still held
+- outcome: no additional current package, workflow, script, executable, or tracked-tree naming defect was found
+- delta: no product or visual file changed; one audit record added
+
+### Interpretation of the ask
+
+Search the places broad prose and URL audits can miss: source configuration, package names, workflow files, filenames and binaries. Also recover what the private ACM knows about the deferred Storm P artwork.
+
+### Examination
+
+The tree/configuration search found old-name strings only in citation/repository URLs already inventoried by audit 2, one historical archive title, deferred image metadata, and test selectors for the deferred image title. No `package.json`, workflow release title, script, Python/Rust source, shell or PowerShell installer, or executable configuration still carries a stale ACS/ACM display identity.
+
+Tracked filenames with old identity are the two ACS website WebPs, `pea-skills-suite-1536.webp` and `pea-skills-suite-768.webp`; these belong to the explicitly deferred image pass. The local package identity is `nilsholmager`; the proxy and agent packages are unrelated and need no rename.
+
+Image provenance:
+
+- The generation prompt is preserved at `earned-autonomy/imageprompt.txt`.
+- The first public image commit was `1db1509` on 2026-06-23; prompt-expansion and regeneration commits followed through `e1759b7`.
+- The 2026-11-23 retouch commit `491892b` replaced destination/mission-era labels with Goal/Learn without claiming a regeneration model.
+- The ACS and earned-autonomy copies of `stormpInspired.png` are byte-identical: 3,421,649 bytes, SHA-256 `6D7D6DB9C9EEC748CD72F9D65993317AA71015CC5A38DF683392AFC29CEA0EA3`.
+- The PNG contains no embedded metadata; the prompt/trail records identify the style and requested scene, but no exact generator or model version.
+
+### Decision
+
+[!DECISION] Declare bounded silence for code, configuration, package and tracked-tree identity. Keep the two WebP filenames and all image text untouched, and do not infer an original generator model that the evidence does not record.
+
+### Prediction
+
+No executable or package identity change is needed before the remote repository rename. The later image pass can reproduce intent from the preserved prompt but must record a new generator decision rather than claim the original model was known. External URL migration remains separate.
+
+### Verification
+
+All seven public worktrees were clean and at their configured upstreams. `python verify.py`, ACS pilot tests, proxy Rust tests, website type checks and the rebuilt naming/metadata browser suites passed during the rename sequence. This final audit found no source/config target to change, so verification did not require a new executable test.
+
+### Reflection
+
+**Falsifiable model claim:** within the audited local projects, remaining rename work is now exactly three bounded external/visual concerns: coordinated GitHub repository renames and 37 URL updates, the visual asset/filename pass, and final version/release publication.
+
+**Named blind spot:** private or unregistered local repositories, external copies, other users' forks, GitHub Actions hosted elsewhere, package registries, and Zenodo records are outside the local tree audit.
+
+**Imagined-reader pushback:** a no-change audit can look ceremonial, but this one proves the absence of package/config drift and recovers the exact evidence needed to postpone the image work responsibly.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired as an unresolved defect; the repeated audits are the operator's requested coverage strategy.
+- *About to declare silence:* fired; this iteration declares silence only for local code/config/package/asset-identity coverage, not for URL migration, images or releases.
+- *Contradicts prior [!REALIZATION]:* not fired.
+- *Operator explicitly asked:* not fired for full-trail reflection; the operator asked for three scoped audits.
+
+**Across-trail macro-Hansei**
+
+The three-audit arc moved from words to locations to executables and assets. Audit 1 corrected a release-description blind spot; audit 2 bounded 37 URL dependencies behind the remote rename; audit 3 found no additional code/config/package defect and recovered the image provenance limit. The recurring risk is now no longer "we forgot a text occurrence"; it is changing an external identity without coordinating redirects, links, visuals and archival metadata. The next safe action is an operator-owned migration decision, not another global replacement.
+
+Learning freshness: STALE - final Learning should summarize the completed local rename and the three remaining operator-owned/external phases.
+Goal need: TRIGGERED - the next move needs operator approval for remote repository renames and URL migration.
+
+### Candidate Next Moves
+
+1. Obtain operator approval for the exact external GitHub rename sequence.
+2. Keep the image generator decision separate and use `imageprompt.txt` as source, not as proof of a particular historical model.
+3. Prepare version bumps, GitHub releases and Zenodo only after repository names, URLs and visuals are accepted.
