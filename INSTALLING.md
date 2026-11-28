@@ -1,4 +1,4 @@
-# Installing the skills
+# Installing Agent Cognition Skills (ACS)
 
 ## One-line install (recommended)
 
@@ -35,14 +35,14 @@ Nothing else is installed and nothing is executed at runtime.
 
 ### Optional: enforce trail discipline with a git hook
 
-The one-line installer does not copy optional tooling. From the target repo where you'll be running the skills, invoke the hook installer by its path in your cloned skills suite:
+The one-line installer does not copy optional tooling. From the target repo where you'll be running ACS, invoke the hook installer by its path in your ACS checkout:
 
 ```
-bash /path/to/principles-of-earned-autonomy-skills-suite/harness/tools/install-hooks.sh
-powershell -NoProfile -ExecutionPolicy Bypass -File C:\path\to\principles-of-earned-autonomy-skills-suite\harness\tools\install-hooks.ps1
+bash /path/to/agent-cognition-skills/harness/tools/install-hooks.sh
+powershell -NoProfile -ExecutionPolicy Bypass -File C:\path\to\agent-cognition-skills\harness\tools\install-hooks.ps1
 ```
 
-The installers use Git's effective hook location, including `core.hooksPath`, and create the directory if needed. A configured directory may be shared by several repos; installing there affects each repo that uses it. An identical installed hook can be installed again. A different existing hook, including an older suite hook, is left untouched and installation stops: review and integrate or explicitly replace it yourself before retrying.
+The installers use Git's effective hook location, including `core.hooksPath`, and create the directory if needed. A configured directory may be shared by several repos; installing there affects each repo that uses it. An identical installed hook can be installed again. A different existing hook, including an older ACS hook, is left untouched and installation stops: review and integrate or explicitly replace it yourself before retrying.
 
 For legacy in-repo trails only, this installs a pre-commit hook that rejects staged changes outside `.acm/`, including deletions, unless the commit also adds or modifies `.acm/audit-trail.md` or `.acm/<task>/audit-trail.md`. Commits confined to `.acm/` are allowed. Deleted or unstaged trails do not satisfy the gate. The hook checks staged paths; it does not validate entry truthfulness or append-only integrity.
 
@@ -104,8 +104,6 @@ All skills work with only their own `SKILL.md`. No required sibling files.
 
 ## The trail — where it lives
 
-The trail lives in a shared ACM memory repository, separate from your code, with one scope per work repository. The AI writes it automatically — no scripts required.
-
 The trail lives in a shared ACM memory repository, separate from your code, with one scope per work repository. The AI writes it automatically — no scripts required. Setting one up takes a few short steps; see the worked example in [QUICKSTART.md](./QUICKSTART.md#set-up-a-memory-and-make-a-first-record). Each entry is a create-only file `records/<UTC yyyyMMddTHHmmssZ>-<slug>.md`, committed in the memory repository as its goal's policy says. Full definition: [Record](./record/SKILL.md#where-memory-lives).
 
 A repository that already has an in-repo `.acm/audit-trail.md` from earlier ACM versions keeps working as legacy memory: entries are appended there and committed with the work. Migration to a memory repository is recommended.
@@ -116,7 +114,7 @@ A repository that already has an in-repo `.acm/audit-trail.md` from earlier ACM 
 
 *This section is for people running the improvement loop on the skills repo itself. If you're adopting the skills for your own project, you don't need any of this.*
 
-`harness/tools/record.py` and `verify.py` exist to support the experiment that produced this suite — running the loop 350+ times and proving the trail is intact. They remain in the cloned repository and are not copied by the one-line installer.
+`harness/tools/record.py` and `verify.py` exist to support the experiment that produced ACS — running the loop 350+ times and proving the trail is intact. They remain in the cloned repository and are not copied by the one-line installer.
 
 **`harness/tools/record.py`** — resolves the scope, writes records, and generates `generated/trail-markers.md` from the trail. Run from the work repo root:
 ```
@@ -140,7 +138,7 @@ Exit 0 = all checks pass, exit 1 = something is wrong.
 
 Once installed, remember one action:
 
-- **Run** (`/improve`) — interpret this prompt, advance the work, and coordinate the suite.
+- **Run** (`/improve`) — interpret this prompt, advance the work, and coordinate ACS.
 
 Intent runs automatically before substantive work. Record runs automatically afterward. Improve triggers Goal when broader direction needs operator confirmation and Learn when the evidence-based freshness check fires. Manual `/goal` and `/learn` remain available as overrides, but are not routine workflow steps. Probe is outside this operating model; `/probe` is only for controlled ARF research.
 

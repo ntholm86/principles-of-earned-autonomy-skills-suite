@@ -19206,3 +19206,61 @@ Goal need: not triggered.
 1. Rename the suite's installation and quickstart paths so a new reader can install ACS without meeting the old product name first.
 2. Update the ACS skill prose's current ACM terminology while preserving examples and historical names.
 3. Rename the memory specification's current surfaces to ACM, then propagate the two identities across dependent repositories.
+
+## 2026-11-28 - acs-iteration-2-installation-path
+
+- target: installation and quickstart documentation
+- operator: Nils Wendelboe Holmager
+- agent: MAI Code 2; host: Copilot SDK in VS Code
+- skill: Improve
+- authority: the author's request for several ACS rename iterations, with releases deferred
+- outcome: new readers see ACS and the future `agent-cognition-skills` checkout path throughout the install and first-run path, with a temporary migration note for the current folder name
+- delta: INSTALLING.md and QUICKSTART.md changed; install behavior and GitHub repository identity are unchanged
+
+### Interpretation of the ask
+
+Continue the rename along the next path a reader takes after the README, so installation does not reintroduce the old project identity.
+
+### Examination
+
+The purpose lens found old checkout-name examples in optional hook installation and quickstart helper commands. The consistency lens found generic suite language around those examples even though the product identity is now ACS. The migration lens found that the future repository slug must be documented without pretending the existing checkout is already renamed.
+
+### Decision
+
+[!DECISION] Replace old checkout examples with `agent-cognition-skills`, use `<acs>` for the checkout placeholder, and state that the old local folder name remains valid until the repository rename.
+
+### Prediction
+
+The install and first-run docs will teach ACS terminology without breaking commands for current checkouts. Not expected: that no old name remains, because one migration note must deliberately preserve it and the current GitHub URL still exists for compatibility.
+
+### Action
+
+Renamed the install title, hook paths, maintainer description, operator summary, and quickstart helper paths. Removed a duplicated memory-location paragraph. No executable installer code changed.
+
+### Verification
+
+`git diff --check` passed and the scoped search leaves the old name only in the deliberate transition note. The first integrity run correctly failed because generated trail markers became stale after iteration 1; this iteration will regenerate them before its final verification.
+
+### Reflection
+
+**Falsifiable model claim:** the highest remaining inconsistency after this iteration is inside the skills' own operational prose, where terminology inherited from the old architecture may still teach SACM to users who have already installed ACS.
+
+**Named blind spot:** the changed placeholder has no shell expansion semantics and users may paste `<acs>` literally if they do not replace it. The surrounding prose explains the placeholder, but a later usability test should verify this path with a fresh reader.
+
+**Imagined-reader pushback:** documenting the future repository slug before the GitHub rename can make `agent-cognition-skills` look as though it already exists. The explicit transition note is intended to contain that risk.
+
+**Across-trail trigger evaluation:**
+
+- *Recurring finding-class:* not fired as a failed-correction pattern; iteration 1 and iteration 2 address distinct, planned reader surfaces rather than the same unresolved finding.
+- *About to declare silence:* not fired; operational skill prose and the memory specification remain.
+- *Contradicts prior [!REALIZATION]:* not fired; the run follows the prior claim about moving outward from the README.
+- *Operator explicitly asked:* not fired for a full arc read; the operator requested a sequence of bounded iterations.
+
+Learning freshness: not yet needed.
+Goal need: not triggered.
+
+### Candidate Next Moves
+
+1. Update current terminology inside the five operational skill files while preserving skill behavior and every historical mention.
+2. Rename the ACM specification's current entry surfaces, citation metadata, diagrams, and release workflow.
+3. Trace and update all current repository-to-repository links after the two canonical surfaces are consistent.

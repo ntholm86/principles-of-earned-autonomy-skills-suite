@@ -27,7 +27,7 @@ The operator workflow is **Run Improve**. Intent interprets each prompt, Record 
 
 ## Set up a memory and make a first record
 
-`<suite>` is your checkout of `principles-of-earned-autonomy-skills-suite`. Memory is a repository of its own, never a folder in your code.
+`<acs>` is your checkout of `agent-cognition-skills`. Memory is a repository of its own, never a folder in your code. Until the repository rename takes place, the checkout may still have the older `principles-of-earned-autonomy-skills-suite` folder name; the placeholder works with either path.
 
 ```
 git init <memory-folder>
@@ -38,7 +38,7 @@ Create an empty file `.acm-root` in it (`touch <memory-folder>/.acm-root`, or `N
 In the work repository, bind it:
 
 ```
-python <suite>/harness/tools/record.py resolve
+python <acs>/harness/tools/record.py resolve
 ```
 
 It prints `unbound: ...` and the repository's root commit (a shallow clone is reported: fetch the full history first). With your confirmation, create `<memory-folder>/repositories/<id>/repository.json` using the full commit from `git rev-list --max-parents=0 HEAD`:
@@ -61,7 +61,7 @@ A maintainer reviews every pull request before it merges. Before that review the
 Make the first record from the work repository:
 
 ```
-python <suite>/harness/tools/record.py new --slug first-run
+python <acs>/harness/tools/record.py new --slug first-run
 ```
 
 It creates `<memory-folder>/repositories/<id>/records/<UTC yyyyMMddTHHmmssZ>-first-run.md`, a stub the agent fills in (the stub continues with the interpretation, decision, prediction, validation and reflection sections that `record/SKILL.md` describes):
@@ -87,7 +87,7 @@ It creates `<memory-folder>/repositories/<id>/records/<UTC yyyyMMddTHHmmssZ>-fir
 `mandate:` is the first 12 hex characters of the governing `goal.md` (`none` when no goal governs). If the name already exists the command exits non-zero and writes nothing; run it again for a new timestamp. Replace every `TODO` before the record counts; the checker below warns about the ones left. Finally:
 
 ```
-python <suite>/harness/tools/memory_check.py <memory-folder>
+python <acs>/harness/tools/memory_check.py <memory-folder>
 ```
 
 `PASS: 2 scope(s) checked, 0 failure(s), 0 warning(s)` means the layout, the binding, every mandate's Human gate and the record names are valid. Any failure exits non-zero and names the file.
@@ -107,7 +107,7 @@ Examples:
 
 The agent applies Intent and asks you to **Confirm**, **Stop**, or **Specify** its reading. After examination, Improve states one proposed change and asks you to **Proceed**, **Stop**, or **Specify** before implementation. Specify restarts the reasoning with your added information. A completed run makes one change, verifies it, applies Record, and ends with one short change-and-verification summary.
 
-Once the suite has earned your trust, explicitly delegate either routine gate in the prompt or in Goal. Delegation does not silence the narration, the final summary, unresolved Goal questions, or operator-declared consequential gates. Host autopilot alone grants no such authority.
+Once ACS has earned your trust, explicitly delegate either routine gate in the prompt or in Goal. Delegation does not silence the narration, the final summary, unresolved Goal questions, or operator-declared consequential gates. Host autopilot alone grants no such authority.
 
 If continuing safely requires broader direction, Improve explains why and invokes Goal after the completed run to ask one sourced question at a time.
 
@@ -137,11 +137,11 @@ Manual `/learn` is an override, not part of the normal workflow.
 
 ## Optional: lock in trail discipline
 
-The one-line installer does not copy optional tooling. From your target repo, invoke the hook installer by its path in your cloned skills suite:
+The one-line installer does not copy optional tooling. From your target repo, invoke the hook installer by its path in your ACS checkout:
 
 ```
-bash /path/to/principles-of-earned-autonomy-skills-suite/harness/tools/install-hooks.sh
-powershell -NoProfile -ExecutionPolicy Bypass -File C:\path\to\principles-of-earned-autonomy-skills-suite\harness\tools\install-hooks.ps1
+bash /path/to/agent-cognition-skills/harness/tools/install-hooks.sh
+powershell -NoProfile -ExecutionPolicy Bypass -File C:\path\to\agent-cognition-skills\harness\tools\install-hooks.ps1
 ```
 
 The installer respects `core.hooksPath` and stops without overwriting a different existing hook. Review the reported path before installing into a shared hook directory; see [INSTALLING.md](./INSTALLING.md) for existing-hook handling.
